@@ -1,0 +1,2 @@
+ln -s /usr/bin/ntlm_auth.desktop ~/ntlm_auth
+/usr/bin/firefox -CreateProfile youtube

@@ -1,0 +1,15 @@
+{
+  "policies": {
+    "DisableFirefoxAccounts": true,
+    "DisableSetDesktopBackground": true,
+    "DisableAppUpdate": true,
+    "DisableTelemetry": true,
+    "DontCheckDefaultBrowser": true,
+    "HardwareAcceleration": false,
+    "DisableSystemAddonUpdate": true,
+    "DefaultDownloadDirectory": "${home}/Downloads"
+    "Preferences": {
+      "browser.cache.disk.parent_directory": "${home}/Downloads"
+    }
+  }
+}

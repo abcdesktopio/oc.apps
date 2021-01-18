@@ -1,0 +1,27 @@
+
+
+if [ ! -f ~/.config/kigorc ]; then
+	cat <<- EOF > ~/.config/kigorc
+	[Backend]
+	EngineCommand=/usr/games/gnugo --mode gtp
+	
+	[Game]
+	BlackPlayerName=
+	BlackPlayerStrength=5
+	FixedHandicapValue=1
+	Komi=0
+	WhitePlayerName=oio
+	WhitePlayerStrength=5
+	
+	[MainWindow]
+	Height 687=700
+	ToolBarsMovable=Disabled
+	Width 1366=800
+	Window-Maximized 554x1366=true
+	Window-Maximized 687x1366=true
+
+	[UserInterface]
+	Theme=themes/plain.desktop
+	EOF
+fi
+
