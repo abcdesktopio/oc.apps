@@ -1,3 +1,9 @@
+
+ifndef TAG
+ TAG=dev
+endif 
+
+
 all: dockerfile build push
 
 dockerfile:
@@ -11,14 +17,13 @@ build:
 	#docker pull abcdesktopio:oc.template.gtk.mswindows.putty
 	for dir in $(sort $(wildcard *.d)); do \
 		echo "\n\n *********** building $$dir **********\n"; \
-        	docker build -t $$dir -f $$dir . ;\
-		docker tag $$dir abcdesktopio/$$dir ;\
+		docker build  --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:$(TAG) -f $$dir . ;\
 	done 
 
 push:
 	for dir in $(sort $(wildcard *.d)); do \
 		echo "pushing $$dir"; \
-           	docker push abcdesktopio/$$dir ;\
+		docker push abcdesktopio/$$dir:$(TAG);\
         done 
 
 
@@ -32,12 +37,12 @@ list:
 command:
 	echo "#!/bin/bash" >  command.sh	
 	for dir in $(sort $(wildcard *.d)); do \
-                echo docker pull abcdesktopio/$$dir >> command.sh;\
+		echo docker pull abcdesktopio/$$dir:$(TAG) >> command.sh;\
         done 
 
 
 clean:
 	for dir in $(wildcard *.d); do \
-                docker rmi abcdesktopio/$$dir ;\
+		docker rmi abcdesktopio/$$dir:$(TAG) ;\
         done 
 	docker rmi `docker images -q --filter "dangling=true"`
