@@ -87,7 +87,7 @@
 {
     "cat": "utilities",
     "debpackage": "x11-apps man-db manpages manpages-posix manpages-dev manpages-posix-dev",
-    "icon": "x11.svg",
+    "icon": "x11man.svg",
     "keyword": "man,xman,help",
     "launch": "topBox.Xman",
     "name": "xman",
