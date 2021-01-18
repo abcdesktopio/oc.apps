@@ -12,7 +12,7 @@
     "launch": "atom.Atom",
     "name": "Atom",
     "path": "/usr/bin/atom",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "args": "-f",
     "desktopfile": "/usr/share/applications/atom.desktop"
 }, {
@@ -29,7 +29,7 @@
     "name": "onlyoffice",
     "displayname": "OnlyOffice",
     "path": "/usr/bin/desktopeditors",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype" : "application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/vnd.oasis.opendocument.text-web;application/vnd.oasis.opendocument.text-master;application/vnd.sun.xml.writer;application/vnd.sun.xml.writer.template;application/vnd.sun.xml.writer.global;application/msword;application/vnd.ms-word;application/x-doc;application/rtf;text/rtf;application/vnd.wordperfect;application/wordperfect;application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-word.document.macroenabled.12;application/vnd.openxmlformats-officedocument.wordprocessingml.template;application/vnd.ms-word.template.macroenabled.12;application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.spreadsheet-template;application/vnd.sun.xml.calc;application/vnd.sun.xml.calc.template;application/msexcel;application/vnd.ms-excel;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroenabled.12;application/vnd.openxmlformats-officedocument.spreadsheetml.template;application/vnd.ms-excel.template.macroenabled.12;application/vnd.ms-excel.sheet.binary.macroenabled.12;text/csv;text/spreadsheet;application/csv;application/excel;application/x-excel;application/x-msexcel;application/x-ms-excel;text/comma-separated-values;text/tab-separated-values;text/x-comma-separated-values;text/x-csv;application/vnd.oasis.opendocument.presentation;application/vnd.oasis.opendocument.presentation-template;application/vnd.sun.xml.impress;application/vnd.sun.xml.impress.template;application/mspowerpoint;application/vnd.ms-powerpoint;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-powerpoint.presentation.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.template;application/vnd.ms-powerpoint.template.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.slide;application/vnd.openxmlformats-officedocument.presentationml.slideshow;application/vnd.ms-powerpoint.slideshow.macroEnabled.12;",
     "args": "",
     "fileextensions": "doc;docx;odt;rtf;txt;xls;xlsx;ods;csv;ppt;pptx;odp", 
@@ -42,7 +42,7 @@
     "launch": "xterm.XTerm",
     "name": "Xterm",
     "path": "/usr/bin/xterm",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "quick": true
 }, {
     "cat": "development",
@@ -54,7 +54,7 @@
     "displayname": "Eclipse Sts4",
     "name": "Eclipse_Sts4",
     "path": "/opt/sts/SpringToolSuite4",
-    "template": "abcdesktop/oc.template.gtk.java.sts4",
+    "template": "abcdesktopio/oc.template.gtk.java.sts4",
     "mimefilename": "eclipse",
     "desktop": "eclipse.desktop"
 }, {
@@ -67,7 +67,7 @@
     "displayname": "Postman",
     "name": "postman",
     "path": "/usr/local/bin/Postman/app/Postman",
-    "template": "abcdesktop/oc.template.gtk.postman"
+    "template": "abcdesktopio/oc.template.gtk.postman"
 }, 
 {
     "cat": "utilities",
@@ -78,7 +78,7 @@
     "name": "filelight",
     "displayname": "Filelight",
     "path": "/usr/bin/filelight",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "inode/directory;",
     "fileextensions":"",
     "args": "",
@@ -93,7 +93,7 @@
     "name": "xman",
     "displayname": "Xman",
     "path": "/usr/bin/xman",
-    "template": "abcdesktop/oc.template.gtk.18.04",
+    "template": "abcdesktopio/oc.template.gtk.18.04",
     "mimetype": "application/x-troff;application/x-troff-man;",
     "fileextensions":"man;roff",
     "args": ""
@@ -107,7 +107,7 @@
     "name": "gimagereader",
     "displayname": "OCR-gimagereader",
     "path": "/usr/bin/gimagereader-gtk",
-    "template": "abcdesktop/oc.template.gtk.gimagereader",
+    "template": "abcdesktopio/oc.template.gtk.gimagereader",
     "mimetype": "image/bmp;image/jpeg;image/gif;image/png;image/tiff;image/x-bmp;image/x-ico;image/x-png;image/x-pcx;image/x-tga;image/xpm;image/svg+xml;",
     "fileextensions":"bmp;jpeg;png,tiff,tga",
     "args": "",
@@ -122,7 +122,7 @@
     "name": "xedit",
     "displayname": "Xedit",
     "path": "/usr/bin/xedit",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "application/text;",
     "fileextensions":"txt;log;md",
     "args": "",
@@ -141,7 +141,7 @@
     "installrecommends" : true,
     "forceconfold" : true,
     "path": "/usr/bin/firefox",
-    "template": "abcdesktop/oc.template.gtk.firefox.rest",
+    "template": "abcdesktopio/oc.template.gtk.firefox.rest",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -159,7 +159,7 @@
     "name": "file-roller",
     "displayname": "file-roller",
     "path": "/usr/bin/file-roller",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "mimetype": "application/x-7z-compressed;application/gzip;application/gtar;application/tar;application/zip;application/x-compress;application/x-compressed;application/x-zip-compressed;multipart/x-zip;application/gnutar;application/x-lzx;application/lzx;application/x-gzip;application/x-gtar;application/x-bzip2;application/x-bzip;application/x-bzip2;",
     "fileextensions":"7z;7zip;Z;unzip;zip;tar;tgz;war;tar.gz;ar;bcz;cpio;ear;jar;iso;tar.Z;tar.gz;tar.lz;tar.lzma;tar.lzo;tar.xz",
     "args": "",
@@ -175,7 +175,7 @@
     "name": "gephi",
     "displayname": "Gephi",
     "path": "/opt/gephi-0.9.1/bin/gephi",
-    "template": "abcdesktop/oc.template.gtk.java.gephi",
+    "template": "abcdesktopio/oc.template.gtk.java.gephi",
     "args": ""
 },
 {
@@ -190,7 +190,7 @@
     "mimetype": "application/text;",
     "fileextensions":"txt;log;",
     "path": "/usr/bin/wine",
-    "template": "abcdesktop/oc.template.gtk.mswindows.default"
+    "template": "abcdesktopio/oc.template.gtk.mswindows.default"
 },
 {
     "args": "winfile",
@@ -202,7 +202,7 @@
     "name": "winefile-wine",
     "displayname": "Winefile Wine",
     "path": "/usr/bin/wine",
-    "template": "abcdesktop/oc.template.gtk.mswindows.default"
+    "template": "abcdesktopio/oc.template.gtk.mswindows.default"
 },
 {
     "args": "winhelp",
@@ -216,7 +216,7 @@
     "mimetype": "application/hlp;",
     "fileextensions":"hlp;",
     "path": "/usr/bin/wine",
-    "template": "abcdesktop/oc.template.gtk.mswindows.default"
+    "template": "abcdesktopio/oc.template.gtk.mswindows.default"
 },
 {
     "args": "winemine",
@@ -228,7 +228,7 @@
     "name": "winemine-wine",
     "displayname": "WineMine Wine",
     "path": "/usr/bin/wine",
-    "template": "abcdesktop/oc.template.gtk.mswindows.default"
+    "template": "abcdesktopio/oc.template.gtk.mswindows.default"
 },
 {
     "args": "/composer/bin/putty.exe",
@@ -240,7 +240,7 @@
     "name": "putty-wine",
     "displayname": "Putty Wine",
     "path": "/usr/bin/wine",
-    "template": "abcdesktop/oc.template.gtk.mswindows.putty"
+    "template": "abcdesktopio/oc.template.gtk.mswindows.putty"
 }, 
 {
     "args": "",
@@ -252,7 +252,7 @@
     "name": "putty-unix",
     "displayname": "Putty Unix",
     "path": "/usr/bin/putty",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 },
 {
     "cat": "games",
@@ -263,7 +263,7 @@
     "name": "supertux2",
     "displayname": "supertux2",
     "path": "/usr/games/supertux2",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/share/applications/supertux2.desktop"
 }, {
     "cat": "games",
@@ -274,7 +274,7 @@
     "name": "doom",
     "displayname": "Doom",
     "path": "/usr/games/doom",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {
     "cat": "games",
     "args": "",
@@ -286,7 +286,7 @@
     "mimetype": "application/x-go-sgf;",
     "displayname": "kigo",
     "path": "/usr/games/kigo",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/share/applications/kigo.desktop",
     "preruncommands": [ "COPY composer/init.d/init.kigo /composer/init.d/init.kigo" ]
 },
@@ -299,7 +299,7 @@
     "name": "2048",
     "displayname": "2048",
     "path": "/usr/games/2048-qt",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 },
 {
     "cat": "games",
@@ -311,7 +311,7 @@
     "name": "astromenace",
     "displayname": "astromenace",
     "path": "/usr/games/AstroMenace",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/share/applications/astromenace.desktop"
 },
 {
@@ -323,7 +323,7 @@
     "name": "swell-foop",
     "displayname": "swell-foop",
     "path": "/usr/games/swell-foop",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/share/applications/swell-foop.desktop"
 }, 
 {
@@ -340,7 +340,7 @@
     "path": "/usr/local/blender-2.90.0-linux64/blender",
     "mimetype": "application/x-blender",
     "fileextensions":"blend,obj,fbx,3ds,ply,stl",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/local/blender-2.90.0-linux64/blender.desktop"
 },
 {
@@ -354,7 +354,7 @@
     "path": "/usr/bin/vlc",
     "mimetype": "video/3gpp;video/dv;video/fli;video/flv;video/mp2t;video/mp4;video/mp4v-es;video/mpeg;video/msvideo;video/ogg;video/quicktime;video/vivo;video/vnd.divx;video/vnd.rn-realvideo;video/vnd.vivo;video/webm;video/x-anim;video/x-avi;video/x-flc;video/x-fli;video/x-flic;video/x-flv;video/x-m4v;video/x-matroska;video/x-mpeg;video/x-ms-asf;video/x-ms-asx;video/x-msvideo;video/x-ms-wm;video/x-ms-wmv;video/x-ms-wmx;video/x-ms-wvx;video/x-nsv;video/x-ogm+ogg;video/x-theora+ogg;",
     "fileextensions":"asx;dts;gxf;m2v;m3u;m4v;mpeg1;mpeg2;mts;mxf;ogm;pls;bup;a52;aac;b4s;cue;divx;dv;flv;m1v;m2ts;mkv;mov;mpeg4;oma;spx;ts,vlc,vob,xspf;dat;bin;ifo;part;3g2;avi;mpeg;mpg;flac;m4a;mp1;ogg;wav;xm;3gp;srt;wmv;ac3;asf;mod;mp2;mp3;mp4;wma;mka;m4p",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/share/applications/vlc.desktop",
     "quick": true
 }, {
@@ -365,7 +365,7 @@
     "launch": "evince.Evince",
     "name": "Evince",
     "path": "/usr/bin/evince",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "mimetype": "application/pdf;application/x-bzpdf;application/x-gzpdf;application/x-xzpdf;application/x-ext-pdf;application/postscript;application/x-bzpostscript;application/x-gzpostscript;image/x-eps;image/x-bzeps;image/x-gzeps;application/x-ext-ps;application/x-ext-eps;application/x-dvi;application/x-bzdvi;application/x-gzdvi;application/x-ext-dvi;image/vnd.djvu;application/x-ext-djv;application/x-ext-djvu;image/tiff;application/x-cbr;application/x-cbz;application/x-cb7;application/x-cbt;application/x-ext-cbr;application/x-ext-cbz;application/x-ext-cb7;application/x-ext-cbt;application/oxps;application/vnd.ms-xpsdocument;",
     "fileextensions": "pdf;ps;dvi;eps;cbt;cbr;cb7;xps",
     "legacyfileextensions": "pdf;ps;dvi",
@@ -394,7 +394,7 @@
     "memory": "16gb",
     "oomkilldisable": true, 
     "path": "/usr/bin/firefox",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
@@ -427,7 +427,7 @@
     "memory": "16gb",
     "oomkilldisable": true,
     "path": "/usr/bin/firefox-esr",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
@@ -451,7 +451,7 @@
     "installrecommends" : true,
     "path": "/usr/bin/google-chrome-stable",
     "args": "-no-sandbox --disable-gpu",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -468,7 +468,7 @@
     "name": "Evolution",
     "displayname": "Evolution",
     "path": "/usr/bin/evolution",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "text/calendar;text/x-vcard;text/directory;application/mbox;message/rfc822;x-scheme-handler/mailto;",
     "desktopfile": "/usr/share/applications/evolution.desktop"
 }, {
@@ -480,7 +480,7 @@
     "name": "Thunderbird",
     "displayname": "Thunderbird",
     "path": "/usr/bin/thunderbird",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "mimetype": "x-scheme-handler/mailto",
     "desktopfile": "/usr/share/applications/thunderbird.desktop"
 }, {
@@ -495,7 +495,7 @@
     "path": "/usr/lib/libreoffice/program/soffice",
     "args": "--writer",
     "uniquerunkey": "libreoffice",
-    "template": "abcdesktop/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.gtk.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/vnd.oasis.opendocument.text-web;application/vnd.oasis.opendocument.text-master;application/vnd.oasis.opendocument.text-master-template;application/vnd.sun.xml.writer;application/vnd.sun.xml.writer.template;application/vnd.sun.xml.writer.global;application/msword;application/vnd.ms-word;application/x-doc;application/x-hwp;application/rtf;text/rtf;application/vnd.wordperfect;application/wordperfect;application/vnd.lotus-wordpro;application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-word.document.macroenabled.12;application/vnd.openxmlformats-officedocument.wordprocessingml.template;application/vnd.ms-word.template.macroenabled.12;application/vnd.stardivision.writer-global;application/x-extension-txt;application/x-t602;application/vnd.oasis.opendocument.text-flat-xml;application/x-fictionbook+xml;application/macwriteii;application/x-aportisdoc;application/prs.plucker;application/vnd.palm;application/clarisworks;application/x-sony-bbeb;application/x-abiword;application/x-iwork-pages-sffpages;application/x-mswrite;",
     "legacyfileextensions": "odf;ott;fodt;uot",
     "fileextensions": "sxw;stw;doc;dot;wps;rtf;602;wpd;docx;docm;dotx;dotm;abw;zabw;pages;dummy;lrf;cwk;hqx;fb2;mw;mcw;mwd;pdb;wn",
@@ -514,7 +514,7 @@
     "args": "--calc",
     "uniquerunkey": "libreoffice",
     "path": "/usr/lib/libreoffice/program/soffice",
-    "template": "abcdesktop/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.gtk.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.spreadsheet-template;application/vnd.sun.xml.calc;application/vnd.sun.xml.calc.template;application/msexcel;application/vnd.ms-excel;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroenabled.12;application/vnd.openxmlformats-officedocument.spreadsheetml.template;application/vnd.ms-excel.template.macroenabled.12;application/vnd.ms-excel.sheet.binary.macroenabled.12;text/csv;application/x-dbf;text/spreadsheet;application/csv;application/excel;application/tab-separated-values;application/vnd.lotus-1-2-3;application/vnd.oasis.opendocument.chart;application/vnd.oasis.opendocument.chart-template;application/x-dbase;application/x-dos_ms_excel;application/x-excel;application/x-msexcel;application/x-ms-excel;application/x-quattropro;application/x-123;text/comma-separated-values;text/tab-separated-values;text/x-comma-separated-values;text/x-csv;application/vnd.oasis.opendocument.spreadsheet-flat-xml;application/vnd.ms-works;application/x-iwork-numbers-sffnumbers;",
     "legacyfileextensions": "ods;ots;csv",
     "fileextensions": "ods;ots;sxc;stc;fods;uos;uof;xml;xlsx;xlsm;xltm;xltx;xlsb;xls;xlm;xlc;xlw;xlk;xlt;dif;dbf;htm;html;wk1;wks;123;wb2;rtf;slk;sylk;csv;numbers;dummy;cwk;wps;wk3;wq1;wq2",
@@ -532,7 +532,7 @@
     "args": "--impress",
     "uniquerunkey": "libreoffice",
     "path": "/usr/lib/libreoffice/program/soffice",
-    "template": "abcdesktop/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.gtk.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.presentation;application/vnd.oasis.opendocument.presentation-template;application/vnd.sun.xml.impress;application/vnd.sun.xml.impress.template;application/mspowerpoint;application/vnd.ms-powerpoint;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-powerpoint.presentation.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.template;application/vnd.ms-powerpoint.template.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.slide;application/vnd.openxmlformats-officedocument.presentationml.slideshow;application/vnd.ms-powerpoint.slideshow.macroenabled.12;application/vnd.oasis.opendocument.presentation-flat-xml;application/x-iwork-keynote-sffkey;",
     "fileextensions": "odp;pot;potm;potx;pps;ppsx;ppt;pptx;pptm",
     "legacyfileextensions":"odp",
@@ -549,7 +549,7 @@
     "args": "--math",
     "uniquerunkey": "libreoffice",
     "path": "/usr/lib/libreoffice/program/soffice",
-    "template": "abcdesktop/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.gtk.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.formula;application/vnd.sun.xml.math;application/vnd.oasis.opendocument.formula-template;text/mathml;application/mathml+xml;",
     "fileextensions": "odf;odc",
     "legacyfileextensions": "odf;odc",
@@ -567,7 +567,7 @@
     "args": "--draw",
     "uniquerunkey": "libreoffice",
     "path": "/usr/lib/libreoffice/program/soffice",
-    "template": "abcdesktop/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.gtk.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.graphics;application/vnd.oasis.opendocument.graphics-flat-xml;application/vnd.oasis.opendocument.graphics-template;application/vnd.sun.xml.draw;application/vnd.sun.xml.draw.template;application/vnd.visio;application/x-wpg;application/vnd.ms-publisher;image/x-freehand;application/x-pagemaker;",
     "fileextensions": "odp;otg",
     "legacyfileextensions":"odp;otg",
@@ -584,7 +584,7 @@
     "args": "--base",
     "uniquerunkey": "libreoffice",
     "path": "/usr/lib/libreoffice/program/soffice",
-    "template": "abcdesktop/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.gtk.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.database;application/vnd.sun.xml.base;",
     "fileextensions": "odb",
     "legacyfileextensions":"odb",
@@ -600,7 +600,7 @@
     "name": "Terminal",
     "path": "/usr/bin/gnome-terminal",
     "args": "--disable-factory",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "quick": true
 },  {
@@ -613,7 +613,7 @@
     "displayname": "Shell AI",
     "path": "/usr/bin/gnome-terminal",
     "args": "--disable-factory --class=terminalai",
-    "template": "abcdesktop/oc.template.gtk.fulldev.ia",
+    "template": "abcdesktopio/oc.template.gtk.fulldev.ia",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "quick": false
 },
@@ -625,7 +625,7 @@
     "launch": "gimp.Gimp",
     "name": "Gimp",
     "path": "/usr/bin/gimp",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "image/bmp;image/g3fax;image/gif;image/x-fits;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-psd;image/x-sgi;image/x-tga;image/x-xbitmap;image/x-xwindowdump;image/x-xcf;image/x-compressed-xcf;image/x-gimp-gbr;image/x-gimp-pat;image/x-gimp-gih;image/jpeg;image/x-psp;image/png;image/x-icon;image/x-xpixmap;image/x-wmf;image/jp2;image/jpeg2000;image/jpx;image/x-xcursor;",
     "fileextensions": "dds",
     "legacyfileextensions":"dds",
@@ -640,7 +640,7 @@
     "launch": "eog.Eog",
     "name": "eog",
     "path": "/usr/bin/eog",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "image/bmp;image/gif;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-tga;image/x-xbitmap;image/jpeg;image/png;image/x-icon;image/x-xpixmap;image/x-xcursor;",
     "fileextensions": "ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
     "legacyfileextensions":"ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
@@ -656,7 +656,7 @@
     "launch": "io.elementary.calculator.Io.elementary.calculator",
     "name": "Calculator",
     "path": "/usr/bin/io.elementary.calculator",
-    "template": "abcdesktop/oc.template.gtk.elementary",
+    "template": "abcdesktopio/oc.template.gtk.elementary",
     "mimefilename": "pantheon-calculator",
     "desktopfile": "/usr/share/applications/org.pantheon.calculator.desktop",
     "rules": { "homedir": { "default": false }, "network": { "default": false, "ship": { "name": "macvlan128", "dns": [ "8.8.8.8" ] } } },
@@ -674,7 +674,7 @@
     "launch": "sublime_text.Sublime_text",
     "name": "Sublime-Text",
     "path": "/opt/sublime_text/sublime_text",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "desktopfile":"/usr/share/applications/sublime_text.desktop"
 }, {
     "cat": "graphics",
@@ -684,7 +684,7 @@
     "launch": "inkscape.Inkscape",
     "name": "Inkscape",
     "path": "/usr/bin/inkscape",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "image/svg+xml;image/svg+xml-compressed;application/vnd.corel-draw;application/illustrator;",
     "fileextensions": "ai;cdr",
     "legacyfileextensions":"ai;cdr",
@@ -698,7 +698,7 @@
     "launch": "gnome-klotski.Gnome-klotski",
     "name": "Klotski",
     "path": "/usr/games/gnome-klotski",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-klotski.desktop"
 }, {
     "cat": "games",
@@ -708,7 +708,7 @@
     "launch": "gnome-mahjongg.Gnome-mahjongg",
     "name": "Mahjongg",
     "path": "/usr/games/gnome-mahjongg",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile":"/usr/share/applications/gnome-mahjongg.desktop"
 }, 
 {
@@ -721,7 +721,7 @@
     "name": "Chess",
     "path": "/usr/games/gnome-chess",
     "args": "",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "mimetype": "application/x-chess-pgn",
     "desktopfile": "/usr/share/applications/gnome-chess.desktop"
 }, {
@@ -732,7 +732,7 @@
     "launch": "gedit.Gedit",
     "name": "Gedit",
     "path": "/usr/bin/gedit",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "mimetype": "text/plain;",
     "fileextensions": "txt",
     "legacyfileextensions":"txt",
@@ -746,7 +746,7 @@
     "launch": "/usr/bin/gnumeric./usr/bin/gnumeric",
     "name": "Gnumeric",
     "path": "/usr/bin/gnumeric",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "mimetype": "application/x-gnumeric;application/x-oleo;application/x-planperfect;application/x-sc;application/x-sylk;application/x-xbase;",
     "fileextensions": "gnm",
     "legacyfileextensions":"gnm",
@@ -759,7 +759,7 @@
     "launch": "gnome-tetravex.Gnome-tetravex",
     "name": "Tetravex",
     "path": "/usr/games/gnome-tetravex",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktop":"gnome-tetravex.desktop"
 }, {
     "cat": "games",
@@ -769,7 +769,7 @@
     "launch": "xeyes.XEyes",
     "name": "xeyes",
     "path": "/usr/bin/xeyes",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "quick": true
 }, {
     "cat": "office",
@@ -779,7 +779,7 @@
     "launch": "planner.Planner",
     "name": "Planner",
     "path": "/usr/bin/planner",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "mimetype": "application/x-planner;",
     "fileextensions": "mpp;mpx",
     "legacyfileextensions":"mpp;mpx"
@@ -792,7 +792,7 @@
     "launch": "leocad.Leocad",
     "name": "Leocad",
     "path": "/usr/bin/leocad",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "application/vnd.leocad;application/x-ldraw;application/x-multi-part-ldraw;application/x-ldlite;",
     "fileextensions": "lcd",
     "legacyfileextensions": "lcd"
@@ -804,7 +804,7 @@
     "launch": "dia-gnome.Dia-gnome",
     "name": "Dia",
     "path": "/usr/bin/dia",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "mimetype": "application/x-dia-diagram;",
     "fileextensions": "dia",
     "legacyfileextensions": "dia",
@@ -817,7 +817,7 @@
     "launch": "gnome-terminal-server.pivotalio.cf",
     "name": "cloudFoundry",
     "path": "/usr/bin/gnome-terminal",
-    "template": "abcdesktop/oc.template.gtk.fulldev",
+    "template": "abcdesktopio/oc.template.gtk.fulldev",
     "displayname": "Cloud Foundry cli",
     "args": "--disable-factory --class pivotalio.cf",
     "quick": true
@@ -829,7 +829,7 @@
     "launch": "gnome-terminal-server.openshift.cli",
     "name": "openshift",
     "path": "/usr/bin/gnome-terminal",
-    "template": "abcdesktop/oc.template.gtk.fulldev",
+    "template": "abcdesktopio/oc.template.gtk.fulldev",
     "displayname": "OpenShift cli",
     "args": "--disable-factory --class openshift.cli",
     "quick": true
@@ -841,7 +841,7 @@
     "launch": "code.Code",
     "name": "VSCode",
     "path": "/usr/bin/code",
-    "template": "abcdesktop/oc.template.gtk.fulldev.vscode",
+    "template": "abcdesktopio/oc.template.gtk.fulldev.vscode",
     "desktop": "code.desktop",
     "shm_size": "2gb",
     "args": "--extensions-dir /usr/share/code/extensions --disable-gpu --verbose",
@@ -859,7 +859,7 @@
     "launch": "sun-awt-X11-XFramePeer.geogebra-GeoGebra",
     "name": "Geogebra",
     "path": "/usr/bin/geogebra",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "fileextensions": "ggb;ggt",
     "legacyfileextensions": "ggb;ggt",
     "desktop": "geogebra.desktop"
@@ -872,7 +872,7 @@
     "launch": "gcompris-qt.gcompris-qt",
     "name": "GCompris",
     "path": "/usr/games/gcompris-qt",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {
     "cat": "development",
     "debpackage": "",
@@ -882,7 +882,7 @@
     "launch": "Eclipse.Eclipse",
     "name": "Eclipse",
     "path": "/usr/bin/eclipse",
-    "template": "abcdesktop/oc.template.gtk.java.eclipse",
+    "template": "abcdesktopio/oc.template.gtk.java.eclipse",
     "mimefilename": "eclipse",
     "desktop": "eclipse.desktop"
 },{
@@ -893,7 +893,7 @@
     "launch": "step.step",
     "name": "Step",
     "path": "/usr/bin/step",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all"
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all"
 }, {
     "cat": "development",
     "debpackage": "librecad",
@@ -902,7 +902,7 @@
     "launch": "librecad.Librecad",
     "name": "LibreCAD",
     "path": "/usr/bin/librecad",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "image/vnd.dxf;",
     "fileextensions":"dxf;dwg",
     "legacyfileextensions":"dxf;dwg"
@@ -914,7 +914,7 @@
     "launch": "golly.Golly",
     "name": "Golly",
     "path": "/usr/games/golly",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all"
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all"
 }, {
     "cat": "education",
     "debpackage": "mathwar",
@@ -923,7 +923,7 @@
     "launch": "mathwar.Mathwar",
     "name": "Mathwar",
     "path": "/usr/games/mathwar",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {
     "cat": "education",
     "debpackage": "kgeography",
@@ -932,7 +932,7 @@
     "launch": "kgeography.kgeography",
     "name": "Kgeography",
     "path": "/usr/bin/kgeography",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {
     "cat": "education",
     "debpackage": "stellarium",
@@ -941,7 +941,7 @@
     "launch": "stellarium.stellarium",
     "name": "Stellarium",
     "path": "/usr/bin/stellarium",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all"
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all"
 }, {
     "cat": "games",
     "debpackage": "gnome-robots",
@@ -950,7 +950,7 @@
     "launch": "gnome-robots.Gnome-robots",
     "name": "Robots",
     "path": "/usr/games/gnome-robots",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktop":"gnome-robots.desktop"
 }, {
     "cat": "education",
@@ -960,7 +960,7 @@
     "launch": "kturtle.kturtle",
     "name": "kTurtle",
     "path": "/usr/bin/kturtle",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {
     "cat": "games",
     "debpackage": "gnome-mines",
@@ -969,7 +969,7 @@
     "launch": "gnome-mines.Gnome-mines",
     "name": "Mines",
     "path": "/usr/games/gnome-mines",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktop":"gnome-mines.desktop"
 }, {
     "cat": "education",
@@ -979,7 +979,7 @@
     "launch": "gelemental.Gelemental",
     "name": "gElemental",
     "path": "/usr/bin/gelemental",
-    "template": "abcdesktop/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktop": "gelemental.desktop"
 }, {
     "cat": "development",
@@ -989,7 +989,7 @@
     "launch": "sun-awt-X11-XFramePeer.java-lang-Thread",
     "name": "Netbeans",
     "path": "/usr/bin/netbeans",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {
     "cat": "education",
     "debpackage": "qelectrotech",
@@ -998,7 +998,7 @@
     "launch": "qelectrotech.Qelectrotech",
     "name": "qElectrotech",
     "path": "/usr/bin/qelectrotech",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {
     "cat": "education",
     "debpackage": "gretl",
@@ -1007,7 +1007,7 @@
     "launch": "gretl_x11.Gretl_x11",
     "name": "Gretl",
     "path": "/usr/bin/gretl",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, 
 {
     "cat": "education",
@@ -1017,7 +1017,7 @@
     "launch": "ksquares.Ksquares",
     "name": "kSquares",
     "path": "/usr/games/ksquares",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {
     "cat": "education",
     "debpackage": "breeze-icon-theme dbus-x11 dbus-user-session klickety",
@@ -1026,7 +1026,7 @@
     "launch": "klickety.Klickety",
     "name": "Klickety",
     "path": "/usr/games/klickety",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {
     "cat": "education",
     "debpackage": "kalzium",
@@ -1035,7 +1035,7 @@
     "launch": "kalzium.Kalzium",
     "name": "Kalzium",
     "path": "/usr/bin/kalzium",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {
     "cat": "education",
     "debpackage": "dbus-x11 dbus-user-session kdiamond",
@@ -1044,7 +1044,7 @@
     "launch": "kdiamond.Kdiamond",
     "name": "kDiamond",
     "path": "/usr/games/kdiamond",
-    "template": "abcdesktop/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {
     "cat": "development",
     "debpackage": "firefox",
@@ -1057,7 +1057,7 @@
     "splash": "enable",
     "installrecommends" : true,
     "path": "/usr/bin/firefox",
-    "template": "abcdesktop/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",

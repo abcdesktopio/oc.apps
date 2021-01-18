@@ -7,18 +7,18 @@ dockerfile:
 	node make.js
 	echo "Number of file generated: $(words $(wildcard *.d))"
 build:
-	#docker pull abcdesktop/oio:oc.template.gtk.mswindows.default
-	#docker pull abcdesktop/oio:oc.template.gtk.mswindows.putty
+	#docker pull abcdesktopio:oc.template.gtk.mswindows.default
+	#docker pull abcdesktopio:oc.template.gtk.mswindows.putty
 	for dir in $(sort $(wildcard *.d)); do \
 		echo "\n\n *********** building $$dir **********\n"; \
         	docker build -t $$dir -f $$dir . ;\
-		docker tag $$dir opendesktop/oio:$$dir ;\
+		docker tag $$dir abcdesktopio/$$dir ;\
 	done 
 
 push:
 	for dir in $(sort $(wildcard *.d)); do \
 		echo "pushing $$dir"; \
-           	docker push opendesktop/oio:$$dir ;\
+           	docker push abcdesktopio/$$dir ;\
         done 
 
 
@@ -32,12 +32,12 @@ list:
 command:
 	echo "#!/bin/bash" >  command.sh	
 	for dir in $(sort $(wildcard *.d)); do \
-                echo docker pull abcdesktop/oio:$$dir >> command.sh;\
+                echo docker pull abcdesktopio/$$dir >> command.sh;\
         done 
 
 
 clean:
 	for dir in $(wildcard *.d); do \
-                docker rmi abcdesktop/oio:$$dir ;\
+                docker rmi abcdesktopio/$$dir ;\
         done 
 	docker rmi `docker images -q --filter "dangling=true"`
