@@ -168,7 +168,11 @@ function makedockerfile(e) {
   if (e.shm_size) { wstream.write(`LABEL oc.shm_size=${JSON.stringify(e.shm_size)}\n`); }
   if (e.memory) { wstream.write(`LABEL oc.memory=${JSON.stringify(e.memory)}\n`); }
   if (e.oomkilldisable) { wstream.write(`LABEL oc.oomkilldisable=${JSON.stringify(e.oomkilldisable)}\n`); }
+  // double JSON.stringify for json object
+  if (e.security_opt) { wstream.write(`LABEL oc.security_opt=${JSON.stringify(JSON.stringify(e.security_opt))}\n`); }
+  // double JSON.stringify for json object
   if (e.rules) { wstream.write(`LABEL oc.rules=${JSON.stringify(JSON.stringify(e.rules))}\n`); }
+  // double JSON.stringify for json object
   if (e.acl) { wstream.write(`LABEL oc.acl=${JSON.stringify(JSON.stringify(e.acl))}\n`); }
 
   // remove links file over inacessible directory
