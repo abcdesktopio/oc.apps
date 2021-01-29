@@ -425,6 +425,7 @@
     "installrecommends" : true,
     "forceconfold" : true,
     "memory": "16gb",
+    "security_opt": [ "seccomp=unconfined" ],
     "oomkilldisable": true,
     "path": "/usr/bin/firefox-esr",
     "template": "abcdesktopio/oc.template.gtk",
