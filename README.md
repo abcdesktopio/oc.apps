@@ -1,4 +1,4 @@
 # oc.apps
 abcdesktop application dockerfiles
 
-DockerFile generator to build applications images 
+DockerFile generator from json file to build applications images 
