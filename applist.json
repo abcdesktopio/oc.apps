@@ -402,7 +402,27 @@
     "shm_size": "2gb",
     "usedefaultapplication": true,
     "quick": true
-}, 
+},  {
+    "cat": "office",
+    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget python3-gtkspellcheck wkhtmltopdf python3-markdown gir1.2-gtksource-3.0 yelp gir1.2-webkit-3.0 python3-bs4 && apt-get clean",
+                        "RUN wget -O /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb && dpkg -i /tmp/remarkable_1.87_all.deb && rm -rf /tmp/remarkable_1.87_all.deb" ],
+    "debpackage": "",
+    "icon": "remarkable.svg",
+    "keyword": "remarkable,markdown,editor",
+    "launch": "remarkable.Remarkable",
+    "name": "remarkable",
+    "displayname": "Remarkable",
+    "showinview": "dock",
+    "splash": "enable",
+    "path": "/usr/bin/remarkable",
+    "template": "abcdesktopio/oc.template.gtk",
+    "mimetype": "text/x-markdown;text/markdown;",
+    "legacyfileextensions": "md;markdown",
+    "fileextensions": "md;markdown",
+    "desktopfile":"/usr/share/applications/remarkable.desktop",
+    "usedefaultapplication": true
+},
+
 {
     "cat": "office",
     "debpackage": "google-chrome-stable",
