@@ -391,7 +391,7 @@
     "displayname": "Firefox",
     "showinview": "dock",
     "splash": "enable",
-    "memory": "16gb",
+    "mem_limit": "16gb",
     "oomkilldisable": true, 
     "path": "/usr/bin/firefox",
     "template": "abcdesktopio/oc.template.gtk",
