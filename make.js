@@ -86,8 +86,8 @@ function makedocumentation(e) {
       `## Legacy file extensions\n${JSON.stringify(e.legacyfileextensions)}\n`,
     );
   }
-  if (e.shm_size) { wstream.write(`## Share Memory size\n${JSON.stringify(e.shm_size)}\n`); }
-  if (e.memory) wstream.write(`## Memory size\n${JSON.stringify(e.memory)}\n`);
+  if (e.shm_size) { wstream.write(`## Share size\n${JSON.stringify(e.shm_size)}\n`); }
+  if (e.mem_limit) wstream.write(`## Memory size\n${JSON.stringify(e.mem_limit)}\n`);
 
   if (e.postinstall) {
     const contents = fs.readFileSync(e.postinstall, 'utf8');
@@ -166,7 +166,7 @@ function makedockerfile(e) {
   if (e.fileextensions) { wstream.write(`LABEL oc.fileextensions=${JSON.stringify(e.fileextensions)}\n`); }
   if (e.legacyfileextensions) { wstream.write(`LABEL oc.legacyfileextensions=${JSON.stringify(e.legacyfileextensions)}\n`); }
   if (e.shm_size) { wstream.write(`LABEL oc.shm_size=${JSON.stringify(e.shm_size)}\n`); }
-  if (e.memory) { wstream.write(`LABEL oc.memory=${JSON.stringify(e.memory)}\n`); }
+  if (e.mem_limit) { wstream.write(`LABEL oc.mem_limit=${JSON.stringify(e.mem_limit)}\n`); }
   if (e.oomkilldisable) { wstream.write(`LABEL oc.oomkilldisable=${JSON.stringify(e.oomkilldisable)}\n`); }
   // double JSON.stringify for json object
   if (e.security_opt) { wstream.write(`LABEL oc.security_opt=${JSON.stringify(JSON.stringify(e.security_opt))}\n`); }
