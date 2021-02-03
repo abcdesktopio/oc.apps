@@ -37,7 +37,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build images
         run: |
-          make clean
           make -B dockerfile
           make -B build
       - name: Login to registry
