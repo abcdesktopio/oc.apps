@@ -40,61 +40,6 @@ function base64Encode(file) {
 
 */
 
-function makedocumentation(e) {
-  const tempname = `${e.name}.md`;
-  const filename = tempname.toLowerCase();
-
-  console.log(e);
-  console.log(`Building documentation ${e.launch}`);
-  const wstream = fs.createWriteStream(filename);
-  wstream.write(`# ${e.name}\n`);
-  // size can not be set with md
-  // wstream.write('![' + e.name + '](img/app/' + e.icon + ')\n');
-  // use HTML img tag
-  // <img src='../img/app/google-chrome.svg' height='64px' width='64px'>
-  wstream.write(
-    `<img src='/docs/img/app/${e.icon}' height='64px' width='64px'>\n`,
-  );
-
-  if (e.template) {
-    wstream.write(`## inherite from\n[${e.template}](${e.template}.md)\n`);
-  }
-  if (e.debpackage) {
-    wstream.write(`## use ubuntu package\n${e.debpackage}\n`);
-  }
-  if (e.description) {
-    wstream.write(`## Description\n${e.description}\n`);
-  }
-  if (e.args) wstream.write(`## Arguments\n${JSON.stringify(e.args)}\n`);
-  const displayname = e.displayname ? e.displayname : e.name;
-  wstream.write(`## Display name\n${JSON.stringify(displayname)}\n`);
-  wstream.write(`## path\n${JSON.stringify(e.path)}\n`);
-  if (e.uniquerunkey) { wstream.write(`## uniquerunkey\n${JSON.stringify(e.uniquerunkey)}\n`); }
-  if (e.showinview) { wstream.write(`## showinview\n${JSON.stringify(e.showinview)}\n`); }
-  if (e.execmode) { wstream.write(`## Exec mode\n${JSON.stringify(e.execmode)}\n`); }
-  if (e.bindhomevolume) {
-    wstream.write(
-      `## Mount Home volume\n${JSON.stringify(e.bindhomevolume)}\n`,
-    );
-  }
-  if (e.mimetype) { wstream.write(`## Mime Type\n${JSON.stringify(e.mimetype)}\n`); }
-  if (e.fileextensions) {
-    wstream.write(`## File extensions\n${JSON.stringify(e.fileextensions)}\n`);
-  }
-  if (e.legacyfileextensions) {
-    wstream.write(
-      `## Legacy file extensions\n${JSON.stringify(e.legacyfileextensions)}\n`,
-    );
-  }
-  if (e.shm_size) { wstream.write(`## Share size\n${JSON.stringify(e.shm_size)}\n`); }
-  if (e.mem_limit) wstream.write(`## Memory size\n${JSON.stringify(e.mem_limit)}\n`);
-
-  if (e.postinstall) {
-    const contents = fs.readFileSync(e.postinstall, 'utf8');
-    wstream.write(`## PostInstall Command\n${contents}\n`);
-  }
-  wstream.end(() => {});
-}
 
 function makedockerfile(e) {
   if (quickMode) { // Only build image this quick set to true
@@ -191,31 +136,6 @@ function makedockerfile(e) {
   wstream.end(() => {});
 }
 
-function makeyml(e) {
-  const displayname = e.displayname ? e.displayname : e.name;
-  const filename = e.name.toLowerCase();
-  console.log(`        - '${displayname}'   : '${filename}.md'`);
-}
-
-function sortByKey(array, key) {
-  return array.sort((a, b) => {
-    const x = a[key];
-    const y = b[key];
-    if (x < y) {
-      return -1;
-    }
-
-    if (x > y) {
-      return 1;
-    }
-
-    return 0;
-  });
-}
-
 const content = fs.readFileSync('applist.json');
 const jsoncontent = JSON.parse(content);
 jsoncontent.forEach(makedockerfile);
-jsoncontent.forEach(makedocumentation);
-const jsonsortcontent = sortByKey(jsoncontent, 'name');
-jsonsortcontent.forEach(makeyml);
