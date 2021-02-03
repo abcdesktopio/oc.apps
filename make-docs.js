@@ -113,9 +113,9 @@ function makedocArray(e) {
 		var end = stdout.length;
     		description = stdout.substr(i, end-comment.length-1);
     	}
-    	docarray[appname] = `|[${e.icon}](icons/${e.icon})|${displayname}|${description}|[${filename}.md](${filename}.md)|`;
+    	docarray[appname] = `|![${e.icon}](icons/${e.icon})|${displayname}|${description}|[${filename}.md](${filename}.md)|`;
     } catch (error) {
-	docarray[appname] = `|[${e.icon}](icons/${e.icon})|${displayname}|${description}|[${filename}.md](${filename}.md)|`;
+	docarray[appname] = `|![${e.icon}](icons/${e.icon})|${displayname}|${description}|[${filename}.md](${filename}.md)|`;
     	// error.status;  // 0 : successful exit, but here in exception it has to be greater than 0
     	// error.message; // Holds the message you typically want.
     	// error.stderr;  // Holds the stderr output. Use `.toString()`.
@@ -123,7 +123,7 @@ function makedocArray(e) {
    }
   }
   else
-    docarray[appname] = `|[${e.icon}](icons/${e.icon})|${displayname}|no description found|[${filename}.md](${filename}.md)|`;
+    docarray[appname] = `|![${e.icon}](icons/${e.icon})|${displayname}|no description found|[${filename}.md](${filename}.md)|`;
   // console.log( docarray[appname] );
 }
 
