@@ -101,7 +101,7 @@ function makedocArray(e) {
   const icon = e.icon;
   const appname = e.name.toLowerCase() + '.d';
   if (e.desktopfile) {
-    var command = `docker run ${dockerRegistryPath}/${appname} cat ${e.desktopfile} | grep 'Comment='`;
+    var command = `docker run --rm ${dockerRegistryPath}/${appname} cat ${e.desktopfile} | grep 'Comment='`;
     try {
 	var description = "no description found";
     	stdout = require('child_process').execSync(command ).toString();
