@@ -45,6 +45,12 @@ jobs:
       - name: Push to registry
         run: |
           make -B push
+      - name: Dispatch repository docs
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.TOKEN_DISPATCH }}
+          repository: abcdesktopio/docs
+          event-type: dispatch-from-oc.apps  
       - name: clean 
         run: |
           make clean
