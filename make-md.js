@@ -40,7 +40,6 @@ function makedummy(e) {
 function makedocumentation(e) {
   const tempname = `${e.name}.md`;
   const filename = tempname.toLowerCase();
-  console.log( filename );
   const wstream = fs.createWriteStream(filename);
   wstream.write(`# ${e.name}\n`);
 
@@ -85,7 +84,7 @@ function makedocumentation(e) {
     wstream.write(`${e.preruncommands}\n`);
     wstream.write("```\n");
   }
-  wstream.end(() => {console.log(`${e.name}.md done`);});
+  wstream.end(() => {console.log(`${filename} done`);});
 }
 
 
