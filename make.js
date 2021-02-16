@@ -147,6 +147,9 @@ function makedockerfile(e) {
   if (e.extra_hosts) {
     wstream.write(`LABEL oc.extra_hosts=${JSON.stringify(e.extra_hosts)}\n`);
   }
+  if (e.webhook) {
+    wstream.write(`LABEL oc.webhook=${JSON.stringify(e.webhook)}\n`);
+  }
   wstream.write(`LABEL oc.launch=${JSON.stringify(e.launch)}\n`);
   wstream.write(`LABEL oc.template=${JSON.stringify(e.template)}\n`);
   if (e.args) { wstream.write(`ENV ARGS=${JSON.stringify(e.args)}\n`); }
