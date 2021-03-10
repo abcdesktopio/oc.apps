@@ -183,14 +183,14 @@
     "cat": "utilities",
     "debpackage": "",
     "icon": "notepad.svg",
-    "keyword": "notepad,text",
+    "keyword": "wine,notepad,text",
     "launch": "notepad.exe.Wine",
     "name": "notepad-wine",
     "displayname": "Notepad Wine",
     "mimetype": "application/text;",
     "fileextensions":"txt;log;",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.mswindows.default"
+    "template": "abcdesktopio/oc.template.gtk.mswindows"
 },
 {
     "args": "winfile",
@@ -202,21 +202,21 @@
     "name": "winefile-wine",
     "displayname": "Winefile Wine",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.mswindows.default"
+    "template": "abcdesktopio/oc.template.gtk.mswindows"
 },
 {
     "args": "winhelp",
     "cat": "utilities",
     "debpackage": "",
     "icon": "winhelp.svg",
-    "keyword": "winhelp,text,hlp,help,wine",
+    "keyword": "wine,winhelp,text,hlp,help,wine",
     "launch": "winhlp32.exe.Wine",
     "name": "winhelp-wine",
     "displayname": "Winhelp Wine",
     "mimetype": "application/hlp;",
     "fileextensions":"hlp;",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.mswindows.default"
+    "template": "abcdesktopio/oc.template.gtk.mswindows"
 },
 {
     "args": "winemine",
@@ -228,7 +228,7 @@
     "name": "winemine-wine",
     "displayname": "WineMine Wine",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.mswindows.default"
+    "template": "abcdesktopio/oc.template.gtk.mswindows"
 },
 {
     "template": "abcdesktopio/oc.template.gtk.wine",
@@ -243,7 +243,7 @@
     "cat": "utilities",
     "debpackage": "",
     "icon": "putty.svg",
-    "keyword": "putty,ssh,terminal",
+    "keyword": "wine,putty,ssh,terminal",
     "launch": "putty.exe.Wine",
     "name": "putty-wine",
     "displayname": "Putty Wine",
@@ -452,7 +452,6 @@
     "launch": "Wfica.Wfica",
     "name": "citrix",
     "displayname": "citrix-client",
-    "showinview": "dock",
     "splash": "enable",
     "args": "-icaroot /opt/Citrix/ICAClient",
     "path": "/opt/Citrix/ICAClient/wfica",
@@ -470,7 +469,6 @@
     "launch": "remarkable.Remarkable",
     "name": "remarkable",
     "displayname": "Remarkable",
-    "showinview": "dock",
     "splash": "enable",
     "path": "/usr/bin/remarkable",
     "template": "abcdesktopio/oc.template.gtk.18.04",
