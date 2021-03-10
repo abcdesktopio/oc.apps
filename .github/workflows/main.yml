@@ -3,14 +3,18 @@
 name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+
+# Controls when the action will run. 
 on:
-  repository_dispatch:
-    types: dispatch-from-oc.template
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [master]
+    branches: [ main ]
   pull_request:
-    branches: [master]
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,23 +27,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - name: Check coding style
-        run: |
-          yarn install
-          npx eslint .
           
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_TOKEN }}
 
       # Runs a single command using the runners shell
       - name: Build images
@@ -52,3 +45,12 @@ jobs:
       - name: Push to registry
         run: |
           make -B push
+      - name: Dispatch repository docs
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.TOKEN_DISPATCH }}
+          repository: abcdesktopio/docs
+          event-type: dispatch-from-oc.apps  
+      - name: clean 
+        run: |
+          make clean

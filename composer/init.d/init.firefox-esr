@@ -1,1 +1,4 @@
+if [ -f /usr/bin/zenity ]; then
+	zenity --warning --width=400 --height=200 --text "Firefox-esr can crash inside docker container. Please use firefox image"
+fi
 ln -s /usr/bin/ntlm_auth.desktop ~/ntlm_auth

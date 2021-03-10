@@ -23,8 +23,9 @@ ifndef TAG
 endif 
 
 
-
 all: dockerfile build push
+	@echo "run firstcommand make dockerfile\n"; \
+	@echo "next run         make build";
 
 dockerfile:
 	for dir in $(wildcard *.d); do \
@@ -32,6 +33,7 @@ dockerfile:
         done 
 	node make.js
 	echo "Number of file generated: $(words $(wildcard *.d))"
+
 build:
 	#docker pull abcdesktopio:oc.template.gtk.mswindows.default
 	#docker pull abcdesktopio:oc.template.gtk.mswindows.putty
@@ -53,6 +55,8 @@ list:
                 echo $$dir >> images-list.txt;\
         done 
 
+docs:
+	node make-docs.js
 
 command:
 	echo "#!/bin/bash" >  command.sh	
