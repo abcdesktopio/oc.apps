@@ -231,6 +231,14 @@
     "template": "abcdesktopio/oc.template.gtk.mswindows.default"
 },
 {
+    "template": "abcdesktopio/oc.template.gtk.wine",
+    "preruncommands": [ 
+        "ENV WINEARCH=win64",
+        "USER $BUSER",
+        "RUN wineboot --init",
+        "RUN wget -O /composer/bin/putty.exe https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe",
+        "RUN echo disable > $WINEPREFIX/.update-timestamp",
+        "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine" ],
     "args": "/composer/bin/putty.exe",
     "cat": "utilities",
     "debpackage": "",
@@ -239,9 +247,8 @@
     "launch": "putty.exe.Wine",
     "name": "putty-wine",
     "displayname": "Putty Wine",
-    "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.mswindows.putty"
-}, 
+    "path": "/usr/bin/wine"
+},
 {
     "args": "",
     "cat": "utilities",
@@ -342,8 +349,7 @@
     "fileextensions":"blend,obj,fbx,3ds,ply,stl",
     "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/local/blender-2.90.0-linux64/blender.desktop"
-},
-{
+}, {
     "cat": "utilities,office,graphics",
     "debpackage": "ffmpeg vlc",
     "icon": "vlc.svg",
@@ -435,15 +441,28 @@
     "shm_size": "2gb",
     "usedefaultapplication": true,
     "quick": true
-},
-{
+}, {
+    "cat": "utilities",
+    "debpackage": "",
+    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget gconf2 gconf-service libnotify4 && apt-get clean",
+                        "RUN wget -O /tmp/hyper.deb  https://releases.hyper.is/download/deb && dpkg -i /tmp/hyper.deb && rm -rf /tmp/hyper.deb" ],
+    "icon": "hyper.svg",
+    "keyword": "hyper,terminal,remote",
+    "launch": "hyper.Hyper",
+    "name": "hyper",
+    "path": "/opt/Hyper/hyper",
+    "mimetype": "x-scheme-handler/ssh",
+    "fileextensions":"",
+    "template": "abcdesktopio/oc.template.gtk",
+    "desktopfile": "/usr/share/applications/hyper.desktop"
+}, {
     "cat": "office",
     "debpackage": "google-chrome-stable",
     "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes  wget  && apt-get clean",
 			"RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -",
 			"RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list" ],
     "icon": "google-chrome.svg",
-    "keyword": "chromium,web,internet",
+    "keyword": "chromium,web,browser,internet",
     "launch": "google-chrome.Google-chrome",
     "name": "chrome",
     "displayname": "Chrome",
@@ -659,8 +678,6 @@
     "template": "abcdesktopio/oc.template.gtk.elementary",
     "mimefilename": "pantheon-calculator",
     "desktopfile": "/usr/share/applications/org.pantheon.calculator.desktop",
-    "rules": { "homedir": { "default": false }, "network": { "default": false, "ship": { "name": "macvlan128", "dns": [ "8.8.8.8" ] } } },
-    "acl": { "permit": [ "all" ], "deny": [ "ship" ] }, 
     "quick": true
 }, {
     "cat": "development",
