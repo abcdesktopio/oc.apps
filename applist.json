@@ -444,9 +444,8 @@
     "quick": true
 },  {
     "cat": "office",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes libice6 libgtk2.0-0  libsm6 libxmu6 libxpm4 libasound2 libidn11 libwebkit2gtk-4.0-37 && apt-get clean",
-			"COPY icaclient_amd64.deb /tmp/icaclient_amd64.deb",
-                        "RUN dpkg -i /tmp/icaclient_amd64.deb" ],
+    "preruncommands": [ "COPY icaclient_amd64.deb /tmp/icaclient_amd64.deb",
+                        "RUN apt-get install  --no-install-recommends --yes /tmp/icaclient_amd64.deb && apt-get clean && rm /tmp/icaclient_amd64.deb" ],
     "debpackage": "",
     "icon": "icaclient.svg",
     "keyword": "ica,citrix,icaclient,",
@@ -457,14 +456,14 @@
     "splash": "enable",
     "args": "-icaroot /opt/Citrix/ICAClient",
     "path": "/opt/Citrix/ICAClient/wfica",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.gtk.18.04",
     "mimetype": "application/x-ica;",
     "desktopfile":"/usr/share/applications/wfica.desktop",
     "usedefaultapplication": true
 },{
     "cat": "office",
     "preruncommands": [ "RUN apt-get update && apt-get install --no-install-recommends --yes wget python3-gtkspellcheck wkhtmltopdf python3-markdown gir1.2-gtksource-3.0 yelp gir1.2-webkit-3.0 python3-bs4 && apt-get clean",
-                        "RUN wget -O /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb && dpkg -i /tmp/remarkable_1.87_all.deb && rm -rf /tmp/remarkable_1.87_all.deb" ],
+                        "RUN wget -O /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb && apt-get install  --no-install-recommends --yes /tmp/remarkable_1.87_all.deb && apt-get clean && rm -rf /tmp/remarkable_1.87_all.deb" ],
     "debpackage": "",
     "icon": "remarkable.svg",
     "keyword": "remarkable,markdown,editor",
@@ -483,8 +482,8 @@
 }, {
     "cat": "utilities",
     "debpackage": "",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget gconf2 gconf-service libnotify4 && apt-get clean",
-                        "RUN wget -O /tmp/hyper.deb  https://releases.hyper.is/download/deb && dpkg -i /tmp/hyper.deb && rm -rf /tmp/hyper.deb" ],
+    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean",
+                        "RUN wget -O /tmp/hyper.deb  https://releases.hyper.is/download/deb && apt-get install  --no-install-recommends --yes /tmp/hyper.deb && apt-get clean && rm -rf /tmp/hyper.deb" ],
     "icon": "hyper.svg",
     "keyword": "hyper,terminal,remote",
     "launch": "hyper.Hyper",
