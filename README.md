@@ -15,11 +15,11 @@ run commands
 $ make dockerfile
 $ make build
 ```
+this command build all generated Dockerfile 
 
 
 To build documentation files 
 ```
 $ make docs
 ```
-
 this command build all md files, and build list.md
