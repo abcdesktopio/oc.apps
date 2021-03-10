@@ -17,8 +17,6 @@ LABEL oc.displayname="Calculator"
 LABEL oc.path="/usr/bin/io.elementary.calculator"
 LABEL oc.type=app
 LABEL oc.homevolume="False"
-LABEL oc.rules="{\"homedir\":{\"default\":false},\"network\":{\"default\":false,\"ship\":{\"name\":\"macvlan128\",\"dns\":[\"8.8.8.8\"]}}}"
-LABEL oc.acl="{\"permit\":[\"all\"],\"deny\":[\"ship\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon
