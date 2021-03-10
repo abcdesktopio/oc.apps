@@ -41,6 +41,12 @@ function base64Encode(file) {
 */
 
 
+function createtagfile(filename,tag) {
+ let tagstream = fs.createWriteStream(filename + '.' + tag );
+ tagstream.write(tag);
+ tagstream.end();
+}
+
 function makedockerfile(e) {
   if (quickMode) { // Only build image this quick set to true
     if (!e.quick) {
@@ -107,6 +113,10 @@ function makedockerfile(e) {
   if (e.showinview) {
     console.log('oc.showinview is True');
     wstream.write(`LABEL oc.showinview=${JSON.stringify(e.showinview)}\n`);
+  }
+  if (e.licence) {
+	  createtagfile( filename, e.licence );
+	  wstream.write(`LABEL oc.licence=${JSON.stringify(e.licence)}\n`);
   }
   if (e.execmode) { wstream.write(`LABEL oc.execmode=${JSON.stringify(e.execmode)}\n`); }
   if (e.bindhomevolume) { wstream.write(`LABEL oc.homevolume=${JSON.stringify(e.bindhomevolume)}\n`); }
