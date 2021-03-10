@@ -24,8 +24,8 @@ endif
 
 
 all: dockerfile build push
-	@echo "run firstcommand make dockerfile\n"; \
-	@echo "next run         make build";
+	echo "run firstcommand make dockerfile\n"; \
+	echo "next run         make build";
 
 dockerfile:
 	for dir in $(wildcard *.d); do \
@@ -44,8 +44,7 @@ build:
 
 push:
 	for dir in $(sort $(wildcard *.d)); do \
-		echo "pushing $$dir"; \
-		docker push abcdesktopio/$$dir:$(TAG);\
+		if [ ! -f $$dir.non-free ]; then  echo "pushing $$dir" && docker push abcdesktopio/$$dir:$(TAG); fi \
         done 
 
 
