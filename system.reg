@@ -1,0 +1,271 @@
+WINE REGISTRY Version 2
+;; All keys relative to \\Machine
+
+#arch=win64
+
+[Software\\Classes\\Wow6432Node] 1240428288
+#time=1c9c38000000000
+
+[Software\\Microsoft\\AudioCompressionManager\\DriverCache\\msacm.imaadpcm] 1613403110
+#time=1d703afadffd12c
+
+[Software\\Microsoft\\AudioCompressionManager\\DriverCache\\msacm.l3acm] 1613403110
+#time=1d703afae01fd80
+
+[Software\\Microsoft\\AudioCompressionManager\\DriverCache\\msacm.msadpcm] 1613403110
+#time=1d703afae00924c
+
+[Software\\Microsoft\\AudioCompressionManager\\DriverCache\\msacm.msg711] 1613403110
+#time=1d703afae014d22
+
+[Software\\Microsoft\\AudioCompressionManager\\DriverCache\\msacm.msgsm610] 1613403110
+#time=1d703afae034e38
+
+[Software\\Microsoft\\AudioCompressionManager\\DriverCache\\msacm32.dll] 1613403110
+#time=1d703afae046570
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders] 1613403109
+#time=1d703afad96c218
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders] 1613403109
+#time=1d703afad96c984
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Fonts] 1613495153
+#time=1d70485fbae44fe
+"Courier"="coure.fon"
+"DejaVu Sans (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSans.ttf"
+"DejaVu Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSans-Bold.ttf"
+"DejaVu Sans Mono (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSansMono.ttf"
+"DejaVu Sans Mono Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSansMono-Bold.ttf"
+"DejaVu Serif (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSerif.ttf"
+"DejaVu Serif Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSerif-Bold.ttf"
+"Liberation Mono (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationMono-Regular.ttf"
+"Liberation Mono Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationMono-Bold.ttf"
+"Liberation Mono Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationMono-BoldItalic.ttf"
+"Liberation Mono Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationMono-Italic.ttf"
+"Liberation Sans (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSans-Regular.ttf"
+"Liberation Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSans-Bold.ttf"
+"Liberation Sans Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSans-BoldItalic.ttf"
+"Liberation Sans Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSans-Italic.ttf"
+"Liberation Sans Narrow (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSansNarrow-Regular.ttf"
+"Liberation Sans Narrow Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSansNarrow-Bold.ttf"
+"Liberation Sans Narrow Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSansNarrow-BoldItalic.ttf"
+"Liberation Sans Narrow Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSansNarrow-Italic.ttf"
+"Liberation Serif (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSerif-Regular.ttf"
+"Liberation Serif Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSerif-Bold.ttf"
+"Liberation Serif Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSerif-BoldItalic.ttf"
+"Liberation Serif Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSerif-Italic.ttf"
+"Marlett (TrueType)"="Z:\\usr\\share\\wine\\fonts\\marlett.ttf"
+"MS Sans Serif"="sserife.fon"
+"MS Serif"="serife.fon"
+"Small Fonts"="smalle.fon"
+"Symbol (TrueType)"="Z:\\usr\\share\\wine\\fonts\\symbol.ttf"
+"Tahoma (TrueType)"="Z:\\usr\\share\\wine\\fonts\\tahoma.ttf"
+"Tahoma Bold (TrueType)"="Z:\\usr\\share\\wine\\fonts\\tahomabd.ttf"
+"Wingdings (TrueType)"="Z:\\usr\\share\\wine\\fonts\\wingding.ttf"
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce] 1613403109
+#time=1d703afad97f052
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\RunServices] 1613403109
+#time=1d703afad6b5d9e
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce] 1613403109
+#time=1d703afad6b3832
+
+[Software\\Microsoft\\Windows NT\\CurrentVersion\\FontLink\\SystemLink] 1613403109
+#time=1d703afad7dcd1c
+"Lucida Sans Unicode"=str(7):"MSGOTHIC.TTC,MS UI Gothic\0MINGLIU.TTC,PMingLiU\0SIMSUN.TTC,SimSun\0GULIM.TTC,Gulim\0"
+"Microsoft Sans Serif"=str(7):"MSGOTHIC.TTC,MS UI Gothic\0MINGLIU.TTC,PMingLiU\0SIMSUN.TTC,SimSun\0GULIM.TTC,Gulim\0"
+"Tahoma"=str(7):"MSGOTHIC.TTC,MS UI Gothic\0MINGLIU.TTC,PMingLiU\0SIMSUN.TTC,SimSun\0GULIM.TTC,Gulim\0"
+
+[Software\\Microsoft\\Windows NT\\CurrentVersion\\Fonts] 1613495153
+#time=1d70485fbae43dc
+"Courier"="coure.fon"
+"DejaVu Sans (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSans.ttf"
+"DejaVu Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSans-Bold.ttf"
+"DejaVu Sans Mono (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSansMono.ttf"
+"DejaVu Sans Mono Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSansMono-Bold.ttf"
+"DejaVu Serif (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSerif.ttf"
+"DejaVu Serif Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSerif-Bold.ttf"
+"Liberation Mono (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationMono-Regular.ttf"
+"Liberation Mono Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationMono-Bold.ttf"
+"Liberation Mono Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationMono-BoldItalic.ttf"
+"Liberation Mono Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationMono-Italic.ttf"
+"Liberation Sans (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSans-Regular.ttf"
+"Liberation Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSans-Bold.ttf"
+"Liberation Sans Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSans-BoldItalic.ttf"
+"Liberation Sans Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSans-Italic.ttf"
+"Liberation Sans Narrow (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSansNarrow-Regular.ttf"
+"Liberation Sans Narrow Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSansNarrow-Bold.ttf"
+"Liberation Sans Narrow Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSansNarrow-BoldItalic.ttf"
+"Liberation Sans Narrow Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSansNarrow-Italic.ttf"
+"Liberation Serif (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSerif-Regular.ttf"
+"Liberation Serif Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSerif-Bold.ttf"
+"Liberation Serif Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSerif-BoldItalic.ttf"
+"Liberation Serif Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\liberation\\LiberationSerif-Italic.ttf"
+"Marlett (TrueType)"="Z:\\usr\\share\\wine\\fonts\\marlett.ttf"
+"MS Sans Serif"="sserife.fon"
+"MS Serif"="serife.fon"
+"Small Fonts"="smalle.fon"
+"Symbol (TrueType)"="Z:\\usr\\share\\wine\\fonts\\symbol.ttf"
+"Tahoma (TrueType)"="Z:\\usr\\share\\wine\\fonts\\tahoma.ttf"
+"Tahoma Bold (TrueType)"="Z:\\usr\\share\\wine\\fonts\\tahomabd.ttf"
+"Wingdings (TrueType)"="Z:\\usr\\share\\wine\\fonts\\wingding.ttf"
+
+[Software\\Microsoft\\Windows NT\\CurrentVersion\\FontSubstitutes] 1613403109
+#time=1d703afad7c03c4
+"MS Shell Dlg"="Tahoma"
+"Tms Rmn"="Times New Roman"
+
+[Software\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList] 1613403109
+#time=1d703afad96e5ea
+"ProfilesDirectory"=str(2):"C:\\users"
+
+[Software\\Microsoft\\Windows NT\\CurrentVersion\\Time Zones] 1613403109
+#time=1d703afad603fb8
+
+[System\\CurrentControlSet\\Control\\Class\\{4D36E968-E325-11CE-BFC1-08002BE10318}\\0000] 1613495153
+#time=1d70485fc3628ce
+"DriverDateData"=hex:c6,f9,35,fc,85,04,d7,01
+"DriverDesc"="Wine Adapter"
+
+[System\\CurrentControlSet\\Control\\Class\\{4D36E96E-E325-11CE-BFC1-08002BE10318}\\0000] 1613495153
+#time=1d70485fc379006
+
+[System\\CurrentControlSet\\Control\\ComputerName\\ComputerName] 1613495150
+#time=1d70485fa5c51cc
+"ComputerName"="9215EAE87563"
+
+[System\\CurrentControlSet\\Control\\Nls\\Codepage] 1613403109
+#time=1d703afad62ad98
+"ACP"="1252"
+"MACCP"="10000"
+"OEMCP"="437"
+
+[System\\CurrentControlSet\\Control\\Print\\Environments\\Windows 4.0\\Drivers\\Version-0\\Desktop_PDF_Printer] 1613495154
+#time=1d70485fcac1368
+"Configuration File"="wineps16.drv"
+"Data File"="Desktop_PDF_Printer.ppd"
+"Datatype"="RAW"
+"Dependent Files"=str(7):""
+"Driver"="wineps16.drv"
+"Help File"=""
+"Monitor"=""
+"Previous Names"=str(7):""
+"Version"=dword:00000000
+
+[System\\CurrentControlSet\\Control\\Print\\Environments\\Windows NT x86\\Drivers\\Version-3\\Desktop_PDF_Printer] 1613495154
+#time=1d70485fcaa0a0a
+"Configuration File"="wineps.drv"
+"Data File"="Desktop_PDF_Printer.ppd"
+"Datatype"="RAW"
+"Dependent Files"=str(7):""
+"Driver"="wineps.drv"
+"Help File"=""
+"Monitor"=""
+"Previous Names"=str(7):""
+"Version"=dword:00000003
+
+[System\\CurrentControlSet\\Control\\Print\\Environments\\Windows x64\\Drivers\\Version-3\\Desktop_PDF_Printer] 1613495154
+#time=1d70485fcab7e12
+"Configuration File"="wineps.drv"
+"Data File"="Desktop_PDF_Printer.ppd"
+"Datatype"="RAW"
+"Dependent Files"=str(7):""
+"Driver"="wineps.drv"
+"Help File"=""
+"Monitor"=""
+"Previous Names"=str(7):""
+"Version"=dword:00000003
+
+[System\\CurrentControlSet\\Control\\Print\\Printers\\Desktop_PDF_Printer] 1613495154
+#time=1d70485fcaed148
+"Attributes"=dword:00000000
+"Datatype"="RAW"
+"Default DevMode"=hex:44,65,73,6b,74,6f,70,5f,50,44,46,5f,50,72,69,6e,74,65,72,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,0a,03,01,00,9c,00,08,00,1f,ff,01,00,\
+  01,00,09,00,9a,0b,33,08,64,00,01,00,07,00,2c,01,02,00,01,00,2c,01,03,00,00,\
+  00,41,34,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"Default Priority"=dword:00000000
+"Description"="Virtual Printer"
+"dnsTimeout"=dword:00000000
+"Location"=""
+"Name"="Desktop_PDF_Printer"
+"Parameters"=""
+"Port"="CUPS:Desktop_PDF_Printer"
+"Print Processor"="WinPrint"
+"Printer Driver"="Desktop_PDF_Printer"
+"Priority"=dword:00000000
+"Separator File"=""
+"Share Name"=""
+"StartTime"=dword:00000000
+"Status"=dword:00000000
+"txTimeout"=dword:00000000
+"UntilTime"=dword:00000000
+
+[System\\CurrentControlSet\\Control\\Session Manager\\Environment] 1613403109
+#time=1d703afad69e356
+"NUMBER_OF_PROCESSORS"="4"
+"PROCESSOR_ARCHITECTURE"="AMD64"
+"PROCESSOR_IDENTIFIER"="Intel64 Family 6 Model 142 Stepping 10, GenuineIntel"
+"PROCESSOR_LEVEL"="6"
+"PROCESSOR_REVISION"="8e0a"
+
+[System\\CurrentControlSet\\Control\\TimeZoneInformation] 1613403109
+#time=1d703afad60bcb8
+"StandardName"=""
+"TimeZoneKeyName"=""
+
+[System\\CurrentControlSet\\Enum\\DISPLAY\\DEFAULT_MONITOR\\0000&0000] 1613495153
+#time=1d70485fc379772
+"ClassGUID"="{4D36E96E-E325-11CE-BFC1-08002BE10318}"
+"DeviceDesc"="Generic Non-PnP Monitor"
+"Driver"="{4D36E96E-E325-11CE-BFC1-08002BE10318}\\0000"
+"HardwareID"=str(7):"MONITOR\\Default_Monitor\0"
+
+[System\\CurrentControlSet\\Enum\\DISPLAY\\DEFAULT_MONITOR\\0000&0000\\Properties\\{233A9EF3-AFC4-4ABD-B564-C32F21F1535B}\\0002] 1613495153
+#time=1d70485fc379e66
+@=hex(ffff0007):03,00,00,00
+
+[System\\CurrentControlSet\\Enum\\DISPLAY\\DEFAULT_MONITOR\\0000&0000\\Properties\\{233A9EF3-AFC4-4ABD-B564-C32F21F1535B}\\0003] 1613495153
+#time=1d70485fc37a3d4
+@=hex(ffff1003):00,00,00,00,00,00,00,00,a0,05,00,00,7f,02,00,00
+
+[System\\CurrentControlSet\\Enum\\DISPLAY\\DEFAULT_MONITOR\\0000&0000\\Properties\\{233A9EF3-AFC4-4ABD-B564-C32F21F1535B}\\0004] 1613495153
+#time=1d70485fc37ac08
+@=hex(ffff1003):00,00,00,00,00,00,00,00,a0,05,00,00,7f,02,00,00
+
+[System\\CurrentControlSet\\Enum\\DISPLAY\\DEFAULT_MONITOR\\0000&0000\\Properties\\{233A9EF3-AFC4-4ABD-B564-C32F21F1535B}\\0005] 1613495153
+#time=1d70485fc37b180
+@=hex(ffff0012):5c,00,5c,00,2e,00,5c,00,44,00,49,00,53,00,50,00,4c,00,41,00,59,\
+  00,31,00,00,00
+
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_0000&DEV_0000&SUBSYS_00000000&REV_00\\00000000] 1613403110
+#time=1d703afadd4ea20
+"ClassGUID"="{4D36E968-E325-11CE-BFC1-08002BE10318}"
+"DeviceDesc"="Wine Adapter"
+"Driver"="{4D36E968-E325-11CE-BFC1-08002BE10318}\\0000"
+"HardwareID"=str(7):"PCI\\VEN_0000&DEV_0000&SUBSYS_00000000&REV_00\0"
+
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_0000&DEV_0000&SUBSYS_00000000&REV_00\\00000000\\Device Parameters] 1613403110
+#time=1d703afadd4f060
+"VideoID"="{dac58d6d-8bcf-4671-a184-2c1088b119f8}"
+
+[System\\CurrentControlSet\\Enum\\PCI\\VEN_0000&DEV_0000&SUBSYS_00000000&REV_00\\00000000\\Properties\\{540B947E-8B40-45BC-A8A2-6A0B894CBDA2}\\0005] 1613495153
+#time=1d70485fc35f746
+@=hex(ffff0011):01,00,00,00
+
+[System\\CurrentControlSet\\Hardware Profiles\\Current\\Software\\Fonts] 1613403109
+#time=1d703afad7b867e
+"FIXEDFON.FON"="vgafix.fon"
+"FONTS.FON"="vgasys.fon"
+"OEMFONT.FON"="vgaoem.fon"
+
+[System\\CurrentControlSet\\Services\\Tcpip\\Parameters] 1613495150
+#time=1d70485fa5c4b78
+"Domain"=""
+"Hostname"="9215eae87563"
