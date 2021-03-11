@@ -69,3 +69,4 @@ clean:
 		docker rmi abcdesktopio/$$dir:$(TAG) ;\
         done 
 	docker rmi `docker images -q --filter "dangling=true"`
+	rm  !("list.md") *.d *.md

@@ -1,1 +1,2 @@
 "rules": { "homedir": { "default": false, "ship": true }, "network": { "default": false, "ship": { "name": "macvlan128", "dns": [ "8.8.8.8" ] } } },
+ "rules": { "homedir": { "default": true, "net-pasenormade": true }, "network": { "default": true, "net-pasenormade": { "name": "ens161", "dns": [ "10.171.36.17", "10.171.30.16" ], "webhook": { "create": "http://192.168.3.2/update?action=create&name={{ name }}&ip={{ container_ip }}", "destroy": "http://192.168.3.2/update?action=destroy&name={{ name }}&ip={{ container_ip }}" } } } },

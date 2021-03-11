@@ -16,7 +16,6 @@ LABEL oc.name="remarkable"
 LABEL oc.displayname="Remarkable"
 LABEL oc.path="/usr/bin/remarkable"
 LABEL oc.type=app
-LABEL oc.showinview="dock"
 LABEL oc.mimetype="text/x-markdown;text/markdown;"
 LABEL oc.fileextensions="md;markdown"
 LABEL oc.legacyfileextensions="md;markdown"
