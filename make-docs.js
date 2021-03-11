@@ -25,33 +25,26 @@ function base64Encode(file) {
   return bitmap.toString('base64');
 }
 
-/*
- {
-        "template": "scratch",
-        "cat": "utilities,office",
-        "icon": "pantheon-files-icons.svg",
-        "keyword": "files,file manager",
-        "launch": "frontendjs.filemanager",
-        "name": "FileManager",
-        "showinview" : "dock",
-        "execmode" : "frontendjs"
-    },
 
-*/
+// test function
+function makedummy(e) {
+  const tempname = "dummy.md";
+  const filename = tempname.toLowerCase();
+  console.log( filename );
+  const wstream = fs.createWriteStream(filename);
+  wstream.write("dummy");
+  wstream.close();
+}
+
 
 function makedocumentation(e) {
   const tempname = `${e.name}.md`;
   const filename = tempname.toLowerCase();
-
+  console.log( filename );
   const wstream = fs.createWriteStream(filename);
   wstream.write(`# ${e.name}\n`);
-  // size can not be set with md
-  // wstream.write('![' + e.name + '](img/app/' + e.icon + ')\n');
-  // use HTML img tag
-  // <img src='../img/app/google-chrome.svg' height='64px' width='64px'>
-  wstream.write(
-    `<img src='icons/${e.icon}' height='64px' width='64px'>\n`,
-  );
+
+  wstream.write(`![${e.icon}](/applications/icons/${e.icon}){: style="height:64px;width:64px"}\n` );
 
   if (e.template) {
     wstream.write(`## inherite from\n[${e.template}](${e.template}.md)\n`);
@@ -86,11 +79,14 @@ function makedocumentation(e) {
   if (e.shm_size) { wstream.write(`## Share size\n${JSON.stringify(e.shm_size)}\n`); }
   if (e.mem_limit) wstream.write(`## Memory size\n${JSON.stringify(e.mem_limit)}\n`);
 
-  if (e.postinstall) {
-    const contents = fs.readFileSync(e.postinstall, 'utf8');
-    wstream.write(`## PostInstall Command\n${contents}\n`);
+  if (e.preruncommands) {
+    wstream.write(`## Pre run command\n\n`);
+    wstream.write("```\n\n");
+    wstream.write(`${e.preruncommands}\n`);
+    wstream.write("```\n");
   }
-  wstream.end(() => {});
+  wstream.end(() => {console.log(`${e.name}.md done`);});
+  wstream.close();
 }
 
 const docarray = {};
@@ -113,9 +109,9 @@ function makedocArray(e) {
 		var end = stdout.length;
     		description = stdout.substr(i, end-comment.length-1);
     	}
-    	docarray[appname] = `|![${e.icon}](icons/${e.icon})|${displayname}|${description}|[${filename}.md](${filename}.md)|`;
+    	docarray[appname] = `|![${e.icon}](icons/${e.icon}){: style="height:32px;width:32px"}|${displayname}|${description}|[${filename}.md](${filename}.md)|`;
     } catch (error) {
-	docarray[appname] = `|![${e.icon}](icons/${e.icon})|${displayname}|${description}|[${filename}.md](${filename}.md)|`;
+	docarray[appname] = `|![${e.icon}](icons/${e.icon}){: style="height:32px;width:32px"}|${displayname}|${description}|[${filename}.md](${filename}.md)|`;
     	// error.status;  // 0 : successful exit, but here in exception it has to be greater than 0
     	// error.message; // Holds the message you typically want.
     	// error.stderr;  // Holds the stderr output. Use `.toString()`.
@@ -123,7 +119,7 @@ function makedocArray(e) {
    }
   }
   else
-    docarray[appname] = `|![${e.icon}](icons/${e.icon})|${displayname}|no description found|[${filename}.md](${filename}.md)|`;
+    docarray[appname] = `|![${e.icon}](icons/${e.icon}){: style="height:32px;width:32px"}|${displayname}|no description found|[${filename}.md](${filename}.md)|`;
   // console.log( docarray[appname] );
 }
 
@@ -147,22 +143,32 @@ function getDescription(jsonArray) {
   }
 }
 
-
 const content = fs.readFileSync('applist.json');
 const jsoncontent = JSON.parse(content);
 jsoncontent.forEach(makedocumentation);
 
-const jsonsortcontent = sortByKey(jsoncontent, 'name');
+return;
+
+
+//const jsonsortcontent = sortByKey(jsoncontent, 'name');
 // console.log( jsonsortcontent );
-getDescription(jsonsortcontent);
+getDescription(jsoncontent);
 
 const wstreamlist = fs.createWriteStream('list.md');
 wstreamlist.write('# Application list\n');
 wstreamlist.write('This array describe the application list ready to use with abcdesktop.\n\n');
 wstreamlist.write('|icon|displayname|description|file md|\n');
 wstreamlist.write('|----|-----------|-----------|-------|\n');
-for (var k in docarray ) {
-	wstreamlist.write(docarray[k] + '\n');
+
+var keys = Object.keys(docarray); // or loop over the object to get the array
+// keys will be in any order
+keys.sort(); // maybe use custom sort, to change direction use .reverse()
+// keys now will be in wanted order
+
+for (var i=0; i<keys.length; i++) { // now lets iterate in sort order
+    var key = keys[i];
+    /* do something with key & value here */
+    wstreamlist.write( docarray[key] + '\n');
 }
-wstreamlist.close();
+wstreamlist.end();
 
