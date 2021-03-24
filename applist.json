@@ -182,6 +182,13 @@
 {
     "args": "notepad",
     "cat": "utilities",
+    "preruncommands": [
+        "ENV WINEARCH=win64",
+        "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
+        "USER $BUSER",
+        "RUN wineboot --init",
+        "RUN echo disable > $WINEPREFIX/.update-timestamp",
+        "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine/" ],
     "debpackage": "",
     "icon": "notepad.svg",
     "keyword": "wine,notepad,text",
@@ -191,11 +198,12 @@
     "mimetype": "application/text;",
     "fileextensions":"txt;log;",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.mswindows"
+    "template": "abcdesktopio/oc.template.gtk.wine"
 },
 {
     "args": "winefile",
     "cat": "utilities",
+    "preruncommands": [ "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"" ],
     "debpackage": "",
     "icon": "winefile.svg",
     "keyword": "wine,winefile,file,manager",
@@ -203,11 +211,12 @@
     "name": "winefile-wine",
     "displayname": "Winefile Wine",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.mswindows"
+    "template": "abcdesktopio/oc.template.gtk.wine"
 },
 {
     "args": "winhelp",
     "cat": "utilities",
+    "preruncommands": [ "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"" ],
     "debpackage": "",
     "icon": "winhelp.svg",
     "keyword": "wine,winhelp,text,hlp,help,wine",
@@ -217,11 +226,12 @@
     "mimetype": "application/hlp;",
     "fileextensions":"hlp;",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.mswindows"
+    "template": "abcdesktopio/oc.template.gtk.wine"
 },
 {
     "args": "winemine",
     "cat": "game",
+    "preruncommands": [ "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"" ],
     "debpackage": "",
     "icon": "winemine.svg",
     "keyword": "wine,winemine",
@@ -229,12 +239,13 @@
     "name": "winemine-wine",
     "displayname": "WineMine Wine",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.mswindows"
+    "template": "abcdesktopio/oc.template.gtk.wine"
 },
 {
     "template": "abcdesktopio/oc.template.gtk.wine",
     "preruncommands": [ 
         "ENV WINEARCH=win64",
+	"ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
         "USER $BUSER",
         "RUN wineboot --init",
         "RUN wget -O /composer/bin/putty.exe https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe",
