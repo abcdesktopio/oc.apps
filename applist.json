@@ -5,7 +5,7 @@
 			 "RUN wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -",
 			 "RUN echo \"deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main\" > /etc/apt/sources.list.d/atom.list",
    			 "RUN apt-get update && apt-get install  --no-install-recommends --yes $(apt-cache search aspell- | awk '{print $1 }') && rm -rf /var/lib/apt/lists/*" ],
-    "debpackage": "libxss1 atom aspell",
+    "debpackage": "libxss1 atom aspell libasound2",
     "icon": "atom.svg",
     "installrecommends" : false,
     "keyword": "atom,editor",
@@ -13,7 +13,7 @@
     "name": "Atom",
     "path": "/usr/bin/atom",
     "template": "abcdesktopio/oc.template.gtk",
-    "args": "-f",
+    "args": "--no-sandbox",
     "desktopfile": "/usr/share/applications/atom.desktop"
 }, {
     "cat": "office",
@@ -528,7 +528,7 @@
     "quick": true
 }, {
     "cat": "office",
-    "debpackage": "evolution",
+    "debpackage": "evolution dbus-x11",
     "icon": "evolution.svg",
     "keyword": "evolution,mail",
     "launch": "evolution.Evolution",
