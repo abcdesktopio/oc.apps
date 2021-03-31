@@ -87,6 +87,21 @@
 },
 {
     "cat": "utilities",
+    "debpackage": "xpad",
+    "icon": "xpad.svg",
+    "keyword": "xpad, note, sticky, postit",
+    "launch": "xpad.xpad",
+    "name": "xpad",
+    "displayname": "Xpad",
+    "path": "/usr/bin/xpad",
+    "template": "abcdesktopio/oc.template.gtk",
+    "fileextensions":"",
+    "args": "",
+    "desktopfile": "/usr/share/applications/xpad.desktop",
+    "preruncommands": [ "COPY composer/init.d/init.xpad /composer/init.d/init.xpad" ]
+},
+{
+    "cat": "utilities",
     "debpackage": "x11-apps man-db manpages manpages-posix manpages-dev manpages-posix-dev",
     "icon": "x11man.svg",
     "keyword": "man,xman,help",
@@ -203,7 +218,13 @@
 {
     "args": "winefile",
     "cat": "utilities",
-    "preruncommands": [ "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"" ],
+    "preruncommands": [
+        "ENV WINEARCH=win64",
+        "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
+        "USER $BUSER",
+        "RUN wineboot --init",
+        "RUN echo disable > $WINEPREFIX/.update-timestamp",
+        "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine/" ],
     "debpackage": "",
     "icon": "winefile.svg",
     "keyword": "wine,winefile,file,manager",
@@ -216,7 +237,13 @@
 {
     "args": "winhelp",
     "cat": "utilities",
-    "preruncommands": [ "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"" ],
+    "preruncommands": [
+        "ENV WINEARCH=win64",
+        "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
+        "USER $BUSER",
+        "RUN wineboot --init",
+        "RUN echo disable > $WINEPREFIX/.update-timestamp",
+        "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine/" ],
     "debpackage": "",
     "icon": "winhelp.svg",
     "keyword": "wine,winhelp,text,hlp,help,wine",
@@ -231,7 +258,13 @@
 {
     "args": "winemine",
     "cat": "game",
-    "preruncommands": [ "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"" ],
+    "preruncommands": [
+        "ENV WINEARCH=win64",
+        "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
+        "USER $BUSER",
+        "RUN wineboot --init",
+        "RUN echo disable > $WINEPREFIX/.update-timestamp",
+        "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine/" ],
     "debpackage": "",
     "icon": "winemine.svg",
     "keyword": "wine,winemine",
@@ -921,7 +954,7 @@
     "icon": "geogebra.svg",
     "installrecommends" : true,
     "keyword": "geogebra,math",
-    "launch": "sun-awt-X11-XFramePeer.geogebra-GeoGebra",
+    "launch": "geogebra-GeoGebra.geogebra-GeoGebra",
     "name": "Geogebra",
     "path": "/usr/bin/geogebra",
     "template": "abcdesktopio/oc.template.gtk",
@@ -937,7 +970,7 @@
     "launch": "gcompris-qt.gcompris-qt",
     "name": "GCompris",
     "path": "/usr/games/gcompris-qt",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk.18.04"
 }, {
     "cat": "development",
     "debpackage": "",
@@ -1075,20 +1108,20 @@
     "template": "abcdesktopio/oc.template.gtk"
 }, 
 {
-    "cat": "education",
+    "cat": "games",
     "debpackage": "dbus-x11 dbus-user-session ksquares",
     "icon": "ksquares.svg",
     "keyword": "ksquares",
-    "launch": "ksquares.Ksquares",
+    "launch": "ksquares.ksquares",
     "name": "kSquares",
     "path": "/usr/games/ksquares",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
-    "cat": "education",
+    "cat": "games",
     "debpackage": "breeze-icon-theme dbus-x11 dbus-user-session klickety",
     "icon": "klickety.svg",
     "keyword": "klickety",
-    "launch": "klickety.Klickety",
+    "launch": "klickety.klickety",
     "name": "Klickety",
     "path": "/usr/games/klickety",
     "template": "abcdesktopio/oc.template.gtk"
@@ -1097,16 +1130,16 @@
     "debpackage": "kalzium",
     "icon": "kalzium.svg",
     "keyword": "kalzium",
-    "launch": "kalzium.Kalzium",
+    "launch": "kalzium.kalzium",
     "name": "Kalzium",
     "path": "/usr/bin/kalzium",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
-    "cat": "education",
+    "cat": "games",
     "debpackage": "dbus-x11 dbus-user-session kdiamond",
     "icon": "kdiamond.svg",
     "keyword": "kdiamond",
-    "launch": "kdiamond.Kdiamond",
+    "launch": "kdiamond.kdiamond",
     "name": "kDiamond",
     "path": "/usr/games/kdiamond",
     "template": "abcdesktopio/oc.template.gtk"
