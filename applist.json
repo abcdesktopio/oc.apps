@@ -48,19 +48,6 @@
 }, {
     "cat": "development",
     "debpackage": "",
-    "installrecommends" : true,
-    "icon": "icon-spring-framework.svg",
-    "keyword": "ide,eclipse,code",
-    "launch": "Spring",
-    "displayname": "Eclipse Sts4",
-    "name": "Eclipse_Sts4",
-    "path": "/opt/sts/SpringToolSuite4",
-    "template": "abcdesktopio/oc.template.gtk.java.sts4",
-    "mimefilename": "eclipse",
-    "desktop": "eclipse.desktop"
-}, {
-    "cat": "development",
-    "debpackage": "",
     "installrecommends" : false,
     "icon": "postman.svg",
     "keyword": "http,post,json",
