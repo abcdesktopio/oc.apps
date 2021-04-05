@@ -975,18 +975,6 @@
     "path": "/usr/games/gcompris-qt",
     "template": "abcdesktopio/oc.template.gtk.18.04"
 }, {
-    "cat": "development",
-    "debpackage": "",
-    "installrecommends" : true,
-    "icon": "eclipse.svg",
-    "keyword": "ide,eclipse,code",
-    "launch": "Eclipse.Eclipse",
-    "name": "Eclipse",
-    "path": "/usr/bin/eclipse",
-    "template": "abcdesktopio/oc.template.gtk.java.eclipse",
-    "mimefilename": "eclipse",
-    "desktop": "eclipse.desktop"
-},{
     "cat": "education",
     "debpackage": "step",
     "icon": "step.svg",
