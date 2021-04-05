@@ -939,7 +939,7 @@
     "launch": "code.Code",
     "name": "VSCode",
     "path": "/usr/bin/code",
-    "template": "abcdesktopio/oc.template.gtk.fulldev.vscode",
+    "template": "abcdesktopio/oc.template.gtk.fulldev",
     "desktop": "code.desktop",
     "shm_size": "2gb",
     "args": "--extensions-dir /usr/share/code/extensions --disable-gpu --verbose",
@@ -947,6 +947,9 @@
     "legacyfileextensions": "c;cpp;py;json;java;md;yml;yaml;",
     "fileextensions": "c;cpp;py;json;js;java;jav;md;xml;txt;svg;html;htm;sh;csh;css;jsx;tsx;vue;yml;yaml;",
     "desktopfile" : "/usr/share/applications/code.desktop",
+    "preruncommands": [  "RUN apt-get update && apt-get install  --no-install-recommends --yes dbus-x11 dbus-user-session  && apt-get clean",
+                         "RUN wget 'https://go.microsoft.com/fwlink/?LinkID=760868' -O /tmp/VSCode-linux-x64-stable.deb && dpkg -i /tmp/VSCode-linux-x64-stable.deb && rm /tmp/VSCode-linux-x64-stable.deb"
+                      ],
     "quick": true
 }, {
     "cat": "education",
