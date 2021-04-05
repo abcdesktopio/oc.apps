@@ -947,7 +947,7 @@
     "legacyfileextensions": "c;cpp;py;json;java;md;yml;yaml;",
     "fileextensions": "c;cpp;py;json;js;java;jav;md;xml;txt;svg;html;htm;sh;csh;css;jsx;tsx;vue;yml;yaml;",
     "desktopfile" : "/usr/share/applications/code.desktop",
-    "preruncommands": [  "RUN apt-get update && apt-get install  --no-install-recommends --yes dbus-x11 dbus-user-session  && apt-get clean",
+    "preruncommands": [  "RUN apt-get update && apt-get install --no-install-recommends --yes dbus-x11 dbus-user-session libx11-xcb1 libxcb-dri3-0 libgbm1 libdrm2 libxtst6 && apt-get clean",
                          "RUN wget 'https://go.microsoft.com/fwlink/?LinkID=760868' -O /tmp/VSCode-linux-x64-stable.deb && dpkg -i /tmp/VSCode-linux-x64-stable.deb && rm /tmp/VSCode-linux-x64-stable.deb"
                       ],
     "quick": true
