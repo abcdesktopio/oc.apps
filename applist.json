@@ -690,7 +690,18 @@
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "quick": true
-},  {
+}, {
+    "cat": "development",
+    "debpackage": "gnome-terminal dbus-x11 stress",
+    "icon": "stress.svg",
+    "keyword": "stress,cpu,shell",
+    "launch": "gnome-terminal-server.stress",
+    "name": "stress",
+    "path": "/usr/bin/gnome-terminal",
+    "args": "--disable-factory --class=stress",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "desktopfile": "/usr/share/applications/gnome-terminal.desktop"
+},{
     "cat": "development",
     "debpackage": "gnome-terminal dbus-x11",
     "icon": "ai-python.svg",
