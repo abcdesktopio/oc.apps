@@ -47,6 +47,10 @@ push:
 		if [ ! -f $$dir.non-free ]; then  echo "pushing $$dir" && docker push abcdesktopio/$$dir:$(TAG); fi \
         done 
 
+pushprod: 
+	for dir in $(sort $(wildcard *.d)); do \
+                if [ ! -f $$dir.non-free ]; then  echo "pushing $$dir" && docker push abcdesktopio/$$dir; fi \
+        done
 
 list:
 	rm -f images-list.txt
