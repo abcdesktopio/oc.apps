@@ -338,7 +338,8 @@
     "name": "2048",
     "displayname": "2048",
     "path": "/usr/games/2048-qt",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.gtk",
+    "host_config": "host_config.2048.json"
 },
 {
     "cat": "games",
@@ -429,7 +430,6 @@
     "displayname": "Firefox",
     "showinview": "dock",
     "splash": "enable",
-    "mem_limit": "16gb",
     "oomkilldisable": true, 
     "path": "/usr/bin/firefox",
     "template": "abcdesktopio/oc.template.gtk",
@@ -437,7 +437,7 @@
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
     "desktopfile":"/usr/share/applications/firefox.desktop",
-    "shm_size": "2gb",
+    "host_config": "host_config.big.json",
     "usedefaultapplication": true,
     "quick": true
 },  {
@@ -582,6 +582,7 @@
     "path": "/usr/lib/libreoffice/program/soffice",
     "args": "--writer",
     "uniquerunkey": "libreoffice",
+    "host_config": "host_config.big.json",
     "template": "abcdesktopio/oc.template.gtk.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/vnd.oasis.opendocument.text-web;application/vnd.oasis.opendocument.text-master;application/vnd.oasis.opendocument.text-master-template;application/vnd.sun.xml.writer;application/vnd.sun.xml.writer.template;application/vnd.sun.xml.writer.global;application/msword;application/vnd.ms-word;application/x-doc;application/x-hwp;application/rtf;text/rtf;application/vnd.wordperfect;application/wordperfect;application/vnd.lotus-wordpro;application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-word.document.macroenabled.12;application/vnd.openxmlformats-officedocument.wordprocessingml.template;application/vnd.ms-word.template.macroenabled.12;application/vnd.stardivision.writer-global;application/x-extension-txt;application/x-t602;application/vnd.oasis.opendocument.text-flat-xml;application/x-fictionbook+xml;application/macwriteii;application/x-aportisdoc;application/prs.plucker;application/vnd.palm;application/clarisworks;application/x-sony-bbeb;application/x-abiword;application/x-iwork-pages-sffpages;application/x-mswrite;",
     "legacyfileextensions": "odf;ott;fodt;uot",
@@ -604,6 +605,7 @@
     "template": "abcdesktopio/oc.template.gtk.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.spreadsheet-template;application/vnd.sun.xml.calc;application/vnd.sun.xml.calc.template;application/msexcel;application/vnd.ms-excel;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroenabled.12;application/vnd.openxmlformats-officedocument.spreadsheetml.template;application/vnd.ms-excel.template.macroenabled.12;application/vnd.ms-excel.sheet.binary.macroenabled.12;text/csv;application/x-dbf;text/spreadsheet;application/csv;application/excel;application/tab-separated-values;application/vnd.lotus-1-2-3;application/vnd.oasis.opendocument.chart;application/vnd.oasis.opendocument.chart-template;application/x-dbase;application/x-dos_ms_excel;application/x-excel;application/x-msexcel;application/x-ms-excel;application/x-quattropro;application/x-123;text/comma-separated-values;text/tab-separated-values;text/x-comma-separated-values;text/x-csv;application/vnd.oasis.opendocument.spreadsheet-flat-xml;application/vnd.ms-works;application/x-iwork-numbers-sffnumbers;",
     "legacyfileextensions": "ods;ots;csv",
+    "host_config": "host_config.big.json",
     "fileextensions": "ods;ots;sxc;stc;fods;uos;uof;xml;xlsx;xlsm;xltm;xltx;xlsb;xls;xlm;xlc;xlw;xlk;xlt;dif;dbf;htm;html;wk1;wks;123;wb2;rtf;slk;sylk;csv;numbers;dummy;cwk;wps;wk3;wq1;wq2",
     "desktopfile": "/usr/share/applications/libreoffice-calc.desktop",
     "usedefaultapplication": true,
@@ -625,7 +627,7 @@
     "legacyfileextensions":"odp",
     "desktopfile": "/usr/share/applications/libreoffice-impress.desktop",
     "usedefaultapplication": true,
-    "quick": true
+    "host_config": "host_config.big.json"
 }, {
     "cat": "office",
     "debpackage": "",
@@ -642,6 +644,7 @@
     "legacyfileextensions": "odf;odc",
     "desktopfile": "/usr/share/applications/libreoffice-math.desktop",
     "usedefaultapplication": true,
+    "host_config": "host_config.big.json",
     "quick": true
 }, {
     "cat": "office",
@@ -660,6 +663,7 @@
     "legacyfileextensions":"odp;otg",
     "desktopfile": "/usr/share/applications/libreoffice-draw.desktop",
     "usedefaultapplication": true,
+    "host_config": "host_config.big.json",
     "quick": true
 }, {
     "cat": "development",
@@ -687,6 +691,7 @@
     "name": "Terminal",
     "path": "/usr/bin/gnome-terminal",
     "args": "--disable-factory",
+    "host_config": "host_config.isolated.default.json",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "quick": true
@@ -698,6 +703,7 @@
     "launch": "gnome-terminal-server.stress",
     "name": "stress",
     "path": "/usr/bin/gnome-terminal",
+    "host_config": "host_config.isolated.default.json",
     "args": "--disable-factory --class=stress",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop"
@@ -743,6 +749,7 @@
     "fileextensions": "ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
     "legacyfileextensions":"ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
     "desktopfile":"/usr/share/applications/eog.desktop",
+    "host_config": "host_config.isolated.default.json",
     "usedefaultapplication": true,
     "quick": true
 }, {
@@ -756,6 +763,7 @@
     "path": "/usr/bin/io.elementary.calculator",
     "template": "abcdesktopio/oc.template.gtk.elementary",
     "mimefilename": "pantheon-calculator",
+    "host_config": "host_config.verysmall.json",
     "desktopfile": "/usr/share/applications/org.pantheon.calculator.desktop",
     "quick": true
 }, {
@@ -785,6 +793,7 @@
     "fileextensions": "ai;cdr",
     "legacyfileextensions":"ai;cdr",
     "installrecommends" : true,
+    "host_config": "host_config.big.json",
     "desktopfile": "/usr/share/applications/inkscape.desktop"
 }, {
     "cat": "games",
@@ -793,6 +802,7 @@
     "keyword": "gnome klotski,game klotski,klotski",
     "launch": "gnome-klotski.Gnome-klotski",
     "name": "Klotski",
+    "host_config": "host_config.verysmall.json",
     "path": "/usr/games/gnome-klotski",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-klotski.desktop"
@@ -856,7 +866,8 @@
     "name": "Tetravex",
     "path": "/usr/games/gnome-tetravex",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
-    "desktop":"gnome-tetravex.desktop"
+    "desktop":"gnome-tetravex.desktop",
+    "host_config": "host_config.verysmall.json"
 }, {
     "cat": "games",
     "debpackage": "x11-apps",
@@ -866,6 +877,7 @@
     "name": "xeyes",
     "path": "/usr/bin/xeyes",
     "template": "abcdesktopio/oc.template.gtk",
+    "host_config": "host_config.verysmall.json",
     "quick": true
 }, {
     "cat": "office",
@@ -1142,6 +1154,7 @@
     "name": "youtube",
     "displayname": "Youtube",
     "splash": "enable",
+    "host_config": "host_config.big.json", 
     "installrecommends" : true,
     "path": "/usr/bin/firefox",
     "template": "abcdesktopio/oc.template.gtk",

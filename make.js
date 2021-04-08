@@ -133,6 +133,11 @@ function makedockerfile(e) {
   // double JSON.stringify for json object
   if (e.acl) { wstream.write(`LABEL oc.acl=${JSON.stringify(JSON.stringify(e.acl))}\n`); }
   if (e.privileged) { wstream.write(`LABEL oc.privileged=${JSON.stringify(e.privileged)}\n`); }
+  if (e.host_config) { 
+	  const host_config = fs.readFileSync(e.host_config); 
+	  var data_config=JSON.parse(host_config);
+	  wstream.write(`LABEL oc.host_config=${JSON.stringify(JSON.stringify(data_config))}\n`);  
+  }
   // remove links file over inacessible directory
   // RUN this command as ROOT
   wstream.write('RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi \n');
