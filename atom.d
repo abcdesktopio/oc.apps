@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install                          --yes libxss1 && 
 RUN wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
 RUN echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list
 RUN apt-get update && apt-get install  --no-install-recommends --yes $(apt-cache search aspell- | awk '{print $1 }') && rm -rf /var/lib/apt/lists/*
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-install-recommends libxss1 atom aspell && apt-get clean
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-install-recommends libxss1 atom aspell libasound2 && apt-get clean
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 ENV BUSER balloon
 LABEL oc.icon="atom.svg"
@@ -17,7 +17,7 @@ LABEL oc.cat="development"
 LABEL oc.desktopfile="atom.desktop"
 LABEL oc.launch="atom.Atom"
 LABEL oc.template="abcdesktopio/oc.template.gtk"
-ENV ARGS="-f"
+ENV ARGS="--no-sandbox"
 LABEL oc.name="Atom"
 LABEL oc.displayname="Atom"
 LABEL oc.path="/usr/bin/atom"
@@ -28,5 +28,5 @@ WORKDIR /home/balloon
 USER balloon
 ENV APPNAME "Atom"
 ENV APPBIN "/usr/bin/atom"
-LABEL oc.args="-f"
+LABEL oc.args="--no-sandbox"
 ENV APP "/usr/bin/atom"

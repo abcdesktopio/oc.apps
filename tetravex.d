@@ -15,6 +15,7 @@ LABEL oc.name="Tetravex"
 LABEL oc.displayname="Tetravex"
 LABEL oc.path="/usr/games/gnome-tetravex"
 LABEL oc.type=app
+LABEL oc.host_config="{\"mem_limit\":\"64M\",\"shm_size\":\"32M\",\"cpu_period\":100000,\"cpu_quota\":100000,\"pid_mode\":false,\"network_mode\":\"none\"}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon

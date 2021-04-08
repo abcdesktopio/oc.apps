@@ -5,7 +5,7 @@ FROM abcdesktopio/oc.template.gtk:$TAG
 RUN apt-get update && apt-get install  --no-install-recommends --yes  wget  && apt-get clean
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y google-chrome-stable && apt-get clean
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine fonts-recommended google-chrome-stable && apt-get clean
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 ENV BUSER balloon
 LABEL oc.icon="google-chrome.svg"

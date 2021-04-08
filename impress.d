@@ -20,6 +20,7 @@ LABEL oc.showinview="dock"
 LABEL oc.mimetype="application/vnd.oasis.opendocument.presentation;application/vnd.oasis.opendocument.presentation-template;application/vnd.sun.xml.impress;application/vnd.sun.xml.impress.template;application/mspowerpoint;application/vnd.ms-powerpoint;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-powerpoint.presentation.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.template;application/vnd.ms-powerpoint.template.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.slide;application/vnd.openxmlformats-officedocument.presentationml.slideshow;application/vnd.ms-powerpoint.slideshow.macroenabled.12;application/vnd.oasis.opendocument.presentation-flat-xml;application/x-iwork-keynote-sffkey;"
 LABEL oc.fileextensions="odp;pot;potm;potx;pps;ppsx;ppt;pptx;pptm"
 LABEL oc.legacyfileextensions="odp"
+LABEL oc.host_config="{\"mem_limit\":\"4G\",\"shm_size\":\"2G\",\"cpu_period\":200000,\"cpu_quota\":200000}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon

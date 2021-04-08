@@ -3,6 +3,7 @@
 ARG TAG=dev
 FROM abcdesktopio/oc.template.gtk.wine:$TAG
 ENV WINEARCH=win64
+ENV WINEDLLOVERRIDES="mscoree,mshtml="
 USER $BUSER
 RUN wineboot --init
 RUN wget -O /composer/bin/putty.exe https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe
