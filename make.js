@@ -90,11 +90,23 @@ function makedockerfile(e) {
     const base64str = base64Encode(`icons/${e.icon}`);
     wstream.write(`LABEL oc.icondata=${JSON.stringify(base64str)}\n`);
   }
-  if (e.keyword) { wstream.write(`LABEL oc.keyword=${JSON.stringify(e.keyword)}\n`); }
+
+  // keywords section
+  // always add application name in the keyword list to lower case
+  let keywords = e.name.toLowerCase();
+  if (e.keyword) { 
+	  keywords = keywords + ',' + e.keyword;
+  }
+  wstream.write(`LABEL oc.keyword=${JSON.stringify(keywords)}\n`); 
+ 
+  // categories section
   if (e.cat) { wstream.write(`LABEL oc.cat=${JSON.stringify(e.cat)}\n`); }
+
+  // desktop file section
   if (e.desktopfile) {
     wstream.write(`LABEL oc.desktopfile=${JSON.stringify(path.basename(e.desktopfile))}\n`);
   }
+
   if (e.extra_hosts) {
     wstream.write(`LABEL oc.extra_hosts=${JSON.stringify(e.extra_hosts)}\n`);
   }
@@ -133,10 +145,18 @@ function makedockerfile(e) {
   // double JSON.stringify for json object
   if (e.acl) { wstream.write(`LABEL oc.acl=${JSON.stringify(JSON.stringify(e.acl))}\n`); }
   if (e.privileged) { wstream.write(`LABEL oc.privileged=${JSON.stringify(e.privileged)}\n`); }
-  if (e.host_config) { 
-	  const host_config = fs.readFileSync(e.host_config); 
-	  var data_config=JSON.parse(host_config);
+  if (e.host_config) {
+	  var data_config=e.host_config;
+	  // if e.host_config is string, suppose to be a json filename
+	  // open and load json content
+	  if ( typeof(e.host_config) === String ) {
+	  	const host_config = fs.readFileSync(e.host_config); 
+	        data_config=JSON.parse(host_config);
+	  }
 	  wstream.write(`LABEL oc.host_config=${JSON.stringify(JSON.stringify(data_config))}\n`);  
+  }
+  if  (e.secrets_requirement) {
+	   wstream.write(`LABEL oc.secrets_requirement=${JSON.stringify(JSON.stringify(e.secrets_requirement))}\n`);
   }
   // remove links file over inacessible directory
   // RUN this command as ROOT
