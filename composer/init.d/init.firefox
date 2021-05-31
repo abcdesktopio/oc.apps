@@ -1,1 +1,5 @@
+#!/bin/bash
+# create Download directory in user homedir
+mkdir -p /home/balloon/Download
+# fake the ntlm auth lib
 ln -s /usr/bin/ntlm_auth.desktop ~/ntlm_auth
