@@ -74,11 +74,17 @@ function makedockerfile(e) {
   // set default tag
   wstream.write("ARG TAG=dev\n");
   if (e.template) { wstream.write(`FROM ${e.template}:$TAG\n`); }
+ 
+  // make sure to be root 
+  // if this image if rerun
+  wstream.write('USER root\n');
 
+  // run pre commands
   if (e.preruncommands) {
     e.preruncommands.forEach((command) => wstream.write(`${command}\n`));
   }
 
+  // install deb package 
   if (e.debpackage) {
     let installCommand = 'RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ';
     if (!e.installrecommends) { installCommand += ' --no-install-recommends '; }
@@ -89,6 +95,8 @@ function makedockerfile(e) {
     wstream.write(installCommand);
     wstream.write("RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections\n");
   }
+ 
+  // run post install script
   if (e.postinstall) {
     const contents = fs.readFileSync(e.postinstall, 'utf8');
     wstream.write(contents);
