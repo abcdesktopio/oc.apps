@@ -107,6 +107,7 @@ function makedockerfile(e) {
   if (e.keyword) { 
 	  keywords = keywords + ',' + e.keyword;
   }
+  if (keywords)
   wstream.write(`LABEL oc.keyword=${JSON.stringify(keywords)}\n`); 
  
   // categories section
