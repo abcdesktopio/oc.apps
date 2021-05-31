@@ -62,7 +62,9 @@ function makedockerfile(e) {
 	filename = 'Dockerfile';
 
   console.log(e);
-  console.log(`Building ${e.launch}`);
+
+  if (e.launch)
+  	console.log(`Building ${e.launch}`);
 
   // Create output Dockerfile 
   const wstream = fs.createWriteStream(filename);
@@ -121,13 +123,13 @@ function makedockerfile(e) {
   if (e.webhook) {
     wstream.write(`LABEL oc.webhook=${JSON.stringify(e.webhook)}\n`);
   }
-  wstream.write(`LABEL oc.launch=${JSON.stringify(e.launch)}\n`);
-  wstream.write(`LABEL oc.template=${JSON.stringify(e.template)}\n`);
-  if (e.args) { wstream.write(`ENV ARGS=${JSON.stringify(e.args)}\n`); }
+  if (e.launch)   wstream.write(`LABEL oc.launch=${JSON.stringify(e.launch)}\n`);
+  if (e.template) wstream.write(`LABEL oc.template=${JSON.stringify(e.template)}\n`);
+  if (e.args)     wstream.write(`ENV ARGS=${JSON.stringify(e.args)}\n`);
   wstream.write(`LABEL oc.name=${JSON.stringify(e.name)}\n`);
   const displayname = (e.displayname) ? e.displayname : e.name;
-  wstream.write(`LABEL oc.displayname=${JSON.stringify(displayname)}\n`);
-  wstream.write(`LABEL oc.path=${JSON.stringify(e.path)}\n`);
+  if (displayname) wstream.write(`LABEL oc.displayname=${JSON.stringify(displayname)}\n`);
+  if (e.path) wstream.write(`LABEL oc.path=${JSON.stringify(e.path)}\n`);
   wstream.write('LABEL oc.type=app\n');
   if (e.uniquerunkey) { wstream.write(`LABEL oc.uniquerunkey=${JSON.stringify(e.uniquerunkey)}\n`); }
   if (e.showinview) {
@@ -167,11 +169,10 @@ function makedockerfile(e) {
   wstream.write('RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi \n');
   wstream.write('WORKDIR /home/balloon\n');
   wstream.write('USER balloon\n');
-  wstream.write(`ENV APPNAME "${e.name}"\n`);
-  wstream.write(`ENV APPBIN "${e.path}"\n`);
+  if (e.name) wstream.write(`ENV APPNAME "${e.name}"\n`);
+  if (e.path) wstream.write(`ENV APPBIN "${e.path}"\n`);
   if (e.args) { wstream.write(`LABEL oc.args=${JSON.stringify(e.args)}\n`); }
   if (e.path) { wstream.write(`ENV APP "${e.path}"\n`); }
-  // wstream.write('ENTRYPOINT /composer/init.sh\n');
   if (e.usedefaultapplication) { wstream.write(`LABEL oc.usedefaultapplication=${JSON.stringify(e.usedefaultapplication)}\n`); }
 
   wstream.end(() => {});
