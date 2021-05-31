@@ -39,6 +39,7 @@ build:
 	#docker pull abcdesktopio:oc.template.gtk.mswindows.putty
 	for dir in $(sort $(wildcard *.d)); do \
 		echo "\n\n *********** building $$dir **********\n"; \
+		echo "docker build  --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:$(TAG) -f $$dir ."; \
 		docker build  --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:$(TAG) -f $$dir . ;\
 	done 
 
