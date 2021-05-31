@@ -131,20 +131,15 @@ function makedockerfile(e) {
 	  wstream.write(`LABEL oc.licence=${JSON.stringify(e.licence)}\n`);
   }
   if (e.execmode) { wstream.write(`LABEL oc.execmode=${JSON.stringify(e.execmode)}\n`); }
-  if (e.bindhomevolume) { wstream.write(`LABEL oc.homevolume=${JSON.stringify(e.bindhomevolume)}\n`); }
   if (e.mimetype) { wstream.write(`LABEL oc.mimetype=${JSON.stringify(e.mimetype)}\n`); }
   if (e.fileextensions) { wstream.write(`LABEL oc.fileextensions=${JSON.stringify(e.fileextensions)}\n`); }
   if (e.legacyfileextensions) { wstream.write(`LABEL oc.legacyfileextensions=${JSON.stringify(e.legacyfileextensions)}\n`); }
-  if (e.shm_size) { wstream.write(`LABEL oc.shm_size=${JSON.stringify(e.shm_size)}\n`); }
-  if (e.mem_limit) { wstream.write(`LABEL oc.mem_limit=${JSON.stringify(e.mem_limit)}\n`); }
-  if (e.oomkilldisable) { wstream.write(`LABEL oc.oomkilldisable=${JSON.stringify(e.oomkilldisable)}\n`); }
   // double JSON.stringify for json object
   if (e.security_opt) { wstream.write(`LABEL oc.security_opt=${JSON.stringify(JSON.stringify(e.security_opt))}\n`); }
   // double JSON.stringify for json object
   if (e.rules) { wstream.write(`LABEL oc.rules=${JSON.stringify(JSON.stringify(e.rules))}\n`); }
   // double JSON.stringify for json object
   if (e.acl) { wstream.write(`LABEL oc.acl=${JSON.stringify(JSON.stringify(e.acl))}\n`); }
-  if (e.privileged) { wstream.write(`LABEL oc.privileged=${JSON.stringify(e.privileged)}\n`); }
   if (e.host_config) {
 	  var data_config=e.host_config;
 	  // if e.host_config is string, suppose to be a json filename
