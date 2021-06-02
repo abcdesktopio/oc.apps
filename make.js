@@ -187,8 +187,13 @@ function makedockerfile(e) {
   wstream.end(() => {});
 }
 
+// open the default json file
+// applist.json is a dictionary file
+// each entry is an application description
 const content = fs.readFileSync('applist.json');
+// parse the applist.json file
 const jsoncontent = JSON.parse(content);
+// count applications entries
 const len_content = jsoncontent.length;
 console.log( 'applist.json entries: ' + len_content );
 
