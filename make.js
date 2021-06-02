@@ -200,6 +200,8 @@ console.log( 'applist.json entries: ' + len_content );
 var myArgs = process.argv.slice(2);
 console.log('myArgs: ', myArgs);
 
+
+// if args contains the Dockerfile option
 if (myArgs.includes("Dockerfile")) {
 	if (len_content == 1) {
 		// use Dockerfile as output filename
