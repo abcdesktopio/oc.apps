@@ -203,6 +203,7 @@ console.log('myArgs: ', myArgs);
 
 // if args contains the Dockerfile option
 if (myArgs.includes("Dockerfile")) {
+	// if only one application is defined in applist.json 
 	if (len_content == 1) {
 		// use Dockerfile as output filename
 		forceOutputToDockerfile = true;
