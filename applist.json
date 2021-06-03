@@ -15,6 +15,18 @@
     "args": "--no-sandbox",
     "desktopfile": "/usr/share/applications/atom.desktop"
 }, {
+    "cat": "game",
+    "debpackage": "blobby",
+    "icon": "blobby.svg",
+    "installrecommends" : false,
+    "keyword": "game",
+    "launch": "blobby.blobby",
+    "name": "blobby",
+    "path": "/usr/games/blobby",
+    "template": "abcdesktopio/oc.template.gtk",
+    "args": "",
+    "desktopfile": "/usr/share/applications/blobby.desktop"
+},{
     "cat": "office",
     "preruncommands": [  "RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5",
 	    		 "RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
@@ -241,6 +253,17 @@
     "template": "abcdesktopio/oc.template.gtk.wine"
 },
 {
+    "cat": "game",
+    "debpackage": "frozen-bubble",
+    "icon": "frozen-bubble.svg",
+    "keyword": "frozen,bubble",
+    "launch": "perl.perl",
+    "name": "frozen-bubble",
+    "displayname": "frozen-bubble",
+    "path": "/usr/games/frozen-bubble",
+    "template": "abcdesktopio/oc.template.gtk"
+},
+{
     "args": "winemine",
     "cat": "game",
     "preruncommands": [
@@ -374,6 +397,7 @@
     "launch": "Blender.Blender",
     "name": "blender",
     "displayname": "Blender",
+    "host_config": { "mem_limit": "2G", "shm_size": "2G", "pid_mode": false, "cpu_period": "100000", "cpu_quota": "400000" },
     "path": "/usr/local/blender-2.90.0-linux64/blender",
     "mimetype": "application/x-blender",
     "fileextensions":"blend,obj,fbx,3ds,ply,stl",
@@ -724,7 +748,7 @@
     "launch": "gnome-terminal-server.stress",
     "name": "stress",
     "path": "/usr/bin/gnome-terminal",
-    "host_config": { "mem_limit": "256M", "shm_size": "128M", "pid_mode": false },
+    "host_config": { "mem_limit": "256M", "shm_size": "128M", "pid_mode": false, "ipc_mode": false  },
     "args": "--disable-factory --class=stress",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop"
@@ -1185,5 +1209,28 @@
     "preventhomemount" : false,
     "quick": true,
     "preruncommands": [ "COPY composer/init.d/init.firefox.youtube /composer/init.d/init.firefox" ]
+},
+{
+    "cat": "development",
+    "debpackage": "firefox",
+    "icon": "firefox.svg",
+    "keyword": "web,browser",
+    "launch": "Navigator.firefox",
+    "args": "file:///composer/disablednetwork.html",
+    "name": "firefox.demo",
+    "showinview": "dock",
+    "displayname": "Firefox",
+    "splash": "enable",
+    "host_config": { "mem_limit": "2G", "shm_size" : "2G" },
+    "installrecommends" : true,
+    "path": "/usr/bin/firefox",
+    "template": "abcdesktopio/oc.template.gtk",
+    "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
+    "legacyfileextensions": "html;xml",
+    "fileextensions": "html;xml;gif",
+    "desktopfile":"/usr/share/applications/firefox.desktop",
+    "quick": true,
+    "preruncommands": [ "COPY composer/disablednetwork.html /composer/disablednetwork.html",
+	                "COPY composer/init.d/init.firefox /composer/init.d/init.firefox" ]
 }
 ]
