@@ -38,7 +38,6 @@ function base64Encode(file) {
         "showinview" : "dock",
         "execmode" : "frontendjs"
     },
-
 */
 
 
@@ -187,23 +186,15 @@ function makedockerfile(e) {
   wstream.end(() => {});
 }
 
-// open the default json file
-// applist.json is a dictionary file
-// each entry is an application description
 const content = fs.readFileSync('applist.json');
-// parse the applist.json file
 const jsoncontent = JSON.parse(content);
-// count applications entries
 const len_content = jsoncontent.length;
 console.log( 'applist.json entries: ' + len_content );
 
 var myArgs = process.argv.slice(2);
 console.log('myArgs: ', myArgs);
 
-
-// if args contains the Dockerfile option
 if (myArgs.includes("Dockerfile")) {
-	// if only one application is defined in applist.json 
 	if (len_content == 1) {
 		// use Dockerfile as output filename
 		forceOutputToDockerfile = true;
