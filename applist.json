@@ -1,4 +1,5 @@
 [{
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [  "RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean",
 			 "RUN wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -",
@@ -15,6 +16,7 @@
     "args": "--no-sandbox",
     "desktopfile": "/usr/share/applications/atom.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "game",
     "debpackage": "blobby",
     "icon": "blobby.svg",
@@ -26,7 +28,8 @@
     "template": "abcdesktopio/oc.template.gtk",
     "args": "",
     "desktopfile": "/usr/share/applications/blobby.desktop"
-},{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "preruncommands": [  "RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5",
 	    		 "RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
@@ -47,6 +50,7 @@
     "desktopfile": "/usr/share/applications/onlyoffice-desktopeditors.desktop",
     "licence" : "non-free"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "icon": "mini.xterm.svg",
     "debpackage": "xterm",
@@ -57,6 +61,7 @@
     "template": "abcdesktopio/oc.template.gtk",
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "",
     "installrecommends" : false,
@@ -67,8 +72,8 @@
     "name": "postman",
     "path": "/usr/local/bin/Postman/app/Postman",
     "template": "abcdesktopio/oc.template.gtk.postman"
-}, 
-{
+}, {   
+    "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "filelight",
     "icon": "filelight.svg",
@@ -82,8 +87,8 @@
     "fileextensions":"",
     "args": "",
     "desktopfile": "/usr/share/applications/org.kde.filelight.desktop"
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "xpad",
     "icon": "xpad.svg",
@@ -97,8 +102,8 @@
     "args": "",
     "desktopfile": "/usr/share/applications/xpad.desktop",
     "preruncommands": [ "COPY composer/init.d/init.xpad /composer/init.d/init.xpad" ]
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "x11-apps man-db manpages manpages-posix manpages-dev manpages-posix-dev",
     "icon": "x11man.svg",
@@ -111,8 +116,8 @@
     "mimetype": "application/x-troff;application/x-troff-man;",
     "fileextensions":"man;roff",
     "args": ""
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "",
     "icon": "gimagereader.svg",
@@ -126,8 +131,8 @@
     "fileextensions":"bmp;jpeg;png,tiff,tga",
     "args": "",
     "desktopfile": "/usr/share/applications/gimagereader-gtk.desktop"
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "x11-apps",
     "icon": "xedit.svg",
@@ -141,8 +146,8 @@
     "fileextensions":"txt;log;md",
     "args": "",
     "quick": true
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "firefox winbind",
     "icon": "rest.svg",
@@ -162,8 +167,8 @@
     "desktopfile":"/usr/share/applications/firefox.desktop",
     "quick": true,
     "preruncommands": [ "COPY composer/init.d/init.firefox /composer/init.d/init.firefox" ]
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "file-roller",
     "icon": "file-roller.svg",
@@ -178,8 +183,8 @@
     "args": "",
     "desktopfile": "/usr/share/applications/org.gnome.FileRoller.desktop",
     "quick": true
-}, 
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "",
     "icon": "gephi.svg",
@@ -190,8 +195,8 @@
     "path": "/opt/gephi-0.9.1/bin/gephi",
     "template": "abcdesktopio/oc.template.gtk.java.gephi",
     "args": ""
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "args": "notepad",
     "cat": "utilities",
     "preruncommands": [
@@ -211,8 +216,8 @@
     "fileextensions":"txt;log;",
     "path": "/usr/bin/wine",
     "template": "abcdesktopio/oc.template.gtk.wine"
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "args": "winefile",
     "cat": "utilities",
     "preruncommands": [
@@ -230,8 +235,8 @@
     "displayname": "Winefile Wine",
     "path": "/usr/bin/wine",
     "template": "abcdesktopio/oc.template.gtk.wine"
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "args": "winhelp",
     "cat": "utilities",
     "preruncommands": [
@@ -251,8 +256,8 @@
     "fileextensions":"hlp;",
     "path": "/usr/bin/wine",
     "template": "abcdesktopio/oc.template.gtk.wine"
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "game",
     "debpackage": "frozen-bubble",
     "icon": "frozen-bubble.svg",
@@ -262,8 +267,8 @@
     "displayname": "frozen-bubble",
     "path": "/usr/games/frozen-bubble",
     "template": "abcdesktopio/oc.template.gtk"
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "args": "winemine",
     "cat": "game",
     "preruncommands": [
@@ -281,8 +286,8 @@
     "displayname": "WineMine Wine",
     "path": "/usr/bin/wine",
     "template": "abcdesktopio/oc.template.gtk.wine"
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "template": "abcdesktopio/oc.template.gtk.wine",
     "preruncommands": [ 
         "ENV WINEARCH=win64",
@@ -301,8 +306,8 @@
     "name": "putty-wine",
     "displayname": "Putty Wine",
     "path": "/usr/bin/wine"
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "args": "",
     "cat": "utilities",
     "debpackage": "putty dbus-x11",
@@ -313,8 +318,8 @@
     "displayname": "Putty Unix",
     "path": "/usr/bin/putty",
     "template": "abcdesktopio/oc.template.gtk"
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "supertux",
     "icon": "supertux2.svg",
@@ -326,6 +331,7 @@
     "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/share/applications/supertux2.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "chocolate-doom doom-wad-shareware prboom-plus freedoom prboom-plus",
     "icon": "doom.svg",
@@ -336,6 +342,7 @@
     "path": "/usr/games/doom",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "args": "",
     "debpackage": "dbus-x11 dbus-user-session gnugo kigo",
@@ -349,8 +356,8 @@
     "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/share/applications/kigo.desktop",
     "preruncommands": [ "COPY composer/init.d/init.kigo /composer/init.d/init.kigo" ]
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "2048-qt",
     "icon": "2048.svg",
@@ -361,8 +368,8 @@
     "path": "/usr/games/2048-qt",
     "template": "abcdesktopio/oc.template.gtk",
     "host_config": { "mem_limit": "256M", "shm_size": "64M", "pid_mode": false, "network_mode": "none" } 
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "astromenace",
     "installrecommends" : true,
@@ -373,8 +380,8 @@
     "path": "/usr/games/AstroMenace",
     "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/share/applications/astromenace.desktop"
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "swell-foop",
     "icon": "swell-foop.svg",
@@ -385,8 +392,8 @@
     "path": "/usr/games/swell-foop",
     "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/share/applications/swell-foop.desktop"
-}, 
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "utilities,graphics",
     "debpackage": "",
     "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes xz-utils wget && apt-get clean",
@@ -404,6 +411,7 @@
     "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/local/blender-2.90.0-linux64/blender.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "utilities,office,graphics",
     "debpackage": "ffmpeg vlc",
     "icon": "vlc.svg",
@@ -418,6 +426,7 @@
     "desktopfile": "/usr/share/applications/vlc.desktop",
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "evince",
     "icon": "evince.svg",
@@ -432,6 +441,7 @@
     "desktopfile": "/usr/share/applications/evince.desktop",
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "preruncommands": [ "RUN DEBIAN_FRONTEND=noninteractive echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
                         "RUN apt-get update && apt-get install  --no-install-recommends --yes ttf-mscorefonts-installer ttf-bitstream-vera ttf-dejavu ttf-xfree86-nonfree && apt-get clean",
@@ -462,7 +472,8 @@
     "host_config": { "shm_size" : "2G" },
     "usedefaultapplication": true,
     "quick": true
-},  {
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
      "preruncommands": ["RUN add-apt-repository -y ppa:mozillateam/ppa",
                         "RUN DEBIAN_FRONTEND=noninteractive echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
@@ -493,7 +504,8 @@
     "fileextensions": "htm;html;xml;gif",
     "desktopfile":"/usr/share/applications/firefox.desktop",
     "usedefaultapplication": false
-},  {
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
      "preruncommands": ["RUN apt-get update && apt-get install  --no-install-recommends --yes wget libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 && apt-get clean",
 	                "RUN wget --quiet -O - https://deb.beekeeperstudio.io/beekeeper.key | apt-key add -",
@@ -519,7 +531,8 @@
     "fileextensions": "sql",
     "desktopfile":"/usr/share/applications/beekeeper-studio.desktop",
     "usedefaultapplication": false
-},  {
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "preruncommands": [ "COPY icaclient_amd64.deb /tmp/icaclient_amd64.deb",
                         "RUN apt-get install  --no-install-recommends --yes /tmp/icaclient_amd64.deb && apt-get clean && rm /tmp/icaclient_amd64.deb" ],
@@ -537,7 +550,8 @@
     "desktopfile":"/usr/share/applications/wfica.desktop",
     "usedefaultapplication": true,
     "licence" : "non-free"
-},{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "preruncommands": [ "RUN apt-get update && apt-get install --no-install-recommends --yes wget python3-gtkspellcheck wkhtmltopdf python3-markdown gir1.2-gtksource-3.0 yelp gir1.2-webkit-3.0 python3-bs4 && apt-get clean",
                         "RUN wget -O /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb && apt-get install  --no-install-recommends --yes /tmp/remarkable_1.87_all.deb && apt-get clean && rm -rf /tmp/remarkable_1.87_all.deb" ],
@@ -556,6 +570,7 @@
     "desktopfile":"/usr/share/applications/remarkable.desktop",
     "usedefaultapplication": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "",
     "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean",
@@ -570,6 +585,7 @@
     "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/share/applications/hyper.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine fonts-recommended google-chrome-stable",
     "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes  wget  && apt-get clean",
@@ -591,6 +607,7 @@
     "desktopfile":"/usr/share/applications/chromium-browser.desktop",
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "evolution dbus-x11",
     "icon": "evolution.svg",
@@ -603,6 +620,7 @@
     "mimetype": "text/calendar;text/x-vcard;text/directory;application/mbox;message/rfc822;x-scheme-handler/mailto;",
     "desktopfile": "/usr/share/applications/evolution.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "tk thunderbird gnome-keyring",
     "icon": "thunderbird.svg",
@@ -615,6 +633,7 @@
     "mimetype": "x-scheme-handler/mailto",
     "desktopfile": "/usr/share/applications/thunderbird.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "",
     "icon": "libreoffice-writer.svg",
@@ -635,6 +654,7 @@
     "usedefaultapplication": true,
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "",
     "icon": "libreoffice-calc.svg",
@@ -655,6 +675,7 @@
     "usedefaultapplication": true,
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "",
     "icon": "libreoffice-impress.svg",
@@ -673,6 +694,7 @@
     "desktopfile": "/usr/share/applications/libreoffice-impress.desktop",
     "usedefaultapplication": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "",
     "icon": "libreoffice-math.svg",
@@ -691,6 +713,7 @@
     "usedefaultapplication": true,
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "",
     "icon": "libreoffice-draw.svg",
@@ -710,6 +733,7 @@
     "usedefaultapplication": true,
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "",
     "icon": "libreoffice-base.svg",
@@ -728,6 +752,7 @@
     "usedefaultapplication": true,
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "gnome-terminal dbus-x11",
     "icon": "pantheon-terminal-icons.svg",
@@ -741,6 +766,7 @@
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "gnome-terminal dbus-x11 stress",
     "icon": "stress.svg",
@@ -752,7 +778,8 @@
     "args": "--disable-factory --class=stress",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop"
-},{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "gnome-terminal dbus-x11",
     "icon": "ai-python.svg",
@@ -765,8 +792,8 @@
     "template": "abcdesktopio/oc.template.gtk.fulldev.ia",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "quick": false
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "graphics",
     "debpackage": "gimp",
     "icon": "gimp.svg",
@@ -782,6 +809,7 @@
     "usedefaultapplication": false,
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "graphics",
     "debpackage": "eog",
     "icon": "eog.svg",
@@ -798,6 +826,7 @@
     "usedefaultapplication": true,
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
     "debpackage": "pantheon-calculator dbus-x11",
     "bindhomevolume": "False",
@@ -812,9 +841,9 @@
     "desktopfile": "/usr/share/applications/org.pantheon.calculator.desktop",
     "preruncommands": [  "RUN add-apt-repository ppa:elementary-os/stable",
    			 "COPY composer/init.d/init.io.elementary.calculator /composer/init.d/init.io.elementary.calculator",
-   			 "RUN mkdir /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop"],
-    "quick": true
+   			 "RUN mkdir /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop"]
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean",
                         "RUN wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -a",
@@ -828,7 +857,8 @@
     "path": "/opt/sublime_text/sublime_text",
     "template": "abcdesktopio/oc.template.gtk",
     "desktopfile":"/usr/share/applications/sublime_text.desktop"
-}, {
+},  {
+    "acl": { "permit": [ "all" ] },
     "cat": "graphics",
     "debpackage": "numix-gtk-theme gtk2-engines gtk2-engines-pixbuf libgtk2.0-0 inkscape",
     "icon": "inkscape.svg",
@@ -842,7 +872,8 @@
     "legacyfileextensions":"ai;cdr",
     "installrecommends" : true,
     "desktopfile": "/usr/share/applications/inkscape.desktop"
-}, {
+},  {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "gnome-klotski",
     "icon": "gnome-klotski.svg",
@@ -853,7 +884,8 @@
     "path": "/usr/games/gnome-klotski",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-klotski.desktop"
-}, {
+},  {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "gnome-mahjongg",
     "icon": "gnome-mahjongg.svg",
@@ -863,8 +895,8 @@
     "path": "/usr/games/gnome-mahjongg",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile":"/usr/share/applications/gnome-mahjongg.desktop"
-}, 
-{
+},  {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "dbus-x11 stockfish gnuchess sjeng crafty gnome-chess",
     "icon": "gnome-chess.svg",
@@ -878,6 +910,7 @@
     "mimetype": "application/x-chess-pgn",
     "desktopfile": "/usr/share/applications/gnome-chess.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "gedit",
     "icon": "gedit.svg",
@@ -892,6 +925,7 @@
     "desktopfile": "/usr/share/applications/gedit.desktop",
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "gnumeric",
     "icon": "gnumeric.svg",
@@ -905,6 +939,7 @@
     "legacyfileextensions":"gnm",
     "desktopfile": "/usr/share/applications/gnumeric.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "gnome-tetravex",
     "icon": "gnome-tetravex.svg",
@@ -916,6 +951,7 @@
     "desktop":"gnome-tetravex.desktop",
     "host_config": { "mem_limit": "384M", "shm_size": "128M", "pid_mode": false }
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "x11-apps",
     "icon": "xeyes.svg",
@@ -927,6 +963,7 @@
     "host_config": { "mem_limit": "32M", "shm_size": "0M", "pid_mode": false, "network_mode": "none" },
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "planner",
     "icon": "planner.svg",
@@ -938,6 +975,7 @@
     "fileextensions": "mpp;mpx",
     "legacyfileextensions":"mpp;mpx"
 }, {
+    "acl": { "permit": [ "all" ] },
     "args": "-l /usr/bin/leocad.library.bin",
     "cat": "games",
     "debpackage": "leocad",
@@ -951,6 +989,7 @@
     "fileextensions": "lcd",
     "legacyfileextensions": "lcd"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "graphics",
     "debpackage": "dia dia-shapes",
     "icon": "dia.svg",
@@ -963,6 +1002,7 @@
     "legacyfileextensions": "dia",
     "desktop": "dia.desktop"
 },{
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "",
     "icon": "pivotalio-icon.svg",
@@ -975,6 +1015,7 @@
     "args": "--disable-factory --class pivotalio.cf",
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "rhc",
     "icon": "openshift.svg",
@@ -987,6 +1028,7 @@
     "args": "--disable-factory --class openshift.cli",
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "",
     "icon": "vscode.svg",
@@ -1006,6 +1048,7 @@
                       ],
     "quick": true
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "geogebra",
     "icon": "geogebra.svg",
@@ -1019,6 +1062,7 @@
     "legacyfileextensions": "ggb;ggt",
     "desktop": "geogebra.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "qt5-default qml-module-qtquick-controls libqt5svg5 libqt5xmlpatterns5 libqt5sensors5 qml-module-qtquick-particles2 qml-module-qtmultimedia libqt5multimedia5-plugins gcompris-qt",
     "icon": "gcompris.svg",
@@ -1029,6 +1073,7 @@
     "path": "/usr/games/gcompris-qt",
     "template": "abcdesktopio/oc.template.gtk.18.04"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "step",
     "icon": "step.svg",
@@ -1038,6 +1083,7 @@
     "path": "/usr/bin/step",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "librecad",
     "icon": "librecad.svg",
@@ -1050,6 +1096,7 @@
     "fileextensions":"dxf;dwg",
     "legacyfileextensions":"dxf;dwg"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "golly",
     "icon": "golly.svg",
@@ -1059,6 +1106,7 @@
     "path": "/usr/games/golly",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "mathwar",
     "icon": "mathwar.svg",
@@ -1068,6 +1116,7 @@
     "path": "/usr/games/mathwar",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "kgeography",
     "icon": "kgeography.svg",
@@ -1077,6 +1126,7 @@
     "path": "/usr/bin/kgeography",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "stellarium",
     "icon": "stellarium.svg",
@@ -1086,6 +1136,7 @@
     "path": "/usr/bin/stellarium",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "gnome-robots",
     "icon": "gnome-robots.svg",
@@ -1096,6 +1147,7 @@
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktop":"gnome-robots.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "kturtle",
     "icon": "kturtle.svg",
@@ -1105,6 +1157,7 @@
     "path": "/usr/bin/kturtle",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "gnome-mines",
     "icon": "gnome-mines.svg",
@@ -1115,6 +1168,7 @@
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktop":"gnome-mines.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "gelemental",
     "icon": "gelemental.svg",
@@ -1125,6 +1179,7 @@
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktop": "gelemental.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "netbeans",
     "icon": "netbeans.svg",
@@ -1134,6 +1189,7 @@
     "path": "/usr/bin/netbeans",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "qelectrotech",
     "icon": "qelectrotech.svg",
@@ -1143,6 +1199,7 @@
     "path": "/usr/bin/qelectrotech",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "gretl",
     "icon": "gretl.svg",
@@ -1151,8 +1208,8 @@
     "name": "Gretl",
     "path": "/usr/bin/gretl",
     "template": "abcdesktopio/oc.template.gtk"
-}, 
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "dbus-x11 dbus-user-session ksquares",
     "icon": "ksquares.svg",
@@ -1162,6 +1219,7 @@
     "path": "/usr/games/ksquares",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "breeze-icon-theme dbus-x11 dbus-user-session klickety",
     "icon": "klickety.svg",
@@ -1171,6 +1229,7 @@
     "path": "/usr/games/klickety",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "kalzium",
     "icon": "kalzium.svg",
@@ -1180,6 +1239,7 @@
     "path": "/usr/bin/kalzium",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "dbus-x11 dbus-user-session kdiamond",
     "icon": "kdiamond.svg",
@@ -1189,6 +1249,7 @@
     "path": "/usr/games/kdiamond",
     "template": "abcdesktopio/oc.template.gtk"
 }, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "firefox",
     "icon": "youtube.svg",
@@ -1209,8 +1270,8 @@
     "preventhomemount" : false,
     "quick": true,
     "preruncommands": [ "COPY composer/init.d/init.firefox.youtube /composer/init.d/init.firefox" ]
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "firefox",
     "icon": "firefox.svg",
