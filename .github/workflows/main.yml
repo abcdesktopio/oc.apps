@@ -51,6 +51,8 @@ jobs:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/docs
           event-type: dispatch-from-oc.apps  
-      - name: clean 
-        run: |
-          make clean
+      # buildpushdelete do a cleanup 
+      # no need to run make clean again
+      # - name: clean 
+      #  run: |
+      #    make clean
