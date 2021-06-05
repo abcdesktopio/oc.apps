@@ -144,7 +144,6 @@ function makedockerfile(e) {
   wstream.write('LABEL oc.type=app\n');
   if (e.uniquerunkey) { wstream.write(`LABEL oc.uniquerunkey=${JSON.stringify(e.uniquerunkey)}\n`); }
   if (e.showinview) {
-    console.log('oc.showinview is True');
     wstream.write(`LABEL oc.showinview=${JSON.stringify(e.showinview)}\n`);
   }
   if (e.licence) {
