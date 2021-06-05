@@ -35,17 +35,16 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
+      - name: Login to registry
+        run: |
+          echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+      
       # Runs a single command using the runners shell
       - name: Build images
         run: |
           make -B dockerfile
-          make -B build
-      - name: Login to registry
-        run: |
-          echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-      - name: Push to registry
-        run: |
-          make -B push
+          make -B buildpushdelete
+          
       - name: Dispatch repository docs
         uses: peter-evans/repository-dispatch@v1
         with:
