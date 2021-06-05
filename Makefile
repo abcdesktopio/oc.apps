@@ -34,6 +34,17 @@ dockerfile:
 	node make.js
 	echo "Number of file generated: $(words $(wildcard *.d))"
 
+buildpushdelete:
+	for dir in $(sort $(wildcard *.d)); do \
+                echo "\n\n *********** building $$dir **********\n"; \
+                echo "docker build  --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:$(TAG) -f $$dir ."; \
+                docker build  --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:$(TAG) -f $$dir . ;\
+		echo "\n\n *********** pushing $$dir **********\n"; \
+		docker push abcdesktopio/$$dir:$(TAG) ;\
+		echo "\n\n *********** deleting $$dir **********\n"; \
+		docker rmi abcdesktopio/$$dir:$(TAG) ;\
+        done
+
 build:
 	#docker pull abcdesktopio:oc.template.gtk.mswindows.default
 	#docker pull abcdesktopio:oc.template.gtk.mswindows.putty
@@ -45,7 +56,7 @@ build:
 
 push:
 	for dir in $(sort $(wildcard *.d)); do \
-		if [ ! -f $$dir.non-free ]; then  echo "pushing $$dir" && docker push abcdesktopio/$$dir:$(TAG); fi \
+		if [ ! -f $$dir.non-free ]; then  echo "pushing $$dir" && docker tag abcdesktopio/$$dir:$(TAG) abcdesktopio/$$dir &&  docker push abcdesktopio/$$dir; fi \
         done 
 
 pushprod: 
@@ -71,7 +82,10 @@ command:
 
 clean:
 	for dir in $(wildcard *.d); do \
-		docker rmi abcdesktopio/$$dir:$(TAG) ;\
+		echo $$dir ;\
+		docker rmi abcdesktopio/$$dir ;\
+		docker rmi $$dir:$(TAG) ;\
+		docker rmi $$dir ;\
         done 
 	docker rmi `docker images -q --filter "dangling=true"`
 	rm  !("list.md") *.d *.md
