@@ -16,7 +16,9 @@
 const fs = require('fs');
 const path = require('path');
 const quickMode = false;
-var   forceOutputToDockerfile = false;
+
+var	defaultApplicationfile  = 'applist.json';
+var	forceOutputToDockerfile = false;
 
 
 // function to encode file data to base64 encoded string
@@ -187,19 +189,40 @@ function makedockerfile(e) {
   wstream.end(() => {});
 }
 
-// open the default json file
+
+
+// start here
+var myArgs = process.argv.slice(2);
+console.log('myArgs: ', myArgs);
+
+
+const isFileOption = (element) => element == '-f';
+
+// -f option replace the default applist.json file
+const indexFileOption = myArgs.findIndex(isFileOption);
+if (indexFileOption != -1) {
+   var indexFileName = indexFileOption + 1;
+   if (indexFileName < myArgs.length )
+	defaultApplicationfile =  myArgs[indexFileName];
+}
+
+
+// open the default application json file
 // applist.json is a dictionary file
 // each entry is an application description
-const content = fs.readFileSync('applist.json');
+console.log ('opening file '+ defaultApplicationfile);
+const content = fs.readFileSync(defaultApplicationfile);
+
 // parse the applist.json file
 const jsoncontent = JSON.parse(content);
+
 // count applications entries
 const len_content = jsoncontent.length;
+
 console.log( 'applist.json entries: ' + len_content );
 
 var myArgs = process.argv.slice(2);
 console.log('myArgs: ', myArgs);
-
 
 // if args contains the Dockerfile option
 if (myArgs.includes("Dockerfile")) {
