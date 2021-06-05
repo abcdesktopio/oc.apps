@@ -207,13 +207,21 @@ if (indexFileOption != -1) {
 
 
 // open the default application json file
-// applist.json is a dictionary file
+// applist.json is an array of dictionary file
 // each entry is an application description
 console.log ('opening file '+ defaultApplicationfile);
 const content = fs.readFileSync(defaultApplicationfile);
 
 // parse the applist.json file
-const jsoncontent = JSON.parse(content);
+var jsoncontent = JSON.parse(content);
+
+// if jsoncontent is not an array 
+// it may be a signel application json file description
+// convert as an array
+
+if ( !Array.isArray(jsoncontent) ) {
+	jsoncontent = [ jsoncontent ];
+}
 
 // count applications entries
 const len_content = jsoncontent.length;
@@ -227,6 +235,7 @@ console.log('myArgs: ', myArgs);
 if (myArgs.includes("Dockerfile")) {
 	// if only one application is defined in applist.json 
 	if (len_content == 1) {
+		console.log( 'Building file Dockerfile as output' );
 		// use Dockerfile as output filename
 		forceOutputToDockerfile = true;
 	}
