@@ -18,6 +18,7 @@ LABEL oc.displayname="hyper"
 LABEL oc.path="/opt/Hyper/hyper"
 LABEL oc.type=app
 LABEL oc.mimetype="x-scheme-handler/ssh"
+LABEL oc.acl="{\"permit\":[\"all\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon

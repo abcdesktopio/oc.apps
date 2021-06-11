@@ -16,6 +16,7 @@ LABEL oc.name="Tetravex"
 LABEL oc.displayname="Tetravex"
 LABEL oc.path="/usr/games/gnome-tetravex"
 LABEL oc.type=app
+LABEL oc.acl="{\"permit\":[\"all\"]}"
 LABEL oc.host_config="{\"mem_limit\":\"384M\",\"shm_size\":\"128M\",\"pid_mode\":false}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 

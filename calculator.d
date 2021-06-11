@@ -20,6 +20,7 @@ LABEL oc.name="Calculator"
 LABEL oc.displayname="Calculator"
 LABEL oc.path="/usr/bin/io.elementary.calculator"
 LABEL oc.type=app
+LABEL oc.acl="{\"permit\":[\"all\"]}"
 LABEL oc.host_config="{\"mem_limit\":\"64M\",\"shm_size\":\"0M\",\"pid_mode\":false}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 

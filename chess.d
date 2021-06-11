@@ -18,6 +18,7 @@ LABEL oc.displayname="Chess"
 LABEL oc.path="/usr/games/gnome-chess"
 LABEL oc.type=app
 LABEL oc.mimetype="application/x-chess-pgn"
+LABEL oc.acl="{\"permit\":[\"all\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon

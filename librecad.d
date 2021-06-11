@@ -19,6 +19,7 @@ LABEL oc.type=app
 LABEL oc.mimetype="image/vnd.dxf;"
 LABEL oc.fileextensions="dxf;dwg"
 LABEL oc.legacyfileextensions="dxf;dwg"
+LABEL oc.acl="{\"permit\":[\"all\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon

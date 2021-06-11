@@ -16,6 +16,7 @@ LABEL oc.name="2048"
 LABEL oc.displayname="2048"
 LABEL oc.path="/usr/games/2048-qt"
 LABEL oc.type=app
+LABEL oc.acl="{\"permit\":[\"all\"]}"
 LABEL oc.host_config="{\"mem_limit\":\"256M\",\"shm_size\":\"64M\",\"pid_mode\":false,\"network_mode\":\"none\"}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 

@@ -20,6 +20,7 @@ LABEL oc.uniquerunkey="libreoffice"
 LABEL oc.mimetype="application/vnd.oasis.opendocument.formula;application/vnd.sun.xml.math;application/vnd.oasis.opendocument.formula-template;text/mathml;application/mathml+xml;"
 LABEL oc.fileextensions="odf;odc"
 LABEL oc.legacyfileextensions="odf;odc"
+LABEL oc.acl="{\"permit\":[\"all\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon

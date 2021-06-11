@@ -20,6 +20,7 @@ LABEL oc.path="/usr/local/blender-2.90.0-linux64/blender"
 LABEL oc.type=app
 LABEL oc.mimetype="application/x-blender"
 LABEL oc.fileextensions="blend,obj,fbx,3ds,ply,stl"
+LABEL oc.acl="{\"permit\":[\"all\"]}"
 LABEL oc.host_config="{\"mem_limit\":\"2G\",\"shm_size\":\"2G\",\"pid_mode\":false,\"cpu_period\":\"100000\",\"cpu_quota\":\"400000\"}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
