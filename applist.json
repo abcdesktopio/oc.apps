@@ -18,7 +18,7 @@
     "desktopfile": "/usr/share/applications/atom.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
-    "cat": "game",
+    "cat": "games",
     "debpackage": "blobby",
     "icon": "blobby.svg",
     "installrecommends" : false,
@@ -259,7 +259,7 @@
     "template": "abcdesktopio/oc.template.gtk.wine"
 }, {
     "acl": { "permit": [ "all" ] },
-    "cat": "game",
+    "cat": "games",
     "debpackage": "frozen-bubble",
     "icon": "frozen-bubble.svg",
     "keyword": "frozen,bubble",
@@ -271,7 +271,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "args": "winemine",
-    "cat": "game",
+    "cat": "games",
     "preruncommands": [
         "ENV WINEARCH=win64",
         "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
@@ -904,7 +904,7 @@
     "debpackage": "dbus-x11 stockfish gnuchess sjeng crafty gnome-chess",
     "icon": "gnome-chess.svg",
     "forceconfold" : true,
-    "keyword": "game",
+    "keyword": "games",
     "launch": "gnome-chess.Gnome-chess",
     "name": "Chess",
     "path": "/usr/games/gnome-chess",
