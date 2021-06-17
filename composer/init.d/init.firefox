@@ -2,4 +2,19 @@
 # create Download directory in user homedir
 mkdir -p /home/balloon/Download
 # fake the ntlm auth lib
-ln -s /usr/bin/ntlm_auth.desktop ~/ntlm_auth
+# Check if ~/bin/script is a symlink.
+ntlm_link=~/ntlm_auth
+ntlm_target=/usr/bin/ntlm_auth.desktop
+if [ -L ${ntlm_link} ] ; then
+   if [ -e ${ntlm_link} ] ; then
+      echo "good link ${ntlm_link}"
+   else
+      echo "broken link ${ntlm_link}"
+      rm -rf ${ntlm_link}
+      ln -s ${ntlm_target} ${ntlm_link}
+   fi
+else
+   echo "${ntlm_link} is not a link"
+   rm -rf ${ntlm_link}
+   ln -s ${ntlm_target} ${ntlm_link}
+fi
