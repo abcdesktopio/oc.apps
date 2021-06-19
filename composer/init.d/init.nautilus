@@ -1,0 +1,15 @@
+echo "starting DBUS_SYSTEM_BUS" >> /var/log/desktop/dbus.log
+
+dbus_system=$(dbus-daemon --config-file=/usr/share/dbus-1/system.conf --print-address  --fork --nosyslog ) 
+
+if [ $? -eq 0 ]; then
+   echo "export DBUS_SYSTEM_BUS_ADDRESS=$dbus_system" > /var/log/desktop/.DBUS_SYSTEM_BUS
+   echo "DBUS_SYSTEM is set $dbus_system" >> /var/log/desktop/dbus.log
+fi
+
+if [! -f /home/$BUSER/.local/share/nautilus-python/extensions/desktop_download.py]; then
+	mkdir -p /home/$BUSER/.local/share/nautilus-python/extensions/
+	cp /composer/desktop_download.py /home/$BUSER/.local/share/nautilus-python/extensions/desktop_download.py
+fi
+
+/usr/bin/dbus-launch &
