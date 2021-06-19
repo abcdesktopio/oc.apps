@@ -10,6 +10,7 @@ fi
 if [! -f /home/$BUSER/.local/share/nautilus-python/extensions/desktop_download.py]; then
 	mkdir -p /home/$BUSER/.local/share/nautilus-python/extensions/
 	cp /composer/desktop_download.py /home/$BUSER/.local/share/nautilus-python/extensions/desktop_download.py
+        chmod 755 /home/$BUSER/.local/share/nautilus-python/extensions/desktop_download.py
 fi
 
 /usr/bin/dbus-launch &
