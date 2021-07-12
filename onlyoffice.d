@@ -6,7 +6,7 @@ USER root
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
 RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
 RUN echo "deb [arch=amd64] https://download.onlyoffice.com/repo/debian squeeze main" > /etc/apt/sources.list.d/onlyoffice.list
-RUN apt-get update && apt-get install  --yes libgl1 libnss3 qt5dxcb-plugin && apt-get clean
+RUN apt-get update && apt-get install  --yes libgl1 libnss3 qt5dxcb-plugin && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y onlyoffice-desktopeditors && apt-get clean
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 ENV BUSER balloon

@@ -5,7 +5,7 @@ FROM abcdesktopio/oc.template.gtk.18.04:$TAG
 USER root
 RUN add-apt-repository ppa:elementary-os/stable
 COPY composer/init.d/init.io.elementary.calculator /composer/init.d/init.io.elementary.calculator
-RUN mkdir /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop
+RUN mkdir -p /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-install-recommends pantheon-calculator dbus-x11 && apt-get clean
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 ENV BUSER balloon

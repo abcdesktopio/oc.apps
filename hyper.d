@@ -4,6 +4,7 @@ ARG TAG=dev
 FROM abcdesktopio/oc.template.gtk:$TAG
 USER root
 RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean
+RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libx11-xcb1 libasound2 && apt-get clean
 RUN wget -O /tmp/hyper.deb  https://releases.hyper.is/download/deb && apt-get install  --no-install-recommends --yes /tmp/hyper.deb && apt-get clean && rm -rf /tmp/hyper.deb
 ENV BUSER balloon
 LABEL oc.icon="hyper.svg"

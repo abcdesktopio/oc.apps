@@ -3,11 +3,12 @@
 ARG TAG=dev
 FROM abcdesktopio/oc.template.gtk:$TAG
 USER root
-RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean
+RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
 RUN echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list
-RUN apt-get update && apt-get install  --no-install-recommends --yes $(apt-cache search aspell- | awk '{print $1 }') && rm -rf /var/lib/apt/lists/*
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-install-recommends libxss1 atom aspell libasound2 && apt-get clean
+RUN apt-get update && apt-get install --yes hunspell $(apt-cache search aspell | grep aspell- | awk '{print $1 }') && rm -rf /var/lib/apt/lists/*
+ENV QT_X11_NO_MITSHM=1
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-install-recommends libxcb-dri3-0 libdrm-common libdrm2 libgbm1 libxss1 atom aspell libasound2 && apt-get clean
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 ENV BUSER balloon
 LABEL oc.icon="atom.svg"
@@ -17,7 +18,7 @@ LABEL oc.cat="development"
 LABEL oc.desktopfile="atom.desktop"
 LABEL oc.launch="atom.Atom"
 LABEL oc.template="abcdesktopio/oc.template.gtk"
-ENV ARGS="--no-sandbox"
+ENV ARGS="--no-sandbox  --disable-gpu"
 LABEL oc.name="Atom"
 LABEL oc.displayname="Atom"
 LABEL oc.path="/usr/bin/atom"
@@ -29,5 +30,5 @@ WORKDIR /home/balloon
 USER balloon
 ENV APPNAME "Atom"
 ENV APPBIN "/usr/bin/atom"
-LABEL oc.args="--no-sandbox"
+LABEL oc.args="--no-sandbox  --disable-gpu"
 ENV APP "/usr/bin/atom"

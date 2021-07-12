@@ -13,8 +13,8 @@ LABEL oc.cat="graphics"
 LABEL oc.desktopfile="inkscape.desktop"
 LABEL oc.launch="inkscape.Inkscape"
 LABEL oc.template="abcdesktopio/oc.template.gtk"
-LABEL oc.name="Inkscape"
-LABEL oc.displayname="Inkscape"
+LABEL oc.name="inkscape"
+LABEL oc.displayname="inkscape"
 LABEL oc.path="/usr/bin/inkscape"
 LABEL oc.type=app
 LABEL oc.mimetype="image/svg+xml;image/svg+xml-compressed;application/vnd.corel-draw;application/illustrator;"
@@ -25,6 +25,6 @@ RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safeli
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon
 USER balloon
-ENV APPNAME "Inkscape"
+ENV APPNAME "inkscape"
 ENV APPBIN "/usr/bin/inkscape"
 ENV APP "/usr/bin/inkscape"

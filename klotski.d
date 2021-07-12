@@ -13,8 +13,8 @@ LABEL oc.cat="games"
 LABEL oc.desktopfile="gnome-klotski.desktop"
 LABEL oc.launch="gnome-klotski.Gnome-klotski"
 LABEL oc.template="abcdesktopio/oc.template.gtk.language-pack-all"
-LABEL oc.name="Klotski"
-LABEL oc.displayname="Klotski"
+LABEL oc.name="klotski"
+LABEL oc.displayname="klotski"
 LABEL oc.path="/usr/games/gnome-klotski"
 LABEL oc.type=app
 LABEL oc.acl="{\"permit\":[\"all\"]}"
@@ -23,6 +23,6 @@ RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safeli
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon
 USER balloon
-ENV APPNAME "Klotski"
+ENV APPNAME "klotski"
 ENV APPBIN "/usr/games/gnome-klotski"
 ENV APP "/usr/games/gnome-klotski"

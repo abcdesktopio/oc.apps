@@ -13,8 +13,8 @@ LABEL oc.cat="games"
 LABEL oc.desktopfile="gnome-mahjongg.desktop"
 LABEL oc.launch="gnome-mahjongg.Gnome-mahjongg"
 LABEL oc.template="abcdesktopio/oc.template.gtk.language-pack-all"
-LABEL oc.name="Mahjongg"
-LABEL oc.displayname="Mahjongg"
+LABEL oc.name="mahjongg"
+LABEL oc.displayname="mahjongg"
 LABEL oc.path="/usr/games/gnome-mahjongg"
 LABEL oc.type=app
 LABEL oc.acl="{\"permit\":[\"all\"]}"
@@ -22,6 +22,6 @@ RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safeli
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon
 USER balloon
-ENV APPNAME "Mahjongg"
+ENV APPNAME "mahjongg"
 ENV APPBIN "/usr/games/gnome-mahjongg"
 ENV APP "/usr/games/gnome-mahjongg"

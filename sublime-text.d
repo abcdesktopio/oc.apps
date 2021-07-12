@@ -3,9 +3,10 @@
 ARG TAG=dev
 FROM abcdesktopio/oc.template.gtk:$TAG
 USER root
-RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean
+RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -a
 RUN echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
+RUN apt-get update && apt-get install --yes libgl1 && apt-get clean
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y sublime-text && apt-get clean
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 ENV BUSER balloon
@@ -16,8 +17,8 @@ LABEL oc.cat="development"
 LABEL oc.desktopfile="sublime_text.desktop"
 LABEL oc.launch="sublime_text.Sublime_text"
 LABEL oc.template="abcdesktopio/oc.template.gtk"
-LABEL oc.name="Sublime-Text"
-LABEL oc.displayname="Sublime-Text"
+LABEL oc.name="sublime-Text"
+LABEL oc.displayname="sublime-Text"
 LABEL oc.path="/opt/sublime_text/sublime_text"
 LABEL oc.type=app
 LABEL oc.acl="{\"permit\":[\"all\"]}"
@@ -25,6 +26,6 @@ RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safeli
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon
 USER balloon
-ENV APPNAME "Sublime-Text"
+ENV APPNAME "sublime-Text"
 ENV APPBIN "/opt/sublime_text/sublime_text"
 ENV APP "/opt/sublime_text/sublime_text"
