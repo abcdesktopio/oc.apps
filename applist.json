@@ -443,6 +443,25 @@
     "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
+    "cat": "utilities,office",
+    "preruncommands": [  	"COPY composer/node /composer/node",
+	   			"RUN cd /composer/node/ocdownload && npm install", 
+	    			"COPY composer/init.d/init.nautilus /composer/init.d/init.nautilus",
+   				"COPY composer/desktop_download.py /composer/desktop_download.py" ],
+    "debpackage": "dbus gnome-icon-theme gnome-icon-theme-symbolic numix-gtk-theme numix-icon-theme gnome-font-viewer dbus-x11 python-nautilus python-shellescape nautilus desktop-file-utils shared-mime-info xdg-user-dirs",
+    "icon": "nautilus.svg",
+    "keyword": "file,manager,nautilus",
+    "launch": "nautilus.Nautilus",
+    "name": "nautilus",
+    "displayname": "FileManager",
+    "showinview": "dock",
+    "path": "/usr/bin/nautilus",
+    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "desktopfile":"/usr/share/applications/nautilus.desktop",
+    "usedefaultapplication": true,
+    "quick": true
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
     "preruncommands": [ "RUN DEBIAN_FRONTEND=noninteractive echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
                         "RUN apt-get update && apt-get install  --no-install-recommends --yes ttf-mscorefonts-installer ttf-bitstream-vera ttf-dejavu ttf-xfree86-nonfree && apt-get clean",
@@ -843,7 +862,7 @@
     "desktopfile": "/usr/share/applications/org.pantheon.calculator.desktop",
     "preruncommands": [  "RUN add-apt-repository ppa:elementary-os/stable",
    			 "COPY composer/init.d/init.io.elementary.calculator /composer/init.d/init.io.elementary.calculator",
-   			 "RUN mkdir /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop"]
+   			 "RUN mkdir -p /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop"]
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -856,7 +875,7 @@
     "icon": "sublime_text.svg",
     "keyword": "ide,code,sublime-text",
     "launch": "sublime_text.Sublime_text",
-    "name": "Sublime-Text",
+    "name": "sublime-Text",
     "path": "/opt/sublime_text/sublime_text",
     "template": "abcdesktopio/oc.template.gtk",
     "desktopfile":"/usr/share/applications/sublime_text.desktop"
@@ -867,7 +886,7 @@
     "icon": "inkscape.svg",
     "keyword": "inkscape",
     "launch": "inkscape.Inkscape",
-    "name": "Inkscape",
+    "name": "inkscape",
     "path": "/usr/bin/inkscape",
     "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "image/svg+xml;image/svg+xml-compressed;application/vnd.corel-draw;application/illustrator;",
@@ -882,7 +901,7 @@
     "icon": "gnome-klotski.svg",
     "keyword": "gnome klotski,game klotski,klotski",
     "launch": "gnome-klotski.Gnome-klotski",
-    "name": "Klotski",
+    "name": "klotski",
     "host_config": { "mem_limit": "384M", "shm_size": "128M", "pid_mode": false },
     "path": "/usr/games/gnome-klotski",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
@@ -890,11 +909,37 @@
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
+    "debpackage": "flare-game",
+    "icon": "flare.svg",
+    "keyword": "flare-game,role,playing",
+    "launch": "flare.flare",
+    "name": "flare",
+    "args": "--game=flare-game",
+    "host_config": { "mem_limit": "512M", "shm_size": "128M", "pid_mode": false },
+    "path": "/usr/games/flare",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "desktopfile": "/usr/share/applications/flare.desktop"
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilies,development",
+    "debpackage": "notepadqq",
+    "icon": "notepadqq.svg",
+    "keyword": "notepad,plus,editor",
+    "launch": "notepadqq-bin.Notepadqq",
+    "name": "notepadqq",
+    "mimetype": "text/plain;text/html;text/x-php;text/x-c;text/x-shellscript;",
+    "host_config": { "mem_limit": "512M", "shm_size": "128M", "pid_mode": false },
+    "path": "/usr/bin/notepadqq",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "desktopfile": "/usr/share/applications/notepadqq.desktop"
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "games",
     "debpackage": "gnome-mahjongg",
     "icon": "gnome-mahjongg.svg",
     "keyword": "gnome mahjongg,game mahjongg,mahjongg",
     "launch": "gnome-mahjongg.Gnome-mahjongg",
-    "name": "Mahjongg",
+    "name": "mahjongg",
     "path": "/usr/games/gnome-mahjongg",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile":"/usr/share/applications/gnome-mahjongg.desktop"
