@@ -103,6 +103,10 @@ function makedockerfile(e) {
     const contents = fs.readFileSync(e.postinstall, 'utf8');
     wstream.write(contents);
   }
+  if (e.postruncommands) {
+  	e.postruncommands.forEach((command) => wstream.write(`${command}\n`));
+  }
+
   wstream.write('ENV BUSER balloon\n');
   if (e.icon) {
     wstream.write(`LABEL oc.icon=${JSON.stringify(e.icon)}\n`);
