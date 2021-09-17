@@ -918,7 +918,7 @@
     "template": "abcdesktopio/oc.template.gtk.18.04",
     "host_config": { "mem_limit": "512M"  },
     "desktopfile": "/opt/brackets/brackets.desktop",
-    "preruncommands": [  "RUN apt-get update && apt-get install -y wget libcurl3 libxss1 && apt-get clean",
+    "preruncommands": [  "RUN apt-get update && apt-get install -y libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin  wget libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin wget libcurl3 libxss1 && apt-get clean",
     			 "RUN apt-get update && wget https://github.com/adobe/brackets/releases/download/release-1.14.1/Brackets.Release.1.14.1.64-bit.deb -O /tmp/bracket.deb && apt-get install -y /tmp/bracket.deb && rm /tmp/bracket.deb && rm -rf /var/lib/apt/lists/*"
     ],
     "args": "--no-sandbox  --disable-gpu"
