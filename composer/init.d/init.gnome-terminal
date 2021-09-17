@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ -f /composer/init.cntlm.sh ]; then
+	 /composer/init.cntlm.sh
+fi
