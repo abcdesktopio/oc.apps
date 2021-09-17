@@ -63,6 +63,8 @@
     "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
+    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin  wget libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin && apt-get clean",
+                        "RUN wget -O /tmp/postman.tar.gz https://dl.pstmn.io/download/latest/linux64 && gunzip -d /tmp/postman.tar.gz && cd /usr/local/bin && tar -xvf /tmp/postman.tar && rm -rf /tmp/blender.tar" ],
     "cat": "development",
     "debpackage": "",
     "installrecommends" : false,
@@ -72,7 +74,7 @@
     "displayname": "Postman",
     "name": "postman",
     "path": "/usr/local/bin/Postman/app/Postman",
-    "template": "abcdesktopio/oc.template.gtk.postman"
+    "template": "abcdesktopio/oc.template.gtk"
 }, {   
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -526,6 +528,33 @@
     "usedefaultapplication": false
 }, {
     "acl": { "permit": [ "all" ] },
+    "cat": "games",
+     "preruncommands": ["RUN apt-get update && apt-get install  --no-install-recommends --yes vice libmp3lame0 git wget && apt-get clean",
+                        "RUN git clone https://github.com/stuartcarnie/vice-emu/ && mv vice-emu/vice/data/DRIVES/* /usr/lib/vice/C64 && cd /vice-emu/vice/data/C64 && mv chargen kernal basic /usr/lib/vice/C64",
+			"RUN mkdir /usr/lib/vice/C64/cartridge",
+			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_1-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_1-8000.bin", 
+			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_2-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_2-8000.bin",
+			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_3-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_3-8000.bin",
+			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_4-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_4-8000.bin",
+			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/C64638_Jack_Attack-8000.bin -O /usr/lib/vice/C64/cartridge/C64638_Jack_Attack-8000.bin",
+			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/315102-01.bin -O /usr/lib/vice/C64/cartridge/315102-01.bin",
+			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/315103-01.bin -O /usr/lib/vice/C64/cartridge/315103-01.bin"
+                       ],
+    "debpackage": "",
+    "icon": "c64.svg",
+    "keyword": "x64,vice,commodore,c64",
+    "launch": "x64.X64",
+    "name": "vice",
+    "displayname": "Commodore64",
+    "splash": "enable",
+    "installrecommends" : true,
+    "path": "/usr/bin/x64",
+    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "fileextensions": "crt;bin",
+    "desktopfile":"/usr/share/applications/x64.desktop",
+    "usedefaultapplication": false
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "office",
      "preruncommands": ["RUN apt-get update && apt-get install  --no-install-recommends --yes wget libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 && apt-get clean",
 	                "RUN wget --quiet -O - https://deb.beekeeperstudio.io/beekeeper.key | apt-key add -",
@@ -782,7 +811,6 @@
     "name": "Terminal",
     "path": "/usr/bin/gnome-terminal",
     "args": "--disable-factory",
-    "host_config": { "mem_limit": "384M", "shm_size": "128M", "pid_mode": false },
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "quick": true
@@ -829,7 +857,22 @@
     "desktopfile":"/usr/share/applications/gimp.desktop",
     "usedefaultapplication": false,
     "quick": true
-}, {
+},  {
+    "acl": { "permit": [ "all" ] },
+    "cat": "graphics",
+    "debpackage": "shotcut",
+    "icon": "shotcut.png",
+    "keyword": "video,audio,editing,suite,mlt,4k,video4linux,blackmagic,decklink",
+    "launch": "shotcut.Shotcut",
+    "name": "Shotcut",
+    "path": "/usr/bin/shotcut",
+    "template": "abcdesktopio/oc.template.gtk",
+    "mimetype": "image/bmp;image/g3fax;image/gif;image/x-fits;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-psd;image/x-sgi;image/x-tga;image/x-xbitmap;image/x-xwindowdump;image/x-xcf;image/x-compressed-xcf;image/x-gimp-gbr;image/x-gimp-pat;image/x-gimp-gih;image/jpeg;image/x-psp;image/png;image/x-icon;image/x-xpixmap;image/x-wmf;image/jp2;image/jpeg2000;image/jpx;image/x-xcursor;application/vnd.mlt+xml;application/ogg;application/x-ogg;audio/ogg;audio/x-vorbis;audio/x-vorbis+ogg;video/ogg;video/x-ogm+ogg;video/x-theora+ogg;video/x-theora;audio/x-speex;audio/opus;application/x-flac;audio/flac;audio/x-flac;audio/x-ms-asf;audio/x-ms-asx;audio/x-ms-wax;audio/x-ms-wma;video/x-ms-asf;video/x-ms-asf-plugin;video/x-ms-asx;video/x-ms-wm;video/x-ms-wmv;video/x-ms-wmx;video/x-ms-wvx;video/x-msvideo;audio/x-pn-windows-acm;video/divx;video/msvideo;video/vnd.divx;video/x-avi;application/vnd.rn-realmedia;application/vnd.rn-realmedia-vbr;audio/vnd.rn-realaudio;audio/x-pn-realaudio;audio/x-pn-realaudio-plugin;audio/x-real-audio;audio/x-realaudio;video/vnd.rn-realvideo;audio/mpeg;audio/mpg;audio/mp1;audio/mp2;audio/mp3;audio/x-mp1;audio/x-mp2;audio/x-mp3;audio/x-mpeg;audio/x-mpg;video/mp2t;video/mpeg;video/mpeg-system;video/x-mpeg;video/x-mpeg2;video/x-mpeg-system;application/mpeg4-iod;application/mpeg4-muxcodetable;application/x-extension-m4a;application/x-extension-mp4;audio/aac;audio/m4a;audio/mp4;audio/x-m4a;audio/x-aac;video/mp4;video/mp4v-es;video/x-m4v;application/x-quicktime-media-link;application/x-quicktimeplayer;video/quicktime;application/x-matroska;audio/x-matroska;video/x-matroska;video/webm;audio/webm;audio/3gpp;audio/3gpp2;audio/AMR;audio/AMR-WB;audio/amr;audio/amr-wb;video/3gp;video/3gpp;video/3gpp2;x-scheme-handler/mms;x-scheme-handler/mmsh;x-scheme-handler/rtsp;x-scheme-handler/rtp;x-scheme-handler/rtmp;x-scheme-handler/icy;x-scheme-handler/icyx;x-content/video-vcd;x-content/video-svcd;x-content/video-dvd;x-content/audio-cdda;x-content/audio-player;application/x-cd-image;application/ram;application/xspf+xml;audio/mpegurl;audio/x-mpegurl;audio/scpls;audio/x-scpls;text/google-video-pointer;text/x-google-video-pointer;video/vnd.mpegurl;application/vnd.apple.mpegurl;application/vnd.ms-asf;application/vnd.ms-wpl;application/sdp;audio/dv;video/dv;audio/x-aiff;audio/x-pn-aiff;video/x-anim;video/x-nsv;video/fli;video/flv;video/x-flc;video/x-fli;video/x-flv;audio/wav;audio/x-pn-au;audio/x-pn-wav;audio/x-wav;audio/ac3;audio/eac3;audio/vnd.dts;audio/vnd.dts.hd;audio/vnd.dolby.heaac.1;audio/vnd.dolby.heaac.2;audio/vnd.dolby.mlp;audio/basic;audio/midi;audio/x-ape;audio/x-gsm;audio/x-musepack;audio/x-tta;audio/x-wavpack;audio/x-shorten;application/x-shockwave-flash;application/x-flash-video;misc/ultravox;image/vnd.rn-realpix;audio/x-it;audio/x-mod;audio/x-s3m;audio/x-xm;application/mxf;",
+    "fileextensions": "mlt",
+    "legacyfileextensions":"mlt",
+    "desktopfile":"/usr/share/applications/gimp.desktop",
+    "usedefaultapplication": false
+},{
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
     "debpackage": "eog",
@@ -863,6 +906,22 @@
     "preruncommands": [  "RUN add-apt-repository ppa:elementary-os/stable",
    			 "COPY composer/init.d/init.io.elementary.calculator /composer/init.d/init.io.elementary.calculator",
    			 "RUN mkdir -p /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop"]
+},{
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities,office",
+    "debpackage": "",
+    "icon": "brackets.svg",
+    "keyword": "html,brackets",
+    "launch": "brackets.Brackets",
+    "name": "Brackets",
+    "path": "/opt/brackets/Brackets",
+    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "host_config": { "mem_limit": "512M"  },
+    "desktopfile": "/opt/brackets/brackets.desktop",
+    "preruncommands": [  "RUN apt-get update && apt-get install -y wget libcurl3 libxss1 && apt-get clean",
+    			 "RUN apt-get update && wget https://github.com/adobe/brackets/releases/download/release-1.14.1/Brackets.Release.1.14.1.64-bit.deb -O /tmp/bracket.deb && apt-get install -y /tmp/bracket.deb && rm /tmp/bracket.deb && rm -rf /var/lib/apt/lists/*"
+    ],
+    "args": "--no-sandbox  --disable-gpu"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -919,7 +978,21 @@
     "path": "/usr/games/flare",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/flare.desktop"
-}, {
+},   {
+    "acl": { "permit": [ "all" ] },
+    "cat": "games",
+      "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget unzip && apt-get clean && rm -rf /var/lib/apt/lists/*",
+                        "RUN cd /composer && wget https://th.corsix.org/Demo.zip && unzip Demo.zip && rm -rf Demo.zip",
+                        "COPY corsix-th.config.txt /composer/corsix-th.config.txt" ],
+    "debpackage": "libgl1 corsix-th",
+    "icon": "games.svg",
+    "keyword": "hospital,role,playing",
+    "launch": "corsix-th.corsix-th",
+    "name": "corsix-th",
+    "path": "/usr/games/corsix-th",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "desktopfile": "/usr/share/applications/com.corsixth.CorsixTH.desktop"
+},  {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,development",
     "debpackage": "notepadqq",
@@ -1061,6 +1134,31 @@
     "template": "abcdesktopio/oc.template.gtk.fulldev",
     "displayname": "Cloud Foundry cli",
     "args": "--disable-factory --class pivotalio.cf",
+    "quick": true
+},{
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "debpackage": "cntlm",
+    "icon": "cntlm.svg",
+    "keyword": "cntlm,proxy,ntlm",
+    "launch": "gnome-terminal-server.cntlm",
+    "name": "cntlm",
+    "path": "/usr/bin/gnome-terminal",
+    "template": "abcdesktopio/oc.template.gtk",
+    "displayname": "cntlm",
+    "args": "--disable-factory --class cntlm /usr/sbin/cntlm"
+},{
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "debpackage": "",
+    "icon": "dev.svg",
+    "keyword": "dev,c,python,html,npm,java,javascript,vscode",
+    "launch": "gnome-terminal-server.dev.env",
+    "name": "dev",
+    "path": "/usr/bin/gnome-terminal",
+    "template": "abcdesktopio/oc.template.gtk.fulldev",
+    "displayname": "DEVenv",
+    "args": "--disable-factory --class dev.env",
     "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
