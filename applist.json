@@ -218,7 +218,7 @@
     "mimetype": "application/text;",
     "fileextensions":"txt;log;",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.wine"
+    "template": "abcdesktopio/oc.template.wine"
 }, {
     "acl": { "permit": [ "all" ] },
     "args": "winefile",
@@ -237,7 +237,7 @@
     "name": "winefile-wine",
     "displayname": "Winefile Wine",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.wine"
+    "template": "abcdesktopio/oc.template.wine"
 }, {
     "acl": { "permit": [ "all" ] },
     "args": "winhelp",
@@ -258,7 +258,7 @@
     "mimetype": "application/hlp;",
     "fileextensions":"hlp;",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.wine"
+    "template": "abcdesktopio/oc.template.wine"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -288,10 +288,10 @@
     "name": "winemine-wine",
     "displayname": "WineMine Wine",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.gtk.wine"
+    "template": "abcdesktopio/oc.template.wine"
 }, {
     "acl": { "permit": [ "all" ] },
-    "template": "abcdesktopio/oc.template.gtk.wine",
+    "template": "abcdesktopio/oc.template.wine",
     "preruncommands": [ 
         "ENV WINEARCH=win64",
 	"ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
@@ -446,7 +446,8 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
-    "preruncommands": [  	"COPY composer/node /composer/node",
+    "preruncommands": [  	"RUN mkdir -p /var/run/dbus/ chown balloon:balloon /var/run/dbus", 
+                                "COPY composer/node /composer/node",
 	   			"RUN cd /composer/node/ocdownload && npm install", 
 	    			"COPY composer/init.d/init.nautilus /composer/init.d/init.nautilus",
    				"COPY composer/desktop_download.py /composer/desktop_download.py" ],
@@ -659,6 +660,29 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
+    "debpackage": "fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf fonts-wine",
+    "preruncommands": [ "# RUN apt-get update && apt-get install  --no-install-recommends --yes  fonts-liberation libatomic1 wget libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0  libcairo2 libdrm2 libgbm1 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libx11-6 libxcomposite1  libxdamage1 libxext6 libxfixes3  libxkbcommon0 libxrandr2  libxshmfence1 libu2f-udev libvulkan1 xdg-utils && apt-get clean && rm -rf /var/lib/apt/lists/*",
+                        "# RUN wget https://www.microsoftedgeinsider.com/en-us/download/microsoft-edge-beta_94.0.992.23-1_amd64.deb",
+			"COPY microsoft-edge-beta_94.0.992.23-1_amd64.deb /tmp",
+			"RUN apt-get update && apt-get install -y /tmp/microsoft-edge-beta_94.0.992.23-1_amd64.deb  && apt-get clean && rm -rf /var/lib/apt/lists/* && rm /tmp/*.deb" ],
+    "icon": "microsoftedge_old.svg",
+    "keyword": "web,browser,internet",
+    "launch": "microsoft-edge-beta.Microsoft-edge-beta",
+    "name": "edge",
+    "displayname": "MicrosoftEdge",
+    "splash": "enable",
+    "installrecommends" : true,
+    "path": "/usr/bin/microsoft-edge",
+    "args": "--no-sandbox",
+    "template": "abcdesktopio/oc.template.gtk",
+    "mimetype": "application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;",
+    "legacyfileextensions": "html;xml",
+    "fileextensions": "html;xml;gif",
+    "desktopfile":"/usr/share/applications/microsoft-edge-beta.desktop",
+    "quick": true
+},{
+    "acl": { "permit": [ "all" ] },
+    "cat": "office",
     "debpackage": "evolution dbus-x11",
     "icon": "evolution.svg",
     "keyword": "evolution,mail",
@@ -685,7 +709,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "",
+    "debpackage": "fonts-liberation2 fonts-noto",
     "icon": "libreoffice-writer.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-writer",
@@ -1136,9 +1160,9 @@
     "args": "--disable-factory --class pivotalio.cf",
     "quick": true
 },{
-    "acl": { "permit": [ "all" ] },
+    "acl": { "permit": [ "all" ] }, 
     "cat": "development",
-    "debpackage": "cntlm",
+    "debpackage": "ruby-mustache gnome-terminal dbus-x11 cntlm net-tools vim curl wget",
     "icon": "cntlm.svg",
     "keyword": "cntlm,proxy,ntlm",
     "launch": "gnome-terminal-server.cntlm",
@@ -1146,7 +1170,14 @@
     "path": "/usr/bin/gnome-terminal",
     "template": "abcdesktopio/oc.template.gtk",
     "displayname": "cntlm",
-    "args": "--disable-factory --class cntlm /usr/sbin/cntlm"
+    "host_config":  { "network_mode": "container" }, 
+    "args": "--class cntlm -- bash -c '/usr/sbin/cntlm -f -v; exec bash'",
+    "preruncommands": [ "COPY cntlm/cntlm.mustache  cntlm/init.cntlm.sh /composer/",  
+	    		"COPY composer/init.d/init.gnome-terminal /composer/init.d/"
+    ],
+    "postruncommands": [ "RUN chown balloon:root /etc/cntlm.conf",
+   			 "RUN chmod 755 /composer/cntlm.mustache" ]
+
 },{
     "acl": { "permit": [ "all" ] },
     "cat": "development",
