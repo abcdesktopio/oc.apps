@@ -1,0 +1,4 @@
+mkdir -p ~/.config/CorsixTH
+if [ ! -f ~/.config/CorsixTH/config.txt ]; then
+	cp /composer/corsix-th.config.txt ~/.config/CorsixTH/config.txt
+fi
