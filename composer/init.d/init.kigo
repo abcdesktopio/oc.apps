@@ -1,5 +1,8 @@
+#!/bin/bash
+# make sure the .config directory exists
+mkdir -p ~/.config
 
-
+# create a default kigo rc file if nit exists
 if [ ! -f ~/.config/kigorc ]; then
 	cat <<- EOF > ~/.config/kigorc
 	[Backend]
