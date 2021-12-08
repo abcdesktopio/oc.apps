@@ -21,6 +21,7 @@ LABEL oc.name="sublime-Text"
 LABEL oc.displayname="sublime-Text"
 LABEL oc.path="/opt/sublime_text/sublime_text"
 LABEL oc.type=app
+LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 

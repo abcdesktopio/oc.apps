@@ -20,6 +20,7 @@ LABEL oc.type=app
 LABEL oc.mimetype="application/pdf;application/x-bzpdf;application/x-gzpdf;application/x-xzpdf;application/x-ext-pdf;application/postscript;application/x-bzpostscript;application/x-gzpostscript;image/x-eps;image/x-bzeps;image/x-gzeps;application/x-ext-ps;application/x-ext-eps;application/x-dvi;application/x-bzdvi;application/x-gzdvi;application/x-ext-dvi;image/vnd.djvu;application/x-ext-djv;application/x-ext-djvu;image/tiff;application/x-cbr;application/x-cbz;application/x-cb7;application/x-cbt;application/x-ext-cbr;application/x-ext-cbz;application/x-ext-cb7;application/x-ext-cbt;application/oxps;application/vnd.ms-xpsdocument;"
 LABEL oc.fileextensions="pdf;ps;dvi;eps;cbt;cbr;cb7;xps"
 LABEL oc.legacyfileextensions="pdf;ps;dvi"
+LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 

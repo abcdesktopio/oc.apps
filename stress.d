@@ -3,7 +3,7 @@
 ARG TAG=dev
 FROM abcdesktopio/oc.template.gtk.language-pack-all:$TAG
 USER root
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-install-recommends gnome-terminal dbus-x11 stress && apt-get clean
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-install-recommends at-spi2-core gnome-terminal dbus-x11 stress && apt-get clean
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 ENV BUSER balloon
 LABEL oc.icon="stress.svg"
@@ -18,6 +18,7 @@ LABEL oc.name="stress"
 LABEL oc.displayname="stress"
 LABEL oc.path="/usr/bin/gnome-terminal"
 LABEL oc.type=app
+LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 LABEL oc.host_config="{\"mem_limit\":\"256M\",\"shm_size\":\"128M\",\"pid_mode\":false,\"ipc_mode\":false}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 

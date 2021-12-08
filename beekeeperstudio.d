@@ -25,6 +25,7 @@ LABEL oc.path="/opt/Beekeeper-Studio/beekeeper-studio"
 LABEL oc.type=app
 LABEL oc.fileextensions="sql"
 LABEL oc.legacyfileextensions="sql"
+LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 LABEL oc.host_config="{\"shm_size\":\"2G\",\"ipc_mode\":\"shareable\"}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 

@@ -21,6 +21,7 @@ LABEL oc.type=app
 LABEL oc.licence="non-free"
 LABEL oc.mimetype="application/x-ica;"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
+LABEL oc.host_config="{\"mem_limit\":\"512M\",\"shm_size\":\"512M\",\"pid_mode\":true,\"ipc_mode\":\"shareable\"}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
 WORKDIR /home/balloon

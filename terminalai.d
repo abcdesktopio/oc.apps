@@ -3,7 +3,7 @@
 ARG TAG=dev
 FROM abcdesktopio/oc.template.gtk.fulldev.ia:$TAG
 USER root
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-install-recommends gnome-terminal dbus-x11 && apt-get clean
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-install-recommends at-spi2-core gnome-terminal dbus-x11 && apt-get clean
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 ENV BUSER balloon
 LABEL oc.icon="ai-python.svg"
@@ -18,6 +18,7 @@ LABEL oc.name="terminalai"
 LABEL oc.displayname="Shell AI"
 LABEL oc.path="/usr/bin/gnome-terminal"
 LABEL oc.type=app
+LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 

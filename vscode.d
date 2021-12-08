@@ -22,6 +22,7 @@ LABEL oc.type=app
 LABEL oc.mimetype="text/x-c;application/json;application/javascript;application/xml;text/xml;application/java-archive;text/x-java-source;text/plain;image/svg+xml;application/x-csh;text/x-yaml;application/x-yaml;application/x-python;"
 LABEL oc.fileextensions="c;cpp;py;json;js;java;jav;md;xml;txt;svg;html;htm;sh;csh;css;jsx;tsx;vue;yml;yaml;"
 LABEL oc.legacyfileextensions="c;cpp;py;json;java;md;yml;yaml;"
+LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 LABEL oc.host_config="{\"mem_limit\":\"2G\",\"shm_size\":\"2G\",\"cpu_period\":200000,\"cpu_quota\":200000,\"cap_add\":[\"SYS_ADMIN\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 

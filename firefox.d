@@ -29,6 +29,7 @@ LABEL oc.showinview="dock"
 LABEL oc.mimetype="text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;"
 LABEL oc.fileextensions="htm;html;xml;gif"
 LABEL oc.legacyfileextensions="htm;html;xml"
+LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 LABEL oc.host_config="{\"shm_size\":\"2G\"}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
@@ -39,3 +40,4 @@ ENV APPNAME "Firefox"
 ENV APPBIN "/usr/bin/firefox"
 ENV APP "/usr/bin/firefox"
 LABEL oc.usedefaultapplication=true
+LABEL oc.run_inside_pod=true

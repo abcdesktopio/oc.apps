@@ -3,6 +3,7 @@
 ARG TAG=dev
 FROM abcdesktopio/oc.template.gtk.18.04:$TAG
 USER root
+RUN mkdir -p /var/run/dbus/ chown balloon:balloon /var/run/dbus
 COPY composer/node /composer/node
 RUN cd /composer/node/ocdownload && npm install
 COPY composer/init.d/init.nautilus /composer/init.d/init.nautilus
@@ -22,6 +23,7 @@ LABEL oc.displayname="FileManager"
 LABEL oc.path="/usr/bin/nautilus"
 LABEL oc.type=app
 LABEL oc.showinview="dock"
+LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 

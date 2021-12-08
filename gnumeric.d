@@ -20,6 +20,7 @@ LABEL oc.type=app
 LABEL oc.mimetype="application/x-gnumeric;application/x-oleo;application/x-planperfect;application/x-sc;application/x-sylk;application/x-xbase;"
 LABEL oc.fileextensions="gnm"
 LABEL oc.legacyfileextensions="gnm"
+LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 

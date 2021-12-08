@@ -16,7 +16,7 @@ LABEL oc.cat="office"
 LABEL oc.desktopfile="chromium-browser.desktop"
 LABEL oc.launch="google-chrome.Google-chrome"
 LABEL oc.template="abcdesktopio/oc.template.gtk"
-ENV ARGS="-no-sandbox --disable-gpu"
+ENV ARGS="-no-sandbox --disable-gpu --disable-dev-shm-usage"
 LABEL oc.name="chrome"
 LABEL oc.displayname="Chrome"
 LABEL oc.path="/usr/bin/google-chrome-stable"
@@ -24,6 +24,7 @@ LABEL oc.type=app
 LABEL oc.mimetype="text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;"
 LABEL oc.fileextensions="html;xml;gif"
 LABEL oc.legacyfileextensions="html;xml"
+LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 RUN  if [ -d /usr/share/icons ];   then cd /usr/share/icons;    /composer/safelinks.sh; fi 
 RUN  if [ -d /usr/share/pixmaps ]; then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi 
@@ -31,5 +32,5 @@ WORKDIR /home/balloon
 USER balloon
 ENV APPNAME "chrome"
 ENV APPBIN "/usr/bin/google-chrome-stable"
-LABEL oc.args="-no-sandbox --disable-gpu"
+LABEL oc.args="-no-sandbox --disable-gpu --disable-dev-shm-usage"
 ENV APP "/usr/bin/google-chrome-stable"
