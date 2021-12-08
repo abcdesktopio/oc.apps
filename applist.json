@@ -371,6 +371,7 @@
     "name": "kigo",
     "mimetype": "application/x-go-sgf;",
     "displayname": "kigo",
+    "rules": { "homedir": { "default": false } },
     "path": "/usr/games/kigo",
     "template": "abcdesktopio/oc.template.gtk",
     "desktopfile": "/usr/share/applications/kigo.desktop",
@@ -620,6 +621,7 @@
     "template": "abcdesktopio/oc.template.gtk.18.04",
     "mimetype": "application/x-ica;",
     "desktopfile":"/usr/share/applications/wfica.desktop",
+    "host_config": { "mem_limit": "512M", "shm_size": "512M", "pid_mode": true, "ipc_mode": "shareable"  },
     "usedefaultapplication": true,
     "licence" : "non-free"
 }, {
