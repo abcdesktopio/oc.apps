@@ -9,10 +9,9 @@
 #  or set permissions such that it can be created:
 #  /home/balloon/.config/nautilus
 #
-mkdir -p /home/.config/nautilus
+mkdir -p /home/balloon/.config/nautilus
 
 echo "starting DBUS_SYSTEM_BUS" >> /var/log/desktop/dbus.log
-
 
 dbus_system=$(dbus-daemon --config-file=/usr/share/dbus-1/system.conf --print-address  --fork --nosyslog ) 
 
