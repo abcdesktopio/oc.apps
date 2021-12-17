@@ -17,4 +17,5 @@ echo "CNTLM_PROXY: $CNTLM_PROXY" >> $CNTLM_YAML
 echo '---' >> $CNTLM_YAML
 
 mustache /tmp/cntlm.yaml /composer/cntlm.mustache > /etc/cntlm.conf
-rm /tmp/cntlm.yaml
+cp /etc/cntlm.conf /tmp
+/usr/bin/gnome-terminal --class cntlm -x bash -c '/usr/sbin/cntlm -v -f; exec bash'
