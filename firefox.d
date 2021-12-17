@@ -40,4 +40,3 @@ ENV APPNAME "Firefox"
 ENV APPBIN "/usr/bin/firefox"
 ENV APP "/usr/bin/firefox"
 LABEL oc.usedefaultapplication=true
-LABEL oc.run_inside_pod=true

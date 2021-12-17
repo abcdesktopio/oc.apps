@@ -504,7 +504,7 @@
     "displayname": "Firefox",
     "showinview": "dock",
     "splash": "enable",
-    "run_inside_pod": true,
+    "run_inside_pod": false,
     "path": "/usr/bin/firefox",
     "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
