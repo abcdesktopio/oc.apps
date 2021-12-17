@@ -188,7 +188,7 @@ function makedockerfile(e) {
   if (e.args) { wstream.write(`LABEL oc.args=${JSON.stringify(e.args)}\n`); }
   if (e.path) { wstream.write(`ENV APP "${e.path}"\n`); }
   if (e.usedefaultapplication) { wstream.write(`LABEL oc.usedefaultapplication=${JSON.stringify(e.usedefaultapplication)}\n`); }
-
+  if (e.run_inside_pod) { wstream.write(`LABEL oc.run_inside_pod=${JSON.stringify(e.run_inside_pod)}\n`); }
   wstream.end(() => {});
 }
 
