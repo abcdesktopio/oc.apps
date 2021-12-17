@@ -1,6 +1,6 @@
 #!/bin/bash
 # create Download directory in user homedir
-mkdir -p /home/balloon/Download
+mkdir -p /home/balloon/Downloads
 # fake the ntlm auth lib
 # Check if ~/bin/script is a symlink.
 ntlm_link=~/ntlm_auth
