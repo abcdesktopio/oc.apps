@@ -497,6 +497,7 @@
 			"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop",
    			"ENV NSS_SDB_USE_CACHE=yes" ],
     "debpackage": "",
+    "rules": { "homedir": { "default": true, "net-metagate": true }, "network": { "default": true, "net-metagate": { "name": "ens161", "dns":["10.171.36.17","10.171.30.16"], "webhook": { "create": "/usr/bin/python3 pan/panxapi.py -h {{ fw_ip }} -K {{ api_key }} -U" , "destroy": "/usr/bin/python3 pan/panxapi.py -h {{ fw_ip }} -K {{ api_key }} -U "} } } },
     "icon": "firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.Firefox",
@@ -512,7 +513,6 @@
     "fileextensions": "htm;html;xml;gif",
     "desktopfile":"/usr/share/applications/firefox.desktop",
     "host_config": { "shm_size" : "2G" },
-    "rules": { "homedir": { "default": true } },
     "usedefaultapplication": true,
     "quick": true
 }, {
@@ -687,6 +687,26 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
+    "debpackage": "fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine chromium-browser",
+    "icon": "chromium.svg",
+    "keyword": "web,browser,internet",
+    "launch": "chromium-browser.Chromium-browser",
+    "name": "chromium",
+    "rules": { "homedir": { "default": true } },
+    "displayname": "Chromium",
+    "splash": "enable",
+    "installrecommends" : true,
+    "path": "/usr/bin/chromium-browser",
+    "args": "-no-sandbox --disable-gpu --disable-dev-shm-usage",
+    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
+    "legacyfileextensions": "html;xml",
+    "fileextensions": "html;xml;gif",
+    "desktopfile":"/usr/share/applications/chromium-browser.desktop",
+    "quick": true
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "office",
     "debpackage": "fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf fonts-wine",
     "preruncommands": [ "# RUN apt-get update && apt-get install  --no-install-recommends --yes  fonts-liberation libatomic1 wget libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0  libcairo2 libdrm2 libgbm1 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libx11-6 libxcomposite1  libxdamage1 libxext6 libxfixes3  libxkbcommon0 libxrandr2  libxshmfence1 libu2f-udev libvulkan1 xdg-utils && apt-get clean && rm -rf /var/lib/apt/lists/*",
                         "# RUN wget https://www.microsoftedgeinsider.com/en-us/download/microsoft-edge-stable_95.0.1020.44-1_amd64.deb",
@@ -707,7 +727,7 @@
     "mimetype": "application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
-    "desktopfile":"/usr/share/applications/microsoft-edge-beta.desktop",
+    "desktopfile":"/usr/share/applications/microsoft-edge.desktop",
     "quick": true
 },{
     "acl": { "permit": [ "all" ] },
@@ -1511,6 +1531,7 @@
     "name": "youtube",
     "displayname": "Youtube",
     "splash": "enable",
+    "rules": { "homedir": { "default": false } }, 
     "host_config": { "mem_limit": "2G", "shm_size" : "2G" }, 
     "installrecommends" : true,
     "path": "/usr/bin/firefox",
