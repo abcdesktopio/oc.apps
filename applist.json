@@ -1266,7 +1266,27 @@
     "postruncommands": [ "RUN chown balloon:root /etc/cntlm.conf",
    			 "RUN chmod 755 /composer/cntlm.mustache" ]
 
-},{
+},
+ {
+    "acl": { "permit": [ "all" ] },
+    "cat": "games",
+    "debpackage": "",
+    "icon": "minecraft.svg",
+    "keyword": "minecraft",
+    "launch": "minecraft-launcher.Minecraft Launcher",
+    "name": "minecraft",
+    "path": "/usr/bin/minecraft-launcher",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.gtk",
+    "desktop": "minecraft-launcher.desktop",
+    "host_config":  {},
+    "desktopfile" : "/usr/share/applications/minecraft-launcher.desktop",
+    "preruncommands": [   "RUN apt-get update && apt-get install --no-install-recommends --yes at-spi2-core dbus-x11 orca libsecret-1-0 wget && apt-get clean",
+	    "RUN wget 'https://launcher.mojang.com/download/Minecraft.deb' -O /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*",
+	    "COPY composer/init.d/init.minecraft-launcher /composer/init.d"
+                      ]
+},
+{
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "",
