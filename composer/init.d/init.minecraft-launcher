@@ -1,3 +1,5 @@
 #!/bin/bash
 # create Download directory in user homedir
-mkdir -p /home/balloon/.pki
+mkdir -p /home/balloon/.pki/nssdb
+/usr/libexec/at-spi-bus-launcher &
+
