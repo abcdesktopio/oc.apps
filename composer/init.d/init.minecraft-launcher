@@ -1,0 +1,3 @@
+#!/bin/bash
+# create Download directory in user homedir
+mkdir -p /home/balloon/.pki
