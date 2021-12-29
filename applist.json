@@ -1126,7 +1126,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "pychess",
-    "icon": "pychess.svg",
+    "icon": "chess.svg",
     "keyword": "games",
     "launch": "pychess.Pychess",
     "name": "chess",
@@ -1279,9 +1279,9 @@
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.gtk",
     "desktop": "minecraft-launcher.desktop",
-    "host_config":  {},
+    "host_config": { "mem_limit": "4G", "shm_size" : "2G",  "cpu_period": 200000, "cpu_quota": 200000, "ipc_mode": "shareable" },
     "desktopfile" : "/usr/share/applications/minecraft-launcher.desktop",
-    "preruncommands": [   "RUN apt-get update && apt-get install --no-install-recommends --yes at-spi2-core dbus-x11 orca libsecret-1-0 wget && apt-get clean",
+    "preruncommands": [   "RUN apt-get update && apt-get install --no-install-recommends --yes libflite1 openjdk-8-jre at-spi2-core dbus-x11 orca libsecret-1-0 wget && apt-get clean",
 	    "RUN wget 'https://launcher.mojang.com/download/Minecraft.deb' -O /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*",
 	    "COPY composer/init.d/init.minecraft-launcher /composer/init.d"
                       ]
