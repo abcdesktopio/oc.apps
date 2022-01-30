@@ -497,7 +497,6 @@
 			"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop",
    			"ENV NSS_SDB_USE_CACHE=yes" ],
     "debpackage": "",
-    "rules": { "homedir": { "default": true, "net-metagate": true }, "network": { "default": true, "net-metagate": { "name": "ens161", "dns":["10.171.36.17","10.171.30.16"], "webhook": { "create": "/usr/bin/python3 pan/panxapi.py -h {{ fw_ip }} -K {{ api_key }} -U" , "destroy": "/usr/bin/python3 pan/panxapi.py -h {{ fw_ip }} -K {{ api_key }} -U "} } } },
     "icon": "firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.Firefox",
@@ -607,15 +606,32 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "preruncommands": [ "COPY icaclient_amd64.deb /tmp/icaclient_amd64.deb",
-                        "RUN apt-get update && apt-get install  --no-install-recommends --yes /tmp/icaclient_amd64.deb && apt-get clean && rm /tmp/icaclient_amd64.deb && rm -rf /var/lib/apt/lists/*" ],
-    "debpackage": "",
+    "debpackage": "remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-vnc remmina-plugin-exec remmina-plugin-nx remmina-plugin-spice remmina-plugin-xdmcp",
+    "icon": "remmina.svg",
+    "keyword": "rdp,tsclient",
+    "launch": "remmina.Remmina",
+    "name": "remmina",
+    "displayname": "Remmina",
+    "args": "",
+    "path": "/usr/bin/remmina",
+    "template": "abcdesktopio/oc.template.gtk",
+    "mimetype": "application/x-remmina;",
+    "desktopfile":"/usr/share/applications/remmina-file.desktop",
+    "usedefaultapplication": true
+},{
+    "comment": "download icaclientWeb from https://www.citrix.com/fr-fr/downloads/citrix-receiver/linux/receiver-for-linux-latest.html", 
+    "acl": { "permit": [ "all" ] },
+    "cat": "office",
+    "postruncommands": [ "COPY icaclientWeb_13.10.0.20_amd64.deb /tmp/icaclient_amd64.deb",
+                         "RUN apt-get update && apt-get install  --no-install-recommends --yes /tmp/icaclient_amd64.deb && apt-get clean && rm /tmp/icaclient_amd64.deb && rm -rf /var/lib/apt/lists/*" ],
+    "debpackage": "libsecret-1-0 libpcsclite1 x11-utils libjpeg-turbo8",
     "icon": "icaclient.svg",
     "keyword": "ica,icaclient,",
     "launch": "Wfica.Wfica",
     "name": "citrix",
     "displayname": "citrix-client",
     "splash": "enable",
+    "secrets_requirement": "citrix",
     "args": "-icaroot /opt/Citrix/ICAClient",
     "path": "/opt/Citrix/ICAClient/wfica",
     "template": "abcdesktopio/oc.template.gtk.18.04",
@@ -1233,7 +1249,23 @@
     "fileextensions": "dia",
     "legacyfileextensions": "dia",
     "desktop": "dia.desktop"
-},{
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "graphics",
+    "debpackage": "",
+    "icon": "drawio.svg",
+    "launch": "draw.io.draw.io",
+    "name": "drawio",
+    "dsiplayname": "draw.io",
+    "rules": { "homedir": { "default": true } },
+    "path": "/opt/drawio/drawio",
+    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "mimetype": "application/vnd.jgraph.mxfile;application/vnd.visio;",
+    "fileextensions": "drawio",
+    "legacyfileextensions": "drawio",
+    "desktopfile": "/usr/share/applications/drawio.desktop",
+    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget && wget 'https://github.com/jgraph/drawio-desktop/releases/download/v16.5.1/drawio-amd64-16.5.1.deb' -O /tmp/drawio-amd64-16.5.1.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64-16.5.1.deb && rm /tmp/drawio-amd64-16.5.1.deb && rm -rf /var/lib/apt/lists/*" ]
+}, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "",
@@ -1284,8 +1316,20 @@
     "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget libflite1 openjdk-8-jre at-spi2-core dbus-x11 orca libsecret-1-0 && wget 'https://launcher.mojang.com/download/Minecraft.deb' -O /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*",
 	    "COPY composer/init.d/init.minecraft-launcher /composer/init.d"
                       ]
-},
-{
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "debpackage": "octave",
+    "icon": "Gnu-octave-logo.svg",
+    "keyword": "octave",
+    "launch": "octave-gui.octave-gui",
+    "name": "octave",
+    "path": "/usr/bin/octave",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.gtk",
+    "desktop": "www.octave.org-octave.desktop.desktop",
+    "desktopfile" : "/usr/share/applications/www.octave.org-octave.desktop"
+}, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "debpackage": "",
