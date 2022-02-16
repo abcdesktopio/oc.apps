@@ -388,7 +388,27 @@
     "path": "/usr/games/2048-qt",
     "template": "abcdesktopio/oc.template.gtk",
     "host_config": { "mem_limit": "256M", "shm_size": "64M", "pid_mode": false, "network_mode": "none" } 
-}, {
+}, 
+{
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities",
+    "licence" : "non-free",
+    "debpackage": "",
+    "icon": "vmware.svg",
+    "keyword": "vmrc,vmware,remote,console",
+    "launch": "vmrc.Vmrc",
+    "name": "vmrc",
+    "displayname": "VMRC",
+    "path": "/usr/bin/vmrc",
+    "template": "abcdesktopio/oc.template.gtk",
+    "mimetype": "x-scheme-handler/vmrc;",
+    "desktopfile": "/usr/share/applications/vmware-vmrc.desktop",
+    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes libaio1 && apt-get clean",
+	    		"COPY VMware-Remote-Console-12.0.1-18113358.x86_64.bundle /tmp",
+			"RUN chmod o+x /tmp/VMware-Remote-Console-12.0.1-18113358.x86_64.bundle",
+           		"RUN /tmp/VMware-Remote-Console-12.0.1-18113358.x86_64.bundle --eulas-agreed --console --required --ignore-errors" ]    
+}, 
+{
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "astromenace",
@@ -486,6 +506,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
+    "comment": "NSS_SDB_USE_CACHE=yes",
     "preruncommands": [ "RUN DEBIAN_FRONTEND=noninteractive echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
                         "RUN apt-get update && apt-get install  --no-install-recommends --yes ttf-mscorefonts-installer ttf-bitstream-vera ttf-dejavu ttf-xfree86-nonfree && apt-get clean",
 	    		"RUN apt-get update && apt-get install  --no-install-recommends --yes winbind firefox $(apt-cache search firefox-locale | awk '{print $1 }') && apt-get clean",
@@ -494,8 +515,7 @@
 			"COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
 			"COPY policies.json /usr/lib/firefox/distribution",
 			"COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
-			"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop",
-   			"ENV NSS_SDB_USE_CACHE=yes" ],
+			"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
     "debpackage": "",
     "icon": "firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
