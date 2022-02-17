@@ -934,6 +934,20 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
+    "debpackage": "io.elementary.terminal io.elementary.stylesheet",
+    "icon": "pantheon-terminal-icons.svg",
+    "keyword": "terminal,bash,shell,cmd",
+    "launch": "io.elementary.terminal.Io.elementary.terminal",
+    "name": "elementary.terminal",
+    "path": "/usr/bin/io.elementary.terminal",
+    "args": "",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.gtk.elementary",
+    "desktopfile": "/usr/share/applications/io.elementary.terminal.desktop",
+    "quick": true
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
     "debpackage": "at-spi2-core gnome-terminal dbus-x11 stress",
     "icon": "stress.svg",
     "keyword": "stress,cpu,shell",
@@ -1044,6 +1058,31 @@
     "preruncommands": [  "RUN add-apt-repository ppa:elementary-os/stable",
    			 "COPY composer/init.d/init.io.elementary.calculator /composer/init.d/init.io.elementary.calculator",
    			 "RUN mkdir -p /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop"]
+},  {
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities,office",
+    "debpackage": "pinta",
+    "icon": "pinta.svg",
+    "keyword": "pinta,paint",
+    "launch": "Pinta.Pinta",
+    "name": "Pinta",
+    "path": "/usr/bin/pinta",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.gtk",
+    "mimetype": "image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/tiff;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/x-targa;image/x-tga;image/openraster;",
+    "desktopfile": "/usr/share/applications/pinta.desktop"
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities,office",
+    "debpackage": "bless",
+    "icon": "bless.svg",
+    "keyword": "hexa,decimal",
+    "launch": "bless.Bless",
+    "name": "Bless",
+    "path": "/usr/bin/bless",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.gtk",
+    "desktopfile": "/usr/share/applications/bless.desktop"
 },{
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
