@@ -93,7 +93,7 @@ function makedockerfile(e) {
 
     if (e.forceconfold) { installCommand += ' -o Dpkg::Options::="--force-confold" '; }
 
-    installCommand += `${e.debpackage} && apt-get clean\n`;
+    installCommand += `${e.debpackage} && apt-get clean && rm -rf /var/lib/apt/lists/*\n`;
     wstream.write(installCommand);
     wstream.write("RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections\n");
   }
