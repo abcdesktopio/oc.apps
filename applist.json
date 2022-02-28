@@ -1011,7 +1011,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
     "debpackage": "shotcut",
-    "icon": "shotcut.png",
+    "icon": "shotcut.svg",
     "keyword": "video,audio,editing,suite,mlt,4k,video4linux,blackmagic,decklink",
     "launch": "shotcut.Shotcut",
     "name": "Shotcut",
