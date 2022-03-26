@@ -9,11 +9,15 @@
 #  or set permissions such that it can be created:
 #  /home/balloon/.config/nautilus
 #
-mkdir -p /home/balloon/.config/nautilus
+mkdir -p ~/.config/nautilus
 
 echo "starting DBUS_SYSTEM_BUS" >> /var/log/desktop/dbus.log
 
 dbus_system=$(dbus-daemon --config-file=/usr/share/dbus-1/system.conf --print-address  --fork --nosyslog ) 
+
+if [ ! -f ~/.gtk-bookmarks ]; then
+	touch ~/.gtk-bookmarks
+fi
 
 if [ $? -eq 0 ]; then
    echo "export DBUS_SYSTEM_BUS_ADDRESS=$dbus_system" > /var/log/desktop/.DBUS_SYSTEM_BUS
