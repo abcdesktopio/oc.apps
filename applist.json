@@ -1,8 +1,7 @@
 [{
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "preruncommands": [  "RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean && rm -rf /var/lib/apt/lists/*",
-			 "RUN wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -",
+    "preruncommands": [  "RUN curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -",
 			 "RUN echo \"deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main\" > /etc/apt/sources.list.d/atom.list",
    			 "RUN apt-get update && apt-get install --yes hunspell $(apt-cache search aspell | grep aspell- | awk '{print $1 }') && rm -rf /var/lib/apt/lists/*",
    			 "ENV QT_X11_NO_MITSHM=1" ],
@@ -66,8 +65,8 @@
     "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin  wget libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin && apt-get clean",
-                        "RUN wget -O /tmp/postman.tar.gz https://dl.pstmn.io/download/latest/linux64 && gunzip -d /tmp/postman.tar.gz && cd /usr/local/bin && tar -xvf /tmp/postman.tar && rm -rf /tmp/blender.tar" ],
+    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin  libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin && apt-get clean",
+                        "RUN curl -Ls -o /tmp/postman.tar.gz https://dl.pstmn.io/download/latest/linux64 && gunzip -d /tmp/postman.tar.gz && cd /usr/local/bin && tar -xvf /tmp/postman.tar && rm -rf /tmp/blender.tar" ],
     "cat": "development",
     "debpackage": "",
     "installrecommends" : false,
@@ -145,7 +144,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "x11-apps",
-    "icon": "circle_xorg.svg",
+    "icon": "circle_xedit.svg",
     "keyword": "text,notepad,edit,txt,editor,xedit",
     "launch": "xedit.Xedit",
     "name": "xedit",
@@ -311,7 +310,7 @@
 	"ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
         "USER $BUSER",
         "RUN wineboot --init",
-        "RUN wget -O /composer/bin/putty.exe https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe",
+        "RUN curl -Ls -o /composer/bin/putty.exe https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe",
         "RUN echo disable > $WINEPREFIX/.update-timestamp",
         "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine/" ],
     "args": "/composer/bin/putty.exe",
@@ -380,6 +379,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "2048-qt",
+    "run_inside_pod": true,
     "icon": "circle_2048.svg",
     "keyword": "2048",
     "launch": "2048-qt.2048-qt",
@@ -407,7 +407,24 @@
 	    		"COPY VMware-Remote-Console-12.0.1-18113358.x86_64.bundle /tmp",
 			"RUN chmod o+x /tmp/VMware-Remote-Console-12.0.1-18113358.x86_64.bundle",
            		"RUN /tmp/VMware-Remote-Console-12.0.1-18113358.x86_64.bundle --eulas-agreed --console --required --ignore-errors" ]    
-}, 
+},{
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities",
+    "licence" : "non-free",
+    "debpackage": "",
+    "icon": "circle-remotedesktopmanager.svg",
+    "keyword": "remote,desktop,ssh",
+    "launch": "RemoteDesktopManager.Free.RemoteDesktopManager.Free",
+    "name": "remotedesktopmanager",
+    "displayname": "RemoteDesktop",
+    "path": "/usr/lib/devolutions/RemoteDesktopManager.Free/RemoteDesktopManager.Free",
+    "template": "abcdesktopio/oc.template.gtk",
+    "mimetype": "",
+    "desktopfile": "/usr/share/applications/remotedesktopmanager.free.desktop",
+    "preruncommands": [ "RUN curl -Ls -o /tmp/RemoteDesktopManager.Free_2022.1.0.7_amd64.deb https://cdn.devolutions.net/download/Linux/RDM/2022.1.0.7/RemoteDesktopManager.Free_2022.1.0.7_amd64.deb",
+                        "RUN apt-get install --yes /tmp/RemoteDesktopManager.Free_2022.1.0.7_amd64.deb",
+     			"COPY composer/init.d/init.RemoteDesktopManager.Free /composer/init.d/init.RemoteDesktopManager.Free" ]
+},
 {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -436,9 +453,9 @@
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,graphics",
     "debpackage": "",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes xz-utils wget && apt-get clean",
+    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes xz-utils && apt-get clean",
                         "RUN apt-get update && apt-get install                          --yes libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 && apt-get clean",
-                        "RUN wget -O /tmp/blender.tar.xz https://download.blender.org/release/Blender2.90/blender-2.90.0-linux64.tar.xz && xz -d /tmp/blender.tar.xz && cd /usr/local && tar -xvf /tmp/blender.tar && rm -rf /tmp/blender.tar" ],
+                        "RUN curl -Ls -o /tmp/blender.tar.xz https://download.blender.org/release/Blender2.90/blender-2.90.0-linux64.tar.xz && xz -d /tmp/blender.tar.xz && cd /usr/local && tar -xvf /tmp/blender.tar && rm -rf /tmp/blender.tar" ],
     "icon": "circle_blender.svg",
     "keyword": "blender,modeler",
     "launch": "Blender.Blender",
@@ -491,7 +508,7 @@
 	    			"COPY composer/init.d/init.nautilus /composer/init.d/init.nautilus",
    				"COPY composer/desktop_download.py /composer/desktop_download.py" ],
     "debpackage": "dbus gnome-icon-theme gnome-icon-theme-symbolic numix-gtk-theme numix-icon-theme gnome-font-viewer dbus-x11 python-nautilus python-shellescape nautilus desktop-file-utils shared-mime-info xdg-user-dirs",
-    "icon": "circle_nautilus.svg",
+    "icon": "circle_filemanager.svg",
     "keyword": "file,manager,nautilus",
     "launch": "nautilus.Nautilus",
     "name": "nautilus",
@@ -505,6 +522,7 @@
     "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
+    "rules": { "homedir": { "default": true } },
     "cat": "office",
     "comment": "NSS_SDB_USE_CACHE=yes",
     "preruncommands": [ "RUN DEBIAN_FRONTEND=noninteractive echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
@@ -598,8 +616,8 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-     "preruncommands": ["RUN apt-get update && apt-get install  --no-install-recommends --yes wget libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 && apt-get clean",
-	                "RUN wget --quiet -O - https://deb.beekeeperstudio.io/beekeeper.key | apt-key add -",
+     "preruncommands": ["RUN apt-get update && apt-get install  --no-install-recommends --yes libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 && apt-get clean",
+	                "RUN curl -Ls https://deb.beekeeperstudio.io/beekeeper.key | apt-key add -",
                         "RUN echo \"deb https://deb.beekeeperstudio.io stable main\" | tee /etc/apt/sources.list.d/beekeeper-studio-app.list",
     			"RUN apt-get update && apt-get install  --no-install-recommends --yes beekeeper-studio libxshmfence1 && apt-get clean",
     			"RUN mv \"/opt/Beekeeper Studio/\" /opt/Beekeeper-Studio",
@@ -626,7 +644,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-vnc remmina-plugin-exec remmina-plugin-nx remmina-plugin-spice remmina-plugin-xdmcp",
+    "debpackage": "remmina libsecret-1-0 remmina-plugin-rdp remmina-plugin-secret remmina-plugin-vnc remmina-plugin-exec remmina-plugin-nx remmina-plugin-spice remmina-plugin-xdmcp",
     "icon": "remmina.svg",
     "keyword": "rdp,tsclient",
     "launch": "remmina.Remmina",
@@ -637,6 +655,7 @@
     "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "application/x-remmina;",
     "desktopfile":"/usr/share/applications/remmina-file.desktop",
+    "rules": { "homedir": { "default": true } },
     "usedefaultapplication": true
 },{
     "comment": "download icaclientWeb from https://www.citrix.com/fr-fr/downloads/citrix-receiver/linux/receiver-for-linux-latest.html", 
@@ -656,6 +675,7 @@
     "path": "/opt/Citrix/ICAClient/wfica",
     "template": "abcdesktopio/oc.template.gtk.18.04",
     "mimetype": "application/x-ica;",
+    "rules": { "homedir": { "default": true } },
     "desktopfile":"/usr/share/applications/wfica.desktop",
     "host_config": { "mem_limit": "512M", "shm_size": "512M", "pid_mode": true, "ipc_mode": "shareable"  },
     "usedefaultapplication": true,
@@ -663,8 +683,8 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "preruncommands": [ "RUN apt-get update && apt-get install --no-install-recommends --yes wget python3-gtkspellcheck wkhtmltopdf python3-markdown gir1.2-gtksource-3.0 yelp gir1.2-webkit-3.0 python3-bs4 && apt-get clean",
-                        "RUN wget -O /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb && apt-get install  --no-install-recommends --yes /tmp/remarkable_1.87_all.deb && apt-get clean && rm -rf /tmp/remarkable_1.87_all.deb && rm -rf /var/lib/apt/lists/*" ],
+    "preruncommands": [ "RUN apt-get update && apt-get install --no-install-recommends --yes python3-gtkspellcheck wkhtmltopdf python3-markdown gir1.2-gtksource-3.0 yelp gir1.2-webkit-3.0 python3-bs4 && apt-get clean",
+                        "RUN curl -Ls -o /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb && apt-get install  --no-install-recommends --yes /tmp/remarkable_1.87_all.deb && apt-get clean && rm -rf /tmp/remarkable_1.87_all.deb && rm -rf /var/lib/apt/lists/*" ],
     "debpackage": "",
     "icon": "remarkable.svg",
     "keyword": "markdown,editor",
@@ -684,9 +704,8 @@
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean",
-	                "RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libx11-xcb1 libasound2 && apt-get clean",
-                        "RUN wget -O /tmp/hyper.deb  https://releases.hyper.is/download/deb && apt-get install  --no-install-recommends --yes /tmp/hyper.deb && apt-get clean && rm -rf /tmp/hyper.deb" ],
+    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libx11-xcb1 libasound2 && apt-get clean",
+                        "RUN curl -Ls -o /tmp/hyper.deb  https://releases.hyper.is/download/deb && apt-get install  --no-install-recommends --yes /tmp/hyper.deb && apt-get clean && rm -rf /tmp/hyper.deb" ],
     "icon": "hyper.svg",
     "keyword": "terminal,remote",
     "launch": "hyper.Hyper",
@@ -701,8 +720,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine fonts-recommended google-chrome-stable",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes  wget  && apt-get clean && rm -rf /var/lib/apt/lists/*",
-			"RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -",
+    "preruncommands": [ "RUN curl -Ls https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -",
 			"RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list" ],
     "icon": "circle_google-chrome.svg",
     "keyword": "web,browser,internet",
@@ -713,7 +731,7 @@
     "splash": "enable",
     "installrecommends" : true,
     "path": "/usr/bin/google-chrome-stable",
-    "args": "-no-sandbox --disable-gpu --disable-dev-shm-usage",
+    "args": "--no-sandbox --disable-gpu --disable-dev-shm-usage",
     "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
@@ -994,7 +1012,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
     "debpackage": "gimp",
-    "icon": "gimp.svg",
+    "icon": "circle_gimp.svg",
     "keyword": "gimp,image,gif,tiff,png,jpeg,bmp,tga,pcx,bitmap,jpg,pixmap",
     "launch": "gimp.Gimp",
     "name": "Gimp",
@@ -1096,15 +1114,14 @@
     "template": "abcdesktopio/oc.template.gtk.18.04",
     "host_config": { "mem_limit": "512M"  },
     "desktopfile": "/opt/brackets/brackets.desktop",
-    "preruncommands": [  "RUN apt-get update && apt-get install -y libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin  wget libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin wget libcurl3 libxss1 && apt-get clean",
-    			 "RUN apt-get update && wget https://github.com/adobe/brackets/releases/download/release-1.14.1/Brackets.Release.1.14.1.64-bit.deb -O /tmp/bracket.deb && apt-get install -y /tmp/bracket.deb && rm /tmp/bracket.deb && rm -rf /var/lib/apt/lists/*"
+    "preruncommands": [  "RUN apt-get update && apt-get install -y libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin libcurl3 libxss1 && apt-get clean",
+    			 "RUN apt-get update && curl -Ls -o /tmp/bracket.deb https://github.com/adobe/brackets/releases/download/release-1.14.1/Brackets.Release.1.14.1.64-bit.deb && apt-get install -y /tmp/bracket.deb && rm /tmp/bracket.deb && rm -rf /var/lib/apt/lists/*"
     ],
     "args": "--no-sandbox  --disable-gpu"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget && apt-get clean && rm -rf /var/lib/apt/lists/*",
-                        "RUN wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -a",
+    "preruncommands": [ "RUN curl -Ls https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -a",
                         "RUN echo \"deb https://download.sublimetext.com/ apt/stable/\" | tee /etc/apt/sources.list.d/sublime-text.list",
    			"RUN apt-get update && apt-get install --yes libgl1 && apt-get clean" ],
     "debpackage": "sublime-text",
@@ -1161,8 +1178,7 @@
 },   {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget unzip && apt-get clean && rm -rf /var/lib/apt/lists/*",
-                        "RUN cd /composer && wget https://th.corsix.org/Demo.zip && unzip Demo.zip && rm -rf Demo.zip",
+    "preruncommands": [ "RUN cd /composer &&  curl -Ls https://th.corsix.org/Demo.zip -o Demo.zip && unzip Demo.zip && rm -rf Demo.zip",
                         "COPY corsix-th.config.txt /composer/corsix-th.config.txt" ],
     "debpackage": "libgl1 corsix-th",
     "icon": "games.svg",
@@ -1323,7 +1339,7 @@
     "fileextensions": "drawio",
     "legacyfileextensions": "drawio",
     "desktopfile": "/usr/share/applications/drawio.desktop",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget && wget 'https://github.com/jgraph/drawio-desktop/releases/download/v16.5.1/drawio-amd64-16.5.1.deb' -O /tmp/drawio-amd64-16.5.1.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64-16.5.1.deb && rm /tmp/drawio-amd64-16.5.1.deb && rm -rf /var/lib/apt/lists/*" ]
+    "preruncommands": [ "RUN apt-get update &&  curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v16.5.1/drawio-amd64-16.5.1.deb' -o /tmp/drawio-amd64-16.5.1.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64-16.5.1.deb && rm /tmp/drawio-amd64-16.5.1.deb && rm -rf /var/lib/apt/lists/*" ]
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1372,7 +1388,7 @@
     "desktop": "minecraft-launcher.desktop",
     "host_config": { "mem_limit": "4G", "shm_size" : "2G",  "cpu_period": 200000, "cpu_quota": 200000, "ipc_mode": "shareable" },
     "desktopfile" : "/usr/share/applications/minecraft-launcher.desktop",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes wget libflite1 openjdk-8-jre at-spi2-core dbus-x11 orca libsecret-1-0 && wget 'https://launcher.mojang.com/download/Minecraft.deb' -O /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*",
+    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes libflite1 openjdk-8-jre at-spi2-core dbus-x11 orca libsecret-1-0 && curl -Ls 'https://launcher.mojang.com/download/Minecraft.deb' -o /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*",
 	    "COPY composer/init.d/init.minecraft-launcher /composer/init.d"
                       ]
 }, {
@@ -1435,7 +1451,7 @@
     "fileextensions": "c;cpp;py;json;js;java;jav;md;xml;txt;svg;html;htm;sh;csh;css;jsx;tsx;vue;yml;yaml;",
     "desktopfile" : "/usr/share/applications/code.desktop",
     "preruncommands": [  "RUN apt-get update && apt-get install --no-install-recommends --yes dbus-x11 dbus-user-session libxshmfence1 libx11-xcb1 libxcb-dri3-0 libgbm1 libdrm2 libxtst6 && apt-get clean",
-                         "RUN wget 'https://go.microsoft.com/fwlink/?LinkID=760868' -O /tmp/VSCode-linux-x64-stable.deb && apt-get install /tmp/VSCode-linux-x64-stable.deb && rm /tmp/VSCode-linux-x64-stable.deb && rm -rf /var/lib/apt/lists/*",
+                         "RUN curl -Ls 'https://go.microsoft.com/fwlink/?LinkID=760868' -o /tmp/VSCode-linux-x64-stable.deb && apt-get install /tmp/VSCode-linux-x64-stable.deb && rm /tmp/VSCode-linux-x64-stable.deb && rm -rf /var/lib/apt/lists/*",
 			 "RUN mkdir -p /usr/share/code/extensions && chown -R $BUSER:$BUSER /usr/share/code/extensions" 
                       ],
     "quick": true
@@ -1634,6 +1650,18 @@
     "template": "abcdesktopio/oc.template.gtk"
 }, {
     "acl": { "permit": [ "all" ] },
+    "cat": "utilities",
+    "debpackage": "rhythmbox",
+    "icon": "circle_rhythmbox.svg",
+    "keyword": "rhythmbox,audio;song;mp3;cd;podcast;MTP;playlist;last.fm;dlna;radio;",
+    "launch": "rhythmbox.Rhythmbox",
+    "name": "rhythmbox",
+    "path": "/usr/bin/rhythmbox",
+    "template": "abcdesktopio/oc.template.gtk",
+    "mimetype": "application/x-ogg;application/ogg;audio/x-vorbis+ogg;audio/vorbis;audio/x-vorbis;audio/x-scpls;audio/x-mp3;audio/x-mpeg;audio/mpeg;audio/x-mpegurl;audio/x-flac;audio/mp4;audio/x-it;audio/x-mod;audio/x-s3m;audio/x-stm;audio/x-xm;",
+    "desktopfile": "/usr/share/applications/rhythmbox.desktop"
+}, {
+    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "dbus-x11 dbus-user-session kdiamond",
     "icon": "kdiamond.svg",
@@ -1653,7 +1681,7 @@
     "name": "youtube",
     "displayname": "Youtube",
     "splash": "enable",
-    "rules": { "homedir": { "default": true } }, 
+    "rules": { "homedir": { "default": false } }, 
     "host_config": { "mem_limit": "2G", "shm_size" : "2G" }, 
     "installrecommends" : true,
     "path": "/usr/bin/firefox",
