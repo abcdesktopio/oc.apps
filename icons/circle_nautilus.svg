@@ -1,6 +1,6 @@
-<svg id="SimpleNote" width="64" height="64" enable-background="new 0 0 1024 1024" image-rendering="optimizeSpeed" version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" image-rendering="optimizeSpeed" enable-background="new 0 0 1024 1024">
  <defs>
-  <linearGradient id="linearGradient1369">
+ <linearGradient id="linearGradient1369">
    <stop stop-color="#fff" stop-opacity=".025105" offset="0"/>
    <stop stop-color="#fff" offset=".5"/>
    <stop stop-color="#fff" stop-opacity=".20921" offset="1"/>
@@ -66,9 +66,31 @@
   <filter id="filter930" x="-.03888" y="-.03888" width="1.0778" height="1.0778" color-interpolation-filters="sRGB">
    <feGaussianBlur stdDeviation="0.972"/>
   </filter>
+  <filter color-interpolation-filters="sRGB" height="1.072" width="1.072" y="-0.036" x="-0.036" id="e">
+   <feGaussianBlur stdDeviation="14.34375"/>
+  </filter>
+  <linearGradient id="a">
+   <stop offset="0" stop-color="#2f5fdd"/>
+   <stop offset="1" stop-color="#1a7fd4"/>
+  </linearGradient>
+  <linearGradient y2="1.09211" y1="-0.08864" x2="0.50984" x1="0.50984" id="d">
+   <stop offset="0" stop-color="#111"/>
+   <stop offset="1" stop-color="#3b3b3b"/>
+  </linearGradient>
+  <linearGradient xlink:href="#a" y2="0.03518" y1="-0.0389" x2="-0.00135" x1="-0.00135" id="svg_19"/>
  </defs>
- <circle cx="32" cy="32" r="30" fill="#000000" filter="url(#filter930)" opacity=".15" stroke-linecap="square" stroke-width="2.2881" style="isolation:isolate;paint-order:stroke fill markers"/>
- <circle cx="32" cy="32" r="30" fill="url(#linearGradient899)" stroke-linecap="square" stroke-width="2.2881" style="isolation:isolate;paint-order:stroke fill markers"/>
+ <g>
+  <title>Layer 1</title>
+  <circle transform="matrix(0.062745 0 0 0.062745 -0.12549 -0.12549)" id="svg_2" opacity="0.25" filter="url(#e)" r="478.12" cy="512" cx="512"/>
+  <g stroke-width="15.938" transform="matrix(0.0624997 0 0 0.0624997 0 0)" id="shadow"/>
+  <path id="svg_4" d="m31.99995,61.99959c-16.57439,0 -29.99964,-13.42525 -29.99964,-29.99964c0,-16.57439 13.42525,-29.99964 29.99964,-29.99964c16.57439,0 29.99964,13.42525 29.99964,29.99964c0,16.57439 -13.42525,29.99964 -29.99964,29.99964z" opacity="undefined" fill="url(#svg_19)"/>
+  <circle transform="matrix(0.062745 0 0 0.062745 -0.12549 -0.12549)" id="svg_5" fill="url(#d)" r="431.93" cy="512.5" cx="511.5"/>
+</g>
+
+
+
+<circle cx="32" cy="32" r="30" fill="#000000" filter="url(#filter930)" opacity=".15" stroke-linecap="square" stroke-width="2.2881" style="isolation:isolate;paint-order:stroke fill markers"/>
+
  <g fill="#000000" font-size="4.3416px">
   <g font-family="'Bitstream Vera Sans'">
    <g stroke-width=".34276">
@@ -283,4 +305,7 @@
   <rect transform="matrix(.34276 0 0 .34276 10.812 10.268)" x="85" y="82" width="15" height="5" fill="#8cd5ff" filter="url(#filter9721)" opacity=".8"/>
   <rect x="41.318" y="39.06" width="2.3993" height=".34276" fill="url(#linearGradient1383)"/>
  </g>
+
+
+
 </svg>
