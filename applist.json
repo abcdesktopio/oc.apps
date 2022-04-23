@@ -499,6 +499,18 @@
     "legacyfileextensions": "pdf;ps;dvi",
     "desktopfile": "/usr/share/applications/evince.desktop",
     "quick": true
+},  {
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities",
+    "debpackage": "filezilla",
+    "icon": "circle_filezilla.svg",
+    "keyword": "ftp,client",
+    "launch": "filezilla.Filezilla",
+    "name": "filezilla",
+    "path": "/usr/bin/filezilla",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.gtk",
+    "desktopfile": "/usr/share/applications/filezilla.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
@@ -525,11 +537,8 @@
     "rules": { "homedir": { "default": true } },
     "cat": "office",
     "comment": "NSS_SDB_USE_CACHE=yes",
-    "preruncommands": [ "RUN DEBIAN_FRONTEND=noninteractive echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
-                        "RUN apt-get update && apt-get install  --no-install-recommends --yes ttf-mscorefonts-installer ttf-bitstream-vera ttf-dejavu ttf-xfree86-nonfree && apt-get clean",
-	    		"RUN apt-get update && apt-get install  --no-install-recommends --yes winbind firefox $(apt-cache search firefox-locale | awk '{print $1 }') && apt-get clean",
-			"RUN apt-get update && apt-get install  --no-install-recommends --yes flashplugin-installer ubuntu-restricted-extras libavc1394-0 && apt-get clean",
-                        "RUN apt-get update && apt-get install  --no-install-recommends --yes libasound2-plugins libgail-common libgtk2.0-bin chromium-codecs-ffmpeg-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi libavcodec-extra && apt-get clean",
+    "preruncommands": [ 
+	    		"RUN apt-get update && apt-get install  --yes winbind firefox-esr $(apt-cache search firefox-esr | awk '{print $1 }') && apt-get clean",
 			"COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
 			"COPY policies.json /usr/lib/firefox/distribution",
 			"COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
@@ -544,7 +553,7 @@
     "splash": "enable",
     "run_inside_pod": false,
     "path": "/usr/bin/firefox",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.debian.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
@@ -782,6 +791,26 @@
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
     "desktopfile":"/usr/share/applications/microsoft-edge.desktop",
+    "quick": true
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "office",
+    "debpackage": "",
+    "preruncommands": [ "COPY teams_1.3.00.5153_amd64.deb /tmp",
+                        "RUN apt-get update && apt-get install -y /tmp/teams_1.3.00.5153_amd64.deb && apt-get clean && rm /tmp/*.deb" ],
+    "icon": "teams.svg",
+    "keyword": "teams",
+    "launch": "microsoft teams - preview.Microsoft Teams - Preview",
+    "name": "teams",
+    "displayname": "Microsoft Teams",
+    "splash": "enable",
+    "installrecommends" : true,
+    "path": "/usr/bin/teams",
+    "rules": { "homedir": { "default": true } },
+    "args": "--disable-namespace-sandbox --disable-setuid-sandbox",
+    "template": "abcdesktopio/oc.template.gtk",
+    "mimetype": "x-scheme-handler/msteams;",
+    "desktopfile":"/usr/share/applications/teams.desktop",
     "quick": true
 },{
     "acl": { "permit": [ "all" ] },
@@ -1114,8 +1143,10 @@
     "template": "abcdesktopio/oc.template.gtk.18.04",
     "host_config": { "mem_limit": "512M"  },
     "desktopfile": "/opt/brackets/brackets.desktop",
-    "preruncommands": [  "RUN apt-get update && apt-get install -y libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin libcurl3 libxss1 && apt-get clean",
-    			 "RUN apt-get update && curl -Ls -o /tmp/bracket.deb https://github.com/adobe/brackets/releases/download/release-1.14.1/Brackets.Release.1.14.1.64-bit.deb && apt-get install -y /tmp/bracket.deb && rm /tmp/bracket.deb && rm -rf /var/lib/apt/lists/*"
+    "preruncommands": [  
+	    "RUN curl -Ls -o /tmp/bracket.deb https://github.com/adobe/brackets/releases/download/release-1.14.1/Brackets.Release.1.14.1.64-bit.deb",
+	    "RUN apt-get update && apt-get install -y libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin libcurl3 libxss1 && apt-get clean", 
+	    "RUN apt-get update && apt-get install -y /tmp/bracket.deb && rm /tmp/bracket.deb  && apt-get clean && rm -rf /var/lib/apt/lists/*"
     ],
     "args": "--no-sandbox  --disable-gpu"
 }, {
@@ -1178,7 +1209,8 @@
 },   {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
-    "preruncommands": [ "RUN cd /composer &&  curl -Ls https://th.corsix.org/Demo.zip -o Demo.zip && unzip Demo.zip && rm -rf Demo.zip",
+    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes unzip && apt-get clean",
+	    		"RUN cd /composer &&  curl -Ls https://th.corsix.org/Demo.zip -o Demo.zip && unzip Demo.zip && rm -rf Demo.zip",
                         "COPY corsix-th.config.txt /composer/corsix-th.config.txt" ],
     "debpackage": "libgl1 corsix-th",
     "icon": "games.svg",
@@ -1339,7 +1371,7 @@
     "fileextensions": "drawio",
     "legacyfileextensions": "drawio",
     "desktopfile": "/usr/share/applications/drawio.desktop",
-    "preruncommands": [ "RUN apt-get update &&  curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v16.5.1/drawio-amd64-16.5.1.deb' -o /tmp/drawio-amd64-16.5.1.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64-16.5.1.deb && rm /tmp/drawio-amd64-16.5.1.deb && rm -rf /var/lib/apt/lists/*" ]
+    "preruncommands": [ "RUN apt-get update &&  curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v17.2.1/drawio-amd64-17.2.1.deb' -o /tmp/drawio-amd64.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64.deb && rm /tmp/drawio-amd64.deb && rm -rf /var/lib/apt/lists/*" ]
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
