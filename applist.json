@@ -408,7 +408,8 @@
     "path": "/usr/games/2048-qt",
     "desktopfile": "/usr/share/applications/2048-qt.desktop",
     "template": "abcdesktopio/oc.template.gtk",
-    "host_config": { "mem_limit": "256M", "shm_size": "64M", "pid_mode": false, "network_mode": "none" } 
+    "rules": { "homedir": { "default": true } },
+    "host_config": { "mem_limit": "256M", "shm_size": "64M", "pid_mode": false, "network_mode": "none" }
 }, 
 {
     "acl": { "permit": [ "all" ] },
@@ -587,7 +588,6 @@
     "displayname": "Firefox",
     "showinview": "dock",
     "splash": "enable",
-    "secrets_requirement": [ "ntlm", "kerberos" ],
     "run_inside_pod": false,
     "path": "/usr/bin/firefox",
     "template": "abcdesktopio/oc.template.gtk.20.04",
@@ -782,7 +782,7 @@
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
     "desktopfile":"/usr/share/applications/chromium-browser.desktop",
-    "quick": true
+    "abcdesktop_release": 3 
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -897,7 +897,7 @@
     "fileextensions": "sxw;stw;doc;dot;wps;rtf;602;wpd;docx;docm;dotx;dotm;abw;zabw;pages;dummy;lrf;cwk;hqx;fb2;mw;mcw;mwd;pdb;wn",
     "desktopfile": "/usr/share/applications/libreoffice-writer.desktop",
     "usedefaultapplication": true,
-    "quick": true
+    "abcdesktop_release": 3
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -919,7 +919,7 @@
     "fileextensions": "ods;ots;sxc;stc;fods;uos;uof;xml;xlsx;xlsm;xltm;xltx;xlsb;xls;xlm;xlc;xlw;xlk;xlt;dif;dbf;htm;html;wk1;wks;123;wb2;rtf;slk;sylk;csv;numbers;dummy;cwk;wps;wk3;wq1;wq2",
     "desktopfile": "/usr/share/applications/libreoffice-calc.desktop",
     "usedefaultapplication": true,
-    "quick": true
+    "abcdesktop_release": 3
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -959,7 +959,7 @@
     "legacyfileextensions": "odf;odc",
     "desktopfile": "/usr/share/applications/libreoffice-math.desktop",
     "usedefaultapplication": true,
-    "quick": true
+    "abcdesktop_release": 3
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -979,7 +979,7 @@
     "legacyfileextensions":"odp;otg",
     "desktopfile": "/usr/share/applications/libreoffice-draw.desktop",
     "usedefaultapplication": true,
-    "quick": true
+    "abcdesktop_release": 3
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -999,7 +999,7 @@
     "legacyfileextensions":"odb",
     "desktopfile": "/usr/share/applications/libreoffice-base.desktop",
     "usedefaultapplication": true,
-    "quick": true
+    "abcdesktop_release": 3
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1014,7 +1014,8 @@
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
-    "quick": true
+    "abcdesktop_release": 3,
+    "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY composer/init.d/init.gnome-terminal /composer/init.d/init.gnome-terminal" ] 
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1356,7 +1357,8 @@
     "mimetype": "application/x-gnumeric;application/x-oleo;application/x-planperfect;application/x-sc;application/x-sylk;application/x-xbase;",
     "fileextensions": "gnm",
     "legacyfileextensions":"gnm",
-    "desktopfile": "/usr/share/applications/gnumeric.desktop"
+    "desktopfile": "/usr/share/applications/gnumeric.desktop",
+    "abcdesktop_release": 3
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1688,17 +1690,8 @@
     "path": "/usr/bin/gelemental",
     "template": "abcdesktopio/oc.template.gtk.language-pack-all",
     "desktop": "gelemental.desktop"
-}, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "debpackage": "netbeans",
-    "icon": "netbeans.svg",
-    "keyword": "ide,netbeans,code",
-    "launch": "sun-awt-X11-XFramePeer.java-lang-Thread",
-    "name": "Netbeans",
-    "path": "/usr/bin/netbeans",
-    "template": "abcdesktopio/oc.template.gtk"
-}, {
+}, 
+{
     "acl": { "permit": [ "all" ] },
     "cat": "education",
     "debpackage": "qelectrotech",
@@ -1793,28 +1786,5 @@
     "preventhomemount" : false,
     "quick": true,
     "preruncommands": [ "COPY composer/init.d/init.firefox.youtube /composer/init.d/init.firefox" ]
-}, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "debpackage": "firefox",
-    "icon": "firefox.svg",
-    "keyword": "web,browser",
-    "launch": "Navigator.firefox",
-    "args": "file:///composer/disablednetwork.html",
-    "name": "firefox.demo",
-    "showinview": "dock",
-    "displayname": "Firefox Demo",
-    "splash": "enable",
-    "host_config": { "mem_limit": "2G", "shm_size" : "2G" },
-    "installrecommends" : true,
-    "path": "/usr/bin/firefox",
-    "template": "abcdesktopio/oc.template.gtk",
-    "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
-    "legacyfileextensions": "html;xml",
-    "fileextensions": "html;xml;gif",
-    "desktopfile":"/usr/share/applications/firefox.desktop",
-    "quick": true,
-    "preruncommands": [ "COPY composer/disablednetwork.html /composer/disablednetwork.html",
-	                "COPY composer/init.d/init.firefox /composer/init.d/init.firefox" ]
-}
+} 
 ]
