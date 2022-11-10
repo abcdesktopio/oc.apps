@@ -1,10 +1,12 @@
 [{
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "preruncommands": [  "RUN curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -",
-			 "RUN echo \"deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main\" > /etc/apt/sources.list.d/atom.list",
-   			 "RUN apt-get update && apt-get install --yes hunspell $(apt-cache search aspell | grep aspell- | awk '{print $1 }') && rm -rf /var/lib/apt/lists/*",
-   			 "ENV QT_X11_NO_MITSHM=1" ],
+    "preruncommands": [  
+        "RUN curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -",
+		"RUN echo \"deb [arch=$(dpkg --print-architecture)] https://packagecloud.io/AtomEditor/atom/any/ any main\" > /etc/apt/sources.list.d/atom.list",
+   		"RUN apt-get update && apt-get install --yes hunspell $(apt-cache search aspell | grep aspell- | awk '{print $1 }') && rm -rf /var/lib/apt/lists/*",
+   		"ENV QT_X11_NO_MITSHM=1" 
+    ],
     "debpackage": "libxcb-dri3-0 libdrm-common libdrm2 libgbm1 libxss1 atom aspell libasound2",
     "icon": "circle_atom.svg",
     "installrecommends" : false,
@@ -13,7 +15,7 @@
     "name": "Atom",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/atom",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "args": "--no-sandbox  --disable-gpu",
     "desktopfile": "/usr/share/applications/atom.desktop"
 }, {
@@ -26,16 +28,18 @@
     "launch": "blobby.blobby",
     "name": "blobby",
     "path": "/usr/games/blobby",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "args": "",
     "desktopfile": "/usr/share/applications/blobby.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "preruncommands": [  "RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5",
-	    		 "RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
-                         "RUN echo \"deb [arch=amd64] https://download.onlyoffice.com/repo/debian squeeze main\" > /etc/apt/sources.list.d/onlyoffice.list",
-			 "RUN apt-get update && apt-get install  --yes libgl1 libnss3 qt5dxcb-plugin && apt-get clean && rm -rf /var/lib/apt/lists/*" ],
+    "preruncommands": [  
+        "RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5",
+	"RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
+        "RUN echo \"deb [arch=$(dpkg --print-architecture)] https://download.onlyoffice.com/repo/debian squeeze main\" > /etc/apt/sources.list.d/onlyoffice.list",
+	"RUN apt-get update && apt-get install --yes libgl1 libnss3 qt5dxcb-plugin && apt-get clean && rm -rf /var/lib/apt/lists/*" 
+    ],
     "debpackage": "onlyoffice-desktopeditors",
     "icon": "onlyoffice-desktopeditors.svg",
     "installrecommends" : true,
@@ -55,18 +59,22 @@
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "icon": "circle_xterm.svg",
-    "debpackage": "xterm",
+    "apkpackage": "xterm",
     "keyword": "xterm,shell,cmd",
     "launch": "xterm.XTerm",
     "name": "Xterm",
     "path": "/usr/bin/xterm",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.alpine.template.minimal",
+    "preruncommands": [
+        "RUN apk add sudo",
+        "echo \"balloon ALL=(ALL) NOPASSWD:ALL\" | tee /etc/sudoers.d/balloon" ],
     "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin  libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin && apt-get clean",
-                        "RUN curl -Ls -o /tmp/postman.tar.gz https://dl.pstmn.io/download/latest/linux64 && gunzip -d /tmp/postman.tar.gz && cd /usr/local/bin && tar -xvf /tmp/postman.tar && rm -rf /tmp/blender.tar" ],
+    "preruncommands": [ 
+        "RUN apt-get update && apt-get install --no-install-recommends --yes libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin  libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin && apt-get clean",
+        "RUN curl -Ls -o /tmp/postman.tar.gz https://dl.pstmn.io/download/latest/linux64 && gunzip -d /tmp/postman.tar.gz && cd /usr/local/bin && tar -xvf /tmp/postman.tar && rm -rf /tmp/blender.tar" ],
     "cat": "development",
     "debpackage": "",
     "installrecommends" : false,
@@ -89,7 +97,7 @@
     "displayname": "Filelight",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/filelight",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "inode/directory;",
     "fileextensions":"",
     "args": "",
@@ -120,7 +128,7 @@
     "name": "xman",
     "displayname": "Xman",
     "path": "/usr/bin/xman",
-    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "template": "abcdesktopio/oc.template.minimal.18.04",
     "mimetype": "application/x-troff;application/x-troff-man;",
     "fileextensions":"man;roff",
     "args": ""
@@ -151,33 +159,11 @@
     "displayname": "Xedit",
     "path": "/usr/bin/xedit",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "application/text;",
     "fileextensions":"txt;log;md",
     "args": "",
     "quick": true
-}, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "debpackage": "firefox winbind",
-    "icon": "circle_firefox-developer-icon.svg",
-    "keyword": "rest,http",
-    "launch": "Navigator.Rest.Firefox",
-    "args": "--class=Rest.Firefox",
-    "name": "FirefoxRest",
-    "displayname": "Firefox-Rest",
-    "splash": "enable",
-    "installrecommends" : true,
-    "forceconfold" : true,
-    "path": "/usr/bin/firefox",
-    "template": "abcdesktopio/oc.template.gtk.firefox.rest",
-    "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
-    "legacyfileextensions": "html;xml",
-    "rules": { "homedir": { "default": true } },
-    "fileextensions": "html;xml;gif",
-    "desktopfile":"/usr/share/applications/firefox.desktop",
-    "quick": true,
-    "preruncommands": [ "COPY composer/init.d/init.firefox /composer/init.d/init.firefox" ]
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -195,18 +181,6 @@
     "rules": { "homedir": { "default": true } },
     "desktopfile": "/usr/share/applications/org.gnome.FileRoller.desktop",
     "quick": true
-}, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "utilities",
-    "debpackage": "",
-    "icon": "gephi.svg",
-    "keyword": "gephi",
-    "launch": "sun-awt-X11-XFramePeer.Gephi 0.9.1",
-    "name": "gephi",
-    "displayname": "Gephi",
-    "path": "/opt/gephi-0.9.1/bin/gephi",
-    "template": "abcdesktopio/oc.template.gtk.java.gephi",
-    "args": ""
 }, {
     "acl": { "permit": [ "all" ] },
     "args": "notepad",
@@ -281,7 +255,7 @@
     "name": "frozen-bubble",
     "displayname": "frozen-bubble",
     "path": "/usr/games/frozen-bubble",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "args": "winemine",
@@ -356,7 +330,7 @@
     "name": "putty-unix",
     "displayname": "Putty Unix",
     "path": "/usr/bin/putty",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -367,7 +341,7 @@
     "name": "supertux2",
     "displayname": "supertux2",
     "path": "/usr/games/supertux2",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "desktopfile": "/usr/share/applications/supertux2.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -379,7 +353,7 @@
     "name": "doom",
     "displayname": "Doom",
     "path": "/usr/games/doom",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -407,7 +381,7 @@
     "displayname": "2048",
     "path": "/usr/games/2048-qt",
     "desktopfile": "/usr/share/applications/2048-qt.desktop",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "rules": { "homedir": { "default": true } },
     "host_config": { "mem_limit": "256M", "shm_size": "64M", "pid_mode": false, "network_mode": "none" }
 }, 
@@ -425,10 +399,11 @@
     "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "x-scheme-handler/vmrc;",
     "desktopfile": "/usr/share/applications/vmware-vmrc.desktop",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes libaio1 && apt-get clean",
-	    		"COPY VMware-Remote-Console-12.0.1-18113358.x86_64.bundle /tmp",
-			"RUN chmod o+x /tmp/VMware-Remote-Console-12.0.1-18113358.x86_64.bundle",
-           		"RUN /tmp/VMware-Remote-Console-12.0.1-18113358.x86_64.bundle --eulas-agreed --console --required --ignore-errors" ]    
+    "preruncommands": [ 
+        "RUN apt-get update && apt-get install  --no-install-recommends --yes libaio1 && apt-get clean",
+	    "COPY VMware-Remote-Console-12.0.1-18113358.x86_64.bundle /tmp",
+		"RUN chmod o+x /tmp/VMware-Remote-Console-12.0.1-18113358.x86_64.bundle",
+        "RUN /tmp/VMware-Remote-Console-12.0.1-18113358.x86_64.bundle --eulas-agreed --console --required --ignore-errors" ]    
 },{
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -443,9 +418,10 @@
     "template": "abcdesktopio/oc.template.gtk",
     "mimetype": "",
     "desktopfile": "/usr/share/applications/remotedesktopmanager.free.desktop",
-    "preruncommands": [ "RUN curl -Ls -o /tmp/RemoteDesktopManager.Free_amd64.deb https://cdn.devolutions.net/download/Linux/RDM/2022.1.2.5/RemoteDesktopManager.Free_2022.1.2.5_amd64.deb",
-                        "RUN apt-get update && apt-get install --yes /tmp/RemoteDesktopManager.Free_amd64.deb && apt-get clean",
-     			"COPY composer/init.d/init.RemoteDesktopManager.Free /composer/init.d/init.RemoteDesktopManager.Free" ]
+    "preruncommands": [ 
+        "RUN curl -Ls -o /tmp/RemoteDesktopManager.Free_amd64.deb https://cdn.devolutions.net/download/Linux/RDM/2022.1.2.5/RemoteDesktopManager.Free_2022.1.2.5_amd64.deb",
+        "RUN apt-get update && apt-get install --yes /tmp/RemoteDesktopManager.Free_amd64.deb && apt-get clean",
+     	"COPY composer/init.d/init.RemoteDesktopManager.Free /composer/init.d/init.RemoteDesktopManager.Free" ]
 },
 {
     "acl": { "permit": [ "all" ] },
@@ -457,7 +433,7 @@
     "name": "astromenace",
     "displayname": "astromenace",
     "path": "/usr/games/AstroMenace",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "desktopfile": "/usr/share/applications/astromenace.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -469,14 +445,14 @@
     "name": "swell-foop",
     "displayname": "swell-foop",
     "path": "/usr/games/swell-foop",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "desktopfile": "/usr/share/applications/swell-foop.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,graphics",
     "debpackage": "",
     "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes xz-utils && apt-get clean",
-                        "RUN apt-get update && apt-get install                          --yes libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 && apt-get clean",
+                        "RUN apt-get update && apt-get install  --yes libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 && apt-get clean",
                         "RUN curl -Ls -o /tmp/blender.tar.xz https://download.blender.org/release/Blender2.90/blender-2.90.0-linux64.tar.xz && xz -d /tmp/blender.tar.xz && cd /usr/local && tar -xvf /tmp/blender.tar && rm -rf /tmp/blender.tar" ],
     "icon": "circle_blender.svg",
     "keyword": "blender,modeler",
@@ -501,7 +477,7 @@
     "path": "/usr/bin/vlc",
     "mimetype": "video/3gpp;video/dv;video/fli;video/flv;video/mp2t;video/mp4;video/mp4v-es;video/mpeg;video/msvideo;video/ogg;video/quicktime;video/vivo;video/vnd.divx;video/vnd.rn-realvideo;video/vnd.vivo;video/webm;video/x-anim;video/x-avi;video/x-flc;video/x-fli;video/x-flic;video/x-flv;video/x-m4v;video/x-matroska;video/x-mpeg;video/x-ms-asf;video/x-ms-asx;video/x-msvideo;video/x-ms-wm;video/x-ms-wmv;video/x-ms-wmx;video/x-ms-wvx;video/x-nsv;video/x-ogm+ogg;video/x-theora+ogg;",
     "fileextensions":"asx;dts;gxf;m2v;m3u;m4v;mpeg1;mpeg2;mts;mxf;ogm;pls;bup;a52;aac;b4s;cue;divx;dv;flv;m1v;m2ts;mkv;mov;mpeg4;oma;spx;ts,vlc,vob,xspf;dat;bin;ifo;part;3g2;avi;mpeg;mpg;flac;m4a;mp1;ogg;wav;xm;3gp;srt;wmv;ac3;asf;mod;mp2;mp3;mp4;wma;mka;m4p",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "rules": { "homedir": { "default": true } },
     "desktopfile": "/usr/share/applications/vlc.desktop",
     "quick": true
@@ -551,11 +527,12 @@
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
-    "preruncommands": [  	"RUN mkdir -p /var/run/dbus/ chown balloon:balloon /var/run/dbus", 
-                                "COPY composer/node /composer/node",
-	   			"RUN cd /composer/node/ocdownload && npm install", 
-	    			"COPY composer/init.d/init.nautilus /composer/init.d/init.nautilus",
-   				"COPY composer/desktop_download.py /composer/desktop_download.py" ],
+    "preruncommands": [  	
+        "RUN mkdir -p /var/run/dbus/ chown balloon:balloon /var/run/dbus", 
+        "COPY composer/node /composer/node",
+	   	"RUN cd /composer/node/ocdownload && npm install", 
+	    "COPY composer/init.d/init.nautilus /composer/init.d/init.nautilus",
+   		"COPY composer/desktop_download.py /composer/desktop_download.py" ],
     "debpackage": "dbus gnome-icon-theme gnome-icon-theme-symbolic numix-gtk-theme numix-icon-theme gnome-font-viewer dbus-x11 python-nautilus python-shellescape nautilus desktop-file-utils shared-mime-info xdg-user-dirs",
     "icon": "circle_filemanager.svg",
     "keyword": "file,manager,nautilus",
@@ -565,7 +542,7 @@
     "showinview": "dock",
     "path": "/usr/bin/nautilus",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "desktopfile":"/usr/share/applications/nautilus.desktop",
     "usedefaultapplication": true,
     "quick": true
@@ -575,11 +552,37 @@
     "cat": "office",
     "comment": "NSS_SDB_USE_CACHE=yes",
     "preruncommands": [ 
-	    		"RUN apt-get update && apt-get install  --yes winbind firefox $(apt-cache search firefox-locale | awk '{print $1 }') && apt-get clean",
-			"COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
-			"COPY policies.json /usr/lib/firefox/distribution",
-			"COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
-			"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
+	    "COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
+		"COPY policies.json /usr/lib/firefox/distribution",
+		"COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
+		"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
+    "debpackage": "krb5-user winbind firefox",
+    "icon": "circle_firefox.svg",
+    "keyword": "firefox,mozilla,web,internet",
+    "launch": "Navigator.Firefox",
+    "name": "Firefox",
+    "displayname": "Firefox",
+    "showinview": "dock",
+    
+    "run_inside_pod": false,
+    "path": "/usr/bin/firefox",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
+    "legacyfileextensions": "htm;html;xml",
+    "fileextensions": "htm;html;xml;gif",
+    "desktopfile":"/usr/share/applications/firefox.desktop",
+    "usedefaultapplication": true
+}, {
+    "acl": { "permit": [ "all" ] },
+    "rules": { "homedir": { "default": true } },
+    "cat": "office",
+    "comment": "NSS_SDB_USE_CACHE=yes",
+    "preruncommands": [ 
+	    "RUN apt-get update && apt-get install --yes krb5-user winbind firefox $(apt-cache search firefox-locale | awk '{print $1 }') && apt-get clean",
+		"COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
+		"COPY policies.json /usr/lib/firefox/distribution",
+		"COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
+		"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
     "debpackage": "",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
@@ -587,7 +590,7 @@
     "name": "Firefox",
     "displayname": "Firefox",
     "showinview": "dock",
-    "splash": "enable",
+    
     "run_inside_pod": false,
     "path": "/usr/bin/firefox",
     "template": "abcdesktopio/oc.template.gtk.20.04",
@@ -600,17 +603,18 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-     "preruncommands": ["RUN add-apt-repository -y ppa:mozillateam/ppa",
-                        "RUN DEBIAN_FRONTEND=noninteractive echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
-                        "RUN apt-get update && apt-get install  --no-install-recommends --yes ttf-mscorefonts-installer ttf-bitstream-vera ttf-dejavu ttf-xfree86-nonfree",
-                        "RUN apt-get update && apt-get install  --no-install-recommends --yes winbind && apt-get clean",
-                        "RUN apt-get update && apt-get install  --no-install-recommends --yes libasound2-plugins libgail-common libgtk2.0-bin chromium-codecs-ffmpeg-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi libavcodec-extra && apt-get clean",
-                        "COPY composer/init.d/init.firefox-esr /composer/init.d/init.firefox-esr",
-                        "COPY policies.json /usr/lib/firefox-esr/distribution",
-			"RUN mkdir -p /etc/adobe",
-			"COPY mms.cfg /etc/adobe/mms.cfg",	
-                        "COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
-                        "RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
+     "preruncommands": [
+        "RUN add-apt-repository -y ppa:mozillateam/ppa",
+        "RUN DEBIAN_FRONTEND=noninteractive echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
+        "RUN apt-get update && apt-get install  --no-install-recommends --yes ttf-mscorefonts-installer ttf-bitstream-vera ttf-dejavu ttf-xfree86-nonfree",
+        "RUN apt-get update && apt-get install  --no-install-recommends --yes winbind && apt-get clean",
+        "RUN apt-get update && apt-get install  --no-install-recommends --yes libasound2-plugins libgail-common libgtk2.0-bin chromium-codecs-ffmpeg-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi libavcodec-extra && apt-get clean",
+        "COPY composer/init.d/init.firefox-esr /composer/init.d/init.firefox-esr",
+        "COPY policies.json /usr/lib/firefox-esr/distribution",
+		"RUN mkdir -p /etc/adobe",
+		"COPY mms.cfg /etc/adobe/mms.cfg",	
+        "COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
+        "RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
     "debpackage": "",
     "icon": "firefox.svg",
     "keyword": "esr,firefox",
@@ -618,14 +622,14 @@
     "name": "firefox-esr",
     "displayname": "Firefox-esr",
     "showinview": "dock",
-    "splash": "enable",
+    
     "installrecommends" : true,
     "rules": { "homedir": { "default": true } },
     "forceconfold" : true,
     "host_config": { "shm_size" : "2G" },
     "args": "-new-instance -P abcdesktop-firefox-esr --class firefox-esr",
     "path": "/usr/bin/firefox-esr",
-    "template": "abcdesktopio/oc.template.gtk.firefox-esr",
+    "template": "abcdesktopio/oc.template.minimal.18.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
@@ -634,24 +638,25 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
-     "preruncommands": ["RUN apt-get update && apt-get install  --no-install-recommends --yes vice libmp3lame0 git wget && apt-get clean",
-                        "RUN git clone https://github.com/stuartcarnie/vice-emu/ && mv vice-emu/vice/data/DRIVES/* /usr/lib/vice/C64 && cd /vice-emu/vice/data/C64 && mv chargen kernal basic /usr/lib/vice/C64",
-			"RUN mkdir /usr/lib/vice/C64/cartridge",
-			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_1-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_1-8000.bin", 
-			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_2-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_2-8000.bin",
-			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_3-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_3-8000.bin",
-			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_4-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_4-8000.bin",
-			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/C64638_Jack_Attack-8000.bin -O /usr/lib/vice/C64/cartridge/C64638_Jack_Attack-8000.bin",
-			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/315102-01.bin -O /usr/lib/vice/C64/cartridge/315102-01.bin",
-			"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/315103-01.bin -O /usr/lib/vice/C64/cartridge/315103-01.bin"
-                       ],
+     "preruncommands": [
+        "RUN apt-get update && apt-get install  --no-install-recommends --yes vice libmp3lame0 git wget && apt-get clean",
+        "RUN git clone https://github.com/stuartcarnie/vice-emu/ && mv vice-emu/vice/data/DRIVES/* /usr/lib/vice/C64 && cd /vice-emu/vice/data/C64 && mv chargen kernal basic /usr/lib/vice/C64",
+		"RUN mkdir /usr/lib/vice/C64/cartridge",
+		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_1-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_1-8000.bin", 
+		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_2-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_2-8000.bin",
+		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_3-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_3-8000.bin",
+		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_4-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_4-8000.bin",
+		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/C64638_Jack_Attack-8000.bin -O /usr/lib/vice/C64/cartridge/C64638_Jack_Attack-8000.bin",
+		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/315102-01.bin -O /usr/lib/vice/C64/cartridge/315102-01.bin",
+		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/315103-01.bin -O /usr/lib/vice/C64/cartridge/315103-01.bin"
+    ],
     "debpackage": "",
     "icon": "c64.svg",
     "keyword": "x64,vice,commodore,c64",
     "launch": "x64.X64",
     "name": "vice",
     "displayname": "Commodore64",
-    "splash": "enable",
+    
     "installrecommends" : true,
     "path": "/usr/bin/x64",
     "template": "abcdesktopio/oc.template.gtk.18.04",
@@ -661,20 +666,22 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-     "preruncommands": ["RUN apt-get update && apt-get install  --no-install-recommends --yes libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 && apt-get clean",
-	                "RUN curl -Ls https://deb.beekeeperstudio.io/beekeeper.key | apt-key add -",
-                        "RUN echo \"deb https://deb.beekeeperstudio.io stable main\" | tee /etc/apt/sources.list.d/beekeeper-studio-app.list",
-    			"RUN apt-get update && apt-get install  --no-install-recommends --yes beekeeper-studio libxshmfence1 && apt-get clean",
-    			"RUN mv \"/opt/Beekeeper Studio/\" /opt/Beekeeper-Studio",
-    			"ENV ELECTRON_ENABLE_LOGGING=true",
-    			"ENV QT_X11_NO_MITSHM=1" ],  
+     "preruncommands": [
+        "RUN apt-get update && apt-get install  --no-install-recommends --yes libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 && apt-get clean",
+	    "RUN curl -Ls https://deb.beekeeperstudio.io/beekeeper.key | apt-key add -",
+        "RUN echo \"deb https://deb.beekeeperstudio.io stable main\" | tee /etc/apt/sources.list.d/beekeeper-studio-app.list",
+    	"RUN apt-get update && apt-get install  --no-install-recommends --yes beekeeper-studio libxshmfence1 && apt-get clean",
+    	"RUN mv \"/opt/Beekeeper Studio/\" /opt/Beekeeper-Studio",
+    	"ENV ELECTRON_ENABLE_LOGGING=true",
+    	"ENV QT_X11_NO_MITSHM=1" 
+    ],  
     "debpackage": "",
     "icon": "beekeeper-studio.svg",
     "keyword": "database,sql,mysql,postgres,sqllite,db,sqlserver,query,editor",
     "launch": "beekeeper-studio.beekeeper-studio",
     "name": "beekeeperstudio",
     "displayname": "Beekeeper-studio",
-    "splash": "enable",
+    
     "installrecommends" : false,
     "forceconfold" : true,
     "host_config": { "shm_size" : "2G", "ipc_mode": "shareable" },
@@ -706,15 +713,16 @@
     "comment": "download icaclientWeb from https://www.citrix.com/fr-fr/downloads/citrix-receiver/linux/receiver-for-linux-latest.html", 
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "postruncommands": [ "COPY icaclientWeb_13.10.0.20_amd64.deb /tmp/icaclient_amd64.deb",
-                         "RUN apt-get update && apt-get install  --no-install-recommends --yes /tmp/icaclient_amd64.deb && apt-get clean && rm /tmp/icaclient_amd64.deb && rm -rf /var/lib/apt/lists/*" ],
+    "postruncommands": [ 
+        "COPY icaclientWeb_13.10.0.20_amd64.deb /tmp/icaclient_amd64.deb",
+        "RUN apt-get update && apt-get install  --no-install-recommends --yes /tmp/icaclient_amd64.deb && apt-get clean && rm /tmp/icaclient_amd64.deb && rm -rf /var/lib/apt/lists/*" ],
     "debpackage": "libsecret-1-0 libpcsclite1 x11-utils libjpeg-turbo8",
     "icon": "icaclient.svg",
     "keyword": "ica,icaclient,",
     "launch": "Wfica.Wfica",
     "name": "citrix",
     "displayname": "citrix-client",
-    "splash": "enable",
+    
     "secrets_requirement": "citrix",
     "args": "-icaroot /opt/Citrix/ICAClient",
     "path": "/opt/Citrix/ICAClient/wfica",
@@ -728,17 +736,18 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "preruncommands": [ "RUN apt-get update && apt-get install --no-install-recommends --yes python3-gtkspellcheck wkhtmltopdf python3-markdown gir1.2-gtksource-3.0 yelp gir1.2-webkit-3.0 python3-bs4 && apt-get clean",
-                        "RUN curl -Ls -o /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb && apt-get install  --no-install-recommends --yes /tmp/remarkable_1.87_all.deb && apt-get clean && rm -rf /tmp/remarkable_1.87_all.deb && rm -rf /var/lib/apt/lists/*" ],
+    "preruncommands": [ 
+        "RUN apt-get update && apt-get install --no-install-recommends --yes python3-gtkspellcheck wkhtmltopdf python3-markdown gir1.2-gtksource-3.0 yelp gir1.2-webkit-3.0 python3-bs4 && apt-get clean",
+        "RUN curl -Ls -o /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb && apt-get install  --no-install-recommends --yes /tmp/remarkable_1.87_all.deb && apt-get clean && rm -rf /tmp/remarkable_1.87_all.deb && rm -rf /var/lib/apt/lists/*" ],
     "debpackage": "",
     "icon": "remarkable.svg",
     "keyword": "markdown,editor",
     "launch": "remarkable.Remarkable",
     "name": "remarkable",
     "displayname": "Remarkable",
-    "splash": "enable",
+    
     "path": "/usr/bin/remarkable",
-    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "text/x-markdown;text/markdown;",
     "legacyfileextensions": "md;markdown",
     "fileextensions": "md;markdown",
@@ -749,8 +758,10 @@
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libx11-xcb1 libasound2 && apt-get clean",
-                        "RUN curl -Ls -o /tmp/hyper.deb  https://releases.hyper.is/download/deb && apt-get install  --no-install-recommends --yes /tmp/hyper.deb && apt-get clean && rm -rf /tmp/hyper.deb" ],
+    "preruncommands": [ 
+        "RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libx11-xcb1 libasound2 && apt-get clean",
+        "RUN curl -Ls -o /tmp/hyper.deb  https://releases.hyper.is/download/deb && apt-get install  --no-install-recommends --yes /tmp/hyper.deb && apt-get clean && rm -rf /tmp/hyper.deb" 
+    ],
     "icon": "hyper.svg",
     "keyword": "terminal,remote",
     "launch": "hyper.Hyper",
@@ -758,26 +769,28 @@
     "path": "/opt/Hyper/hyper",
     "mimetype": "x-scheme-handler/ssh",
     "fileextensions":"",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "rules": { "homedir": { "default": true } },
     "desktopfile": "/usr/share/applications/hyper.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine fonts-recommended google-chrome-stable",
-    "preruncommands": [ "RUN curl -Ls https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -",
-			"RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | tee /etc/apt/sources.list.d/google-chrome.list" ],
+    "debpackage": "krb5-user fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine fonts-recommended google-chrome-stable",
+    "preruncommands": [ 
+        "RUN curl -Ls https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -",
+	"RUN echo \"deb [arch=$(dpkg --print-architecture)] http://dl.google.com/linux/chrome/deb/ stable main\" | tee /etc/apt/sources.list.d/google-chrome.list" 
+    ],
     "icon": "circle_google-chrome.svg",
     "keyword": "web,browser,internet",
     "launch": "google-chrome.Google-chrome",
     "name": "chrome",
     "rules": { "homedir": { "default": true } },
     "displayname": "Chrome",
-    "splash": "enable",
+    
     "installrecommends" : true,
     "path": "/usr/bin/google-chrome-stable",
     "args": "--no-sandbox --disable-gpu --disable-dev-shm-usage",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -786,18 +799,18 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine chromium-browser",
+    "debpackage": "krb5-user fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine chromium-browser",
     "icon": "circle_chromium.svg",
     "keyword": "web,browser,internet",
     "launch": "chromium-browser.Chromium-browser",
     "name": "chromium",
     "rules": { "homedir": { "default": true } },
     "displayname": "Chromium",
-    "splash": "enable",
+    
     "installrecommends" : true,
     "path": "/usr/bin/chromium-browser",
     "args": "-no-sandbox --disable-gpu --disable-dev-shm-usage",
-    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -807,22 +820,22 @@
     "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf fonts-wine",
-    "preruncommands": [ "# RUN apt-get update && apt-get install  --no-install-recommends --yes  fonts-liberation libatomic1 wget libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0  libcairo2 libdrm2 libgbm1 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libx11-6 libxcomposite1  libxdamage1 libxext6 libxfixes3  libxkbcommon0 libxrandr2  libxshmfence1 libu2f-udev libvulkan1 xdg-utils && apt-get clean && rm -rf /var/lib/apt/lists/*",
-                        "# RUN wget https://www.microsoftedgeinsider.com/en-us/download/microsoft-edge-stable_95.0.1020.44-1_amd64.deb",
-			"RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -",
-			"COPY microsoft-edge-stable_95.0.1020.44-1_amd64.deb /tmp",
-			"RUN apt-get update && apt-get install -y /tmp/microsoft-edge-stable_95.0.1020.44-1_amd64.deb && apt-get clean && rm /tmp/*.deb" ],
+    "preruncommands": [ 
+        "RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg",
+        "RUN echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/edge stable main\" > /etc/apt/sources.list.d/edge.list",
+        "RUN apt update && apt install -y microsoft-edge-stable && apt-get clean && rm -rf /var/lib/apt/lists/*"
+	],
     "icon": "circle_microsoft-edge.svg",
     "keyword": "web,browser,internet",
     "launch": "microsoft-edge-beta.Microsoft-edge-beta",
     "name": "edge",
     "displayname": "MicrosoftEdge",
-    "splash": "enable",
+    
     "installrecommends" : true,
     "path": "/usr/bin/microsoft-edge",
     "rules": { "homedir": { "default": true } },
     "args": "--no-sandbox --disable-gpu --disable-dev-shm-usage",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -832,19 +845,21 @@
     "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "",
-    "preruncommands": [ "COPY teams_1.3.00.5153_amd64.deb /tmp",
-                        "RUN apt-get update && apt-get install -y /tmp/teams_1.3.00.5153_amd64.deb && apt-get clean && rm /tmp/*.deb" ],
+    "preruncommands": [ 
+        "RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg",
+        "RUN echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/ms-teams stable main\" > /etc/apt/sources.list.d/teams.list",
+        "RUN apt update && apt install -y teams && apt-get clean && rm -rf /var/lib/apt/lists/*" ],
     "icon": "teams.svg",
     "keyword": "teams",
     "launch": "microsoft teams - preview.Microsoft Teams - Preview",
     "name": "teams",
     "displayname": "Microsoft Teams",
-    "splash": "enable",
+    
     "installrecommends" : true,
     "path": "/usr/bin/teams",
     "rules": { "homedir": { "default": true } },
     "args": "--disable-namespace-sandbox --disable-setuid-sandbox",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "x-scheme-handler/msteams;",
     "desktopfile":"/usr/share/applications/teams.desktop",
     "quick": true
@@ -859,7 +874,7 @@
     "displayname": "Evolution",
     "path": "/usr/bin/evolution",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "text/calendar;text/x-vcard;text/directory;application/mbox;message/rfc822;x-scheme-handler/mailto;",
     "desktopfile": "/usr/share/applications/evolution.desktop"
 }, {
@@ -873,7 +888,7 @@
     "displayname": "Thunderbird",
     "path": "/usr/bin/thunderbird",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "x-scheme-handler/mailto",
     "desktopfile": "/usr/share/applications/thunderbird.desktop"
 }, {
@@ -886,7 +901,7 @@
     "name": "writer",
     "rules": { "homedir": { "default": true } },
     "displayname": "Writer",
-    "splash": "enable",
+    
     "showinview": "dock",
     "path": "/usr/lib/libreoffice/program/soffice",
     "args": "--writer",
@@ -908,7 +923,7 @@
     "name": "calc",
     "displayname": "Calc",
     "showinview": "dock",
-    "splash": "enable",
+    
     "args": "--calc",
     "rules": { "homedir": { "default": true } },
     "uniquerunkey": "libreoffice",
@@ -1012,7 +1027,7 @@
     "path": "/usr/bin/gnome-terminal",
     "args": "--disable-factory",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.minimal.20.04",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY composer/init.d/init.gnome-terminal /composer/init.d/init.gnome-terminal" ] 
@@ -1118,7 +1133,7 @@
     "name": "eog",
     "path": "/usr/bin/eog",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "image/bmp;image/gif;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-tga;image/x-xbitmap;image/jpeg;image/png;image/x-icon;image/x-xpixmap;image/x-xcursor;",
     "fileextensions": "ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
     "legacyfileextensions":"ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
@@ -1140,9 +1155,10 @@
     "mimefilename": "pantheon-calculator",
     "host_config": { "mem_limit": "64M", "shm_size": "0M", "pid_mode": false },
     "desktopfile": "/usr/share/applications/org.pantheon.calculator.desktop",
-    "preruncommands": [  "RUN add-apt-repository ppa:elementary-os/stable",
-   			 "COPY composer/init.d/init.io.elementary.calculator /composer/init.d/init.io.elementary.calculator",
-   			 "RUN mkdir -p /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop"]
+    "preruncommands": [  
+        "RUN add-apt-repository ppa:elementary-os/stable",
+   		"COPY composer/init.d/init.io.elementary.calculator /composer/init.d/init.io.elementary.calculator",
+   		"RUN mkdir -p /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop"]
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -1169,9 +1185,10 @@
     "workdir": "/home/arch/OSX-KVM",  
     "user": "arch",
     "home": "/home/arch",
-    "cmd": [    "/bin/bash",
-                "-c",
-     "sudo touch /dev/kvm /dev/snd \"${IMAGE_PATH}\" \"${BOOTDISK}\" \"${ENV}\" 2>/dev/null || true     ; sudo chown -R $(id -u):$(id -g) /dev/kvm /dev/snd \"${IMAGE_PATH}\" \"${BOOTDISK}\" \"${ENV}\" 2>/dev/null || true     ; [[ \"${NOPICKER}\" == true ]] && {         sed -i '/^.*InstallMedia.*/d' Launch.sh         && export BOOTDISK=\"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore-nopicker.qcow2}\"     ; }     || export BOOTDISK=\"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore.qcow2}\"     ; [[ \"${GENERATE_UNIQUE}\" == true ]] && {         ./Docker-OSX/osx-serial-generator/generate-unique-machine-values.sh             --master-plist-url=\"${MASTER_PLIST_URL}\"             --count 1             --tsv ./serial.tsv             --bootdisks             --width \"${WIDTH:-1920}\" -height \"${HEIGHT:-1080}\"   --output-bootdisk \"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore.qcow2}\"             --output-env \"${ENV:=/env}\" || exit 1 ; }     ; [[ \"${GENERATE_SPECIFIC}\" == true ]] && {             source \"${ENV:=/env}\" 2>/dev/null             ; ./Docker-OSX/osx-serial-generator/generate-specific-bootdisk.sh --master-plist-url=\"${MASTER_PLIST_URL}\" --model \"${DEVICE_MODEL}\"             --serial \"${SERIAL}\"             --board-serial \"${BOARD_SERIAL}\"             --uuid \"${UUID}\"             --mac-address \"${MAC_ADDRESS}\" --width \"${WIDTH:-1920}\"             --height \"${HEIGHT:-1080}\"             --output-bootdisk \"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore.qcow2}\" || exit 1 ; } ; ./abcdesktop_config.sh ;  ./Launch.sh"
+    "cmd": [    
+        "/bin/bash",
+        "-c",
+        "sudo touch /dev/kvm /dev/snd \"${IMAGE_PATH}\" \"${BOOTDISK}\" \"${ENV}\" 2>/dev/null || true; sudo chown -R $(id -u):$(id -g) /dev/kvm /dev/snd \"${IMAGE_PATH}\" \"${BOOTDISK}\" \"${ENV}\" 2>/dev/null || true     ; [[ \"${NOPICKER}\" == true ]] && {         sed -i '/^.*InstallMedia.*/d' Launch.sh         && export BOOTDISK=\"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore-nopicker.qcow2}\"     ; }     || export BOOTDISK=\"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore.qcow2}\"     ; [[ \"${GENERATE_UNIQUE}\" == true ]] && {         ./Docker-OSX/osx-serial-generator/generate-unique-machine-values.sh             --master-plist-url=\"${MASTER_PLIST_URL}\"             --count 1             --tsv ./serial.tsv             --bootdisks             --width \"${WIDTH:-1920}\" -height \"${HEIGHT:-1080}\"   --output-bootdisk \"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore.qcow2}\"             --output-env \"${ENV:=/env}\" || exit 1 ; }     ; [[ \"${GENERATE_SPECIFIC}\" == true ]] && {             source \"${ENV:=/env}\" 2>/dev/null             ; ./Docker-OSX/osx-serial-generator/generate-specific-bootdisk.sh --master-plist-url=\"${MASTER_PLIST_URL}\" --model \"${DEVICE_MODEL}\"             --serial \"${SERIAL}\"             --board-serial \"${BOARD_SERIAL}\"             --uuid \"${UUID}\"             --mac-address \"${MAC_ADDRESS}\" --width \"${WIDTH:-1920}\"             --height \"${HEIGHT:-1080}\"             --output-bootdisk \"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore.qcow2}\" || exit 1 ; } ; ./abcdesktop_config.sh ;  ./Launch.sh"
     ]
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1277,7 +1294,7 @@
 },   {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes unzip && apt-get clean",
+    "preruncommands": [ "RUN apt-get update && apt-get install --no-install-recommends --yes unzip && apt-get clean",
 	    		"RUN cd /composer &&  curl -Ls https://th.corsix.org/Demo.zip -o Demo.zip && unzip Demo.zip && rm -rf Demo.zip",
                         "COPY corsix-th.config.txt /composer/corsix-th.config.txt" ],
     "debpackage": "libgl1 corsix-th",
@@ -1380,7 +1397,7 @@
     "launch": "xeyes.XEyes",
     "name": "xeyes",
     "path": "/usr/bin/xeyes",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "host_config": { "mem_limit": "32M", "shm_size": "0M", "pid_mode": false, "network_mode": "none" },
     "quick": true
 }, {
@@ -1391,7 +1408,7 @@
     "launch": "planner.Planner",
     "name": "Planner",
     "path": "/usr/bin/planner",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "application/x-planner;",
     "fileextensions": "mpp;mpx",
     "rules": { "homedir": { "default": true } },
@@ -1407,7 +1424,7 @@
     "rules": { "homedir": { "default": true } },
     "name": "Leocad",
     "path": "/usr/bin/leocad",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "application/vnd.leocad;application/x-ldraw;application/x-multi-part-ldraw;application/x-ldlite;",
     "fileextensions": "lcd",
     "legacyfileextensions": "lcd"
@@ -1421,7 +1438,7 @@
     "name": "Dia",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/dia",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "application/x-dia-diagram;",
     "fileextensions": "dia",
     "legacyfileextensions": "dia",
@@ -1441,7 +1458,9 @@
     "fileextensions": "drawio",
     "legacyfileextensions": "drawio",
     "desktopfile": "/usr/share/applications/drawio.desktop",
-    "preruncommands": [ "RUN apt-get update &&  curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v17.2.1/drawio-amd64-17.2.1.deb' -o /tmp/drawio-amd64.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64.deb && rm /tmp/drawio-amd64.deb && rm -rf /var/lib/apt/lists/*" ]
+    "preruncommands": [ 
+        "RUN apt-get update && curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v20.3.0/drawio-amd64-20.3.0.deb' -o /tmp/drawio-amd64.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64.deb && rm /tmp/drawio-amd64.deb && rm -rf /var/lib/apt/lists/*" 
+    ]
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1465,12 +1484,13 @@
     "launch": "gnome-terminal-server.cntlm",
     "name": "cntlm",
     "path": "/usr/bin/gnome-terminal",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "displayname": "cntlm",
     "host_config":  { "network_mode": "container" }, 
     "args": "--class cntlm -- bash -c '/usr/sbin/cntlm -f -v; exec bash'",
-    "preruncommands": [ "COPY cntlm/cntlm.mustache  cntlm/init.cntlm.sh /composer/",  
-	    		"COPY composer/init.d/init.gnome-terminal /composer/init.d/"
+    "preruncommands": [ 
+        "COPY cntlm/cntlm.mustache  cntlm/init.cntlm.sh /composer/",  
+	    "COPY composer/init.d/init.gnome-terminal /composer/init.d/"
     ],
     "postruncommands": [ "RUN chown balloon:root /etc/cntlm.conf",
    			 "RUN chmod 755 /composer/cntlm.mustache" ]
@@ -1490,7 +1510,8 @@
     "desktop": "minecraft-launcher.desktop",
     "host_config": { "mem_limit": "4G", "shm_size" : "2G",  "cpu_period": 200000, "cpu_quota": 200000, "ipc_mode": "shareable" },
     "desktopfile" : "/usr/share/applications/minecraft-launcher.desktop",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes libflite1 openjdk-8-jre at-spi2-core dbus-x11 orca libsecret-1-0 && curl -Ls 'https://launcher.mojang.com/download/Minecraft.deb' -o /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*",
+    "preruncommands": [ 
+        "RUN apt-get update && apt-get install --no-install-recommends --yes libflite1 openjdk-8-jre at-spi2-core dbus-x11 orca libsecret-1-0 && curl -Ls 'https://launcher.mojang.com/download/Minecraft.deb' -o /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*",
 	    "COPY composer/init.d/init.minecraft-launcher /composer/init.d"
                       ]
 }, {
@@ -1503,23 +1524,9 @@
     "name": "octave",
     "path": "/usr/bin/octave",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "desktop": "www.octave.org-octave.desktop.desktop",
     "desktopfile" : "/usr/share/applications/www.octave.org-octave.desktop"
-}, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "debpackage": "",
-    "icon": "dev.svg",
-    "keyword": "dev,c,python,html,npm,java,javascript,vscode",
-    "launch": "gnome-terminal-server.dev.env",
-    "name": "dev",
-    "rules": { "homedir": { "default": true } },
-    "path": "/usr/bin/gnome-terminal",
-    "template": "abcdesktopio/oc.template.gtk.fulldev",
-    "displayname": "DEVenv",
-    "args": "--disable-factory --class dev.env",
-    "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1544,7 +1551,7 @@
     "name": "VSCode",
     "path": "/usr/bin/code",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk.fulldev",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "desktop": "code.desktop",
     "host_config":  { "mem_limit": "2G", "shm_size" : "2G",  "cpu_period": 200000, "cpu_quota": 200000 , "cap_add": [ "SYS_ADMIN" ] },
     "args": "--extensions-dir /usr/share/code/extensions --verbose",
@@ -1552,10 +1559,11 @@
     "legacyfileextensions": "c;cpp;py;json;java;md;yml;yaml;",
     "fileextensions": "c;cpp;py;json;js;java;jav;md;xml;txt;svg;html;htm;sh;csh;css;jsx;tsx;vue;yml;yaml;",
     "desktopfile" : "/usr/share/applications/code.desktop",
-    "preruncommands": [  "RUN apt-get update && apt-get install --no-install-recommends --yes dbus-x11 dbus-user-session libxshmfence1 libx11-xcb1 libxcb-dri3-0 libgbm1 libdrm2 libxtst6 && apt-get clean",
-                         "RUN curl -Ls 'https://go.microsoft.com/fwlink/?LinkID=760868' -o /tmp/VSCode-linux-x64-stable.deb && apt-get install /tmp/VSCode-linux-x64-stable.deb && rm /tmp/VSCode-linux-x64-stable.deb && rm -rf /var/lib/apt/lists/*",
-			 "RUN mkdir -p /usr/share/code/extensions && chown -R $BUSER:$BUSER /usr/share/code/extensions" 
-                      ],
+    "preruncommands": [  
+        "RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg",
+        "RUN echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main\" > /etc/apt/sources.list.d/teams.list",
+        "RUN apt update && apt install -y --no-install-recommends code && apt-get clean && rm -rf /var/lib/apt/lists/*"
+    ],
     "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1567,7 +1575,7 @@
     "launch": "geogebra-GeoGebra.geogebra-GeoGebra",
     "name": "Geogebra",
     "path": "/usr/bin/geogebra",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "fileextensions": "ggb;ggt",
     "legacyfileextensions": "ggb;ggt",
     "rules": { "homedir": { "default": true } },
@@ -1582,7 +1590,7 @@
     "launch": "gcompris-qt.gcompris-qt",
     "name": "GCompris",
     "path": "/usr/games/gcompris-qt",
-    "template": "abcdesktopio/oc.template.gtk.18.04"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
@@ -1592,7 +1600,7 @@
     "launch": "step.step",
     "name": "Step",
     "path": "/usr/bin/step",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1603,7 +1611,7 @@
     "name": "LibreCAD",
     "path": "/usr/bin/librecad",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "image/vnd.dxf;",
     "fileextensions":"dxf;dwg",
     "legacyfileextensions":"dxf;dwg"
@@ -1626,7 +1634,7 @@
     "launch": "mathwar.Mathwar",
     "name": "Mathwar",
     "path": "/usr/games/mathwar",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
@@ -1636,7 +1644,7 @@
     "launch": "kgeography.kgeography",
     "name": "Kgeography",
     "path": "/usr/bin/kgeography",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
@@ -1646,7 +1654,7 @@
     "launch": "stellarium.stellarium",
     "name": "Stellarium",
     "path": "/usr/bin/stellarium",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1656,7 +1664,7 @@
     "launch": "gnome-robots.Gnome-robots",
     "name": "Robots",
     "path": "/usr/games/gnome-robots",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "desktop":"gnome-robots.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1667,7 +1675,7 @@
     "launch": "kturtle.kturtle",
     "name": "kTurtle",
     "path": "/usr/bin/kturtle",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1677,7 +1685,7 @@
     "launch": "gnome-mines.Gnome-mines",
     "name": "Mines",
     "path": "/usr/games/gnome-mines",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "desktop":"gnome-mines.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1688,7 +1696,7 @@
     "launch": "gelemental.Gelemental",
     "name": "gElemental",
     "path": "/usr/bin/gelemental",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "desktop": "gelemental.desktop"
 }, 
 {
@@ -1700,7 +1708,7 @@
     "launch": "qelectrotech.Qelectrotech",
     "name": "qElectrotech",
     "path": "/usr/bin/qelectrotech",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
@@ -1710,7 +1718,7 @@
     "launch": "gretl_x11.Gretl_x11",
     "name": "Gretl",
     "path": "/usr/bin/gretl",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1720,7 +1728,7 @@
     "launch": "ksquares.ksquares",
     "name": "kSquares",
     "path": "/usr/games/ksquares",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1730,7 +1738,7 @@
     "launch": "klickety.klickety",
     "name": "Klickety",
     "path": "/usr/games/klickety",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
@@ -1740,7 +1748,7 @@
     "launch": "kalzium.kalzium",
     "name": "Kalzium",
     "path": "/usr/bin/kalzium",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -1750,7 +1758,7 @@
     "launch": "rhythmbox.Rhythmbox",
     "name": "rhythmbox",
     "path": "/usr/bin/rhythmbox",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "application/x-ogg;application/ogg;audio/x-vorbis+ogg;audio/vorbis;audio/x-vorbis;audio/x-scpls;audio/x-mp3;audio/x-mpeg;audio/mpeg;audio/x-mpegurl;audio/x-flac;audio/mp4;audio/x-it;audio/x-mod;audio/x-s3m;audio/x-stm;audio/x-xm;",
     "desktopfile": "/usr/share/applications/rhythmbox.desktop"
 }, {
@@ -1762,7 +1770,7 @@
     "launch": "kdiamond.kdiamond",
     "name": "kDiamond",
     "path": "/usr/games/kdiamond",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1773,12 +1781,11 @@
     "args": "-P youtube --class=youtube https://www.youtube.com/",
     "name": "youtube",
     "displayname": "Youtube",
-    "splash": "enable",
     "rules": { "homedir": { "default": false } }, 
     "host_config": { "mem_limit": "2G", "shm_size" : "2G" }, 
     "installrecommends" : true,
     "path": "/usr/bin/firefox",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.minimal.22.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",

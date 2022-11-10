@@ -16,10 +16,12 @@
 const fs = require('fs');
 const path = require('path');
 const quickMode = false;
+const { ArgumentParser } = require('argparse');
+const { version } = require('./package.json');
 
 var	defaultApplicationfile  = 'applist.json';
 var	forceOutputToDockerfile = false;
-
+var 	abcdesktop_release='2.0'; 
 
 // function to encode file data to base64 encoded string
 function base64Encode(file) {
@@ -104,18 +106,20 @@ function makedockerfile(e) {
 
     if (e.forceconfold) { installCommand += ' -o Dpkg::Options::="--force-confold" '; }
 
-    installCommand += `${e.debpackage} && apt-get clean && rm -rf /var/lib/apt/lists/*\n`;
+    installCommand += `${e.debpackage} && apt-get clean\n`;
     wstream.write(installCommand);
     wstream.write("RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections\n");
+  }
+  // install apk package 
+  if (e.apkpackage) {
+    let installCommand = `RUN apk add --no-cache --update ${e.apkpackage}\n`;
+    wstream.write(installCommand);
   }
  
   // run post install script
   if (e.postinstall) {
     const contents = fs.readFileSync(e.postinstall, 'utf8');
     wstream.write(contents);
-  }
-  if (e.postruncommands) {
-  	e.postruncommands.forEach((command) => wstream.write(`${command}\n`));
   }
 
   wstream.write('ENV BUSER balloon\n');
@@ -199,22 +203,28 @@ function makedockerfile(e) {
   if (e.usedefaultapplication) { wstream.write(`LABEL oc.usedefaultapplication=${JSON.stringify(e.usedefaultapplication)}\n`); }
   if (e.run_inside_pod) { wstream.write(`LABEL oc.run_inside_pod=${JSON.stringify(e.run_inside_pod)}\n`); }
   if (e.home) { wstream.write(`LABEL oc.home=${JSON.stringify(e.home)}\n`); }
+
+  if (e.postruncommands) {
+        e.postruncommands.forEach((command) => wstream.write(`${command}\n`));
+  }
+
+  if ( abcdesktop_release === '3.0' ) {
+      // make sure that we are root to run the commands :
+      wstream.write( "USER root\n" ),
+      wstream.write( "RUN mkdir -p /var/secrets/abcdesktop/localaccount && cp /etc/passwd /etc/group /etc/shadow /var/secrets/abcdesktop/localaccount\n" );
+      wstream.write( "RUN rm -f /etc/passwd && ln -s /var/secrets/abcdesktop/localaccount/passwd /etc/passwd\n" ); 
+      wstream.write( "RUN rm -f /etc/group && ln -s /var/secrets/abcdesktop/localaccount/group  /etc/group\n" );
+      wstream.write( "RUN rm -f /etc/shadow && ln -s /var/secrets/abcdesktop/localaccount/shadow /etc/shadow\n" );
+  }
+
+  let user=(e.user)?(e.user):'balloon';
+  wstream.write(`USER ${user}\n`);
+
+  let cmd=(e.cmd)?(e.cmd):'/composer/appli-docker-entrypoint.sh';  
+  wstream.write(`CMD [\"${cmd}\"]\n`);
  
-  if (e.user) 
-  	wstream.write(`USER ${e.user}\n`); 
-  else
-  	wstream.write('USER balloon\n');
-  
-  if (e.cmd)
-     wstream.write(`CMD [\"${e.cmd}\"]\n`);
-  else
-     wstream.write("CMD [\"/composer/appli-docker-entrypoint.sh\"]\n");
-  
-  if (e.workdir) 
-    wstream.write(`WORKDIR ${e.workdir}\n`);
-  else
-    wstream.write('WORKDIR /home/balloon\n');
-  
+  let workdir=(e.workdir)?e.workdir:'/home/balloon';
+  wstream.write(`WORKDIR ${workdir}\n`);
   
   wstream.end(() => {});
 }
@@ -222,21 +232,24 @@ function makedockerfile(e) {
 
 
 // start here
-var myArgs = process.argv.slice(2);
-console.log('myArgs: ', myArgs);
+
+const parser = new ArgumentParser({ description: 'abcdesktop Dockerfile generator' });
+parser.add_argument('-v', '--version',   	{ action: 'version', version });
+parser.add_argument('-d', '--dockerfile', 	{ default: false, 		help: 'boolean true/false, default is false, force output as Dockerfile (must contains only one entry in json application list' });
+parser.add_argument('-r', '--release',   	{ default: '2.0', 		help: 'build version 2.0 or 3.0' });
+parser.add_argument('-f', '--applicationfile', 	{ default: 'applist.json', 	help: 'applicationfile applist.json' });
+
+let args=parser.parse_args();
+console.log( args );
+abcdesktop_release = args.release;
+console.log( 'Building image for release=' + abcdesktop_release );
+defaultApplicationfile = args.applicationfile;
+console.log( 'Read database json file=' + defaultApplicationfile );
+forceOutputToDockerfile = args.dockerfile;
+console.log( 'Only one file option to force output to dockerfile=' +  forceOutputToDockerfile);
 
 
-const isFileOption = (element) => element == '-f';
-
-// -f option replace the default applist.json file
-const indexFileOption = myArgs.findIndex(isFileOption);
-if (indexFileOption != -1) {
-   var indexFileName = indexFileOption + 1;
-   if (indexFileName < myArgs.length )
-	defaultApplicationfile =  myArgs[indexFileName];
-}
-
-
+// Start open file
 // open the default application json file
 // applist.json is an array of dictionary file
 // each entry is an application description
@@ -249,26 +262,20 @@ var jsoncontent = JSON.parse(content);
 // if jsoncontent is not an array 
 // it may be a signel application json file description
 // convert as an array
-
+// if it is only one app
 if ( !Array.isArray(jsoncontent) ) {
 	jsoncontent = [ jsoncontent ];
 }
 
 // count applications entries
 const len_content = jsoncontent.length;
-
 console.log( 'applist.json entries: ' + len_content );
 
-var myArgs = process.argv.slice(2);
-console.log('myArgs: ', myArgs);
-
 // if args contains the Dockerfile option
-if (myArgs.includes("Dockerfile")) {
+if (forceOutputToDockerfile === true ) {
 	// if only one application is defined in applist.json 
 	if (len_content == 1) {
 		console.log( 'Building file Dockerfile as output' );
-		// use Dockerfile as output filename
-		forceOutputToDockerfile = true;
 	}
 	else
 	{
