@@ -15,10 +15,28 @@
     "name": "Atom",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/atom",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "args": "--no-sandbox  --disable-gpu",
     "desktopfile": "/usr/share/applications/atom.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "preruncommands": [
+        "RUN curl -sL --output /tmp/ApacheDirectoryStudio.tar.gz https://dlcdn.apache.org/directory/studio/2.0.0.v20210717-M17/ApacheDirectoryStudio-2.0.0.v20210717-M17-linux.gtk.x86_64.tar.gz && cd /usr/local && tar -xvf /tmp/ApacheDirectoryStudio.tar.gz && rm -rf /tmp/ApacheDirectoryStudio.tar.gz",
+    	"RUN mkdir /.ApacheDirectoryStudio && chmod 777 /.ApacheDirectoryStudio",
+    	"COPY composer/init.d/init.ApacheDirectoryStudio /composer/init.d/"],
+    "debpackage": "openjdk-11-jre libswt-gtk-4-jni libswt-webkit-gtk-4-jni libswt-cairo-gtk-4-jni libswt-gtk-4-java",
+    "icon": "account.svg",
+    "args": "-configuration .eclipse/1988419495_linux_gtk_x86_64",
+    "installrecommends" : true,
+    "keyword": "ldap",
+    "launch": "Apache Directory Studio.Apache Directory Studio",
+    "name": "apachedirectorystudio",
+    "displayname": "Apache Directory Studio",
+    "rules": { "homedir": { "default": true } },
+    "path": "/usr/local/ApacheDirectoryStudio/ApacheDirectoryStudio",
+    "template": "abcdesktopio/oc.template.ubuntu.22.04"
+},  {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "blobby",
@@ -28,7 +46,7 @@
     "launch": "blobby.blobby",
     "name": "blobby",
     "path": "/usr/games/blobby",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "args": "",
     "desktopfile": "/usr/share/applications/blobby.desktop"
 }, {
@@ -49,7 +67,7 @@
     "displayname": "OnlyOffice",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/desktopeditors",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "mimetype" : "application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/vnd.oasis.opendocument.text-web;application/vnd.oasis.opendocument.text-master;application/vnd.sun.xml.writer;application/vnd.sun.xml.writer.template;application/vnd.sun.xml.writer.global;application/msword;application/vnd.ms-word;application/x-doc;application/rtf;text/rtf;application/vnd.wordperfect;application/wordperfect;application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-word.document.macroenabled.12;application/vnd.openxmlformats-officedocument.wordprocessingml.template;application/vnd.ms-word.template.macroenabled.12;application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.spreadsheet-template;application/vnd.sun.xml.calc;application/vnd.sun.xml.calc.template;application/msexcel;application/vnd.ms-excel;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroenabled.12;application/vnd.openxmlformats-officedocument.spreadsheetml.template;application/vnd.ms-excel.template.macroenabled.12;application/vnd.ms-excel.sheet.binary.macroenabled.12;text/csv;text/spreadsheet;application/csv;application/excel;application/x-excel;application/x-msexcel;application/x-ms-excel;text/comma-separated-values;text/tab-separated-values;text/x-comma-separated-values;text/x-csv;application/vnd.oasis.opendocument.presentation;application/vnd.oasis.opendocument.presentation-template;application/vnd.sun.xml.impress;application/vnd.sun.xml.impress.template;application/mspowerpoint;application/vnd.ms-powerpoint;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-powerpoint.presentation.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.template;application/vnd.ms-powerpoint.template.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.slide;application/vnd.openxmlformats-officedocument.presentationml.slideshow;application/vnd.ms-powerpoint.slideshow.macroEnabled.12;",
     "args": "",
     "fileextensions": "doc;docx;odt;rtf;txt;xls;xlsx;ods;csv;ppt;pptx;odp", 
@@ -65,10 +83,20 @@
     "name": "Xterm",
     "path": "/usr/bin/xterm",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.alpine.template.minimal",
-    "preruncommands": [
-        "RUN apk add sudo",
-        "echo \"balloon ALL=(ALL) NOPASSWD:ALL\" | tee /etc/sudoers.d/balloon" ],
+    "template": "abcdesktopio/oc.template.alpine.minimal",
+    "quick": true
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "preruncommands": [ "ENV QT_XCB_NO_MITSHM=1" ],
+    "icon": "konsole.svg",
+    "apkpackage": "konsole",
+    "keyword": "xterm,shell,cmd",
+    "launch": "konsole.konsole",
+    "name": "konsole",
+    "path": "/usr/bin/konsole",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.alpine",
     "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
@@ -85,7 +113,7 @@
     "rules": { "homedir": { "default": true } },
     "name": "postman",
     "path": "/usr/local/bin/Postman/app/Postman",
-    "template": "abcdesktopio/oc.template.gtk"
+    "template": "abcdesktopio/oc.template.ubuntu.gtk"
 }, {   
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -97,7 +125,7 @@
     "displayname": "Filelight",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/filelight",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "inode/directory;",
     "fileextensions":"",
     "args": "",
@@ -112,7 +140,7 @@
     "name": "xpad",
     "displayname": "Xpad",
     "path": "/usr/bin/xpad",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "rules": { "homedir": { "default": true } },
     "fileextensions":"",
     "args": "",
@@ -128,7 +156,7 @@
     "name": "xman",
     "displayname": "Xman",
     "path": "/usr/bin/xman",
-    "template": "abcdesktopio/oc.template.minimal.18.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.18.04",
     "mimetype": "application/x-troff;application/x-troff-man;",
     "fileextensions":"man;roff",
     "args": ""
@@ -143,7 +171,7 @@
     "displayname": "OCR-gimagereader",
     "path": "/usr/bin/gimagereader-gtk",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk.gimagereader",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.gimagereader",
     "mimetype": "image/bmp;image/jpeg;image/gif;image/png;image/tiff;image/x-bmp;image/x-ico;image/x-png;image/x-pcx;image/x-tga;image/xpm;image/svg+xml;",
     "fileextensions":"bmp;jpeg;png,tiff,tga",
     "args": "",
@@ -159,7 +187,7 @@
     "displayname": "Xedit",
     "path": "/usr/bin/xedit",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "application/text;",
     "fileextensions":"txt;log;md",
     "args": "",
@@ -174,7 +202,7 @@
     "name": "file-roller",
     "displayname": "file-roller",
     "path": "/usr/bin/file-roller",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "mimetype": "application/x-7z-compressed;application/gzip;application/gtar;application/tar;application/zip;application/x-compress;application/x-compressed;application/x-zip-compressed;multipart/x-zip;application/gnutar;application/x-lzx;application/lzx;application/x-gzip;application/x-gtar;application/x-bzip2;application/x-bzip;application/x-bzip2;",
     "fileextensions":"7z;7zip;Z;unzip;zip;tar;tgz;war;tar.gz;ar;bcz;cpio;ear;jar;iso;tar.Z;tar.gz;tar.lz;tar.lzma;tar.lzo;tar.xz",
     "args": "",
@@ -183,47 +211,44 @@
     "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
-    "args": "notepad",
     "cat": "utilities",
-    "preruncommands": [
-        "ENV WINEARCH=win64",
-        "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
-        "USER $BUSER",
-        "RUN wineboot --init",
-        "RUN echo disable > $WINEPREFIX/.update-timestamp",
-        "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine/" ],
-    "debpackage": "",
+    "apkpackage": "wine",
     "icon": "notepad.svg",
     "keyword": "wine,notepad,text",
-    "launch": "notepad.exe.Wine",
+    "launch": "notepad.exe.notepad.exe",
     "name": "notepad-wine",
-    "displayname": "Notepad Wine",
+    "displayname": "Notepad Wine (alpine)",
     "mimetype": "application/text;",
     "fileextensions":"txt;log;",
-    "path": "/usr/bin/wine",
+    "path": "/usr/bin/notepad",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.wine"
+    "template": "abcdesktopio/oc.template.alpine.wine"
 }, {
     "acl": { "permit": [ "all" ] },
-    "args": "winefile",
     "cat": "utilities",
-    "preruncommands": [
-        "ENV WINEARCH=win64",
-        "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
-        "USER $BUSER",
-        "RUN wineboot --init",
-        "RUN echo disable > $WINEPREFIX/.update-timestamp",
-        "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine/" ],
-    "debpackage": "",
+    "apkpackage": "wine",
     "icon": "winefile.svg",
     "keyword": "wine,winefile,file,manager",
-    "launch": "winefile.exe.Wine",
+    "launch": "winefile.exe.winefile.exe",
     "name": "winefile-wine",
-    "displayname": "Winefile Wine",
+    "displayname": "Winefile Wine (alpine)",
     "rules": { "homedir": { "default": true } },
-    "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.wine"
+    "path": "/usr/bin/winfile",
+    "template": "abcdesktopio/oc.template.alpine.wine"
 }, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities",
+    "apkpackage": "wine",
+    "icon": "pantheon-terminal-icons.svg",
+    "keyword": "cmd.exe",
+    "launch": "conhost.exe.conhost.exe",
+    "name": "cmd wine",
+    "displayname": "cmd.exe wine (alpine)",
+    "rules": { "homedir": { "default": true } },
+    "path": "/usr/bin/wineconsole",
+    "template": "abcdesktopio/oc.template.alpine.minimal"
+}, 
+{
     "acl": { "permit": [ "all" ] },
     "args": "winhelp",
     "cat": "utilities",
@@ -255,48 +280,37 @@
     "name": "frozen-bubble",
     "displayname": "frozen-bubble",
     "path": "/usr/games/frozen-bubble",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
-    "args": "winemine",
     "cat": "games",
-    "preruncommands": [
-        "ENV WINEARCH=win64",
-        "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
-        "USER $BUSER",
-        "RUN wineboot --init",
-        "RUN echo disable > $WINEPREFIX/.update-timestamp",
-        "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine/" ],
-    "debpackage": "",
+    "apkpackage": "wine",
     "icon": "winemine.svg",
     "keyword": "wine,winemine",
     "launch": "winemine.exe.Wine",
     "name": "winemine-wine",
-    "displayname": "WineMine Wine",
+    "displayname": "WineMine Wine (alpine)",
     "rules": { "homedir": { "default": true } },
-    "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.wine"
+    "path": "/usr/bin/winemine",
+    "template": "abcdesktopio/oc.template.alpine.minimal"
 }, {
     "acl": { "permit": [ "all" ] },
-    "template": "abcdesktopio/oc.template.wine",
+    "template": "abcdesktopio/oc.template.alpine.minimal",
     "preruncommands": [ 
         "ENV WINEARCH=win64",
-	"ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
-        "USER $BUSER",
-        "RUN wineboot --init",
-        "RUN curl -Ls -o /composer/bin/putty.exe https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe",
-        "RUN echo disable > $WINEPREFIX/.update-timestamp",
-        "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine/" ],
+        "RUN mkdir -p /composer/bin",
+        "RUN curl -Ls -o /composer/bin/putty.exe https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe"
+    ],
     "args": "/composer/bin/putty.exe",
     "cat": "utilities",
-    "debpackage": "",
+    "apkpackage": "wine",
     "icon": "putty.svg",
     "keyword": "wine,putty,ssh,terminal",
-    "launch": "putty.exe.Wine",
+    "launch": "putty.exe.putty.exe",
     "rules": { "homedir": { "default": true } },
     "name": "putty-wine",
-    "displayname": "Putty Wine",
-    "path": "/usr/bin/wine"
+    "displayname": "Putty Wine (alpine)",
+    "path": "/usr/bin/wine64"
 }, {
     "acl": { "permit": [ "all" ] },
     "template": "abcdesktopio/oc.template.wine",
@@ -330,7 +344,7 @@
     "name": "putty-unix",
     "displayname": "Putty Unix",
     "path": "/usr/bin/putty",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -341,7 +355,7 @@
     "name": "supertux2",
     "displayname": "supertux2",
     "path": "/usr/games/supertux2",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "desktopfile": "/usr/share/applications/supertux2.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -353,7 +367,7 @@
     "name": "doom",
     "displayname": "Doom",
     "path": "/usr/games/doom",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -367,21 +381,36 @@
     "displayname": "kigo",
     "rules": { "homedir": { "default": false } },
     "path": "/usr/games/kigo",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile": "/usr/share/applications/kigo.desktop",
     "preruncommands": [ "COPY composer/init.d/init.kigo /composer/init.d/init.kigo" ]
 }, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "games",
+    "apkpackage": "gnome-2048",
+    "icon": "circle_2048.svg",
+    "keyword": "2048",
+    "launch": "org.gnome.TwentyFortyEight.Gnome-2048",
+    "name": "alpine-2048",
+    "displayname": "2048 (alpine)",
+    "path": "/usr/bin/gnome-2048",
+    "desktopfile": "/usr/share/applications/org.gnome.TwentyFortyEight.desktop",
+    "template": "abcdesktopio/oc.template.alpine.gtk", 
+    "rules": { "homedir": { "default": true } },
+    "host_config": { "mem_limit": "256M", "shm_size": "64M", "pid_mode": false, "network_mode": "none" }
+},
+{
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "2048-qt",
     "icon": "circle_2048.svg",
     "keyword": "2048",
     "launch": "2048-qt.2048-qt",
-    "name": "2048",
-    "displayname": "2048",
+    "name": "ubuntu-2048",
+    "displayname": "2048 (ubuntu qt)",
     "path": "/usr/games/2048-qt",
     "desktopfile": "/usr/share/applications/2048-qt.desktop",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "rules": { "homedir": { "default": true } },
     "host_config": { "mem_limit": "256M", "shm_size": "64M", "pid_mode": false, "network_mode": "none" }
 }, 
@@ -396,7 +425,7 @@
     "name": "vmrc",
     "displayname": "VMRC",
     "path": "/usr/bin/vmrc",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "mimetype": "x-scheme-handler/vmrc;",
     "desktopfile": "/usr/share/applications/vmware-vmrc.desktop",
     "preruncommands": [ 
@@ -415,7 +444,7 @@
     "name": "remotedesktopmanager",
     "displayname": "RemoteDesktop",
     "path": "/bin/remotedesktopmanager.free",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "mimetype": "",
     "desktopfile": "/usr/share/applications/remotedesktopmanager.free.desktop",
     "preruncommands": [ 
@@ -433,7 +462,7 @@
     "name": "astromenace",
     "displayname": "astromenace",
     "path": "/usr/games/AstroMenace",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "desktopfile": "/usr/share/applications/astromenace.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -445,7 +474,7 @@
     "name": "swell-foop",
     "displayname": "swell-foop",
     "path": "/usr/games/swell-foop",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "desktopfile": "/usr/share/applications/swell-foop.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -463,7 +492,7 @@
     "path": "/usr/local/blender-2.90.0-linux64/blender",
     "mimetype": "application/x-blender",
     "fileextensions":"blend,obj,fbx,3ds,ply,stl",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile": "/usr/local/blender-2.90.0-linux64/blender.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -477,7 +506,7 @@
     "path": "/usr/bin/vlc",
     "mimetype": "video/3gpp;video/dv;video/fli;video/flv;video/mp2t;video/mp4;video/mp4v-es;video/mpeg;video/msvideo;video/ogg;video/quicktime;video/vivo;video/vnd.divx;video/vnd.rn-realvideo;video/vnd.vivo;video/webm;video/x-anim;video/x-avi;video/x-flc;video/x-fli;video/x-flic;video/x-flv;video/x-m4v;video/x-matroska;video/x-mpeg;video/x-ms-asf;video/x-ms-asx;video/x-msvideo;video/x-ms-wm;video/x-ms-wmv;video/x-ms-wmx;video/x-ms-wvx;video/x-nsv;video/x-ogm+ogg;video/x-theora+ogg;",
     "fileextensions":"asx;dts;gxf;m2v;m3u;m4v;mpeg1;mpeg2;mts;mxf;ogm;pls;bup;a52;aac;b4s;cue;divx;dv;flv;m1v;m2ts;mkv;mov;mpeg4;oma;spx;ts,vlc,vob,xspf;dat;bin;ifo;part;3g2;avi;mpeg;mpg;flac;m4a;mp1;ogg;wav;xm;3gp;srt;wmv;ac3;asf;mod;mp2;mp3;mp4;wma;mka;m4p",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "rules": { "homedir": { "default": true } },
     "desktopfile": "/usr/share/applications/vlc.desktop",
     "quick": true
@@ -491,7 +520,7 @@
     "name": "Evince",
     "path": "/usr/bin/evince",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "mimetype": "application/pdf;application/x-bzpdf;application/x-gzpdf;application/x-xzpdf;application/x-ext-pdf;application/postscript;application/x-bzpostscript;application/x-gzpostscript;image/x-eps;image/x-bzeps;image/x-gzeps;application/x-ext-ps;application/x-ext-eps;application/x-dvi;application/x-bzdvi;application/x-gzdvi;application/x-ext-dvi;image/vnd.djvu;application/x-ext-djv;application/x-ext-djvu;image/tiff;application/x-cbr;application/x-cbz;application/x-cb7;application/x-cbt;application/x-ext-cbr;application/x-ext-cbz;application/x-ext-cb7;application/x-ext-cbt;application/oxps;application/vnd.ms-xpsdocument;",
     "fileextensions": "pdf;ps;dvi;eps;cbt;cbr;cb7;xps",
     "legacyfileextensions": "pdf;ps;dvi",
@@ -500,26 +529,29 @@
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
-    "debpackage": "filezilla",
+    "apkpackage": "filezilla",
     "icon": "circle_filezilla.svg",
     "keyword": "ftp,client",
     "launch": "filezilla.Filezilla",
     "name": "filezilla",
+    "displayname": "filezilla (alpine)",
     "path": "/usr/bin/filezilla",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.alpine.gtk",
     "desktopfile": "/usr/share/applications/filezilla.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
-    "debpackage": "wireshark-gtk",
+    "preruncommands": [ "ENV QT_XCB_NO_MITSHM=1" ],
+    "apkpackage": "wireshark",
     "icon": "wireshark.svg",
     "keyword": "capture,network,analyzer",
-    "launch": "wireshark-gtk.Wireshark-gtk",
+    "launch": "wireshark.Wireshark",
     "name": "wireshark",
+    "displayname": "wireshark (alpine)",
     "path": "/usr/bin/wireshark",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.alpine.gtk",
     "desktopfile": "/usr/share/applications/wireshark.desktop",
     "mimetype": "application/vnd.tcpdump.pcap;application/x-pcapng;application/x-snoop;application/x-iptrace;application/x-lanalyzer;application/x-nettl;application/x-radcom;application/x-etherpeek;application/x-visualnetworks;application/x-netinstobserver;application/x-5view;application/x-tektronix-rf5;",
     "fileextensions": "cap,pcap",
@@ -527,22 +559,23 @@
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
-    "preruncommands": [  	
-        "RUN mkdir -p /var/run/dbus/ chown balloon:balloon /var/run/dbus", 
+    "preruncommands": [ 
+        "RUN mkdir -p /run/user/4096 /var/run/dbus/ chown balloon:balloon /run/user/4096 /var/run/dbus", 
         "COPY composer/node /composer/node",
-	   	"RUN cd /composer/node/ocdownload && npm install", 
-	    "COPY composer/init.d/init.nautilus /composer/init.d/init.nautilus",
-   		"COPY composer/desktop_download.py /composer/desktop_download.py" ],
-    "debpackage": "dbus gnome-icon-theme gnome-icon-theme-symbolic numix-gtk-theme numix-icon-theme gnome-font-viewer dbus-x11 python-nautilus python-shellescape nautilus desktop-file-utils shared-mime-info xdg-user-dirs",
+	"RUN cd /composer/node/ocdownload && npm install", 
+	"COPY composer/init.d/init.nautilus /composer/init.d/init.nautilus",
+   	"COPY composer/desktop_download.py /composer/desktop_download.py",
+   	"ENV NAUTILUS_PYTHON_DEBUG=misc" ],
+    "debpackage": "dbus gnome-icon-theme gnome-icon-theme-symbolic numix-gtk-theme numix-icon-theme gnome-font-viewer dbus-x11 python3-nautilus python3-shellescape nautilus desktop-file-utils shared-mime-info xdg-user-dirs",
     "icon": "circle_filemanager.svg",
     "keyword": "file,manager,nautilus",
-    "launch": "nautilus.Nautilus",
+    "launch": "org.gnome.Nautilus.Org.gnome.Nautilus",
     "name": "nautilus",
     "displayname": "FileManager",
     "showinview": "dock",
     "path": "/usr/bin/nautilus",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile":"/usr/share/applications/nautilus.desktop",
     "usedefaultapplication": true,
     "quick": true
@@ -552,21 +585,20 @@
     "cat": "office",
     "comment": "NSS_SDB_USE_CACHE=yes",
     "preruncommands": [ 
-	    "COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
-		"COPY policies.json /usr/lib/firefox/distribution",
-		"COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
-		"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
-    "debpackage": "krb5-user winbind firefox",
+	"COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
+	"COPY policies.json /usr/lib/firefox/distribution",
+	"COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
+	"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
+    "aokpackage": "krb5-user winbind firefox",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.Firefox",
     "name": "Firefox",
     "displayname": "Firefox",
     "showinview": "dock",
-    
     "run_inside_pod": false,
     "path": "/usr/bin/firefox",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.alpine.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
@@ -590,10 +622,9 @@
     "name": "Firefox",
     "displayname": "Firefox",
     "showinview": "dock",
-    
     "run_inside_pod": false,
     "path": "/usr/bin/firefox",
-    "template": "abcdesktopio/oc.template.gtk.20.04",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.20.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
@@ -629,7 +660,7 @@
     "host_config": { "shm_size" : "2G" },
     "args": "-new-instance -P abcdesktop-firefox-esr --class firefox-esr",
     "path": "/usr/bin/firefox-esr",
-    "template": "abcdesktopio/oc.template.minimal.18.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.18.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
@@ -659,7 +690,7 @@
     
     "installrecommends" : true,
     "path": "/usr/bin/x64",
-    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.18.04",
     "fileextensions": "crt;bin",
     "desktopfile":"/usr/share/applications/x64.desktop",
     "usedefaultapplication": false
@@ -688,7 +719,7 @@
     "args": "--no-sandbox",
     "rules": { "homedir": { "default": true } },
     "path": "/opt/Beekeeper-Studio/beekeeper-studio",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "legacyfileextensions": "sql",
     "fileextensions": "sql",
     "desktopfile":"/usr/share/applications/beekeeper-studio.desktop",
@@ -704,7 +735,7 @@
     "displayname": "Remmina",
     "args": "",
     "path": "/usr/bin/remmina",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "mimetype": "application/x-remmina;",
     "desktopfile":"/usr/share/applications/remmina-file.desktop",
     "rules": { "homedir": { "default": true } },
@@ -726,7 +757,7 @@
     "secrets_requirement": "citrix",
     "args": "-icaroot /opt/Citrix/ICAClient",
     "path": "/opt/Citrix/ICAClient/wfica",
-    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.18.04",
     "mimetype": "application/x-ica;",
     "rules": { "homedir": { "default": true } },
     "desktopfile":"/usr/share/applications/wfica.desktop",
@@ -747,7 +778,7 @@
     "displayname": "Remarkable",
     
     "path": "/usr/bin/remarkable",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "text/x-markdown;text/markdown;",
     "legacyfileextensions": "md;markdown",
     "fileextensions": "md;markdown",
@@ -769,7 +800,7 @@
     "path": "/opt/Hyper/hyper",
     "mimetype": "x-scheme-handler/ssh",
     "fileextensions":"",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "rules": { "homedir": { "default": true } },
     "desktopfile": "/usr/share/applications/hyper.desktop"
 }, {
@@ -790,7 +821,7 @@
     "installrecommends" : true,
     "path": "/usr/bin/google-chrome-stable",
     "args": "--no-sandbox --disable-gpu --disable-dev-shm-usage",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -810,7 +841,7 @@
     "installrecommends" : true,
     "path": "/usr/bin/chromium-browser",
     "args": "-no-sandbox --disable-gpu --disable-dev-shm-usage",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -835,7 +866,7 @@
     "path": "/usr/bin/microsoft-edge",
     "rules": { "homedir": { "default": true } },
     "args": "--no-sandbox --disable-gpu --disable-dev-shm-usage",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -859,7 +890,7 @@
     "path": "/usr/bin/teams",
     "rules": { "homedir": { "default": true } },
     "args": "--disable-namespace-sandbox --disable-setuid-sandbox",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "x-scheme-handler/msteams;",
     "desktopfile":"/usr/share/applications/teams.desktop",
     "quick": true
@@ -874,7 +905,7 @@
     "displayname": "Evolution",
     "path": "/usr/bin/evolution",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "text/calendar;text/x-vcard;text/directory;application/mbox;message/rfc822;x-scheme-handler/mailto;",
     "desktopfile": "/usr/share/applications/evolution.desktop"
 }, {
@@ -888,25 +919,24 @@
     "displayname": "Thunderbird",
     "path": "/usr/bin/thunderbird",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "x-scheme-handler/mailto",
     "desktopfile": "/usr/share/applications/thunderbird.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "fonts-liberation2 fonts-noto",
+    "apkpackage": "libreoffice-gnome",
     "icon": "circle_libreoffice_writer.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-writer",
     "name": "writer",
     "rules": { "homedir": { "default": true } },
-    "displayname": "Writer",
-    
+    "displayname": "Writer ubuntu",
     "showinview": "dock",
     "path": "/usr/lib/libreoffice/program/soffice",
     "args": "--writer",
     "uniquerunkey": "libreoffice",
-    "template": "abcdesktopio/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.alpine.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/vnd.oasis.opendocument.text-web;application/vnd.oasis.opendocument.text-master;application/vnd.oasis.opendocument.text-master-template;application/vnd.sun.xml.writer;application/vnd.sun.xml.writer.template;application/vnd.sun.xml.writer.global;application/msword;application/vnd.ms-word;application/x-doc;application/x-hwp;application/rtf;text/rtf;application/vnd.wordperfect;application/wordperfect;application/vnd.lotus-wordpro;application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-word.document.macroenabled.12;application/vnd.openxmlformats-officedocument.wordprocessingml.template;application/vnd.ms-word.template.macroenabled.12;application/vnd.stardivision.writer-global;application/x-extension-txt;application/x-t602;application/vnd.oasis.opendocument.text-flat-xml;application/x-fictionbook+xml;application/macwriteii;application/x-aportisdoc;application/prs.plucker;application/vnd.palm;application/clarisworks;application/x-sony-bbeb;application/x-abiword;application/x-iwork-pages-sffpages;application/x-mswrite;",
     "legacyfileextensions": "odf;ott;fodt;uot",
     "fileextensions": "sxw;stw;doc;dot;wps;rtf;602;wpd;docx;docm;dotx;dotm;abw;zabw;pages;dummy;lrf;cwk;hqx;fb2;mw;mcw;mwd;pdb;wn",
@@ -916,19 +946,39 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "",
+    "apkpackage": "libreoffice-gnome",
+    "icon": "circle_libreoffice_writer.svg",
+    "keyword": "libreoffice,office",
+    "launch": "libreoffice.libreoffice-writer",
+    "name": "writer",
+    "rules": { "homedir": { "default": true } },
+    "displayname": "Writer alpine",
+    "showinview": "dock",
+    "path": "/usr/lib/libreoffice/program/soffice",
+    "args": "--writer",
+    "uniquerunkey": "libreoffice",
+    "template": "abcdesktopio/oc.template.alpine.libreoffice",
+    "mimetype": "application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/vnd.oasis.opendocument.text-web;application/vnd.oasis.opendocument.text-master;application/vnd.oasis.opendocument.text-master-template;application/vnd.sun.xml.writer;application/vnd.sun.xml.writer.template;application/vnd.sun.xml.writer.global;application/msword;application/vnd.ms-word;application/x-doc;application/x-hwp;application/rtf;text/rtf;application/vnd.wordperfect;application/wordperfect;application/vnd.lotus-wordpro;application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-word.document.macroenabled.12;application/vnd.openxmlformats-officedocument.wordprocessingml.template;application/vnd.ms-word.template.macroenabled.12;application/vnd.stardivision.writer-global;application/x-extension-txt;application/x-t602;application/vnd.oasis.opendocument.text-flat-xml;application/x-fictionbook+xml;application/macwriteii;application/x-aportisdoc;application/prs.plucker;application/vnd.palm;application/clarisworks;application/x-sony-bbeb;application/x-abiword;application/x-iwork-pages-sffpages;application/x-mswrite;",
+    "legacyfileextensions": "odf;ott;fodt;uot",
+    "fileextensions": "sxw;stw;doc;dot;wps;rtf;602;wpd;docx;docm;dotx;dotm;abw;zabw;pages;dummy;lrf;cwk;hqx;fb2;mw;mcw;mwd;pdb;wn",
+    "desktopfile": "/usr/share/applications/libreoffice-writer.desktop",
+    "usedefaultapplication": true,
+    "abcdesktop_release": 3
+},  {
+    "acl": { "permit": [ "all" ] },
+    "cat": "office",
+    "apkpackage": "libreoffice-gnome",
     "icon": "circle_libreoffice_calc.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-calc",
     "name": "calc",
     "displayname": "Calc",
     "showinview": "dock",
-    
     "args": "--calc",
     "rules": { "homedir": { "default": true } },
     "uniquerunkey": "libreoffice",
     "path": "/usr/lib/libreoffice/program/soffice",
-    "template": "abcdesktopio/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.alpine.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.spreadsheet-template;application/vnd.sun.xml.calc;application/vnd.sun.xml.calc.template;application/msexcel;application/vnd.ms-excel;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroenabled.12;application/vnd.openxmlformats-officedocument.spreadsheetml.template;application/vnd.ms-excel.template.macroenabled.12;application/vnd.ms-excel.sheet.binary.macroenabled.12;text/csv;application/x-dbf;text/spreadsheet;application/csv;application/excel;application/tab-separated-values;application/vnd.lotus-1-2-3;application/vnd.oasis.opendocument.chart;application/vnd.oasis.opendocument.chart-template;application/x-dbase;application/x-dos_ms_excel;application/x-excel;application/x-msexcel;application/x-ms-excel;application/x-quattropro;application/x-123;text/comma-separated-values;text/tab-separated-values;text/x-comma-separated-values;text/x-csv;application/vnd.oasis.opendocument.spreadsheet-flat-xml;application/vnd.ms-works;application/x-iwork-numbers-sffnumbers;",
     "legacyfileextensions": "ods;ots;csv",
     "fileextensions": "ods;ots;sxc;stc;fods;uos;uof;xml;xlsx;xlsm;xltm;xltx;xlsb;xls;xlm;xlc;xlw;xlk;xlt;dif;dbf;htm;html;wk1;wks;123;wb2;rtf;slk;sylk;csv;numbers;dummy;cwk;wps;wk3;wq1;wq2",
@@ -938,7 +988,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "",
+    "apkpackage": "libreoffice-gnome",
     "icon": "circle_libreoffice_impress.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-impress",
@@ -949,7 +999,7 @@
     "uniquerunkey": "libreoffice",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/lib/libreoffice/program/soffice",
-    "template": "abcdesktopio/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.alpine.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.presentation;application/vnd.oasis.opendocument.presentation-template;application/vnd.sun.xml.impress;application/vnd.sun.xml.impress.template;application/mspowerpoint;application/vnd.ms-powerpoint;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-powerpoint.presentation.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.template;application/vnd.ms-powerpoint.template.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.slide;application/vnd.openxmlformats-officedocument.presentationml.slideshow;application/vnd.ms-powerpoint.slideshow.macroenabled.12;application/vnd.oasis.opendocument.presentation-flat-xml;application/x-iwork-keynote-sffkey;",
     "fileextensions": "odp;pot;potm;potx;pps;ppsx;ppt;pptx;pptm",
     "legacyfileextensions":"odp",
@@ -958,7 +1008,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "",
+    "apkpackage": "libreoffice-gnome",
     "icon": "circle_libreoffice_math.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-math",
@@ -968,7 +1018,7 @@
     "uniquerunkey": "libreoffice",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/lib/libreoffice/program/soffice",
-    "template": "abcdesktopio/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.alpine.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.formula;application/vnd.sun.xml.math;application/vnd.oasis.opendocument.formula-template;text/mathml;application/mathml+xml;",
     "fileextensions": "odf;odc",
     "legacyfileextensions": "odf;odc",
@@ -978,7 +1028,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "",
+    "apkpackage": "libreoffice-gnome",
     "icon": "circle_libreoffice_draw.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-draw",
@@ -988,7 +1038,7 @@
     "args": "--draw",
     "uniquerunkey": "libreoffice",
     "path": "/usr/lib/libreoffice/program/soffice",
-    "template": "abcdesktopio/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.alpine.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.graphics;application/vnd.oasis.opendocument.graphics-flat-xml;application/vnd.oasis.opendocument.graphics-template;application/vnd.sun.xml.draw;application/vnd.sun.xml.draw.template;application/vnd.visio;application/x-wpg;application/vnd.ms-publisher;image/x-freehand;application/x-pagemaker;",
     "fileextensions": "odp;otg",
     "legacyfileextensions":"odp;otg",
@@ -998,7 +1048,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "debpackage": "",
+    "apkpackage": "libreoffice-gnome",
     "icon": "circle_libreoffice_base.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-base",
@@ -1007,7 +1057,7 @@
     "args": "--base",
     "uniquerunkey": "libreoffice",
     "path": "/usr/lib/libreoffice/program/soffice",
-    "template": "abcdesktopio/oc.template.gtk.libreoffice",
+    "template": "abcdesktopio/oc.template.alpine.libreoffice",
     "mimetype": "application/vnd.oasis.opendocument.database;application/vnd.sun.xml.base;",
     "fileextensions": "odb",
     "rules": { "homedir": { "default": true } },
@@ -1027,7 +1077,7 @@
     "path": "/usr/bin/gnome-terminal",
     "args": "--disable-factory",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.minimal.20.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.20.04",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY composer/init.d/init.gnome-terminal /composer/init.d/init.gnome-terminal" ] 
@@ -1042,7 +1092,7 @@
     "path": "/usr/bin/io.elementary.terminal",
     "args": "",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk.elementary",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.elementary",
     "desktopfile": "/usr/share/applications/io.elementary.terminal.desktop",
     "quick": true
 }, {
@@ -1057,7 +1107,7 @@
     "rules": { "homedir": { "default": true } },
     "host_config": { "mem_limit": "256M", "shm_size": "128M", "pid_mode": false, "ipc_mode": false  },
     "args": "--disable-factory --class=stress",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1073,34 +1123,19 @@
     "host_config": { "mem_limit": "256M", "shm_size": "128M", "pid_mode": false, "ipc_mode": false  },
     "args": "--disable-factory --class=pod",
     "run_inside_pod": true,
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop"
-},{
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "debpackage": "at-spi2-core gnome-terminal dbus-x11",
-    "icon": "ai-python.svg",
-    "keyword": "terminal,ai,ia,shell,cmd,python",
-    "launch": "gnome-terminal-server.terminalai",
-    "name": "terminalai",
-    "displayname": "Shell AI",
-    "rules": { "homedir": { "default": true } },
-    "path": "/usr/bin/gnome-terminal",
-    "args": "--disable-factory --class=terminalai",
-    "template": "abcdesktopio/oc.template.gtk.fulldev.ia",
-    "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
-    "quick": false
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
-    "debpackage": "gimp",
+    "apkpackage": "gimp",
     "icon": "circle_gimp.svg",
     "keyword": "gimp,image,gif,tiff,png,jpeg,bmp,tga,pcx,bitmap,jpg,pixmap",
     "launch": "gimp.Gimp",
     "name": "Gimp",
     "path": "/usr/bin/gimp",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.alpine.gtk",
     "mimetype": "image/bmp;image/g3fax;image/gif;image/x-fits;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-psd;image/x-sgi;image/x-tga;image/x-xbitmap;image/x-xwindowdump;image/x-xcf;image/x-compressed-xcf;image/x-gimp-gbr;image/x-gimp-pat;image/x-gimp-gih;image/jpeg;image/x-psp;image/png;image/x-icon;image/x-xpixmap;image/x-wmf;image/jp2;image/jpeg2000;image/jpx;image/x-xcursor;",
     "fileextensions": "dds",
     "legacyfileextensions":"dds",
@@ -1116,24 +1151,24 @@
     "launch": "shotcut.Shotcut",
     "name": "Shotcut",
     "path": "/usr/bin/shotcut",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.alpine.gtk",
     "mimetype": "image/bmp;image/g3fax;image/gif;image/x-fits;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-psd;image/x-sgi;image/x-tga;image/x-xbitmap;image/x-xwindowdump;image/x-xcf;image/x-compressed-xcf;image/x-gimp-gbr;image/x-gimp-pat;image/x-gimp-gih;image/jpeg;image/x-psp;image/png;image/x-icon;image/x-xpixmap;image/x-wmf;image/jp2;image/jpeg2000;image/jpx;image/x-xcursor;application/vnd.mlt+xml;application/ogg;application/x-ogg;audio/ogg;audio/x-vorbis;audio/x-vorbis+ogg;video/ogg;video/x-ogm+ogg;video/x-theora+ogg;video/x-theora;audio/x-speex;audio/opus;application/x-flac;audio/flac;audio/x-flac;audio/x-ms-asf;audio/x-ms-asx;audio/x-ms-wax;audio/x-ms-wma;video/x-ms-asf;video/x-ms-asf-plugin;video/x-ms-asx;video/x-ms-wm;video/x-ms-wmv;video/x-ms-wmx;video/x-ms-wvx;video/x-msvideo;audio/x-pn-windows-acm;video/divx;video/msvideo;video/vnd.divx;video/x-avi;application/vnd.rn-realmedia;application/vnd.rn-realmedia-vbr;audio/vnd.rn-realaudio;audio/x-pn-realaudio;audio/x-pn-realaudio-plugin;audio/x-real-audio;audio/x-realaudio;video/vnd.rn-realvideo;audio/mpeg;audio/mpg;audio/mp1;audio/mp2;audio/mp3;audio/x-mp1;audio/x-mp2;audio/x-mp3;audio/x-mpeg;audio/x-mpg;video/mp2t;video/mpeg;video/mpeg-system;video/x-mpeg;video/x-mpeg2;video/x-mpeg-system;application/mpeg4-iod;application/mpeg4-muxcodetable;application/x-extension-m4a;application/x-extension-mp4;audio/aac;audio/m4a;audio/mp4;audio/x-m4a;audio/x-aac;video/mp4;video/mp4v-es;video/x-m4v;application/x-quicktime-media-link;application/x-quicktimeplayer;video/quicktime;application/x-matroska;audio/x-matroska;video/x-matroska;video/webm;audio/webm;audio/3gpp;audio/3gpp2;audio/AMR;audio/AMR-WB;audio/amr;audio/amr-wb;video/3gp;video/3gpp;video/3gpp2;x-scheme-handler/mms;x-scheme-handler/mmsh;x-scheme-handler/rtsp;x-scheme-handler/rtp;x-scheme-handler/rtmp;x-scheme-handler/icy;x-scheme-handler/icyx;x-content/video-vcd;x-content/video-svcd;x-content/video-dvd;x-content/audio-cdda;x-content/audio-player;application/x-cd-image;application/ram;application/xspf+xml;audio/mpegurl;audio/x-mpegurl;audio/scpls;audio/x-scpls;text/google-video-pointer;text/x-google-video-pointer;video/vnd.mpegurl;application/vnd.apple.mpegurl;application/vnd.ms-asf;application/vnd.ms-wpl;application/sdp;audio/dv;video/dv;audio/x-aiff;audio/x-pn-aiff;video/x-anim;video/x-nsv;video/fli;video/flv;video/x-flc;video/x-fli;video/x-flv;audio/wav;audio/x-pn-au;audio/x-pn-wav;audio/x-wav;audio/ac3;audio/eac3;audio/vnd.dts;audio/vnd.dts.hd;audio/vnd.dolby.heaac.1;audio/vnd.dolby.heaac.2;audio/vnd.dolby.mlp;audio/basic;audio/midi;audio/x-ape;audio/x-gsm;audio/x-musepack;audio/x-tta;audio/x-wavpack;audio/x-shorten;application/x-shockwave-flash;application/x-flash-video;misc/ultravox;image/vnd.rn-realpix;audio/x-it;audio/x-mod;audio/x-s3m;audio/x-xm;application/mxf;",
     "fileextensions": "mlt",
     "legacyfileextensions":"mlt",
     "rules": { "homedir": { "default": true } },
-    "desktopfile":"/usr/share/applications/gimp.desktop",
+    "desktopfile":"/usr/share/applications/shotcut.desktop",
     "usedefaultapplication": false
 },{
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
-    "debpackage": "eog",
+    "apkpackage": "eog",
     "icon": "circle_eog.svg",
     "keyword": "eog,image,gif,tiff,png,jpeg,bmp,tga,pcx,bitmap,jpg,pixmap",
     "launch": "eog.Eog",
     "name": "eog",
     "path": "/usr/bin/eog",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.alpine.gtk",
     "mimetype": "image/bmp;image/gif;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-tga;image/x-xbitmap;image/jpeg;image/png;image/x-icon;image/x-xpixmap;image/x-xcursor;",
     "fileextensions": "ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
     "legacyfileextensions":"ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
@@ -1151,7 +1186,7 @@
     "launch": "io.elementary.calculator.Io.elementary.calculator",
     "name": "Calculator",
     "path": "/usr/bin/io.elementary.calculator",
-    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.18.04",
     "mimefilename": "pantheon-calculator",
     "host_config": { "mem_limit": "64M", "shm_size": "0M", "pid_mode": false },
     "desktopfile": "/usr/share/applications/org.pantheon.calculator.desktop",
@@ -1200,10 +1235,25 @@
     "name": "Pinta",
     "path": "/usr/bin/pinta",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "mimetype": "image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/tiff;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/x-targa;image/x-tga;image/openraster;",
     "desktopfile": "/usr/share/applications/pinta.desktop"
 }, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities,office",
+    "displayname": "Pinta (alpine)",
+    "apkpackage": "pinta adwaita-icon-theme libadwaita font-noto font-xfree86-type1",
+    "icon": "pinta.svg",
+    "keyword": "pinta,paint",
+    "launch": "Pinta.Pinta",
+    "name": "Pinta",
+    "path": "/usr/bin/pinta",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.alpine.minimal",
+    "mimetype": "image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/tiff;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/x-targa;image/x-tga;image/openraster;",
+    "desktopfile": "/usr/share/applications/pinta.desktop"
+}, 
+{
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
     "debpackage": "bless",
@@ -1213,7 +1263,7 @@
     "name": "Bless",
     "path": "/usr/bin/bless",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile": "/usr/share/applications/bless.desktop"
 },{
     "acl": { "permit": [ "all" ] },
@@ -1225,7 +1275,7 @@
     "name": "Brackets",
     "path": "/opt/brackets/Brackets",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk.18.04",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.18.04",
     "host_config": { "mem_limit": "512M"  },
     "desktopfile": "/opt/brackets/brackets.desktop",
     "preruncommands": [  
@@ -1248,7 +1298,7 @@
     "rules": { "homedir": { "default": true } },
     "name": "sublime-Text",
     "path": "/opt/sublime_text/sublime_text",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile":"/usr/share/applications/sublime_text.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
@@ -1259,7 +1309,7 @@
     "launch": "inkscape.Inkscape",
     "name": "inkscape",
     "path": "/usr/bin/inkscape",
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "rules": { "homedir": { "default": true } },
     "mimetype": "image/svg+xml;image/svg+xml-compressed;application/vnd.corel-draw;application/illustrator;",
     "fileextensions": "ai;cdr",
@@ -1276,7 +1326,7 @@
     "name": "klotski",
     "host_config": { "mem_limit": "384M", "shm_size": "128M", "pid_mode": false },
     "path": "/usr/games/gnome-klotski",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/gnome-klotski.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
@@ -1289,7 +1339,7 @@
     "args": "--game=flare-game",
     "host_config": { "mem_limit": "512M", "shm_size": "128M", "pid_mode": false },
     "path": "/usr/games/flare",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/flare.desktop"
 },   {
     "acl": { "permit": [ "all" ] },
@@ -1303,7 +1353,7 @@
     "launch": "corsix-th.corsix-th",
     "name": "corsix-th",
     "path": "/usr/games/corsix-th",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/com.corsixth.CorsixTH.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
@@ -1317,7 +1367,7 @@
     "mimetype": "text/plain;text/html;text/x-php;text/x-c;text/x-shellscript;",
     "host_config": { "mem_limit": "512M", "shm_size": "128M", "pid_mode": false },
     "path": "/usr/bin/notepadqq",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/notepadqq.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1328,33 +1378,33 @@
     "launch": "gnome-mahjongg.Gnome-mahjongg",
     "name": "mahjongg",
     "path": "/usr/games/gnome-mahjongg",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "desktopfile":"/usr/share/applications/gnome-mahjongg.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
-    "debpackage": "pychess",
+    "apkpackage": "gnuchess gnome-chess dbus",
     "icon": "circle_chess.svg",
     "keyword": "games",
-    "launch": "pychess.Pychess",
+    "launch": "gnome-chess.gnome-chess",
     "name": "chess",
     "rules": { "homedir": { "default": true } },
-    "path": "/usr/games/pychess",
+    "path": "/usr/bin/gnome-chess",
     "args": "",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.alpine.gtk",
     "mimetype": "application/x-chess-pgn",
-    "desktopfile": "/usr/share/applications/pychess.desktop"
+    "desktopfile": "/usr/share/applications/org.gnome.Chess.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "gedit",
+    "apkpackage": "gedit",
     "icon": "gedit.svg",
     "keyword": "editor",
     "launch": "gedit.Gedit",
     "name": "Gedit",
     "path": "/usr/bin/gedit",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.alpine",
     "mimetype": "text/plain;",
     "fileextensions": "txt",
     "legacyfileextensions":"txt",
@@ -1363,20 +1413,22 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "gnumeric",
+    "apkpackage": "gnumeric glpk",
     "icon": "gnumeric.svg",
     "keyword": "numeric",
-    "launch": "/usr/bin/gnumeric./usr/bin/gnumeric",
+    "launch": "gnumeric.Gnumeric",
+    "displayname": "Gnumerix (alpine)", 
     "name": "Gnumeric",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/gnumeric",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.alpine",
     "mimetype": "application/x-gnumeric;application/x-oleo;application/x-planperfect;application/x-sc;application/x-sylk;application/x-xbase;",
     "fileextensions": "gnm",
     "legacyfileextensions":"gnm",
     "desktopfile": "/usr/share/applications/gnumeric.desktop",
     "abcdesktop_release": 3
-}, {
+}, 
+{
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "gnome-tetravex",
@@ -1385,7 +1437,7 @@
     "launch": "gnome-tetravex.Gnome-tetravex",
     "name": "Tetravex",
     "path": "/usr/games/gnome-tetravex",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "desktop":"gnome-tetravex.desktop",
     "host_config": { "mem_limit": "384M", "shm_size": "128M", "pid_mode": false }
 }, {
@@ -1397,7 +1449,7 @@
     "launch": "xeyes.XEyes",
     "name": "xeyes",
     "path": "/usr/bin/xeyes",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "host_config": { "mem_limit": "32M", "shm_size": "0M", "pid_mode": false, "network_mode": "none" },
     "quick": true
 }, {
@@ -1408,7 +1460,7 @@
     "launch": "planner.Planner",
     "name": "Planner",
     "path": "/usr/bin/planner",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "application/x-planner;",
     "fileextensions": "mpp;mpx",
     "rules": { "homedir": { "default": true } },
@@ -1424,7 +1476,7 @@
     "rules": { "homedir": { "default": true } },
     "name": "Leocad",
     "path": "/usr/bin/leocad",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "application/vnd.leocad;application/x-ldraw;application/x-multi-part-ldraw;application/x-ldlite;",
     "fileextensions": "lcd",
     "legacyfileextensions": "lcd"
@@ -1438,7 +1490,7 @@
     "name": "Dia",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/dia",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "application/x-dia-diagram;",
     "fileextensions": "dia",
     "legacyfileextensions": "dia",
@@ -1453,7 +1505,7 @@
     "dsiplayname": "draw.io",
     "rules": { "homedir": { "default": true } },
     "path": "/opt/drawio/drawio",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "mimetype": "application/vnd.jgraph.mxfile;application/vnd.visio;",
     "fileextensions": "drawio",
     "legacyfileextensions": "drawio",
@@ -1471,7 +1523,7 @@
     "name": "cloudFoundry",
     "path": "/usr/bin/gnome-terminal",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk.fulldev",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.fulldev",
     "displayname": "Cloud Foundry cli",
     "args": "--disable-factory --class pivotalio.cf",
     "quick": true
@@ -1484,7 +1536,7 @@
     "launch": "gnome-terminal-server.cntlm",
     "name": "cntlm",
     "path": "/usr/bin/gnome-terminal",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "displayname": "cntlm",
     "host_config":  { "network_mode": "container" }, 
     "args": "--class cntlm -- bash -c '/usr/sbin/cntlm -f -v; exec bash'",
@@ -1506,7 +1558,7 @@
     "name": "minecraft",
     "path": "/usr/bin/minecraft-launcher",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktop": "minecraft-launcher.desktop",
     "host_config": { "mem_limit": "4G", "shm_size" : "2G",  "cpu_period": 200000, "cpu_quota": 200000, "ipc_mode": "shareable" },
     "desktopfile" : "/usr/share/applications/minecraft-launcher.desktop",
@@ -1524,7 +1576,7 @@
     "name": "octave",
     "path": "/usr/bin/octave",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "desktop": "www.octave.org-octave.desktop.desktop",
     "desktopfile" : "/usr/share/applications/www.octave.org-octave.desktop"
 }, {
@@ -1537,7 +1589,7 @@
     "name": "openshift",
     "path": "/usr/bin/gnome-terminal",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.gtk.fulldev",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.fulldev",
     "displayname": "OpenShift cli",
     "args": "--disable-factory --class openshift.cli",
     "quick": true
@@ -1551,7 +1603,7 @@
     "name": "VSCode",
     "path": "/usr/bin/code",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "desktop": "code.desktop",
     "host_config":  { "mem_limit": "2G", "shm_size" : "2G",  "cpu_period": 200000, "cpu_quota": 200000 , "cap_add": [ "SYS_ADMIN" ] },
     "args": "--extensions-dir /usr/share/code/extensions --verbose",
@@ -1575,7 +1627,7 @@
     "launch": "geogebra-GeoGebra.geogebra-GeoGebra",
     "name": "Geogebra",
     "path": "/usr/bin/geogebra",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "fileextensions": "ggb;ggt",
     "legacyfileextensions": "ggb;ggt",
     "rules": { "homedir": { "default": true } },
@@ -1590,7 +1642,7 @@
     "launch": "gcompris-qt.gcompris-qt",
     "name": "GCompris",
     "path": "/usr/games/gcompris-qt",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
@@ -1600,7 +1652,7 @@
     "launch": "step.step",
     "name": "Step",
     "path": "/usr/bin/step",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1611,7 +1663,7 @@
     "name": "LibreCAD",
     "path": "/usr/bin/librecad",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "image/vnd.dxf;",
     "fileextensions":"dxf;dwg",
     "legacyfileextensions":"dxf;dwg"
@@ -1624,7 +1676,7 @@
     "launch": "golly.Golly",
     "name": "Golly",
     "path": "/usr/games/golly",
-    "template": "abcdesktopio/oc.template.gtk.language-pack-all"
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
@@ -1634,7 +1686,7 @@
     "launch": "mathwar.Mathwar",
     "name": "Mathwar",
     "path": "/usr/games/mathwar",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
@@ -1644,7 +1696,7 @@
     "launch": "kgeography.kgeography",
     "name": "Kgeography",
     "path": "/usr/bin/kgeography",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
@@ -1654,7 +1706,7 @@
     "launch": "stellarium.stellarium",
     "name": "Stellarium",
     "path": "/usr/bin/stellarium",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1664,7 +1716,7 @@
     "launch": "gnome-robots.Gnome-robots",
     "name": "Robots",
     "path": "/usr/games/gnome-robots",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "desktop":"gnome-robots.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1675,17 +1727,30 @@
     "launch": "kturtle.kturtle",
     "name": "kTurtle",
     "path": "/usr/bin/kturtle",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "debpackage": "gnome-mines",
+    "displayname": "gnome-mines (ubuntu)",
     "icon": "circle_gnome-mines.svg",
     "keyword": "gnome mines,game mines,mines",
     "launch": "gnome-mines.Gnome-mines",
     "name": "Mines",
     "path": "/usr/games/gnome-mines",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "desktop":"gnome-mines.desktop"
+},{
+    "acl": { "permit": [ "all" ] },
+    "cat": "games",
+    "displayname": "gnome-mines (alpine)",
+    "apkpackage": "gnome-mines",
+    "icon": "circle_gnome-mines.svg",
+    "keyword": "gnome mines,game mines,mines",
+    "launch": "gnome-mines.Gnome-mines",
+    "name": "Mines",
+    "path": "/usr/bin/gnome-mines",
+    "template": "abcdesktopio/oc.template.alpine",
     "desktop":"gnome-mines.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1696,7 +1761,7 @@
     "launch": "gelemental.Gelemental",
     "name": "gElemental",
     "path": "/usr/bin/gelemental",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "desktop": "gelemental.desktop"
 }, 
 {
@@ -1708,7 +1773,7 @@
     "launch": "qelectrotech.Qelectrotech",
     "name": "qElectrotech",
     "path": "/usr/bin/qelectrotech",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
@@ -1718,7 +1783,7 @@
     "launch": "gretl_x11.Gretl_x11",
     "name": "Gretl",
     "path": "/usr/bin/gretl",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1728,7 +1793,7 @@
     "launch": "ksquares.ksquares",
     "name": "kSquares",
     "path": "/usr/games/ksquares",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1738,7 +1803,7 @@
     "launch": "klickety.klickety",
     "name": "Klickety",
     "path": "/usr/games/klickety",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
@@ -1748,7 +1813,7 @@
     "launch": "kalzium.kalzium",
     "name": "Kalzium",
     "path": "/usr/bin/kalzium",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -1758,7 +1823,7 @@
     "launch": "rhythmbox.Rhythmbox",
     "name": "rhythmbox",
     "path": "/usr/bin/rhythmbox",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "application/x-ogg;application/ogg;audio/x-vorbis+ogg;audio/vorbis;audio/x-vorbis;audio/x-scpls;audio/x-mp3;audio/x-mpeg;audio/mpeg;audio/x-mpegurl;audio/x-flac;audio/mp4;audio/x-it;audio/x-mod;audio/x-s3m;audio/x-stm;audio/x-xm;",
     "desktopfile": "/usr/share/applications/rhythmbox.desktop"
 }, {
@@ -1770,7 +1835,7 @@
     "launch": "kdiamond.kdiamond",
     "name": "kDiamond",
     "path": "/usr/games/kdiamond",
-    "template": "abcdesktopio/oc.template.minimal.22.04"
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1785,7 +1850,7 @@
     "host_config": { "mem_limit": "2G", "shm_size" : "2G" }, 
     "installrecommends" : true,
     "path": "/usr/bin/firefox",
-    "template": "abcdesktopio/oc.template.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
