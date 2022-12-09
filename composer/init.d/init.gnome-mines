@@ -1,7 +1,0 @@
-#!/bin/bash
-
-mkdir -p /run/user/$(id --user)/dconf
-
-if [ -x /usr/bin/dbus-launch ]; then
-	/usr/bin/dbus-launch &
-fi
