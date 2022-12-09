@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ -f /var/secrets/abcdesktop/citrix/All_Regions.ini ]; then
+	cp /var/secrets/abcdesktop/citrix/All_Regions.ini /etc/icaclient/config/All_Regions.ini
+fi

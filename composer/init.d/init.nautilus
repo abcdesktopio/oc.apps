@@ -1,7 +1,7 @@
 #!/bin/bash
 
-
-# make sure the nautilus direcotry exixts in .config
+echo "start of init.nautilus"
+# make sure the nautilus directory exists in .config
 # prevent message 
 #
 #    Oops! Something went wrong 
@@ -10,25 +10,14 @@
 #  /home/balloon/.config/nautilus
 #
 mkdir -p ~/.config/nautilus
-
-echo "starting DBUS_SYSTEM_BUS" >> /var/log/desktop/dbus.log
-
-dbus_system=$(dbus-daemon --config-file=/usr/share/dbus-1/system.conf --print-address  --fork --nosyslog ) 
-
 if [ ! -f ~/.gtk-bookmarks ]; then
 	touch ~/.gtk-bookmarks
 fi
 
-if [ $? -eq 0 ]; then
-   echo "export DBUS_SYSTEM_BUS_ADDRESS=$dbus_system" > /var/log/desktop/.DBUS_SYSTEM_BUS
-   echo "DBUS_SYSTEM is set $dbus_system" >> /var/log/desktop/dbus.log
+if [ ! -f ~/.local/share/nautilus-python/extensions/desktop_download.py ]; then
+	mkdir -p ~/.local/share/nautilus-python/extensions/
+	cp /composer/desktop_download.py ~/.local/share/nautilus-python/extensions/desktop_download.py
+        chmod 755 ~/.local/share/nautilus-python/extensions/desktop_download.py
 fi
 
-if [ ! -f /home/$BUSER/.local/share/nautilus-python/extensions/desktop_download.py ]; then
-	mkdir -p /home/$BUSER/.local/share/nautilus-python/extensions/
-	cp /composer/desktop_download.py /home/$BUSER/.local/share/nautilus-python/extensions/desktop_download.py
-        chmod 755 /home/$BUSER/.local/share/nautilus-python/extensions/desktop_download.py
-fi
-
-/usr/bin/dbus-launch &
 echo "end of init.nautilus"

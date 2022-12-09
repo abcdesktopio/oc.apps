@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "start of init.ApacheDirectoryStudio"
+
+if [ ! -d ~/.eclipse/1988419495_linux_gtk_x86_64 ]; then
+	mkdir -p ~/.eclipse/1988419495_linux_gtk_x86_64
+fi
+
+echo "end of init.ApacheDirectoryStudio"
