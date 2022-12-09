@@ -1,12 +1,16 @@
-from gi.repository import Nautilus, GObject
+from gi.repository import GObject
 import shellescape
 import os
 import gi
+import sys
+gi.require_version('Nautilus', '3.0')
+from gi.repository import Nautilus
 
 class DesktopMenuProvider(GObject.GObject, Nautilus.MenuProvider):
+
     def __init__(self):
-        gi.require_version('Nautilus', '3.0')
-   
+        self.debug( 'sys.version: ' + str(sys.version))
+    
     def debug(self, msg):
         f = open("/var/log/desktop/nautilus_desktop_extension.log", "a")
         f.write(msg + '\n')
@@ -19,7 +23,7 @@ class DesktopMenuProvider(GObject.GObject, Nautilus.MenuProvider):
           try: 
             path = f.get_location().get_path()
             escaped_path = shellescape.quote( path )
-            command = "nodejs /composer/node/ocdownload/ocdownload.js " + escaped_path
+            command = "node /composer/node/ocdownload/ocdownload.js " + escaped_path
             self.debug('menu_activate_cb runs ' + command )
             exit_code = os.system(command)
             self.debug('exit code: ' + str(exit_code) )
