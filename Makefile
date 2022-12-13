@@ -88,6 +88,16 @@ push3:
                 if [ ! -f $$dir.non-free ]; then  echo "pushing $$dir" && docker push abcdesktopio/$$dir:3.0; fi \
         done 
 
+import:
+	for dir in $(sort $(wildcard *.d)); do \
+                docker save abcdesktopio/$$dir:3.0 -o $$dir.tar; \
+		ctr -n k8s.io images import $$dir.tar; \
+		docker image inspect abcdesktopio/$$dir:3.0 > $$dir.json; \
+		curl -X PUT -H 'Content-Type: text/javascript' http://localhost:30443/API/manager/image -d @$$dir.json; \
+		rm $$dir.tar; \
+		rm $$dir.json; \
+	done 
+
 list:
 	rm -f images-list.txt
 	for dir in $(sort $(wildcard *.d)); do \
@@ -107,6 +117,20 @@ json:
 	for dir in $(sort $(wildcard *.d)); do \
                 docker inspect abcdesktopio/$$dir:$(TAG) >  $$dir.json;\
         done
+
+import:
+	for dir in $(sort $(wildcard *.d)); do \
+		echo "saving abcdesktopio/$$dir:3.0 to $$dir.tar"; \
+		docker save abcdesktopio/$$dir:3.0 -o $$dir.tar; \
+		echo "importing $$dir.tar"; \
+		ctr -n k8s.io images import $$dir.tar; \
+		echo "saving json abcdesktopio/$$dir:3.0"; \
+		docker image inspect abcdesktopio/$$dir:3.0 > $$dir.json; \
+		echo "importing $$dir.json to abcdesktop"; \
+		curl -X PUT -H 'Content-Type: text/javascript' http://localhost:30443/API/manager/image -d @$$dir.json; \
+		rm $$dir.tar; \
+		rm $$dir.json; \
+	done 
 
 clean:
 	for dir in $(wildcard *.d); do \
