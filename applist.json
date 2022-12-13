@@ -1582,14 +1582,17 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "debpackage": "rhc",
+     "preruncommands": [
+        "RUN cd /tmp && wget \"https://cli.run.pivotal.io/stable?release=linux64-binary\" -O pivotal.tgz && tar -xvf pivotal.tgz && mv cf /usr/local/bin" 
+    ],
+    "debpackage": "rhc gnome-terminal",
     "icon": "openshift.svg",
     "keyword": "oc,openshift",
     "launch": "gnome-terminal-server.openshift.cli",
     "name": "openshift",
     "path": "/usr/bin/gnome-terminal",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.fulldev",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "displayname": "OpenShift cli",
     "args": "--disable-factory --class openshift.cli",
     "quick": true
