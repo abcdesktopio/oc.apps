@@ -6,6 +6,7 @@
   "author": "kecsou <kevin.voyer.developpeur@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "argparse": "^2.0.1",
     "eslint": "^7.10.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.1",

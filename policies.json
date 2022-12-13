@@ -6,9 +6,12 @@
     "DisableTelemetry": true,
     "DontCheckDefaultBrowser": true,
     "DisableSystemAddonUpdate": true,
-    "DefaultDownloadDirectory": "${home}/Downloads"
+    "DefaultDownloadDirectory": "${home}/Downloads",
+    "NoDefaultBookmarks": true,
+    "OverrideFirstRunPage": "",
     "Preferences": {
-      "browser.cache.disk.parent_directory": "${home}/Downloads"
+      "browser.cache.disk.parent_directory": "${home}/Downloads",
+      "toolkit.legacyUserProfileCustomizations.stylesheets": { "Value": true, "Status": "user" }
     }
   }
 }

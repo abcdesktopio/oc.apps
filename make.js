@@ -122,7 +122,6 @@ function makedockerfile(e) {
     wstream.write(contents);
   }
 
-  wstream.write('ENV BUSER balloon\n');
   if (e.icon) {
     wstream.write(`LABEL oc.icon=${JSON.stringify(e.icon)}\n`);
     // convert image to base64 encoded string
@@ -215,17 +214,14 @@ function makedockerfile(e) {
       wstream.write( "RUN rm -f /etc/passwd && ln -s /var/secrets/abcdesktop/localaccount/passwd /etc/passwd\n" ); 
       wstream.write( "RUN rm -f /etc/group && ln -s /var/secrets/abcdesktop/localaccount/group  /etc/group\n" );
       wstream.write( "RUN rm -f /etc/shadow && ln -s /var/secrets/abcdesktop/localaccount/shadow /etc/shadow\n" );
+      wstream.write( "RUN rm -f /etc/gshadow && ln -s /var/secrets/abcdesktop/localaccount/gshadow /etc/gshadow\n" );
   }
 
   let user=(e.user)?(e.user):'balloon';
   wstream.write(`USER ${user}\n`);
 
-  let cmd=(e.cmd)?(e.cmd):'/composer/appli-docker-entrypoint.sh';  
-  wstream.write(`CMD [\"${cmd}\"]\n`);
- 
-  let workdir=(e.workdir)?e.workdir:'/home/balloon';
-  wstream.write(`WORKDIR ${workdir}\n`);
-  
+  let cmd=(e.cmd)?(e.cmd):"/composer/appli-docker-entrypoint.sh";  
+  wstream.write(`CMD [ \"${cmd}\" ]\n`);
   wstream.end(() => {});
 }
 
