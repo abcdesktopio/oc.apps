@@ -1190,10 +1190,7 @@
     "mimefilename": "pantheon-calculator",
     "host_config": { "mem_limit": "64M", "shm_size": "0M", "pid_mode": false },
     "desktopfile": "/usr/share/applications/org.pantheon.calculator.desktop",
-    "preruncommands": [  
-        "RUN add-apt-repository ppa:elementary-os/stable",
-   		"COPY composer/init.d/init.io.elementary.calculator /composer/init.d/init.io.elementary.calculator",
-   		"RUN mkdir -p /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop"]
+    "preruncommands": [ "RUN add-apt-repository ppa:elementary-os/stable" ]
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
