@@ -242,7 +242,7 @@
     "icon": "pantheon-terminal-icons.svg",
     "keyword": "cmd.exe",
     "launch": "conhost.exe.conhost.exe",
-    "name": "cmd wine",
+    "name": "cmd.exe",
     "displayname": "cmd.exe wine (alpine)",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/wineconsole",
@@ -1081,6 +1081,25 @@
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY composer/init.d/init.gnome-terminal /composer/init.d/init.gnome-terminal" ] 
+},  {
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "preruncommands": [
+        "RUN apt-get update && apt-get install --no-install-recommends --yes build-essential python3.8 python3-pip python-is-python3 curl libcurl4-openssl-dev libssl-dev firefox wget && apt-get clean",
+	"RUN pip install jupyterlab" ],
+    "debpackage": "gnome-terminal openssh-client telnet netcat sshcommand sshfs ftp-ssl wput curl wget tftp ncftp git git-ftp ftp dbus-x11",
+    "icon": "jupyter.svg",
+    "keyword": "jupyter",
+    "launch": "gnome-terminal-server.jupyter",
+    "name": "jupyter",
+    "showinview": "dock",
+    "path": "/usr/bin/gnome-terminal",
+    "args": "--disable-factory  --class=jupyter -- /usr/local/bin/startjupyter.sh",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.ubuntu.minimal.20.04",
+    "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
+    "abcdesktop_release": 3,
+    "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY startjupyter.sh /usr/local/bin/startjupyter.sh" ]
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
