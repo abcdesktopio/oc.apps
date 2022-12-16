@@ -1,0 +1,171 @@
+[
+    {
+        "Id": "sha256:ae10e4412c44a59e3126c08c8eb079bf8efde7514fd5080c1fbf8288bcbf2294",
+        "RepoTags": [
+            "abcdesktopio/beekeeperstudio.d:3.0"
+        ],
+        "RepoDigests": [],
+        "Parent": "sha256:2d307f1140e95292a8aa6e7e196733fe6c5ec41d7e0524d1c1d380f9c08827d6",
+        "Comment": "",
+        "Created": "2022-12-15T11:28:39.244970659Z",
+        "Container": "ef84b7e9dcb382110b1d14c040c43e5c8db9f1b55a9d7b562c65128bdb20a3fc",
+        "ContainerConfig": {
+            "Hostname": "ef84b7e9dcb3",
+            "Domainname": "",
+            "User": "balloon",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBCONF_FRONTEND=noninteractive",
+                "TERM=linux",
+                "LANG=en_US.utf8",
+                "BUSER=balloon",
+                "ELECTRON_ENABLE_LOGGING=true",
+                "QT_X11_NO_MITSHM=1",
+                "ARGS=--no-sandbox",
+                "APPNAME=beekeeperstudio",
+                "APPBIN=/opt/Beekeeper-Studio/beekeeper-studio",
+                "APP=/opt/Beekeeper-Studio/beekeeper-studio"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"/composer/appli-docker-entrypoint.sh\"]"
+            ],
+            "Image": "sha256:2d307f1140e95292a8aa6e7e196733fe6c5ec41d7e0524d1c1d380f9c08827d6",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "oc.acl": "{\"permit\":[\"all\"]}",
+                "oc.args": "--no-sandbox",
+                "oc.cat": "office",
+                "oc.desktopfile": "beekeeper-studio.desktop",
+                "oc.displayname": "Beekeeper-studio",
+                "oc.fileextensions": "sql",
+                "oc.host_config": "{\"shm_size\":\"2G\",\"ipc_mode\":\"shareable\"}",
+                "oc.icon": "beekeeper-studio.svg",
+                "oc.icondata": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEzMi44IDE0Ni4yIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMzIuOCAxNDYuMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGQUQ4M0I7fQo8L3N0eWxlPgo8Zz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMjEuMywyOC4yTDc3LjcsMy4xQzcwLjYtMSw2MS45LTEsNTQuOSwzLjFMNDMuNSw5LjdWMzl2Ni43djI3LjVjMCw4LjEsNC4zLDE1LjcsMTEuNCwxOS44CgkJCWMzLjUsMiw3LjUsMy4xLDExLjQsMy4xczcuOS0xLDExLjQtMy4xbDAsMGM3LjEtNC4xLDExLjQtMTEuNiwxMS40LTE5LjhjMC04LjEtNC4zLTE1LjctMTEuNC0xOS44bDAsMGMtMy41LTItNy41LTMuMS0xMS40LTMuMQoJCQlWMzZjMy45LDAsNy45LDEsMTEuNCwzLjFsMTIuNCw3LjJjNy4xLDQuMSwxMS40LDExLjYsMTEuNCwxOS44djE0LjNjMCw4LjEtNC4zLDE1LjctMTEuNCwxOS44bC0xMi40LDcuMmMtMy41LDItNy41LDMuMS0xMS40LDMuMQoJCQlzLTcuOS0xLTExLjQtMy4xbC0xMi40LTcuMmMtNy4xLTQuMS0xMS40LTExLjYtMTEuNC0xOS44di03LjJWNjZWNDcuNVYxNi44TDExLjQsMjguMkM0LjMsMzIuMywwLDM5LjgsMCw0OHY1MC4zCgkJCWMwLDguMSw0LjMsMTUuNywxMS40LDE5LjhMNTUsMTQzLjJjNy4xLDQuMSwxNS44LDQuMSwyMi44LDBsNDMuNi0yNS4xYzcuMS00LjEsMTEuNC0xMS42LDExLjQtMTkuOFY0OAoJCQlDMTMyLjcsMzkuOCwxMjguMywzMi4zLDEyMS4zLDI4LjJ6IE01Mi4zLDU1LjJjLTEuMywxLTIuNCwyLjEtMy40LDMuM3YtMTZsMy40LTJWNTUuMnogTTYxLDUxYy0xLjIsMC4zLTIuMywwLjYtMy40LDEuMVYzNy43CgkJCWMxLjEtMC41LDIuMy0wLjgsMy40LTEuMVY1MXoiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K",
+                "oc.keyword": "beekeeperstudio,database,sql,mysql,postgres,sqllite,db,sqlserver,query,editor",
+                "oc.launch": "beekeeper-studio.beekeeper-studio",
+                "oc.legacyfileextensions": "sql",
+                "oc.name": "beekeeperstudio",
+                "oc.path": "/opt/Beekeeper-Studio/beekeeper-studio",
+                "oc.rules": "{\"homedir\":{\"default\":true}}",
+                "oc.template": "abcdesktopio/oc.template.ubuntu.gtk",
+                "oc.type": "app"
+            }
+        },
+        "DockerVersion": "20.10.16",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "balloon",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBCONF_FRONTEND=noninteractive",
+                "TERM=linux",
+                "LANG=en_US.utf8",
+                "BUSER=balloon",
+                "ELECTRON_ENABLE_LOGGING=true",
+                "QT_X11_NO_MITSHM=1",
+                "ARGS=--no-sandbox",
+                "APPNAME=beekeeperstudio",
+                "APPBIN=/opt/Beekeeper-Studio/beekeeper-studio",
+                "APP=/opt/Beekeeper-Studio/beekeeper-studio"
+            ],
+            "Cmd": [
+                "/composer/appli-docker-entrypoint.sh"
+            ],
+            "Image": "sha256:2d307f1140e95292a8aa6e7e196733fe6c5ec41d7e0524d1c1d380f9c08827d6",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "oc.acl": "{\"permit\":[\"all\"]}",
+                "oc.args": "--no-sandbox",
+                "oc.cat": "office",
+                "oc.desktopfile": "beekeeper-studio.desktop",
+                "oc.displayname": "Beekeeper-studio",
+                "oc.fileextensions": "sql",
+                "oc.host_config": "{\"shm_size\":\"2G\",\"ipc_mode\":\"shareable\"}",
+                "oc.icon": "beekeeper-studio.svg",
+                "oc.icondata": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEzMi44IDE0Ni4yIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMzIuOCAxNDYuMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGQUQ4M0I7fQo8L3N0eWxlPgo8Zz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMjEuMywyOC4yTDc3LjcsMy4xQzcwLjYtMSw2MS45LTEsNTQuOSwzLjFMNDMuNSw5LjdWMzl2Ni43djI3LjVjMCw4LjEsNC4zLDE1LjcsMTEuNCwxOS44CgkJCWMzLjUsMiw3LjUsMy4xLDExLjQsMy4xczcuOS0xLDExLjQtMy4xbDAsMGM3LjEtNC4xLDExLjQtMTEuNiwxMS40LTE5LjhjMC04LjEtNC4zLTE1LjctMTEuNC0xOS44bDAsMGMtMy41LTItNy41LTMuMS0xMS40LTMuMQoJCQlWMzZjMy45LDAsNy45LDEsMTEuNCwzLjFsMTIuNCw3LjJjNy4xLDQuMSwxMS40LDExLjYsMTEuNCwxOS44djE0LjNjMCw4LjEtNC4zLDE1LjctMTEuNCwxOS44bC0xMi40LDcuMmMtMy41LDItNy41LDMuMS0xMS40LDMuMQoJCQlzLTcuOS0xLTExLjQtMy4xbC0xMi40LTcuMmMtNy4xLTQuMS0xMS40LTExLjYtMTEuNC0xOS44di03LjJWNjZWNDcuNVYxNi44TDExLjQsMjguMkM0LjMsMzIuMywwLDM5LjgsMCw0OHY1MC4zCgkJCWMwLDguMSw0LjMsMTUuNywxMS40LDE5LjhMNTUsMTQzLjJjNy4xLDQuMSwxNS44LDQuMSwyMi44LDBsNDMuNi0yNS4xYzcuMS00LjEsMTEuNC0xMS42LDExLjQtMTkuOFY0OAoJCQlDMTMyLjcsMzkuOCwxMjguMywzMi4zLDEyMS4zLDI4LjJ6IE01Mi4zLDU1LjJjLTEuMywxLTIuNCwyLjEtMy40LDMuM3YtMTZsMy40LTJWNTUuMnogTTYxLDUxYy0xLjIsMC4zLTIuMywwLjYtMy40LDEuMVYzNy43CgkJCWMxLjEtMC41LDIuMy0wLjgsMy40LTEuMVY1MXoiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K",
+                "oc.keyword": "beekeeperstudio,database,sql,mysql,postgres,sqllite,db,sqlserver,query,editor",
+                "oc.launch": "beekeeper-studio.beekeeper-studio",
+                "oc.legacyfileextensions": "sql",
+                "oc.name": "beekeeperstudio",
+                "oc.path": "/opt/Beekeeper-Studio/beekeeper-studio",
+                "oc.rules": "{\"homedir\":{\"default\":true}}",
+                "oc.template": "abcdesktopio/oc.template.ubuntu.gtk",
+                "oc.type": "app"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1521830645,
+        "VirtualSize": 1521830645,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/ba91d07fc059f7f908e6c67661e2d89cb595d2992140e9f7fa71e449b118fd0d/diff:/mnt/nvme0n1/var/lib/docker/overlay2/140d984bdc7985ec52ee97adb162374169986184d1aeb12cf14c8922551a9463/diff:/mnt/nvme0n1/var/lib/docker/overlay2/9f5d9fa861a9fedf4d31a75060b27608ba04df818c7b7f3a80fe36462ae9cc49/diff:/mnt/nvme0n1/var/lib/docker/overlay2/c6d892ecdc070c2852b43dfc4b7347969432ce95dfb52c4c441d14b9fc2a29aa/diff:/mnt/nvme0n1/var/lib/docker/overlay2/b01d5f6c9c1a4aa4fb9c37708c2aa27e140335fcb3b4e15b4a4e891cfbebbb9f/diff:/mnt/nvme0n1/var/lib/docker/overlay2/4cf8b0a167c248c4555bc2741272f9f07600cad4a8e60592d17a7c6d0707fbfb/diff:/mnt/nvme0n1/var/lib/docker/overlay2/7ba2d3a21b091cf09d248f12ebf28be4ae86381371ac0bebecf542be7708d828/diff:/mnt/nvme0n1/var/lib/docker/overlay2/5327f181937f4d7632736e052c9ea11cb993c2a23952efc84960f5b58abac7e4/diff:/mnt/nvme0n1/var/lib/docker/overlay2/baa84ef4cda2663164cd81789713719c7ca9a33a23b2ae271553c3c30e28725b/diff:/mnt/nvme0n1/var/lib/docker/overlay2/f16a4d2d4d23978d2debf1009dfef5d65270eada1ec3187dfe90c9e84bc6b9ce/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d20198e55fe073e51a2d4c3f4a8e9b05193f693718eef7928596a95fe36f25b9/diff:/mnt/nvme0n1/var/lib/docker/overlay2/2150f75b95d10cc2aec914c22073be118b7612fd92102f5afd9c782ae7745519/diff:/mnt/nvme0n1/var/lib/docker/overlay2/52a066798836b2339e46f0ef6f8d7090a5de2d3406370f516ef037ac9474cfbd/diff:/mnt/nvme0n1/var/lib/docker/overlay2/050ef924e941a428accc7ca4df3b083399f065554fc3b9c17def3aa176551044/diff:/mnt/nvme0n1/var/lib/docker/overlay2/c3c2e2744dbe90f8b488759106d0d64c81e80f270fdc4b6af1e8839a3e31253c/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d1ece1bea8caaf6f19ab0469e2ce5994f8115ca786c8997671344f5a59accbb5/diff:/mnt/nvme0n1/var/lib/docker/overlay2/06768d8fd2f219cba0c70f216ebcbeb5fb370ea252ef0537d9d657f7e0e54c5a/diff:/mnt/nvme0n1/var/lib/docker/overlay2/6330e2af4b384c03b8c266524df2ed22d82efa3c4243aae7427f8e1af89c7919/diff:/mnt/nvme0n1/var/lib/docker/overlay2/387a8e72b2e6929420e3c740bfaa648bc11d15a6acffd65e160cd00315edd15f/diff:/mnt/nvme0n1/var/lib/docker/overlay2/3b555e5266163ae5f379ab03e33be3b55c28f9c649500bffc281c5a466874528/diff:/mnt/nvme0n1/var/lib/docker/overlay2/dd5d44127e58cb5009fe11ec1adc6a6d54df124100943abcb058381c66139258/diff:/mnt/nvme0n1/var/lib/docker/overlay2/00700148dc9c8a0cfcf7625b49d69118d59bf0bc1604f6f375fa764427c8a0f3/diff:/mnt/nvme0n1/var/lib/docker/overlay2/374b71fcf13209e1547de33b97ae49cd90eb76741b5ddede1015aa3980d5e974/diff:/mnt/nvme0n1/var/lib/docker/overlay2/6d9f3e6b5b2bf99921007a56c2592b9ff66db190bf250337ca02442646d30f0e/diff:/mnt/nvme0n1/var/lib/docker/overlay2/b3009142953300c7d3f336f8fcbb9047d07552226eac5472a5e692d69a8f6cf9/diff:/mnt/nvme0n1/var/lib/docker/overlay2/963cd5ca601e7bd2c55e96b4391d10e2a1f34131b8c31e4375eb81961077494a/diff:/mnt/nvme0n1/var/lib/docker/overlay2/a9704faa550763923c92092807812a7731997c1addace48a798ddbc5b12f8419/diff:/mnt/nvme0n1/var/lib/docker/overlay2/9bb28c07582e42b975352f1ee17342276da8dd660932bbb3fca0bcc28eeb1d6e/diff:/mnt/nvme0n1/var/lib/docker/overlay2/fc5cf3bc8ef63ef3d0b1904274ca99aab860f13a0da5ce492103271befcc8224/diff",
+                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/b98437e65ae9ce64e61327660b5c933c90062c9faf692205ffe6c25de51621a5/merged",
+                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/b98437e65ae9ce64e61327660b5c933c90062c9faf692205ffe6c25de51621a5/diff",
+                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/b98437e65ae9ce64e61327660b5c933c90062c9faf692205ffe6c25de51621a5/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:0002c93bdb3704dd9e36ce5153ef637f84de253015f3ee330468dccdeacad60b",
+                "sha256:fa2c3b1ab5da20931089969f153509651b54f69acc22a0368ac4bcce3ad9e5c9",
+                "sha256:bd1fc91f5663fc906b2ce86a85fa4f5d949dae0ca49169831be30a106ffaf54b",
+                "sha256:5ca1c58af39ed07123426a995d7e8f5522f400c155a5557607734f3ad23cf58e",
+                "sha256:4efecc672f79df98bee6966a2cb56d516199f4ca1c52d95078cc1875a147fa10",
+                "sha256:f26802f3151bfd38fea6b5b274a3326dee0eb5976795ab9da759a9a4a11e1327",
+                "sha256:e44b32b6fa7bbf1692510be44602bd1e852bbae21f7ddef41ad5a8239dff01ea",
+                "sha256:14e7cacf71680650067177abf40a307d78dfc5c4a664860ead533b847aacf341",
+                "sha256:c67311a85cec15fd9898597ac5e83b17bd9878dd21b2682b547b081067a3b295",
+                "sha256:dc4e7cbfecc8e8cdc36299dea00b19328230e914e7c835ac9bbd8693014bbbae",
+                "sha256:a277ba57b56d00451cb1961d1f1e5a87f7cdd1a5ecb2757b13c87b6ae524844c",
+                "sha256:e5db50ef6070974a6788cd4191ae84756c9d0ff7e42874ee55425201cd95e978",
+                "sha256:e6033b8ee4d9b7686c814439528328c2f4fa6232b4d25f8cc28af1ba5f441d4a",
+                "sha256:ba2fdfde0889ba4acbf2027dbde8bdaad96e00d3a0ebd0fd075ce4e7cc00b875",
+                "sha256:452cbf8029bc7da7c36ae964a88cec6a36482e67f2e99f98514a6201f668d8a4",
+                "sha256:3a03771f94359d909a4fa78a3d8f2364fda5b51b0bfd712305c7e8472c8c51bf",
+                "sha256:d61868b49566e5ebe8cbdd6b8ee03c7d496b80c62973a2612813fffab05b0b99",
+                "sha256:8be99f517e0402fcc6bd2f4f37b518a9c469adc3e9aa9bc4a48f0d0e7f703924",
+                "sha256:ebbd741dcd81f30b0482ae6fcd31210ce695001d645b357bb066084b6e1e0a96",
+                "sha256:890b76f447a7c7ecd798d136a6420cc4ab207cdc80c9fc2e3c6a14f8c6b6c2db",
+                "sha256:d9799874fba25b928b5e08048cac5b5e7c1c454bbab217f9b90d254986de51a3",
+                "sha256:30e62620aa2e9af599b96df44e5d231ef295ace67732fbea83db2e1256bf3109",
+                "sha256:c8f8b4be99765d25a5e01f719e717331b0aa950eb28623e5dd9029eb0c94814c",
+                "sha256:87689b7b0740a6b9c2f9039244dc8ddbf24e7dc5c1e14ff4e3c7dcc762f74d4a",
+                "sha256:b105f09bdf54249788b7371ab0e77db1acdc26461e80bce2c66baed072b9295b",
+                "sha256:2120ebd971c0340336bd612cab4c1e6c06f3cf00f4b2516b22cc4b9fbf650355",
+                "sha256:cd95e816d742829f4a5aa31c719450b566dd2c2c9cefd01fa852fda94ad2138a",
+                "sha256:54e6f07aae8b6ab16e195b6417528655c1cdd1bd1acd57c3832c101526d73185",
+                "sha256:52905998ed6c6d92ff0b09a6846074979f5a2e3f6612129b9cbf73d8f4816860",
+                "sha256:1a5e3bde5a912db9b8db92ba21113ef488b4007d6adf7cde48075a5241f50bf8"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2022-12-15T12:28:39.456158384+01:00"
+        }
+    }
+]
