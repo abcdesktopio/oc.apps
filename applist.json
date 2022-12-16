@@ -1086,7 +1086,10 @@
     "cat": "development",
     "preruncommands": [
         "RUN apt-get update && apt-get install --no-install-recommends --yes build-essential python3.8 python3-pip python-is-python3 curl libcurl4-openssl-dev libssl-dev firefox wget && apt-get clean",
-	"RUN pip install jupyterlab" ],
+	"RUN pip install jupyterlab",
+   	"RUN pip install jupyterlab-nvdashboard",
+        "RUN # jupyter labextension install jupyterlab-nvdashboard"
+    ],
     "debpackage": "gnome-terminal openssh-client telnet netcat sshcommand sshfs ftp-ssl wput curl wget tftp ncftp git git-ftp ftp dbus-x11",
     "icon": "jupyter.svg",
     "keyword": "jupyter",
@@ -1097,6 +1100,22 @@
     "args": "--disable-factory  --class=jupyter -- /usr/local/bin/startjupyter.sh",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.minimal.20.04",
+    "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
+    "abcdesktop_release": 3,
+    "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY startjupyter.sh /usr/local/bin/startjupyter.sh" ]
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "preruncommands": [],
+    "debpackage": "gnome-terminal dbus-x11",
+    "icon": "nvidia.svg",
+    "keyword": "cuda nvidia",
+    "launch": "gnome-terminal-server.cuda",
+    "name": "cuda",
+    "path": "/usr/bin/gnome-terminal",
+    "args": "--disable-factory  --class=cuda",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY startjupyter.sh /usr/local/bin/startjupyter.sh" ]
