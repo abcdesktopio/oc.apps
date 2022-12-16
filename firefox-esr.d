@@ -44,5 +44,6 @@ RUN mkdir -p /var/secrets/abcdesktop/localaccount && cp /etc/passwd /etc/group /
 RUN rm -f /etc/passwd && ln -s /var/secrets/abcdesktop/localaccount/passwd /etc/passwd
 RUN rm -f /etc/group && ln -s /var/secrets/abcdesktop/localaccount/group  /etc/group
 RUN rm -f /etc/shadow && ln -s /var/secrets/abcdesktop/localaccount/shadow /etc/shadow
+RUN rm -f /etc/gshadow && ln -s /var/secrets/abcdesktop/localaccount/gshadow /etc/gshadow
 USER balloon
 CMD [ "/composer/appli-docker-entrypoint.sh" ]

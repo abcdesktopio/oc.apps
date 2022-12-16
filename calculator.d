@@ -4,8 +4,6 @@ ARG TAG=dev
 FROM abcdesktopio/oc.template.ubuntu.gtk.18.04:$TAG
 USER root
 RUN add-apt-repository ppa:elementary-os/stable
-COPY composer/init.d/init.io.elementary.calculator /composer/init.d/init.io.elementary.calculator
-RUN mkdir -p /var/run/dbus /var/log/desktop && chown balloon:balloon /var/run/dbus /var/log/desktop
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-install-recommends pantheon-calculator dbus-x11 && apt-get clean
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 LABEL oc.icon="circle_calculator.svg"
@@ -31,5 +29,6 @@ RUN mkdir -p /var/secrets/abcdesktop/localaccount && cp /etc/passwd /etc/group /
 RUN rm -f /etc/passwd && ln -s /var/secrets/abcdesktop/localaccount/passwd /etc/passwd
 RUN rm -f /etc/group && ln -s /var/secrets/abcdesktop/localaccount/group  /etc/group
 RUN rm -f /etc/shadow && ln -s /var/secrets/abcdesktop/localaccount/shadow /etc/shadow
+RUN rm -f /etc/gshadow && ln -s /var/secrets/abcdesktop/localaccount/gshadow /etc/gshadow
 USER balloon
 CMD [ "/composer/appli-docker-entrypoint.sh" ]
