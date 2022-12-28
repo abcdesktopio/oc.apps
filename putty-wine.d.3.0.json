@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/putty-wine.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/putty-wine.d@sha256:803b078a1a8779afd7881eb4547cc45894b5912c2e2001caf6eb2c8a5e462644"
+        ],
         "Parent": "sha256:15ce8d546e33c0013beec4ce8db78f21db0d43cb299811ae05acc0440c573865",
         "Comment": "",
         "Created": "2022-12-15T12:35:05.079987631Z",
@@ -148,7 +150,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:35:05.298238395+01:00"
+            "LastTagTime": "2022-12-27T13:12:13.906451512+01:00"
         }
     }
 ]

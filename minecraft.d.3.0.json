@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/minecraft.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/minecraft.d@sha256:004e6eda12549fd314d8c22710d240eb7917e8ccb1e4dd9a9801b3c3ca02c328"
+        ],
         "Parent": "sha256:8357aa0ee9af7838c7308a8d13fbc766c500e4aa9275f3134fb14d9be9c2d996",
         "Comment": "",
         "Created": "2022-12-15T12:23:08.920335401Z",
@@ -150,7 +152,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:23:09.186321364+01:00"
+            "LastTagTime": "2022-12-27T13:10:53.307406975+01:00"
         }
     }
 ]

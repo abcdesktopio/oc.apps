@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/sublime-text.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/sublime-text.d@sha256:839a1e935a7a6176994683e9e5beba80b1cd0f06cbb18a6118707fbe0f63d287"
+        ],
         "Parent": "sha256:a8467a7d0a78d49ba819f33439924db4c7c2859f3bdd36489ca0abbc0f1c94b8",
         "Comment": "",
         "Created": "2022-12-15T12:44:02.389626742Z",
@@ -151,7 +153,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:44:02.642137636+01:00"
+            "LastTagTime": "2022-12-27T13:13:36.180402319+01:00"
         }
     }
 ]

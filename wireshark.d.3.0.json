@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/wireshark.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/wireshark.d@sha256:e7c83c110fec373a6b1a439b9d356ae8753a56bd1ede4d939d7235cd1503c269"
+        ],
         "Parent": "sha256:e56d4ff92db9bca14b7e6b8c193e14685f9a737bbf3ba733bee061bced3ab1e0",
         "Comment": "",
         "Created": "2022-12-15T12:58:33.012725496Z",
@@ -152,7 +154,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:58:33.231278897+01:00"
+            "LastTagTime": "2022-12-27T13:17:45.889903496+01:00"
         }
     }
 ]

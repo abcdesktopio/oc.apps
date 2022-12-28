@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/ksquares.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/ksquares.d@sha256:4c77f66a5913032b2344d0ed1cae287a60a859321a81498f9b231d8fb00755e4"
+        ],
         "Parent": "sha256:6d107276faa63d9ef23f9b8a547b21d8891211f561bf6c907263093a7c00bf10",
         "Comment": "",
         "Created": "2022-12-15T12:16:45.797509915Z",
@@ -136,7 +138,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:16:46.014675252+01:00"
+            "LastTagTime": "2022-12-27T13:10:07.775327119+01:00"
         }
     }
 ]

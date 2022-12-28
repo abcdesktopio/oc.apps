@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/youtube.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/youtube.d@sha256:840cb87cca88bd8486319e81da00929d109a33099990b655822fd6852a070557"
+        ],
         "Parent": "sha256:6beb3b88584db1484a754352a2f8be8ac6f64e91341470b5e9d460e6a7c0f400",
         "Comment": "",
         "Created": "2022-12-15T13:02:24.602952509Z",
@@ -153,7 +155,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T14:02:24.888439382+01:00"
+            "LastTagTime": "2022-12-27T13:18:47.893307393+01:00"
         }
     }
 ]

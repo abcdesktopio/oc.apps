@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/stellarium.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/stellarium.d@sha256:5fe697dbc27188d4e5b5219e971098b9eca24652fc892b0e0461b1979c1cd888"
+        ],
         "Parent": "sha256:50da9ff96509b22c078c8c5b47ce450b49284c18077df137c743d7a343edda9e",
         "Comment": "",
         "Created": "2022-12-15T12:40:38.989724163Z",
@@ -136,7 +138,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:40:39.199970205+01:00"
+            "LastTagTime": "2022-12-27T13:13:16.643815085+01:00"
         }
     }
 ]

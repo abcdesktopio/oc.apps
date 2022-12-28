@@ -202,7 +202,7 @@ function makedockerfile(e) {
   if (e.usedefaultapplication) { wstream.write(`LABEL oc.usedefaultapplication=${JSON.stringify(e.usedefaultapplication)}\n`); }
   if (e.run_inside_pod) { wstream.write(`LABEL oc.run_inside_pod=${JSON.stringify(e.run_inside_pod)}\n`); }
   if (e.home) { wstream.write(`LABEL oc.home=${JSON.stringify(e.home)}\n`); }
-
+  if (e.containerengine) {  wstream.write(`LABEL oc.containerengine=${JSON.stringify(e.containerengine)}\n`); }
   if (e.postruncommands) {
         e.postruncommands.forEach((command) => wstream.write(`${command}\n`));
   }

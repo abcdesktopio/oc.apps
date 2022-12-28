@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/supertux2.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/supertux2.d@sha256:f6a08e06621b5fcc48fa71a725757c1852867ecb8f2fa8effe5be5106ca4d0a1"
+        ],
         "Parent": "sha256:548884948759b4edcac2c8d245dea283a09253a41a83299ab94bccf8e308c81f",
         "Comment": "",
         "Created": "2022-12-15T12:44:45.945375821Z",
@@ -138,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:44:46.215947212+01:00"
+            "LastTagTime": "2022-12-27T13:13:42.489408622+01:00"
         }
     }
 ]

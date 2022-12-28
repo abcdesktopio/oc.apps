@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/librecad.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/librecad.d@sha256:f50b9ccdb52e16321bbef78be203aaa4459baebff5bc8cb95d0819ac9de3ede7"
+        ],
         "Parent": "sha256:285893dc85fdf30038092eb3caa87e2e08ed7dd20555c9f783588ae20169b245",
         "Comment": "",
         "Created": "2022-12-15T12:19:37.568054447Z",
@@ -144,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:19:37.816254372+01:00"
+            "LastTagTime": "2022-12-27T13:10:27.206253226+01:00"
         }
     }
 ]

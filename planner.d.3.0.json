@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/planner.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/planner.d@sha256:a0c3cae57649feef1d442dda02fee80b7486e186f8cf20526572c13ff14a5861"
+        ],
         "Parent": "sha256:1a2c8a1cee3341752f32c5eb18425be1b26c10de055790f6de077f15c17002c3",
         "Comment": "",
         "Created": "2022-12-15T12:32:26.454310213Z",
@@ -144,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:32:26.69170382+01:00"
+            "LastTagTime": "2022-12-27T13:11:54.434041147+01:00"
         }
     }
 ]

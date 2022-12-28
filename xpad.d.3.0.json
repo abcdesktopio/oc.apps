@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/xpad.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/xpad.d@sha256:e9db5eb3fa8b384fc6b00ad16b1b65c224bedee2b4016c1d8d514c7a4b026b9a"
+        ],
         "Parent": "sha256:9e1f6879a16e0195f032b39c901aa42a6bfd13f3b08382f835e6b85148588700",
         "Comment": "",
         "Created": "2022-12-15T13:01:32.362873355Z",
@@ -149,7 +151,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T14:01:32.56167953+01:00"
+            "LastTagTime": "2022-12-27T13:18:35.185956828+01:00"
         }
     }
 ]

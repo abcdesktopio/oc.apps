@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/kdiamond.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/kdiamond.d@sha256:cef8b6eb3e60edc69028fc21ab2b5e296e73125692b5337fcbd24f91f1d49e9f"
+        ],
         "Parent": "sha256:0ffce1e8f34cb88982a34837e873385fb34385f68c91478f1581ec99754494fd",
         "Comment": "",
         "Created": "2022-12-15T12:10:24.698983986Z",
@@ -136,7 +138,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:10:24.904297404+01:00"
+            "LastTagTime": "2022-12-27T13:09:28.380206636+01:00"
         }
     }
 ]

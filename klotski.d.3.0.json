@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/klotski.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/klotski.d@sha256:a4b294d84bc23d0c7ada443e498641a135083d91aea62acd9f1a2a6537a587cc"
+        ],
         "Parent": "sha256:ba8bb06cd33a5a108a84c11fd7d4f8e4795be3f505ed36d17ffc90b9f35616d1",
         "Comment": "",
         "Created": "2022-12-15T12:15:14.802946253Z",
@@ -151,7 +153,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:15:15.034650084+01:00"
+            "LastTagTime": "2022-12-27T13:09:54.572282067+01:00"
         }
     }
 ]

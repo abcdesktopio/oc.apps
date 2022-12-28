@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/stress.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/stress.d@sha256:51c2cd02cc2b7cdf6e81459abea76bcc6c00e791ef3ff498c52eb839d0d73997"
+        ],
         "Parent": "sha256:39de93703a25082fcd6099033d50ac81b7122fb9441cf1d81c819697df39eaca",
         "Comment": "",
         "Created": "2022-12-15T12:42:54.161088204Z",
@@ -157,7 +159,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:42:54.41839976+01:00"
+            "LastTagTime": "2022-12-27T13:13:29.647776848+01:00"
         }
     }
 ]

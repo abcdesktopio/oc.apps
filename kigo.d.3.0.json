@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/kigo.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/kigo.d@sha256:95a894a2c85c38944efcdede79645e64e7e4fd17264861205032fb9401e5b846"
+        ],
         "Parent": "sha256:8244f9220c15a044cb11dbf3a5b58669f4d67825e9e45162b526be292c37bf48",
         "Comment": "",
         "Created": "2022-12-15T12:12:53.794394053Z",
@@ -151,7 +153,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:12:54.053470075+01:00"
+            "LastTagTime": "2022-12-27T13:09:41.57481972+01:00"
         }
     }
 ]

@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/postman.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/postman.d@sha256:c13a7344d6007ba1ee30cb85c9699d0844024f30ed9b1c3359111dfdd80d2b96"
+        ],
         "Parent": "sha256:7fa416b321efcab3f6e61735414678a7d376b01ef651e6ed8c3011ae4601bbc5",
         "Comment": "",
         "Created": "2022-12-15T12:33:45.118769884Z",
@@ -146,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:33:47.640727118+01:00"
+            "LastTagTime": "2022-12-27T13:12:00.963942849+01:00"
         }
     }
 ]

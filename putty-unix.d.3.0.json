@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/putty-unix.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/putty-unix.d@sha256:45e8dd88dd0c1a5b53a3f3ee6e7b8ecb9fb87de8349770ee4dbc7384453d483c"
+        ],
         "Parent": "sha256:c590422028312d603570068d7b59a2d9e9de547ece6e49784637f56f5ab52a05",
         "Comment": "",
         "Created": "2022-12-15T12:34:41.210090646Z",
@@ -138,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:34:41.449686607+01:00"
+            "LastTagTime": "2022-12-27T13:12:07.410492822+01:00"
         }
     }
 ]

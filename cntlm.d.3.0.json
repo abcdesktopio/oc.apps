@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/cntlm.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/cntlm.d@sha256:e651693742ce308d8c6cdacad1c16cc85cc23b9f9fae14d5b626a41edc802a05"
+        ],
         "Parent": "sha256:c55830d035588016cfd6156f8e89acbfd8c3e08cfbb37252c98b9eb43b35a404",
         "Comment": "",
         "Created": "2022-12-09T11:35:56.323113378Z",

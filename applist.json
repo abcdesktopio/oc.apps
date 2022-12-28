@@ -1,24 +1,5 @@
-[{
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "preruncommands": [  
-        "RUN curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -",
-		"RUN echo \"deb [arch=$(dpkg --print-architecture)] https://packagecloud.io/AtomEditor/atom/any/ any main\" > /etc/apt/sources.list.d/atom.list",
-   		"RUN apt-get update && apt-get install --yes hunspell $(apt-cache search aspell | grep aspell- | awk '{print $1 }') && rm -rf /var/lib/apt/lists/*",
-   		"ENV QT_X11_NO_MITSHM=1" 
-    ],
-    "debpackage": "libxcb-dri3-0 libdrm-common libdrm2 libgbm1 libxss1 atom aspell libasound2",
-    "icon": "circle_atom.svg",
-    "installrecommends" : false,
-    "keyword": "editor",
-    "launch": "atom.Atom",
-    "name": "Atom",
-    "rules": { "homedir": { "default": true } },
-    "path": "/usr/bin/atom",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
-    "args": "--no-sandbox  --disable-gpu",
-    "desktopfile": "/usr/share/applications/atom.desktop"
-}, {
+[
+{
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [
@@ -88,7 +69,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "preruncommands": [ "ENV QT_XCB_NO_MITSHM=1" ],
+    "postruncommands": [ "ENV QT_XCB_NO_MITSHM=1" ],
     "icon": "konsole.svg",
     "apkpackage": "konsole",
     "keyword": "xterm,shell,cmd",
@@ -149,6 +130,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
+    "containerengine": "ephemeral_container",
     "debpackage": "x11-apps man-db manpages manpages-posix manpages-dev manpages-posix-dev",
     "icon": "circle_xorg.svg",
     "keyword": "man,xman,help",
@@ -179,7 +161,8 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
-    "debpackage": "x11-apps",
+    "containerengine": "pod_application",
+    "apkpackage": "xedit",
     "icon": "circle_xedit.svg",
     "keyword": "text,notepad,edit,txt,editor,xedit",
     "launch": "xedit.Xedit",
@@ -187,7 +170,7 @@
     "displayname": "Xedit",
     "path": "/usr/bin/xedit",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "abcdesktopio/oc.template.alpine.minimal",
     "mimetype": "application/text;",
     "fileextensions":"txt;log;md",
     "args": "",
@@ -387,12 +370,13 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
+    "containerengine": "ephemeral_container",
     "apkpackage": "gnome-2048",
     "icon": "circle_2048.svg",
     "keyword": "2048",
     "launch": "org.gnome.TwentyFortyEight.Gnome-2048",
-    "name": "alpine-2048",
-    "displayname": "2048 (alpine)",
+    "name": "2048-alpine",
+    "displayname": "2048 (alpine gtk)",
     "path": "/usr/bin/gnome-2048",
     "desktopfile": "/usr/share/applications/org.gnome.TwentyFortyEight.desktop",
     "template": "abcdesktopio/oc.template.alpine.gtk", 
@@ -402,16 +386,18 @@
 {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
+    "containerengine": "pod_application",
     "debpackage": "2048-qt",
     "icon": "circle_2048.svg",
     "keyword": "2048",
     "launch": "2048-qt.2048-qt",
-    "name": "ubuntu-2048",
+    "name": "2048-ubuntu",
     "displayname": "2048 (ubuntu qt)",
     "path": "/usr/games/2048-qt",
     "desktopfile": "/usr/share/applications/2048-qt.desktop",
     "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "rules": { "homedir": { "default": true } },
+    "postruncommands": [ "ENV QT_XCB_NO_MITSHM=1" ],
     "host_config": { "mem_limit": "256M", "shm_size": "64M", "pid_mode": false, "network_mode": "none" }
 }, 
 {
@@ -589,7 +575,7 @@
 	"COPY policies.json /usr/lib/firefox/distribution",
 	"COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
 	"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
-    "aokpackage": "krb5-user winbind firefox",
+    "apkpackage": "krb5-user winbind firefox",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.Firefox",
@@ -1085,8 +1071,13 @@
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [
-        "RUN apt-get update && apt-get install --no-install-recommends --yes build-essential python3.8 python3-pip python-is-python3 curl libcurl4-openssl-dev libssl-dev firefox wget && apt-get clean",
-	"RUN pip install jupyterlab",
+	"RUN add-apt-repository ppa:mozillateam/ppa",
+        "COPY etc/apt/preferences.d/mozilla-firefox /etc/apt/preferences.d/mozilla-firefox",
+        "RUN apt-get update && apt-get install --no-install-recommends --yes firefox && apt-get clean",
+	"RUN apt-get update && apt-get install --no-install-recommends --yes sudo && apt-get clean",
+        "RUN apt-get update && apt-get install --no-install-recommends --yes build-essential python3.9 python3-pip python-is-python3 curl libcurl4-openssl-dev libssl-dev firefox wget && apt-get clean",
+	"RUN pip3 install torch",
+	"RUN pip3 install jupyterlab",
    	"RUN pip install jupyterlab-nvdashboard",
         "RUN # jupyter labextension install jupyterlab-nvdashboard"
     ],
@@ -1100,6 +1091,42 @@
     "args": "--disable-factory  --class=jupyter -- /usr/local/bin/startjupyter.sh",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.minimal.20.04",
+    "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
+    "abcdesktop_release": 3,
+    "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY startjupyter.sh /usr/local/bin/startjupyter.sh" ]
+}, {
+    "comment": "https://stackoverflow.com/questions/51002045/how-to-make-jupyter-notebook-to-run-on-gpu",
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "preruncommands": [
+	"RUN add-apt-repository ppa:mozillateam/ppa",
+	"COPY etc/apt/preferences.d/mozilla-firefox /etc/apt/preferences.d/mozilla-firefox",
+	"RUN apt-get update && apt-get install --no-install-recommends --yes firefox wget sudo && apt-get clean",
+	"COPY cudnn-local-repo-ubuntu2204-8.7.0.84_1.0-1_amd64.deb /tmp",
+	"RUN apt-get update && apt-get install --no-install-recommends --yes -f /tmp/cudnn-local-repo-ubuntu2204-8.7.0.84_1.0-1_amd64.deb && apt-get clean",
+	"RUN cp /var/cudnn-local-repo-ubuntu2204-8.7.0.84/cudnn-local-BF23AD8A-keyring.gpg /usr/share/keyrings/",
+	"ENV PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "ENV LD_LIBRARY_PATH=/usr/local/cuda-12.0/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
+        "RUN apt-get update && apt-get install --no-install-recommends --yes build-essential python3.9 python3-pip python-is-python3 libcurl4-openssl-dev libssl-dev wget && apt-get clean",
+	"RUN # wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh -O /tmp/anaconda3.sh && bash /tmp/anaconda3.sh -b -p /usr/local/anaconda", 
+	"RUN pip3 install torch",
+	"RUN pip3 install tensorflow-gpu",
+        "RUN pip3 install jupyter notebook",
+	"RUN pip3 install jupyterlab",
+        "RUN pip3 install jupyterlab-nvdashboard",
+        "RUN # jupyter labextension install jupyterlab-nvdashboard"
+    ],
+    "debpackage": "gnome-terminal openssh-client telnet netcat sshcommand sshfs ftp-ssl wput curl wget tftp ncftp git git-ftp ftp dbus-x11",
+    "icon": "jupyter.svg",
+    "keyword": "jupyter",
+    "launch": "gnome-terminal-server.jupyternvidia",
+    "name": "jupyternvidia",
+    "displayname": "jupyter nvidia",
+    "showinview": "dock",
+    "path": "/usr/bin/gnome-terminal",
+    "args": "--disable-factory  --class=jupyternvidia -- /usr/local/bin/startjupyter.sh",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
     "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY startjupyter.sh /usr/local/bin/startjupyter.sh" ]
@@ -1140,7 +1167,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [],
-    "debpackage": "gnome-terminal dbus-x11 git cuda",
+    "debpackage": "gnome-terminal dbus-x11 git cuda libnvidia-cfg1-525 libnvidia-common-525 libnvidia-compute-525 libnvidia-decode-525 libnvidia-encode-525 libnvidia-extra-525 libnvidia-fbc1-525 git libglu1-mesa libxi6 libxinerama1 libxmu6 libglu1-mesa mesa-utils freeglut3 x11-xserver-utils",
     "icon": "nvidia.svg",
     "keyword": "cuda nvidia dev",
     "launch": "gnome-terminal-server.cudadev",
@@ -1155,6 +1182,7 @@
     "postruncommands": [ 	
 	    	"RUN mkdir -p /run/user", 
 	    	"RUN chmod 777 /run/user",
+		"RUN cd /usr/local/cuda && git clone https://github.com/NVIDIA/cuda-samples.git && chmod 777 cuda-samples && cd cuda-samples && chmod -R 777 * ",
    		"RUN echo \"export PATH=/usr/local/cuda-12.0/bin${PATH:+:${PATH}}\" > /cuda.sh",
    		"RUN echo \"export LD_LIBRARY_PATH=/usr/local/cuda-12.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}\" >> /cuda.sh" ]
 }, {
@@ -1301,6 +1329,24 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
+    "debpackage": "dbus-x11",
+    "icon": "whatsapp.svg",
+    "keyword": "whatsapp,whatsdesk",
+    "launch": "whatsdesk.whatsdesk",
+    "name": "whatsdesk",
+    "path": "/opt/whatsdesk/whatsdesk",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.20.04",
+    "mimetype": "x-scheme-handler/whatsapp;",
+    "desktopfile": "/usr/share/applications/whatsdesk.desktop",
+    "preruncommands": [
+            "RUN curl -Ls -o /tmp/whatsdesk.deb https://zerkc.gitlab.io/whatsdesk/whatsdesk_0.3.9_amd64.deb",
+	    "RUN apt-get update && apt-get install --no-install-recommends --yes desktop-file-utils libasound2 && apt-get clean && rm -rf /var/lib/apt/lists/*",
+            "RUN apt-get update && apt-get install --no-install-recommends --yes /tmp/whatsdesk.deb && apt-get clean && rm -rf /var/lib/apt/lists/*"
+    ]
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities,office",
     "debpackage": "pinta",
     "icon": "pinta.svg",
     "keyword": "pinta,paint",
@@ -1353,8 +1399,8 @@
     "desktopfile": "/opt/brackets/brackets.desktop",
     "preruncommands": [  
 	    "RUN curl -Ls -o /tmp/bracket.deb https://github.com/adobe/brackets/releases/download/release-1.14.1/Brackets.Release.1.14.1.64-bit.deb",
-	    "RUN apt-get update && apt-get install -y libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin libcurl3 libxss1 && apt-get clean", 
-	    "RUN apt-get update && apt-get install -y /tmp/bracket.deb && rm /tmp/bracket.deb  && apt-get clean && rm -rf /var/lib/apt/lists/*"
+	    "RUN apt-get update && apt-get install --no-install-recommends --yes libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin libcurl3 libxss1 && apt-get clean", 
+	    "RUN apt-get update && apt-get install --no-install-recommends --yes /tmp/bracket.deb && rm /tmp/bracket.deb  && apt-get clean && rm -rf /var/lib/apt/lists/*"
     ],
     "args": "--no-sandbox  --disable-gpu"
 }, {

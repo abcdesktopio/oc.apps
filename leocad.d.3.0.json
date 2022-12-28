@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/leocad.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/leocad.d@sha256:e8c880e8a0332447e4aec40b5876a23d4494ee0b51cff91c573341b67df8f12a"
+        ],
         "Parent": "sha256:c8f9771777ae3261dde11d896eedf229bdbbe45083970f83c681b584499930fe",
         "Comment": "",
         "Created": "2022-12-15T12:18:47.823537051Z",
@@ -148,7 +150,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:18:48.021775889+01:00"
+            "LastTagTime": "2022-12-27T13:10:20.791987126+01:00"
         }
     }
 ]

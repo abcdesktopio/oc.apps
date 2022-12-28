@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/nautilus.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/nautilus.d@sha256:7e7ab5510b2f663e58ff497b3e1e83516ff358d1f325274fd53c657928f97e29"
+        ],
         "Parent": "sha256:83fc73a788eb2b0262076bee68a404dcbc2b7e8c75d2ff9742583a97c49083b3",
         "Comment": "",
         "Created": "2022-12-15T12:25:33.799600406Z",
@@ -159,7 +161,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:25:34.012239248+01:00"
+            "LastTagTime": "2022-12-27T13:11:06.286291585+01:00"
         }
     }
 ]

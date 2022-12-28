@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/octave.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/octave.d@sha256:c35e89124a4730e524ec9a5515cc6690b9e1604442e10a1092468ebe6d9aff96"
+        ],
         "Parent": "sha256:a1daccfb2795f54885a7907a0276a44a0009468869520d5c9c6302d70e50435d",
         "Comment": "",
         "Created": "2022-12-15T12:28:35.765056119Z",
@@ -140,7 +142,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:28:35.990056811+01:00"
+            "LastTagTime": "2022-12-27T13:11:26.712481208+01:00"
         }
     }
 ]

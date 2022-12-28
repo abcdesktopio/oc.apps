@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/remmina.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/remmina.d@sha256:87b7ecb33e4ba32c141fec455c26e2e6ba2921e56d41c024a267fbf406e5dd5b"
+        ],
         "Parent": "sha256:5a836a29f9d5250ca0e4f3489baa3d88e8821af1d9be21a60e5500258ff2410c",
         "Comment": "",
         "Created": "2022-12-15T12:36:28.963042487Z",
@@ -152,7 +154,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:36:29.194991685+01:00"
+            "LastTagTime": "2022-12-27T13:12:37.412863712+01:00"
         }
     }
 ]

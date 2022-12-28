@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/xeyes.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/xeyes.d@sha256:60ce34a2c26895117107e97dfe74488fd4993c90cee110cf4ae9825deaa0f1d7"
+        ],
         "Parent": "sha256:5906196e553b634acf5f874af84f7dab0692c809479704d8d64859100f6aa887",
         "Comment": "",
         "Created": "2022-12-15T12:59:58.661331388Z",
@@ -138,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:59:58.849416736+01:00"
+            "LastTagTime": "2022-12-27T13:18:11.830467418+01:00"
         }
     }
 ]

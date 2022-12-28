@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/teams.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/teams.d@sha256:86f07c65246f72bdfb6d4e2932821e77e3c5c2815674e3dab40acf1f6d16fa1e"
+        ],
         "Parent": "sha256:5a1c8d020baffe004b37af1f829d2c3f5497f69c16d5702c0fb15575ac61eac9",
         "Comment": "",
         "Created": "2022-12-15T12:47:01.499085895Z",
@@ -147,7 +149,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:47:01.753001443+01:00"
+            "LastTagTime": "2022-12-27T13:13:55.217158575+01:00"
         }
     }
 ]

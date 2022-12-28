@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/robots.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/robots.d@sha256:31fb720764ba43d777216391a2bcb393972efc8e4a720169fb0e8c0937515f27"
+        ],
         "Parent": "sha256:538c9fe0f9f7756462d2f48f14b9d3b79336602644546a35be66242f74b77fe2",
         "Comment": "",
         "Created": "2022-12-15T12:39:27.338365224Z",
@@ -136,7 +138,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:39:27.564888352+01:00"
+            "LastTagTime": "2022-12-27T13:13:02.147713234+01:00"
         }
     }
 ]

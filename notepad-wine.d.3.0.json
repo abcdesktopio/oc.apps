@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/notepad-wine.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/notepad-wine.d@sha256:e5b4960fb7956496c7e5db8911e97fc0c9771edf910f4b2b06532ad603e70c58"
+        ],
         "Parent": "sha256:09099e10122efff42ccefa8c89479d2303dedbdb5b60a6d87956fa6f9bcdba67",
         "Comment": "",
         "Created": "2022-12-15T12:25:54.491350001Z",
@@ -145,7 +147,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:25:54.719143538+01:00"
+            "LastTagTime": "2022-12-27T13:11:13.184112039+01:00"
         }
     }
 ]

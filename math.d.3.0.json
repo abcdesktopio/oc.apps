@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/math.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/math.d@sha256:d859036ed6ff83bd4cf799d645b30b72bff5f637164738c02b41979b2959099a"
+        ],
         "Parent": "sha256:f0a521623724c4c5286f89671b7ec728df29997e13234cba93cc0b47da52afd2",
         "Comment": "",
         "Created": "2022-12-15T12:21:15.178428225Z",
@@ -158,7 +160,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:21:15.386450127+01:00"
+            "LastTagTime": "2022-12-27T13:10:40.226482016+01:00"
         }
     }
 ]

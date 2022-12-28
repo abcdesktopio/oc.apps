@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/kturtle.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/kturtle.d@sha256:10f40c1b2481a137410a078d5fb77a258aa788b7a06b65729f1ee3280711bc94"
+        ],
         "Parent": "sha256:39900a91e73088125d89403ce82b4a423962ff2974addd102fe16945e4446929",
         "Comment": "",
         "Created": "2022-12-15T12:17:53.541592043Z",
@@ -136,7 +138,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:17:53.732635923+01:00"
+            "LastTagTime": "2022-12-27T13:10:14.332886676+01:00"
         }
     }
 ]

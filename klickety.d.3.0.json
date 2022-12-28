@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/klickety.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/klickety.d@sha256:10fd816544c6831575554ccd014aed6272075ff7bd3a8ffa2f846148469ea231"
+        ],
         "Parent": "sha256:4f4937204348bdd6e316088c6ae05e453808471759a8a61fa007f295a1f7d8b4",
         "Comment": "",
         "Created": "2022-12-15T12:14:19.326816472Z",
@@ -136,7 +138,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:14:19.551475031+01:00"
+            "LastTagTime": "2022-12-27T13:09:48.227813746+01:00"
         }
     }
 ]

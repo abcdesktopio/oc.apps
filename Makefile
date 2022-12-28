@@ -31,7 +31,7 @@ all: dockerfilev2 build2
 dockerfilev3:
 	TAG=3.0
 	for dir in $(wildcard *.d); do \
-            rm $$dir ;\
+            rm $$dir | true;\
         done 
 	node make.js -r '3.0'
 	echo "Number of file generated: $(words $(wildcard *.d))"
@@ -90,7 +90,7 @@ push3:
 
 import:
 	for dir in $(sort $(wildcard *.d)); do \
-                docker save abcdesktopio/$$dir:3.0 -o $$dir.tar; \
+		docker save abcdesktopio/$$dir:3.0 -o $$dir.tar; \
 		ctr -n k8s.io images import $$dir.tar; \
 		docker image inspect abcdesktopio/$$dir:3.0 > $$dir.json; \
 		curl -X PUT -H 'Content-Type: text/javascript' http://localhost:30443/API/manager/image -d @$$dir.json; \
@@ -115,7 +115,8 @@ command:
 
 json:
 	for dir in $(sort $(wildcard *.d)); do \
-                docker inspect abcdesktopio/$$dir:$(TAG) >  $$dir.json;\
+		echo create $$dir;\
+                docker inspect abcdesktopio/$$dir:$(TAG) >  $$dir.$(TAG).json;\
         done
 
 import:

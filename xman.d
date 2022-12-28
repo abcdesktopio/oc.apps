@@ -23,6 +23,7 @@ RUN  if [ -d /usr/share/pixmaps ] && [ -x /composer/safelinks.sh ] && [ -d /usr/
 ENV APPNAME "xman"
 ENV APPBIN "/usr/bin/xman"
 ENV APP "/usr/bin/xman"
+LABEL oc.containerengine="ephemeral_container"
 USER root
 RUN mkdir -p /var/secrets/abcdesktop/localaccount && cp /etc/passwd /etc/group /etc/shadow /var/secrets/abcdesktop/localaccount
 RUN rm -f /etc/passwd && ln -s /var/secrets/abcdesktop/localaccount/passwd /etc/passwd

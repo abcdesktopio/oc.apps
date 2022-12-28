@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/atom.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/atom.d@sha256:4e72006808c3c24733741b4e7fc249ca8cc05299963672dcb6acda32628a3228"
+        ],
         "Parent": "sha256:98f7082dc224b187274dde0c0c173baeac061fb71f27d36c72d9005b8f1ddd93",
         "Comment": "",
         "Created": "2022-12-15T11:26:29.704624281Z",
@@ -149,7 +151,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T12:26:29.924154734+01:00"
+            "LastTagTime": "2022-12-17T18:16:31.987139913+01:00"
         }
     }
 ]

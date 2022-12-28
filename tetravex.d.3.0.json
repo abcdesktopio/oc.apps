@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/tetravex.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/tetravex.d@sha256:cb7735ccedd30e5c630bc3e131b59709553158e04f591e75364adbb8037931de"
+        ],
         "Parent": "sha256:eb74d018846b99d63210c4e5351f188c8124d507ad4fb65076f823f1c6d37969",
         "Comment": "",
         "Created": "2022-12-15T12:49:54.512859128Z",
@@ -149,7 +151,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:49:54.733751193+01:00"
+            "LastTagTime": "2022-12-27T13:15:13.750394886+01:00"
         }
     }
 ]

@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/swell-foop.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/swell-foop.d@sha256:cc51e2b040578838a115b40cda3c5d807cb5e5e1ee21e0110fec0afcc482fd82"
+        ],
         "Parent": "sha256:17d0f144fa2331ef9ff061daab54d41083c50b29609791f1e833d6e7eb3f4c9e",
         "Comment": "",
         "Created": "2022-12-15T12:45:53.346207171Z",
@@ -138,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:45:53.544511124+01:00"
+            "LastTagTime": "2022-12-27T13:13:48.937521173+01:00"
         }
     }
 ]

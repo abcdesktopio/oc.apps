@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/rhythmbox.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/rhythmbox.d@sha256:ede2e4318517f00e7d5f71d2244ef60f4a867b655697be65e6ebfb574c70a2c3"
+        ],
         "Parent": "sha256:74b323e4253ef492c8bdf0af59104c12e107c48fb6b57f09e2966274596efd12",
         "Comment": "",
         "Created": "2022-12-15T12:38:27.524873988Z",
@@ -140,7 +142,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:38:27.724979804+01:00"
+            "LastTagTime": "2022-12-27T13:12:55.827539357+01:00"
         }
     }
 ]

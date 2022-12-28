@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/vscode.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/vscode.d@sha256:8c035d92ed0c484624ccbae88502857c43a33350dcb8489c7093fe96c65bf3ce"
+        ],
         "Parent": "sha256:f814c43fa1ca99d0cdf4fb73984bd6a853dbc2032c290c0cfb6a481a0e4b62ff",
         "Comment": "",
         "Created": "2022-12-15T12:57:26.457399303Z",
@@ -153,7 +155,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-12-15T13:57:26.710125712+01:00"
+            "LastTagTime": "2022-12-27T13:16:07.892562304+01:00"
         }
     }
 ]
