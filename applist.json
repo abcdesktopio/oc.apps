@@ -145,22 +145,6 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
-    "debpackage": "",
-    "icon": "gimagereader.svg",
-    "keyword": "ocr, reader, image, gimagereader, scanning, convert, text",
-    "launch": "gimagereader-gtk.Gimagereader-gtk",
-    "name": "gimagereader",
-    "displayname": "OCR-gimagereader",
-    "path": "/usr/bin/gimagereader-gtk",
-    "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.gimagereader",
-    "mimetype": "image/bmp;image/jpeg;image/gif;image/png;image/tiff;image/x-bmp;image/x-ico;image/x-png;image/x-pcx;image/x-tga;image/xpm;image/svg+xml;",
-    "fileextensions":"bmp;jpeg;png,tiff,tga",
-    "args": "",
-    "desktopfile": "/usr/share/applications/gimagereader-gtk.desktop"
-}, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "utilities",
     "containerengine": "pod_application",
     "apkpackage": "xedit",
     "icon": "circle_xedit.svg",
@@ -173,6 +157,21 @@
     "template": "abcdesktopio/oc.template.alpine.minimal",
     "mimetype": "application/text;",
     "fileextensions":"txt;log;md",
+    "args": "",
+    "quick": true
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities",
+    "containerengine": "ephemeral_container",
+    "apkpackage": "xclock",
+    "icon": "xclock.svg",
+    "keyword": "clock,xclock,time",
+    "launch": "xclock.XClock",
+    "name": "xclock",
+    "displayname": "Xclock",
+    "path": "/usr/bin/xclock",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.alpine.minimal",
     "args": "",
     "quick": true
 }, {
@@ -365,9 +364,23 @@
     "rules": { "homedir": { "default": false } },
     "path": "/usr/games/kigo",
     "template": "abcdesktopio/oc.template.ubuntu.gtk",
-    "desktopfile": "/usr/share/applications/kigo.desktop",
+    "desktopfile": "/usr/share/applications/org.kde.kigo.desktop",
     "preruncommands": [ "COPY composer/init.d/init.kigo /composer/init.d/init.kigo" ]
 }, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "games",
+    "containerengine": "pod_application",
+    "apkpackage": "gnome-2048",
+    "icon": "circle_2048.svg",
+    "keyword": "2048",
+    "launch": "org.gnome.TwentyFortyEight.Gnome-2048",
+    "name": "2048-alpine-error",
+    "displayname": "2048 (alpine gtk) with error",
+    "path": "/usr/bin/gnome-2048",
+    "desktopfile": "/usr/share/applications/org.gnome.TwentyFortyEight.desktop",
+    "template": "abcdesktopio/oc.template.alpine.gtk",
+    "rules": { "homedir": { "default": true } }
+},{
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "containerengine": "ephemeral_container",
@@ -382,8 +395,7 @@
     "template": "abcdesktopio/oc.template.alpine.gtk", 
     "rules": { "homedir": { "default": true } },
     "host_config": { "mem_limit": "256M", "shm_size": "64M", "pid_mode": false, "network_mode": "none" }
-},
-{
+}, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "containerengine": "pod_application",
@@ -397,10 +409,8 @@
     "desktopfile": "/usr/share/applications/2048-qt.desktop",
     "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "rules": { "homedir": { "default": true } },
-    "postruncommands": [ "ENV QT_XCB_NO_MITSHM=1" ],
-    "host_config": { "mem_limit": "256M", "shm_size": "64M", "pid_mode": false, "network_mode": "none" }
-}, 
-{
+    "postruncommands": [ "ENV QT_X11_NO_MITSHM=1" ] 
+}, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "licence" : "non-free",
@@ -423,7 +433,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "licence" : "non-free",
-    "debpackage": "gir1.2-gdkpixbuf-2.0 gtk2-engines-pixbuf libssl3 libgdk-pixbuf2.0-0 adwaita-icon-theme libgdk-pixbuf2.0-bin librsvg2-2 librsvg2-common",
+    "debpackage": "gir1.2-gdkpixbuf-2.0 gtk2-engines-pixbuf libgdk-pixbuf2.0-0 adwaita-icon-theme libgdk-pixbuf2.0-bin librsvg2-2 librsvg2-common",
     "icon": "circle-remotedesktopmanager.svg",
     "keyword": "remote,desktop,ssh",
     "launch": "RemoteDesktopManager.Free.RemoteDesktopManager.Free",
@@ -461,7 +471,7 @@
     "displayname": "swell-foop",
     "path": "/usr/games/swell-foop",
     "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
-    "desktopfile": "/usr/share/applications/swell-foop.desktop"
+    "desktopfile": "/usr/share/applications/org.gnome.SwellFoop.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,graphics",
@@ -510,7 +520,7 @@
     "mimetype": "application/pdf;application/x-bzpdf;application/x-gzpdf;application/x-xzpdf;application/x-ext-pdf;application/postscript;application/x-bzpostscript;application/x-gzpostscript;image/x-eps;image/x-bzeps;image/x-gzeps;application/x-ext-ps;application/x-ext-eps;application/x-dvi;application/x-bzdvi;application/x-gzdvi;application/x-ext-dvi;image/vnd.djvu;application/x-ext-djv;application/x-ext-djvu;image/tiff;application/x-cbr;application/x-cbz;application/x-cb7;application/x-cbt;application/x-ext-cbr;application/x-ext-cbz;application/x-ext-cb7;application/x-ext-cbt;application/oxps;application/vnd.ms-xpsdocument;",
     "fileextensions": "pdf;ps;dvi;eps;cbt;cbr;cb7;xps",
     "legacyfileextensions": "pdf;ps;dvi",
-    "desktopfile": "/usr/share/applications/evince.desktop",
+    "desktopfile": "/usr/share/applications/org.gnome.Evince.desktop",
     "quick": true
 },  {
     "acl": { "permit": [ "all" ] },
@@ -538,7 +548,7 @@
     "path": "/usr/bin/wireshark",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.alpine.gtk",
-    "desktopfile": "/usr/share/applications/wireshark.desktop",
+    "desktopfile": "/usr/share/applications/org.wireshark.Wireshark.desktop",
     "mimetype": "application/vnd.tcpdump.pcap;application/x-pcapng;application/x-snoop;application/x-iptrace;application/x-lanalyzer;application/x-nettl;application/x-radcom;application/x-etherpeek;application/x-visualnetworks;application/x-netinstobserver;application/x-5view;application/x-tektronix-rf5;",
     "fileextensions": "cap,pcap",
     "legacyfileextensions": "cap"
@@ -562,7 +572,7 @@
     "path": "/usr/bin/nautilus",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.gtk",
-    "desktopfile":"/usr/share/applications/nautilus.desktop",
+    "desktopfile":"/usr/share/applications/org.gnome.Nautilus.desktop",
     "usedefaultapplication": true,
     "quick": true
 }, {
@@ -582,7 +592,6 @@
     "name": "Firefox",
     "displayname": "Firefox",
     "showinview": "dock",
-    "run_inside_pod": false,
     "path": "/usr/bin/firefox",
     "template": "abcdesktopio/oc.template.alpine.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
@@ -601,16 +610,15 @@
 		"COPY policies.json /usr/lib/firefox/distribution",
 		"COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
 		"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
-    "debpackage": "",
+    "debpackage": "firefox-esr",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.Firefox-esr",
-    "name": "Firefox",
-    "displayname": "Firefox",
+    "name": "firefox-esr",
+    "displayname": "Firefox (esr alpine)",
     "showinview": "dock",
-    "run_inside_pod": false,
     "path": "/usr/bin/firefox",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.20.04",
+    "template": "abcdesktopio/oc.template.alpine.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
@@ -639,7 +647,6 @@
     "name": "firefox-esr",
     "displayname": "Firefox-esr",
     "showinview": "dock",
-    
     "installrecommends" : true,
     "rules": { "homedir": { "default": true } },
     "forceconfold" : true,
@@ -739,7 +746,6 @@
     "launch": "Wfica.Wfica",
     "name": "citrix",
     "displayname": "citrix-client",
-    
     "secrets_requirement": "citrix",
     "args": "-icaroot /opt/Citrix/ICAClient",
     "path": "/opt/Citrix/ICAClient/wfica",
@@ -754,7 +760,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "office",
     "preruncommands": [ 
-        "RUN apt-get update && apt-get install --no-install-recommends --yes python3-gtkspellcheck wkhtmltopdf python3-markdown gir1.2-gtksource-3.0 yelp gir1.2-webkit-3.0 python3-bs4 && apt-get clean",
+        "RUN apt-get update && apt-get install --no-install-recommends --yes python3-gtkspellcheck wkhtmltopdf python3-markdown yelp && apt-get clean",
         "RUN curl -Ls -o /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb && apt-get install  --no-install-recommends --yes /tmp/remarkable_1.87_all.deb && apt-get clean && rm -rf /tmp/remarkable_1.87_all.deb && rm -rf /var/lib/apt/lists/*" ],
     "debpackage": "",
     "icon": "remarkable.svg",
@@ -803,7 +809,6 @@
     "name": "chrome",
     "rules": { "homedir": { "default": true } },
     "displayname": "Chrome",
-    
     "installrecommends" : true,
     "path": "/usr/bin/google-chrome-stable",
     "args": "--no-sandbox --disable-gpu --disable-dev-shm-usage",
@@ -811,7 +816,7 @@
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
-    "desktopfile":"/usr/share/applications/chromium-browser.desktop",
+    "desktopfile":"/usr/share/applications/google-chrome.desktop",
     "abcdesktop_release": 3 
 }, {
     "acl": { "permit": [ "all" ] },
@@ -893,7 +898,7 @@
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "text/calendar;text/x-vcard;text/directory;application/mbox;message/rfc822;x-scheme-handler/mailto;",
-    "desktopfile": "/usr/share/applications/evolution.desktop"
+    "desktopfile": "/usr/share/applications/org.gnome.Evolution.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -950,31 +955,10 @@
     "desktopfile": "/usr/share/applications/libreoffice-writer.desktop",
     "usedefaultapplication": true,
     "abcdesktop_release": 3
-},  {
-    "acl": { "permit": [ "all" ] },
-    "cat": "office",
-    "apkpackage": "libreoffice-gnome",
-    "icon": "circle_libreoffice_calc.svg",
-    "keyword": "libreoffice,office",
-    "launch": "libreoffice.libreoffice-calc",
-    "name": "calc",
-    "displayname": "Calc",
-    "showinview": "dock",
-    "args": "--calc",
-    "rules": { "homedir": { "default": true } },
-    "uniquerunkey": "libreoffice",
-    "path": "/usr/lib/libreoffice/program/soffice",
-    "template": "abcdesktopio/oc.template.alpine.libreoffice",
-    "mimetype": "application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.spreadsheet-template;application/vnd.sun.xml.calc;application/vnd.sun.xml.calc.template;application/msexcel;application/vnd.ms-excel;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroenabled.12;application/vnd.openxmlformats-officedocument.spreadsheetml.template;application/vnd.ms-excel.template.macroenabled.12;application/vnd.ms-excel.sheet.binary.macroenabled.12;text/csv;application/x-dbf;text/spreadsheet;application/csv;application/excel;application/tab-separated-values;application/vnd.lotus-1-2-3;application/vnd.oasis.opendocument.chart;application/vnd.oasis.opendocument.chart-template;application/x-dbase;application/x-dos_ms_excel;application/x-excel;application/x-msexcel;application/x-ms-excel;application/x-quattropro;application/x-123;text/comma-separated-values;text/tab-separated-values;text/x-comma-separated-values;text/x-csv;application/vnd.oasis.opendocument.spreadsheet-flat-xml;application/vnd.ms-works;application/x-iwork-numbers-sffnumbers;",
-    "legacyfileextensions": "ods;ots;csv",
-    "fileextensions": "ods;ots;sxc;stc;fods;uos;uof;xml;xlsx;xlsm;xltm;xltx;xlsb;xls;xlm;xlc;xlw;xlk;xlt;dif;dbf;htm;html;wk1;wks;123;wb2;rtf;slk;sylk;csv;numbers;dummy;cwk;wps;wk3;wq1;wq2",
-    "desktopfile": "/usr/share/applications/libreoffice-calc.desktop",
-    "usedefaultapplication": true,
-    "abcdesktop_release": 3
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "apkpackage": "",
+    "apkpackage": "libreoffice-gnome",
     "icon": "circle_libreoffice_impress.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-impress",
@@ -1064,7 +1048,7 @@
     "args": "--disable-factory",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.minimal.20.04",
-    "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
+    "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY composer/init.d/init.gnome-terminal /composer/init.d/init.gnome-terminal" ] 
 },  {
@@ -1091,7 +1075,7 @@
     "args": "--disable-factory  --class=jupyter -- /usr/local/bin/startjupyter.sh",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.minimal.20.04",
-    "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
+    "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY startjupyter.sh /usr/local/bin/startjupyter.sh" ]
 }, {
@@ -1127,7 +1111,7 @@
     "args": "--disable-factory  --class=jupyternvidia -- /usr/local/bin/startjupyter.sh",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
-    "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
+    "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user", "COPY startjupyter.sh /usr/local/bin/startjupyter.sh" ]
 }, {
@@ -1143,7 +1127,7 @@
     "args": "--disable-factory  --class=cuda",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
-    "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
+    "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user" ]
 }, {
@@ -1160,7 +1144,7 @@
     "args": "--disable-factory  --class=cudademo -- cd /usr/local/cuda/extras/demo_suite",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
-    "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
+    "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ "RUN mkdir -p /run/user", "RUN chmod 777 /run/user" ]
 }, {
@@ -1177,7 +1161,7 @@
     "args": "--disable-factory  --class=cudadev",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
-    "desktopfile": "/usr/share/applications/gnome-terminal.desktop",
+    "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ 	
 	    	"RUN mkdir -p /run/user", 
@@ -1226,9 +1210,9 @@
     "rules": { "homedir": { "default": false} },
     "host_config": { "mem_limit": "256M", "shm_size": "128M", "pid_mode": false, "ipc_mode": false  },
     "args": "--disable-factory --class=pod",
-    "run_inside_pod": true,
+    "containerengine": "pod_application",
     "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
-    "desktopfile": "/usr/share/applications/gnome-terminal.desktop"
+    "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
@@ -1276,7 +1260,7 @@
     "mimetype": "image/bmp;image/gif;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-tga;image/x-xbitmap;image/jpeg;image/png;image/x-icon;image/x-xpixmap;image/x-xcursor;",
     "fileextensions": "ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
     "legacyfileextensions":"ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
-    "desktopfile":"/usr/share/applications/eog.desktop",
+    "desktopfile":"/usr/share/applications/org.gnome.eog.desktop",
     "host_config": { "mem_limit": "512M", "shm_size": "256M", "pid_mode": false },
     "usedefaultapplication": true,
     "quick": true
