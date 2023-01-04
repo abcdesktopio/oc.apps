@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/xedit.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/xedit.d@sha256:75782995834045c3c55d4ff7ba19a334e9824b08d62ad79a3d7c02ae3da919f9"
+        ],
         "Parent": "sha256:9fdbc35d12e5464e4b0b241b291c1021348a33915c364973b63e9df58965cf99",
         "Comment": "",
         "Created": "2022-12-27T12:18:04.91653147Z",
