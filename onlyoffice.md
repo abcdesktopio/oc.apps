@@ -1,28 +1,88 @@
 # onlyoffice
 ![onlyoffice-desktopeditors.svg](icons/onlyoffice-desktopeditors.svg){: style="height:64px;width:64px"}
 ## inherite from
-[abcdesktopio/oc.template.ubuntu.gtk](../abcdesktopio/oc.template.ubuntu.gtk.md)
+[abcdesktopio/oc.template.ubuntu.gtk](../abcdesktopio/oc.template.ubuntu.gtk)
 ## Distribution
-ubuntu ![ubuntu](icons/ubuntu.svg){: style="height:32px;width:32px"}
-## Ubuntu packages
+ubuntu ![ubuntu](icons/ubuntu.svg){: style="height:32px;"}
+
+``` 
+NAME="Ubuntu"
+VERSION="20.04.5 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04.5 LTS"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
+
 ```
+
+
+## Ubuntu packages
+
+``` 
 onlyoffice-desktopeditors
 ```
+
+## Licence
+ ** This application is NO FREE. ** You need to build it manually.
+
 ## Displayname
-"OnlyOffice"
+
+
+``` 
+OnlyOffice
+```
+
 ## Path
-"/usr/bin/desktopeditors"
-## Mime Type
-"application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/vnd.oasis.opendocument.text-web;application/vnd.oasis.opendocument.text-master;application/vnd.sun.xml.writer;application/vnd.sun.xml.writer.template;application/vnd.sun.xml.writer.global;application/msword;application/vnd.ms-word;application/x-doc;application/rtf;text/rtf;application/vnd.wordperfect;application/wordperfect;application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-word.document.macroenabled.12;application/vnd.openxmlformats-officedocument.wordprocessingml.template;application/vnd.ms-word.template.macroenabled.12;application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.spreadsheet-template;application/vnd.sun.xml.calc;application/vnd.sun.xml.calc.template;application/msexcel;application/vnd.ms-excel;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroenabled.12;application/vnd.openxmlformats-officedocument.spreadsheetml.template;application/vnd.ms-excel.template.macroenabled.12;application/vnd.ms-excel.sheet.binary.macroenabled.12;text/csv;text/spreadsheet;application/csv;application/excel;application/x-excel;application/x-msexcel;application/x-ms-excel;text/comma-separated-values;text/tab-separated-values;text/x-comma-separated-values;text/x-csv;application/vnd.oasis.opendocument.presentation;application/vnd.oasis.opendocument.presentation-template;application/vnd.sun.xml.impress;application/vnd.sun.xml.impress.template;application/mspowerpoint;application/vnd.ms-powerpoint;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-powerpoint.presentation.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.template;application/vnd.ms-powerpoint.template.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.slide;application/vnd.openxmlformats-officedocument.presentationml.slideshow;application/vnd.ms-powerpoint.slideshow.macroEnabled.12;"
+
+
+``` 
+/usr/bin/desktopeditors
+```
+
+## Mimetype
+
+``` 
+application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/vnd.oasis.opendocument.text-web;application/vnd.oasis.opendocument.text-master;application/vnd.sun.xml.writer;application/vnd.sun.xml.writer.template;application/vnd.sun.xml.writer.global;application/msword;application/vnd.ms-word;application/x-doc;application/rtf;text/rtf;application/vnd.wordperfect;application/wordperfect;application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-word.document.macroenabled.12;application/vnd.openxmlformats-officedocument.wordprocessingml.template;application/vnd.ms-word.template.macroenabled.12;application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.spreadsheet-template;application/vnd.sun.xml.calc;application/vnd.sun.xml.calc.template;application/msexcel;application/vnd.ms-excel;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroenabled.12;application/vnd.openxmlformats-officedocument.spreadsheetml.template;application/vnd.ms-excel.template.macroenabled.12;application/vnd.ms-excel.sheet.binary.macroenabled.12;text/csv;text/spreadsheet;application/csv;application/excel;application/x-excel;application/x-msexcel;application/x-ms-excel;text/comma-separated-values;text/tab-separated-values;text/x-comma-separated-values;text/x-csv;application/vnd.oasis.opendocument.presentation;application/vnd.oasis.opendocument.presentation-template;application/vnd.sun.xml.impress;application/vnd.sun.xml.impress.template;application/mspowerpoint;application/vnd.ms-powerpoint;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-powerpoint.presentation.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.template;application/vnd.ms-powerpoint.template.macroenabled.12;application/vnd.openxmlformats-officedocument.presentationml.slide;application/vnd.openxmlformats-officedocument.presentationml.slideshow;application/vnd.ms-powerpoint.slideshow.macroEnabled.12;
+```
+
 ## File extensions
-"doc;docx;odt;rtf;txt;xls;xlsx;ods;csv;ppt;pptx;odp"
+`"doc;docx;odt;rtf;txt;xls;xlsx;ods;csv;ppt;pptx;odp"`
 ## ACL
-{"permit":["all"]}
+
+``` json
+{
+    "permit": [
+        "all"
+    ]
+}
+```
+
 ## WM_CLASS
+
+``` 
 DesktopEditors.DesktopEditors
+```
+
+> The WM_CLASS property (of type STRING without control characters) contains two consecutive null-terminated strings. These specify the Instance and Class names to be used by both the client and the window manager for looking up resources for the application or as identifying information.
+> to get the WM_CLASS property of an application, use the command line `wmctrl -lx`
+
 ## Desktopfile
+
+``` 
 /usr/share/applications/onlyoffice-desktopeditors.desktop
+```
+
+> A .desktop file is a simple text file that holds information about a program. It is usually placed in “/usr/share/applications/”.
+
 ## PRE run command
+
+> PRE run command are run **before** the package install command
 
 ```
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
@@ -31,9 +91,12 @@ RUN echo "deb [arch=$(dpkg --print-architecture)] https://download.onlyoffice.co
 RUN apt-get update && apt-get install --yes libgl1 libnss3 qt5dxcb-plugin && apt-get clean && rm -rf /var/lib/apt/lists/*
 ```
 
-## JSON dump
 
-```json
+
+## JSON dump
+json source file
+
+``` json
 {
     "acl": {
         "permit": [
@@ -69,9 +132,19 @@ RUN apt-get update && apt-get install --yes libgl1 libnss3 qt5dxcb-plugin && apt
 }
 ```
 
-## Dockerfile generated
+## Install the builded image
+>Replace the **ABCHOST** var set to localhost by default to your own server ip address
 
-```dockerfile
+``` sh
+ABCHOST=localhost
+curl --output onlyoffice.json https://raw.githubusercontent.com/abcdesktopio/oc.apps/main/onlyoffice.d.3.0.json
+curl -X PUT -H 'Content-Type: text/javascript' http://$ABCHOST:30443/API/manager/image -d @onlyoffice.json
+
+```
+
+## Generated `DockerFile` source code
+
+``` 
 # Dynamic DockerFile application file for abcdesktopio generated by abcdesktopio/oc.apps/make.js
 # DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN
 ARG TAG=dev
@@ -114,3 +187,35 @@ USER balloon
 CMD [ "/composer/appli-docker-entrypoint.sh" ]
 
 ```
+
+## Rebuild the image manually
+
+### Download the Dockerfile manually
+[Dockerfile for application onlyoffice](https://raw.githubusercontent.com/abcdesktopio/oc.apps/main/onlyoffice.d)
+``` sh
+wget https://raw.githubusercontent.com/abcdesktopio/oc.apps/main/onlyoffice.d
+```
+
+### build the `Dockerfile` to create a container image
+
+``` sh
+docker build --build-arg TAG=3.0 -f onlyoffice.d -t onlyoffice .
+```
+
+### Install the new image
+>If you are using `containerd` as container runtime, use the ctr command line
+
+ 
+>If you are not running this bash command on your abcdesktop node
+>Replace the **ABCHOST** variable set to localhost by default to your own server ip address
+
+
+``` sh
+ABCHOST=localhost
+docker inspect onlyoffice > onlyoffice.json
+docker image save onlyoffice -o onlyoffice.tar
+ctr -n k8s.io images import onlyoffice.tar
+curl -X PUT -H 'Content-Type: text/javascript' http://$ABCHOST:30443/API/manager/image -d @onlyoffice.json
+
+```
+
