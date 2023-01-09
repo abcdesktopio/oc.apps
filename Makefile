@@ -22,25 +22,15 @@ ifndef TAG
  TAG=dev
 endif 
 
-3.0:  dockerfilev3 build3
-
-all: dockerfilev2 build2
+all: dockerfile build
 	echo "run firstcommand make dockerfile\n"; \
 	echo "next run         make build";
 
-dockerfilev3:
-	TAG=3.0
+dockerfile:
 	for dir in $(wildcard *.d); do \
             rm $$dir | true;\
         done 
 	node make.js -r '3.0'
-	echo "Number of file generated: $(words $(wildcard *.d))"
-
-dockerfilev2:
-	for dir in $(wildcard *.d); do \
-	    rm $$dir ;\
-        done 
-	node make.js -r '2.0'
 	echo "Number of file generated: $(words $(wildcard *.d))"
 
 buildpushdelete:
@@ -53,39 +43,24 @@ buildpushdelete:
 		# docker rmi abcdesktopio/$$dir:$(TAG) ;\
 		fi \
         done
-
-build2:
-	for dir in $(sort $(wildcard *.d)); do \
-		echo "\n\n *********** building $$dir **********\n"; \
-		echo "docker build  --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:2.0 -f $$dir ."; \
-		docker build --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:2.0 -f $$dir . ;\
-		docker inspect abcdesktopio/$$dir:2.0 > $$dir.2.0.json; \
-		docker rmi `docker images -q --filter "dangling=true"` ;\
-	done 
-
-build3:
+build:
 	for dir in $(sort $(wildcard *.d)); do \
                 echo "\n\n *********** buildin $$dir **********\n"; \
-                echo "docker build  --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:3.0 -f $$dir ."; \
-                docker build --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:3.0 -f $$dir . ;\
-                docker inspect abcdesktopio/$$dir:3.0 > $$dir.3.0.json; \
-                docker rmi `docker images -q --filter "dangling=true"` ;\
+                echo "docker build  --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:$(TAG) -f $$dir ."; \
+                docker build --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:$(TAG) -f $$dir . ;\
+		docker inspect abcdesktopio/$$dir:$(TAG) > $$dir.$(TAG).json; \
+                # docker rmi `docker images -q --filter "dangling=true"` ;\
         done 
+	docker rmi `docker images -q --filter "dangling=true"`
 
-
-add3: 
-	for dir in $(sort $(wildcard *.3.0.json)); do \
+add: 
+	for dir in $(sort $(wildcard *.$(TAG).json)); do \
 		curl -X POST -H 'Content-Type: text/javascript' http://localhost:30443/API/manager/image -d@$$dir ;\
 	done
 
-push2:
+push:
 	for dir in $(sort $(wildcard *.d)); do \
-		if [ ! -f $$dir.non-free ]; then echo "pushing $$dir" && docker push abcdesktopio/$$dir:2.0; fi \
-        done 
-
-push3:
-	for dir in $(sort $(wildcard *.d)); do \
-                if [ ! -f $$dir.non-free ]; then  echo "pushing $$dir" && docker push abcdesktopio/$$dir:3.0; fi \
+                if [ ! -f $$dir.non-free ]; then  echo "pushing $$dir" && docker push abcdesktopio/$$dir:$(TAG); fi \
         done 
 
 import:
