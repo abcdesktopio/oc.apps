@@ -227,7 +227,7 @@
     "name": "winefile-wine",
     "displayname": "Winefile Wine (alpine)",
     "rules": { "homedir": { "default": true } },
-    "path": "/usr/bin/winfile",
+    "path": "/usr/bin/winefile",
     "template": "abcdesktopio/oc.template.alpine.wine"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -244,8 +244,7 @@
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/wineconsole",
     "template": "abcdesktopio/oc.template.alpine.wine"
-}, 
-{
+}, {
     "acl": { "permit": [ "all" ] },
     "args": "winhelp",
     "cat": "utilities",
@@ -267,6 +266,22 @@
     "fileextensions":"hlp;",
     "path": "/usr/bin/wine",
     "template": "abcdesktopio/oc.template.wine"
+}, 
+{
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities",
+    "apkpackage": "powershell dbus-x11 gnome-terminal font-adobe-source-code-pro",
+    "icon": "powershell.svg",
+    "keyword": "powershell",
+    "launch": "gnome-terminal-server.powershell",
+    "name": "powershell",
+    "displayname": "Powershell",
+    "rules": { "homedir": { "default": true } },
+    "mimetype": "application/hlp;",
+    "fileextensions":"hlp;",
+    "path": "/usr/bin/gnome-terminal",
+    "args": "--class=powershell -- /usr/bin/pwsh",
+    "template": "abcdesktopio/oc.template.alpine"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1035,7 +1050,7 @@
     "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [ 
-            "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers",
+            "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all",
 	    "RUN mkdir -p /run/user", 
 	    "RUN chmod 777 /run/user" ]   
 },  {
@@ -1913,27 +1928,5 @@
     "name": "kDiamond",
     "path": "/usr/games/kdiamond",
     "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
-}, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "debpackage": "firefox",
-    "icon": "circle_youtube.svg",
-    "keyword": "youtube,tube",
-    "launch": "Navigator.youtube",
-    "args": "-P youtube --class=youtube https://www.youtube.com/",
-    "name": "youtube",
-    "displayname": "Youtube",
-    "rules": { "homedir": { "default": false } }, 
-    "host_config": { "mem_limit": "2G", "shm_size" : "2G" }, 
-    "installrecommends" : true,
-    "path": "/usr/bin/firefox",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
-    "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
-    "legacyfileextensions": "html;xml",
-    "fileextensions": "html;xml;gif",
-    "desktopfile":"/usr/share/applications/firefox.desktop",
-    "preventhomemount" : false,
-    "quick": true,
-    "preruncommands": [ "COPY composer/init.d/init.firefox.youtube /composer/init.d/init.firefox" ]
-} 
+}
 ]
