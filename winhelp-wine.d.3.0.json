@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/winhelp-wine.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/winhelp-wine.d@sha256:a3fdefdce8517c5036d6c2612311cd29347487451668bc541f39615344014f63"
+        ],
         "Parent": "sha256:eff4c4c81755898f857007d7ad56f48f7f5c4baf540e446e6e829b619e65c352",
         "Comment": "",
         "Created": "2023-01-03T16:20:28.044726418Z",
@@ -173,7 +175,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-04T22:36:35.336465025+01:00"
+            "LastTagTime": "2023-01-06T16:53:55.60522737+01:00"
         }
     }
 ]
