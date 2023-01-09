@@ -210,11 +210,8 @@ function makedockerfile(e) {
   if ( abcdesktop_release === '3.0' ) {
       // make sure that we are root to run the commands :
       wstream.write( "USER root\n" ),
-      wstream.write( "RUN mkdir -p /var/secrets/abcdesktop/localaccount && cp /etc/passwd /etc/group /etc/shadow /var/secrets/abcdesktop/localaccount\n" );
-      wstream.write( "RUN rm -f /etc/passwd && ln -s /var/secrets/abcdesktop/localaccount/passwd /etc/passwd\n" ); 
-      wstream.write( "RUN rm -f /etc/group && ln -s /var/secrets/abcdesktop/localaccount/group  /etc/group\n" );
-      wstream.write( "RUN rm -f /etc/shadow && ln -s /var/secrets/abcdesktop/localaccount/shadow /etc/shadow\n" );
-      wstream.write( "RUN rm -f /etc/gshadow && ln -s /var/secrets/abcdesktop/localaccount/gshadow /etc/gshadow\n" );
+      wstream.write( "RUN mkdir -p /var/secrets/abcdesktop/localaccount\n" );
+      wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /var/secrets/abcdesktop/localaccount; rm -f /etc/$f; ln -s /var/secrets/abcdesktop/localaccount/$f /etc/$f; fi; done\n" );
   }
 
   let user=(e.user)?(e.user):'balloon';
