@@ -193,16 +193,15 @@ function makedockerfile(e) {
   }
   // remove links file over inacessible directory
   // RUN this command as ROOT
-  wstream.write('RUN  if [ -d /usr/share/icons ]   && [ -x /composer/safelinks.sh ] && [ -d /usr/share/icons   ];  then cd /usr/share/icons;    /composer/safelinks.sh; fi \n');
-  wstream.write('RUN  if [ -d /usr/share/pixmaps ] && [ -x /composer/safelinks.sh ] && [ -d /usr/share/pixmaps ];  then cd /usr/share/pixmaps;  /composer/safelinks.sh; fi \n');
+  wstream.write( "RUN for d in /usr/share/icons /usr/share/pixmaps ; do echo \"testing link in $d\"; if [ -d $d ] && [ -x /composer/safelinks.sh ] ; then echo \"fixing link in $d\"; cd $d ; /composer/safelinks.sh ; fi; done\n" );
   if (e.name) wstream.write(`ENV APPNAME "${e.name}"\n`);
   if (e.path) wstream.write(`ENV APPBIN "${e.path}"\n`);
   if (e.args) { wstream.write(`LABEL oc.args=${JSON.stringify(e.args)}\n`); }
   if (e.path) { wstream.write(`ENV APP "${e.path}"\n`); }
   if (e.usedefaultapplication) { wstream.write(`LABEL oc.usedefaultapplication=${JSON.stringify(e.usedefaultapplication)}\n`); }
-  if (e.run_inside_pod) { wstream.write(`LABEL oc.run_inside_pod=${JSON.stringify(e.run_inside_pod)}\n`); }
   if (e.home) { wstream.write(`LABEL oc.home=${JSON.stringify(e.home)}\n`); }
   if (e.containerengine) {  wstream.write(`LABEL oc.containerengine=${JSON.stringify(e.containerengine)}\n`); }
+  if (e.securitycontext) {  wstream.write(`LABEL oc.securitycontext=${JSON.stringify(e.securitycontext)}\n`); }
   if (e.postruncommands) {
         e.postruncommands.forEach((command) => wstream.write(`${command}\n`));
   }
