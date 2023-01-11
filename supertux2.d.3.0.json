@@ -2,8 +2,7 @@
     {
         "Id": "sha256:dfbfe2b1d233d75c4b3d7d1c366884f66c78e135c52a2eafe14de4662181b972",
         "RepoTags": [
-            "abcdesktopio/supertux2.d:3.0",
-            "abcdesktopio/supertux2.d:dev"
+            "abcdesktopio/supertux2.d:3.0"
         ],
         "RepoDigests": [],
         "Parent": "sha256:dc6d33e23bb181d69ea8a9d2a9150cf3990c058b6988adf7684b027dd282ce39",
