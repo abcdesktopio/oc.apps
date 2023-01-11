@@ -68,6 +68,7 @@
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.alpine",
     "desktopfile": "/usr/share/applications/xterm.desktop",
+    "args": "-xrm 'XTerm*selectToClipboard:true'",
     "postruncommands": [
     	"RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
     ],
@@ -75,15 +76,41 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
+    "icon": "org.gnome.Boxes.svg",
+    "apkpackage": "gnome-boxes sudo",
+    "keyword": "boxes,vm",
+    "launch": "gnome-boxes.Gnome-boxes",
+    "name": "boxes",
+    "displayname": "Gnome-boxes",
+    "path": "/usr/bin/gnome-boxes",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.alpine",
+    "desktopfile": "/usr/share/applications/org.gnome.Boxes.desktop",
+    "mimetype": "application-x-cd-image;",
+    "postruncommands": [
+        "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
+    ],
+    "securitycontext": {
+      "allowPrivilegeEscalation": true,
+      "capabilities": {
+        "add": ["NET_ADMIN", "CAP_SYS_ADMIN"] 
+      }
+    }	
+},{
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
     "postruncommands": [ "ENV QT_XCB_NO_MITSHM=1" ],
     "icon": "konsole.svg",
-    "apkpackage": "konsole",
-    "keyword": "xterm,shell,cmd",
+    "apkpackage": "konsole, sudo",
+    "keyword": "ksonsole,console,shell,bash,sh",
     "launch": "konsole.konsole",
     "name": "konsole",
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.alpine",
+    "postruncommands": [
+            "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" 
+    ], 
     "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
@@ -222,7 +249,7 @@
     "cat": "utilities",
     "apkpackage": "wine",
     "icon": "winefile.svg",
-    "keyword": "wine,winefile,file,manager",
+    "keyword": "wine,winfile,winefile,file,manager",
     "launch": "winefile.exe.winefile.exe",
     "name": "winefile-wine",
     "displayname": "Winefile Wine (alpine)",
@@ -236,8 +263,8 @@
     ],
     "cat": "utilities",
     "apkpackage": "wine",
-    "icon": "pantheon-terminal-icons.svg",
-    "keyword": "cmd.exe",
+    "icon": "cmd.svg",
+    "keyword": "wine,command,cmd.exe",
     "launch": "conhost.exe.conhost.exe",
     "name": "cmd.exe",
     "displayname": "cmd.exe wine (alpine)",
@@ -302,7 +329,7 @@
     ],
     "icon": "winemine.svg",
     "keyword": "wine,winemine,mine",
-    "launch": "winemine.exe.Wine",
+    "launch": "winemine.exe.winemine.exe",
     "name": "winemine-wine",
     "displayname": "WineMine Wine (alpine)",
     "rules": { "homedir": { "default": true } },
@@ -364,14 +391,14 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
-    "debpackage": "supertux",
+    "apkpackage": "supertux mesa-gl mesa-egl mesa-dri-gallium",
     "icon": "circle_supertux.svg",
     "keyword": "supertux",
     "launch": "supertux2.supertux2",
     "name": "supertux2",
     "displayname": "supertux2",
     "path": "/usr/games/supertux2",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "abcdesktopio/oc.template.alpinei.minimal",
     "desktopfile": "/usr/share/applications/supertux2.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -401,20 +428,6 @@
     "desktopfile": "/usr/share/applications/org.kde.kigo.desktop",
     "preruncommands": [ "COPY composer/init.d/init.kigo /composer/init.d/init.kigo" ]
 }, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "games",
-    "containerengine": "pod_application",
-    "apkpackage": "gnome-2048",
-    "icon": "circle_2048.svg",
-    "keyword": "2048",
-    "launch": "org.gnome.TwentyFortyEight.Gnome-2048",
-    "name": "2048-alpine-error",
-    "displayname": "2048 (alpine gtk) with error",
-    "path": "/usr/bin/gnome-2048",
-    "desktopfile": "/usr/share/applications/org.gnome.TwentyFortyEight.desktop",
-    "template": "abcdesktopio/oc.template.alpine.gtk",
-    "rules": { "homedir": { "default": true } }
-},{
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "containerengine": "ephemeral_container",
@@ -509,21 +522,17 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,graphics",
-    "debpackage": "",
-    "preruncommands": [ "RUN apt-get update && apt-get install  --no-install-recommends --yes xz-utils && apt-get clean",
-                        "RUN apt-get update && apt-get install  --yes libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 && apt-get clean",
-                        "RUN curl -Ls -o /tmp/blender.tar.xz https://download.blender.org/release/Blender2.90/blender-2.90.0-linux64.tar.xz && xz -d /tmp/blender.tar.xz && cd /usr/local && tar -xvf /tmp/blender.tar && rm -rf /tmp/blender.tar" ],
+    "apkpackage": "blender mesa-dri-gallium",
     "icon": "circle_blender.svg",
     "keyword": "blender,modeler",
     "launch": "Blender.Blender",
     "name": "blender",
     "displayname": "Blender",
-    "host_config": { "mem_limit": "2G", "shm_size": "2G", "pid_mode": false, "cpu_period": 100000, "cpu_quota": 400000 },
-    "path": "/usr/local/blender-2.90.0-linux64/blender",
+    "path": "/usr/bin/blender",
     "mimetype": "application/x-blender",
     "fileextensions":"blend,obj,fbx,3ds,ply,stl",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
-    "desktopfile": "/usr/local/blender-2.90.0-linux64/blender.desktop"
+    "template": "abcdesktopio/oc.template.alpine",
+    "desktopfile": "/usr/share/applications/blender.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office,graphics",
@@ -622,9 +631,10 @@
     "apkpackage": "firefox krb5",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
-    "launch": "Navigator.Firefox",
+    "launch": "Navigator.firefox",
+    "args": "",
     "name": "Firefox",
-    "displayname": "Firefox",
+    "displayname": "Firefox (alpine)",
     "showinview": "dock",
     "path": "/usr/bin/firefox",
     "template": "abcdesktopio/oc.template.alpine.gtk",
@@ -646,11 +656,12 @@
     "apkpackage": "firefox-esr",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
-    "launch": "Navigator.Firefox-esr",
+    "launch": "Navigator.firefox-esr",
     "name": "firefox-esr",
     "displayname": "Firefox (esr alpine)",
     "showinview": "dock",
     "path": "/usr/bin/firefox-esr",
+    "args": "",
     "template": "abcdesktopio/oc.template.alpine.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
@@ -809,7 +820,6 @@
     "displayname": "Chrome",
     "installrecommends" : true,
     "path": "/usr/bin/google-chrome-stable",
-    "args": "--no-sandbox --disable-gpu --disable-dev-shm-usage",
     "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
@@ -822,13 +832,12 @@
     "apkpackage": "chromium",
     "icon": "circle_chromium.svg",
     "keyword": "web,browser,internet",
-    "launch": "chromium-browser.Chromium-browser",
+    "launch": "chromium.Chromium",
     "name": "chromium",
     "rules": { "homedir": { "default": true } },
     "displayname": "chromium (alpine)",
     "installrecommends" : true,
     "path": "/usr/bin/chromium-browser",
-    "args": "-no-sandbox --disable-gpu --disable-dev-shm-usage",
     "template": "abcdesktopio/oc.template.alpine.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
@@ -838,25 +847,22 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf fonts-wine",
+    "containerengine": "ephemeral_container",
+    "debpackage": "microsoft-edge-stable",
     "preruncommands": [ 
         "RUN # curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg",
 	"RUN curl https://packages.microsoft.com/keys/microsoft.asc  | apt-key add -",
-        "RUN echo \"deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/edge stable main\" > /etc/apt/sources.list.d/edge.list",
-        "RUN apt update && apt-get upgrade -y && apt-get install  --no-install-recommends -y microsoft-edge-stable && apt-get clean && rm -rf /var/lib/apt/lists/*"
-	],
+        "RUN echo \"deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/edge stable main\" > /etc/apt/sources.list.d/edge.list"
+    ],
     "icon": "circle_microsoft-edge.svg",
     "keyword": "web,browser,internet",
-    "launch": "microsoft-edge-beta.Microsoft-edge-beta",
+    "launch": "microsoft-edge.Microsoft-edge",
     "name": "edge",
-    "displayname": "MicrosoftEdge",
-    
-    "installrecommends" : true,
-    "path": "/usr/bin/microsoft-edge",
+    "displayname": "Microsoft Edge",
+    "path": "/usr/bin/microsoft-edge-stable",
     "rules": { "homedir": { "default": true } },
-    "args": "--no-sandbox --disable-gpu --disable-dev-shm-usage",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
-    "mimetype": "application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "mimetype": "application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;", 
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
     "desktopfile":"/usr/share/applications/microsoft-edge.desktop",
@@ -1188,9 +1194,25 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "debpackage": "at-spi2-core gnome-terminal dbus-x11",
+    "debpackage": "at-spi2-core gnome-terminal dbus-x11 pulseaudio-utils",
     "icon": "pantheon-terminal-icons.svg",
-    "keyword": "pod,shell",
+    "keyword": "ephemeral,terminal,shell",
+    "launch": "gnome-terminal-server.ephemeral",
+    "name": "terminalephemeral",
+    "displayname": "Terminal [ephemeral container]",
+    "path": "/usr/bin/gnome-terminal",
+    "rules": { "homedir": { "default": false} },
+    "host_config": { "mem_limit": "256M", "shm_size": "128M", "pid_mode": false, "ipc_mode": false  },
+    "args": "--disable-factory --class=ephemeral",
+    "containerengine": "ephemeral_container",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop"
+},{
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "debpackage": "pulseaudio-utils at-spi2-core gnome-terminal dbus-x11",
+    "icon": "pantheon-terminal-icons.svg",
+    "keyword": "pod,terminal,shell",
     "launch": "gnome-terminal-server.pod",
     "name": "terminalpod",
     "displayname": "Terminal [Pod]",
@@ -1204,7 +1226,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
-    "apkpackage": "gimp",
+    "apkpackage": "gimp gimp-lang",
     "icon": "circle_gimp.svg",
     "keyword": "gimp,image,gif,tiff,png,jpeg,bmp,tga,pcx,bitmap,jpg,pixmap",
     "launch": "gimp.Gimp",
@@ -1221,7 +1243,7 @@
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
-    "debpackage": "shotcut",
+    "apkpackage": "shotcut mesa-dri-gallium",
     "icon": "circle_shotcut.svg",
     "keyword": "video,audio,editing,suite,mlt,4k,video4linux,blackmagic,decklink",
     "launch": "shotcut.Shotcut",
@@ -1232,7 +1254,7 @@
     "fileextensions": "mlt",
     "legacyfileextensions":"mlt",
     "rules": { "homedir": { "default": true } },
-    "desktopfile":"/usr/share/applications/shotcut.desktop",
+    "desktopfile":"/usr/share/applications/org.shotcut.Shotcut.desktop",
     "usedefaultapplication": false
 },{
     "acl": { "permit": [ "all" ] },
@@ -1315,32 +1337,18 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
-    "debpackage": "pinta",
+    "displayname": "Pinta (alpine)",
+    "apkpackage": "pinta pinta-lang adwaita-icon-theme libadwaita font-noto font-xfree86-type1",
     "icon": "pinta.svg",
     "keyword": "pinta,paint",
     "launch": "Pinta.Pinta",
     "name": "Pinta",
     "path": "/usr/bin/pinta",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.20.04",
+    "template": "abcdesktopio/oc.template.alpine",
     "mimetype": "image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/tiff;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/x-targa;image/x-tga;image/openraster;",
     "desktopfile": "/usr/share/applications/pinta.desktop"
 }, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "utilities,office",
-    "displayname": "Pinta (alpine)",
-    "apkpackage": "pinta adwaita-icon-theme libadwaita font-noto font-xfree86-type1",
-    "icon": "pinta.svg",
-    "keyword": "pinta,paint",
-    "launch": "Pinta.Pinta",
-    "name": "Pinta",
-    "path": "/usr/bin/pinta",
-    "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.alpine.minimal",
-    "mimetype": "image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/tiff;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/x-targa;image/x-tga;image/openraster;",
-    "desktopfile": "/usr/share/applications/pinta.desktop"
-}, 
-{
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
     "debpackage": "bless",
@@ -1390,19 +1398,19 @@
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
-    "debpackage": "numix-gtk-theme gtk2-engines gtk2-engines-pixbuf libgtk2.0-0 inkscape",
+    "debpackage": "inkscape inkscape-lang",
     "icon": "circle_inkscape.svg",
     "keyword": "inkscape",
-    "launch": "inkscape.Inkscape",
+    "launch": "org.inkscape.Inkscape.Inkscape",
     "name": "inkscape",
     "path": "/usr/bin/inkscape",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.alpine",
     "rules": { "homedir": { "default": true } },
-    "mimetype": "image/svg+xml;image/svg+xml-compressed;application/vnd.corel-draw;application/illustrator;",
+    "mimetype": "image/svg+xml;image/svg+xml-compressed;application/vnd.corel-draw;application/pdf;application/postscript;image/x-eps;application/illustrator;image/cgm;image/x-wmf;application/x-xccx;application/x-xcgm;application/x-xcdt;application/x-xsk1;application/x-xcmx;image/x-xcdr;application/visio;application/x-visio;application/vnd.visio;application/visio.drawing;application/vsd;application/x-vsd;image/x-vsd;",
     "fileextensions": "ai;cdr",
     "legacyfileextensions":"ai;cdr",
     "installrecommends" : true,
-    "desktopfile": "/usr/share/applications/inkscape.desktop"
+    "desktopfile": "/usr/share/applications/org.inkscape.Inkscape.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1476,7 +1484,7 @@
     "keyword": "maps",
     "launch": "org.gnome.Maps.org.gnome.Maps",
     "name": "maps",
-    "path": "/usr/games/gnome-maps",
+    "path": "/usr/bin/gnome-maps",
     "mimetype": "application/vnd.geo+json;x-scheme-handler/geo;application/vnd.google-earth.kml+xml;application/gpx+xml;",
     "template": "abcdesktopio/oc.template.alpine",
     "desktopfile":"/usr/share/applications/org.gnome.Maps.desktop"
@@ -1522,7 +1530,7 @@
     "desktopfile": "/usr/share/applications/org.gnome.Sudoku.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
-    "cat": "office",
+    "cat": "games",
     "apkpackage": "gnome-taquin",
     "icon": "org.gnome.Taquin.svg",
     "keyword": "taquin",
@@ -1622,34 +1630,34 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
-    "debpackage": "dia dia-shapes",
+    "apkpackage": "dia dia-lang",
     "installrecommends" : true,
     "icon": "circle_dia.svg",
     "launch": "dia-gnome.Dia-gnome",
     "name": "Dia",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/dia",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "abcdesktopio/oc.template.alpine",
     "mimetype": "application/x-dia-diagram;",
     "fileextensions": "dia",
     "legacyfileextensions": "dia",
-    "desktop": "dia.desktop"
+    "desktopfile": "/usr/share/applications/dia.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
-    "debpackage": "",
+    "debpackage": "libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin",
     "icon": "circle_drawio.svg",
     "launch": "draw.io.draw.io",
     "name": "drawio",
-    "dsiplayname": "draw.io",
+    "displayname": "draw.io",
     "rules": { "homedir": { "default": true } },
     "path": "/opt/drawio/drawio",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "mimetype": "application/vnd.jgraph.mxfile;application/vnd.visio;",
     "fileextensions": "drawio",
     "legacyfileextensions": "drawio",
     "desktopfile": "/usr/share/applications/drawio.desktop",
-    "preruncommands": [ 
+    "postruncommands": [ 
         "RUN apt-get update && curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v20.3.0/drawio-amd64-20.3.0.deb' -o /tmp/drawio-amd64.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64.deb && rm /tmp/drawio-amd64.deb && rm -rf /var/lib/apt/lists/*" 
     ]
 }, {
@@ -1722,7 +1730,8 @@
     "preruncommands": [  
         "RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg",
         "RUN echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main\" > /etc/apt/sources.list.d/teams.list",
-        "RUN apt update && apt install -y --no-install-recommends code && apt-get clean && rm -rf /var/lib/apt/lists/*"
+        "RUN apt update && apt install -y --no-install-recommends code && apt-get clean && rm -rf /var/lib/apt/lists/*",
+	"RUN mkdir -p /usr/share/code/extensions && chmod 777 /usr/share/code /usr/share/code/extensions"
     ],
     "quick": true
 }, {
@@ -1755,14 +1764,16 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
-    "debpackage": "step",
+    "apkpackage": "step",
     "icon": "step.svg",
     "keyword": "step",
     "rules": { "homedir": { "default": true } },
     "launch": "step.step",
     "name": "Step",
     "path": "/usr/bin/step",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
+    "mimetype": "application/x-step;",
+    "desktopfile":"/usr/share/applications/org.kde.step.desktop",
+    "template": "abcdesktopio/oc.template.alpine"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1802,24 +1813,27 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
-    "debpackage": "kgeography",
+    "apkpackage": "kgeography",
     "icon": "kgeography.svg",
     "keyword": "kgeography,geography",
     "launch": "kgeography.kgeography",
     "name": "Kgeography",
     "path": "/usr/bin/kgeography",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
+    "desktopfile":"/usr/share/applications/org.kde.kgeography.desktop",
+    "template": "abcdesktopio/oc.template.alpine"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
-    "debpackage": "stellarium",
+    "apkpackage": "stellarium",
     "icon": "stellarium.svg",
     "keyword": "stellarium,astronomy",
     "launch": "stellarium.stellarium",
     "name": "Stellarium",
     "path": "/usr/bin/stellarium",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
+    "mimetype": "application/x-stellarium-script;",
+    "desktopfile":"/usr/share/applications/org.stellarium.Stellarium.desktop",
+    "template": "abcdesktopio/oc.template.alpine"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1841,7 +1855,7 @@
     "name": "kTurtle",
     "path": "/usr/bin/kturtle",
     "template": "abcdesktopio/oc.template.alpine",
-    "desktopfile":"/usr/share/applications/org.kde.kurtle.desktop"
+    "desktopfile":"/usr/share/applications/org.kde.kturtle.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -1899,34 +1913,35 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
-    "debpackage": "kalzium",
+    "apkpackage": "kalzium",
     "icon": "kalzium.svg",
     "keyword": "kalzium",
     "launch": "kalzium.kalzium",
     "name": "Kalzium",
     "path": "/usr/bin/kalzium",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
+    "desktopfile":"/usr/share/applications/org.kde.kalzium.desktop",
+    "template": "abcdesktopio/oc.template.alpine"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
-    "debpackage": "rhythmbox",
+    "apkpackage": "rhythmbox",
     "icon": "circle_rhythmbox.svg",
     "keyword": "rhythmbox,audio;song;mp3;cd;podcast;MTP;playlist;last.fm;dlna;radio;",
     "launch": "rhythmbox.Rhythmbox",
     "name": "rhythmbox",
     "path": "/usr/bin/rhythmbox",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "abcdesktopio/oc.template.alpine",
     "mimetype": "application/x-ogg;application/ogg;audio/x-vorbis+ogg;audio/vorbis;audio/x-vorbis;audio/x-scpls;audio/x-mp3;audio/x-mpeg;audio/mpeg;audio/x-mpegurl;audio/x-flac;audio/mp4;audio/x-it;audio/x-mod;audio/x-s3m;audio/x-stm;audio/x-xm;",
-    "desktopfile": "/usr/share/applications/rhythmbox.desktop"
+    "desktopfile": "/usr/share/applications/org.gnome.Rhythmbox3.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
-    "debpackage": "dbus-x11 dbus-user-session kdiamond",
+    "apkpackage": "kdiamond",
     "icon": "kdiamond.svg",
     "keyword": "kdiamond",
     "launch": "kdiamond.kdiamond",
     "name": "kDiamond",
     "path": "/usr/games/kdiamond",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
+    "template": "abcdesktopio/oc.template.alpine"
 }
 ]
