@@ -53,10 +53,31 @@ build:
         done 
 	docker rmi `docker images -q --filter "dangling=true"`
 
+edge:
+	for dir in edge.d; do \
+		docker build --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:$(TAG) -f $$dir . ;\
+        	docker inspect abcdesktopio/$$dir:$(TAG) > $$dir.$(TAG).json; \
+	done
+
+
+chrome:
+	for dir in chrome.d; do \
+                docker build --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:$(TAG) -f $$dir . ;\
+                docker inspect abcdesktopio/$$dir:$(TAG) > $$dir.$(TAG).json; \
+        done
+
 add: 
 	for dir in $(sort $(wildcard *.$(TAG).json)); do \
+		echo "\n\n" ;\
+		echo " -" ;\
+		echo " -> add: $$dir" ;\
+		echo " -" ;\
 		curl -X POST -H 'Content-Type: text/javascript' http://localhost:30443/API/manager/image -d@$$dir ;\
 	done
+
+delall: 
+	curl -X DELETE -H 'Content-Type: text/javascript' http://localhost:30443/API/manager/images/
+	@echo "\n"
 
 push:
 	for dir in $(sort $(wildcard *.d)); do \
@@ -71,7 +92,7 @@ import:
 		curl -X PUT -H 'Content-Type: text/javascript' http://localhost:30443/API/manager/image -d @$$dir.json; \
 		rm $$dir.tar; \
 		rm $$dir.json; \
-	done 
+	done
 
 list:
 	rm -f images-list.txt
