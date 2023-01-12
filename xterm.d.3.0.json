@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/xterm.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/xterm.d@sha256:37ca3d1cf46ec1867e180a9b971dd069e44eb512df33b29ca7e1475e2d7da147"
+        ],
         "Parent": "sha256:eed3112a098eb8af6e9b466c60470d2f74e0de016f4ad379be784fbb79abbaa4",
         "Comment": "",
         "Created": "2023-01-11T10:48:15.969173096Z",
@@ -145,7 +147,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:44:32.201151643+01:00"
+            "LastTagTime": "2023-01-12T15:14:16.103033723+01:00"
         }
     }
 ]

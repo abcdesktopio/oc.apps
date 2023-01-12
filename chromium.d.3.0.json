@@ -5,7 +5,9 @@
             "abcdesktopio/chromium.d:3.0",
             "abcdesktopio/chromium.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/chromium.d@sha256:8a4b23169a78093a793bd3df0019ba3aafabbfc6d53b80123c01f4b705f54ee1"
+        ],
         "Parent": "sha256:4ba1d668317caeef6d8aabaddf9e78eb0c2c86c866d0f783015d477675f46f9b",
         "Comment": "",
         "Created": "2023-01-11T11:40:21.915015294Z",
@@ -148,7 +150,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:27.234837085+01:00"
+            "LastTagTime": "2023-01-12T15:10:07.853935441+01:00"
         }
     }
 ]

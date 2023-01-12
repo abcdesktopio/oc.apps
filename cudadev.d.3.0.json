@@ -5,7 +5,9 @@
             "abcdesktopio/cudadev.d:3.0",
             "abcdesktopio/cudadev.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/cudadev.d@sha256:ba9596ae693ec2dd17093a382050895edc989e0059ce86746b91f4b3e8f32d0c"
+        ],
         "Parent": "sha256:52a7a8f15f5296d0c30065da420121bd4597733b21bdde9edc1a61b7cd09e703",
         "Comment": "",
         "Created": "2023-01-10T09:38:25.682250123Z",
@@ -168,7 +170,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:35.459561035+01:00"
+            "LastTagTime": "2023-01-12T15:10:15.769342989+01:00"
         }
     }
 ]

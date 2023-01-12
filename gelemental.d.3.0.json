@@ -5,7 +5,9 @@
             "abcdesktopio/gelemental.d:3.0",
             "abcdesktopio/gelemental.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/gelemental.d@sha256:9a77894bc39db3a5f347beedc32c329854ea26648790c551937f67920dc2c236"
+        ],
         "Parent": "sha256:beb3c8b9e97b28785df91778a354eed0213d430b659c4eb5264ddd172086cedc",
         "Comment": "",
         "Created": "2023-01-11T09:11:33.041958093Z",
@@ -136,7 +138,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:08.618862829+01:00"
+            "LastTagTime": "2023-01-12T15:11:04.994405748+01:00"
         }
     }
 ]

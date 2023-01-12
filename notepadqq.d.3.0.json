@@ -5,7 +5,9 @@
             "abcdesktopio/notepadqq.d:3.0",
             "abcdesktopio/notepadqq.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/notepadqq.d@sha256:97fbe41200458052c70637d1886ea2cf02dff9320cd1d971e28241e66de0708e"
+        ],
         "Parent": "sha256:465b3e88c214c5ef7e7c6224d2ee94af7cd8ca67004342b08134c365fa2bbe9f",
         "Comment": "",
         "Created": "2023-01-11T09:37:07.542417974Z",
@@ -153,7 +155,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:46.081823739+01:00"
+            "LastTagTime": "2023-01-12T15:12:38.537681236+01:00"
         }
     }
 ]

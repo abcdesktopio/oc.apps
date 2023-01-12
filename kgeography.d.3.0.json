@@ -5,7 +5,9 @@
             "abcdesktopio/kgeography.d:3.0",
             "abcdesktopio/kgeography.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/kgeography.d@sha256:030d1725da1df6ae511ad37626ab876dc49616d72aa04502203e1dd83397d0dd"
+        ],
         "Parent": "sha256:86d424c7f3d1cb6be99d9739e78094cd27e16b1591148281989def9089e73703",
         "Comment": "",
         "Created": "2023-01-11T09:25:05.232879519Z",
@@ -141,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:24.077302208+01:00"
+            "LastTagTime": "2023-01-12T15:11:49.168822777+01:00"
         }
     }
 ]

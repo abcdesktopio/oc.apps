@@ -5,7 +5,9 @@
             "abcdesktopio/konsole.d:3.0",
             "abcdesktopio/konsole.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/konsole.d@sha256:3e32cdff561a4ba66ff884e1c33d42882281c9b6f788f35a568c4636f9911790"
+        ],
         "Parent": "sha256:071ad4be3053dcf1b1c0ab274e896b7453d05ec72d5ef308611ceb0dd99bac07",
         "Comment": "",
         "Created": "2023-01-10T10:38:52.087715501Z",

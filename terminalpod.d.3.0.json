@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/terminalpod.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/terminalpod.d@sha256:ec4814e99e1d48a0656d97fa597ff253532d421fdfc2f829ea331b24cb184bb5"
+        ],
         "Parent": "sha256:a1174ca703df8e6281e58bf3beae21249a5dbf30596151bc12a82061a214d969",
         "Comment": "",
         "Created": "2023-01-12T10:43:57.457452406Z",
@@ -156,7 +158,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:43:57.67847496+01:00"
+            "LastTagTime": "2023-01-12T15:13:13.29576003+01:00"
         }
     }
 ]

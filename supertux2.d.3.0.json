@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/supertux2.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/supertux2.d@sha256:efb4e1d64e23482ef554e845392b61be9d3bef220f3b771b07b35082d9981d4a"
+        ],
         "Parent": "sha256:dc6d33e23bb181d69ea8a9d2a9150cf3990c058b6988adf7684b027dd282ce39",
         "Comment": "",
         "Created": "2023-01-05T14:09:04.075641899Z",

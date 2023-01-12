@@ -5,7 +5,9 @@
             "abcdesktopio/astromenace.d:3.0",
             "abcdesktopio/astromenace.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/astromenace.d@sha256:ebd59a60af6dd0a71663aec58ca85bdd218aead8ce3d2c0f098e5cdc3151632f"
+        ],
         "Parent": "sha256:e98352b8b17c41af0d498d4a689246c25aac45daac6b06c2362db8e7244b8f78",
         "Comment": "",
         "Created": "2023-01-11T08:44:47.79065248Z",
@@ -136,7 +138,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:14.89935641+01:00"
+            "LastTagTime": "2023-01-12T15:09:24.305130307+01:00"
         }
     }
 ]

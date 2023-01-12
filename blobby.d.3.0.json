@@ -5,7 +5,9 @@
             "abcdesktopio/blobby.d:3.0",
             "abcdesktopio/blobby.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/blobby.d@sha256:289f7c3da43ec4808a4205fdbae979642ca5daa45d40e6ddb7de868eca4e4f83"
+        ],
         "Parent": "sha256:7870583956f373f2a63e029a25e5b80596af71d9c80643c7018b5e90ac85b2e7",
         "Comment": "",
         "Created": "2023-01-11T08:48:42.919419716Z",
@@ -138,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:20.502868494+01:00"
+            "LastTagTime": "2023-01-12T15:10:00.953801524+01:00"
         }
     }
 ]

@@ -5,7 +5,9 @@
             "abcdesktopio/sublime-text.d:3.0",
             "abcdesktopio/sublime-text.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/sublime-text.d@sha256:ca10a9e2246e8b4cac138606ae23d7fa4a83553446229cf34d00c7d518467974"
+        ],
         "Parent": "sha256:1b0f60ababe3c81de00acfa08abf01b511f28dbe3f42479ed6c16cc4d75ee9a1",
         "Comment": "",
         "Created": "2023-01-11T10:07:27.791036345Z",
@@ -149,7 +151,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:42:10.354185241+01:00"
+            "LastTagTime": "2023-01-12T15:13:02.985253971+01:00"
         }
     }
 ]

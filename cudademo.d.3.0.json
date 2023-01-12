@@ -5,7 +5,9 @@
             "abcdesktopio/cudademo.d:3.0",
             "abcdesktopio/cudademo.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/cudademo.d@sha256:e8e0977f6c29e761bb1888d9a9f6c5b296f7c00da68c8b74a2c7be61dd4d5853"
+        ],
         "Parent": "sha256:aa4556afbc743f33e4fb2de6f5941ac3901a36bd05b7915117e930e20672a944",
         "Comment": "",
         "Created": "2023-01-10T09:37:50.514350413Z",
@@ -165,7 +167,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:34.292402393+01:00"
+            "LastTagTime": "2023-01-12T15:10:14.618792829+01:00"
         }
     }
 ]

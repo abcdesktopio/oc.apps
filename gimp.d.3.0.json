@@ -5,7 +5,9 @@
             "abcdesktopio/gimp.d:3.0",
             "abcdesktopio/gimp.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/gimp.d@sha256:b1b2e9a842bddcb6fbad1316a2701be49afe310510657122ac88869833c94f0e"
+        ],
         "Parent": "sha256:94e0231f94be95416b263b2e647f19738860ee0a642fca25f3668995a685611e",
         "Comment": "",
         "Created": "2023-01-11T09:12:34.551695831Z",
@@ -148,7 +150,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:10.94819172+01:00"
+            "LastTagTime": "2023-01-12T15:11:07.294936722+01:00"
         }
     }
 ]

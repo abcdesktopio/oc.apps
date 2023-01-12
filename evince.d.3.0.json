@@ -5,7 +5,9 @@
             "abcdesktopio/evince.d:3.0",
             "abcdesktopio/evince.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/evince.d@sha256:b2ebb1dd4690fd57901f61eb65a0b6d6ab89506b09917345384bf4ddadfd2a7f"
+        ],
         "Parent": "sha256:2a17d0b6837cbdf852e72bc496e2ed91d05abb983697805ec8d9d0a1ab46f60c",
         "Comment": "",
         "Created": "2023-01-11T09:03:40.384344416Z",
@@ -147,7 +149,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:43.708378155+01:00"
+            "LastTagTime": "2023-01-12T15:10:50.965126183+01:00"
         }
     }
 ]

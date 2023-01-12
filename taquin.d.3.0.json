@@ -5,7 +5,9 @@
             "abcdesktopio/taquin.d:3.0",
             "abcdesktopio/taquin.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/taquin.d@sha256:0685b924e421f356ed73b4c4f2a7623f7dbf4c556d359cf7f9421b886c64ffb8"
+        ],
         "Parent": "sha256:2dfa014e4c7571088d5e70d6d74bbe2e79273113c4acdaf729211aaec70be364",
         "Comment": "",
         "Created": "2023-01-11T10:14:32.63881226Z",
@@ -141,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:42:15.924198161+01:00"
+            "LastTagTime": "2023-01-12T15:13:08.591000441+01:00"
         }
     }
 ]

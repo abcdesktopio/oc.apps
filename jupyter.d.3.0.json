@@ -5,7 +5,9 @@
             "abcdesktopio/jupyter.d:3.0",
             "abcdesktopio/jupyter.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/jupyter.d@sha256:2ed856cbd9d9145ea673d12ddf31d751fa4e15970ed3083238ec975247582295"
+        ],
         "Parent": "sha256:750315736052d906b44ebd182ccbbeeec1417eda29932801c3b4c836edac55cc",
         "Comment": "",
         "Created": "2023-01-11T09:21:27.990592707Z",
@@ -154,7 +156,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:19.288815509+01:00"
+            "LastTagTime": "2023-01-12T15:11:44.210572515+01:00"
         }
     }
 ]

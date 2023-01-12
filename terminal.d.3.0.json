@@ -5,7 +5,9 @@
             "abcdesktopio/terminal.d:3.0",
             "abcdesktopio/terminal.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/terminal.d@sha256:86f002b57b1cf991a87eadd68e16d1ed62c4cc16e90e1d8a1d1d016e5d8c083d"
+        ],
         "Parent": "sha256:17e72643a5e08c5e63999d69de4a8b02a6878df15f3d400a9e7549ec970e96c1",
         "Comment": "",
         "Created": "2023-01-11T10:16:50.100086188Z",
@@ -146,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:42:18.196145023+01:00"
+            "LastTagTime": "2023-01-12T15:13:10.909341798+01:00"
         }
     }
 ]

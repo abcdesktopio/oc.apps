@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/vlc.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/vlc.d@sha256:3b8f92c17630e7f5d7157e95aa7364bebf02536f2e487547c4d8777e84f0063d"
+        ],
         "Parent": "sha256:3008222d9fa470794f29f9288dbe653f1d92983bf7bc7edaccc787da52130519",
         "Comment": "",
         "Created": "2023-01-11T10:26:44.894329365Z",
@@ -144,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:44:02.131050942+01:00"
+            "LastTagTime": "2023-01-12T15:13:17.847651127+01:00"
         }
     }
 ]

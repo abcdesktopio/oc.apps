@@ -5,7 +5,9 @@
             "abcdesktopio/kigo.d:3.0",
             "abcdesktopio/kigo.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/kigo.d@sha256:536b575eb308405f4e2235149d3de67abc2755df2ea1631c892352f31d43ec82"
+        ],
         "Parent": "sha256:a1cc3f6594c6d7f4c2c5cd8ee4c5bfd3ad6d3ad13c1cffaa6030771f69ef85f2",
         "Comment": "",
         "Created": "2023-01-11T09:26:32.427051316Z",
@@ -149,7 +151,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:25.207146635+01:00"
+            "LastTagTime": "2023-01-12T15:11:50.279380475+01:00"
         }
     }
 ]

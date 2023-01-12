@@ -5,7 +5,9 @@
             "abcdesktopio/kalzium.d:3.0",
             "abcdesktopio/kalzium.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/kalzium.d@sha256:d7be2b0f6d833fadefc5647c1f953d75eb525ac7ab84caf561aec9e0ecdb1422"
+        ],
         "Parent": "sha256:99a6c869184bea255e927810aeda9e6cd9b61d2ccac59257d4061fdae0b050ac",
         "Comment": "",
         "Created": "2023-01-11T09:24:32.013531184Z",
@@ -139,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:21.86985641+01:00"
+            "LastTagTime": "2023-01-12T15:11:46.860893298+01:00"
         }
     }
 ]

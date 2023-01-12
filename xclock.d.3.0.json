@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/xclock.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/xclock.d@sha256:e6839edc46935a350e2bdf02219c0cade9d5c93e5ad74dcb19166c18bf226d48"
+        ],
         "Parent": "sha256:7ce7719041b3f468bc10ee2cfa41bfd96cfed59bf27ad71f13ac4c78f30a3c22",
         "Comment": "",
         "Created": "2023-01-11T10:34:12.969306745Z",
@@ -139,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:44:26.639507834+01:00"
+            "LastTagTime": "2023-01-12T15:14:10.395869633+01:00"
         }
     }
 ]

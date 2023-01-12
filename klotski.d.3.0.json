@@ -5,7 +5,9 @@
             "abcdesktopio/klotski.d:3.0",
             "abcdesktopio/klotski.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/klotski.d@sha256:d8742725e707055cc9b069d3e61e837483d4f7df7d91f882b31626ae7700e491"
+        ],
         "Parent": "sha256:244d446b037fd8b5b4d2967242952070a9618b17244718c06267067927975306",
         "Comment": "",
         "Created": "2023-01-11T09:28:34.833520001Z",
@@ -149,7 +151,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:27.444054812+01:00"
+            "LastTagTime": "2023-01-12T15:11:52.545383087+01:00"
         }
     }
 ]

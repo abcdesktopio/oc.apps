@@ -5,7 +5,9 @@
             "abcdesktopio/minecraft.d:3.0",
             "abcdesktopio/minecraft.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/minecraft.d@sha256:b1a307a0e3a1c0f672270da375cd1799bc0c9e87c5031a0786378dae598624f5"
+        ],
         "Parent": "sha256:c9dfe18fc1d46e8f6d44d740a57e01c3dba3fe067369e7e3c698a6e6a350e097",
         "Comment": "",
         "Created": "2023-01-11T09:33:22.914841586Z",
@@ -148,7 +150,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:41.041079829+01:00"
+            "LastTagTime": "2023-01-12T15:12:33.553949075+01:00"
         }
     }
 ]

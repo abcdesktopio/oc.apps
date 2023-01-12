@@ -5,7 +5,9 @@
             "abcdesktopio/octave.d:3.0",
             "abcdesktopio/octave.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/octave.d@sha256:78907582d2bbe3a0f2e5c28a252a6d8cc72f33dcedfa16a8fbc162d095004856"
+        ],
         "Parent": "sha256:d925264b69dc29d5f4cc25edd778e2f5a88d0d7120fe2bda56460667e1d834e0",
         "Comment": "",
         "Created": "2023-01-11T09:38:14.21041656Z",
@@ -138,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:47.211875222+01:00"
+            "LastTagTime": "2023-01-12T15:12:39.660796121+01:00"
         }
     }
 ]

@@ -5,7 +5,9 @@
             "abcdesktopio/beekeeperstudio.d:3.0",
             "abcdesktopio/beekeeperstudio.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/beekeeperstudio.d@sha256:743a8452c76678060cde0703ac9a9536c94ac432f8bee10aa097b2728816ac52"
+        ],
         "Parent": "sha256:e7de3afaf0a099e6dacfc4a890c35838f57f02355f39559ea2e495a41f322269",
         "Comment": "",
         "Created": "2023-01-11T08:46:56.265747888Z",
@@ -163,7 +165,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:17.169745264+01:00"
+            "LastTagTime": "2023-01-12T15:09:57.60422298+01:00"
         }
     }
 ]

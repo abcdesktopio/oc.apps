@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/thunderbird.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/thunderbird.d@sha256:d6ba62bbcc441838b3426a5768f9c670474c6cbb8dc9603f12e95e8e524dbf38"
+        ],
         "Parent": "sha256:1a0a521f9f640fe9ae169bc34c5de18021f12b20728b63749bfaca52036ea7e3",
         "Comment": "",
         "Created": "2023-01-11T10:19:22.662153662Z",
@@ -139,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:43:59.923589456+01:00"
+            "LastTagTime": "2023-01-12T15:13:15.592098786+01:00"
         }
     }
 ]

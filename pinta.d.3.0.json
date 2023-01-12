@@ -5,7 +5,9 @@
             "abcdesktopio/pinta.d:3.0",
             "abcdesktopio/pinta.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/pinta.d@sha256:c99555fec98fefbc009f43abed10ec134d30f2c323c07c2237e07ca4f82d5ea9"
+        ],
         "Parent": "sha256:82a9ac0f546992e70c45c69f95d9ba9e5d95862c86a21b6e05fee3063cd2292b",
         "Comment": "",
         "Created": "2023-01-11T09:41:09.326716602Z",
@@ -143,7 +145,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:49.75736202+01:00"
+            "LastTagTime": "2023-01-12T15:12:42.110832725+01:00"
         }
     }
 ]

@@ -5,7 +5,9 @@
             "abcdesktopio/flare.d:3.0",
             "abcdesktopio/flare.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/flare.d@sha256:9aac9eace72610a25879d5a4916530bafe0f38b9c392e036d571079f2248ee09"
+        ],
         "Parent": "sha256:302909b1e8942c26bc2c8b6eb57e85b913cfc00d5d91d5dc1d1fda6fbe95c0c5",
         "Comment": "",
         "Created": "2023-01-11T09:08:33.632961584Z",
@@ -153,7 +155,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:51.657427298+01:00"
+            "LastTagTime": "2023-01-12T15:10:58.839806339+01:00"
         }
     }
 ]

@@ -5,7 +5,9 @@
             "abcdesktopio/inkscape.d:3.0",
             "abcdesktopio/inkscape.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/inkscape.d@sha256:37532b1caa4f1511b21aa8e3bdf5c9c459b4e7e7607555941b20cdb5bb4a40ee"
+        ],
         "Parent": "sha256:d1bf71079e4831886b723ca75ca423ce875c8b7ad294591a7e10af5ff642012e",
         "Comment": "",
         "Created": "2023-01-10T09:46:23.539577948Z",

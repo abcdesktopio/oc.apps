@@ -5,7 +5,9 @@
             "abcdesktopio/evolution.d:3.0",
             "abcdesktopio/evolution.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/evolution.d@sha256:0850be1e868f7106bac5dbde8dd08ef6ebddc1ba1ac645ea3a08d4228c45fa51"
+        ],
         "Parent": "sha256:96ff3a499a1bc475e389abb0986d664b6deda040dae56f2989dee932eb387316",
         "Comment": "",
         "Created": "2023-01-11T09:04:59.210489027Z",
@@ -140,7 +142,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:44.826591145+01:00"
+            "LastTagTime": "2023-01-12T15:10:52.07572893+01:00"
         }
     }
 ]

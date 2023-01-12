@@ -5,7 +5,9 @@
             "abcdesktopio/apachedirectorystudio.d:3.0",
             "abcdesktopio/apachedirectorystudio.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/apachedirectorystudio.d@sha256:48a7b47e5decb34bd116f69380b03a53cad37a4f2fdb51a8605d7daf731ffece"
+        ],
         "Parent": "sha256:24370e3e57682128cb3a44bf984932c599308000eaccab4fbca0bd952e78e364",
         "Comment": "",
         "Created": "2023-01-11T08:43:58.557261638Z",
@@ -144,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:13.807541725+01:00"
+            "LastTagTime": "2023-01-12T15:09:23.202273262+01:00"
         }
     }
 ]

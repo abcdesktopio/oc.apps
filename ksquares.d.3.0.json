@@ -5,7 +5,9 @@
             "abcdesktopio/ksquares.d:3.0",
             "abcdesktopio/ksquares.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/ksquares.d@sha256:61b94814f88d61e5ad3d2f6006049445ab5878a0d7472b89d53463a1fb18693f"
+        ],
         "Parent": "sha256:1b6bd8909ed935364ba8359399b197ae1756d2f0a0e2a45c814f6ebc206fd75a",
         "Comment": "",
         "Created": "2023-01-05T13:39:29.213388096Z",

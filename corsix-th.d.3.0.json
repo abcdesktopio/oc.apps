@@ -5,7 +5,9 @@
             "abcdesktopio/corsix-th.d:3.0",
             "abcdesktopio/corsix-th.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/corsix-th.d@sha256:919288970fba65ebb360b643cdf0f87f5269003da8ae614f6e00a87cffe8d0ce"
+        ],
         "Parent": "sha256:5d5112f2ad7d22485dcc1a02490137075f126860619eea4fb5804a9813849ffd",
         "Comment": "",
         "Created": "2023-01-11T08:58:08.300321735Z",
@@ -150,7 +152,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:31.975500868+01:00"
+            "LastTagTime": "2023-01-12T15:10:12.415230411+01:00"
         }
     }
 ]

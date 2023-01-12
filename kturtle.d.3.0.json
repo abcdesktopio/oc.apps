@@ -5,7 +5,9 @@
             "abcdesktopio/kturtle.d:3.0",
             "abcdesktopio/kturtle.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/kturtle.d@sha256:6b65df297f0d57f98bac9faa613dad02451aa7b3b852bc9808c08c9de6b79b18"
+        ],
         "Parent": "sha256:259c15cdff208ddc7f042a30baaca8be25495b669b0fbc59d4d09b19167eff00",
         "Comment": "",
         "Created": "2023-01-11T09:28:58.039048398Z",
@@ -139,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:33.398988812+01:00"
+            "LastTagTime": "2023-01-12T15:11:58.292523192+01:00"
         }
     }
 ]

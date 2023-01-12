@@ -5,7 +5,9 @@
             "abcdesktopio/filezilla.d:3.0",
             "abcdesktopio/filezilla.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/filezilla.d@sha256:a4613bd09a46bf9ee6995a4b46346f23ac86c0e873244f15255b3ca325bb0679"
+        ],
         "Parent": "sha256:65d1e71e91d239520fb7c90ea5bb029316457f8d5304681b945e999087af2691",
         "Comment": "",
         "Created": "2023-01-11T09:06:57.477086157Z",
@@ -142,7 +144,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:48.197415974+01:00"
+            "LastTagTime": "2023-01-12T15:10:55.355505466+01:00"
         }
     }
 ]

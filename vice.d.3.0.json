@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/vice.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/vice.d@sha256:71bc01de794972f1a7123c42266fe19eeb84c38ae0caf46bb24151206f00fe5c"
+        ],
         "Parent": "sha256:f384891d47c40671db3944ca2b57bcfa10dea4aedc9d46f085a258109498fe38",
         "Comment": "",
         "Created": "2023-01-11T10:20:36.91699736Z",
@@ -153,7 +155,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:44:01.016051272+01:00"
+            "LastTagTime": "2023-01-12T15:13:16.706461286+01:00"
         }
     }
 ]

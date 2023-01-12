@@ -5,7 +5,9 @@
             "abcdesktopio/stress.d:3.0",
             "abcdesktopio/stress.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/stress.d@sha256:e8e0b2c221ffba9ec8fff72670bcd9467d3cde594d4c7373f28cbfb0ad47930c"
+        ],
         "Parent": "sha256:ae8241ea501acf9b6ab213baf57189390b4dbe9582ceba755b903f0fa9be802d",
         "Comment": "",
         "Created": "2023-01-11T10:06:31.388085478Z",
@@ -155,7 +157,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:42:09.236611236+01:00"
+            "LastTagTime": "2023-01-12T15:13:01.867543211+01:00"
         }
     }
 ]

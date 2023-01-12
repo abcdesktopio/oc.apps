@@ -5,7 +5,9 @@
             "abcdesktopio/planner.d:3.0",
             "abcdesktopio/planner.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/planner.d@sha256:ebb6f3d70198df8e88b00fcb92330c50b344a80d9d00dffebfea44f73cae89d8"
+        ],
         "Parent": "sha256:b47bbf03e2cac41b03b36c0f99e0bf1507cd2c861d88f69c312245f117c00ffe",
         "Comment": "",
         "Created": "2023-01-11T09:41:53.489333967Z",
@@ -142,7 +144,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:50.954632721+01:00"
+            "LastTagTime": "2023-01-12T15:12:43.228664101+01:00"
         }
     }
 ]

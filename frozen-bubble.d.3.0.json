@@ -5,7 +5,9 @@
             "abcdesktopio/frozen-bubble.d:3.0",
             "abcdesktopio/frozen-bubble.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/frozen-bubble.d@sha256:a42a4b9eea3a4571d5935658e2112cb617f7051634be5bd43596841dd12760b5"
+        ],
         "Parent": "sha256:6c2ad3fdd5a9cb077f8a30734b9660989f6fb517095802bdeb2cc9b8eac88d99",
         "Comment": "",
         "Created": "2023-01-11T09:09:12.373960443Z",
@@ -134,7 +136,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:52.811656327+01:00"
+            "LastTagTime": "2023-01-12T15:10:59.9668557+01:00"
         }
     }
 ]

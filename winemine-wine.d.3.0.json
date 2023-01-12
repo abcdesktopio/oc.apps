@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/winemine-wine.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/winemine-wine.d@sha256:ca0f539cc2d11423c671acb9a7c603763a02caab37cad99b23ca4b88ab417a60"
+        ],
         "Parent": "sha256:efb4026f9ad0cf5fa24a8c884bff31c3d3eff1eeb7d09f67ff4c249e5429df32",
         "Comment": "",
         "Created": "2023-01-11T10:33:16.586923694Z",
@@ -141,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:44:20.691765213+01:00"
+            "LastTagTime": "2023-01-12T15:13:37.044770726+01:00"
         }
     }
 ]

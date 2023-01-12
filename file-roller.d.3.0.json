@@ -5,7 +5,9 @@
             "abcdesktopio/file-roller.d:3.0",
             "abcdesktopio/file-roller.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/file-roller.d@sha256:5a6f04a08d524ca75c7f68ae476880b9d3fdbf6f4704fb606a12faf4fded3068"
+        ],
         "Parent": "sha256:651ab809518803b595e6df048e46202a7e899d37e6da5f9a9f5a9772dd50146e",
         "Comment": "",
         "Created": "2023-01-11T09:05:48.4601888Z",
@@ -153,7 +155,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:46.020482464+01:00"
+            "LastTagTime": "2023-01-12T15:10:53.17456038+01:00"
         }
     }
 ]

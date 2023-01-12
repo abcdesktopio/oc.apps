@@ -5,7 +5,9 @@
             "abcdesktopio/geogebra.d:3.0",
             "abcdesktopio/geogebra.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/geogebra.d@sha256:dc95226e0155b53c386a682b9ac95ad957a44f189cb1b7cea32c080cece75ddd"
+        ],
         "Parent": "sha256:845b5ff6420b4c8c3462b8bfe10b640da0be013d7b5a63905115670e2e73e6b5",
         "Comment": "",
         "Created": "2023-01-11T09:12:21.221901715Z",
@@ -141,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:41:09.735580175+01:00"
+            "LastTagTime": "2023-01-12T15:11:06.106814557+01:00"
         }
     }
 ]

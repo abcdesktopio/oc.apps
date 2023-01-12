@@ -5,7 +5,9 @@
             "abcdesktopio/firefox.d:3.0",
             "abcdesktopio/firefox.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/firefox.d@sha256:e775bb2c208634def29c959c6f144ee0b440811d70b55e4f85d7b082f7546bc8"
+        ],
         "Parent": "sha256:966824acc1515d32152a9b330c5efe5a7d1630ee04d098fa3d7ba8150fbec18e",
         "Comment": "",
         "Created": "2023-01-11T09:07:31.351041519Z",
@@ -156,7 +158,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:50.537873099+01:00"
+            "LastTagTime": "2023-01-12T15:10:57.714868967+01:00"
         }
     }
 ]

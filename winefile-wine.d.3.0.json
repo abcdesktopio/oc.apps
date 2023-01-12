@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/winefile-wine.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/winefile-wine.d@sha256:9d85caee2f1ea1ff79ccb21b5f15993f4173a4ccb8db9faba0d8d7f94a52c1f8"
+        ],
         "Parent": "sha256:135fcf149c4151d56e8a2f10567f4ac08441185bd43b673db1c17fff9539165c",
         "Comment": "",
         "Created": "2023-01-11T10:33:09.176915448Z",
@@ -141,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:44:19.566668644+01:00"
+            "LastTagTime": "2023-01-12T15:13:35.934467003+01:00"
         }
     }
 ]

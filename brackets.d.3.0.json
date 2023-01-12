@@ -5,7 +5,9 @@
             "abcdesktopio/brackets.d:3.0",
             "abcdesktopio/brackets.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/brackets.d@sha256:c93aa848db116ac14ac65ac5dfaf21eb744f6911e424c4de025b4e44dc133240"
+        ],
         "Parent": "sha256:6e37f558f8f542dca4efa6bae793225ce031a178dcfeba11e808367a3e0f3488",
         "Comment": "",
         "Created": "2023-01-11T08:50:18.964357532Z",
@@ -153,7 +155,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T11:40:22.767531734+01:00"
+            "LastTagTime": "2023-01-12T15:10:03.187832421+01:00"
         }
     }
 ]
