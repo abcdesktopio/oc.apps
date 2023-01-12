@@ -15,6 +15,7 @@ LABEL oc.name="2048-alpine"
 LABEL oc.displayname="2048 (alpine gtk)"
 LABEL oc.path="/usr/bin/gnome-2048"
 LABEL oc.type=app
+LABEL oc.showinview="dock"
 LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 LABEL oc.host_config="{\"mem_limit\":\"256M\",\"shm_size\":\"64M\",\"pid_mode\":false,\"network_mode\":\"none\"}"
