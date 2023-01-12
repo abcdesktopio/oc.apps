@@ -2,7 +2,8 @@
     {
         "Id": "sha256:25303b515805644b2ba52b1644db486bcf086d652ab967fdd06955cd3557933f",
         "RepoTags": [
-            "abcdesktopio/minecraft.d:3.0"
+            "abcdesktopio/minecraft.d:3.0",
+            "abcdesktopio/minecraft.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:c9dfe18fc1d46e8f6d44d740a57e01c3dba3fe067369e7e3c698a6e6a350e097",
@@ -147,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:27.675382897+01:00"
+            "LastTagTime": "2023-01-12T11:41:41.041079829+01:00"
         }
     }
 ]

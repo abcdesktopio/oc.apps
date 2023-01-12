@@ -2,7 +2,8 @@
     {
         "Id": "sha256:22090477ed723cff970dc1dc43d7c0a9b0ece143e859943f19ec4f2123cd2d97",
         "RepoTags": [
-            "abcdesktopio/filelight.d:3.0"
+            "abcdesktopio/filelight.d:3.0",
+            "abcdesktopio/filelight.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:04fe3b8e3f97d771da2bf13fbba66f451917cda32cac84ad4f0c4bf7cf07a005",
@@ -139,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:41.093699909+01:00"
+            "LastTagTime": "2023-01-12T11:40:47.093974891+01:00"
         }
     }
 ]

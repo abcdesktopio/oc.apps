@@ -2,7 +2,8 @@
     {
         "Id": "sha256:68fe6ab2de69a7157855afe32c66c55f83a173c11ffebd6e1568be23f9f8c404",
         "RepoTags": [
-            "abcdesktopio/stellarium.d:3.0"
+            "abcdesktopio/stellarium.d:3.0",
+            "abcdesktopio/stellarium.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:60f12ab612f1dc4dfa4aaff24eeada3b710318fc3d7dcbe19d7df24d19ce189b",
@@ -140,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:55.284746411+01:00"
+            "LastTagTime": "2023-01-12T11:42:06.991585746+01:00"
         }
     }
 ]

@@ -2,7 +2,8 @@
     {
         "Id": "sha256:ca1183e54fe028810179755a70f0967adb860e72c21706b68bfb30b643610523",
         "RepoTags": [
-            "abcdesktopio/cloudfoundry.d:3.0"
+            "abcdesktopio/cloudfoundry.d:3.0",
+            "abcdesktopio/cloudfoundry.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:b3df6a1664aeaca97d5f85f2cdeb1419b159e81f89f2c35ecf1a24172cc2f9e3",
@@ -149,7 +150,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:24.200976196+01:00"
+            "LastTagTime": "2023-01-12T11:40:29.610103899+01:00"
         }
     }
 ]

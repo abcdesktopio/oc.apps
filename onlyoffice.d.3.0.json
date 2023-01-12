@@ -2,7 +2,8 @@
     {
         "Id": "sha256:f0c083129f7dc0727a6ff500577c8e22695716b93c9d2e5e539763d968391774",
         "RepoTags": [
-            "abcdesktopio/onlyoffice.d:3.0"
+            "abcdesktopio/onlyoffice.d:3.0",
+            "abcdesktopio/onlyoffice.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:f5dd13bdf7af791953262c1a939a0bdb0814c872ac5d00fabe6b0449284667fd",
@@ -155,7 +156,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:34.780124298+01:00"
+            "LastTagTime": "2023-01-12T11:41:48.397205206+01:00"
         }
     }
 ]

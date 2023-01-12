@@ -2,7 +2,8 @@
     {
         "Id": "sha256:f8f4e4cd0900e8084ba7dc3f7aa164cb88a591b410ca035099ca65a38d092701",
         "RepoTags": [
-            "abcdesktopio/klickety.d:3.0"
+            "abcdesktopio/klickety.d:3.0",
+            "abcdesktopio/klickety.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:b02659f18a6d19ead8b0f8af2555a22f54d067fb94fb582f206af3c2c5a5541e",
@@ -133,7 +134,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:12.337678032+01:00"
+            "LastTagTime": "2023-01-12T11:41:26.33837398+01:00"
         }
     }
 ]

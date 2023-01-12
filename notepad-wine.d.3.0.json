@@ -2,7 +2,8 @@
     {
         "Id": "sha256:ac2a3848ae7e9cb5712fb2e97d892f54c8da9b047e592464d6a06a64eeedbc87",
         "RepoTags": [
-            "abcdesktopio/notepad-wine.d:3.0"
+            "abcdesktopio/notepad-wine.d:3.0",
+            "abcdesktopio/notepad-wine.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:c8c85b0ff8ec52a9b6c19f1d7ec6a7e641f49e35195f77d410f306bfb5b1d6ca",
@@ -145,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:31.503999289+01:00"
+            "LastTagTime": "2023-01-12T11:41:44.879584481+01:00"
         }
     }
 ]

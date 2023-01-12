@@ -2,7 +2,8 @@
     {
         "Id": "sha256:fb0e79292fb2dfe5c4b8b29ce54e1f4b35c06c288a7a82d0da7c36518644cde5",
         "RepoTags": [
-            "abcdesktopio/gimp.d:3.0"
+            "abcdesktopio/gimp.d:3.0",
+            "abcdesktopio/gimp.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:94e0231f94be95416b263b2e647f19738860ee0a642fca25f3668995a685611e",
@@ -147,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:55.400339226+01:00"
+            "LastTagTime": "2023-01-12T11:41:10.94819172+01:00"
         }
     }
 ]

@@ -2,7 +2,8 @@
     {
         "Id": "sha256:c3e40f44a08b41d0a4a6b81c259f5b4c7825e8f1d64eed6e0c7fef63cac4d024",
         "RepoTags": [
-            "abcdesktopio/pinta.d:3.0"
+            "abcdesktopio/pinta.d:3.0",
+            "abcdesktopio/pinta.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:82a9ac0f546992e70c45c69f95d9ba9e5d95862c86a21b6e05fee3063cd2292b",
@@ -142,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:35.992114685+01:00"
+            "LastTagTime": "2023-01-12T11:41:49.75736202+01:00"
         }
     }
 ]

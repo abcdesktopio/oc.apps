@@ -2,7 +2,8 @@
     {
         "Id": "sha256:1cb3c6138a105405aefbcabc724b9609ff1aa6b5969815b05bd03b434c3c82fe",
         "RepoTags": [
-            "abcdesktopio/klotski.d:3.0"
+            "abcdesktopio/klotski.d:3.0",
+            "abcdesktopio/klotski.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:244d446b037fd8b5b4d2967242952070a9618b17244718c06267067927975306",
@@ -148,7 +149,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:13.50103153+01:00"
+            "LastTagTime": "2023-01-12T11:41:27.444054812+01:00"
         }
     }
 ]

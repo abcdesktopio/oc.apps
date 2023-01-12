@@ -2,7 +2,8 @@
     {
         "Id": "sha256:a81134a987e88775f976bc27429c63ccb21a38ca2d47d93dada3086430dbd944",
         "RepoTags": [
-            "abcdesktopio/citrix.d:3.0"
+            "abcdesktopio/citrix.d:3.0",
+            "abcdesktopio/citrix.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:5f0b315bd45bd98a39650716c56717cc3d762bdfd6221c2426ea5ea696687c09",
@@ -161,7 +162,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:23.179706216+01:00"
+            "LastTagTime": "2023-01-12T11:40:28.395332198+01:00"
         }
     }
 ]

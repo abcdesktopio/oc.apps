@@ -2,7 +2,8 @@
     {
         "Id": "sha256:58e93f5bdfccfcc3670ae531d498132c2ecbd94d8c2ecf098c02269b9d103724",
         "RepoTags": [
-            "abcdesktopio/evince.d:3.0"
+            "abcdesktopio/evince.d:3.0",
+            "abcdesktopio/evince.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:2a17d0b6837cbdf852e72bc496e2ed91d05abb983697805ec8d9d0a1ab46f60c",
@@ -146,7 +147,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:37.794604432+01:00"
+            "LastTagTime": "2023-01-12T11:40:43.708378155+01:00"
         }
     }
 ]

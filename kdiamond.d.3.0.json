@@ -2,7 +2,8 @@
     {
         "Id": "sha256:bea85ebcd7d53fca70031c90e02af9b76b7953eade018b9e3acc9eee57e4b6ab",
         "RepoTags": [
-            "abcdesktopio/kdiamond.d:3.0"
+            "abcdesktopio/kdiamond.d:3.0",
+            "abcdesktopio/kdiamond.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:b7f86bb6493dd1f81ab6321c531b534f57a478ab81d7369e1e796e185d804a94",
@@ -136,7 +137,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:08.383779144+01:00"
+            "LastTagTime": "2023-01-12T11:41:22.976991692+01:00"
         }
     }
 ]

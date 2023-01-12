@@ -2,7 +2,8 @@
     {
         "Id": "sha256:2115912dbcaf109091de8781ebfc23c0e27fedfb9a8276cdb64cc10d104f8516",
         "RepoTags": [
-            "abcdesktopio/kturtle.d:3.0"
+            "abcdesktopio/kturtle.d:3.0",
+            "abcdesktopio/kturtle.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:259c15cdff208ddc7f042a30baaca8be25495b669b0fbc59d4d09b19167eff00",
@@ -138,7 +139,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:20.020412231+01:00"
+            "LastTagTime": "2023-01-12T11:41:33.398988812+01:00"
         }
     }
 ]

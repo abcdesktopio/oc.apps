@@ -2,7 +2,8 @@
     {
         "Id": "sha256:c279d1dc07dfef85f2a34500db152c38c5edf67e8c5a89cc7bf526f092904f2d",
         "RepoTags": [
-            "abcdesktopio/nautilus.d:3.0"
+            "abcdesktopio/nautilus.d:3.0",
+            "abcdesktopio/nautilus.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:581909e09daa8c2848e5297979f7607633c068fcf30184ccf3cfaa847ce4c155",
@@ -156,7 +157,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:30.034799762+01:00"
+            "LastTagTime": "2023-01-12T11:41:43.375341243+01:00"
         }
     }
 ]

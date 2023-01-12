@@ -2,7 +2,8 @@
     {
         "Id": "sha256:23605d31133962671d7f9fd9fb2c00919ee6d6989681cc0c0685d6837c250452",
         "RepoTags": [
-            "abcdesktopio/mines.d:3.0"
+            "abcdesktopio/mines.d:3.0",
+            "abcdesktopio/mines.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:ccd497c670d91fb1da6eb58b901037d142d7743046b17d3162fccb6366a2e021",
@@ -138,7 +139,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:28.922612527+01:00"
+            "LastTagTime": "2023-01-12T11:41:42.206868268+01:00"
         }
     }
 ]

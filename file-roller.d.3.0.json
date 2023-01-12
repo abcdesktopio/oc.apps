@@ -2,7 +2,8 @@
     {
         "Id": "sha256:29e64525d000f0897641aa0acb0afe658ab7e4e1ddf5070e36a9445473213aa8",
         "RepoTags": [
-            "abcdesktopio/file-roller.d:3.0"
+            "abcdesktopio/file-roller.d:3.0",
+            "abcdesktopio/file-roller.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:651ab809518803b595e6df048e46202a7e899d37e6da5f9a9f5a9772dd50146e",
@@ -152,7 +153,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:40.043434026+01:00"
+            "LastTagTime": "2023-01-12T11:40:46.020482464+01:00"
         }
     }
 ]

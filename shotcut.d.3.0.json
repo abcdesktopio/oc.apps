@@ -2,7 +2,8 @@
     {
         "Id": "sha256:affc002e32b71e1f845e32832d2b07d27336e482f492ca14a005774fc3c460ac",
         "RepoTags": [
-            "abcdesktopio/shotcut.d:3.0"
+            "abcdesktopio/shotcut.d:3.0",
+            "abcdesktopio/shotcut.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:bc8de617f5e29cfe77bb58c0d7936e6fff2f6a0e4c4d551d4a7e034b54c41c0e",
@@ -147,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:54.005261423+01:00"
+            "LastTagTime": "2023-01-12T11:42:05.83999926+01:00"
         }
     }
 ]

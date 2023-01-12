@@ -2,7 +2,8 @@
     {
         "Id": "sha256:6bb0c6df296b90380eb24676a637a6f1fe04b79e4598911c60cde4b3f3926916",
         "RepoTags": [
-            "abcdesktopio/geogebra.d:3.0"
+            "abcdesktopio/geogebra.d:3.0",
+            "abcdesktopio/geogebra.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:845b5ff6420b4c8c3462b8bfe10b640da0be013d7b5a63905115670e2e73e6b5",
@@ -140,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:53.997692206+01:00"
+            "LastTagTime": "2023-01-12T11:41:09.735580175+01:00"
         }
     }
 ]

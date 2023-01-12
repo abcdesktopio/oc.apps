@@ -2,7 +2,8 @@
     {
         "Id": "sha256:337220238d4073d38f32fcd30f01fd4339bd3ba82692607b1e8dd62cbbba1363",
         "RepoTags": [
-            "abcdesktopio/terminal.d:3.0"
+            "abcdesktopio/terminal.d:3.0",
+            "abcdesktopio/terminal.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:17e72643a5e08c5e63999d69de4a8b02a6878df15f3d400a9e7549ec970e96c1",
@@ -145,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:42:06.02170921+01:00"
+            "LastTagTime": "2023-01-12T11:42:18.196145023+01:00"
         }
     }
 ]

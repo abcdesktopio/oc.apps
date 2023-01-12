@@ -2,7 +2,8 @@
     {
         "Id": "sha256:3795d48a8cb34362c97340b40e5c3ae65886ee498fd493871440076ea3c0134f",
         "RepoTags": [
-            "abcdesktopio/kgeography.d:3.0"
+            "abcdesktopio/kgeography.d:3.0",
+            "abcdesktopio/kgeography.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:86d424c7f3d1cb6be99d9739e78094cd27e16b1591148281989def9089e73703",
@@ -140,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:09.794585581+01:00"
+            "LastTagTime": "2023-01-12T11:41:24.077302208+01:00"
         }
     }
 ]

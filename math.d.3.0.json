@@ -2,7 +2,8 @@
     {
         "Id": "sha256:302f62225d50dbe54cbc26019df60682a73efba5706458be497f92970a77f61a",
         "RepoTags": [
-            "abcdesktopio/math.d:3.0"
+            "abcdesktopio/math.d:3.0",
+            "abcdesktopio/math.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:f1ab9209dbeee115b8e428c2d7bfe7f7270f6c5b4646fded9aad7a0943640f9b",
@@ -155,7 +156,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:25.611289454+01:00"
+            "LastTagTime": "2023-01-12T11:41:38.964980744+01:00"
         }
     }
 ]

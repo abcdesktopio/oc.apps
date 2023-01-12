@@ -2,7 +2,8 @@
     {
         "Id": "sha256:fd60793aa0358edede8c9380d7bcbc9c3a9cdcbfa52b85009a76ea5cfb4197ba",
         "RepoTags": [
-            "abcdesktopio/jupyter.d:3.0"
+            "abcdesktopio/jupyter.d:3.0",
+            "abcdesktopio/jupyter.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:750315736052d906b44ebd182ccbbeeec1417eda29932801c3b4c836edac55cc",
@@ -153,7 +154,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:04.161073411+01:00"
+            "LastTagTime": "2023-01-12T11:41:19.288815509+01:00"
         }
     }
 ]

@@ -2,7 +2,8 @@
     {
         "Id": "sha256:a9a6ccad62c4a510c5cbf83763acce2696e0c25b26542a65663fdec7e1bc7a98",
         "RepoTags": [
-            "abcdesktopio/filezilla.d:3.0"
+            "abcdesktopio/filezilla.d:3.0",
+            "abcdesktopio/filezilla.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:65d1e71e91d239520fb7c90ea5bb029316457f8d5304681b945e999087af2691",
@@ -141,7 +142,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:42.12387578+01:00"
+            "LastTagTime": "2023-01-12T11:40:48.197415974+01:00"
         }
     }
 ]

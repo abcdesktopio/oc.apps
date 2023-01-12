@@ -2,7 +2,8 @@
     {
         "Id": "sha256:c569a70b17ac3912751cea1048fc6a8c2bbe1081e8632af899eb2d5eda04719e",
         "RepoTags": [
-            "abcdesktopio/draw.d:3.0"
+            "abcdesktopio/draw.d:3.0",
+            "abcdesktopio/draw.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:11365e0a1328630c727aa87349e48af4430608a393ba7d98883c37cedf5d123f",
@@ -155,7 +156,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:32.910095728+01:00"
+            "LastTagTime": "2023-01-12T11:40:39.143166597+01:00"
         }
     }
 ]

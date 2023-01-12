@@ -2,7 +2,8 @@
     {
         "Id": "sha256:c720cce66c1e179732a9cc07e35e3841bb06b20d35f5847ee30c7056792d0aea",
         "RepoTags": [
-            "abcdesktopio/chrome.d:3.0"
+            "abcdesktopio/chrome.d:3.0",
+            "abcdesktopio/chrome.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:5bb8b3879fc6b53114fd5bb6dfc6450468e653df1f3e785e9a42313d3db95b5d",
@@ -145,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:15.102385186+01:00"
+            "LastTagTime": "2023-01-12T11:40:26.137364217+01:00"
         }
     }
 ]

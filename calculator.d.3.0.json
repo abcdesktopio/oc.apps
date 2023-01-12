@@ -2,7 +2,8 @@
     {
         "Id": "sha256:89597fbf2fe58f44e7e4788945b98f6c6dba26a352333a1a019445911b80edc3",
         "RepoTags": [
-            "abcdesktopio/calculator.d:3.0"
+            "abcdesktopio/calculator.d:3.0",
+            "abcdesktopio/calculator.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:7e6d7cafddce12a22c27f8ed937dd2cae2842ea0dcc0d9e3a3dfd8809ca3c08f",
@@ -140,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:39:55.899174415+01:00"
+            "LastTagTime": "2023-01-12T11:40:23.89320735+01:00"
         }
     }
 ]

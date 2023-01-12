@@ -2,7 +2,8 @@
     {
         "Id": "sha256:30c63dd87c2ab7cad9dc76eae839e3384f6955d296bc80a7d2267369cf17e075",
         "RepoTags": [
-            "abcdesktopio/corsix-th.d:3.0"
+            "abcdesktopio/corsix-th.d:3.0",
+            "abcdesktopio/corsix-th.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:5d5112f2ad7d22485dcc1a02490137075f126860619eea4fb5804a9813849ffd",
@@ -149,7 +150,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:26.416813411+01:00"
+            "LastTagTime": "2023-01-12T11:40:31.975500868+01:00"
         }
     }
 ]

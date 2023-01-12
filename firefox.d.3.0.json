@@ -2,7 +2,8 @@
     {
         "Id": "sha256:e0eb4862938bdea60ec8d6b3748270782d3ebd2446a604dd87718c5fc3800fd7",
         "RepoTags": [
-            "abcdesktopio/firefox.d:3.0"
+            "abcdesktopio/firefox.d:3.0",
+            "abcdesktopio/firefox.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:966824acc1515d32152a9b330c5efe5a7d1630ee04d098fa3d7ba8150fbec18e",
@@ -155,7 +156,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:44.787845083+01:00"
+            "LastTagTime": "2023-01-12T11:40:50.537873099+01:00"
         }
     }
 ]

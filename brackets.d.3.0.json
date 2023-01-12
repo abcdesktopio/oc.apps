@@ -2,7 +2,8 @@
     {
         "Id": "sha256:84ef0a8316750c611e67d2e08d1fd681bdf7208f9cbbe031717d78d506a41e0b",
         "RepoTags": [
-            "abcdesktopio/brackets.d:3.0"
+            "abcdesktopio/brackets.d:3.0",
+            "abcdesktopio/brackets.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:6e37f558f8f542dca4efa6bae793225ce031a178dcfeba11e808367a3e0f3488",
@@ -152,7 +153,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:39:54.781180271+01:00"
+            "LastTagTime": "2023-01-12T11:40:22.767531734+01:00"
         }
     }
 ]

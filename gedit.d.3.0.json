@@ -2,7 +2,8 @@
     {
         "Id": "sha256:63dbcfbf376a614a4113ac71e146ec3ec51a060ec5c719e50aed34816f13840c",
         "RepoTags": [
-            "abcdesktopio/gedit.d:3.0"
+            "abcdesktopio/gedit.d:3.0",
+            "abcdesktopio/gedit.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:3887345958bbc18399633fd32d58ad7fd5cfb39af38b6d4518598f51bbedee33",
@@ -146,7 +147,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:51.293595929+01:00"
+            "LastTagTime": "2023-01-12T11:41:07.430167849+01:00"
         }
     }
 ]

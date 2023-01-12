@@ -2,7 +2,8 @@
     {
         "Id": "sha256:ac764f69b8acc447f7ae3a037d6fb8c949156699295d03d1b3aadbe27f9f73c9",
         "RepoTags": [
-            "abcdesktopio/golly.d:3.0"
+            "abcdesktopio/golly.d:3.0",
+            "abcdesktopio/golly.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:13fd761ef169d9f9a0d7cc99c3f9587b345cf27baade03aafd662cf3a1c2f9e0",
@@ -146,7 +147,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:58.282609379+01:00"
+            "LastTagTime": "2023-01-12T11:41:13.589489007+01:00"
         }
     }
 ]

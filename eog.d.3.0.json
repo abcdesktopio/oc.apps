@@ -2,7 +2,8 @@
     {
         "Id": "sha256:80b4d46ceef2aafdd34bdae7e038d1ccae849d832f8921f9b4a31740cbe879a8",
         "RepoTags": [
-            "abcdesktopio/eog.d:3.0"
+            "abcdesktopio/eog.d:3.0",
+            "abcdesktopio/eog.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:36a7ef142d76f09ed7121092e10c86317eb469c6d3a4a284acbefe1047e8b95e",
@@ -149,7 +150,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:36.583256154+01:00"
+            "LastTagTime": "2023-01-12T11:40:42.621999978+01:00"
         }
     }
 ]

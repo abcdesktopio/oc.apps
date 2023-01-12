@@ -2,7 +2,8 @@
     {
         "Id": "sha256:9824095aac4894261c768662d850e30567cdc15d6f13c62adfcabf72630b1a86",
         "RepoTags": [
-            "abcdesktopio/gelemental.d:3.0"
+            "abcdesktopio/gelemental.d:3.0",
+            "abcdesktopio/gelemental.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:beb3c8b9e97b28785df91778a354eed0213d430b659c4eb5264ddd172086cedc",
@@ -135,7 +136,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:52.776903513+01:00"
+            "LastTagTime": "2023-01-12T11:41:08.618862829+01:00"
         }
     }
 ]

@@ -2,7 +2,8 @@
     {
         "Id": "sha256:17e19f331065036012fe226b7dda25e16848e33615552b71934bcd4295c4d7c5",
         "RepoTags": [
-            "abcdesktopio/kalzium.d:3.0"
+            "abcdesktopio/kalzium.d:3.0",
+            "abcdesktopio/kalzium.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:99a6c869184bea255e927810aeda9e6cd9b61d2ccac59257d4061fdae0b050ac",
@@ -138,7 +139,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:07.113741799+01:00"
+            "LastTagTime": "2023-01-12T11:41:21.86985641+01:00"
         }
     }
 ]

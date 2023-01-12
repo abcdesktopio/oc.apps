@@ -2,7 +2,8 @@
     {
         "Id": "sha256:62e33a3243969376b69bc61b19c05ac56b799af8e5bf465d89c09c3b76cf4a9c",
         "RepoTags": [
-            "abcdesktopio/kigo.d:3.0"
+            "abcdesktopio/kigo.d:3.0",
+            "abcdesktopio/kigo.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:a1cc3f6594c6d7f4c2c5cd8ee4c5bfd3ad6d3ad13c1cffaa6030771f69ef85f2",
@@ -148,7 +149,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:11.014959856+01:00"
+            "LastTagTime": "2023-01-12T11:41:25.207146635+01:00"
         }
     }
 ]

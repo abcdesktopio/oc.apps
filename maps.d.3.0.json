@@ -2,7 +2,8 @@
     {
         "Id": "sha256:3052483770ab50cdd85a6d80a356f6ee9c5ddc2a21c12355672f152bcbb53fbe",
         "RepoTags": [
-            "abcdesktopio/maps.d:3.0"
+            "abcdesktopio/maps.d:3.0",
+            "abcdesktopio/maps.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:4abc503040b3d0f60aa1b5fffd456eff3ca0c1d53391d149f1a3c9fa7eaad03b",
@@ -142,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:24.333196963+01:00"
+            "LastTagTime": "2023-01-12T11:41:37.808963978+01:00"
         }
     }
 ]

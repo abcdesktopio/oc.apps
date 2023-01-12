@@ -2,7 +2,8 @@
     {
         "Id": "sha256:bbe09e8c756e4c659865a02b5eec54f01295a4997014b6234782f780a754aa94",
         "RepoTags": [
-            "abcdesktopio/taquin.d:3.0"
+            "abcdesktopio/taquin.d:3.0",
+            "abcdesktopio/taquin.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:2dfa014e4c7571088d5e70d6d74bbe2e79273113c4acdaf729211aaec70be364",
@@ -140,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:42:03.803347241+01:00"
+            "LastTagTime": "2023-01-12T11:42:15.924198161+01:00"
         }
     }
 ]

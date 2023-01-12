@@ -2,7 +2,8 @@
     {
         "Id": "sha256:369b86e69021b169400db6fbf14d1b9f05bc4e31d602d2153e261defb12e0cce",
         "RepoTags": [
-            "abcdesktopio/gnumeric.d:3.0"
+            "abcdesktopio/gnumeric.d:3.0",
+            "abcdesktopio/gnumeric.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:96ed2ee86b46bbc85ef15737ffa117b20bdd9554287e4cabd15656b35bf2cd7b",
@@ -146,7 +147,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:57.119099399+01:00"
+            "LastTagTime": "2023-01-12T11:41:12.389061623+01:00"
         }
     }
 ]

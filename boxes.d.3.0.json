@@ -2,7 +2,8 @@
     {
         "Id": "sha256:b0b447505cf6e974652552eb4519acb915a32b43d859321aa0985e616316d7d5",
         "RepoTags": [
-            "abcdesktopio/boxes.d:3.0"
+            "abcdesktopio/boxes.d:3.0",
+            "abcdesktopio/boxes.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:66062f2b03f46b5f2ae42bd3c52c434bb2038f0effe8ca4fc1a8eb55ea523121",
@@ -145,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:39:53.513093567+01:00"
+            "LastTagTime": "2023-01-12T11:40:21.663735725+01:00"
         }
     }
 ]

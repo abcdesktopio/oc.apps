@@ -2,7 +2,8 @@
     {
         "Id": "sha256:14c1947a5fb198502f7232a5229077e44ed3364188397cb16c9ce9242d324c5d",
         "RepoTags": [
-            "abcdesktopio/flare.d:3.0"
+            "abcdesktopio/flare.d:3.0",
+            "abcdesktopio/flare.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:302909b1e8942c26bc2c8b6eb57e85b913cfc00d5d91d5dc1d1fda6fbe95c0c5",
@@ -152,7 +153,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:46.285505988+01:00"
+            "LastTagTime": "2023-01-12T11:40:51.657427298+01:00"
         }
     }
 ]

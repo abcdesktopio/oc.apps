@@ -2,7 +2,8 @@
     {
         "Id": "sha256:a5f1b357552576050169054a048c7df654c83bb33f7d2066270280dc8af4dd68",
         "RepoTags": [
-            "abcdesktopio/impress.d:3.0"
+            "abcdesktopio/impress.d:3.0",
+            "abcdesktopio/impress.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:029eb9866045234f629036feabbb6cb7b92ae74bd7cc9800d4e2ef628d39bb1b",
@@ -157,7 +158,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:00.892057462+01:00"
+            "LastTagTime": "2023-01-12T11:41:15.95226541+01:00"
         }
     }
 ]

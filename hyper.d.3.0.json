@@ -2,7 +2,8 @@
     {
         "Id": "sha256:147ec053bc47e7985bbec8d1efb85efede1e6a4244723da1ab735046172d8b0f",
         "RepoTags": [
-            "abcdesktopio/hyper.d:3.0"
+            "abcdesktopio/hyper.d:3.0",
+            "abcdesktopio/hyper.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:6d1a42b7bd2fd00559d2780ef364b8acd81c2bb7e5169d95f508aae02d842df7",
@@ -139,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:59.483966425+01:00"
+            "LastTagTime": "2023-01-12T11:41:14.792075312+01:00"
         }
     }
 ]

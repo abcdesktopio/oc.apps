@@ -2,7 +2,8 @@
     {
         "Id": "sha256:1d77afca1faeb352615e12c53bcb474d76269e80935b2a8c72f4f190f429374f",
         "RepoTags": [
-            "abcdesktopio/evolution.d:3.0"
+            "abcdesktopio/evolution.d:3.0",
+            "abcdesktopio/evolution.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:96ff3a499a1bc475e389abb0986d664b6deda040dae56f2989dee932eb387316",
@@ -139,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:38.917656516+01:00"
+            "LastTagTime": "2023-01-12T11:40:44.826591145+01:00"
         }
     }
 ]

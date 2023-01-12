@@ -2,7 +2,8 @@
     {
         "Id": "sha256:d8649c14f6912b1897bb704acc30851697c8cf0f3e2c972eb1e3efd1530cd9e2",
         "RepoTags": [
-            "abcdesktopio/doom.d:3.0"
+            "abcdesktopio/doom.d:3.0",
+            "abcdesktopio/doom.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:686ea4a82d499d58c2d62d484f9a26823da9edaccfa01773cf4e21adafc95dc6",
@@ -133,7 +134,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:31.866194409+01:00"
+            "LastTagTime": "2023-01-12T11:40:37.907389546+01:00"
         }
     }
 ]

@@ -2,7 +2,8 @@
     {
         "Id": "sha256:f2286d18f9e01a5ee758b58222c61e59ed45c3ab9b9d69d7fa7a11d7ca721ef4",
         "RepoTags": [
-            "abcdesktopio/edge.d:3.0"
+            "abcdesktopio/edge.d:3.0",
+            "abcdesktopio/edge.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:33dd62b70f7a1f89d409d3c4fe5ee2680e7634c111680462a65090e698020e0c",
@@ -158,7 +159,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:35.201537265+01:00"
+            "LastTagTime": "2023-01-12T11:40:41.521112233+01:00"
         }
     }
 ]

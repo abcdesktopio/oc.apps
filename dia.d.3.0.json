@@ -2,7 +2,8 @@
     {
         "Id": "sha256:cb406fa9b7ef0891e15a03db62a624ce5c15aab644028d7dfb4625f45cf0ed1c",
         "RepoTags": [
-            "abcdesktopio/dia.d:3.0"
+            "abcdesktopio/dia.d:3.0",
+            "abcdesktopio/dia.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:c9dcddd6bf898f70b6fdd58c9bdfcf28c689598a81192ea5a7e81cfd7b496b04",
@@ -146,7 +147,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:30.62991593+01:00"
+            "LastTagTime": "2023-01-12T11:40:36.639204275+01:00"
         }
     }
 ]

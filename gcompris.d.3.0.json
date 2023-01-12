@@ -2,7 +2,8 @@
     {
         "Id": "sha256:27392336e08e7841c51dfbcc9b1e66035a10635b885a643b7e2494c2c288aa6a",
         "RepoTags": [
-            "abcdesktopio/gcompris.d:3.0"
+            "abcdesktopio/gcompris.d:3.0",
+            "abcdesktopio/gcompris.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:b51cd6c9817851124bf8f4aafe12b4b1eff5313fc2cf74ec5d42c77a7cb1df64",
@@ -136,7 +137,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:40:49.470818556+01:00"
+            "LastTagTime": "2023-01-12T11:40:54.101864946+01:00"
         }
     }
 ]

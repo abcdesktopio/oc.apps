@@ -2,7 +2,8 @@
     {
         "Id": "sha256:08db6b76a57b1b17259299df14eba2f1cac9b179fe934dfa102fbdc060e7eee8",
         "RepoTags": [
-            "abcdesktopio/remotedesktopmanager.d:3.0"
+            "abcdesktopio/remotedesktopmanager.d:3.0",
+            "abcdesktopio/remotedesktopmanager.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:c3cfde0208b1f4129d91a99797f7cbd4330089108d680dc21b2561b80289392d",
@@ -148,7 +149,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:48.758513852+01:00"
+            "LastTagTime": "2023-01-12T11:42:02.439033+01:00"
         }
     }
 ]

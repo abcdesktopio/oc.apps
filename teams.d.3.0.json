@@ -2,7 +2,8 @@
     {
         "Id": "sha256:621a569d575864efadf8049d4891d3fec0d6f3848f0fea80545c4b68697c6699",
         "RepoTags": [
-            "abcdesktopio/teams.d:3.0"
+            "abcdesktopio/teams.d:3.0",
+            "abcdesktopio/teams.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:74e6570f82a424ee7c65cd3dbdf0cc35cfc3ab5881f69e2d60bc3e7c90ef44bc",
@@ -144,7 +145,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:42:04.874034627+01:00"
+            "LastTagTime": "2023-01-12T11:42:17.027818353+01:00"
         }
     }
 ]

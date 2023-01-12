@@ -2,7 +2,8 @@
     {
         "Id": "sha256:c044e8838baa9de0c9779a5d7e42f04dc28b93ffb1ce5dd44909a00a1a8b2384",
         "RepoTags": [
-            "abcdesktopio/leocad.d:3.0"
+            "abcdesktopio/leocad.d:3.0",
+            "abcdesktopio/leocad.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:78f0f8ae87cb6f0d49cb21da35ce3cb40097045f50d358812abe3d86877cd416",
@@ -145,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:21.065915191+01:00"
+            "LastTagTime": "2023-01-12T11:41:34.490576105+01:00"
         }
     }
 ]

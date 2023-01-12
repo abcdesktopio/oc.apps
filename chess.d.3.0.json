@@ -2,7 +2,8 @@
     {
         "Id": "sha256:eb751aa30c1216d0d4c797beaa0ca522e2e0a5ac05cb30d082b9eed799a0fca4",
         "RepoTags": [
-            "abcdesktopio/chess.d:3.0"
+            "abcdesktopio/chess.d:3.0",
+            "abcdesktopio/chess.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:aca6f6a0c4cd3e8700048ebaa55c137d55d493dfdbbaa64e75fd55fd3b6bb6d8",
@@ -142,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:39:56.94828604+01:00"
+            "LastTagTime": "2023-01-12T11:40:25.03284372+01:00"
         }
     }
 ]

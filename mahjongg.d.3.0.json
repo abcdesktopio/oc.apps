@@ -2,7 +2,8 @@
     {
         "Id": "sha256:55896b0e570eb317cb126a75f81a2e3cdcf60241e35429b262fea9df86b13b4e",
         "RepoTags": [
-            "abcdesktopio/mahjongg.d:3.0"
+            "abcdesktopio/mahjongg.d:3.0",
+            "abcdesktopio/mahjongg.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:ee6976e80c275935031bcd48384016edd28b635b3814d92866cc2be778a874b3",
@@ -146,7 +147,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:23.154500122+01:00"
+            "LastTagTime": "2023-01-12T11:41:36.718371153+01:00"
         }
     }
 ]

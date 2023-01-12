@@ -2,7 +2,8 @@
     {
         "Id": "sha256:c9b0c2fa460df2ae8ac271d176b835f740ae82c4a92559bc62272f8c3c90ecfe",
         "RepoTags": [
-            "abcdesktopio/sublime-text.d:3.0"
+            "abcdesktopio/sublime-text.d:3.0",
+            "abcdesktopio/sublime-text.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:1b0f60ababe3c81de00acfa08abf01b511f28dbe3f42479ed6c16cc4d75ee9a1",
@@ -148,7 +149,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:58.49199851+01:00"
+            "LastTagTime": "2023-01-12T11:42:10.354185241+01:00"
         }
     }
 ]

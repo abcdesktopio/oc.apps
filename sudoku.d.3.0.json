@@ -2,7 +2,8 @@
     {
         "Id": "sha256:6dc5d210ee0d7090ee95302f8b042432f0a52b049a0a864b2f3994bfea055510",
         "RepoTags": [
-            "abcdesktopio/sudoku.d:3.0"
+            "abcdesktopio/sudoku.d:3.0",
+            "abcdesktopio/sudoku.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:eafc55963df9198c347913cff83e2a6f00177247d198387d3c4cf9ec78a20db5",
@@ -140,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:59.524816257+01:00"
+            "LastTagTime": "2023-01-12T11:42:11.471823459+01:00"
         }
     }
 ]

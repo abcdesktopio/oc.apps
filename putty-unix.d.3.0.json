@@ -2,7 +2,8 @@
     {
         "Id": "sha256:1ae200483dbf385cc10762537edd7e5fa4228b356671d48946b1c9cfe5a00f4e",
         "RepoTags": [
-            "abcdesktopio/putty-unix.d:3.0"
+            "abcdesktopio/putty-unix.d:3.0",
+            "abcdesktopio/putty-unix.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:aa213bbfe3c3e932aa53bf975f3a0b0b25f833dcc1229133d8e49bd7af1c9e57",
@@ -138,7 +139,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T12:41:40.301843137+01:00"
+            "LastTagTime": "2023-01-12T11:41:54.501577341+01:00"
         }
     }
 ]
