@@ -1,0 +1,158 @@
+[
+    {
+        "Id": "sha256:8b29afd8e03745014f40cc4f2ab4ac72d5ea66f21bfb07a6111b6b4f6ade8d53",
+        "RepoTags": [
+            "abcdesktopio/mongodb-compass.d:3.0",
+            "abcdesktopio/mongodb-compasss.d:3.0"
+        ],
+        "RepoDigests": [
+            "abcdesktopio/mongodb-compasss.d@sha256:8479384e1131877e424ea80ca0623ce31025f9ef6c7881f3bc51d0fcada9599f"
+        ],
+        "Parent": "sha256:494c6b385bb4570c337268676d42b7b20bdb3409ef8eb33f41547454fc069d4a",
+        "Comment": "",
+        "Created": "2023-01-17T12:29:57.883582178Z",
+        "Container": "7e0980c66bbc77556ee5f5187f1905a9fe8cd398daad346bc17bb76739a79127",
+        "ContainerConfig": {
+            "Hostname": "7e0980c66bbc",
+            "Domainname": "",
+            "User": "0",
+            "AttachStdin": true,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": true,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBCONF_FRONTEND=noninteractive",
+                "TERM=linux",
+                "LANG=en_US.utf8",
+                "BUSER=balloon",
+                "APPNAME=mongodb-compasss",
+                "APPBIN=/usr/lib/mongodb-compass/MongoDB Compass",
+                "APP=/usr/lib/mongodb-compass/MongoDB Compass"
+            ],
+            "Cmd": [
+                "bash"
+            ],
+            "Image": "abcdesktopio/mongodb-compasss.d:3.0",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "oc.acl": "{\"permit\":[\"all\"]}",
+                "oc.cat": "utilities,office",
+                "oc.desktopfile": "mongodb-compass.desktop",
+                "oc.displayname": "Mongodb Compass",
+                "oc.icon": "mongodb-compass.svg",
+                "oc.icondata": "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYiIgeDE9IjcuOTM3IiB4Mj0iNy45MzciIHkxPSIxNS4wODEiIHkyPSIxLjg1MiIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgtMi4yODYgLTIuMjUyKSBzY2FsZSg0LjA0OTQpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agc3RvcC1jb2xvcj0iI2YxZWZlYiIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iI2ZkZmNmYyIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImMiIHgxPSIyMS45ODkiIHgyPSIyMS45ODkiIHkxPSIyOS4wODQiIHkyPSIxNS4wNzYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjODVlYzUxIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjYmVmZjY2IiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iZCIgeDE9IjI1LjM4MiIgeDI9IjI1LjM4MiIgeTE9IjMwLjYxMyIgeTI9IjE0LjIxOSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIHN0b3AtY29sb3I9IiM0M2RiNTkiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM2YWYxYjAiIG9mZnNldD0iMSIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0iYSIgeD0iLS4wMzEiIHk9Ii0uMDMxIiB3aWR0aD0iMS4wNjEiIGhlaWdodD0iMS4wNjEiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iLjc2OCIvPjwvZmlsdGVyPjwvZGVmcz48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHJ4PSIzMCIgcnk9IjMwIiBmaWx0ZXI9InVybCgjYSkiIG9wYWNpdHk9Ii4xNSIvPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcng9IjMwIiByeT0iMzAiIGZpbGw9InVybCgjYikiLz48aW1hZ2UgeD0iMTEuOTQyIiB5PSI0LjI2OCIgd2lkdGg9IjM3IiBoZWlnaHQ9IjU3LjUiIG9wYWNpdHk9Ii41IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bGluazpocmVmPSJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQUVvQUFBQnpDQVlBQUFBL3BaUVVBQUFBQ1hCSVdYTUFBQjJIQUFBZGh3R1A1ZkZsQUFBQSBHWFJGV0hSVGIyWjBkMkZ5WlFCM2QzY3VhVzVyYzJOaGNHVXViM0pubSs0OEdnQUFCbFZKUkVGVWVKenRuTnVTbkRBTVJEV1QvUDhuIEQzbFoxeXE5YWwxc0dVaUtycHJDZU1DR00yMVpYSFpGSGoxNjlPalJvMGVQSHMzb2RjTitqOU9Pb3FBelFWWDd1aFd3TTBCWmZiQisgTFRpM0FMWWJGTGIvY3I0N1NObGFQMTIvTjdadFFmRkFXUnFBWG5JeHJGMk9ZcEFzWUZxSFdoNVFoK1ZUdGROUklqL2hlTEFPNGM3NSBMNGNlYzVEMTBkSXUwblV2VWo1VjNhQllMSHBMSHBUK2ZPUmlRRU8vbXR1ekhQU0dzdlZoQURQbFU5UUppZzJ6dC95RTlNdjREdDNJIFlsazBJV3hSRnlndkZqRVhNVWZwOXJCOTF1OTI3YzZqc21CRXZtUFM2MnVwOWZuYTd3UGJqMzYyeDY0T1VOSE14b0JwVUNONFc1Q0cgUHZMVFFhZkJXZ1hGcnVNUWtBV0xPUXAxeU4vdDRUYW53T29hZXN4Qm1lRTNwRTlZakhvUjIxVzQ3eFpZSzZDczJTa3o0MFdnTWlmSyBuRGVPb3gxV3A2UEdNZ01KMDRFb3FiVHFQRmp0bWdVVkJYQUxrcFdBSXF5MzVDNkN4N1lmdFk2WE9xM1FPdE1ETDA1WjY5Wmx6TkQ3IGE4bWc2VlJpOUkxRHJ4WFdES2lNbXpLQUxGQTZQUmo3V3NJQWorN1M3YlhBNnNxanJHR0Z3eTV6WVN6eWZkSVdKQmJ3dlJ5clJWVlEgbHB0d1BYSVFpMDk2NmNGQzRUN1dkOHZRT2gyRmNDSTNpYkVVaVdHaHE4YlN5N0dXWVZWQVJiR0pBV0hYZHRaSjRjdzExalVzQm1ybyBZOVNOdHFkaGRWekNzR0RPMGdCdnRoUDVDUXY3d2hueGdPMnRZWGpwME12RW9DaHdzd0RNZ3J5MXJlVXNGdHluWFpVRnhZYmRxR1BCIEd6UHdqSnM4V0pHanhsTDNnMkNtWUhVT1BlODZMdU1tWFkrNTBOQVlVZ3lZenU3WlJER2xsVXVZYWxEM25HUzFqeW1EL2c2RHV3WjAgcU8vMUVNVDJTdENxc3g0THp0YjMyWmt1MDYrR3BWMDFvS0dyOVBDYmhxT1ZBZVVORVgzd0hzUnNtN2dOdTNXQ2tIQnB3ZElxZzF1OSAxc01sYzFGMTZPbDlXWERIaEJUaHZHSDl0SVJUSzVySktpbEJwaThHeTRxTnpGR1dxOUxLWEV2aFFiR0RYSEhPck5nRUVqM3gwZnVuIFZNMmo5TUd4QTdhMldZV1hkWlYyRlBzUnA0Wmc1Q2p2QkwxaGg5dGsyb3ZFK3ZHY3pYNUFyQXRWR1hyUlFaYzdYMUFFcVhJM05hVXEgS1BicjREWmkxSGVJdFZsMVUxbTdYeVRicVd5Y3RBQ1ZZOVhzMEVPZE9lTkZmWGd1OHNxdXVrQmRwY2hCbDhVb1MyZm1UYXhQZElZMyA1S2FnZGMxNmQ1QTNqQzV6Vk9acDdwWHlIR1dWUS8zck1jcFN4VkZwV0YyZ0ttK2k3SlIzVlJEVnUrcDAxRldRTXBkUjBmNmhWa0NOIGk4KzdhT3NFVXdXbDcvVmduYmZOMWNva2xpN283cUYzSnB5cWc2THQzV09QUUhrN0gvTFRQWkc3cm5UWlV0OVpSekVZRE1MZGh0NnkgWm1JVUs3UDR0VXVWdHBjZFBST2pFSXIzc1E2dUN4N0duSzBPWGczbUZWaG5Ec1hvaHlvZlYvYU50dWhBR0NCdi8xVkZNYk9ySHhHcCAzZUhFSjdXakx2cmczY1N6N3p5MHhNK1Z1d2ZWV0dXMXNVdnRTZS9LUGZQTThHTUhyQjA1NHpBdkhMQ1lsUG54cUNwNWxIVXdoM3kvIE0rbVZkODE4ckwxMlI2MWVGT3Z5UnkwUmt2ZHJycHpNaXF0THFvQ3FISkFIRE52RDhxbzhTRjdaMWVwelBRdU92Z1U3NmtUK2prdWkgdnEvR0t6dzV6emt0TTU3SVBDanZZRHhnK05kVDFVRE9obTFteUMwTndTb282MWRIT0xqVTk0TFlnYzY2eWlyalpJTDFVNXI5Yy83cyByZGZvL1lSTUcweVdXejdrRXprdFZOZTdCN3BUSFpNaVYxbHh5MXJYZGRndk9takx6TmZsS0YxdlBkTzNic1ZhN3dCNGJRK3gySVBwIGllVW9xNjJVVnY2VEJuc1JnbTBqeGpaVldONGt3Z0MxeEtyVmZ6a1NPUXUzaTJCNnNZek5jQllZWE5mN1Qya25LTGFlaFdWdFowRmkganZMaWxrZ1JYTWMvc2ZHR1ZlVzVmMldteTdpcXpVMGkrLzdiRDZ1ejlzbldSWkNzOHVXem5xV1pOMFc2OHFVSWt0Vm1TYnYrSTlucSBmcGhQNlRJREV6bHBLallOM1FXVXA5bWNhVGt1YVhXREVzbkQwaWZpUFhxeTBnSXZaMnFiNmJSMmdCTHBjUmFlbkJmQU0wTnVTYnRBIGlhekI4aUJsaGx4TEFOZmFDVXBrL1g2VHJ2ZnlKdS9qdFp2V2JsQWlQTVBHNy9Ca3JDRHVCZlAyQUs1MUJpaVIraVZORk15am1OVHEgSnBIelFJbXN2V2Nwa2dNbHNzbFZaNElheWx4SWV5N3puR05OQWkyNkFwUklmSDhLeTNqaW1WbXVWVmVER3VYS1RUdlBUZHVnWFFWcSB5QVBHbEUwb1c0SGQ1UThidlpNNmhEOGlPMjM0WGUwb0VmK09KaE1MMXY5OEhoV3BDZ3Z6clA4Mm1LT3FzY3B5RkN1MzZDNmdSSEpQIGs3VzJKcGlvTzRFU3FUOTBpSnpWcHJ1RHFyNndzVTA3YnQydUt1dXE5bnRPbnU0SWFtZ21YZGltTzRNU3VkSFFlL1RvMGFOSGp4NDkgZXZSb3EvNEFpeEkraDh3M3JWb0FBQUFBU1VWT1JLNUNZSUk9Ii8+PHBhdGggZD0iTTI0IDEwYy0zLjUzMSAzLjk4OC02IDYuOS02IDEyIDAgNS41IDMuNTI1IDguODYzIDYgMTEgMS0zIDEtMTkgMC0yM3oiIGZpbGw9InVybCgjYykiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04IC02LjMzMykgc2NhbGUoMS42NjY3KSIvPjxwYXRoIGQ9Ik0yNCAxMHYyNS4xOTlMMjUgMzZ2LTNjMi4xMDUtMi4xOTUgNS00LjUgNS0xMSAwLTQtMy03LTUtMTAtLjQxMy0uNjItMS0yLTEtMnoiIGZpbGw9InVybCgjZCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04IC02LjMzMykgc2NhbGUoMS42NjY3KSIvPjwvc3ZnPg==",
+                "oc.keyword": "mongodb-compasss,mongodb,compass",
+                "oc.launch": "mongodb compass.MongoDB Compass",
+                "oc.mimetype": "x-scheme-handler/mongodb;x-scheme-handler/mongodb+srv;",
+                "oc.name": "mongodb-compasss",
+                "oc.path": "/usr/lib/mongodb-compass/MongoDB Compass",
+                "oc.rules": "{\"homedir\":{\"default\":true}}",
+                "oc.template": "abcdesktopio/oc.template.ubuntu.gtk",
+                "oc.type": "app",
+                "oc.usedefaultapplication": "true"
+            }
+        },
+        "DockerVersion": "20.10.16",
+        "Author": "",
+        "Config": {
+            "Hostname": "7e0980c66bbc",
+            "Domainname": "",
+            "User": "0",
+            "AttachStdin": true,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": true,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBCONF_FRONTEND=noninteractive",
+                "TERM=linux",
+                "LANG=en_US.utf8",
+                "BUSER=balloon",
+                "APPNAME=mongodb-compasss",
+                "APPBIN=/usr/lib/mongodb-compass/MongoDB Compass",
+                "APP=/usr/lib/mongodb-compass/MongoDB Compass"
+            ],
+            "Cmd": [
+                "bash"
+            ],
+            "Image": "abcdesktopio/mongodb-compasss.d:3.0",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "oc.acl": "{\"permit\":[\"all\"]}",
+                "oc.cat": "utilities,office",
+                "oc.desktopfile": "mongodb-compass.desktop",
+                "oc.displayname": "Mongodb Compass",
+                "oc.icon": "mongodb-compass.svg",
+                "oc.icondata": "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYiIgeDE9IjcuOTM3IiB4Mj0iNy45MzciIHkxPSIxNS4wODEiIHkyPSIxLjg1MiIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgtMi4yODYgLTIuMjUyKSBzY2FsZSg0LjA0OTQpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agc3RvcC1jb2xvcj0iI2YxZWZlYiIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iI2ZkZmNmYyIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImMiIHgxPSIyMS45ODkiIHgyPSIyMS45ODkiIHkxPSIyOS4wODQiIHkyPSIxNS4wNzYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBzdG9wLWNvbG9yPSIjODVlYzUxIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjYmVmZjY2IiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iZCIgeDE9IjI1LjM4MiIgeDI9IjI1LjM4MiIgeTE9IjMwLjYxMyIgeTI9IjE0LjIxOSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIHN0b3AtY29sb3I9IiM0M2RiNTkiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM2YWYxYjAiIG9mZnNldD0iMSIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0iYSIgeD0iLS4wMzEiIHk9Ii0uMDMxIiB3aWR0aD0iMS4wNjEiIGhlaWdodD0iMS4wNjEiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iLjc2OCIvPjwvZmlsdGVyPjwvZGVmcz48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHJ4PSIzMCIgcnk9IjMwIiBmaWx0ZXI9InVybCgjYSkiIG9wYWNpdHk9Ii4xNSIvPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcng9IjMwIiByeT0iMzAiIGZpbGw9InVybCgjYikiLz48aW1hZ2UgeD0iMTEuOTQyIiB5PSI0LjI2OCIgd2lkdGg9IjM3IiBoZWlnaHQ9IjU3LjUiIG9wYWNpdHk9Ii41IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bGluazpocmVmPSJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQUVvQUFBQnpDQVlBQUFBL3BaUVVBQUFBQ1hCSVdYTUFBQjJIQUFBZGh3R1A1ZkZsQUFBQSBHWFJGV0hSVGIyWjBkMkZ5WlFCM2QzY3VhVzVyYzJOaGNHVXViM0pubSs0OEdnQUFCbFZKUkVGVWVKenRuTnVTbkRBTVJEV1QvUDhuIEQzbFoxeXE5YWwxc0dVaUtycHJDZU1DR00yMVpYSFpGSGoxNjlPalJvMGVQSHMzb2RjTitqOU9Pb3FBelFWWDd1aFd3TTBCWmZiQisgTFRpM0FMWWJGTGIvY3I0N1NObGFQMTIvTjdadFFmRkFXUnFBWG5JeHJGMk9ZcEFzWUZxSFdoNVFoK1ZUdGROUklqL2hlTEFPNGM3NSBMNGNlYzVEMTBkSXUwblV2VWo1VjNhQllMSHBMSHBUK2ZPUmlRRU8vbXR1ekhQU0dzdlZoQURQbFU5UUppZzJ6dC95RTlNdjREdDNJIFlsazBJV3hSRnlndkZqRVhNVWZwOXJCOTF1OTI3YzZqc21CRXZtUFM2MnVwOWZuYTd3UGJqMzYyeDY0T1VOSE14b0JwVUNONFc1Q0cgUHZMVFFhZkJXZ1hGcnVNUWtBV0xPUXAxeU4vdDRUYW53T29hZXN4Qm1lRTNwRTlZakhvUjIxVzQ3eFpZSzZDczJTa3o0MFdnTWlmSyBuRGVPb3gxV3A2UEdNZ01KMDRFb3FiVHFQRmp0bWdVVkJYQUxrcFdBSXF5MzVDNkN4N1lmdFk2WE9xM1FPdE1ETDA1WjY5Wmx6TkQ3IGE4bWc2VlJpOUkxRHJ4WFdES2lNbXpLQUxGQTZQUmo3V3NJQWorN1M3YlhBNnNxanJHR0Z3eTV6WVN6eWZkSVdKQmJ3dlJ5clJWVlEgbHB0d1BYSVFpMDk2NmNGQzRUN1dkOHZRT2gyRmNDSTNpYkVVaVdHaHE4YlN5N0dXWVZWQVJiR0pBV0hYZHRaSjRjdzExalVzQm1ybyBZOVNOdHFkaGRWekNzR0RPMGdCdnRoUDVDUXY3d2hueGdPMnRZWGpwME12RW9DaHdzd0RNZ3J5MXJlVXNGdHluWFpVRnhZYmRxR1BCIEd6UHdqSnM4V0pHanhsTDNnMkNtWUhVT1BlODZMdU1tWFkrNTBOQVlVZ3lZenU3WlJER2xsVXVZYWxEM25HUzFqeW1EL2c2RHV3WjAgcU8vMUVNVDJTdENxc3g0THp0YjMyWmt1MDYrR3BWMDFvS0dyOVBDYmhxT1ZBZVVORVgzd0hzUnNtN2dOdTNXQ2tIQnB3ZElxZzF1OSAxc01sYzFGMTZPbDlXWERIaEJUaHZHSDl0SVJUSzVySktpbEJwaThHeTRxTnpGR1dxOUxLWEV2aFFiR0RYSEhPck5nRUVqM3gwZnVuIFZNMmo5TUd4QTdhMldZV1hkWlYyRlBzUnA0Wmc1Q2p2QkwxaGg5dGsyb3ZFK3ZHY3pYNUFyQXRWR1hyUlFaYzdYMUFFcVhJM05hVXEgS1BicjREWmkxSGVJdFZsMVUxbTdYeVRicVd5Y3RBQ1ZZOVhzMEVPZE9lTkZmWGd1OHNxdXVrQmRwY2hCbDhVb1MyZm1UYXhQZElZMyA1S2FnZGMxNmQ1QTNqQzV6Vk9acDdwWHlIR1dWUS8zck1jcFN4VkZwV0YyZ0ttK2k3SlIzVlJEVnUrcDAxRldRTXBkUjBmNmhWa0NOIGk4KzdhT3NFVXdXbDcvVmduYmZOMWNva2xpN283cUYzSnB5cWc2THQzV09QUUhrN0gvTFRQWkc3cm5UWlV0OVpSekVZRE1MZGh0NnkgWm1JVUs3UDR0VXVWdHBjZFBST2pFSXIzc1E2dUN4N0duSzBPWGczbUZWaG5Ec1hvaHlvZlYvYU50dWhBR0NCdi8xVkZNYk9ySHhHcCAzZUhFSjdXakx2cmczY1N6N3p5MHhNK1Z1d2ZWV0dXMXNVdnRTZS9LUGZQTThHTUhyQjA1NHpBdkhMQ1lsUG54cUNwNWxIVXdoM3kvIE0rbVZkODE4ckwxMlI2MWVGT3Z5UnkwUmt2ZHJycHpNaXF0THFvQ3FISkFIRE52RDhxbzhTRjdaMWVwelBRdU92Z1U3NmtUK2prdWkgdnEvR0t6dzV6emt0TTU3SVBDanZZRHhnK05kVDFVRE9obTFteUMwTndTb282MWRIT0xqVTk0TFlnYzY2eWlyalpJTDFVNXI5Yy83cyByZGZvL1lSTUcweVdXejdrRXprdFZOZTdCN3BUSFpNaVYxbHh5MXJYZGRndk9takx6TmZsS0YxdlBkTzNic1ZhN3dCNGJRK3gySVBwIGllVW9xNjJVVnY2VEJuc1JnbTBqeGpaVldONGt3Z0MxeEtyVmZ6a1NPUXUzaTJCNnNZek5jQllZWE5mN1Qya25LTGFlaFdWdFowRmkganZMaWxrZ1JYTWMvc2ZHR1ZlVzVmMldteTdpcXpVMGkrLzdiRDZ1ejlzbldSWkNzOHVXem5xV1pOMFc2OHFVSWt0Vm1TYnYrSTlucSBmcGhQNlRJREV6bHBLallOM1FXVXA5bWNhVGt1YVhXREVzbkQwaWZpUFhxeTBnSXZaMnFiNmJSMmdCTHBjUmFlbkJmQU0wTnVTYnRBIGlhekI4aUJsaGx4TEFOZmFDVXBrL1g2VHJ2ZnlKdS9qdFp2V2JsQWlQTVBHNy9Ca3JDRHVCZlAyQUs1MUJpaVIraVZORk15am1OVHEgSnBIelFJbXN2V2Nwa2dNbHNzbFZaNElheWx4SWV5N3puR05OQWkyNkFwUklmSDhLeTNqaW1WbXVWVmVER3VYS1RUdlBUZHVnWFFWcSB5QVBHbEUwb1c0SGQ1UThidlpNNmhEOGlPMjM0WGUwb0VmK09KaE1MMXY5OEhoV3BDZ3Z6clA4Mm1LT3FzY3B5RkN1MzZDNmdSSEpQIGs3VzJKcGlvTzRFU3FUOTBpSnpWcHJ1RHFyNndzVTA3YnQydUt1dXE5bnRPbnU0SWFtZ21YZGltTzRNU3VkSFFlL1RvMGFOSGp4NDkgZXZSb3EvNEFpeEkraDh3M3JWb0FBQUFBU1VWT1JLNUNZSUk9Ii8+PHBhdGggZD0iTTI0IDEwYy0zLjUzMSAzLjk4OC02IDYuOS02IDEyIDAgNS41IDMuNTI1IDguODYzIDYgMTEgMS0zIDEtMTkgMC0yM3oiIGZpbGw9InVybCgjYykiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04IC02LjMzMykgc2NhbGUoMS42NjY3KSIvPjxwYXRoIGQ9Ik0yNCAxMHYyNS4xOTlMMjUgMzZ2LTNjMi4xMDUtMi4xOTUgNS00LjUgNS0xMSAwLTQtMy03LTUtMTAtLjQxMy0uNjItMS0yLTEtMnoiIGZpbGw9InVybCgjZCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04IC02LjMzMykgc2NhbGUoMS42NjY3KSIvPjwvc3ZnPg==",
+                "oc.keyword": "mongodb-compasss,mongodb,compass",
+                "oc.launch": "mongodb compass.MongoDB Compass",
+                "oc.mimetype": "x-scheme-handler/mongodb;x-scheme-handler/mongodb+srv;",
+                "oc.name": "mongodb-compasss",
+                "oc.path": "/usr/lib/mongodb-compass/MongoDB Compass",
+                "oc.rules": "{\"homedir\":{\"default\":true}}",
+                "oc.template": "abcdesktopio/oc.template.ubuntu.gtk",
+                "oc.type": "app",
+                "oc.usedefaultapplication": "true"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1455248834,
+        "VirtualSize": 1455248834,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/2b8d489d0041b6046c4d8251e069702885f049a18ec9e25fac78c8c50c841d49/diff:/mnt/nvme0n1/var/lib/docker/overlay2/f91d99f3760241c58b2974b2c754c5020dea26eb54f9e3cb0a709c0c899eeeb0/diff:/mnt/nvme0n1/var/lib/docker/overlay2/b8a23739c03ec1161a72d2cbfe2bbaf612864501919f9f36c725877b8ce87eca/diff:/mnt/nvme0n1/var/lib/docker/overlay2/cf48aec62a2f6d844c1f993c4905eaa14da3aeb8b88533ed9b52d356c93d286d/diff:/mnt/nvme0n1/var/lib/docker/overlay2/920dbc5bf4b53d0400ae1f8d037661a4be77a8698c9d61c1860a3b0656299f84/diff:/mnt/nvme0n1/var/lib/docker/overlay2/16236017f43f2595a16793bee8308ddd0c501582217ff4cf4bd9e491888e980c/diff:/mnt/nvme0n1/var/lib/docker/overlay2/02d79901ba518a172c0914652d8da489ba5857a0002f72db945bfd75d4cd00a4/diff:/mnt/nvme0n1/var/lib/docker/overlay2/ee2d94afb25353d7a8de8e23c72098b2565f6f9b9a54ed92df5be84d86073f78/diff:/mnt/nvme0n1/var/lib/docker/overlay2/f578b1de52f2ec30a09861c2d1ecaa5c6cb1da328e22eae20c1965060c647efe/diff:/mnt/nvme0n1/var/lib/docker/overlay2/0ba826c1fe86152ff14891bb67b45a31fa2d170a549842e83f7ebb2e8dc635c2/diff:/mnt/nvme0n1/var/lib/docker/overlay2/35960445330a45bc2dc239560e95b9c51a3da2987a3ee766a97d86f136fa13af/diff:/mnt/nvme0n1/var/lib/docker/overlay2/63b9a0fd92f752285648d23d217698ba0fe61451ba5f89306fe45acd1ba14248/diff:/mnt/nvme0n1/var/lib/docker/overlay2/fa64b54a7d3e49ecad689cce585df1c80894ff88fa02b03f217fd840b7f919f8/diff:/mnt/nvme0n1/var/lib/docker/overlay2/e8066ebce7b467ed476e422cbb9b19643b6d6b342f9f7083f3cbbf83cfbc8092/diff:/mnt/nvme0n1/var/lib/docker/overlay2/132617296d1ab92cfda77f76ed5643a202e3d706cf5048d14765a2aaec66c607/diff:/mnt/nvme0n1/var/lib/docker/overlay2/ca8a6d6718d671d5a1d4aa852313e6af94b2d2142cba6204d5d8a8e1a275db41/diff:/mnt/nvme0n1/var/lib/docker/overlay2/952a55c81db0a5912faab657c84e8f6de3e4f13acc4eb326675fc3d9b2ebbcce/diff:/mnt/nvme0n1/var/lib/docker/overlay2/c4769aa4b265bd54dcd4d4d16e6e7555f0a188bae0161c19f6cfa3ae31420748/diff:/mnt/nvme0n1/var/lib/docker/overlay2/62914a40bd1888c53693b7beb017ef161f10152857f19ea1638e532e04e1f8b7/diff:/mnt/nvme0n1/var/lib/docker/overlay2/77926e25275400a2de2c6acbfdd4673396d29514ce8a3e365854c9483300710e/diff:/mnt/nvme0n1/var/lib/docker/overlay2/b23972cd7e8a1507b25ffb47517f4f40dc68c2e7062450ef4cffedfb5ca8557f/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d0bd5a8018367e2615fc427502a5600b6b5da741cc43e836283fe6e5d0df5fd0/diff:/mnt/nvme0n1/var/lib/docker/overlay2/2b65acb696edbd3f8f14c1c2258ee5cf52125fb44f322a4b9f510cb687d768e4/diff:/mnt/nvme0n1/var/lib/docker/overlay2/89f8e85c542c094c50825014c554f4a87050b79d819620345dbf5c606d343ebc/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1883b3e75059391bc6158691cb763ed5ed45fbbda9c8d7cf614c9edd5b85a229/diff:/mnt/nvme0n1/var/lib/docker/overlay2/fc5cf3bc8ef63ef3d0b1904274ca99aab860f13a0da5ce492103271befcc8224/diff",
+                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/609f11cbf3b326dc79aab14425f690c5282f38653c6d110863fd12c26c0f9e46/merged",
+                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/609f11cbf3b326dc79aab14425f690c5282f38653c6d110863fd12c26c0f9e46/diff",
+                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/609f11cbf3b326dc79aab14425f690c5282f38653c6d110863fd12c26c0f9e46/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:0002c93bdb3704dd9e36ce5153ef637f84de253015f3ee330468dccdeacad60b",
+                "sha256:51fa83bfe0137f727fff67220bc23f7822f47e089cd05a27229374a0ee670aeb",
+                "sha256:54d38f6540e5f943672cbe35bdcd78299a1a78c85607eb722974d524a68cf70f",
+                "sha256:4f4546dbee03629a1675976e11c3ed006dbe5b0db7c93cf53f5e49024207ec63",
+                "sha256:0efe182f63f241376f22c2ce64c399093cc1fe9996d9a9d2dc732034603981e9",
+                "sha256:fde3dc03389b11ed44a93016604ecb403b42a2571d48fa404c0ac284ab8334d7",
+                "sha256:a2a34faf5bb172de32f5ff11ac12f5d54696fa16d9239c4d1bd424ce437b3f3d",
+                "sha256:fae7c0a3eace32459e719779a736deb59fa8512611e2f8105fb9264fcdc65dbf",
+                "sha256:6252f83329ebcd1d317d8bbf1160fe9bcd1d7899eba0e638637b09ab448d6988",
+                "sha256:606f85e381db0ab5682d6d4cbbc51c7e0c1bcae6b2b8ec6fe77c2802ff3f4253",
+                "sha256:f6b825ce38980a146fff6f455caa0ffe825f0b9996d5655fa76b329f87bed78d",
+                "sha256:e571866906eb23145ab1d742c37e0239b3c0e4ee94a442fd987a939196dc1bd5",
+                "sha256:c108960d32dac272e2d3382ee316eda5eeae3fd5d648adb6db39c2b1c8c5a5b1",
+                "sha256:b0811ad726e1b11c1c46791e615efc66d7bc25a8ae2917a3892eca7cf27695c5",
+                "sha256:56c738678e09de1ab00eedd88355bdf0ea922a9f70ee32b45037afa3df3d0bb6",
+                "sha256:09a865deb6e0a4f111d9be5fbb9455be9a8bba5e88c1ed505c039c4cdcfe6a33",
+                "sha256:08f9cb3a2ace9ad4dde2094ab7ff7dfa9e4d375e98c9607aff7cb0afd59c12e5",
+                "sha256:49d645b5b193bb0def0eda1a77f20670606a9fada9785ab2338158d0e0401e2a",
+                "sha256:ba68f4e36a9c26572238e9a2652654d7161cd7abbb1407e9c99030d96c0aaef8",
+                "sha256:0a5acbc194122dfb9ef39ef07f5cdaf07bfb23501d42bbea1e266a7f197aa8c0",
+                "sha256:54494ea006c639263529c0acb928383c67082916f3a17782e7fe9a6d9aa1fd1c",
+                "sha256:c74b028f47f85edf60999a248625d9ac82fc0cfbad3b66a34de2daa19c2e7071",
+                "sha256:2dae5fb89178e2eb21e0b90d12a89bbcfafb7cba7291de9a37527d913d4e9008",
+                "sha256:6561df6f25227ce846127e33a3b59172945cd2196ee6d8bf0be8a08af690b3ee",
+                "sha256:fb2347746bbb50a2306bb2e6aea515a11c4f82cf58f659681777affaa25778ef",
+                "sha256:4148e1f561efa49eedd40da7e37399ab3318adafe4d4b4f8f4fadd97c7607a2b",
+                "sha256:8af1111dedd9a2da69942defebc4502ab4c71adc85b7f7d278224240084fe7e4"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2023-01-17T13:36:36.300993564+01:00"
+        }
+    }
+]
