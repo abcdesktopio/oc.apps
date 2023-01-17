@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/writer.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/writer.d@sha256:1d256d663ec5d821c309060aa13e167a34634eccb8845655ac7541102bfddb57"
+        ],
         "Parent": "sha256:5d9dd95858df85c4d09e54a5c3908e4654563e4a458000bc7aef9015c78d3640",
         "Comment": "",
         "Created": "2023-01-12T14:14:08.689370525Z",
@@ -157,7 +159,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-12T15:14:08.928125275+01:00"
+            "LastTagTime": "2023-01-17T13:19:15.762895395+01:00"
         }
     }
 ]
