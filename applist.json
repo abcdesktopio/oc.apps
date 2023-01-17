@@ -96,12 +96,27 @@
         "add": ["NET_ADMIN", "CAP_SYS_ADMIN"] 
       }
     }	
-},{
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "icon": "geany.svg",
+    "apkpackage": "geany vte3 geany-plugins-commander geany-plugins-spellcheck geany-plugins-lang geany-plugins-pretty-printer geany-plugins-overview geany-plugins-scope",
+    "keyword": "text,editor,geany,ide",
+    "launch": "geany.Geany",
+    "name": "geany",
+    "displayname": "Geany",
+    "path": "/usr/bin/geany",
+    "showinview": "dock",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.alpine",
+    "desktopfile": "/usr/share/applications/geany.desktop",
+    "mimetype": "text/x-chdr;text/x-csrc;text/x-c++hdr;text/x-c++src;text/x-java;text/x-dsrc;text/x-pascal;text/x-perl;text/x-python;application/x-php;application/x-httpd-php3;application/x-httpd-php4;application/x-httpd-php5;application/xml;text/html;text/css;text/x-sql;text/x-diff;"
+}, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "postruncommands": [ "ENV QT_XCB_NO_MITSHM=1" ],
     "icon": "konsole.svg",
-    "apkpackage": "konsole, sudo",
+    "apkpackage": "konsole sudo",
     "keyword": "ksonsole,console,shell,bash,sh",
     "launch": "konsole.konsole",
     "name": "konsole",
@@ -431,13 +446,14 @@
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "containerengine": "ephemeral_container",
-    "apkpackage": "gnome-2048",
+    "apkpackage": "mesa-dri-gallium gnome-2048",
     "icon": "circle_2048.svg",
     "keyword": "2048",
     "launch": "org.gnome.TwentyFortyEight.Gnome-2048",
     "name": "2048-alpine",
     "displayname": "2048 (alpine gtk)",
     "path": "/usr/bin/gnome-2048",
+    "showinview": "dock",
     "desktopfile": "/usr/share/applications/org.gnome.TwentyFortyEight.desktop",
     "template": "abcdesktopio/oc.template.alpine.gtk", 
     "rules": { "homedir": { "default": true } },
@@ -618,7 +634,26 @@
     "desktopfile":"/usr/share/applications/org.gnome.Nautilus.desktop",
     "usedefaultapplication": true,
     "quick": true
-}, {
+},   {
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities,office",
+    "postruncommands": [
+	"RUN curl -Ls -o /tmp/mongodb-compass_1.35.0_amd64.deb https://downloads.mongodb.com/compass/mongodb-compass_1.35.0_amd64.deb",
+        "RUN apt-get update && apt-get install --no-install-recommends -y /tmp/mongodb-compass_1.35.0_amd64.deb && apt-get clean" 
+    ],
+    "debpackage": "wget dbus dbus-x11 libasound2",
+    "icon": "mongodb-compass.svg",
+    "keyword": "mongodb,compass",
+    "launch": "mongodb compass.MongoDB Compass",
+    "name": "mongodb-compass",
+    "displayname": "Mongodb Compass",
+    "path": "/usr/lib/mongodb-compass/MongoDB Compass",
+    "rules": { "homedir": { "default": true } },
+    "mimetype": "x-scheme-handler/mongodb;x-scheme-handler/mongodb+srv;",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "desktopfile":"/usr/share/applications/mongodb-compass.desktop",
+    "usedefaultapplication": true
+},  {
     "acl": { "permit": [ "all" ] },
     "rules": { "homedir": { "default": true } },
     "cat": "office",
