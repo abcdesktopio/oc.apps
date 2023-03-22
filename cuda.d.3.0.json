@@ -2,8 +2,7 @@
     {
         "Id": "sha256:180f82932207ba500f78dc40dd09c352ec6a8f5553538ed0a8aa3334ed4b8d5e",
         "RepoTags": [
-            "abcdesktopio/cuda.d:3.0",
-            "abcdesktopio/cuda.d:dev"
+            "abcdesktopio/cuda.d:3.0"
         ],
         "RepoDigests": [
             "abcdesktopio/cuda.d@sha256:7eecdd10996fd55fcc7c0695bf7360ac8c98142c31fdabb699b6cb5026b9d33f"
@@ -167,7 +166,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-17T14:30:42.657138843+01:00"
+            "LastTagTime": "2023-03-22T13:47:59.952265303+01:00"
         }
     }
 ]
