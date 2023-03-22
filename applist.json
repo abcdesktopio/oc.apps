@@ -86,7 +86,7 @@
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.alpine",
     "desktopfile": "/usr/share/applications/org.gnome.Boxes.desktop",
-    "mimetype": "application-x-cd-image;",
+    "mimetype": "application/x-cd-image;",
     "postruncommands": [
         "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
     ],
@@ -94,7 +94,11 @@
       "allowPrivilegeEscalation": true,
       "capabilities": {
         "add": ["NET_ADMIN", "CAP_SYS_ADMIN"] 
-      }
+      },
+      "readOnlyRootFilesystem": false,
+      "allowPrivilegeEscalation": true,
+      "runAsUser":  "0",
+      "runAsGroup": "0"
     }	
 }, {
     "acl": { "permit": [ "all" ] },
@@ -446,7 +450,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "containerengine": "ephemeral_container",
-    "apkpackage": "mesa-dri-gallium gnome-2048",
+    "apkpackage": "mesa-gl mesa-dri-gallium gnome-2048",
     "icon": "circle_2048.svg",
     "keyword": "2048",
     "launch": "org.gnome.TwentyFortyEight.Gnome-2048",
@@ -454,10 +458,10 @@
     "displayname": "2048 (alpine gtk)",
     "path": "/usr/bin/gnome-2048",
     "showinview": "dock",
+    "host_config": { "shm_size" : "2G", "ipc_mode": "shareable" },
     "desktopfile": "/usr/share/applications/org.gnome.TwentyFortyEight.desktop",
-    "template": "abcdesktopio/oc.template.alpine.gtk", 
-    "rules": { "homedir": { "default": true } },
-    "host_config": { "mem_limit": "256M", "shm_size": "64M", "pid_mode": false, "network_mode": "none" }
+    "template": "abcdesktopio/oc.template.alpine", 
+    "rules": { "homedir": { "default": true } }
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -641,7 +645,7 @@
 	"RUN curl -Ls -o /tmp/mongodb-compass_1.35.0_amd64.deb https://downloads.mongodb.com/compass/mongodb-compass_1.35.0_amd64.deb",
         "RUN apt-get update && apt-get install --no-install-recommends -y /tmp/mongodb-compass_1.35.0_amd64.deb && apt-get clean" 
     ],
-    "debpackage": "wget dbus dbus-x11 libasound2",
+    "debpackage": "dbus dbus-x11 libasound2",
     "icon": "mongodb-compass.svg",
     "keyword": "mongodb,compass",
     "launch": "mongodb compass.MongoDB Compass",
@@ -1126,6 +1130,30 @@
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [
+	"RUN apt-get update && apt-get install --no-install-recommends --yes wget && apt-get clean", 
+	"RUN cd /tmp && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb && apt-get install --no-install-recommends --yes ./cuda-keyring_1.0-1_all.deb && rm cuda-keyring_1.0-1_all.deb && apt-get clean",
+	"RUN apt-get update && apt-get --no-install-recommends --yes install nvidia-utils-470 && apt-get clean" 
+    ],
+    "postruncommands": [
+        "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
+    ],
+    "debpackage": "konsole vim breeze-icon-theme sudo",
+    "icon": "nvidia.svg",
+    "keyword": "nvidia,smi",
+    "launch": "konsole.konsole",
+    "name": "nvidia-smi",
+    "displayname": "nvidia-smi",
+    "showinview": "dock",
+    "path": "/usr/bin/konsole",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "abcdesktop_release": 3
+}, {
+    "comment": "https://stackoverflow.com/questions/51002045/how-to-make-jupyter-notebook-to-run-on-gpu",
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "preruncommands": [
 	"RUN add-apt-repository ppa:mozillateam/ppa",
 	"COPY etc/apt/preferences.d/mozilla-firefox /etc/apt/preferences.d/mozilla-firefox",
 	"RUN apt-get update && apt-get install --no-install-recommends --yes firefox wget sudo && apt-get clean",
@@ -1245,7 +1273,7 @@
 },{
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "debpackage": "pulseaudio-utils at-spi2-core gnome-terminal dbus-x11",
+    "debpackage": "pulseaudio-utils at-spi2-core gnome-terminal dbus-x11 net-tools",
     "icon": "pantheon-terminal-icons.svg",
     "keyword": "pod,terminal,shell",
     "launch": "gnome-terminal-server.pod",
@@ -1258,6 +1286,20 @@
     "containerengine": "pod_application",
     "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
     "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop"
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "apkpackage": "sudo qterminal net-tools font-opensans font-adobe-100dpi font-noto font-xfree86-type1 ttf-freefont font-ibm-type1 font-liberation",
+    "icon": "pantheon-terminal-icons.svg",
+    "keyword": "pod,qterminal,shell",
+    "launch": "no.qterminal",
+    "name": "qterminalpod",
+    "displayname": "qterminal [Pod]",
+    "path": "/usr/bin/qterminal",
+    "rules": { "homedir": { "default": false} },
+    "containerengine": "pod_application",
+    "template": "abcdesktopio/oc.template.alpine.minimal",
+    "desktopfile": "/usr/share/applications/qterminal.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
@@ -1328,10 +1370,19 @@
     "launch": "qemu.Qemu-system-x86_64",
     "name": "vmubuntu",
     "rules": { "homedir": { "default": true } },
-    "host_config": { "devices": [ "/dev/kvm"] ,  "mem_limit": "16G" },
     "template": "abcdesktopio/oc.vm.ubuntu:22.04",
     "home": "/home/balloon",
-    "cmd": "/docker-entrypoint.sh"
+    "cmd": "/docker-entrypoint.sh",
+    "securitycontext": {
+      "allowPrivilegeEscalation": true,
+      "capabilities": {
+        "add": ["NET_ADMIN", "CAP_SYS_ADMIN"]
+      },
+      "readOnlyRootFilesystem": false,
+      "allowPrivilegeEscalation": true,
+      "runAsUser":  "0",
+      "runAsGroup": "0"
+    }
 },{
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -1433,7 +1484,7 @@
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
-    "debpackage": "inkscape inkscape-lang",
+    "apkpackage": "inkscape inkscape-lang",
     "icon": "circle_inkscape.svg",
     "keyword": "inkscape",
     "launch": "org.inkscape.Inkscape.Inkscape",
