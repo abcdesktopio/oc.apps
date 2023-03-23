@@ -2,7 +2,8 @@
     {
         "Id": "sha256:0498f8a07f86fb7981ccd00f2caf8e0f9d2ba846c2ba178325578ab16de25057",
         "RepoTags": [
-            "abcdesktopio/remmina.d:3.0"
+            "abcdesktopio/remmina.d:3.0",
+            "abcdesktopio/remmina.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:44f03b885793664607e4bdb63a45f9b8f330e1e04ba0c8290e0f31352f0d1385",
@@ -153,7 +154,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:56:53.050449639+01:00"
+            "LastTagTime": "2023-03-23T23:46:59.147358399+01:00"
         }
     }
 ]

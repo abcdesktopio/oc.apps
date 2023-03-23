@@ -2,7 +2,8 @@
     {
         "Id": "sha256:b013abe6c17dfc35775d60210fbe67476a976ef572b60541023254ce7ff8db8b",
         "RepoTags": [
-            "abcdesktopio/planner.d:3.0"
+            "abcdesktopio/planner.d:3.0",
+            "abcdesktopio/planner.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:558e7a157b6a5edc1d22d43905aba965a83a53e983af68cbeafe921d13cd9b31",
@@ -145,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:52:20.303623178+01:00"
+            "LastTagTime": "2023-03-23T23:46:46.985022806+01:00"
         }
     }
 ]

@@ -2,7 +2,8 @@
     {
         "Id": "sha256:2dc9799218bda279f997f24bb2b1a30c6fbc39f9f111d52cd33fbc4ea3295ec0",
         "RepoTags": [
-            "abcdesktopio/qterminalpod.d:3.0"
+            "abcdesktopio/qterminalpod.d:3.0",
+            "abcdesktopio/qterminalpod.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:2f5d8a3f8a30bed6d66e375e8e93034ee12df20508855da0466588c469e6135b",
@@ -141,7 +142,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:54:35.264825796+01:00"
+            "LastTagTime": "2023-03-23T23:46:54.140608342+01:00"
         }
     }
 ]

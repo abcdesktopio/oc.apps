@@ -2,7 +2,8 @@
     {
         "Id": "sha256:34393185f5c831003ac9ecbc44e482c3a6a19342b80ac58cda8e4f16ecd0c1ba",
         "RepoTags": [
-            "abcdesktopio/rhythmbox.d:3.0"
+            "abcdesktopio/rhythmbox.d:3.0",
+            "abcdesktopio/rhythmbox.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:6edaf69cfe5a572fd8ec4b7e0bf1fcfd82de45c00a80e5f3d140832cbfd02d16",
@@ -140,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:58:50.496326292+01:00"
+            "LastTagTime": "2023-03-23T23:47:01.631969961+01:00"
         }
     }
 ]

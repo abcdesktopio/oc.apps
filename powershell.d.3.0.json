@@ -2,7 +2,8 @@
     {
         "Id": "sha256:64aab85a99b3ec8008894b8557516117b95e98dd34dfd276ae92dac8e3c76fd8",
         "RepoTags": [
-            "abcdesktopio/powershell.d:3.0"
+            "abcdesktopio/powershell.d:3.0",
+            "abcdesktopio/powershell.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:f009a1bbe44e11feecc6a6f956cc448895cbba1a5967e86b32fdfc6e9e10f58e",
@@ -146,7 +147,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:53:55.680787943+01:00"
+            "LastTagTime": "2023-03-23T23:46:49.37985747+01:00"
         }
     }
 ]

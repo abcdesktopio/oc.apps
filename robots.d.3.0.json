@@ -2,7 +2,8 @@
     {
         "Id": "sha256:9646feb6100aeb27fd8847eafa74bc0b93111f975c422e19b6b4a249aaa8f570",
         "RepoTags": [
-            "abcdesktopio/robots.d:3.0"
+            "abcdesktopio/robots.d:3.0",
+            "abcdesktopio/robots.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:4e08dd218d15682e6a1fb3eb0260394f4621f9657e8523502f7ed1d378900e8d",
@@ -139,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:59:39.964493308+01:00"
+            "LastTagTime": "2023-03-23T23:47:02.99908945+01:00"
         }
     }
 ]

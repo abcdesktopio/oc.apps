@@ -2,7 +2,8 @@
     {
         "Id": "sha256:de0e990adc3a2a6f892899f67bd52f041887d6b93c3a1001377ccc4770b143c7",
         "RepoTags": [
-            "abcdesktopio/step.d:3.0"
+            "abcdesktopio/step.d:3.0",
+            "abcdesktopio/step.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:6083cd87cb14dccfbb4645a607c2a11dfbaa44368cecb4e2b3d905bcb1fe6519",
@@ -142,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T14:00:32.098120942+01:00"
+            "LastTagTime": "2023-03-23T23:47:07.094387672+01:00"
         }
     }
 ]

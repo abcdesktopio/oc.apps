@@ -2,7 +2,8 @@
     {
         "Id": "sha256:ca5c38c99d21637097676970a31a934e534990e75217338c99b626399e559879",
         "RepoTags": [
-            "abcdesktopio/putty-wine.d:3.0"
+            "abcdesktopio/putty-wine.d:3.0",
+            "abcdesktopio/putty-wine.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:4eca3b67af5b9dc2fcb25e0d25ee45ecf4f8737db7a6d99a6ec5aa4b63eb19ef",
@@ -147,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:54:20.870312423+01:00"
+            "LastTagTime": "2023-03-23T23:46:51.817490905+01:00"
         }
     }
 ]

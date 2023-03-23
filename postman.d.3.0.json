@@ -2,7 +2,8 @@
     {
         "Id": "sha256:02cb59ef08feee61f0490ce82908a28f74453647b0be8c581c2db69e74d6e231",
         "RepoTags": [
-            "abcdesktopio/postman.d:3.0"
+            "abcdesktopio/postman.d:3.0",
+            "abcdesktopio/postman.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:00d7d2322ca5f9e096e25336f9817b65c4d05e284cdfb0f563e299a75693b455",
@@ -147,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:53:33.710226842+01:00"
+            "LastTagTime": "2023-03-23T23:46:48.170095654+01:00"
         }
     }
 ]

@@ -2,7 +2,8 @@
     {
         "Id": "sha256:3f7249a52eeda62ea3237830530646498955193f065adffc2db8b0ae78073068",
         "RepoTags": [
-            "abcdesktopio/octave.d:3.0"
+            "abcdesktopio/octave.d:3.0",
+            "abcdesktopio/octave.d:dev"
         ],
         "RepoDigests": [],
         "Parent": "sha256:b6e80aba72a29fc3331af08b1f8673a51c7998585954bc2cb0d4bb1d534dcef5",
@@ -141,7 +142,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:51:26.439525375+01:00"
+            "LastTagTime": "2023-03-23T23:46:42.057293362+01:00"
         }
     }
 ]
