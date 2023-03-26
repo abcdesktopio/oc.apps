@@ -24,6 +24,7 @@ RUN for d in /usr/share/icons /usr/share/pixmaps ; do echo "testing link in $d";
 ENV APPNAME "chimerax"
 ENV APPBIN "/usr/bin/chimerax"
 ENV APP "/usr/bin/chimerax"
+ENV CUDA_VISIBLE_DEVICES=1
 USER root
 RUN mkdir -p /var/secrets/abcdesktop/localaccount
 RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /var/secrets/abcdesktop/localaccount; rm -f /etc/$f; ln -s /var/secrets/abcdesktop/localaccount/$f /etc/$f; fi; done

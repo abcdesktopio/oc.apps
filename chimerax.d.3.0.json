@@ -1,16 +1,16 @@
 [
     {
-        "Id": "sha256:6a8b2a3cac8276d1386342ce55e145e4693105b1920c2b04142aae171b8a5c78",
+        "Id": "sha256:f50a4569fe2a9b27ad8f44b9849ae1f40ad6536f77be0b39d16a0e03a3a84a32",
         "RepoTags": [
             "abcdesktopio/chimerax.d:3.0"
         ],
         "RepoDigests": [],
-        "Parent": "sha256:8b2e9d85eafeaa2c06801defd2b08704b89be7f366055ea71bdd9f25a0add5ab",
+        "Parent": "sha256:91e253a3b05f44230d32c41889d0ccfcaa59bd90677d582bd9e921d42302a265",
         "Comment": "",
-        "Created": "2023-03-26T17:40:53.112540709Z",
-        "Container": "14dc1169eb0333d311b6ef43bdd1db6f7e5d9391ec5f7a665f165a3534d67d03",
+        "Created": "2023-03-26T19:45:47.839196616Z",
+        "Container": "f5684aa49556f474fde00094ea5135c594068b0e1dfb9cc15bcd3859cc899a2d",
         "ContainerConfig": {
-            "Hostname": "14dc1169eb03",
+            "Hostname": "f5684aa49556",
             "Domainname": "",
             "User": "balloon",
             "AttachStdin": false,
@@ -27,7 +27,8 @@
                 "BUSER=balloon",
                 "APPNAME=chimerax",
                 "APPBIN=/usr/bin/chimerax",
-                "APP=/usr/bin/chimerax"
+                "APP=/usr/bin/chimerax",
+                "CUDA_VISIBLE_DEVICES=1"
             ],
             "Cmd": [
                 "/bin/sh",
@@ -35,7 +36,7 @@
                 "#(nop) ",
                 "CMD [\"/composer/appli-docker-entrypoint.sh\"]"
             ],
-            "Image": "sha256:8b2e9d85eafeaa2c06801defd2b08704b89be7f366055ea71bdd9f25a0add5ab",
+            "Image": "sha256:91e253a3b05f44230d32c41889d0ccfcaa59bd90677d582bd9e921d42302a265",
             "Volumes": null,
             "WorkingDir": "",
             "Entrypoint": null,
@@ -79,12 +80,13 @@
                 "BUSER=balloon",
                 "APPNAME=chimerax",
                 "APPBIN=/usr/bin/chimerax",
-                "APP=/usr/bin/chimerax"
+                "APP=/usr/bin/chimerax",
+                "CUDA_VISIBLE_DEVICES=1"
             ],
             "Cmd": [
                 "/composer/appli-docker-entrypoint.sh"
             ],
-            "Image": "sha256:8b2e9d85eafeaa2c06801defd2b08704b89be7f366055ea71bdd9f25a0add5ab",
+            "Image": "sha256:91e253a3b05f44230d32c41889d0ccfcaa59bd90677d582bd9e921d42302a265",
             "Volumes": null,
             "WorkingDir": "",
             "Entrypoint": null,
@@ -114,10 +116,10 @@
         "VirtualSize": 2680603388,
         "GraphDriver": {
             "Data": {
-                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/645f6eaa3be73b8c9808e3242c4812f625f80a0cb917d838c985e332ea3ef7e6/diff:/mnt/nvme0n1/var/lib/docker/overlay2/107b828974d3d32897d9de6f176b455a0647e0a343119f3fdb3d254d40856340/diff:/mnt/nvme0n1/var/lib/docker/overlay2/0a5c28be35588920699d715b9436684fdeaab5908d739691198b8a58b3bc7286/diff:/mnt/nvme0n1/var/lib/docker/overlay2/07894464d6d7111cd4172ec7423972c4648394ddad88dc294bc2cab4ac35a113/diff:/mnt/nvme0n1/var/lib/docker/overlay2/5bb01c6b0715f919a7586f3d35979b051232ac2ed61155f39eabb044541d8b15/diff:/mnt/nvme0n1/var/lib/docker/overlay2/2e93c30a8c9abd2556fc5ad76beb22a8535974b7c6c84b9f55804f96d4f25a9a/diff:/mnt/nvme0n1/var/lib/docker/overlay2/84054c27961c5253e8e2fdfeb2f656e324f85ab1403a1f5611934a9a3e2e7972/diff:/mnt/nvme0n1/var/lib/docker/overlay2/edda1e93335c22a0662a602b8f5118a251992fce1b0a1f8b23a055379ad77daf/diff:/mnt/nvme0n1/var/lib/docker/overlay2/35d80316a8596cbf0f55776c3779befca9969351d64c1bb99b29ebcdbe55da2a/diff:/mnt/nvme0n1/var/lib/docker/overlay2/170f2bba08c4bd09571304a1d3260e451dd3049432b9bb75d650043c0a1f4f44/diff:/mnt/nvme0n1/var/lib/docker/overlay2/34684f574d1306c306e5cf80bd5c786c062a93b9ae38ed070c984b1150ea4f49/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1c60e5bbea872eea3512ad277e79084133f2baafab7aa99d1124bd31bac60d09/diff:/mnt/nvme0n1/var/lib/docker/overlay2/9e8f52e846b057328d3e1d329c74557c877d363b75f9c3d6ac597ef4f82e0424/diff:/mnt/nvme0n1/var/lib/docker/overlay2/41413e224ab80ee8d3cede30599dc4570938efaa5058230a071f9f042d3158cc/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d32eac72fb5f969a4475670c3a7f1734b84073f347d8a53944b50eaf1ef02dd9/diff:/mnt/nvme0n1/var/lib/docker/overlay2/c581a68b7c364c665ba6e1a55d5977580969cf77d4623fa8b26a944386ace1d5/diff:/mnt/nvme0n1/var/lib/docker/overlay2/73fca8550c3cc4f3be1e61af94a70c8dcd4f1e9014801f9bd0898060cec43584/diff",
-                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/dfe8a885eb2aad7723427b87bf5b385de6d7f67545c66a47cd9a3756c8e1ee7e/merged",
-                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/dfe8a885eb2aad7723427b87bf5b385de6d7f67545c66a47cd9a3756c8e1ee7e/diff",
-                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/dfe8a885eb2aad7723427b87bf5b385de6d7f67545c66a47cd9a3756c8e1ee7e/work"
+                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/0a7e227e072baec4856f64af750a7243c0ebf243ee9d1b901fd09260add6cde4/diff:/mnt/nvme0n1/var/lib/docker/overlay2/107b828974d3d32897d9de6f176b455a0647e0a343119f3fdb3d254d40856340/diff:/mnt/nvme0n1/var/lib/docker/overlay2/0a5c28be35588920699d715b9436684fdeaab5908d739691198b8a58b3bc7286/diff:/mnt/nvme0n1/var/lib/docker/overlay2/07894464d6d7111cd4172ec7423972c4648394ddad88dc294bc2cab4ac35a113/diff:/mnt/nvme0n1/var/lib/docker/overlay2/5bb01c6b0715f919a7586f3d35979b051232ac2ed61155f39eabb044541d8b15/diff:/mnt/nvme0n1/var/lib/docker/overlay2/2e93c30a8c9abd2556fc5ad76beb22a8535974b7c6c84b9f55804f96d4f25a9a/diff:/mnt/nvme0n1/var/lib/docker/overlay2/84054c27961c5253e8e2fdfeb2f656e324f85ab1403a1f5611934a9a3e2e7972/diff:/mnt/nvme0n1/var/lib/docker/overlay2/edda1e93335c22a0662a602b8f5118a251992fce1b0a1f8b23a055379ad77daf/diff:/mnt/nvme0n1/var/lib/docker/overlay2/35d80316a8596cbf0f55776c3779befca9969351d64c1bb99b29ebcdbe55da2a/diff:/mnt/nvme0n1/var/lib/docker/overlay2/170f2bba08c4bd09571304a1d3260e451dd3049432b9bb75d650043c0a1f4f44/diff:/mnt/nvme0n1/var/lib/docker/overlay2/34684f574d1306c306e5cf80bd5c786c062a93b9ae38ed070c984b1150ea4f49/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1c60e5bbea872eea3512ad277e79084133f2baafab7aa99d1124bd31bac60d09/diff:/mnt/nvme0n1/var/lib/docker/overlay2/9e8f52e846b057328d3e1d329c74557c877d363b75f9c3d6ac597ef4f82e0424/diff:/mnt/nvme0n1/var/lib/docker/overlay2/41413e224ab80ee8d3cede30599dc4570938efaa5058230a071f9f042d3158cc/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d32eac72fb5f969a4475670c3a7f1734b84073f347d8a53944b50eaf1ef02dd9/diff:/mnt/nvme0n1/var/lib/docker/overlay2/c581a68b7c364c665ba6e1a55d5977580969cf77d4623fa8b26a944386ace1d5/diff:/mnt/nvme0n1/var/lib/docker/overlay2/73fca8550c3cc4f3be1e61af94a70c8dcd4f1e9014801f9bd0898060cec43584/diff",
+                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/d031c61b6492cd33f5a1951bee23ef2359ecccee4f43190bef3e00809535ce06/merged",
+                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/d031c61b6492cd33f5a1951bee23ef2359ecccee4f43190bef3e00809535ce06/diff",
+                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/d031c61b6492cd33f5a1951bee23ef2359ecccee4f43190bef3e00809535ce06/work"
             },
             "Name": "overlay2"
         },
@@ -140,12 +142,12 @@
                 "sha256:486b3ec89a8ee79b199be47bb862e6c8f5bbff576f2b07372eb83d736f263526",
                 "sha256:bd103f0b1260c7aecb1dac5d5ff271732ece5717b272daeb6343c0ed25e0d601",
                 "sha256:ab44482bed2078452a32f435e8452994594826170927b360a44209c0a3d1f26b",
-                "sha256:ce066cf2856146a73d6060e932363f2f5961c6c6784702d98dfd72f7c87bb469",
-                "sha256:684df9d77c72758ac57467ba9a9b74ed04e00880647327ef241134c021ebb6db"
+                "sha256:4e69e46bf8fe490b3f246d46ddc805f326999b88ad4a7cc209bfabb013c4e3a6",
+                "sha256:3dab3e19e7e848dd6b92d685754f73cb404d0be882507e007d68c64404c7068a"
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-26T21:38:24.512752734+02:00"
+            "LastTagTime": "2023-03-26T21:45:48.038938114+02:00"
         }
     }
 ]
