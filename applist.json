@@ -1,5 +1,27 @@
-[
-{
+[ {
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "debpackage": "qt5dxcb-plugin libqglviewer2-qt5 libmgl-qt5-8",
+     "preruncommands": [
+        "COPY ucsf-chimerax_1.5ubuntu22.04_amd64.deb /tmp",
+	"RUN apt-get update && apt-get install -y -f /tmp/ucsf-chimerax_1.5ubuntu22.04_amd64.deb && rm -f /tmp/ucsf-chimerax_1.5ubuntu22.04_amd64.deb" ],
+    "icon": "chimerax.svg",
+    "installrecommends" : true,
+    "keyword": "game",
+    "launch": "ChimeraX.ChimeraX",
+    "name": "chimerax",
+    "path": "/usr/bin/chimerax",
+    "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
+    "args": "",
+    "source": "https://www.cgl.ucsf.edu/chimerax/cgi-bin/secure/chimerax-get.py?ident=OHeQer2WTKVn%2F%2BJptntC7uBntlBVQ9nx3x9x0w3nnvEj&file=1.5%2Fubuntu-22.04%2Fucsf-chimerax_1.5ubuntu22.04_amd64.deb&choice=Notified",
+    "comment" : "https://www.rbvi.ucsf.edu/pipermail/chimerax-users/2020-November/001706.html",
+        "postruncommands": [
+        "ENV CUDA_VISIBLE_DEVICES=1"
+    ],
+    "rules": { "homedir": { "default": true } },
+    "mimetype" : "application/x-chimerax-code;application/x-chimerax-session;chemical/x-mmcif;chemical/x-pdb;chemical/x-spdbv;model/x3d+xml;",
+    "desktopfile": "/usr/lib/ucsf-chimerax/share/UCSF-ChimeraX-1.5.desktop"
+}, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [
@@ -1094,6 +1116,7 @@
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
     "abcdesktop_release": 3,
     "postruncommands": [
+	    "ENV SHELL=/bin/bash",
             "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" 
     ]   
 },  {
