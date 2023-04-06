@@ -15,14 +15,14 @@ LABEL oc.name="boxes"
 LABEL oc.displayname="Gnome-boxes"
 LABEL oc.path="/usr/bin/gnome-boxes"
 LABEL oc.type=app
-LABEL oc.mimetype="application-x-cd-image;"
+LABEL oc.mimetype="application/x-cd-image;"
 LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
 RUN for d in /usr/share/icons /usr/share/pixmaps ; do echo "testing link in $d"; if [ -d $d ] && [ -x /composer/safelinks.sh ] ; then echo "fixing link in $d"; cd $d ; /composer/safelinks.sh ; fi; done
 ENV APPNAME "boxes"
 ENV APPBIN "/usr/bin/gnome-boxes"
 ENV APP "/usr/bin/gnome-boxes"
-LABEL oc.securitycontext={"allowPrivilegeEscalation":true,"capabilities":{"add":["NET_ADMIN","CAP_SYS_ADMIN"]}}
+LABEL oc.securitycontext={"allowPrivilegeEscalation":true,"capabilities":{"add":["NET_ADMIN","CAP_SYS_ADMIN"]},"readOnlyRootFilesystem":false,"runAsUser":"0","runAsGroup":"0"}
 RUN echo "ALL ALL=(ALL:ALL) ALL">/etc/sudoers.d/all
 USER root
 RUN mkdir -p /var/secrets/abcdesktop/localaccount

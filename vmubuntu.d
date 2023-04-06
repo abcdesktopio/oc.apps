@@ -14,10 +14,10 @@ LABEL oc.displayname="vmubuntu"
 LABEL oc.type=app
 LABEL oc.rules="{\"homedir\":{\"default\":true}}"
 LABEL oc.acl="{\"permit\":[\"all\"]}"
-LABEL oc.host_config="{\"devices\":[\"/dev/kvm\"],\"mem_limit\":\"16G\"}"
 RUN for d in /usr/share/icons /usr/share/pixmaps ; do echo "testing link in $d"; if [ -d $d ] && [ -x /composer/safelinks.sh ] ; then echo "fixing link in $d"; cd $d ; /composer/safelinks.sh ; fi; done
 ENV APPNAME "vmubuntu"
 LABEL oc.home="/home/balloon"
+LABEL oc.securitycontext={"allowPrivilegeEscalation":true,"capabilities":{"add":["NET_ADMIN","CAP_SYS_ADMIN"]},"readOnlyRootFilesystem":false,"runAsUser":"0","runAsGroup":"0"}
 USER root
 RUN mkdir -p /var/secrets/abcdesktop/localaccount
 RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /var/secrets/abcdesktop/localaccount; rm -f /etc/$f; ln -s /var/secrets/abcdesktop/localaccount/$f /etc/$f; fi; done
