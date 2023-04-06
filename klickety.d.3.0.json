@@ -5,7 +5,9 @@
             "abcdesktopio/klickety.d:3.0",
             "abcdesktopio/klickety.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/klickety.d@sha256:d48837fb182d3aa5b854b9d87781a7e8681dd89b4204a723ad29e97e372689a8"
+        ],
         "Parent": "sha256:139d348383c2dcffcd399e258db5194383e1c70eb839d11f5fc5473f6e9ac9aa",
         "Comment": "",
         "Created": "2023-03-22T11:48:49.841821764Z",
@@ -138,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:46:18.02016366+01:00"
+            "LastTagTime": "2023-04-06T10:55:39.066722059+02:00"
         }
     }
 ]

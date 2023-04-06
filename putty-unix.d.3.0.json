@@ -5,7 +5,9 @@
             "abcdesktopio/putty-unix.d:3.0",
             "abcdesktopio/putty-unix.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/putty-unix.d@sha256:9a47f25f03606b7e31108dd81c94a14caf22269d572fe6cc6781eb35de731a77"
+        ],
         "Parent": "sha256:eba8cbe4b440cc554fcc1d3cc873b8f4715261b433538b4a8b3d6efdb51725c7",
         "Comment": "",
         "Created": "2023-03-22T12:54:05.179974197Z",
@@ -139,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:46:50.578022702+01:00"
+            "LastTagTime": "2023-04-06T10:58:14.414996142+02:00"
         }
     }
 ]

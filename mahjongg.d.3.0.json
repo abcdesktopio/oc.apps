@@ -5,7 +5,9 @@
             "abcdesktopio/mahjongg.d:3.0",
             "abcdesktopio/mahjongg.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/mahjongg.d@sha256:030cbbd3a3eb18231ecd5f637127749b9f28c446f86d6f5715eda6a3bf818185"
+        ],
         "Parent": "sha256:6810c84bff652efb7b8096f70faee4c29648741dae902d526acd35790947e601",
         "Comment": "",
         "Created": "2023-03-22T11:51:55.731869106Z",
@@ -151,7 +153,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:46:27.589220656+01:00"
+            "LastTagTime": "2023-04-06T10:56:24.561779749+02:00"
         }
     }
 ]

@@ -5,7 +5,9 @@
             "abcdesktopio/gcompris.d:3.0",
             "abcdesktopio/gcompris.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/gcompris.d@sha256:c59cedfb51b5c081290c83237c5a7672a64abe7258176873314705d673f46c65"
+        ],
         "Parent": "sha256:e507496ee82de95ef2d6e5536218df5f981439a11a4557f6660ff74c02bd8af0",
         "Comment": "",
         "Created": "2023-03-22T11:36:46.250745324Z",
@@ -141,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:44:00.626239028+01:00"
+            "LastTagTime": "2023-04-06T10:53:44.791960466+02:00"
         }
     }
 ]

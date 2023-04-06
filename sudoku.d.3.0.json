@@ -2,9 +2,12 @@
     {
         "Id": "sha256:1c012a082a44735b5b36e0bfc780aa5f9f003f4368c21c1a81cc6025fdc57801",
         "RepoTags": [
-            "abcdesktopio/sudoku.d:3.0"
+            "abcdesktopio/sudoku.d:3.0",
+            "abcdesktopio/sudoku.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/sudoku.d@sha256:83469c3c04707e255437d27869678e345657ab00d4a8a3f58683bbd2ffddb6ca"
+        ],
         "Parent": "sha256:94c32961be90576d37c04e4f979ffd06f5afad10b8e98abc17fb5a1c93c48590",
         "Comment": "",
         "Created": "2023-03-22T13:02:26.563152181Z",
@@ -140,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:49:11.620728926+01:00"
+            "LastTagTime": "2023-04-06T10:59:46.578193487+02:00"
         }
     }
 ]

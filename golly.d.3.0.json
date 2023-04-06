@@ -5,7 +5,9 @@
             "abcdesktopio/golly.d:3.0",
             "abcdesktopio/golly.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/golly.d@sha256:b6a7c81013114d09ad715f5f6a817737f05c1863457f152cf18b0ae87641a157"
+        ],
         "Parent": "sha256:eb81529b59f825e6ef94ebf9b5505d6abfe56f068f5f747df2bb2076ae310ed3",
         "Comment": "",
         "Created": "2023-03-22T11:39:22.016188009Z",
@@ -151,7 +153,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:44:09.803372746+01:00"
+            "LastTagTime": "2023-04-06T10:54:30.400716619+02:00"
         }
     }
 ]

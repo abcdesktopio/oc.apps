@@ -2,9 +2,12 @@
     {
         "Id": "sha256:1135a6ce93f1038e1dd2e9ed0bba6fe4ec2ffb85abce77b3015eb046658193ea",
         "RepoTags": [
-            "abcdesktopio/sublime-text.d:3.0"
+            "abcdesktopio/sublime-text.d:3.0",
+            "abcdesktopio/sublime-text.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/sublime-text.d@sha256:b2fe79453feab40224149192ce8064fa565c471e43aa56401fc66bc81224e36c"
+        ],
         "Parent": "sha256:32fde31f790854f489b44d7f48f39ab44893dbb11b23a1b78692e624f43bee53",
         "Comment": "",
         "Created": "2023-03-22T13:02:16.840916623Z",
@@ -152,7 +155,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:49:10.471157932+01:00"
+            "LastTagTime": "2023-04-06T10:59:40.344713719+02:00"
         }
     }
 ]

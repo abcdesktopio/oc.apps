@@ -2,9 +2,12 @@
     {
         "Id": "sha256:c257c9baccf98eefe626776ebd0bd93ec8db7b7afc5281603255bd4bde067c48",
         "RepoTags": [
-            "abcdesktopio/xterm.d:3.0"
+            "abcdesktopio/xterm.d:3.0",
+            "abcdesktopio/xterm.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/xterm.d@sha256:3f1ff68091d236c862567af944e531753001bf3a0526b31bae096fa632a445fc"
+        ],
         "Parent": "sha256:0afbe978688699bbdce2e79a28ac636ebc52bd4b85dc8d19b9665b77b0092c7b",
         "Comment": "",
         "Created": "2023-03-22T13:17:10.870793405Z",
@@ -145,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:52:40.460244199+01:00"
+            "LastTagTime": "2023-04-06T11:03:05.046198833+02:00"
         }
     }
 ]

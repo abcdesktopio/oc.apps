@@ -2,9 +2,12 @@
     {
         "Id": "sha256:ad51b7a3e3001ad5afb12bdc203671f27aa6fa4752f0bca67b23ccdbcb80a799",
         "RepoTags": [
-            "abcdesktopio/xedit.d:3.0"
+            "abcdesktopio/xedit.d:3.0",
+            "abcdesktopio/xedit.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/xedit.d@sha256:cd549674fa9ad9565de91f0fb1e5e48d77be97a72b6bd6776aeea17f729171f3"
+        ],
         "Parent": "sha256:9cadbe39e32bbea8a48af8a91042ff8d943ba93e19e93dd89af9cae495d9cebe",
         "Comment": "",
         "Created": "2023-03-22T13:15:38.689495444Z",
@@ -145,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:52:35.559815251+01:00"
+            "LastTagTime": "2023-04-06T11:02:38.941987385+02:00"
         }
     }
 ]

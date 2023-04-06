@@ -2,9 +2,12 @@
     {
         "Id": "sha256:ff206e461e34f523beab4cac146dd73b81d76e0f7a4379bf0f243536cf46a4c8",
         "RepoTags": [
-            "abcdesktopio/xclock.d:3.0"
+            "abcdesktopio/xclock.d:3.0",
+            "abcdesktopio/xclock.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/xclock.d@sha256:f2c090e646925c23cf00c1a38c7b7eff0ac6581956b4583bf262953f333d1bc9"
+        ],
         "Parent": "sha256:03aaa0169d32f95f3f2bb7032927788dcf699b4d7be495776cee897cb8c8b39f",
         "Comment": "",
         "Created": "2023-03-22T13:15:01.656681051Z",
@@ -139,7 +142,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:52:34.391133885+01:00"
+            "LastTagTime": "2023-04-06T11:02:32.199113084+02:00"
         }
     }
 ]

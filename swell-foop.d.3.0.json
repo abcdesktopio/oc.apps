@@ -2,9 +2,12 @@
     {
         "Id": "sha256:c5c67dd24ac9e39d832532c81d702d7fb202f998a85dcc287cd2fd12fdac3df4",
         "RepoTags": [
-            "abcdesktopio/swell-foop.d:3.0"
+            "abcdesktopio/swell-foop.d:3.0",
+            "abcdesktopio/swell-foop.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/swell-foop.d@sha256:b32b34a262e32217e082dda5b75f929e8c7a9b9c32a5d09fc72d17b0ed0517ef"
+        ],
         "Parent": "sha256:091f12240ca5496bbd6602c83f8d7a44f6ef8491fe88f1975677548b5305ff8e",
         "Comment": "",
         "Created": "2023-03-22T13:03:26.404114017Z",
@@ -139,7 +142,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:49:15.200408183+01:00"
+            "LastTagTime": "2023-04-06T11:00:00.685034084+02:00"
         }
     }
 ]

@@ -5,7 +5,9 @@
             "abcdesktopio/shotcut.d:3.0",
             "abcdesktopio/shotcut.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/shotcut.d@sha256:e5e4e12aed49a5771ac210dea112a68c26cc7c0d38b9a8bc6e02bcb9beb3fa54"
+        ],
         "Parent": "sha256:93163f4537f3ffd0423a10c049987aad86822290fae7df2c9472995fcfc7f04c",
         "Comment": "",
         "Created": "2023-03-22T12:59:57.339735518Z",
@@ -148,7 +150,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:47:04.349265362+01:00"
+            "LastTagTime": "2023-04-06T10:59:14.732968518+02:00"
         }
     }
 ]

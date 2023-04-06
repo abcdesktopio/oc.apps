@@ -5,7 +5,9 @@
             "abcdesktopio/gedit.d:3.0",
             "abcdesktopio/gedit.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/gedit.d@sha256:7bcac7abcea986490583337a0c5610b4d07bcfce82e11e15da1adcae54f1715f"
+        ],
         "Parent": "sha256:d61cf210e6cb81234cd972eca54fb6e611a2d88c1cb52945204bda829d4253e2",
         "Comment": "",
         "Created": "2023-02-17T17:19:22.316344658Z",
@@ -147,7 +149,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:44:03.285154766+01:00"
+            "LastTagTime": "2023-04-06T10:53:57.828569722+02:00"
         }
     }
 ]

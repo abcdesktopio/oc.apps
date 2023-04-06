@@ -2,9 +2,12 @@
     {
         "Id": "sha256:4ed2e110042b80f1634d8f3ae66b793914db813f53cd88811285448602d7540e",
         "RepoTags": [
-            "abcdesktopio/xeyes.d:3.0"
+            "abcdesktopio/xeyes.d:3.0",
+            "abcdesktopio/xeyes.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/xeyes.d@sha256:8878381cce81998519cc75210d646d6bc617940f7b1e5c6f5b182e06bf755751"
+        ],
         "Parent": "sha256:ba55d07f2e594bc8da1787a255c95fed9fc561afa98f72681db230916e9ebe79",
         "Comment": "",
         "Created": "2023-03-22T13:15:47.175530732Z",
@@ -136,7 +139,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:52:36.771574296+01:00"
+            "LastTagTime": "2023-04-06T11:02:45.399804169+02:00"
         }
     }
 ]

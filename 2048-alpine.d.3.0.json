@@ -5,7 +5,9 @@
             "abcdesktopio/2048-alpine.d:3.0",
             "abcdesktopio/2048-alpine.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/2048-alpine.d@sha256:2c3c46c22689b8f91cbd5ebd4d5f80c95bc5ba9b1e23f13aebb54121d2f6d590"
+        ],
         "Parent": "sha256:59f202ce936937a1bd3b6397a6004b50225143cb7760560cfb01d219ea791717",
         "Comment": "",
         "Created": "2023-02-18T11:39:46.161454846Z",
@@ -147,7 +149,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-24T00:23:03.727202099+01:00"
+            "LastTagTime": "2023-04-06T10:49:17.917173261+02:00"
         }
     }
 ]

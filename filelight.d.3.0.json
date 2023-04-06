@@ -5,7 +5,9 @@
             "abcdesktopio/filelight.d:3.0",
             "abcdesktopio/filelight.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/filelight.d@sha256:ace4285877337fba06453fe84f0182da1b4d01402a1badad299d4d1048c821e4"
+        ],
         "Parent": "sha256:b4c72b00450062b5516247c3051448bb95e2cb5fd13bc71b3a47209b6aa5b1be",
         "Comment": "",
         "Created": "2023-03-22T11:33:40.071708865Z",
@@ -144,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:43:52.953175695+01:00"
+            "LastTagTime": "2023-04-06T10:52:48.689391961+02:00"
         }
     }
 ]

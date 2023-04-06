@@ -2,9 +2,12 @@
     {
         "Id": "sha256:bee0463a9955610069f740d822a63bb7dcde613b7c2f74c56fbb82a636d3542c",
         "RepoTags": [
-            "abcdesktopio/xman.d:3.0"
+            "abcdesktopio/xman.d:3.0",
+            "abcdesktopio/xman.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/xman.d@sha256:46c21e4fdd4b5aa9ba0a485e044546b9f6037fc64bd367b98a98510c01a35850"
+        ],
         "Parent": "sha256:dd51f2d6508b8c2adfcb4497b32b922a0f2d402967c4304e331b2b63cae0cd07",
         "Comment": "",
         "Created": "2023-03-22T13:16:09.412576946Z",
@@ -143,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:52:38.049277432+01:00"
+            "LastTagTime": "2023-04-06T11:02:52.043241047+02:00"
         }
     }
 ]

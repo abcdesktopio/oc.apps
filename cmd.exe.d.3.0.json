@@ -5,7 +5,9 @@
             "abcdesktopio/cmd.exe.d:3.0",
             "abcdesktopio/cmd.exe.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/cmd.exe.d@sha256:a94e08f58ad4c6e587ff71705a705385147578f430240044fe79d9655965312e"
+        ],
         "Parent": "sha256:d1c5c959a80554cb39191a6b43eea160e3bb60acbd62b1ffdb4759a3a1de405a",
         "Comment": "",
         "Created": "2023-02-17T17:09:40.423406086Z",
@@ -142,7 +144,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:38:47.002592669+01:00"
+            "LastTagTime": "2023-04-06T10:51:13.487600091+02:00"
         }
     }
 ]

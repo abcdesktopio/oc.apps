@@ -5,7 +5,9 @@
             "abcdesktopio/powershell.d:3.0",
             "abcdesktopio/powershell.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/powershell.d@sha256:8ca00eee341a5158182afcf6400c70f5e7711147a6667ff6d32dccd1ddd55811"
+        ],
         "Parent": "sha256:f009a1bbe44e11feecc6a6f956cc448895cbba1a5967e86b32fdfc6e9e10f58e",
         "Comment": "",
         "Created": "2023-03-22T12:53:55.502683754Z",
@@ -147,7 +149,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:46:49.37985747+01:00"
+            "LastTagTime": "2023-04-06T10:58:08.067649428+02:00"
         }
     }
 ]

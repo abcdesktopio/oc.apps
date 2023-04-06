@@ -2,9 +2,12 @@
     {
         "Id": "sha256:a283a90c6fe41961ad2ce588d4c3c6c43b737a07293f96a363a911fc80cd0fa4",
         "RepoTags": [
-            "abcdesktopio/tetravex.d:3.0"
+            "abcdesktopio/tetravex.d:3.0",
+            "abcdesktopio/tetravex.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/tetravex.d@sha256:c900f1689695b3ccf3b0307e4b1b25baf9a368d855a047c02db62d83a3717225"
+        ],
         "Parent": "sha256:c6b89f211975071ce695dd2f1763d96ebc8a1ce408aadbdbb81069ab0b3a66b0",
         "Comment": "",
         "Created": "2023-03-22T13:07:26.917548627Z",
@@ -152,7 +155,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:52:06.157176887+01:00"
+            "LastTagTime": "2023-04-06T11:00:45.414132665+02:00"
         }
     }
 ]

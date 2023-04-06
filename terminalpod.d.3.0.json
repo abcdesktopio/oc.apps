@@ -2,9 +2,12 @@
     {
         "Id": "sha256:1fc278f808c93f926b7ded7531ea24f2e604c58f5a972a739141492f51eaffa8",
         "RepoTags": [
-            "abcdesktopio/terminalpod.d:3.0"
+            "abcdesktopio/terminalpod.d:3.0",
+            "abcdesktopio/terminalpod.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/terminalpod.d@sha256:298d8def2f7cb570c50ee730870aef4bec4ba804c7fcc575b7602e1c0fee2a77"
+        ],
         "Parent": "sha256:156bf937b435b28ddb245cf5ab85f4abd22a5a8c4e68ba06092e37734892227f",
         "Comment": "",
         "Created": "2023-03-23T22:52:04.839805917Z",
@@ -160,7 +163,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:52:05.025555618+01:00"
+            "LastTagTime": "2023-04-06T11:00:39.207693868+02:00"
         }
     }
 ]

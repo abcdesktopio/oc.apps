@@ -5,7 +5,9 @@
             "abcdesktopio/chess.d:3.0",
             "abcdesktopio/chess.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/chess.d@sha256:355d1c57a78fc88cb6b6e923a522231e418719ae78326b4d8eeb61d23a5221ac"
+        ],
         "Parent": "sha256:64b3377a5ad2817ffd4835dd7115cd65743be35c86dafd645454033bb80e4ee3",
         "Comment": "",
         "Created": "2023-02-17T17:07:06.186754164Z",
@@ -143,7 +145,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:38:41.113299538+01:00"
+            "LastTagTime": "2023-04-06T10:50:34.96305193+02:00"
         }
     }
 ]

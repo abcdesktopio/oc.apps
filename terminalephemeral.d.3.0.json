@@ -2,9 +2,12 @@
     {
         "Id": "sha256:b4941120686ab16c48a0f3727f4f565f1172ec18eae044f84dfcb2f720e30b67",
         "RepoTags": [
-            "abcdesktopio/terminalephemeral.d:3.0"
+            "abcdesktopio/terminalephemeral.d:3.0",
+            "abcdesktopio/terminalephemeral.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/terminalephemeral.d@sha256:1c901f8ebb9b086dcfef09b222d6ff65509e0f4ff6fd8bf9f877b7fa87de495c"
+        ],
         "Parent": "sha256:8b671f264d624baa557cbdb721139aed3312a6208887e8e7721dc1d6d5974fba",
         "Comment": "",
         "Created": "2023-03-23T22:51:25.901291653Z",
@@ -160,7 +163,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:51:26.083766941+01:00"
+            "LastTagTime": "2023-04-06T11:00:32.73811987+02:00"
         }
     }
 ]

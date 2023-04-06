@@ -5,7 +5,9 @@
             "abcdesktopio/calculator.d:3.0",
             "abcdesktopio/calculator.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/calculator.d@sha256:5901f6632a58b0254d65d4f9d1e387b651c1b01d4b07e15fafa2fe1952e7a0f5"
+        ],
         "Parent": "sha256:4b417572f48c43f45f89012fe7983a66977f497b04d60cb8f00a51225c7b2ca2",
         "Comment": "",
         "Created": "2023-02-17T17:06:48.007653568Z",
@@ -141,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:38:39.868649778+01:00"
+            "LastTagTime": "2023-04-06T10:50:28.627550039+02:00"
         }
     }
 ]

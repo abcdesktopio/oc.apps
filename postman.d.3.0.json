@@ -5,7 +5,9 @@
             "abcdesktopio/postman.d:3.0",
             "abcdesktopio/postman.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/postman.d@sha256:869f25be73b994666d6c6db4791337e6858fc3b398d47a424b513796d3e08a9a"
+        ],
         "Parent": "sha256:00d7d2322ca5f9e096e25336f9817b65c4d05e284cdfb0f563e299a75693b455",
         "Comment": "",
         "Created": "2023-03-22T12:53:33.493230245Z",
@@ -148,7 +150,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:46:48.170095654+01:00"
+            "LastTagTime": "2023-04-06T10:58:01.559271815+02:00"
         }
     }
 ]

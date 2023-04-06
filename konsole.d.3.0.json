@@ -5,7 +5,9 @@
             "abcdesktopio/konsole.d:3.0",
             "abcdesktopio/konsole.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/konsole.d@sha256:b87f143671c8d189559d492d58c21ef94f29f40c6084f6ad721c432f2c4429b6"
+        ],
         "Parent": "sha256:73238d8b104d6dd5fa43c5a5fc10b76caecc2902b1a735634f8ae2e6fec11aee",
         "Comment": "",
         "Created": "2023-02-17T17:25:04.477628601Z",
@@ -140,7 +142,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:46:20.503954777+01:00"
+            "LastTagTime": "2023-04-06T10:55:51.766614989+02:00"
         }
     }
 ]

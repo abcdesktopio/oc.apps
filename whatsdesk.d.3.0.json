@@ -2,9 +2,12 @@
     {
         "Id": "sha256:67b615a4a5ac82587b90b2eebb224621b9d60b72d13041d60a8bc69f3541fdaa",
         "RepoTags": [
-            "abcdesktopio/whatsdesk.d:3.0"
+            "abcdesktopio/whatsdesk.d:3.0",
+            "abcdesktopio/whatsdesk.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/whatsdesk.d@sha256:6202de5f81bcdab202933a66955808271ea635bbf742cc627bb974d36311f331"
+        ],
         "Parent": "sha256:260d4383a01355b013e7dfa8d4eb249794dc949bf5dbfd15458929611ca8b5e0",
         "Comment": "",
         "Created": "2023-03-22T13:13:43.24661589Z",
@@ -154,7 +157,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:52:25.335776358+01:00"
+            "LastTagTime": "2023-04-06T11:01:46.580744473+02:00"
         }
     }
 ]

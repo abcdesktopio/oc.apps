@@ -5,7 +5,9 @@
             "abcdesktopio/robots.d:3.0",
             "abcdesktopio/robots.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/robots.d@sha256:3c4b8a5535b6a79144ae0135fbab6cf561cff9c200b6151697d6fedc9dc997dd"
+        ],
         "Parent": "sha256:4e08dd218d15682e6a1fb3eb0260394f4621f9657e8523502f7ed1d378900e8d",
         "Comment": "",
         "Created": "2023-03-22T12:59:39.78026295Z",
@@ -140,7 +142,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:47:02.99908945+01:00"
+            "LastTagTime": "2023-04-06T10:59:08.39038089+02:00"
         }
     }
 ]

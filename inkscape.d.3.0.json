@@ -5,7 +5,9 @@
             "abcdesktopio/inkscape.d:3.0",
             "abcdesktopio/inkscape.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/inkscape.d@sha256:19e93679e16b41be6c4fd61fbb591c45a7df0a66fc1486e99fba5195d1c43ae5"
+        ],
         "Parent": "sha256:f806b4d680314572aeff2587d2016e03c46fc604317c33d3dc5ab8ff49cc8d33",
         "Comment": "",
         "Created": "2023-02-17T17:21:31.435346097Z",
@@ -147,7 +149,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:44:13.789456424+01:00"
+            "LastTagTime": "2023-04-06T10:54:49.5725861+02:00"
         }
     }
 ]

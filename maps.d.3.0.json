@@ -5,7 +5,9 @@
             "abcdesktopio/maps.d:3.0",
             "abcdesktopio/maps.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/maps.d@sha256:fc8fb8c90b56d920b55dcf101567ca34ca6f4b9971cffd35435f8d392c5e24b2"
+        ],
         "Parent": "sha256:3855c9336ad55cb0cca64b09a74164893721841e198ca0222cd81d83258f9d4b",
         "Comment": "",
         "Created": "2023-02-17T17:26:39.012840671Z",
@@ -143,7 +145,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:46:28.887540926+01:00"
+            "LastTagTime": "2023-04-06T10:56:31.035803241+02:00"
         }
     }
 ]

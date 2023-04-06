@@ -5,7 +5,9 @@
             "abcdesktopio/geany.d:3.0",
             "abcdesktopio/geany.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/geany.d@sha256:687602644d8d7481d63eaac72a562bbf9724168554184a25412d02d601195f2d"
+        ],
         "Parent": "sha256:0e881360133dbb6c4583097c5d363815a4898551fe6faebdcc744fff8ae44053",
         "Comment": "",
         "Created": "2023-02-17T17:19:06.407172814Z",
@@ -145,7 +147,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:44:02.031117642+01:00"
+            "LastTagTime": "2023-04-06T10:53:51.4124033+02:00"
         }
     }
 ]

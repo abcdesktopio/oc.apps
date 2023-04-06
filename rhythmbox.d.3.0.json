@@ -5,7 +5,9 @@
             "abcdesktopio/rhythmbox.d:3.0",
             "abcdesktopio/rhythmbox.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/rhythmbox.d@sha256:cddabf8592e0dc0a16e52696ea5f1f60abb1ea125526c55e073b85e43454a14c"
+        ],
         "Parent": "sha256:6edaf69cfe5a572fd8ec4b7e0bf1fcfd82de45c00a80e5f3d140832cbfd02d16",
         "Comment": "",
         "Created": "2023-03-22T12:58:50.265174522Z",
@@ -141,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:47:01.631969961+01:00"
+            "LastTagTime": "2023-04-06T10:59:01.962269668+02:00"
         }
     }
 ]

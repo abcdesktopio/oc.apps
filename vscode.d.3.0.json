@@ -2,9 +2,12 @@
     {
         "Id": "sha256:4ce79218b2d29578ba4b12e5aa9d122e7ac6fbb102401c44e55f7b4760099a74",
         "RepoTags": [
-            "abcdesktopio/vscode.d:3.0"
+            "abcdesktopio/vscode.d:3.0",
+            "abcdesktopio/vscode.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/vscode.d@sha256:94c580566a74a8d007c4215ed59f10abd7d6f85437d3ad8b53b30c522098472c"
+        ],
         "Parent": "sha256:a1537717fd04412db6f989ac61b57a73cd9be58d44c6a83606aee12205d885b2",
         "Comment": "",
         "Created": "2023-03-22T13:11:59.47227302Z",
@@ -155,7 +158,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:52:22.875015941+01:00"
+            "LastTagTime": "2023-04-06T11:01:33.188772702+02:00"
         }
     }
 ]

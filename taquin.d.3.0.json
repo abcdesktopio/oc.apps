@@ -2,9 +2,12 @@
     {
         "Id": "sha256:abfc2c146e87754d0be6a3d51bf599271a92504f33bffeab479f89adaf81e27b",
         "RepoTags": [
-            "abcdesktopio/taquin.d:3.0"
+            "abcdesktopio/taquin.d:3.0",
+            "abcdesktopio/taquin.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/taquin.d@sha256:8b1da6d22ae55e9941fba853505be546e37187b0d99da7408113ff04e270e943"
+        ],
         "Parent": "sha256:cb33e0b39dab59e273f80650f84f6e204491b7be48b2db7c3ede2071eccc6a17",
         "Comment": "",
         "Created": "2023-03-22T13:03:36.355991925Z",
@@ -140,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:49:16.351531996+01:00"
+            "LastTagTime": "2023-04-06T11:00:07.25113336+02:00"
         }
     }
 ]

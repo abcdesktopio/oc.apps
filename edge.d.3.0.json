@@ -5,7 +5,9 @@
             "abcdesktopio/edge.d:3.0",
             "abcdesktopio/edge.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/edge.d@sha256:0545ca2a17f11844c0613f1d73a561350c2e103225bd30c9789197cd19d38f76"
+        ],
         "Parent": "sha256:6d414197ddfd7f46be63f0aca162bc042832ffde48af499e7f3f2c762547d7b5",
         "Comment": "",
         "Created": "2023-03-22T11:29:19.434729912Z",
@@ -163,7 +165,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:43:46.951805254+01:00"
+            "LastTagTime": "2023-04-06T10:52:16.155855597+02:00"
         }
     }
 ]

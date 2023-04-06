@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/nvidia-smi.d:3.0"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/nvidia-smi.d@sha256:b8bfd6ea350847e23a75902e7635edb5a40d66ba98e32755fbf173d25c96f38d"
+        ],
         "Parent": "sha256:d436379c5ebcb4f481d0d982bd300dd3e74314683286917a2409da5a2f603edd",
         "Comment": "",
         "Created": "2023-03-23T23:16:05.438417294Z",
@@ -167,7 +169,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-24T00:16:05.622371443+01:00"
+            "LastTagTime": "2023-04-06T10:57:28.778217125+02:00"
         }
     }
 ]

@@ -5,7 +5,9 @@
             "abcdesktopio/bless.d:3.0",
             "abcdesktopio/bless.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/bless.d@sha256:e0759eb326f81b0493b1fbd7974a77487867c24421368b8dfc94949c86d94418"
+        ],
         "Parent": "sha256:9c1be96e0a2c8b43a8860005ab50de82ccb740fa654902a8faae96bb855b6105",
         "Comment": "",
         "Created": "2023-03-22T10:57:12.812860551Z",
@@ -150,7 +152,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:38:35.029796624+01:00"
+            "LastTagTime": "2023-04-06T10:50:03.162977629+02:00"
         }
     }
 ]

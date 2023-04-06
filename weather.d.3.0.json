@@ -2,9 +2,12 @@
     {
         "Id": "sha256:a9c1c90ea7d0a41e56982bbcee83d8d64e6ed98559cd040392fab5ae900878b2",
         "RepoTags": [
-            "abcdesktopio/weather.d:3.0"
+            "abcdesktopio/weather.d:3.0",
+            "abcdesktopio/weather.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/weather.d@sha256:30b1d13f1f5dfb4bed6b0abe1aea1c8a19eb306d52a824971ed5528008e185aa"
+        ],
         "Parent": "sha256:1998a92cc79aa9921ee1b75efba6a8ffce21695767e985137e21a8109d2fb6d3",
         "Comment": "",
         "Created": "2023-03-22T13:12:26.901644003Z",
@@ -140,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:52:24.128481086+01:00"
+            "LastTagTime": "2023-04-06T11:01:40.076545048+02:00"
         }
     }
 ]

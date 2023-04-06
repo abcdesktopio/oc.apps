@@ -5,7 +5,9 @@
             "abcdesktopio/stellarium.d:3.0",
             "abcdesktopio/stellarium.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/stellarium.d@sha256:5551b7efee038c2578639fb24461a9dd4636df9b8eebf66c4ed205cdf83f51eb"
+        ],
         "Parent": "sha256:d8593382c69d4f56bbd19963df90dafed8bbc7614b967fcc725b4e89a2b0a6f7",
         "Comment": "",
         "Created": "2023-03-22T13:00:17.908435896Z",
@@ -141,7 +143,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:47:05.680826548+01:00"
+            "LastTagTime": "2023-04-06T10:59:21.194851655+02:00"
         }
     }
 ]

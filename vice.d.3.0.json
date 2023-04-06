@@ -2,9 +2,12 @@
     {
         "Id": "sha256:ab6eeb60f991ee9613daddd82b0f891d83dc532f42980808591ea6288313f77d",
         "RepoTags": [
-            "abcdesktopio/vice.d:3.0"
+            "abcdesktopio/vice.d:3.0",
+            "abcdesktopio/vice.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/vice.d@sha256:d361dd84587b7c143dccf0c26685484f770935232a1de4d8421fa2d94a801dc4"
+        ],
         "Parent": "sha256:786ab4f734f28e8252a992f03523d6926ffe434bd954020396af57d9109b1026",
         "Comment": "",
         "Created": "2023-03-22T13:10:20.795401444Z",
@@ -157,7 +160,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-23T23:52:08.780084468+01:00"
+            "LastTagTime": "2023-04-06T11:00:57.983030845+02:00"
         }
     }
 ]
