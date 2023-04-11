@@ -513,6 +513,7 @@
     "cat": "utilities",
     "licence" : "non-free",
     "debpackage": "",
+    "source": "https://docs.vmware.com/en/VMware-Remote-Console/12.0/com.vmware.vmrc.vra.doc/GUID-121D9620-3036-4CF5-B19B-BBD629406430.html",
     "icon": "circle_vmware.svg",
     "keyword": "vmrc,vmware,remote,console",
     "launch": "vmrc.Vmrc",
@@ -524,9 +525,8 @@
     "desktopfile": "/usr/share/applications/vmware-vmrc.desktop",
     "preruncommands": [ 
         "RUN apt-get update && apt-get install  --no-install-recommends --yes libaio1 && apt-get clean",
-	    "COPY VMware-Remote-Console-12.0.1-18113358.x86_64.bundle /tmp",
-		"RUN chmod o+x /tmp/VMware-Remote-Console-12.0.1-18113358.x86_64.bundle",
-        "RUN /tmp/VMware-Remote-Console-12.0.1-18113358.x86_64.bundle --eulas-agreed --console --required --ignore-errors" ]    
+        "COPY VMware-Remote-Console-12.0.3-21263813.x86_64.bundle /tmp",
+	"RUN chmod o+x VMware-Remote-Console-12.0.3-21263813.x86_64.bundle && /tmp/VMware-Remote-Console-12.0.1-18113358.x86_64.bundle --eulas-agreed --console --required --ignore-errors" ]    
 },{
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -697,7 +697,7 @@
 	"COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
 	"COPY policies.json /usr/lib/firefox/distribution",
 	"COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
-	"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
+	"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 115 /usr/bin/ntlm_auth.desktop" ],
     "apkpackage": "firefox krb5 gcompat",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
@@ -722,8 +722,8 @@
 	"COPY composer/init.d/init.firefox-esr /composer/init.d/init.firefox-esr",
 	"COPY policies.json /usr/lib/firefox/distribution",
 	"COPY /ntlm_auth /usr/bin/ntlm_auth.desktop",
-	"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
-    "apkpackage": "firefox-esr",
+	"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 115 /usr/bin/ntlm_auth.desktop" ],
+    "apkpackage": "firefox-esr krb5 gcompat",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.firefox-esr",
@@ -1294,27 +1294,35 @@
     "args": "--name ephemeral",
     "containerengine": "ephemeral_container",
     "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop"
-},{
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "debpackage": "pulseaudio-utils at-spi2-core gnome-terminal dbus-x11 net-tools",
-    "icon": "pantheon-terminal-icons.svg",
-    "keyword": "pod,terminal,shell",
-    "launch": "pod.konsole",
-    "name": "terminalpod",
-    "displayname": "Terminal [Pod]",
-    "path": "/usr/bin/ksone",
-    "rules": { "homedir": { "default": false} },
-    "host_config": { "mem_limit": "256M", "shm_size": "128M", "pid_mode": false, "ipc_mode": false  },
-    "args": "--name pod",
-    "containerengine": "pod_application",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop"
+    "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "apkpackage": "sudo qterminal net-tools font-opensans font-adobe-100dpi font-noto font-xfree86-type1 ttf-freefont font-ibm-type1 font-liberation",
+    "postruncommands": [ "ENV QT_XCB_NO_MITSHM=1" ],
+    "icon": "konsole.svg",
+    "apkpackage": "konsole sudo",
+    "keyword": "ksonsole,console,shell,bash,sh",
+    "launch": "pod.konsole",
+    "name": "konsolepod",
+    "displayname": "konsole [pod]",
+    "containerengine": "pod_application",
+    "executeclassname": "silver",
+    "args": "--name pod",
+    "path": "/usr/bin/konsole",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.alpine",
+    "postruncommands": [
+	    "ENV SHELL=/bin/bash",
+            "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
+    ]
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
+    "apkpackage": "sudo qterminal dbus-x11 net-tools font-opensans font-adobe-100dpi font-noto font-xfree86-type1 ttf-freefont font-ibm-type1 font-liberation",
+    "postruncommands": [
+            "ENV SHELL=/bin/bash",
+            "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
+    ],
     "icon": "pantheon-terminal-icons.svg",
     "keyword": "pod,qterminal,shell",
     "launch": "no.qterminal",
@@ -1323,6 +1331,7 @@
     "path": "/usr/bin/qterminal",
     "rules": { "homedir": { "default": false} },
     "containerengine": "pod_application",
+    "executeclassname": "silver",
     "template": "abcdesktopio/oc.template.alpine.minimal",
     "desktopfile": "/usr/share/applications/qterminal.desktop"
 }, {
