@@ -5,7 +5,9 @@
             "abcdesktopio/doom.d:3.0",
             "abcdesktopio/doom.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/doom.d@sha256:344bb92ee8f3d51b66500ed0fbf60f8f60bb9108772f05f6a7543f551a9c308c"
+        ],
         "Parent": "sha256:d4ec2f65c4c8e32b54c90aef1f54bf3fc11c087f941ac4f728a8fa47757a8c04",
         "Comment": "",
         "Created": "2023-03-22T11:26:35.115695028Z",
@@ -138,7 +140,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:38:37.477232698+01:00"
+            "LastTagTime": "2023-04-11T17:34:55.952549649+02:00"
         }
     }
 ]

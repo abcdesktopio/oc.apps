@@ -5,7 +5,9 @@
             "abcdesktopio/cloudfoundry.d:3.0",
             "abcdesktopio/cloudfoundry.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/cloudfoundry.d@sha256:5b09407f1152026b9ed42dc45eb5173703ac46f25f6a618c4dadaa162e91f495"
+        ],
         "Parent": "sha256:88a75ba0c043196c5b84dba938075ab93ab94512ad44dcdefce0f29dd615cc58",
         "Comment": "",
         "Created": "2023-03-22T11:24:18.169152077Z",
@@ -154,7 +156,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T14:49:13.74173047+01:00"
+            "LastTagTime": "2023-04-11T17:34:45.188009186+02:00"
         }
     }
 ]

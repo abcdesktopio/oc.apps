@@ -1,16 +1,16 @@
 [
     {
-        "Id": "sha256:2358eb1f5a157dafd9e9e0e4ed025f4424abeced277e7a33258a745c59d07365",
+        "Id": "sha256:eeb94c513967c781880403c09a9a5ae6b12712f13d63b32bf9ad51d5f8167d23",
         "RepoTags": [
             "abcdesktopio/cudademo.d:dev"
         ],
         "RepoDigests": [],
-        "Parent": "sha256:dd3ed4968e4c187eebcc1c15d5503ffc121b41a0c9c6c1cd9402540605c0acfc",
+        "Parent": "sha256:54c132bb2554ec60ee2740b51bd0dc53b03e348e638ed7dc7cb138f92a4a0c28",
         "Comment": "",
-        "Created": "2023-03-22T12:38:27.978801936Z",
-        "Container": "464a38c4f19acb0e9aa6541ad3859f6ce0aa403a5d7143fe2b2df10565e4ba47",
+        "Created": "2023-03-28T09:40:11.765757613Z",
+        "Container": "85cf6792782285d6376b9d1c352181fbc761be3f08fd454d0c9d3e70ec73d709",
         "ContainerConfig": {
-            "Hostname": "464a38c4f19a",
+            "Hostname": "85cf67927822",
             "Domainname": "",
             "User": "balloon",
             "AttachStdin": false,
@@ -33,10 +33,10 @@
                 "TERM=linux",
                 "LANG=en_US.utf8",
                 "BUSER=balloon",
-                "ARGS=--disable-factory  --class=cudademo -- cd /usr/local/cuda/extras/demo_suite",
+                "ARGS=--name cudademo",
                 "APPNAME=cudademo",
-                "APPBIN=/usr/bin/gnome-terminal",
-                "APP=/usr/bin/gnome-terminal"
+                "APPBIN=/usr/bin/konsole",
+                "APP=/usr/bin/konsole"
             ],
             "Cmd": [
                 "/bin/sh",
@@ -44,7 +44,7 @@
                 "#(nop) ",
                 "CMD [\"/composer/appli-docker-entrypoint.sh\"]"
             ],
-            "Image": "sha256:dd3ed4968e4c187eebcc1c15d5503ffc121b41a0c9c6c1cd9402540605c0acfc",
+            "Image": "sha256:54c132bb2554ec60ee2740b51bd0dc53b03e348e638ed7dc7cb138f92a4a0c28",
             "Volumes": null,
             "WorkingDir": "",
             "Entrypoint": null,
@@ -52,16 +52,16 @@
             "Labels": {
                 "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
                 "oc.acl": "{\"permit\":[\"all\"]}",
-                "oc.args": "--disable-factory  --class=cudademo -- cd /usr/local/cuda/extras/demo_suite",
+                "oc.args": "--name cudademo",
                 "oc.cat": "development",
-                "oc.desktopfile": "org.gnome.Terminal.desktop",
+                "oc.desktopfile": "org.kde.konsole.desktop",
                 "oc.displayname": "cuda demo",
                 "oc.icon": "nvidia.svg",
                 "oc.icondata": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9InN2ZzIiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciDQoJIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzUxLjQ2cHgiDQoJIGhlaWdodD0iMjU4Ljc4NXB4IiB2aWV3Qm94PSIzNS4xODggMzEuNTEyIDM1MS40NiAyNTguNzg1IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDM1LjE4OCAzMS41MTIgMzUxLjQ2IDI1OC43ODUiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHRpdGxlICBpZD0idGl0bGU0Ij5nZW5lcmF0ZWQgYnkgcHN0b2VkaXQgdmVyc2lvbjozLjQ0IGZyb20gTlZCYWRnZV8yRC5lcHM8L3RpdGxlPg0KPHBhdGggaWQ9InBhdGgxNyIgZD0iTTM4NC4xOTUsMjgyLjEwOWMwLDMuNzcxLTIuNzY5LDYuMzAyLTYuMDQ3LDYuMzAydi0wLjAyM2MtMy4zNzEsMC4wMjMtNi4wODktMi41MDgtNi4wODktNi4yNzgNCgljMC0zLjc2OSwyLjcxOC02LjI5Myw2LjA4OS02LjI5M0MzODEuNDI3LDI3NS44MTYsMzg0LjE5NSwyNzguMzQsMzg0LjE5NSwyODIuMTA5eiBNMzg2LjY0OCwyODIuMTA5YzAtNS4xNzUtNC4wMi04LjE3OS04LjUtOC4xNzkNCgljLTQuNTExLDAtOC41MzEsMy4wMDQtOC41MzEsOC4xNzljMCw1LjE3Miw0LjAyMSw4LjE4OCw4LjUzMSw4LjE4OEMzODIuNjI5LDI5MC4yOTcsMzg2LjY0OCwyODcuMjgxLDM4Ni42NDgsMjgyLjEwOQ0KCSBNMzc2LjczOCwyODIuODAxaDAuOTFsMi4xMDksMy43MDNoMi4zMTZsLTIuMzM2LTMuODU5YzEuMjA3LTAuMDg2LDIuMi0wLjY2MSwyLjItMi4yODZjMC0yLjAxOS0xLjM5Mi0yLjY2OC0zLjc1LTIuNjY4aC0zLjQxMQ0KCXY4LjgxM2gxLjk2MVYyODIuODAxIE0zNzYuNzM4LDI4MS4zMDl2LTIuMTIyaDEuMzY0YzAuNzQyLDAsMS43NTMsMC4wNiwxLjc1MywwLjk2NWMwLDAuOTg1LTAuNTIzLDEuMTU3LTEuMzk4LDEuMTU3SDM3Ni43MzgiLz4NCjxwYXRoIGlkPSJwYXRoMTkiIGQ9Ik0zMjkuNDA2LDIzNy4wMjdsMTAuNTk4LDI4Ljk5M0gzMTguNDhMMzI5LjQwNiwyMzcuMDI3eiBNMzE4LjA1NiwyMjUuNzM4bC0yNC40MjMsNjEuODhoMTcuMjQ2bDMuODYzLTEwLjkzNA0KCWgyOC45MDNsMy42NTYsMTAuOTM0aDE4LjcyMmwtMjQuNjA1LTYxLjg4OEwzMTguMDU2LDIyNS43Mzh6IE0yNjkuMDIzLDI4Ny42NDFoMTcuNDk3di02MS45MjJsLTE3LjUtMC4wMDRMMjY5LjAyMywyODcuNjQxeg0KCSBNMTQ3LjU1NiwyMjUuNzE1bC0xNC41OTgsNDkuMDc4bC0xMy45ODQtNDkuMDc0bC0xOC44NzktMC4wMDRsMTkuOTcyLDYxLjkyNmgyNS4yMDdsMjAuMTMzLTYxLjkyNkgxNDcuNTU2eiBNMjE4LjI4MSwyMzkuMTk5aDcuNTINCgljMTAuOTEsMCwxNy45NjYsNC44OTgsMTcuOTY2LDE3LjYwOWMwLDEyLjcxNC03LjA1NiwxNy42MTMtMTcuOTY2LDE3LjYxM2gtNy41MlYyMzkuMTk5eiBNMjAwLjkzMSwyMjUuNzE1djYxLjkyNmgyOC4zNjYNCgljMTUuMTEzLDAsMjAuMDQ4LTIuNTEyLDI1LjM4NC04LjE0OGMzLjc2OS0zLjk1Nyw2LjIwNy0xMi42NDEsNi4yMDctMjIuMTM0YzAtOC43MDctMi4wNjMtMTYuNDY4LTUuNjYtMjEuMzA0DQoJYy02LjQ4MS04LjY0OS0xNS44MTctMTAuMzQtMjkuNzUtMTAuMzRIMjAwLjkzMXogTTM1LjE4OCwyMjUuNjI5djYyLjAxMmgxNy42NDV2LTQ3LjA4NmwxMy42NzIsMC4wMDQNCgljNC41MjcsMCw3Ljc1NCwxLjEyOCw5LjkzNCwzLjQ1N2MyLjc2NSwyLjk0NSwzLjg5NCw3LjY5OSwzLjg5NCwxNi4zOTV2MjcuMjNoMTcuMDk4di0zNC4yNjJjMC0yNC40NTMtMTUuNTg2LTI3Ljc1LTMwLjgzNi0yNy43NQ0KCUgzNS4xODh6IE0xNzIuNzcxLDIyNS43MTVsMC4wMDcsNjEuOTI2aDE3LjQ4OXYtNjEuOTI2SDE3Mi43NzF6Ii8+DQo8cGF0aCBpZD0icGF0aDIxIiBmaWxsPSIjNzdCOTAwIiBkPSJNODIuMjExLDEwMi40MTRjMCwwLDIyLjUwNC0zMy4yMDMsNjcuNDM3LTM2LjYzOFY1My43Mw0KCWMtNDkuNzY5LDMuOTk3LTkyLjg2Nyw0Ni4xNDktOTIuODY3LDQ2LjE0OXMyNC40MSw3MC41NjUsOTIuODY3LDc3LjAyNnYtMTIuODA0Qzk5LjQxMSwxNTcuNzgxLDgyLjIxMSwxMDIuNDE0LDgyLjIxMSwxMDIuNDE0eg0KCSBNMTQ5LjY0OCwxMzguNjM3djExLjcyNmMtMzcuOTY4LTYuNzY5LTQ4LjUwNy00Ni4yMzctNDguNTA3LTQ2LjIzN3MxOC4yMy0yMC4xOTUsNDguNTA3LTIzLjQ3djEyLjg2Nw0KCWMtMC4wMjMsMC0wLjAzOS0wLjAwNy0wLjA1OC0wLjAwN2MtMTUuODkxLTEuOTA3LTI4LjMwNSwxMi45MzgtMjguMzA1LDEyLjkzOFMxMjguMjQzLDEzMS40NDUsMTQ5LjY0OCwxMzguNjM3IE0xNDkuNjQ4LDMxLjUxMg0KCVY1My43M2MxLjQ2MS0wLjExMiwyLjkyMi0wLjIwNyw0LjM5MS0wLjI1N2M1Ni41ODItMS45MDcsOTMuNDQ5LDQ2LjQwNiw5My40NDksNDYuNDA2cy00Mi4zNDMsNTEuNDg4LTg2LjQ1Nyw1MS40ODgNCgljLTQuMDQzLDAtNy44MjgtMC4zNzUtMTEuMzgzLTEuMDA1djEzLjczOWMzLjA0LDAuMzg2LDYuMTkyLDAuNjEzLDkuNDgxLDAuNjEzYzQxLjA1MSwwLDcwLjczOC0yMC45NjUsOTkuNDg0LTQ1Ljc3OA0KCWM0Ljc2NiwzLjgxNywyNC4yNzgsMTMuMTAzLDI4LjI4OSwxNy4xNjhjLTI3LjMzMiwyMi44ODMtOTEuMDMxLDQxLjMyOS0xMjcuMTQ0LDQxLjMyOWMtMy40ODEsMC02LjgyNC0wLjIxMS0xMC4xMS0wLjUyOHYxOS4zMDYNCgloMTU2LjAzMlYzMS41MTJIMTQ5LjY0OHogTTE0OS42NDgsODAuNjU2VjY1Ljc3N2MxLjQ0Ni0wLjEwMSwyLjkwMy0wLjE3OSw0LjM5MS0wLjIyNmM0MC42ODgtMS4yNzgsNjcuMzgyLDM0Ljk2NSw2Ny4zODIsMzQuOTY1DQoJcy0yOC44MzIsNDAuMDQzLTU5Ljc0Niw0MC4wNDNjLTQuNDQ5LDAtOC40MzgtMC43MTUtMTIuMDI4LTEuOTIyVjkzLjUyM2MxNS44NCwxLjkxNCwxOS4wMjgsOC45MTEsMjguNTUxLDI0Ljc4NmwyMS4xOC0xNy44NTkNCgljMCwwLTE1LjQ2MS0yMC4yNzctNDEuNTI0LTIwLjI3N0MxNTUuMDIxLDgwLjE3MiwxNTIuMzEsODAuMzcxLDE0OS42NDgsODAuNjU2Ii8+DQo8L3N2Zz4NCg==",
                 "oc.keyword": "cudademo,cuda nvidia",
-                "oc.launch": "gnome-terminal-server.cudademo",
+                "oc.launch": "cudademo.konsole",
                 "oc.name": "cudademo",
-                "oc.path": "/usr/bin/gnome-terminal",
+                "oc.path": "/usr/bin/konsole",
                 "oc.rules": "{\"homedir\":{\"default\":true}}",
                 "oc.template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
                 "oc.type": "app",
@@ -95,15 +95,15 @@
                 "TERM=linux",
                 "LANG=en_US.utf8",
                 "BUSER=balloon",
-                "ARGS=--disable-factory  --class=cudademo -- cd /usr/local/cuda/extras/demo_suite",
+                "ARGS=--name cudademo",
                 "APPNAME=cudademo",
-                "APPBIN=/usr/bin/gnome-terminal",
-                "APP=/usr/bin/gnome-terminal"
+                "APPBIN=/usr/bin/konsole",
+                "APP=/usr/bin/konsole"
             ],
             "Cmd": [
                 "/composer/appli-docker-entrypoint.sh"
             ],
-            "Image": "sha256:dd3ed4968e4c187eebcc1c15d5503ffc121b41a0c9c6c1cd9402540605c0acfc",
+            "Image": "sha256:54c132bb2554ec60ee2740b51bd0dc53b03e348e638ed7dc7cb138f92a4a0c28",
             "Volumes": null,
             "WorkingDir": "",
             "Entrypoint": null,
@@ -111,16 +111,16 @@
             "Labels": {
                 "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
                 "oc.acl": "{\"permit\":[\"all\"]}",
-                "oc.args": "--disable-factory  --class=cudademo -- cd /usr/local/cuda/extras/demo_suite",
+                "oc.args": "--name cudademo",
                 "oc.cat": "development",
-                "oc.desktopfile": "org.gnome.Terminal.desktop",
+                "oc.desktopfile": "org.kde.konsole.desktop",
                 "oc.displayname": "cuda demo",
                 "oc.icon": "nvidia.svg",
                 "oc.icondata": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9InN2ZzIiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciDQoJIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzUxLjQ2cHgiDQoJIGhlaWdodD0iMjU4Ljc4NXB4IiB2aWV3Qm94PSIzNS4xODggMzEuNTEyIDM1MS40NiAyNTguNzg1IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDM1LjE4OCAzMS41MTIgMzUxLjQ2IDI1OC43ODUiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHRpdGxlICBpZD0idGl0bGU0Ij5nZW5lcmF0ZWQgYnkgcHN0b2VkaXQgdmVyc2lvbjozLjQ0IGZyb20gTlZCYWRnZV8yRC5lcHM8L3RpdGxlPg0KPHBhdGggaWQ9InBhdGgxNyIgZD0iTTM4NC4xOTUsMjgyLjEwOWMwLDMuNzcxLTIuNzY5LDYuMzAyLTYuMDQ3LDYuMzAydi0wLjAyM2MtMy4zNzEsMC4wMjMtNi4wODktMi41MDgtNi4wODktNi4yNzgNCgljMC0zLjc2OSwyLjcxOC02LjI5Myw2LjA4OS02LjI5M0MzODEuNDI3LDI3NS44MTYsMzg0LjE5NSwyNzguMzQsMzg0LjE5NSwyODIuMTA5eiBNMzg2LjY0OCwyODIuMTA5YzAtNS4xNzUtNC4wMi04LjE3OS04LjUtOC4xNzkNCgljLTQuNTExLDAtOC41MzEsMy4wMDQtOC41MzEsOC4xNzljMCw1LjE3Miw0LjAyMSw4LjE4OCw4LjUzMSw4LjE4OEMzODIuNjI5LDI5MC4yOTcsMzg2LjY0OCwyODcuMjgxLDM4Ni42NDgsMjgyLjEwOQ0KCSBNMzc2LjczOCwyODIuODAxaDAuOTFsMi4xMDksMy43MDNoMi4zMTZsLTIuMzM2LTMuODU5YzEuMjA3LTAuMDg2LDIuMi0wLjY2MSwyLjItMi4yODZjMC0yLjAxOS0xLjM5Mi0yLjY2OC0zLjc1LTIuNjY4aC0zLjQxMQ0KCXY4LjgxM2gxLjk2MVYyODIuODAxIE0zNzYuNzM4LDI4MS4zMDl2LTIuMTIyaDEuMzY0YzAuNzQyLDAsMS43NTMsMC4wNiwxLjc1MywwLjk2NWMwLDAuOTg1LTAuNTIzLDEuMTU3LTEuMzk4LDEuMTU3SDM3Ni43MzgiLz4NCjxwYXRoIGlkPSJwYXRoMTkiIGQ9Ik0zMjkuNDA2LDIzNy4wMjdsMTAuNTk4LDI4Ljk5M0gzMTguNDhMMzI5LjQwNiwyMzcuMDI3eiBNMzE4LjA1NiwyMjUuNzM4bC0yNC40MjMsNjEuODhoMTcuMjQ2bDMuODYzLTEwLjkzNA0KCWgyOC45MDNsMy42NTYsMTAuOTM0aDE4LjcyMmwtMjQuNjA1LTYxLjg4OEwzMTguMDU2LDIyNS43Mzh6IE0yNjkuMDIzLDI4Ny42NDFoMTcuNDk3di02MS45MjJsLTE3LjUtMC4wMDRMMjY5LjAyMywyODcuNjQxeg0KCSBNMTQ3LjU1NiwyMjUuNzE1bC0xNC41OTgsNDkuMDc4bC0xMy45ODQtNDkuMDc0bC0xOC44NzktMC4wMDRsMTkuOTcyLDYxLjkyNmgyNS4yMDdsMjAuMTMzLTYxLjkyNkgxNDcuNTU2eiBNMjE4LjI4MSwyMzkuMTk5aDcuNTINCgljMTAuOTEsMCwxNy45NjYsNC44OTgsMTcuOTY2LDE3LjYwOWMwLDEyLjcxNC03LjA1NiwxNy42MTMtMTcuOTY2LDE3LjYxM2gtNy41MlYyMzkuMTk5eiBNMjAwLjkzMSwyMjUuNzE1djYxLjkyNmgyOC4zNjYNCgljMTUuMTEzLDAsMjAuMDQ4LTIuNTEyLDI1LjM4NC04LjE0OGMzLjc2OS0zLjk1Nyw2LjIwNy0xMi42NDEsNi4yMDctMjIuMTM0YzAtOC43MDctMi4wNjMtMTYuNDY4LTUuNjYtMjEuMzA0DQoJYy02LjQ4MS04LjY0OS0xNS44MTctMTAuMzQtMjkuNzUtMTAuMzRIMjAwLjkzMXogTTM1LjE4OCwyMjUuNjI5djYyLjAxMmgxNy42NDV2LTQ3LjA4NmwxMy42NzIsMC4wMDQNCgljNC41MjcsMCw3Ljc1NCwxLjEyOCw5LjkzNCwzLjQ1N2MyLjc2NSwyLjk0NSwzLjg5NCw3LjY5OSwzLjg5NCwxNi4zOTV2MjcuMjNoMTcuMDk4di0zNC4yNjJjMC0yNC40NTMtMTUuNTg2LTI3Ljc1LTMwLjgzNi0yNy43NQ0KCUgzNS4xODh6IE0xNzIuNzcxLDIyNS43MTVsMC4wMDcsNjEuOTI2aDE3LjQ4OXYtNjEuOTI2SDE3Mi43NzF6Ii8+DQo8cGF0aCBpZD0icGF0aDIxIiBmaWxsPSIjNzdCOTAwIiBkPSJNODIuMjExLDEwMi40MTRjMCwwLDIyLjUwNC0zMy4yMDMsNjcuNDM3LTM2LjYzOFY1My43Mw0KCWMtNDkuNzY5LDMuOTk3LTkyLjg2Nyw0Ni4xNDktOTIuODY3LDQ2LjE0OXMyNC40MSw3MC41NjUsOTIuODY3LDc3LjAyNnYtMTIuODA0Qzk5LjQxMSwxNTcuNzgxLDgyLjIxMSwxMDIuNDE0LDgyLjIxMSwxMDIuNDE0eg0KCSBNMTQ5LjY0OCwxMzguNjM3djExLjcyNmMtMzcuOTY4LTYuNzY5LTQ4LjUwNy00Ni4yMzctNDguNTA3LTQ2LjIzN3MxOC4yMy0yMC4xOTUsNDguNTA3LTIzLjQ3djEyLjg2Nw0KCWMtMC4wMjMsMC0wLjAzOS0wLjAwNy0wLjA1OC0wLjAwN2MtMTUuODkxLTEuOTA3LTI4LjMwNSwxMi45MzgtMjguMzA1LDEyLjkzOFMxMjguMjQzLDEzMS40NDUsMTQ5LjY0OCwxMzguNjM3IE0xNDkuNjQ4LDMxLjUxMg0KCVY1My43M2MxLjQ2MS0wLjExMiwyLjkyMi0wLjIwNyw0LjM5MS0wLjI1N2M1Ni41ODItMS45MDcsOTMuNDQ5LDQ2LjQwNiw5My40NDksNDYuNDA2cy00Mi4zNDMsNTEuNDg4LTg2LjQ1Nyw1MS40ODgNCgljLTQuMDQzLDAtNy44MjgtMC4zNzUtMTEuMzgzLTEuMDA1djEzLjczOWMzLjA0LDAuMzg2LDYuMTkyLDAuNjEzLDkuNDgxLDAuNjEzYzQxLjA1MSwwLDcwLjczOC0yMC45NjUsOTkuNDg0LTQ1Ljc3OA0KCWM0Ljc2NiwzLjgxNywyNC4yNzgsMTMuMTAzLDI4LjI4OSwxNy4xNjhjLTI3LjMzMiwyMi44ODMtOTEuMDMxLDQxLjMyOS0xMjcuMTQ0LDQxLjMyOWMtMy40ODEsMC02LjgyNC0wLjIxMS0xMC4xMS0wLjUyOHYxOS4zMDYNCgloMTU2LjAzMlYzMS41MTJIMTQ5LjY0OHogTTE0OS42NDgsODAuNjU2VjY1Ljc3N2MxLjQ0Ni0wLjEwMSwyLjkwMy0wLjE3OSw0LjM5MS0wLjIyNmM0MC42ODgtMS4yNzgsNjcuMzgyLDM0Ljk2NSw2Ny4zODIsMzQuOTY1DQoJcy0yOC44MzIsNDAuMDQzLTU5Ljc0Niw0MC4wNDNjLTQuNDQ5LDAtOC40MzgtMC43MTUtMTIuMDI4LTEuOTIyVjkzLjUyM2MxNS44NCwxLjkxNCwxOS4wMjgsOC45MTEsMjguNTUxLDI0Ljc4NmwyMS4xOC0xNy44NTkNCgljMCwwLTE1LjQ2MS0yMC4yNzctNDEuNTI0LTIwLjI3N0MxNTUuMDIxLDgwLjE3MiwxNTIuMzEsODAuMzcxLDE0OS42NDgsODAuNjU2Ii8+DQo8L3N2Zz4NCg==",
                 "oc.keyword": "cudademo,cuda nvidia",
-                "oc.launch": "gnome-terminal-server.cudademo",
+                "oc.launch": "cudademo.konsole",
                 "oc.name": "cudademo",
-                "oc.path": "/usr/bin/gnome-terminal",
+                "oc.path": "/usr/bin/konsole",
                 "oc.rules": "{\"homedir\":{\"default\":true}}",
                 "oc.template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
                 "oc.type": "app",
@@ -130,14 +130,14 @@
         },
         "Architecture": "amd64",
         "Os": "linux",
-        "Size": 4279239305,
-        "VirtualSize": 4279239305,
+        "Size": 4382594664,
+        "VirtualSize": 4382594664,
         "GraphDriver": {
             "Data": {
-                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/e926f659089c6f188eb30a86101e823986c6a70953f0dfc0fb3ace7274984ff3/diff:/mnt/nvme0n1/var/lib/docker/overlay2/5e9a4c339b0ff39c15313789e05cb84151dabc4f6d0e8ff48398cc47f0d254a2/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1cfa111aa850c225b43428af3d6422cdfd6f5aa5af852aa1cb6950250d60049d/diff:/mnt/nvme0n1/var/lib/docker/overlay2/baef052e4584a1c91c005fcd6209f07f428f8533f8a9bbc1c58235c12b64006a/diff:/mnt/nvme0n1/var/lib/docker/overlay2/f3765d75be8a3f8982af2a6f23c0a48d9e4aceb39165e30ba0ffb29453b8c483/diff:/mnt/nvme0n1/var/lib/docker/overlay2/792933627f28d38c13928c84c4f6bf7f3d273673b5fe83b64cb4f9dff99aeb9d/diff:/mnt/nvme0n1/var/lib/docker/overlay2/fa7f2e6c81f38f9ccc8875031e1a9aca3c5b8f03c8a13d34c4f589f64ed581a7/diff:/mnt/nvme0n1/var/lib/docker/overlay2/8b37b4ffe5aff52f8f0069753197dec87c4c2c4fd3596cf1609d3a2defd2e083/diff:/mnt/nvme0n1/var/lib/docker/overlay2/e2fd4046af42d1dd97ebe0d89df096626ea3b5c36250a159655084589247feb0/diff:/mnt/nvme0n1/var/lib/docker/overlay2/263d474f94493a3de60299374617266391f684f0dc5af4f409beba9580fb2127/diff:/mnt/nvme0n1/var/lib/docker/overlay2/8eb8a4032651d607aee04901b3088e0f0703f952644eb3c8d607f71d5b00d304/diff:/mnt/nvme0n1/var/lib/docker/overlay2/27bd901f5a3923a5ba453120a4389198d6b09295ec89b1241497fa56f53134e3/diff:/mnt/nvme0n1/var/lib/docker/overlay2/a9a05a632722abb83274dfeb6dc7dbc9130a31fe6642305e9443096f3c6d7711/diff:/mnt/nvme0n1/var/lib/docker/overlay2/899b3d0a637d0e60d9c6bb0567046d7288aec9708d8abc2a0f5f22b177abe5f6/diff:/mnt/nvme0n1/var/lib/docker/overlay2/11fe9a1f3a18e6fcfa14fdc074ed929aeb3764895b08da36dc7311a5d79fec34/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1570df6d67be44b15c5d5eecd06ce33ed86b0f7894869f46fa6f1290988c53eb/diff:/mnt/nvme0n1/var/lib/docker/overlay2/94948d56dac814f7e294eb262f5b64e4ccb496bb2ae148e3ecd8d53eba0682aa/diff:/mnt/nvme0n1/var/lib/docker/overlay2/30b79c14df40d13db5a5e34e4270070f86b5fa501605812519f53070b30d83aa/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1ca3594279a65e695055271abee4117c5756c98b66e0c0459ce759f20bdf5f72/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d0808114a3bed21260af8617ae048f26e8bc45a827dcce78fc66f3df3f68c118/diff",
-                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/5b1bec97b06a3d8bbd1e75685fb7377851090bab970bee2eb19a237deca1801d/merged",
-                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/5b1bec97b06a3d8bbd1e75685fb7377851090bab970bee2eb19a237deca1801d/diff",
-                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/5b1bec97b06a3d8bbd1e75685fb7377851090bab970bee2eb19a237deca1801d/work"
+                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/bfafd2f358d573deff76553ca9064268b786a7028e2041fbfd00ef158d66ad95/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d6ea7fe46b0f900aced96f425279e0ea18ea77a34dfe0d6cf73d9b6391c502d1/diff:/mnt/nvme0n1/var/lib/docker/overlay2/22ca1128255ca74b493f5e639cf795cd03f05ff0b6f313f4a0d526192943e0d9/diff:/mnt/nvme0n1/var/lib/docker/overlay2/f3765d75be8a3f8982af2a6f23c0a48d9e4aceb39165e30ba0ffb29453b8c483/diff:/mnt/nvme0n1/var/lib/docker/overlay2/792933627f28d38c13928c84c4f6bf7f3d273673b5fe83b64cb4f9dff99aeb9d/diff:/mnt/nvme0n1/var/lib/docker/overlay2/fa7f2e6c81f38f9ccc8875031e1a9aca3c5b8f03c8a13d34c4f589f64ed581a7/diff:/mnt/nvme0n1/var/lib/docker/overlay2/8b37b4ffe5aff52f8f0069753197dec87c4c2c4fd3596cf1609d3a2defd2e083/diff:/mnt/nvme0n1/var/lib/docker/overlay2/e2fd4046af42d1dd97ebe0d89df096626ea3b5c36250a159655084589247feb0/diff:/mnt/nvme0n1/var/lib/docker/overlay2/263d474f94493a3de60299374617266391f684f0dc5af4f409beba9580fb2127/diff:/mnt/nvme0n1/var/lib/docker/overlay2/8eb8a4032651d607aee04901b3088e0f0703f952644eb3c8d607f71d5b00d304/diff:/mnt/nvme0n1/var/lib/docker/overlay2/27bd901f5a3923a5ba453120a4389198d6b09295ec89b1241497fa56f53134e3/diff:/mnt/nvme0n1/var/lib/docker/overlay2/a9a05a632722abb83274dfeb6dc7dbc9130a31fe6642305e9443096f3c6d7711/diff:/mnt/nvme0n1/var/lib/docker/overlay2/899b3d0a637d0e60d9c6bb0567046d7288aec9708d8abc2a0f5f22b177abe5f6/diff:/mnt/nvme0n1/var/lib/docker/overlay2/11fe9a1f3a18e6fcfa14fdc074ed929aeb3764895b08da36dc7311a5d79fec34/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1570df6d67be44b15c5d5eecd06ce33ed86b0f7894869f46fa6f1290988c53eb/diff:/mnt/nvme0n1/var/lib/docker/overlay2/94948d56dac814f7e294eb262f5b64e4ccb496bb2ae148e3ecd8d53eba0682aa/diff:/mnt/nvme0n1/var/lib/docker/overlay2/30b79c14df40d13db5a5e34e4270070f86b5fa501605812519f53070b30d83aa/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1ca3594279a65e695055271abee4117c5756c98b66e0c0459ce759f20bdf5f72/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d0808114a3bed21260af8617ae048f26e8bc45a827dcce78fc66f3df3f68c118/diff",
+                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/71086bc69dfced7700689c3714680c8a7d4cb8763459d913aee14e41e5050407/merged",
+                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/71086bc69dfced7700689c3714680c8a7d4cb8763459d913aee14e41e5050407/diff",
+                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/71086bc69dfced7700689c3714680c8a7d4cb8763459d913aee14e41e5050407/work"
             },
             "Name": "overlay2"
         },
@@ -160,15 +160,14 @@
                 "sha256:fc248efc8167528dc1b4a189c26f10b1558390adef63fc6ff499e3b2a13825e7",
                 "sha256:fe490b38609fcf58927948c2bc8a476f5706602ca6143477f4a360193a3161bf",
                 "sha256:7331bca235c4717c3ae7b560c2f20ad45d7216b7a5bcac4d20aac63946d65224",
-                "sha256:ba63c4965bf4aa16dcc993fff3f86dfde235e958360193eb87a7b9dfa00faaac",
-                "sha256:601ec5f60019481d35837b0a152b6fd1a47f95bc3c67132bb3f389ca16cd828e",
-                "sha256:71f2f9f601a495e3017c2ba83368a0b73dfaa7f236c7e518aa0b1ac8f9bba47f",
-                "sha256:07f8308737ba4d1b6aa383060525c42e74565b5ef0ce09bcf6826024d81c360d",
-                "sha256:36849bc74c763dd81e90fb603f2af497fdb53460fad728e75a1e93d15ede50ed"
+                "sha256:84e0d984edf41111e90c4f2bd2f3ea26e2a6c7d9e2d407cd2f60dd0081d45e79",
+                "sha256:7877d1dd462c1675fde9051b8f89e1e1fb48e842ba17d196a4f560be605249ff",
+                "sha256:f9da295a5f3263d8e44781385c29d8cb3dbfbc7dc46121490a5181612ac610ad",
+                "sha256:3b8b279c161d05c737aaa734737d6bcfff22e41fd0a2b658d55f6d861e763d6f"
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T14:49:18.582489671+01:00"
+            "LastTagTime": "2023-04-11T17:34:48.210662998+02:00"
         }
     }
 ]

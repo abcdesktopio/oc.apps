@@ -5,7 +5,9 @@
             "abcdesktopio/hyper.d:3.0",
             "abcdesktopio/hyper.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/hyper.d@sha256:bb2759e5bbed5c907b3a3b409d87e9b88bc26187219b5e0cdc103a8c6131cd42"
+        ],
         "Parent": "sha256:14ab4a47a0f510974921b745ffc02f4707dd4e507d4a6d51e1ad16a1f18aac97",
         "Comment": "",
         "Created": "2023-03-22T11:40:32.01327101Z",
@@ -144,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:39:04.589408882+01:00"
+            "LastTagTime": "2023-04-11T17:35:14.195338953+02:00"
         }
     }
 ]

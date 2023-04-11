@@ -2,9 +2,12 @@
     {
         "Id": "sha256:d995c9021601a3a0e7cb46ea765a9cda49ae8e0d46461f431be218306f0d441d",
         "RepoTags": [
+            "abcdesktopio/notepadqq.d:3.0",
             "abcdesktopio/notepadqq.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/notepadqq.d@sha256:b5b5493b66dd9f0d40a0f280c4eac1fda6a9e92c37de2146639c9ceae9577e05"
+        ],
         "Parent": "sha256:76293c12873482418480d653c6e2e1f488343d810751c4c6c2a5fc51dd7f2565",
         "Comment": "",
         "Created": "2023-03-22T12:46:58.290580886Z",
@@ -156,7 +159,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:46:58.491225005+01:00"
+            "LastTagTime": "2023-04-11T17:36:17.466522772+02:00"
         }
     }
 ]

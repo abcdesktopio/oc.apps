@@ -5,7 +5,9 @@
             "abcdesktopio/gnumeric.d:3.0",
             "abcdesktopio/gnumeric.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/gnumeric.d@sha256:0f3cf5fb646d947bbd70635ecaabe94a63375c27094ebffd4bcb9dfd03f607bb"
+        ],
         "Parent": "sha256:347a29dd1879713a50191a20bbfe53f0afbac94a01d5f24417a01ca603ee31e5",
         "Comment": "",
         "Created": "2023-02-17T17:19:55.906924543Z",
@@ -147,7 +149,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:39:02.217757907+01:00"
+            "LastTagTime": "2023-04-11T17:35:12.567973748+02:00"
         }
     }
 ]

@@ -2,9 +2,12 @@
     {
         "Id": "sha256:5d2406a7be3882bcc95e83761fe773b9ea7ccf4a0dc37f55ae5a7c523e3304c2",
         "RepoTags": [
+            "abcdesktopio/pinta.d:3.0",
             "abcdesktopio/pinta.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/pinta.d@sha256:ffc769c00a61c43de88e708b8f14cd3d6327715141d29a423cb244c340f8bda3"
+        ],
         "Parent": "sha256:1348165540aaef3d55e3853670cf73a68580055f0bdd799357a54012d8d3605b",
         "Comment": "",
         "Created": "2023-02-17T17:38:41.013832605Z",
@@ -142,7 +145,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-02-17T18:38:41.232757396+01:00"
+            "LastTagTime": "2023-04-11T17:36:20.97817528+02:00"
         }
     }
 ]

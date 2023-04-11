@@ -2,9 +2,12 @@
     {
         "Id": "sha256:79399dd93a5c35aab35d20a16ad6aa3bec70f52a16f5c015c7404d437b2230f0",
         "RepoTags": [
+            "abcdesktopio/mongodb-compass.d:3.0",
             "abcdesktopio/mongodb-compass.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/mongodb-compass.d@sha256:7d92b9e1ddcec174b02a0462097459f0832d1b54d0f5564fec854ea84207dc2e"
+        ],
         "Parent": "sha256:1d6e0861b6158ddebfe8e7463b7bca23bf84785ff387b20b89cf2714ff2e84cf",
         "Comment": "",
         "Created": "2023-03-22T12:43:20.667115619Z",
@@ -155,7 +158,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:43:20.841183401+01:00"
+            "LastTagTime": "2023-04-11T17:36:14.676144029+02:00"
         }
     }
 ]

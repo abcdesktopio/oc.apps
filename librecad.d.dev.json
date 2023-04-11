@@ -5,7 +5,9 @@
             "abcdesktopio/librecad.d:3.0",
             "abcdesktopio/librecad.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/librecad.d@sha256:fe953199c45c8c3c687ac2d0c9faabd30c051c338cf34f646b2a7abc758c034e"
+        ],
         "Parent": "sha256:257b7bd4b8eb67180ab896b0960514d53c78119e71f993e9eb676a8fe4caa265",
         "Comment": "",
         "Created": "2023-03-22T11:51:09.136464818Z",
@@ -146,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:40:04.329630258+01:00"
+            "LastTagTime": "2023-04-11T17:36:09.368736759+02:00"
         }
     }
 ]

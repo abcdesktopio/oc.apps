@@ -2,9 +2,12 @@
     {
         "Id": "sha256:db58eb1708aab4c680c387721229ee4d22cddd5e2107087fac4569622e824410",
         "RepoTags": [
+            "abcdesktopio/nautilus.d:3.0",
             "abcdesktopio/nautilus.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/nautilus.d@sha256:587796d931cab9d789632defa463a5474b9403ae52d90bd93ad2a055cd8587f2"
+        ],
         "Parent": "sha256:9a67fd554146b31cc1e58c779efabe155d425e68e7a8ce742ef0637f8bd41807",
         "Comment": "",
         "Created": "2023-03-22T12:45:41.953973376Z",
@@ -160,7 +163,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:45:42.13489401+01:00"
+            "LastTagTime": "2023-03-26T21:40:28.277844977+02:00"
         }
     }
 ]

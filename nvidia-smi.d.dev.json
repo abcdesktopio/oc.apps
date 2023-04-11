@@ -1,16 +1,16 @@
 [
     {
-        "Id": "sha256:53b7f28f8b4cb5d38adaa50a5611b691e5fc2bca0bd0bdbc5144ec1175b68f34",
+        "Id": "sha256:a7c2302f0878e5cb90e845d6cca63f11703ff64aad73aaa0783149cc5f3c6c03",
         "RepoTags": [
             "abcdesktopio/nvidia-smi.d:dev"
         ],
         "RepoDigests": [],
-        "Parent": "sha256:b3eee57e7fa43894af2f823f061df05b62f3628d19436a7c0e47fef150f0f5bc",
+        "Parent": "sha256:c1be29ee38bacbea42af17b40e13efe12d2dab6ee7dbfc2160d0e6252d49b441",
         "Comment": "",
-        "Created": "2023-03-22T14:03:25.070855527Z",
-        "Container": "58c995b76269d79f015a75a1ec224911417f8022de1a9c3ffda7338c831850e1",
+        "Created": "2023-04-01T07:19:16.847107669Z",
+        "Container": "f730264d3bebe9ebe66043ed16767bd15473016b6df0bb98433f1f5ae557fa25",
         "ContainerConfig": {
-            "Hostname": "58c995b76269",
+            "Hostname": "f730264d3beb",
             "Domainname": "",
             "User": "balloon",
             "AttachStdin": false,
@@ -33,6 +33,7 @@
                 "TERM=linux",
                 "LANG=en_US.utf8",
                 "BUSER=balloon",
+                "ARGS=--name nvidiasmi",
                 "APPNAME=nvidia-smi",
                 "APPBIN=/usr/bin/konsole",
                 "APP=/usr/bin/konsole"
@@ -43,7 +44,7 @@
                 "#(nop) ",
                 "CMD [\"/composer/appli-docker-entrypoint.sh\"]"
             ],
-            "Image": "sha256:b3eee57e7fa43894af2f823f061df05b62f3628d19436a7c0e47fef150f0f5bc",
+            "Image": "sha256:c1be29ee38bacbea42af17b40e13efe12d2dab6ee7dbfc2160d0e6252d49b441",
             "Volumes": null,
             "WorkingDir": "",
             "Entrypoint": null,
@@ -51,13 +52,14 @@
             "Labels": {
                 "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
                 "oc.acl": "{\"permit\":[\"all\"]}",
+                "oc.args": "--name nvidiasmi",
                 "oc.cat": "development",
                 "oc.desktopfile": "org.kde.konsole.desktop",
                 "oc.displayname": "nvidia-smi",
                 "oc.icon": "nvidia.svg",
                 "oc.icondata": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9InN2ZzIiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciDQoJIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzUxLjQ2cHgiDQoJIGhlaWdodD0iMjU4Ljc4NXB4IiB2aWV3Qm94PSIzNS4xODggMzEuNTEyIDM1MS40NiAyNTguNzg1IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDM1LjE4OCAzMS41MTIgMzUxLjQ2IDI1OC43ODUiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHRpdGxlICBpZD0idGl0bGU0Ij5nZW5lcmF0ZWQgYnkgcHN0b2VkaXQgdmVyc2lvbjozLjQ0IGZyb20gTlZCYWRnZV8yRC5lcHM8L3RpdGxlPg0KPHBhdGggaWQ9InBhdGgxNyIgZD0iTTM4NC4xOTUsMjgyLjEwOWMwLDMuNzcxLTIuNzY5LDYuMzAyLTYuMDQ3LDYuMzAydi0wLjAyM2MtMy4zNzEsMC4wMjMtNi4wODktMi41MDgtNi4wODktNi4yNzgNCgljMC0zLjc2OSwyLjcxOC02LjI5Myw2LjA4OS02LjI5M0MzODEuNDI3LDI3NS44MTYsMzg0LjE5NSwyNzguMzQsMzg0LjE5NSwyODIuMTA5eiBNMzg2LjY0OCwyODIuMTA5YzAtNS4xNzUtNC4wMi04LjE3OS04LjUtOC4xNzkNCgljLTQuNTExLDAtOC41MzEsMy4wMDQtOC41MzEsOC4xNzljMCw1LjE3Miw0LjAyMSw4LjE4OCw4LjUzMSw4LjE4OEMzODIuNjI5LDI5MC4yOTcsMzg2LjY0OCwyODcuMjgxLDM4Ni42NDgsMjgyLjEwOQ0KCSBNMzc2LjczOCwyODIuODAxaDAuOTFsMi4xMDksMy43MDNoMi4zMTZsLTIuMzM2LTMuODU5YzEuMjA3LTAuMDg2LDIuMi0wLjY2MSwyLjItMi4yODZjMC0yLjAxOS0xLjM5Mi0yLjY2OC0zLjc1LTIuNjY4aC0zLjQxMQ0KCXY4LjgxM2gxLjk2MVYyODIuODAxIE0zNzYuNzM4LDI4MS4zMDl2LTIuMTIyaDEuMzY0YzAuNzQyLDAsMS43NTMsMC4wNiwxLjc1MywwLjk2NWMwLDAuOTg1LTAuNTIzLDEuMTU3LTEuMzk4LDEuMTU3SDM3Ni43MzgiLz4NCjxwYXRoIGlkPSJwYXRoMTkiIGQ9Ik0zMjkuNDA2LDIzNy4wMjdsMTAuNTk4LDI4Ljk5M0gzMTguNDhMMzI5LjQwNiwyMzcuMDI3eiBNMzE4LjA1NiwyMjUuNzM4bC0yNC40MjMsNjEuODhoMTcuMjQ2bDMuODYzLTEwLjkzNA0KCWgyOC45MDNsMy42NTYsMTAuOTM0aDE4LjcyMmwtMjQuNjA1LTYxLjg4OEwzMTguMDU2LDIyNS43Mzh6IE0yNjkuMDIzLDI4Ny42NDFoMTcuNDk3di02MS45MjJsLTE3LjUtMC4wMDRMMjY5LjAyMywyODcuNjQxeg0KCSBNMTQ3LjU1NiwyMjUuNzE1bC0xNC41OTgsNDkuMDc4bC0xMy45ODQtNDkuMDc0bC0xOC44NzktMC4wMDRsMTkuOTcyLDYxLjkyNmgyNS4yMDdsMjAuMTMzLTYxLjkyNkgxNDcuNTU2eiBNMjE4LjI4MSwyMzkuMTk5aDcuNTINCgljMTAuOTEsMCwxNy45NjYsNC44OTgsMTcuOTY2LDE3LjYwOWMwLDEyLjcxNC03LjA1NiwxNy42MTMtMTcuOTY2LDE3LjYxM2gtNy41MlYyMzkuMTk5eiBNMjAwLjkzMSwyMjUuNzE1djYxLjkyNmgyOC4zNjYNCgljMTUuMTEzLDAsMjAuMDQ4LTIuNTEyLDI1LjM4NC04LjE0OGMzLjc2OS0zLjk1Nyw2LjIwNy0xMi42NDEsNi4yMDctMjIuMTM0YzAtOC43MDctMi4wNjMtMTYuNDY4LTUuNjYtMjEuMzA0DQoJYy02LjQ4MS04LjY0OS0xNS44MTctMTAuMzQtMjkuNzUtMTAuMzRIMjAwLjkzMXogTTM1LjE4OCwyMjUuNjI5djYyLjAxMmgxNy42NDV2LTQ3LjA4NmwxMy42NzIsMC4wMDQNCgljNC41MjcsMCw3Ljc1NCwxLjEyOCw5LjkzNCwzLjQ1N2MyLjc2NSwyLjk0NSwzLjg5NCw3LjY5OSwzLjg5NCwxNi4zOTV2MjcuMjNoMTcuMDk4di0zNC4yNjJjMC0yNC40NTMtMTUuNTg2LTI3Ljc1LTMwLjgzNi0yNy43NQ0KCUgzNS4xODh6IE0xNzIuNzcxLDIyNS43MTVsMC4wMDcsNjEuOTI2aDE3LjQ4OXYtNjEuOTI2SDE3Mi43NzF6Ii8+DQo8cGF0aCBpZD0icGF0aDIxIiBmaWxsPSIjNzdCOTAwIiBkPSJNODIuMjExLDEwMi40MTRjMCwwLDIyLjUwNC0zMy4yMDMsNjcuNDM3LTM2LjYzOFY1My43Mw0KCWMtNDkuNzY5LDMuOTk3LTkyLjg2Nyw0Ni4xNDktOTIuODY3LDQ2LjE0OXMyNC40MSw3MC41NjUsOTIuODY3LDc3LjAyNnYtMTIuODA0Qzk5LjQxMSwxNTcuNzgxLDgyLjIxMSwxMDIuNDE0LDgyLjIxMSwxMDIuNDE0eg0KCSBNMTQ5LjY0OCwxMzguNjM3djExLjcyNmMtMzcuOTY4LTYuNzY5LTQ4LjUwNy00Ni4yMzctNDguNTA3LTQ2LjIzN3MxOC4yMy0yMC4xOTUsNDguNTA3LTIzLjQ3djEyLjg2Nw0KCWMtMC4wMjMsMC0wLjAzOS0wLjAwNy0wLjA1OC0wLjAwN2MtMTUuODkxLTEuOTA3LTI4LjMwNSwxMi45MzgtMjguMzA1LDEyLjkzOFMxMjguMjQzLDEzMS40NDUsMTQ5LjY0OCwxMzguNjM3IE0xNDkuNjQ4LDMxLjUxMg0KCVY1My43M2MxLjQ2MS0wLjExMiwyLjkyMi0wLjIwNyw0LjM5MS0wLjI1N2M1Ni41ODItMS45MDcsOTMuNDQ5LDQ2LjQwNiw5My40NDksNDYuNDA2cy00Mi4zNDMsNTEuNDg4LTg2LjQ1Nyw1MS40ODgNCgljLTQuMDQzLDAtNy44MjgtMC4zNzUtMTEuMzgzLTEuMDA1djEzLjczOWMzLjA0LDAuMzg2LDYuMTkyLDAuNjEzLDkuNDgxLDAuNjEzYzQxLjA1MSwwLDcwLjczOC0yMC45NjUsOTkuNDg0LTQ1Ljc3OA0KCWM0Ljc2NiwzLjgxNywyNC4yNzgsMTMuMTAzLDI4LjI4OSwxNy4xNjhjLTI3LjMzMiwyMi44ODMtOTEuMDMxLDQxLjMyOS0xMjcuMTQ0LDQxLjMyOWMtMy40ODEsMC02LjgyNC0wLjIxMS0xMC4xMS0wLjUyOHYxOS4zMDYNCgloMTU2LjAzMlYzMS41MTJIMTQ5LjY0OHogTTE0OS42NDgsODAuNjU2VjY1Ljc3N2MxLjQ0Ni0wLjEwMSwyLjkwMy0wLjE3OSw0LjM5MS0wLjIyNmM0MC42ODgtMS4yNzgsNjcuMzgyLDM0Ljk2NSw2Ny4zODIsMzQuOTY1DQoJcy0yOC44MzIsNDAuMDQzLTU5Ljc0Niw0MC4wNDNjLTQuNDQ5LDAtOC40MzgtMC43MTUtMTIuMDI4LTEuOTIyVjkzLjUyM2MxNS44NCwxLjkxNCwxOS4wMjgsOC45MTEsMjguNTUxLDI0Ljc4NmwyMS4xOC0xNy44NTkNCgljMCwwLTE1LjQ2MS0yMC4yNzctNDEuNTI0LTIwLjI3N0MxNTUuMDIxLDgwLjE3MiwxNTIuMzEsODAuMzcxLDE0OS42NDgsODAuNjU2Ii8+DQo8L3N2Zz4NCg==",
                 "oc.keyword": "nvidia-smi,nvidia,smi",
-                "oc.launch": "konsole.konsole",
+                "oc.launch": "nvidiasmi.konsole",
                 "oc.name": "nvidia-smi",
                 "oc.path": "/usr/bin/konsole",
                 "oc.rules": "{\"homedir\":{\"default\":true}}",
@@ -94,6 +96,7 @@
                 "TERM=linux",
                 "LANG=en_US.utf8",
                 "BUSER=balloon",
+                "ARGS=--name nvidiasmi",
                 "APPNAME=nvidia-smi",
                 "APPBIN=/usr/bin/konsole",
                 "APP=/usr/bin/konsole"
@@ -101,7 +104,7 @@
             "Cmd": [
                 "/composer/appli-docker-entrypoint.sh"
             ],
-            "Image": "sha256:b3eee57e7fa43894af2f823f061df05b62f3628d19436a7c0e47fef150f0f5bc",
+            "Image": "sha256:c1be29ee38bacbea42af17b40e13efe12d2dab6ee7dbfc2160d0e6252d49b441",
             "Volumes": null,
             "WorkingDir": "",
             "Entrypoint": null,
@@ -109,13 +112,14 @@
             "Labels": {
                 "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
                 "oc.acl": "{\"permit\":[\"all\"]}",
+                "oc.args": "--name nvidiasmi",
                 "oc.cat": "development",
                 "oc.desktopfile": "org.kde.konsole.desktop",
                 "oc.displayname": "nvidia-smi",
                 "oc.icon": "nvidia.svg",
                 "oc.icondata": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9InN2ZzIiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciDQoJIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzUxLjQ2cHgiDQoJIGhlaWdodD0iMjU4Ljc4NXB4IiB2aWV3Qm94PSIzNS4xODggMzEuNTEyIDM1MS40NiAyNTguNzg1IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDM1LjE4OCAzMS41MTIgMzUxLjQ2IDI1OC43ODUiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHRpdGxlICBpZD0idGl0bGU0Ij5nZW5lcmF0ZWQgYnkgcHN0b2VkaXQgdmVyc2lvbjozLjQ0IGZyb20gTlZCYWRnZV8yRC5lcHM8L3RpdGxlPg0KPHBhdGggaWQ9InBhdGgxNyIgZD0iTTM4NC4xOTUsMjgyLjEwOWMwLDMuNzcxLTIuNzY5LDYuMzAyLTYuMDQ3LDYuMzAydi0wLjAyM2MtMy4zNzEsMC4wMjMtNi4wODktMi41MDgtNi4wODktNi4yNzgNCgljMC0zLjc2OSwyLjcxOC02LjI5Myw2LjA4OS02LjI5M0MzODEuNDI3LDI3NS44MTYsMzg0LjE5NSwyNzguMzQsMzg0LjE5NSwyODIuMTA5eiBNMzg2LjY0OCwyODIuMTA5YzAtNS4xNzUtNC4wMi04LjE3OS04LjUtOC4xNzkNCgljLTQuNTExLDAtOC41MzEsMy4wMDQtOC41MzEsOC4xNzljMCw1LjE3Miw0LjAyMSw4LjE4OCw4LjUzMSw4LjE4OEMzODIuNjI5LDI5MC4yOTcsMzg2LjY0OCwyODcuMjgxLDM4Ni42NDgsMjgyLjEwOQ0KCSBNMzc2LjczOCwyODIuODAxaDAuOTFsMi4xMDksMy43MDNoMi4zMTZsLTIuMzM2LTMuODU5YzEuMjA3LTAuMDg2LDIuMi0wLjY2MSwyLjItMi4yODZjMC0yLjAxOS0xLjM5Mi0yLjY2OC0zLjc1LTIuNjY4aC0zLjQxMQ0KCXY4LjgxM2gxLjk2MVYyODIuODAxIE0zNzYuNzM4LDI4MS4zMDl2LTIuMTIyaDEuMzY0YzAuNzQyLDAsMS43NTMsMC4wNiwxLjc1MywwLjk2NWMwLDAuOTg1LTAuNTIzLDEuMTU3LTEuMzk4LDEuMTU3SDM3Ni43MzgiLz4NCjxwYXRoIGlkPSJwYXRoMTkiIGQ9Ik0zMjkuNDA2LDIzNy4wMjdsMTAuNTk4LDI4Ljk5M0gzMTguNDhMMzI5LjQwNiwyMzcuMDI3eiBNMzE4LjA1NiwyMjUuNzM4bC0yNC40MjMsNjEuODhoMTcuMjQ2bDMuODYzLTEwLjkzNA0KCWgyOC45MDNsMy42NTYsMTAuOTM0aDE4LjcyMmwtMjQuNjA1LTYxLjg4OEwzMTguMDU2LDIyNS43Mzh6IE0yNjkuMDIzLDI4Ny42NDFoMTcuNDk3di02MS45MjJsLTE3LjUtMC4wMDRMMjY5LjAyMywyODcuNjQxeg0KCSBNMTQ3LjU1NiwyMjUuNzE1bC0xNC41OTgsNDkuMDc4bC0xMy45ODQtNDkuMDc0bC0xOC44NzktMC4wMDRsMTkuOTcyLDYxLjkyNmgyNS4yMDdsMjAuMTMzLTYxLjkyNkgxNDcuNTU2eiBNMjE4LjI4MSwyMzkuMTk5aDcuNTINCgljMTAuOTEsMCwxNy45NjYsNC44OTgsMTcuOTY2LDE3LjYwOWMwLDEyLjcxNC03LjA1NiwxNy42MTMtMTcuOTY2LDE3LjYxM2gtNy41MlYyMzkuMTk5eiBNMjAwLjkzMSwyMjUuNzE1djYxLjkyNmgyOC4zNjYNCgljMTUuMTEzLDAsMjAuMDQ4LTIuNTEyLDI1LjM4NC04LjE0OGMzLjc2OS0zLjk1Nyw2LjIwNy0xMi42NDEsNi4yMDctMjIuMTM0YzAtOC43MDctMi4wNjMtMTYuNDY4LTUuNjYtMjEuMzA0DQoJYy02LjQ4MS04LjY0OS0xNS44MTctMTAuMzQtMjkuNzUtMTAuMzRIMjAwLjkzMXogTTM1LjE4OCwyMjUuNjI5djYyLjAxMmgxNy42NDV2LTQ3LjA4NmwxMy42NzIsMC4wMDQNCgljNC41MjcsMCw3Ljc1NCwxLjEyOCw5LjkzNCwzLjQ1N2MyLjc2NSwyLjk0NSwzLjg5NCw3LjY5OSwzLjg5NCwxNi4zOTV2MjcuMjNoMTcuMDk4di0zNC4yNjJjMC0yNC40NTMtMTUuNTg2LTI3Ljc1LTMwLjgzNi0yNy43NQ0KCUgzNS4xODh6IE0xNzIuNzcxLDIyNS43MTVsMC4wMDcsNjEuOTI2aDE3LjQ4OXYtNjEuOTI2SDE3Mi43NzF6Ii8+DQo8cGF0aCBpZD0icGF0aDIxIiBmaWxsPSIjNzdCOTAwIiBkPSJNODIuMjExLDEwMi40MTRjMCwwLDIyLjUwNC0zMy4yMDMsNjcuNDM3LTM2LjYzOFY1My43Mw0KCWMtNDkuNzY5LDMuOTk3LTkyLjg2Nyw0Ni4xNDktOTIuODY3LDQ2LjE0OXMyNC40MSw3MC41NjUsOTIuODY3LDc3LjAyNnYtMTIuODA0Qzk5LjQxMSwxNTcuNzgxLDgyLjIxMSwxMDIuNDE0LDgyLjIxMSwxMDIuNDE0eg0KCSBNMTQ5LjY0OCwxMzguNjM3djExLjcyNmMtMzcuOTY4LTYuNzY5LTQ4LjUwNy00Ni4yMzctNDguNTA3LTQ2LjIzN3MxOC4yMy0yMC4xOTUsNDguNTA3LTIzLjQ3djEyLjg2Nw0KCWMtMC4wMjMsMC0wLjAzOS0wLjAwNy0wLjA1OC0wLjAwN2MtMTUuODkxLTEuOTA3LTI4LjMwNSwxMi45MzgtMjguMzA1LDEyLjkzOFMxMjguMjQzLDEzMS40NDUsMTQ5LjY0OCwxMzguNjM3IE0xNDkuNjQ4LDMxLjUxMg0KCVY1My43M2MxLjQ2MS0wLjExMiwyLjkyMi0wLjIwNyw0LjM5MS0wLjI1N2M1Ni41ODItMS45MDcsOTMuNDQ5LDQ2LjQwNiw5My40NDksNDYuNDA2cy00Mi4zNDMsNTEuNDg4LTg2LjQ1Nyw1MS40ODgNCgljLTQuMDQzLDAtNy44MjgtMC4zNzUtMTEuMzgzLTEuMDA1djEzLjczOWMzLjA0LDAuMzg2LDYuMTkyLDAuNjEzLDkuNDgxLDAuNjEzYzQxLjA1MSwwLDcwLjczOC0yMC45NjUsOTkuNDg0LTQ1Ljc3OA0KCWM0Ljc2NiwzLjgxNywyNC4yNzgsMTMuMTAzLDI4LjI4OSwxNy4xNjhjLTI3LjMzMiwyMi44ODMtOTEuMDMxLDQxLjMyOS0xMjcuMTQ0LDQxLjMyOWMtMy40ODEsMC02LjgyNC0wLjIxMS0xMC4xMS0wLjUyOHYxOS4zMDYNCgloMTU2LjAzMlYzMS41MTJIMTQ5LjY0OHogTTE0OS42NDgsODAuNjU2VjY1Ljc3N2MxLjQ0Ni0wLjEwMSwyLjkwMy0wLjE3OSw0LjM5MS0wLjIyNmM0MC42ODgtMS4yNzgsNjcuMzgyLDM0Ljk2NSw2Ny4zODIsMzQuOTY1DQoJcy0yOC44MzIsNDAuMDQzLTU5Ljc0Niw0MC4wNDNjLTQuNDQ5LDAtOC40MzgtMC43MTUtMTIuMDI4LTEuOTIyVjkzLjUyM2MxNS44NCwxLjkxNCwxOS4wMjgsOC45MTEsMjguNTUxLDI0Ljc4NmwyMS4xOC0xNy44NTkNCgljMCwwLTE1LjQ2MS0yMC4yNzctNDEuNTI0LTIwLjI3N0MxNTUuMDIxLDgwLjE3MiwxNTIuMzEsODAuMzcxLDE0OS42NDgsODAuNjU2Ii8+DQo8L3N2Zz4NCg==",
                 "oc.keyword": "nvidia-smi,nvidia,smi",
-                "oc.launch": "konsole.konsole",
+                "oc.launch": "nvidiasmi.konsole",
                 "oc.name": "nvidia-smi",
                 "oc.path": "/usr/bin/konsole",
                 "oc.rules": "{\"homedir\":{\"default\":true}}",
@@ -128,14 +132,14 @@
         },
         "Architecture": "amd64",
         "Os": "linux",
-        "Size": 1059867033,
-        "VirtualSize": 1059867033,
+        "Size": 1056307510,
+        "VirtualSize": 1056307510,
         "GraphDriver": {
             "Data": {
-                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/6e7a39d1ab49a7f25cc28bd73f16dc64e1eb610d47814937c34ae1ddac493944/diff:/mnt/nvme0n1/var/lib/docker/overlay2/ec428ea6e38863341b5b6fbeb4490e9c075921f69942dea2860408a2993da175/diff:/mnt/nvme0n1/var/lib/docker/overlay2/a9ee1ecfdc3934b0734ef1d1358cf8bf0cd8de35ae05bd06a84f8e075b9ada4c/diff:/mnt/nvme0n1/var/lib/docker/overlay2/7a941f18872e90c827c96f43eea66bf290068797fea2253109fd69f23a23ff3e/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d96666b8bd8a12b0396a9af07c3c22ea66fd5396db6ac52c6bd9e37f6c88c4b0/diff:/mnt/nvme0n1/var/lib/docker/overlay2/9d1bb70735f5abafcaea2126b9a9e1501d8f6c2fa55434a61ad4b89b7953fa0b/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1fb68a3b1f4b26f92d29835500a751654978b243c291ad6f765ee4cc8972a116/diff:/mnt/nvme0n1/var/lib/docker/overlay2/f3765d75be8a3f8982af2a6f23c0a48d9e4aceb39165e30ba0ffb29453b8c483/diff:/mnt/nvme0n1/var/lib/docker/overlay2/792933627f28d38c13928c84c4f6bf7f3d273673b5fe83b64cb4f9dff99aeb9d/diff:/mnt/nvme0n1/var/lib/docker/overlay2/fa7f2e6c81f38f9ccc8875031e1a9aca3c5b8f03c8a13d34c4f589f64ed581a7/diff:/mnt/nvme0n1/var/lib/docker/overlay2/8b37b4ffe5aff52f8f0069753197dec87c4c2c4fd3596cf1609d3a2defd2e083/diff:/mnt/nvme0n1/var/lib/docker/overlay2/e2fd4046af42d1dd97ebe0d89df096626ea3b5c36250a159655084589247feb0/diff:/mnt/nvme0n1/var/lib/docker/overlay2/263d474f94493a3de60299374617266391f684f0dc5af4f409beba9580fb2127/diff:/mnt/nvme0n1/var/lib/docker/overlay2/8eb8a4032651d607aee04901b3088e0f0703f952644eb3c8d607f71d5b00d304/diff:/mnt/nvme0n1/var/lib/docker/overlay2/27bd901f5a3923a5ba453120a4389198d6b09295ec89b1241497fa56f53134e3/diff:/mnt/nvme0n1/var/lib/docker/overlay2/a9a05a632722abb83274dfeb6dc7dbc9130a31fe6642305e9443096f3c6d7711/diff:/mnt/nvme0n1/var/lib/docker/overlay2/899b3d0a637d0e60d9c6bb0567046d7288aec9708d8abc2a0f5f22b177abe5f6/diff:/mnt/nvme0n1/var/lib/docker/overlay2/11fe9a1f3a18e6fcfa14fdc074ed929aeb3764895b08da36dc7311a5d79fec34/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1570df6d67be44b15c5d5eecd06ce33ed86b0f7894869f46fa6f1290988c53eb/diff:/mnt/nvme0n1/var/lib/docker/overlay2/94948d56dac814f7e294eb262f5b64e4ccb496bb2ae148e3ecd8d53eba0682aa/diff:/mnt/nvme0n1/var/lib/docker/overlay2/30b79c14df40d13db5a5e34e4270070f86b5fa501605812519f53070b30d83aa/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1ca3594279a65e695055271abee4117c5756c98b66e0c0459ce759f20bdf5f72/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d0808114a3bed21260af8617ae048f26e8bc45a827dcce78fc66f3df3f68c118/diff",
-                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/393b63cf8d9ec3d8720f9b02096c6781ca556334404522943db99155e81f223b/merged",
-                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/393b63cf8d9ec3d8720f9b02096c6781ca556334404522943db99155e81f223b/diff",
-                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/393b63cf8d9ec3d8720f9b02096c6781ca556334404522943db99155e81f223b/work"
+                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/0b3013cc07bed7b895aff648e2f69752d9ca921182eb1c2b44fcd68271b01f8c/diff:/mnt/nvme0n1/var/lib/docker/overlay2/22beef88859e6440aacfa7ecae6cd28619b590f84cf46c265094fec0fe89aeee/diff:/mnt/nvme0n1/var/lib/docker/overlay2/9c1845bcd609047ee0357c9b471271e6c04606b76517b9ae257154bee1f238e5/diff:/mnt/nvme0n1/var/lib/docker/overlay2/de26f837a58da866f3bb3be53ca14e1948620c9788a9d5ee8390578bc238ad2a/diff:/mnt/nvme0n1/var/lib/docker/overlay2/c8f79b752be71ddbc34e0099a1b6afaac34fcfa4a8e4380ac3de76134b120b06/diff:/mnt/nvme0n1/var/lib/docker/overlay2/f3765d75be8a3f8982af2a6f23c0a48d9e4aceb39165e30ba0ffb29453b8c483/diff:/mnt/nvme0n1/var/lib/docker/overlay2/792933627f28d38c13928c84c4f6bf7f3d273673b5fe83b64cb4f9dff99aeb9d/diff:/mnt/nvme0n1/var/lib/docker/overlay2/fa7f2e6c81f38f9ccc8875031e1a9aca3c5b8f03c8a13d34c4f589f64ed581a7/diff:/mnt/nvme0n1/var/lib/docker/overlay2/8b37b4ffe5aff52f8f0069753197dec87c4c2c4fd3596cf1609d3a2defd2e083/diff:/mnt/nvme0n1/var/lib/docker/overlay2/e2fd4046af42d1dd97ebe0d89df096626ea3b5c36250a159655084589247feb0/diff:/mnt/nvme0n1/var/lib/docker/overlay2/263d474f94493a3de60299374617266391f684f0dc5af4f409beba9580fb2127/diff:/mnt/nvme0n1/var/lib/docker/overlay2/8eb8a4032651d607aee04901b3088e0f0703f952644eb3c8d607f71d5b00d304/diff:/mnt/nvme0n1/var/lib/docker/overlay2/27bd901f5a3923a5ba453120a4389198d6b09295ec89b1241497fa56f53134e3/diff:/mnt/nvme0n1/var/lib/docker/overlay2/a9a05a632722abb83274dfeb6dc7dbc9130a31fe6642305e9443096f3c6d7711/diff:/mnt/nvme0n1/var/lib/docker/overlay2/899b3d0a637d0e60d9c6bb0567046d7288aec9708d8abc2a0f5f22b177abe5f6/diff:/mnt/nvme0n1/var/lib/docker/overlay2/11fe9a1f3a18e6fcfa14fdc074ed929aeb3764895b08da36dc7311a5d79fec34/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1570df6d67be44b15c5d5eecd06ce33ed86b0f7894869f46fa6f1290988c53eb/diff:/mnt/nvme0n1/var/lib/docker/overlay2/94948d56dac814f7e294eb262f5b64e4ccb496bb2ae148e3ecd8d53eba0682aa/diff:/mnt/nvme0n1/var/lib/docker/overlay2/30b79c14df40d13db5a5e34e4270070f86b5fa501605812519f53070b30d83aa/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1ca3594279a65e695055271abee4117c5756c98b66e0c0459ce759f20bdf5f72/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d0808114a3bed21260af8617ae048f26e8bc45a827dcce78fc66f3df3f68c118/diff",
+                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/f6fcb625755a7f65660efd47830cd35378bd937389a89bbd5f8f68a90656ea59/merged",
+                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/f6fcb625755a7f65660efd47830cd35378bd937389a89bbd5f8f68a90656ea59/diff",
+                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/f6fcb625755a7f65660efd47830cd35378bd937389a89bbd5f8f68a90656ea59/work"
             },
             "Name": "overlay2"
         },
@@ -158,18 +162,16 @@
                 "sha256:fc248efc8167528dc1b4a189c26f10b1558390adef63fc6ff499e3b2a13825e7",
                 "sha256:fe490b38609fcf58927948c2bc8a476f5706602ca6143477f4a360193a3161bf",
                 "sha256:7331bca235c4717c3ae7b560c2f20ad45d7216b7a5bcac4d20aac63946d65224",
-                "sha256:bc7bf9db537ffa0ee9a28f37f643575e18c5a4463d2cbb4a3a1e49c8c65bcee1",
-                "sha256:efd1a56b199dae5e5ca54ac32ce892461777553afc953e97c8e7427580c9593a",
-                "sha256:a14635ec28dc398e10a966ce9e0b07fc34d6317db7a4222b56259ca23f6c4ae0",
-                "sha256:b630e58dae53a0ad0e30ff8e6aa5cc044c73c3577d61d83ce76482baed195ba4",
-                "sha256:651086b929ec0be85356c6629a92f13e578d865132a355e08e364806f6279dc1",
-                "sha256:06a70eb01c0f894b672d1f8c2397bb35a4d4d36bfa2b1c0e671899487671b235",
-                "sha256:caa1739f5af5ae0cf0f7dd485badc34ca0f7b70f5dab76913ead626696ab68ad",
-                "sha256:ddda9ebcd88f24755113f0154b747832f733a6405dd7e716d4cfe903fdcf999e"
+                "sha256:758dd9956d467118e36bd294badeac9cd702c55e7f941d9f3c73a7cfb5b0d880",
+                "sha256:dd8330b03d85ca62c31582f378621a1f2313c8a179e37db5e78efefeab6bb11b",
+                "sha256:8871de5eac4c1cd8b58ff4d597ae637b687869c77613e0fb7c73114713699ee6",
+                "sha256:98dc6bc09caa1fe8fbcc0efccd9ff86fff9fa3dea15b2aa4f295cf2a9dd7da82",
+                "sha256:b9cae339882eb51f4fc105cdc89d18c1e505ba08b161b28244b35b65dd32cd50",
+                "sha256:30a01bdef6d2ff058c93b693f43501ed2a7af9ece84f6de20232bfd90bf96c85"
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T15:03:33.374479955+01:00"
+            "LastTagTime": "2023-04-11T17:36:18.270531805+02:00"
         }
     }
 ]

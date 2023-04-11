@@ -5,7 +5,9 @@
             "abcdesktopio/2048-ubuntu.d:3.0",
             "abcdesktopio/2048-ubuntu.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/2048-ubuntu.d@sha256:82a2b7ed690c2368ac0f608b606bfaa12152e21e1b2ec04137df8b462c13df63"
+        ],
         "Parent": "sha256:b55a5c7818fcd77c25fb2578c9e8f6195c04ab39d343e225e46819cba31dd44e",
         "Comment": "",
         "Created": "2023-03-22T10:51:57.964332644Z",
@@ -146,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T14:49:58.943404343+01:00"
+            "LastTagTime": "2023-04-11T17:34:32.78435016+02:00"
         }
     }
 ]

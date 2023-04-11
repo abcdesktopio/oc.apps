@@ -5,7 +5,9 @@
             "abcdesktopio/boxes.d:3.0",
             "abcdesktopio/boxes.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/boxes.d@sha256:00eb953a520f91c11637524243e0d07c3f2962be2238d5f81fbad1afebc24362"
+        ],
         "Parent": "sha256:1d1c0db0d59af5391583b852b8fe0dc3c87ab5546e5baf541f0a0f9090e59045",
         "Comment": "",
         "Created": "2023-02-17T17:05:07.753961472Z",
@@ -146,7 +148,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T14:49:05.132946421+01:00"
+            "LastTagTime": "2023-04-11T17:34:39.133211644+02:00"
         }
     }
 ]

@@ -5,7 +5,9 @@
             "abcdesktopio/drawio.d:3.0",
             "abcdesktopio/drawio.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/drawio.d@sha256:51b2d18657476017256c7bb55a6d57b919ee3da2b48fd872bac286ba6d562254"
+        ],
         "Parent": "sha256:3539c251e8424d4deed99ce40777658d8ac277ad58c95dd26b053c94c0f9f12d",
         "Comment": "",
         "Created": "2023-03-22T11:27:58.722860034Z",
@@ -157,7 +159,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:38:39.881662728+01:00"
+            "LastTagTime": "2023-04-11T17:34:57.435973715+02:00"
         }
     }
 ]

@@ -5,7 +5,9 @@
             "abcdesktopio/mines.d:3.0",
             "abcdesktopio/mines.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/mines.d@sha256:81ac26a877c14ec9d821ab7ec19a9bf804e21f7c2e8b025d59971a32932ddd56"
+        ],
         "Parent": "sha256:a2c6d51310e4668b4957a52f11746b8a2e4fd50c61f567c3418159175f5b26cf",
         "Comment": "",
         "Created": "2023-02-17T17:29:05.325357826Z",
@@ -139,7 +141,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:41:51.98708403+01:00"
+            "LastTagTime": "2023-04-11T17:36:13.897778668+02:00"
         }
     }
 ]

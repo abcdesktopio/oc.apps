@@ -1,0 +1,154 @@
+[
+    {
+        "Id": "sha256:ad51b7a3e3001ad5afb12bdc203671f27aa6fa4752f0bca67b23ccdbcb80a799",
+        "RepoTags": [
+            "abcdesktopio/xedit.d:3.0",
+            "abcdesktopio/xedit.d:dev"
+        ],
+        "RepoDigests": [
+            "abcdesktopio/xedit.d@sha256:cd549674fa9ad9565de91f0fb1e5e48d77be97a72b6bd6776aeea17f729171f3"
+        ],
+        "Parent": "sha256:9cadbe39e32bbea8a48af8a91042ff8d943ba93e19e93dd89af9cae495d9cebe",
+        "Comment": "",
+        "Created": "2023-03-22T13:15:38.689495444Z",
+        "Container": "0a6205489ed40865bec0a9be5fa4e9d5527c4441098eac0473b9f400b9835ed9",
+        "ContainerConfig": {
+            "Hostname": "0a6205489ed4",
+            "Domainname": "",
+            "User": "balloon",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBCONF_FRONTEND=noninteractive",
+                "TERM=linux",
+                "LANG=en_US.utf8",
+                "BUSER=balloon",
+                "APPNAME=xedit",
+                "APPBIN=/usr/bin/xedit",
+                "APP=/usr/bin/xedit"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"/composer/appli-docker-entrypoint.sh\"]"
+            ],
+            "Image": "sha256:9cadbe39e32bbea8a48af8a91042ff8d943ba93e19e93dd89af9cae495d9cebe",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "oc.acl": "{\"permit\":[\"all\"]}",
+                "oc.cat": "utilities",
+                "oc.containerengine": "ephemeral_container",
+                "oc.displayname": "Xedit",
+                "oc.fileextensions": "txt;log;md",
+                "oc.icon": "circle_xedit.svg",
+                "oc.icondata": "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiA8ZGVmcz4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSIxMC45NzMiIHgyPSIzNi45MzciIHkxPSIyNCIgeTI9IjI0IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEuNTAyIDAgMCAxLjUwMzcgLTMuOTgyNyAtMy4zNDIpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgIDxzdG9wIHN0b3AtY29sb3I9IiMyYTJjMmYiIG9mZnNldD0iMCIvPgogICA8c3RvcCBzdG9wLWNvbG9yPSIjNDI0NjQ5IiBvZmZzZXQ9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxsaW5lYXJHcmFkaWVudCBpZD0iYSIgeDE9IjMxOS4yMSIgeDI9IjY1Ny42NSIgeTE9IjIzNS4xNSIgeTI9IjI2OS40OSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCguMTMyMzUgMCAwIC4xMzA3NSAtMzIuMzc5IDEuMDg3MykiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgPHN0b3Agc3RvcC1jb2xvcj0iI2U1NGMxOCIgb2Zmc2V0PSIwIi8+CiAgIDxzdG9wIHN0b3AtY29sb3I9IiNmZWMzNTAiIG9mZnNldD0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPGZpbHRlciBpZD0iZCIgeD0iLS4wMzYiIHk9Ii0uMDM2IiB3aWR0aD0iMS4wNzIiIGhlaWdodD0iMS4wNzIiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CiAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjAuODg5NzI0NDkiLz4KICA8L2ZpbHRlcj4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImUiIHgxPSI0MDguMjUiIHgyPSI0MDcuOTQiIHkxPSI1NDcuNiIgeTI9IjQ5OC44OSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjMyNzYsMCwwLDEuMzI3NiwtNTEwLjY0LC02NjMuNTIpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgIDxzdG9wIHN0b3AtY29sb3I9IiNmZmYiIG9mZnNldD0iMCIvPgogICA8c3RvcCBzdG9wLWNvbG9yPSIjZTZlNmU2IiBvZmZzZXQ9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxmaWx0ZXIgeD0iLS4wNDk4OTciIHk9Ii0uMDc1MjMyIiB3aWR0aD0iMS4wOTk4IiBoZWlnaHQ9IjEuMTUwNSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4KICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMC45MzU1MzYwOCIvPgogIDwvZmlsdGVyPgogIDxmaWx0ZXIgaWQ9ImMiIHg9Ii0uMDU1MzE5IiB5PSItLjA2NTU2MyIgd2lkdGg9IjEuMTEwNiIgaGVpZ2h0PSIxLjEzMTEiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CiAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEuMTA2MjkxMiIvPgogIDwvZmlsdGVyPgogPC9kZWZzPgogPHJlY3QgdHJhbnNmb3JtPSJtYXRyaXgoMS4wMTE1LDAsMCwxLjAxMTUsLTM4OS4zMiwtNDg5LjkyKSIgeD0iMzg2Ljg1IiB5PSI0ODYuMzEiIHdpZHRoPSI1OS4zMTUiIGhlaWdodD0iNTkuMzE1IiByeT0iMjkuNjU3IiBmaWx0ZXI9InVybCgjZCkiIG9wYWNpdHk9Ii4yNSIvPgogPHJlY3QgeD0iMS45ODI2IiB5PSIxLjk3ODQiIHdpZHRoPSI1OS45OTciIGhlaWdodD0iNTkuOTk3IiByeT0iMjkuOTk4IiBmaWxsPSJ1cmwoI2UpIiBzdHJva2Utd2lkdGg9IjEuMDExNSIvPgogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMS40OTk5LDAsMCwxLjQ5OTksLTU4MC44MSwtNzUzLjY0KSIgZm9udC1zaXplPSIxMi42NjZweCIgc3Ryb2tlLXdpZHRoPSIuNjY2NzIiPgogIDx0ZXh0IHg9IjczMC44OCIgeT0iMTMyLjE5IiBmb250LWZhbWlseT0iJ0Ryb2lkIFNhbnMnIiBzdHJva2Utd2lkdGg9Ii42NjY3MiIvPgogPC9nPgogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMS40OTk5IDAgMCAxLjQ5OTkgLTU4MC44MSAtNzUzLjY0KSIgZm9udC1zaXplPSIxMi42NjZweCIgc3Ryb2tlLXdpZHRoPSIuNjY2NzIiPgogIDx0ZXh0IHg9IjczMC44OCIgeT0iMTMyLjE5IiBmb250LWZhbWlseT0iJ0Ryb2lkIFNhbnMnIiBzdHJva2Utd2lkdGg9Ii42NjY3MiIvPgogPC9nPgogPHJlY3QgeD0iNjQuOTY1IiB5PSIyOS43OTMiIHdpZHRoPSIuMDY3NDk1IiBoZWlnaHQ9IjAiIGZpbGw9IiMwMDBjZmYiIG9wYWNpdHk9Ii40MDc0MSIvPgogPGcgdHJhbnNmb3JtPSJtYXRyaXgoLjc5NzAyIDAgMCAuNzk0OTIgNS44OTk3IDUuNjYwMykiIGZpbHRlcj0idXJsKCNjKSIgb3BhY2l0eT0iLjE1IiBzdHJva2Utd2lkdGg9IjEuMjU2MyI+CiAgPHBhdGggZD0ibTEyLjkzNCA1Mi45ODIgMTQuNzI0LTE5LjI3NC0xNS4xNTktMjEuMTkyIDkuNzQzMSAwLjAwODEgMTIuMDc5IDE2LjY2My0xOC4wNiAyMy43OTRoLTMuMzI3em0yOC44MTkgMC4wMTM2OC0xMS45OTUtMTYuNjkyIDE4LjIxMS0yMy44MDVoMy4yNDQ3bC0xNC43ODQgMTkuMzY0IDE1LjA2OCAyMS4xMzJ6Ii8+CiAgPHBhdGggZD0ibTMxLjk5NiAxOS44OTJjLTEuMTcxNCAwLTIuNDIyOSAwLjA4OTYtMy41NDk2IDAuMTk2NDYgMi4wMDcyIDIuNTg2MiAzLjY3MjYgNC43NzYyIDUuNTg5NCA3LjI2MzQtMS4wNzU4LTIuMjg3Mi0zLjI4NjktNC40ODA1LTIuNTIyNS01LjYwODQgMC43NTY2NS0xLjExNjYgMi4xNTA4LTAuOTI4NjIgMi4yNTctMC45Mjg2MiAyLjIzNTEgMCA0LjM4NjcgMC4yNDkzOSA2LjM5ODEgMC43MTA5NWwwLjQ3MTQ4LTAuNjQxNDljLTIuNjgyOC0wLjY4MjI4LTUuNTk2Ny0wLjk5MjIxLTguNjQzOS0wLjk5MjIxem0xMi4xMDYgMi4wODcyLTAuNDM0MjYgMC42MTI4OWM2LjE5NzIgMi4zOTc1IDEwLjM4OSA2Ljk3NjggMTAuMzg5IDEyLjIyNSAwIDcuNzI4MS05LjA4NzYgMTMuOTk4LTIwLjI4NiAxMy45OTgtMTEuMTk5IDAtMjAuMjktNi4yNzAzLTIwLjI5LTEzLjk5OCAxZS02IC00LjIwODUgMi42OTYxLTcuOTg2MiA2Ljk2MDYtMTAuNTU0bC0xLjMxMTEtMS45NzM1Yy02LjY4OTYgMi44MDIyLTExLjEzIDcuNzIwNy0xMS4xMyAxMy4zMiAwIDguNzEyMyAxMC43NSAxNS43OCAyMy45OTYgMTUuNzggMTMuMjQ3IDAgMjQtNy4wNjc1IDI0LTE1Ljc4IDAtNS44MDk2LTQuNzgwNy0xMC44OS0xMS44OTUtMTMuNjMxeiIvPgogPC9nPgogPGcgdHJhbnNmb3JtPSJtYXRyaXgoLjc5NzAyIDAgMCAuNzk0OTIgNS44OTk3IDUuNjYwMykiIHN0cm9rZS13aWR0aD0iMS4yNTYzIj4KICA8cGF0aCBkPSJtMTIuOTM0IDUyLjk4MiAxNC43MjQtMTkuMjc0LTE1LjE1OS0yMS4xOTIgOS43NDMxIDAuMDA4MSAxMi4wNzkgMTYuNjYzLTE4LjA2IDIzLjc5NGgtMy4zMjd6bTI4LjgxOSAwLjAxMzY4LTExLjk5NS0xNi42OTIgMTguMjExLTIzLjgwNWgzLjI0NDdsLTE0Ljc4NCAxOS4zNjQgMTUuMDY4IDIxLjEzMnoiIGZpbGw9InVybCgjYikiLz4KICA8cGF0aCBkPSJtMzEuOTk2IDE5Ljg5MmMtMS4xNzE0IDAtMi40MjI5IDAuMDg5Ni0zLjU0OTYgMC4xOTY0NiAyLjAwNzIgMi41ODYyIDMuNjcyNiA0Ljc3NjIgNS41ODk0IDcuMjYzNC0xLjA3NTgtMi4yODcyLTMuMjg2OS00LjQ4MDUtMi41MjI1LTUuNjA4NCAwLjc1NjY1LTEuMTE2NiAyLjE1MDgtMC45Mjg2MiAyLjI1Ny0wLjkyODYyIDIuMjM1MSAwIDQuMzg2NyAwLjI0OTM5IDYuMzk4MSAwLjcxMDk1bDAuNDcxNDgtMC42NDE0OWMtMi42ODI4LTAuNjgyMjgtNS41OTY3LTAuOTkyMjEtOC42NDM5LTAuOTkyMjF6bTEyLjEwNiAyLjA4NzItMC40MzQyNiAwLjYxMjg5YzYuMTk3MiAyLjM5NzUgMTAuMzg5IDYuOTc2OCAxMC4zODkgMTIuMjI1IDAgNy43MjgxLTkuMDg3NiAxMy45OTgtMjAuMjg2IDEzLjk5OC0xMS4xOTkgMC0yMC4yOS02LjI3MDMtMjAuMjktMTMuOTk4IDFlLTYgLTQuMjA4NSAyLjY5NjEtNy45ODYyIDYuOTYwNi0xMC41NTRsLTEuMzExMS0xLjk3MzVjLTYuNjg5NiAyLjgwMjItMTEuMTMgNy43MjA3LTExLjEzIDEzLjMyIDAgOC43MTIzIDEwLjc1IDE1Ljc4IDIzLjk5NiAxNS43OCAxMy4yNDcgMCAyNC03LjA2NzUgMjQtMTUuNzggMC01LjgwOTYtNC43ODA3LTEwLjg5LTExLjg5NS0xMy42MzF6IiBmaWxsPSJ1cmwoI2EpIi8+CiA8L2c+Cjwvc3ZnPgo=",
+                "oc.keyword": "xedit,text,notepad,edit,txt,editor,xedit",
+                "oc.launch": "xedit.Xedit",
+                "oc.mimetype": "application/text;",
+                "oc.name": "xedit",
+                "oc.path": "/usr/bin/xedit",
+                "oc.rules": "{\"homedir\":{\"default\":true}}",
+                "oc.template": "abcdesktopio/oc.template.ubuntu.minimal.18.04",
+                "oc.type": "app",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "18.04"
+            }
+        },
+        "DockerVersion": "23.0.1",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "balloon",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBCONF_FRONTEND=noninteractive",
+                "TERM=linux",
+                "LANG=en_US.utf8",
+                "BUSER=balloon",
+                "APPNAME=xedit",
+                "APPBIN=/usr/bin/xedit",
+                "APP=/usr/bin/xedit"
+            ],
+            "Cmd": [
+                "/composer/appli-docker-entrypoint.sh"
+            ],
+            "Image": "sha256:9cadbe39e32bbea8a48af8a91042ff8d943ba93e19e93dd89af9cae495d9cebe",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "oc.acl": "{\"permit\":[\"all\"]}",
+                "oc.cat": "utilities",
+                "oc.containerengine": "ephemeral_container",
+                "oc.displayname": "Xedit",
+                "oc.fileextensions": "txt;log;md",
+                "oc.icon": "circle_xedit.svg",
+                "oc.icondata": "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiA8ZGVmcz4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSIxMC45NzMiIHgyPSIzNi45MzciIHkxPSIyNCIgeTI9IjI0IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDEuNTAyIDAgMCAxLjUwMzcgLTMuOTgyNyAtMy4zNDIpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgIDxzdG9wIHN0b3AtY29sb3I9IiMyYTJjMmYiIG9mZnNldD0iMCIvPgogICA8c3RvcCBzdG9wLWNvbG9yPSIjNDI0NjQ5IiBvZmZzZXQ9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxsaW5lYXJHcmFkaWVudCBpZD0iYSIgeDE9IjMxOS4yMSIgeDI9IjY1Ny42NSIgeTE9IjIzNS4xNSIgeTI9IjI2OS40OSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCguMTMyMzUgMCAwIC4xMzA3NSAtMzIuMzc5IDEuMDg3MykiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgPHN0b3Agc3RvcC1jb2xvcj0iI2U1NGMxOCIgb2Zmc2V0PSIwIi8+CiAgIDxzdG9wIHN0b3AtY29sb3I9IiNmZWMzNTAiIG9mZnNldD0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPGZpbHRlciBpZD0iZCIgeD0iLS4wMzYiIHk9Ii0uMDM2IiB3aWR0aD0iMS4wNzIiIGhlaWdodD0iMS4wNzIiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CiAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjAuODg5NzI0NDkiLz4KICA8L2ZpbHRlcj4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImUiIHgxPSI0MDguMjUiIHgyPSI0MDcuOTQiIHkxPSI1NDcuNiIgeTI9IjQ5OC44OSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjMyNzYsMCwwLDEuMzI3NiwtNTEwLjY0LC02NjMuNTIpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgIDxzdG9wIHN0b3AtY29sb3I9IiNmZmYiIG9mZnNldD0iMCIvPgogICA8c3RvcCBzdG9wLWNvbG9yPSIjZTZlNmU2IiBvZmZzZXQ9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxmaWx0ZXIgeD0iLS4wNDk4OTciIHk9Ii0uMDc1MjMyIiB3aWR0aD0iMS4wOTk4IiBoZWlnaHQ9IjEuMTUwNSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4KICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMC45MzU1MzYwOCIvPgogIDwvZmlsdGVyPgogIDxmaWx0ZXIgaWQ9ImMiIHg9Ii0uMDU1MzE5IiB5PSItLjA2NTU2MyIgd2lkdGg9IjEuMTEwNiIgaGVpZ2h0PSIxLjEzMTEiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CiAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEuMTA2MjkxMiIvPgogIDwvZmlsdGVyPgogPC9kZWZzPgogPHJlY3QgdHJhbnNmb3JtPSJtYXRyaXgoMS4wMTE1LDAsMCwxLjAxMTUsLTM4OS4zMiwtNDg5LjkyKSIgeD0iMzg2Ljg1IiB5PSI0ODYuMzEiIHdpZHRoPSI1OS4zMTUiIGhlaWdodD0iNTkuMzE1IiByeT0iMjkuNjU3IiBmaWx0ZXI9InVybCgjZCkiIG9wYWNpdHk9Ii4yNSIvPgogPHJlY3QgeD0iMS45ODI2IiB5PSIxLjk3ODQiIHdpZHRoPSI1OS45OTciIGhlaWdodD0iNTkuOTk3IiByeT0iMjkuOTk4IiBmaWxsPSJ1cmwoI2UpIiBzdHJva2Utd2lkdGg9IjEuMDExNSIvPgogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMS40OTk5LDAsMCwxLjQ5OTksLTU4MC44MSwtNzUzLjY0KSIgZm9udC1zaXplPSIxMi42NjZweCIgc3Ryb2tlLXdpZHRoPSIuNjY2NzIiPgogIDx0ZXh0IHg9IjczMC44OCIgeT0iMTMyLjE5IiBmb250LWZhbWlseT0iJ0Ryb2lkIFNhbnMnIiBzdHJva2Utd2lkdGg9Ii42NjY3MiIvPgogPC9nPgogPGcgdHJhbnNmb3JtPSJtYXRyaXgoMS40OTk5IDAgMCAxLjQ5OTkgLTU4MC44MSAtNzUzLjY0KSIgZm9udC1zaXplPSIxMi42NjZweCIgc3Ryb2tlLXdpZHRoPSIuNjY2NzIiPgogIDx0ZXh0IHg9IjczMC44OCIgeT0iMTMyLjE5IiBmb250LWZhbWlseT0iJ0Ryb2lkIFNhbnMnIiBzdHJva2Utd2lkdGg9Ii42NjY3MiIvPgogPC9nPgogPHJlY3QgeD0iNjQuOTY1IiB5PSIyOS43OTMiIHdpZHRoPSIuMDY3NDk1IiBoZWlnaHQ9IjAiIGZpbGw9IiMwMDBjZmYiIG9wYWNpdHk9Ii40MDc0MSIvPgogPGcgdHJhbnNmb3JtPSJtYXRyaXgoLjc5NzAyIDAgMCAuNzk0OTIgNS44OTk3IDUuNjYwMykiIGZpbHRlcj0idXJsKCNjKSIgb3BhY2l0eT0iLjE1IiBzdHJva2Utd2lkdGg9IjEuMjU2MyI+CiAgPHBhdGggZD0ibTEyLjkzNCA1Mi45ODIgMTQuNzI0LTE5LjI3NC0xNS4xNTktMjEuMTkyIDkuNzQzMSAwLjAwODEgMTIuMDc5IDE2LjY2My0xOC4wNiAyMy43OTRoLTMuMzI3em0yOC44MTkgMC4wMTM2OC0xMS45OTUtMTYuNjkyIDE4LjIxMS0yMy44MDVoMy4yNDQ3bC0xNC43ODQgMTkuMzY0IDE1LjA2OCAyMS4xMzJ6Ii8+CiAgPHBhdGggZD0ibTMxLjk5NiAxOS44OTJjLTEuMTcxNCAwLTIuNDIyOSAwLjA4OTYtMy41NDk2IDAuMTk2NDYgMi4wMDcyIDIuNTg2MiAzLjY3MjYgNC43NzYyIDUuNTg5NCA3LjI2MzQtMS4wNzU4LTIuMjg3Mi0zLjI4NjktNC40ODA1LTIuNTIyNS01LjYwODQgMC43NTY2NS0xLjExNjYgMi4xNTA4LTAuOTI4NjIgMi4yNTctMC45Mjg2MiAyLjIzNTEgMCA0LjM4NjcgMC4yNDkzOSA2LjM5ODEgMC43MTA5NWwwLjQ3MTQ4LTAuNjQxNDljLTIuNjgyOC0wLjY4MjI4LTUuNTk2Ny0wLjk5MjIxLTguNjQzOS0wLjk5MjIxem0xMi4xMDYgMi4wODcyLTAuNDM0MjYgMC42MTI4OWM2LjE5NzIgMi4zOTc1IDEwLjM4OSA2Ljk3NjggMTAuMzg5IDEyLjIyNSAwIDcuNzI4MS05LjA4NzYgMTMuOTk4LTIwLjI4NiAxMy45OTgtMTEuMTk5IDAtMjAuMjktNi4yNzAzLTIwLjI5LTEzLjk5OCAxZS02IC00LjIwODUgMi42OTYxLTcuOTg2MiA2Ljk2MDYtMTAuNTU0bC0xLjMxMTEtMS45NzM1Yy02LjY4OTYgMi44MDIyLTExLjEzIDcuNzIwNy0xMS4xMyAxMy4zMiAwIDguNzEyMyAxMC43NSAxNS43OCAyMy45OTYgMTUuNzggMTMuMjQ3IDAgMjQtNy4wNjc1IDI0LTE1Ljc4IDAtNS44MDk2LTQuNzgwNy0xMC44OS0xMS44OTUtMTMuNjMxeiIvPgogPC9nPgogPGcgdHJhbnNmb3JtPSJtYXRyaXgoLjc5NzAyIDAgMCAuNzk0OTIgNS44OTk3IDUuNjYwMykiIHN0cm9rZS13aWR0aD0iMS4yNTYzIj4KICA8cGF0aCBkPSJtMTIuOTM0IDUyLjk4MiAxNC43MjQtMTkuMjc0LTE1LjE1OS0yMS4xOTIgOS43NDMxIDAuMDA4MSAxMi4wNzkgMTYuNjYzLTE4LjA2IDIzLjc5NGgtMy4zMjd6bTI4LjgxOSAwLjAxMzY4LTExLjk5NS0xNi42OTIgMTguMjExLTIzLjgwNWgzLjI0NDdsLTE0Ljc4NCAxOS4zNjQgMTUuMDY4IDIxLjEzMnoiIGZpbGw9InVybCgjYikiLz4KICA8cGF0aCBkPSJtMzEuOTk2IDE5Ljg5MmMtMS4xNzE0IDAtMi40MjI5IDAuMDg5Ni0zLjU0OTYgMC4xOTY0NiAyLjAwNzIgMi41ODYyIDMuNjcyNiA0Ljc3NjIgNS41ODk0IDcuMjYzNC0xLjA3NTgtMi4yODcyLTMuMjg2OS00LjQ4MDUtMi41MjI1LTUuNjA4NCAwLjc1NjY1LTEuMTE2NiAyLjE1MDgtMC45Mjg2MiAyLjI1Ny0wLjkyODYyIDIuMjM1MSAwIDQuMzg2NyAwLjI0OTM5IDYuMzk4MSAwLjcxMDk1bDAuNDcxNDgtMC42NDE0OWMtMi42ODI4LTAuNjgyMjgtNS41OTY3LTAuOTkyMjEtOC42NDM5LTAuOTkyMjF6bTEyLjEwNiAyLjA4NzItMC40MzQyNiAwLjYxMjg5YzYuMTk3MiAyLjM5NzUgMTAuMzg5IDYuOTc2OCAxMC4zODkgMTIuMjI1IDAgNy43MjgxLTkuMDg3NiAxMy45OTgtMjAuMjg2IDEzLjk5OC0xMS4xOTkgMC0yMC4yOS02LjI3MDMtMjAuMjktMTMuOTk4IDFlLTYgLTQuMjA4NSAyLjY5NjEtNy45ODYyIDYuOTYwNi0xMC41NTRsLTEuMzExMS0xLjk3MzVjLTYuNjg5NiAyLjgwMjItMTEuMTMgNy43MjA3LTExLjEzIDEzLjMyIDAgOC43MTIzIDEwLjc1IDE1Ljc4IDIzLjk5NiAxNS43OCAxMy4yNDcgMCAyNC03LjA2NzUgMjQtMTUuNzggMC01LjgwOTYtNC43ODA3LTEwLjg5LTExLjg5NS0xMy42MzF6IiBmaWxsPSJ1cmwoI2EpIi8+CiA8L2c+Cjwvc3ZnPgo=",
+                "oc.keyword": "xedit,text,notepad,edit,txt,editor,xedit",
+                "oc.launch": "xedit.Xedit",
+                "oc.mimetype": "application/text;",
+                "oc.name": "xedit",
+                "oc.path": "/usr/bin/xedit",
+                "oc.rules": "{\"homedir\":{\"default\":true}}",
+                "oc.template": "abcdesktopio/oc.template.ubuntu.minimal.18.04",
+                "oc.type": "app",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "18.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 418155029,
+        "VirtualSize": 418155029,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/fb26609305686da38159fce0917103c313b4c01fdd098e13f2889aee2d5e47f3/diff:/mnt/nvme0n1/var/lib/docker/overlay2/070aef25b11f83bc9074c23dd9713baf5211c88bdbd61ed4b5a6274c5d330719/diff:/mnt/nvme0n1/var/lib/docker/overlay2/9608d5e20807a2e5aac5dcc0e624c644d4f6f52142a4784944fdf3a530d11e99/diff:/mnt/nvme0n1/var/lib/docker/overlay2/3df3866a4f80a8105d5be64480954a770220b56859aa9339dd71e6dd4c5c0378/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1ef29f77c1fad9f388820a13aabfb54d29a957d22925a655154d15d948216148/diff:/mnt/nvme0n1/var/lib/docker/overlay2/4f1ef2388327708800676ecce8503a766a534577c2ff82fb95d9e3e9a1c9392d/diff:/mnt/nvme0n1/var/lib/docker/overlay2/fe7b167ec27eb75c9efb8e053eae919fcb5d1e4c33a0da4b49cc4494731f981f/diff:/mnt/nvme0n1/var/lib/docker/overlay2/f37f66e5fe2235b3d671a436e80fef286e0a8d0f877d4185e8fc17fc60b38309/diff:/mnt/nvme0n1/var/lib/docker/overlay2/e2ab3a1ce3599ff4d61cfca2e3b65e478227750baa355dc5125be82797cc11be/diff:/mnt/nvme0n1/var/lib/docker/overlay2/a15deaff36e8c09abb398a2a99e2b8d19ccb1ad5518a16f0ed0683393a66e2d2/diff:/mnt/nvme0n1/var/lib/docker/overlay2/fa969a844e1b1daf2a0719e6041b991f9a488120b262a41309fee0ad5906a151/diff:/mnt/nvme0n1/var/lib/docker/overlay2/aa5bbec9ab3dc75774bcfaf0daaae5b0fa6d500bc0545d28aab8b4cbe14076ee/diff:/mnt/nvme0n1/var/lib/docker/overlay2/9eae6afc7005c7bc4f6522cf012ea63c47b9d47808a71f9739c58e9f956c57c0/diff:/mnt/nvme0n1/var/lib/docker/overlay2/3db258767e41255ff43deb98953aee84168485882cf8c82dbac7a0d2ab68546a/diff:/mnt/nvme0n1/var/lib/docker/overlay2/012c0f891335cfe8c8d45dc24004d682d214060accd17d260ab5ba17e8102d83/diff",
+                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/0df5b3098b0e8d5b9acb829836351fed56d66235daee23f45ace033a35de9f04/merged",
+                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/0df5b3098b0e8d5b9acb829836351fed56d66235daee23f45ace033a35de9f04/diff",
+                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/0df5b3098b0e8d5b9acb829836351fed56d66235daee23f45ace033a35de9f04/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:b7e0fa7bfe7f9796f1268cca2e65a8bfb1e010277652cee9a9c9d077a83db3c4",
+                "sha256:c467782ac9d01ea2531a599380bca67ae92370cb8644a570529855967144ac2b",
+                "sha256:f0645ea8c8e4d6b989bc74f5e48eef9fd3c7aa402be3c0f2129d1484288ecc7e",
+                "sha256:2c9c3323a648a4012a12c7cc917b6b2c345bdc03471c9b6b235b4e8582b34e09",
+                "sha256:873ba82e7f96ff2127d20ca1211abe4fa0d4b34ed674a6f7491da05aaf1b7fa5",
+                "sha256:c54b99309d8d9b475fbaf99835fb8b670fb045a799016dc8643f06c2a11aa3e0",
+                "sha256:9f9ff536d8b077c030becaab2ac18c7f0dcf9a3ceeb9334a2220c4e100189fe9",
+                "sha256:ed0b4f613aa057a53d81090a1b1a80d785013815f405194ed7889716341ad2eb",
+                "sha256:a65b1db7c6c771e3d1eb657a78f9287907c35e48e009e2b41710069e4900e0ff",
+                "sha256:d5ac73335dd5e780108332c690f1e35911513025e622be8bac0287290e90fefb",
+                "sha256:492b4489648c3431d80638297df86f140d32071feffdd19efaf4c76ed7f179fd",
+                "sha256:023448fcb07504f459932c8d20c7e9a934f0b2e761e8c7572178c4f60f75d633",
+                "sha256:ed4d6d42a91fdd124948e7d448190d6a345c1f0555c6319a7ee0207c17c4283a",
+                "sha256:5734ced5548469b3870ef7eaf07222480592b6638ef38a69a114677e4ee045c4",
+                "sha256:6d5d4bc52c57069f8f09b3e6d48f0a43912db94f209ffdc717dbca5c3b60b8dd",
+                "sha256:a2bab73ca7bcd7dfea1cf94139ca19a7424d5c36637b46f1a7f9e8714b737edf"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2023-04-11T17:37:09.88609966+02:00"
+        }
+    }
+]

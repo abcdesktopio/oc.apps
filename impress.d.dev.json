@@ -5,7 +5,9 @@
             "abcdesktopio/impress.d:3.0",
             "abcdesktopio/impress.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/impress.d@sha256:f11d29c1bf351af806cbddc2f1322f83a096e8afda1ca83c96ddf80e41d9893a"
+        ],
         "Parent": "sha256:54d429e49245387337d521862853b433a635a1ff4e87002b99c3033353e04b3d",
         "Comment": "",
         "Created": "2023-02-17T17:21:15.327773793Z",
@@ -158,7 +160,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:39:05.79088574+01:00"
+            "LastTagTime": "2023-04-11T17:35:15.000569184+02:00"
         }
     }
 ]

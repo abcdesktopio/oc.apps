@@ -2,10 +2,11 @@
     {
         "Id": "sha256:621a569d575864efadf8049d4891d3fec0d6f3848f0fea80545c4b68697c6699",
         "RepoTags": [
-            "abcdesktopio/teams.d:3.0",
             "abcdesktopio/teams.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/teams.d@sha256:bdf96bc89ae9251d2ce125b169439c31849e0531659e821d34dc9a4fcfc1e0a2"
+        ],
         "Parent": "sha256:74e6570f82a424ee7c65cd3dbdf0cc35cfc3ab5881f69e2d60bc3e7c90ef44bc",
         "Comment": "",
         "Created": "2023-01-11T10:15:37.288315043Z",
@@ -145,7 +146,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-01-11T14:22:21.595550216+01:00"
+            "LastTagTime": "2023-01-17T13:18:46.386266581+01:00"
         }
     }
 ]

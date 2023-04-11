@@ -5,7 +5,9 @@
             "abcdesktopio/kdiamond.d:3.0",
             "abcdesktopio/kdiamond.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/kdiamond.d@sha256:d17847d7512b77f3ebef2deca5ad4c3f98ad356b6aff60cbb929c5d43963616a"
+        ],
         "Parent": "sha256:383f8dad7d64e0b19c90814212c3cf3132cd12e6687e02e2865ead1c2d51ae5d",
         "Comment": "",
         "Created": "2023-02-17T17:22:03.780963201Z",
@@ -137,7 +139,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:39:52.477032096+01:00"
+            "LastTagTime": "2023-04-11T17:36:00.754733904+02:00"
         }
     }
 ]

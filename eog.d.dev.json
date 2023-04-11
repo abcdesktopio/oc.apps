@@ -5,7 +5,9 @@
             "abcdesktopio/eog.d:3.0",
             "abcdesktopio/eog.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/eog.d@sha256:3b5efceb84ac4bb9040a9ac349933b3f9691795ef59366ee3b7c94b4437a27fe"
+        ],
         "Parent": "sha256:194898ba66339911f5b8388350fd0e3bf8cf02df33debb4fb74859851c966b77",
         "Comment": "",
         "Created": "2023-02-17T17:14:35.73883424Z",
@@ -150,7 +152,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T13:38:42.173797624+01:00"
+            "LastTagTime": "2023-04-11T17:34:59.012524295+02:00"
         }
     }
 ]

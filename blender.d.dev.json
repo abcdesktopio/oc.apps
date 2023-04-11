@@ -5,7 +5,9 @@
             "abcdesktopio/blender.d:3.0",
             "abcdesktopio/blender.d:dev"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/blender.d@sha256:9277220e6e3ea55c0f6ca4e0ea353c6909bc6fe398559a8ae2aa7fb2439f80fa"
+        ],
         "Parent": "sha256:e1cb4256ea913b2168eff6c6f10356f45d201ceda7309cbc2ae28e2bb30a3f83",
         "Comment": "",
         "Created": "2023-02-17T17:03:33.214216938Z",
@@ -143,7 +145,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-03-22T14:49:01.717589463+01:00"
+            "LastTagTime": "2023-04-11T17:34:36.658096973+02:00"
         }
     }
 ]
