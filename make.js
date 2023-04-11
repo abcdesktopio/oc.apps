@@ -201,6 +201,7 @@ function makedockerfile(e) {
   if (e.usedefaultapplication) { wstream.write(`LABEL oc.usedefaultapplication=${JSON.stringify(e.usedefaultapplication)}\n`); }
   if (e.home) { wstream.write(`LABEL oc.home=${JSON.stringify(e.home)}\n`); }
   if (e.containerengine) {  wstream.write(`LABEL oc.containerengine=${JSON.stringify(e.containerengine)}\n`); }
+  if (e.executeclassname) {  wstream.write(`LABEL oc.executeclassname=${JSON.stringify(e.executeclassname)}\n`); }
   if (e.securitycontext) {  wstream.write(`LABEL oc.securitycontext=${JSON.stringify(e.securitycontext)}\n`); }
   if (e.postruncommands) {
         e.postruncommands.forEach((command) => wstream.write(`${command}\n`));
