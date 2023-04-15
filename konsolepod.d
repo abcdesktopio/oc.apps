@@ -23,7 +23,6 @@ ENV APPBIN "/usr/bin/konsole"
 LABEL oc.args="--name pod"
 ENV APP "/usr/bin/konsole"
 LABEL oc.containerengine="pod_application"
-LABEL oc.executeclassname="silver"
 ENV SHELL=/bin/bash
 RUN echo "ALL ALL=(ALL:ALL) ALL">/etc/sudoers.d/all
 USER root
