@@ -18,41 +18,28 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    # runs-on: self-hosted
+  generateInputDockerFile:
     runs-on: ubuntu-latest
-    
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-          
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Login to registry
+      - name: Generate matrix with all Dockerfiles of the repository
+        id: set-matrix
         run: |
-          echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          echo "::set-output name=matrix::$(ls -l *.d | grep '^-' | awk -F ' ' '{print $9}' | jq -R -s -c 'split("\n") | map(select(length > 0))')"
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
       
-      # Runs a single command using the runners shell
-      - name: Build images
+  build:
+    needs: generateInputDockerFile
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        path: ${{ fromJson(needs.generateInputDockerFile.outputs.matrix) }}
+    steps:
+      - name: dump 
         run: |
-          make -B dockerfile
-          make -B buildpushdelete
+          echo ${{ matrix }}
+          echo "" 
+          echo ${{ matrix.inputPath }}
           
-      - name: Dispatch repository docs
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.TOKEN_DISPATCH }}
-          repository: abcdesktopio/docs
-          event-type: dispatch-from-oc.apps  
-      # buildpushdelete do a cleanup 
-      # no need to run make clean again
-      # - name: clean 
-      #  run: |
-      #    make clean
