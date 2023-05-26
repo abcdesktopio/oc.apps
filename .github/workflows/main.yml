@@ -42,7 +42,6 @@ jobs:
           echo "dump" 
           echo "matrix ${{ matrix }}"
           echo "matrix.path ${{ matrix.path }}"
-          echo "path ${{ path }}"
           echo "${{ matrix.inputPath }}"
           echo "end of dump" 
           
