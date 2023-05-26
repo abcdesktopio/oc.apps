@@ -18,7 +18,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  generateDockerFile:
+
+  generateInputDockerFile:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -45,16 +46,12 @@ jobs:
         
       - name: generate Dockerfile
         run: node make.js -r '3.0'
-
-  generateInputDockerFile:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
          
       - name: Generate matrix with all Dockerfiles of the repository
         id: set-matrix
         run: |
           echo "::set-output name=matrix::$(ls -l *.d | grep '^-' | awk -F ' ' '{print $9}' | jq -R -s -c 'split("\n") | map(select(length > 0))')"
+    
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
       
@@ -66,21 +63,19 @@ jobs:
       matrix:
         path: ${{ fromJson(needs.generateInputDockerFile.outputs.matrix) }}
     steps:
-      - name: dump 
-        run: |
-          echo "Dockerfile=${{ matrix.path }}" 
-          
-      - name: "image"
+     
+      - name: Dump ${{ matrix.path }}
         env: 
           image: ${{ matrix.path }}
-        run: echo "image set to '${{ env.image }}'"
-          
-      - name: "image tag"
-        env: 
           imagetag: debug${{ github.head_ref || github.ref_name || 'dev' }}
-        run: echo "image tag set to '${{ env.imagetag }}'"
-        
-      - name: Build and push ${{ env.image }}:${{ env.imagetag }}
+        run: |
+          echo "Dockerfile=${{ matrix.path }}" 
+          echo "abcdesktopio/${{ env.image }}:${{ env.imagetag }}"
+          
+      - name: Build and push ${{ matrix.path }}
+        env: 
+          image: ${{ matrix.path }}
+          imagetag: debug${{ github.head_ref || github.ref_name || 'dev' }}
         uses: docker/build-push-action@v3
         with:
           file: ${{ env.image }}
