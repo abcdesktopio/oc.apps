@@ -39,7 +39,10 @@ jobs:
     steps:
       - name: dump 
         run: |
-          echo ${{ matrix }}
-          echo "" 
+          echo "dump" 
+          echo matrix ${{ matrix }}
+          echo matrix.path ${{ matrix.path }}
+          echo path ${{ path }}
           echo ${{ matrix.inputPath }}
+          echo "end of dump" 
           
