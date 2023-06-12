@@ -64,7 +64,9 @@ jobs:
         run: npm install 
         
       - name: generate Dockerfile
-        run: node make.js -r '3.0'
+        run: |
+          node make.js -r '3.0'
+          node make-docs.js
          
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -122,11 +124,12 @@ jobs:
           image: ${{ matrix.path }}
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
         run: |
+          cp {{ env.image }}.json  ${{ env.image }}.${{ env.imagetag }}.json images
           cd images
           echo "imagemd=$(echo {{ env.image }} | rev | cut -c3- | rev)" >> $GITHUB_ENV
-          echo ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json $imagemd.md
-          git add ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json $imagemd.md
-          git commit -m "generated file" ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json $imagemd.md
+          echo ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json
+          git add ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json
+          git commit -m "generated file" ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json
           git push
           
       - name: dump env
