@@ -123,16 +123,15 @@ jobs:
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
         run: |
           cd images
-          # add image.d image.json image.md
           echo "imagemd=$(echo {{ env.image }} | rev | cut -c3- | rev)" >> $GITHUB_ENV
-          echo ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ env.imagemd }}.md
-          git add ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ imagemd }}.md
-          git commit -m "generated file" ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ imagemd }}.md
+          echo ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json $imagemd.md
+          git add ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json $imagemd.md
+          git commit -m "generated file" ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json $imagemd.md
           git push
           
       - name: dump env
         run: |
-           echo "imagemd=$(echo {{ env.imagemd }}
+           echo $imagemd
           
 
 
