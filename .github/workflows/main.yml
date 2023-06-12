@@ -123,7 +123,8 @@ jobs:
           image: ${{ matrix.path }}
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
         run: |
-          cp {{ env.image }}.json  ${{ env.image }}.${{ env.imagetag }}.json images
+          ls -la images
+          cp ${{ env.image }}.json  ${{ env.image }}.${{ env.imagetag }}.json images
           cd images
           echo "imagemd=$(echo {{ env.image }} | rev | cut -c3- | rev)" >> $GITHUB_ENV
           echo ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json
