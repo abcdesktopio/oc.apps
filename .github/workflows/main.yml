@@ -103,11 +103,17 @@ jobs:
             abcdesktopio/${{ env.image }}:${{ env.imagetag }}
             
       - name: Docker inpect
+        env: 
+          image: ${{ matrix.path }}
+          imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
         run: |
           docker inspect abcdesktopio/${{ env.image }}:${{ env.imagetag }} > ${{ env.image }}.d.${{ env.imagetag }}.json
           cat ${{ env.image }}.d.${{ env.imagetag }}.json
 
       - name: Docker Hub Description
+        env: 
+          image: ${{ matrix.path }}
+          imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
         uses: peter-evans/dockerhub-description@v3
         with:
          username: ${{ secrets.DOCKER_USERNAME }}
