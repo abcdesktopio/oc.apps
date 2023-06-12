@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
+      commit_hash: ${{ steps.set-matrix.outputs.commit_hash }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -41,10 +42,18 @@ jobs:
           dockerfiles=$(ls -l *.d | grep '^-' | awk -F ' ' '{print $9}' | jq -R -s -c 'split("\n") | map(select(length > 0))')
           echo "dockerfiles=$dockerfiles"
           echo "::set-output name=matrix::$dockerfiles"
+      # Commit all changed files back to the repository
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: "*.d"
       
   build:
     needs: generateInputDockerFile
     runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
     strategy:
       fail-fast: false
       matrix:
@@ -53,7 +62,7 @@ jobs:
     
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ needs.generateInputDockerFile.outputs.commit_hash }}
          
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -63,9 +72,9 @@ jobs:
       - name: Install dependencies
         run: npm install 
         
-      - name: generate Dockerfile
-        run: |
-          node make.js -r '3.0'
+      # - name: generate Dockerfile
+      #  run: |
+      #    node make.js -r '3.0'
          
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -87,6 +96,9 @@ jobs:
         run: |
           echo "Dockerfile=${{ matrix.path }}" 
           echo "abcdesktopio/${{ env.image }}:${{ env.imagetag }}"
+          echo "#### Dockerfile"
+          cat ${{ matrix.path }}
+          echo "#### end of Dockerfile"
             
       - name: Build and push ${{ matrix.path }}
         env: 
@@ -111,35 +123,10 @@ jobs:
           docker pull docker.io/abcdesktopio/${{ env.image }}:${{ env.imagetag }} 
           docker image inspect docker.io/abcdesktopio/${{ env.image }}:${{ env.imagetag }} > ${{ env.image }}.${{ env.imagetag }}.json
           cat ${{ env.image }}.${{ env.imagetag }}.json
-          
-      - uses: actions/checkout@v3
+      
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          repository: 'abcdesktopio/images'
-          persist-credentials: false
-          path: images
-          
-      - name: commit image
-        env:
-          image: ${{ matrix.path }}
-          imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
-          CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
-          CI_COMMIT_AUTHOR: Continuous Integration
-        run: |
-          ls -la 
-          ls -la images
-          cp ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json images
-          cd images
-          echo "imagemd=$(echo {{ env.image }} | rev | cut -c3- | rev)" >> $GITHUB_ENV
-          echo ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json
-          git config --global user.name "${{ secrets.USER_NAME }}"
-          git config --global user.email "abcdesktop@users.noreply.github.com"
-          git add ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json
-          git commit -m "generated file" ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json
-          git push
-          
-      - name: dump env
-        run: |
-           echo $imagemd
+          file_pattern: "${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json"
           
 
 
