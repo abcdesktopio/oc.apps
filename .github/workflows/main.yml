@@ -122,6 +122,8 @@ jobs:
         env:
           image: ${{ matrix.path }}
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
+          CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
+          CI_COMMIT_AUTHOR: Continuous Integration
         run: |
           ls -la 
           ls -la images
@@ -129,6 +131,8 @@ jobs:
           cd images
           echo "imagemd=$(echo {{ env.image }} | rev | cut -c3- | rev)" >> $GITHUB_ENV
           echo ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "username@users.noreply.github.com"
           git add ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json
           git commit -m "generated file" ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json
           git push
