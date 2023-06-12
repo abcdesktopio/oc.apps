@@ -119,13 +119,14 @@ jobs:
           
       - name: commit image 
         run: |
-          imagemd: ${{ env.image::-2 }}.md
           image: ${{ matrix.path }}
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
           cd images
           # add image.d image.json image.md
-          git add ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ env.imagemd }}.md
-          git commit -m "generated file" ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ env.image::-2 }}.md
+          imagemd=$(echo {{ env.image }} | rev | cut -c3- | rev)
+          echo ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ imagemd }}.md
+          git add ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ imagemd }}.md
+          git commit -m "generated file" ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ imagemd }}.md
           git push
           
       - name: Docker Hub Description
