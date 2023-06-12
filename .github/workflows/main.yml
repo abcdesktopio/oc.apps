@@ -66,7 +66,6 @@ jobs:
       - name: generate Dockerfile
         run: |
           node make.js -r '3.0'
-          node make-docs.js
          
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
