@@ -107,6 +107,8 @@ jobs:
           image: ${{ matrix.path }}
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
         run: |
+          docker image ls
+          docker pull docker.io/abcdesktopio/${{ env.image }}:${{ env.imagetag }} 
           docker image inspect docker.io/abcdesktopio/${{ env.image }}:${{ env.imagetag }} > ${{ env.image }}.${{ env.imagetag }}.json
           cat ${{ env.image }}.${{ env.imagetag }}.json
 
