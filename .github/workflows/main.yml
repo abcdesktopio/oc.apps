@@ -119,11 +119,12 @@ jobs:
           
       - name: commit image 
         run: |
+          imagemd: ${{ env.image::-2 }}.md
           image: ${{ matrix.path }}
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
           cd images
           # add image.d image.json image.md
-          git add ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ env.image::-2 }}.md
+          git add ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ env.imagemd }}.md
           git commit -m "generated file" ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ env.image::-2 }}.md
           git push
           
@@ -136,5 +137,5 @@ jobs:
          username: ${{ secrets.DOCKER_USERNAME }}
          password: ${{ secrets.DOCKER_TOKEN }}
          repository: abcdesktopio/${{ env.image }}
-         readme-filepath: ./${{ env.image::-2 }}.md
+         readme-filepath: ./${{ env.image }}.md
 
