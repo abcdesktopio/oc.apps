@@ -123,20 +123,11 @@ jobs:
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
           cd images
           # add image.d image.json image.md
-          imagemd=$(echo {{ env.image }} | rev | cut -c3- | rev)
-          echo ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ imagemd }}.md
+          echo "imagemd=$(echo {{ env.image }} | rev | cut -c3- | rev)" >> $GITHUB_ENV
+          echo ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ env.imagemd }}.md
           git add ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ imagemd }}.md
           git commit -m "generated file" ${{ env.image }} ${{ env.image }}.${{ env.imagetag }}.json ${{ imagemd }}.md
           git push
           
-      - name: Docker Hub Description
-        env: 
-          image: ${{ matrix.path }}
-          imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
-        uses: peter-evans/dockerhub-description@v3
-        with:
-         username: ${{ secrets.DOCKER_USERNAME }}
-         password: ${{ secrets.DOCKER_TOKEN }}
-         repository: abcdesktopio/${{ env.image }}
-         readme-filepath: ./${{ env.image }}.md
+
 
