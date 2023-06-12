@@ -1,0 +1,120 @@
+[
+    {
+        "Id": "sha256:f36f9c3058fd9959ea6f1bd48c456ec10af4b579622e691d23e62b37e90d8d42",
+        "RepoTags": [
+            "abcdesktopio/calculator.d:main"
+        ],
+        "RepoDigests": [
+            "abcdesktopio/calculator.d@sha256:bcdac164872097a8b3a4ac7c5d22d98a32ee01077d02e989e59e8949432dbbb2"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2023-06-12T16:14:12.104758557Z",
+        "Container": "",
+        "ContainerConfig": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": null,
+            "Cmd": null,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "DockerVersion": "",
+        "Author": "Alexandre DEVELY",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "balloon",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "TERM=linux",
+                "LANG=en_US.utf8",
+                "BUSER=balloon",
+                "BGROUP=balloon",
+                "BUID=4096",
+                "BGID=4096",
+                "APPNAME=calculator",
+                "APPBIN=/usr/bin/gnome-calculator",
+                "APP=/usr/bin/gnome-calculator"
+            ],
+            "Cmd": [
+                "/composer/appli-docker-entrypoint.sh"
+            ],
+            "ArgsEscaped": true,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "oc.acl": "{\"permit\":[\"all\"]}",
+                "oc.cat": "utilities,office",
+                "oc.desktopfile": "org.gnome.Calculator.desktop",
+                "oc.displayname": "calculator",
+                "oc.icon": "gnome_calculator.svg",
+                "oc.icondata": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBoZWlnaHQ9IjEyOHB4IiB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgd2lkdGg9IjEyOHB4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgwLjE5MjM1MSAwIDAgMC4yNSAyMi4wMDUyMTMgNTcuMDAwMDMxKSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIxMC4yNzYxNTYiIHgyPSI0MjYuMjc2MjE1IiB5MT0iMjU5Ljk5OTg3OCIgeTI9IjI1OS45OTk4NzgiPgogICAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzlhOTk5NiIvPgogICAgICAgIDxzdG9wIG9mZnNldD0iMC4wNTAyMTU2IiBzdG9wLWNvbG9yPSIjYzBiZmJjIi8+CiAgICAgICAgPHN0b3Agb2Zmc2V0PSIwLjEwMDIwNCIgc3RvcC1jb2xvcj0iIzlhOTk5NiIvPgogICAgICAgIDxzdG9wIG9mZnNldD0iMC45MDAwMjMiIHN0b3AtY29sb3I9IiM5YTk5OTYiLz4KICAgICAgICA8c3RvcCBvZmZzZXQ9IjAuOTUwMDExIiBzdG9wLWNvbG9yPSIjYzBiZmJjIi8+CiAgICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOWE5OTk2Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdGggZD0ibSAzMiAzNiBoIDY0IGMgNC40MTc5NjkgMCA4IDMuNTgyMDMxIDggOCB2IDY4IGMgMCA0LjQxNzk2OSAtMy41ODIwMzEgOCAtOCA4IGggLTY0IGMgLTQuNDE3OTY5IDAgLTggLTMuNTgyMDMxIC04IC04IHYgLTY4IGMgMCAtNC40MTc5NjkgMy41ODIwMzEgLTggOCAtOCB6IG0gMCAwIiBmaWxsPSJ1cmwoI2EpIi8+CiAgICA8cGF0aCBkPSJtIDMyIDggaCA2NCBjIDQuNDE3OTY5IDAgOCAzLjU4MjAzMSA4IDggdiA5MCBjIDAgNC40MTc5NjkgLTMuNTgyMDMxIDggLTggOCBoIC02NCBjIC00LjQxNzk2OSAwIC04IC0zLjU4MjAzMSAtOCAtOCB2IC05MCBjIDAgLTQuNDE3OTY5IDMuNTgyMDMxIC04IDggLTggeiBtIDAgMCIgZmlsbD0iI2RlZGRkYSIvPgogICAgPHBhdGggZD0ibSAzOCAxOCBoIDUyLjAzOTA2MiBjIDIuMjEwOTM4IDAgNCAxLjc4OTA2MiA0IDQgdiA2IGMgMCAyLjIxMDkzOCAtMS43ODkwNjIgNCAtNCA0IGggLTUyLjAzOTA2MiBjIC0yLjIxMDkzOCAwIC00IC0xLjc4OTA2MiAtNCAtNCB2IC02IGMgMCAtMi4yMTA5MzggMS43ODkwNjIgLTQgNCAtNCB6IG0gMCAwIiBmaWxsPSIjNzc3NjdiIi8+CiAgICA8cGF0aCBkPSJtIDM4IDM2IGggNTIuMDM5MDYyIGMgMi4yMTA5MzggMCA0IC0xLjc4OTA2MiA0IC00IHYgLTggYyAwIC0yLjIxMDkzOCAtMS43ODkwNjIgLTQgLTQgLTQgaCAtNTIuMDM5MDYyIGMgLTIuMjEwOTM4IDAgLTQgMS43ODkwNjIgLTQgNCB2IDggYyAwIDIuMjEwOTM4IDEuNzg5MDYyIDQgNCA0IHogbSAwIDAiIGZpbGw9IiM2ZmIxODIiLz4KICAgIDxwYXRoIGQ9Im0gMzQgNTEgdiAyIGMgMCAzLjg3ODkwNiAzLjEyMTA5NCA3IDcgNyBzIDcgLTMuMTIxMDk0IDcgLTcgdiAtMiB6IG0gMCAwIiBmaWxsPSIjNWU1YzY0Ii8+CiAgICA8cGF0aCBkPSJtIDQxIDQ0IGMgMy44NjcxODggMCA3IDMuMTMyODEyIDcgNyBzIC0zLjEzMjgxMiA3IC03IDcgcyAtNyAtMy4xMzI4MTIgLTcgLTcgcyAzLjEzMjgxMiAtNyA3IC03IHogbSAwIDAiIGZpbGw9IiM5YTk5OTYiLz4KICAgIDxwYXRoIGQ9Im0gNTcuMDExNzE5IDUxIHYgMiBjIDAgMy44Nzg5MDYgMy4xMjEwOTMgNyA3IDcgYyAzLjg3NSAwIDcgLTMuMTIxMDk0IDcgLTcgdiAtMiB6IG0gMCAwIiBmaWxsPSIjNWU1YzY0Ii8+CiAgICA8cGF0aCBkPSJtIDY0IDQ0IGMgMy44NjcxODggMCA3IDMuMTMyODEyIDcgNyBzIC0zLjEzMjgxMiA3IC03IDcgcyAtNyAtMy4xMzI4MTIgLTcgLTcgcyAzLjEzMjgxMiAtNyA3IC03IHogbSAwIDAiIGZpbGw9IiM5YTk5OTYiLz4KICAgIDxwYXRoIGQ9Im0gODAgNTEgdiAyIGMgMCAzLjg3ODkwNiAzLjEyMTA5NCA3IDcgNyBzIDcgLTMuMTIxMDk0IDcgLTcgdiAtMiB6IG0gMCAwIiBmaWxsPSIjNWU1YzY0Ii8+CiAgICA8cGF0aCBkPSJtIDg3IDQ0IGMgMy44NjcxODggMCA3IDMuMTMyODEyIDcgNyBzIC0zLjEzMjgxMiA3IC03IDcgcyAtNyAtMy4xMzI4MTIgLTcgLTcgcyAzLjEzMjgxMiAtNyA3IC03IHogbSAwIDAiIGZpbGw9IiM5YTk5OTYiLz4KICAgIDxwYXRoIGQ9Im0gMzQgNzMgdiAyIGMgMCAzLjg3ODkwNiAzLjEyMTA5NCA3IDcgNyBzIDcgLTMuMTIxMDk0IDcgLTcgdiAtMiB6IG0gMCAwIiBmaWxsPSIjM2QzODQ2Ii8+CiAgICA8cGF0aCBkPSJtIDU3LjAxMTcxOSA3MyB2IDIgYyAwIDMuODc4OTA2IDMuMTIxMDkzIDcgNyA3IGMgMy44NzUgMCA3IC0zLjEyMTA5NCA3IC03IHYgLTIgeiBtIDAgMCIgZmlsbD0iIzNkMzg0NiIvPgogICAgPHBhdGggZD0ibSA0MSA2NiBjIDMuODY3MTg4IDAgNyAzLjEzMjgxMiA3IDcgcyAtMy4xMzI4MTIgNyAtNyA3IHMgLTcgLTMuMTMyODEyIC03IC03IHMgMy4xMzI4MTIgLTcgNyAtNyB6IG0gMCAwIiBmaWxsPSIjNWU1YzY0Ii8+CiAgICA8cGF0aCBkPSJtIDY0IDY2IGMgMy44NjcxODggMCA3IDMuMTMyODEyIDcgNyBzIC0zLjEzMjgxMiA3IC03IDcgcyAtNyAtMy4xMzI4MTIgLTcgLTcgcyAzLjEzMjgxMiAtNyA3IC03IHogbSAwIDAiIGZpbGw9IiM1ZTVjNjQiLz4KICAgIDxwYXRoIGQ9Im0gMzQgOTUgdiAyIGMgMCAzLjg3ODkwNiAzLjEyMTA5NCA3IDcgNyBzIDcgLTMuMTIxMDk0IDcgLTcgdiAtMiB6IG0gMCAwIiBmaWxsPSIjM2QzODQ2Ii8+CiAgICA8cGF0aCBkPSJtIDQxIDg4IGMgMy44NjcxODggMCA3IDMuMTMyODEyIDcgNyBzIC0zLjEzMjgxMiA3IC03IDcgcyAtNyAtMy4xMzI4MTIgLTcgLTcgcyAzLjEzMjgxMiAtNyA3IC03IHogbSAwIDAiIGZpbGw9IiM1ZTVjNjQiLz4KICAgIDxwYXRoIGQ9Im0gNTcuMDExNzE5IDk1IHYgMiBjIDAgMy44Nzg5MDYgMy4xMjEwOTMgNyA3IDcgYyAzLjg3NSAwIDcgLTMuMTIxMDk0IDcgLTcgdiAtMiB6IG0gMCAwIiBmaWxsPSIjM2QzODQ2Ii8+CiAgICA8cGF0aCBkPSJtIDY0IDg4IGMgMy44NjcxODggMCA3IDMuMTMyODEyIDcgNyBzIC0zLjEzMjgxMiA3IC03IDcgcyAtNyAtMy4xMzI4MTIgLTcgLTcgcyAzLjEzMjgxMiAtNyA3IC03IHogbSAwIDAiIGZpbGw9IiM1ZTVjNjQiLz4KICAgIDxwYXRoIGQ9Im0gODcgODYgYyAzLjg2NzE4OCAwIDcgMy4xMzI4MTIgNyA3IHYgNCBjIDAgMy44NjcxODggLTMuMTMyODEyIDcgLTcgNyBzIC03IC0zLjEzMjgxMiAtNyAtNyB2IC00IGMgMCAtMy44NjcxODggMy4xMzI4MTIgLTcgNyAtNyB6IG0gMCAwIiBmaWxsPSIjYzY0NjAwIi8+CiAgICA8cGF0aCBkPSJtIDg3IDY2IGMgMy44NjcxODggMCA3IDMuMTMyODEyIDcgNyB2IDIyIGMgMCAzLjg2NzE4OCAtMy4xMzI4MTIgNyAtNyA3IHMgLTcgLTMuMTMyODEyIC03IC03IHYgLTIyIGMgMCAtMy44NjcxODggMy4xMzI4MTIgLTcgNyAtNyB6IG0gMCAwIiBmaWxsPSIjZmY3ODAwIi8+Cjwvc3ZnPgo=",
+                "oc.keyword": "calculator,calculator",
+                "oc.launch": "gnome-calculator.gnome-calculator",
+                "oc.name": "calculator",
+                "oc.path": "/usr/bin/gnome-calculator",
+                "oc.rules": "{\"homedir\":{\"default\":true}}",
+                "oc.template": "abcdesktopio/oc.template.alpine",
+                "oc.type": "app"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 397165105,
+        "VirtualSize": 397165105,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/de3a1ce5688ed64502985aca55e09b8ffe8c507e4c2b9f23d12efdf80b935c90/diff:/var/lib/docker/overlay2/0432489dd5ef946ec3412c6bfa6daf9904683d1c203454d1bd52bb7b4aa2e12d/diff:/var/lib/docker/overlay2/6e1a08164262fffa33f7372105fe624b5f8d277e447dd59aef5125fced4b47ac/diff:/var/lib/docker/overlay2/a80912b35caf9799b5728345a2e634e7f13be30176bce09e07e2118d435a0872/diff:/var/lib/docker/overlay2/3926dbbc1640b74739ce5ee3626ebf4ece7538d6eaf4e25c972c0e5296194555/diff:/var/lib/docker/overlay2/6be062daa575901ceb9af5b68b96f75658f772eac0b9a84e8268d08a1527a101/diff:/var/lib/docker/overlay2/603115a6676303e96dd6252ed0e39d81613b2bd977ecbeee1841e12bc0ac8e28/diff:/var/lib/docker/overlay2/4ea9177c1b2d0625cf0d873722e2daa427589038f9ff2658c7f8f500fc680df7/diff:/var/lib/docker/overlay2/67b5f873a3791c81d8178ba5db19baadb8af5400b67c0e36ed56f577e377a523/diff:/var/lib/docker/overlay2/d73c410c78d3d927fc012d6bcfc8f650686cd8c0c20a26b1bb62dfad7d0d15d2/diff:/var/lib/docker/overlay2/1716768554b18ee470f079e3da9c633772b8b6ddb74c5b30ecd35ffb6c892304/diff:/var/lib/docker/overlay2/ed541b27babecdfbb8f66aa32e79eaef39b91bb53229fa5cce5efed7fb4bfbe1/diff:/var/lib/docker/overlay2/11a19dc5afb943998127c131d9c17ab33841f18c0720ad1ed8c1dfb90a475611/diff:/var/lib/docker/overlay2/4bc0c4c42c84e6e00f607ee005b309a7beef8fbaab2bced5a6719ed7790de27a/diff:/var/lib/docker/overlay2/9dd5451b1a9d7f9bdaffde02ffeb42c914fc634e2e9f5243fb32d5677cbbf605/diff",
+                "MergedDir": "/var/lib/docker/overlay2/50d5892b79f2df8a126fc2b097ae91f0a9b6d914490ea1292b1f0025727ddce3/merged",
+                "UpperDir": "/var/lib/docker/overlay2/50d5892b79f2df8a126fc2b097ae91f0a9b6d914490ea1292b1f0025727ddce3/diff",
+                "WorkDir": "/var/lib/docker/overlay2/50d5892b79f2df8a126fc2b097ae91f0a9b6d914490ea1292b1f0025727ddce3/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:bb01bd7e32b58b6694c8c3622c230171f1cec24001a82068a8d30d338f420d6c",
+                "sha256:a7e98105e1ae389455388869e22402060f81063234cc0476bf4e7c752401174a",
+                "sha256:8043f665fb8a697e1200e3acc4dce48ada138c5609758ed86b0e77b5fb82b645",
+                "sha256:e389b8f924b5d5ef90e10e9a9d0aa10f9876b2211111d6103042ad86f472f3ae",
+                "sha256:8ca33c8fba49d3ed6f9c43620cde3fdea2e4b001e95a35a9181cd8ebf597d7a4",
+                "sha256:74f2a36b5c83a16d87fc19b506e8a392019c5034286342dea3de7f0d79940576",
+                "sha256:0ef65d2c2a0af4a47c790e6fc2eaec8d70e5cb97e410761fbd35bf49adc2a095",
+                "sha256:2c8222c1c95881055fe554f268aacaff45763c12c37cb07a1914dfba05943853",
+                "sha256:4059756e00b629e0ddcb45d06cf175cf0654049db017fe3010670908a6da4419",
+                "sha256:cd98eca520c81801b20b8c0ea289d6e959eb041bdab9bf834cda9bff4d95ec8a",
+                "sha256:8f793fe18bafc8e6d37f37f058ae449ad2aa09e8fabb9ec853e73c873fbb2acd",
+                "sha256:8e681069a2da11bdf3ad3e829cf208313fa4523f24a1bd8c26af8dd482f563c9",
+                "sha256:b99a6b270a8256bf2e41c7b1fb8d30cc291a44b0055920e7ae76f8a090575fbf",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:aeebd382168de438c40d36dd3b36780fb57d1807f8389b4143b2e843fc2bb897",
+                "sha256:a39cba883349319dd8febc6e1e1e33e0af73fea790de6c869c0f6c0522d579fd"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
