@@ -56,12 +56,13 @@ jobs:
       # Give the default GITHUB_TOKEN write permission to commit and push the
       # added or changed files to the repository.
       contents: write
+    outputs:
+      matrix: ${{ steps.set-jsonimage.outputs.matrix }}
     strategy:
       fail-fast: false
       matrix:
         path: ${{ fromJson(needs.generateInputDockerFile.outputs.matrix) }}
     steps:
-    
       - uses: actions/checkout@v3
         with:
           ref: ${{ needs.generateInputDockerFile.outputs.commit_hash }}
@@ -124,6 +125,7 @@ jobs:
       
       - run: mkdir -p artifact
       - name: Docker inspect
+        id: set-jsonimage
         env: 
           image: ${{ matrix.path }}
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
@@ -131,6 +133,7 @@ jobs:
           docker pull docker.io/abcdesktopio/${{ env.image }}:${{ env.imagetag }} 
           docker image inspect docker.io/abcdesktopio/${{ env.image }}:${{ env.imagetag }} > artifact/${{ env.image }}.${{ env.imagetag }}.json
           cat artifact/${{ env.image }}.${{ env.imagetag }}.json
+          echo "::set-output name=matrix::${{ env.image }}.${{ env.imagetag }}.json"
           
       - uses: actions/upload-artifact@v3
         env: 
@@ -140,14 +143,36 @@ jobs:
           name: artifact-${{ env.image }}
           path: artifact/${{ env.image }}.${{ env.imagetag }}.json
           if-no-files-found: warn # 'error' or 'ignore' are also available, defaults to `warn`
+          
+    
+  commit:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write  
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        path: ${{ needs.build.outputs.jsonimage) }}     
+    steps:
+    - uses: actions/download-artifact@v3
+      with:
+         name: ${{ matrix.path }}
+    - name: dump
+      run: |
+          ls -la
+          ls -la ${{ matrix.path }}
       
-      - name: Commit build artifacts 
-        env: 
+    - name: Commit build artifacts 
+      env: 
           CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
           CI_COMMIT_AUTHOR: ${{ github.event.repository.name }} Continuous Integration
           image: ${{ matrix.path }}
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
-        run: |
+      run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "abcdesktop@users.noreply.github.com"
           cat artifact/${{ env.image }}.${{ env.imagetag }}.json
