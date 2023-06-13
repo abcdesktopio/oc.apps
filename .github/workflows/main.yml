@@ -156,7 +156,7 @@ jobs:
       max-parallel: 1
       fail-fast: false
       matrix:
-        path: ${{ needs.build.outputs.jsonimage) }}     
+        path: ${{ needs.build.outputs.jsonimage }}     
     steps:
     - uses: actions/download-artifact@v3
       with:
