@@ -63,8 +63,8 @@ jobs:
     steps:
     
       - uses: actions/checkout@v3
-        with:
-          ref: ${{ needs.generateInputDockerFile.outputs.commit_hash }}
+        # with:
+        #  ref: ${{ needs.generateInputDockerFile.outputs.commit_hash }}
          
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -116,17 +116,25 @@ jobs:
           push: true
           tags: |
             abcdesktopio/${{ env.image }}:${{ env.imagetag }}
-            
+      
+      - run: mkdir -p artifact
       - name: Docker inspect
         env: 
           image: ${{ matrix.path }}
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
         run: |
           docker pull docker.io/abcdesktopio/${{ env.image }}:${{ env.imagetag }} 
-          docker image inspect docker.io/abcdesktopio/${{ env.image }}:${{ env.imagetag }} > ${{ env.image }}.${{ env.imagetag }}.json
-          cat ${{ env.image }}.${{ env.imagetag }}.json
-      
-      - uses: stefanzweifel/git-auto-commit-action@v4
+          docker image inspect docker.io/abcdesktopio/${{ env.image }}:${{ env.imagetag }} > artifact/${{ env.image }}.${{ env.imagetag }}.json
+          cat artifact/${{ env.image }}.${{ env.imagetag }}.json
+          
+      - uses: actions/upload-artifact@v3
+        env: 
+          image: ${{ matrix.path }}
+          imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
+        with:
+          name: artifact-${{ env.image }}
+          path: artifact/${{ env.image }}.${{ env.imagetag }}.json
+          if-no-files-found: warn # 'error' or 'ignore' are also available, defaults to `warn`
           
 
 
