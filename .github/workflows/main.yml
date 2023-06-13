@@ -151,6 +151,7 @@ jobs:
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "abcdesktop@users.noreply.github.com"
           cat artifact/${{ env.image }}.${{ env.imagetag }}.json
+          git add artifact/${{ env.image }}.${{ env.imagetag }}.json
           git commit -m "${{ env.CI_COMMIT_MESSAGE }}" artifact/${{ env.image }}.${{ env.imagetag }}.json
           git push    
           
