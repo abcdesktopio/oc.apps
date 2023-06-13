@@ -63,16 +63,21 @@ jobs:
     steps:
     
       - uses: actions/checkout@v3
-        # with:
-        #  ref: ${{ needs.generateInputDockerFile.outputs.commit_hash }}
-         
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with: 
-          node-version: "18.x"
+        with:
+          ref: ${{ needs.generateInputDockerFile.outputs.commit_hash }}
+     
+      - name: Current Dockerfile
+        run: |
+          echo Current Dockerfile
+          ls -la ${{ matrix.path }}
+        
+      # - name: Use Node.js
+      #   uses: actions/setup-node@v3
+      #  with: 
+      #    node-version: "18.x"
 
-      - name: Install dependencies
-        run: npm install 
+      # - name: Install dependencies
+      #   run: npm install 
         
       # - name: generate Dockerfile
       #  run: |
