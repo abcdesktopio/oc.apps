@@ -140,6 +140,19 @@ jobs:
           name: artifact-${{ env.image }}
           path: artifact/${{ env.image }}.${{ env.imagetag }}.json
           if-no-files-found: warn # 'error' or 'ignore' are also available, defaults to `warn`
+      
+      - name: Commit build artifacts 
+        env: 
+          CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
+          CI_COMMIT_AUTHOR: ${{ github.event.repository.name }} Continuous Integration
+          image: ${{ matrix.path }}
+          imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "abcdesktop@users.noreply.github.com"
+          cat artifact/${{ env.image }}.${{ env.imagetag }}.json
+          git commit -m "${{ env.CI_COMMIT_MESSAGE }}" artifact/${{ env.image }}.${{ env.imagetag }}.json
+          git push    
           
-
+        
 
