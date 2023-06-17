@@ -123,7 +123,26 @@ jobs:
           event-type: dispatch-from-oc.apps
           client-payload: '{"image": "${{ env.image }}", "tag": "${{ env.imagetag }}"}'
           
-  
+  builddone:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+     
+      # overwrite previous Dockerfiles
+      - uses: actions/download-artifact@v3
+        with:
+            name: artifact-dockerfiles
+            
+      - name: Current Dockerfile
+        run: |
+          echo "Build Done"
+          ls -la *.d
+          cat *.d
           
         
 
