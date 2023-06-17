@@ -1962,17 +1962,6 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
-    "debpackage": "mathwar",
-    "icon": "mathwar.svg",
-    "keyword": "mathwar,math",
-    "launch": "mathwar.Mathwar",
-    "name": "Mathwar",
-    "path": "/usr/games/mathwar",
-    "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
-}, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "education",
     "apkpackage": "kgeography",
     "icon": "kgeography.svg",
     "keyword": "kgeography,geography",
