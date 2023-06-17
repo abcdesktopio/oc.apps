@@ -2039,17 +2039,6 @@
     "path": "/usr/bin/gelemental",
     "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "desktopfile": "/usr/share/applications/gelemental.desktop"
-}, 
-{
-    "acl": { "permit": [ "all" ] },
-    "cat": "education",
-    "debpackage": "qelectrotech",
-    "icon": "qelectrotech.svg",
-    "keyword": "qelectrotech",
-    "launch": "qelectrotech.Qelectrotech",
-    "name": "qElectrotech",
-    "path": "/usr/bin/qelectrotech",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
