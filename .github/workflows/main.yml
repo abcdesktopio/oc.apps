@@ -38,7 +38,9 @@ jobs:
           node-version: "18.x"
       - name: Install dependencies
         run: npm install   
-      - name: generate Dockerfile
+      - name: Remove previous Dockerfile
+        run: rm *.d
+      - name: generate Dockerfiles
         run: node make.js -r '3.0'
       - name: Generate matrix with all Dockerfiles of the repository
         id: set-matrix
@@ -46,8 +48,13 @@ jobs:
           dockerfiles=$(ls -l *.d | grep '^-' | awk -F ' ' '{print $9}' | jq -R -s -c 'split("\n") | map(select(length > 0))')
           echo "dockerfiles=$dockerfiles"
           echo "::set-output name=matrix::$dockerfiles"
-      # Commit all changed files back to the repository
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - run: mkdir -p artifact
+      - run: cp *.d ./artifact
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifact-dockerfiles
+          path: artifact
+          if-no-files-found: warn # 'error' or 'ignore' are also available, defaults to `warn`
       
   build:
     needs: generateInputDockerFile
@@ -67,22 +74,16 @@ jobs:
         with:
           ref: ${{ needs.generateInputDockerFile.outputs.commit_hash }}
      
+      # overwrite previous Dockerfiles
+      - uses: actions/download-artifact@v3
+        with:
+            name: artifact-dockerfiles
+            
       - name: Current Dockerfile
         run: |
           echo Current Dockerfile
           ls -la ${{ matrix.path }}
-        
-      # - name: Use Node.js
-      #   uses: actions/setup-node@v3
-      #  with: 
-      #    node-version: "18.x"
-
-      # - name: Install dependencies
-      #   run: npm install 
-        
-      # - name: generate Dockerfile
-      #  run: |
-      #    node make.js -r '3.0'
+          cat ${{ matrix.path }}
          
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -95,18 +96,6 @@ jobs:
         with:
          username: ${{ secrets.DOCKER_USERNAME }}
          password: ${{ secrets.DOCKER_TOKEN }}
-     
-      - name: Dump ${{ matrix.path }}
-        env: 
-          image: ${{ matrix.path }}
-          # imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
-          imagetag: 'dev'
-        run: |
-          echo "Dockerfile=${{ matrix.path }}" 
-          echo "abcdesktopio/${{ env.image }}:${{ env.imagetag }}"
-          echo "#### Dockerfile"
-          cat ${{ matrix.path }}
-          echo "#### end of Dockerfile"
             
       - name: Build and push ${{ matrix.path }}
         env: 
