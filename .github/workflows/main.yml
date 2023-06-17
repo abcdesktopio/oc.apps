@@ -118,67 +118,23 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           build-args: |
-            TAG=dev
+            TAG=3.0
           push: true
           tags: |
             abcdesktopio/${{ env.image }}:${{ env.imagetag }}
-      
-      - run: mkdir -p artifact
-      - name: Docker inspect
-        id: set-jsonimage
+            
+      - name: Repository Dispatch
         env: 
           image: ${{ matrix.path }}
           imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
-        run: |
-          docker pull docker.io/abcdesktopio/${{ env.image }}:${{ env.imagetag }} 
-          docker image inspect docker.io/abcdesktopio/${{ env.image }}:${{ env.imagetag }} > artifact/${{ env.image }}.${{ env.imagetag }}.json
-          cat artifact/${{ env.image }}.${{ env.imagetag }}.json
-          echo "::set-output name=matrix::${{ env.image }}.${{ env.imagetag }}.json"
-          
-      - uses: actions/upload-artifact@v3
-        env: 
-          image: ${{ matrix.path }}
-          imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
+        uses: peter-evans/repository-dispatch@v2
         with:
-          name: artifact-${{ env.image }}
-          path: artifact/${{ env.image }}.${{ env.imagetag }}.json
-          if-no-files-found: warn # 'error' or 'ignore' are also available, defaults to `warn`
+          token: ${{ secrets.TOKEN_DISPATCH }}
+          repository: abcdesktopio/images
+          event-type: dispatch-from-oc.apps
+          client-payload: '{"image": "${{ env.image }}", "tag": "${{ env.imagetag }}"}'
           
-    
-  commit:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      # Give the default GITHUB_TOKEN write permission to commit and push the
-      # added or changed files to the repository.
-      contents: write  
-    strategy:
-      max-parallel: 1
-      fail-fast: false
-      matrix:
-        path: ${{ needs.build.outputs.jsonimage }}     
-    steps:
-    - uses: actions/download-artifact@v3
-      with:
-         name: ${{ matrix.path }}
-    - name: dump
-      run: |
-          ls -la
-          ls -la ${{ matrix.path }}
-      
-    - name: Commit build artifacts 
-      env: 
-          CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
-          CI_COMMIT_AUTHOR: ${{ github.event.repository.name }} Continuous Integration
-          image: ${{ matrix.path }}
-          imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
-      run: |
-          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-          git config --global user.email "abcdesktop@users.noreply.github.com"
-          cat artifact/${{ env.image }}.${{ env.imagetag }}.json
-          git add artifact/${{ env.image }}.${{ env.imagetag }}.json
-          git commit -m "${{ env.CI_COMMIT_MESSAGE }}" artifact/${{ env.image }}.${{ env.imagetag }}.json
-          git push    
+  
           
         
 
