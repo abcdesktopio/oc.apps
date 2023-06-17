@@ -4,11 +4,9 @@ ARG TAG=dev
 FROM abcdesktopio/oc.template.ubuntu.gtk:$TAG
 USER root
 RUN mkdir -p /run/user/4096 /var/run/dbus/ chown balloon:balloon /run/user/4096 /var/run/dbus
-COPY composer/node /composer/node
-RUN cd /composer/node/ocdownload && npm install
+RUN mkdir -p /composer/node/ocdownload && cd /composer/node/ocdownload && curl -Ls -o ocdownload.js  https://raw.githubusercontent.com/abcdesktopio/oc.user/main/composer/node/ocdownload/ocdownload.js && curl -Ls -o package.json  https://raw.githubusercontent.com/abcdesktopio/oc.user/main/composer/node/ocdownload/package.json && npm install
 COPY composer/init.d/init.nautilus /composer/init.d/init.nautilus
 COPY composer/desktop_download.py /composer/desktop_download.py
-ENV NAUTILUS_PYTHON_DEBUG=misc
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-install-recommends dbus gnome-icon-theme gnome-icon-theme-symbolic numix-gtk-theme numix-icon-theme gnome-font-viewer dbus-x11 python3-nautilus python3-shellescape nautilus desktop-file-utils shared-mime-info xdg-user-dirs && apt-get clean
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 LABEL oc.icon="circle_filemanager.svg"
