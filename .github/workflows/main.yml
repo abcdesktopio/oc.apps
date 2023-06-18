@@ -100,14 +100,15 @@ jobs:
       - name: Build and push ${{ matrix.path }}
         env: 
           image: ${{ matrix.path }}
-          imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
+          imagetag: 'main'
+          # imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
         uses: docker/build-push-action@v3
         with:
           file: ${{ env.image }}
           context: .
           platforms: linux/amd64,linux/arm64
           build-args: |
-            TAG=3.0
+            TAG=main
           push: true
           tags: |
             abcdesktopio/${{ env.image }}:${{ env.imagetag }}
