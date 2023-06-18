@@ -267,7 +267,7 @@
     "name": "file-roller",
     "displayname": "file-roller",
     "path": "/usr/bin/file-roller",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "mimetype": "application/x-7z-compressed;application/gzip;application/gtar;application/tar;application/zip;application/x-compress;application/x-compressed;application/x-zip-compressed;multipart/x-zip;application/gnutar;application/x-lzx;application/lzx;application/x-gzip;application/x-gtar;application/x-bzip2;application/x-bzip;application/x-bzip2;",
     "fileextensions":"7z;7zip;Z;unzip;zip;tar;tgz;war;tar.gz;ar;bcz;cpio;ear;jar;iso;tar.Z;tar.gz;tar.lz;tar.lzma;tar.lzo;tar.xz",
     "args": "",
@@ -932,7 +932,7 @@
     "displayname": "Microsoft Edge",
     "path": "/usr/bin/microsoft-edge-stable",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "mimetype": "application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;", 
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -1258,7 +1258,7 @@
     "rules": { "homedir": { "default": true } },
     "host_config": { "mem_limit": "256M", "shm_size": "128M", "pid_mode": false, "ipc_mode": false  },
     "args": "--name stress",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1274,7 +1274,7 @@
     "host_config": { "mem_limit": "256M", "shm_size": "128M", "pid_mode": false, "ipc_mode": false  },
     "args": "--name ephemeral",
     "containerengine": "ephemeral_container",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1581,7 +1581,7 @@
     "name": "klotski",
     "host_config": { "mem_limit": "384M", "shm_size": "128M", "pid_mode": false },
     "path": "/usr/games/gnome-klotski",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile": "/usr/share/applications/gnome-klotski.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
@@ -1594,7 +1594,7 @@
     "args": "--game=flare-game",
     "host_config": { "mem_limit": "512M", "shm_size": "128M", "pid_mode": false },
     "path": "/usr/games/flare",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile": "/usr/share/applications/flare.desktop"
 },   {
     "acl": { "permit": [ "all" ] },
@@ -1608,7 +1608,7 @@
     "launch": "corsix-th.corsix-th",
     "name": "corsix-th",
     "path": "/usr/games/corsix-th",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile": "/usr/share/applications/com.corsixth.CorsixTH.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
@@ -1622,7 +1622,7 @@
     "mimetype": "text/plain;text/html;text/x-php;text/x-c;text/x-shellscript;",
     "host_config": { "mem_limit": "512M", "shm_size": "128M", "pid_mode": false },
     "path": "/usr/bin/notepadqq",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile": "/usr/share/applications/notepadqq.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1633,7 +1633,7 @@
     "launch": "gnome-mahjongg.Gnome-mahjongg",
     "name": "mahjongg",
     "path": "/usr/games/gnome-mahjongg",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile":"/usr/share/applications/gnome-mahjongg.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1744,7 +1744,7 @@
     "launch": "gnome-tetravex.Gnome-tetravex",
     "name": "Tetravex",
     "path": "/usr/games/gnome-tetravex",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktop":"gnome-tetravex.desktop",
     "rules": { "homedir": { "default": true } },
     "host_config": { "mem_limit": "384M", "shm_size": "128M", "pid_mode": false }
@@ -1958,7 +1958,7 @@
     "name": "Golly",
     "path": "/usr/games/golly",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.language-pack-all"
+    "template": "abcdesktopio/oc.template.ubuntu.gtk"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
