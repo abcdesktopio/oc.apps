@@ -923,11 +923,15 @@
     "acl": { "permit": [ "all" ] },
     "cat": "office",
     "containerengine": "ephemeral_container",
-    "debpackage": "microsoft-edge-stable",
+    "debpackage": "",
     "preruncommands": [ 
         "RUN # curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg",
 	"RUN curl https://packages.microsoft.com/keys/microsoft.asc  | apt-key add -",
         "RUN echo \"deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/edge stable main\" > /etc/apt/sources.list.d/edge.list"
+    ],
+    "postruncommands": [
+	"RUN if [ $(uname -m) == 'aarch64' ]; then echo microsoft-edge-stable does not exist on $(uname -m); fi",
+        "RUN if [ $(uname -m) == 'x86_64'  ]; then apt-get install -y microsoft-edge-stable; fi"
     ],
     "icon": "circle_microsoft-edge.svg",
     "keyword": "web,browser,internet",
