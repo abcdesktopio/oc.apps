@@ -2047,7 +2047,7 @@
     "launch": "ksquares.ksquares",
     "name": "kSquares",
     "path": "/usr/games/ksquares",
-    "template": "abcdesktopio/oc.template.ubuntu"
+    "template": "abcdesktopio/oc.template.ubuntu.22.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
