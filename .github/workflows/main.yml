@@ -100,7 +100,7 @@ jobs:
 
       - name: Define platforms
         id: define-platforms
-        run:
+        run: |
           PLATFORMS=$(grep "# platforms=" ${{ matrix.path }} | awk -F "=" '{print $2 }')
           echo "platforms=$PLATFORMS"
           echo "platforms=$PLATFORMS" >> "$GITHUB_OUTPUT"
