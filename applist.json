@@ -1657,7 +1657,7 @@
     "name": "Dia",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/dia",
-    "template": "abcdesktopio/oc.template.alpine",
+    "template": "abcdesktopio/oc.template.alpine.3.17",
     "mimetype": "application/x-dia-diagram;",
     "fileextensions": "dia",
     "legacyfileextensions": "dia",
