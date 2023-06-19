@@ -746,8 +746,9 @@
     "debpackage": "",
     "preruncommands": [ 
         "RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libx11-xcb1 libasound2 && apt-get clean",
-	"RUN if [ $(uname -m) == 'aarch64' ]; then curl -Ls -o /tmp/hyper.deb  https://releases.hyper.is/download/deb_arm64 && apt-get install  --no-install-recommends --yes /tmp/hyper.deb && apt-get clean && rm -rf /tmp/hyper.deb fi",
-        "RUN if [ $(uname -m) == 'x86_64'  ]; then curl -Ls -o /tmp/hyper.deb  https://releases.hyper.is/download/deb       && apt-get install  --no-install-recommends --yes /tmp/hyper.deb && apt-get clean && rm -rf /tmp/hyper.deb fi"
+	"RUN if [ $(uname -m) == 'aarch64' ]; then curl -Ls -o /tmp/hyper.deb  https://releases.hyper.is/download/deb_arm64; fi",
+        "RUN if [ $(uname -m) == 'x86_64'  ]; then curl -Ls -o /tmp/hyper.deb  https://releases.hyper.is/download/deb; fi",
+	"RUN apt-get update && apt-get install --no-install-recommends --yes /tmp/hyper.deb && apt-get clean && rm -rf /tmp/hyper.deb"
     ],
     "icon": "hyper.svg",
     "keyword": "terminal,remote",
@@ -801,8 +802,7 @@
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
-    "desktopfile":"/usr/share/applications/chromium-browser.desktop",
-    "quick": true
+    "desktopfile":"/usr/share/applications/chromium-browser.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
