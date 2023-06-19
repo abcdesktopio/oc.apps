@@ -72,7 +72,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ needs.generateInputDockerFile.outputs.commit_hash }}
+          ref: ${{ github.head_ref }}
      
       # overwrite previous Dockerfiles
       - uses: actions/download-artifact@v3
@@ -133,6 +133,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
      
       # overwrite previous Dockerfiles
       - uses: actions/download-artifact@v3
