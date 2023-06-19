@@ -1021,57 +1021,7 @@
 	    "ENV SHELL=/bin/bash",
             "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" 
     ]   
-},  {
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "preruncommands": [
-	"RUN add-apt-repository ppa:mozillateam/ppa",
-        "COPY etc/apt/preferences.d/mozilla-firefox /etc/apt/preferences.d/mozilla-firefox",
-        "RUN apt-get update && apt-get install --no-install-recommends --yes firefox && apt-get clean",
-	"RUN apt-get update && apt-get install --no-install-recommends --yes sudo && apt-get clean",
-        "RUN apt-get update && apt-get install --no-install-recommends --yes build-essential python3.9 python3-pip python-is-python3 curl libcurl4-openssl-dev libssl-dev firefox wget && apt-get clean",
-	"RUN pip3 install torch",
-	"RUN pip3 install jupyterlab",
-   	"RUN pip install jupyterlab-nvdashboard",
-        "RUN # jupyter labextension install jupyterlab-nvdashboard"
-    ],
-    "debpackage": "konsole openssh-client telnet netcat sshcommand sshfs ftp-ssl wput curl wget tftp ncftp git git-ftp ftp dbus-x11",
-    "icon": "jupyter.svg",
-    "keyword": "jupyter",
-    "launch": "jupyter.konsole",
-    "name": "jupyter",
-    "showinview": "dock",
-    "path": "/usr/bin/konsole",
-    "args": "--name jupyter -e /usr/local/bin/startjupyter.sh",
-    "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.20.04",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
-    "abcdesktop_release": 3,
-    "postruncommands": [ "COPY startjupyter.sh /usr/local/bin/startjupyter.sh" ]
 }, {
-    "comment": "https://stackoverflow.com/questions/51002045/how-to-make-jupyter-notebook-to-run-on-gpu",
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "preruncommands": [
-	"RUN apt-get update && apt-get --no-install-recommends --yes install nvidia-utils-470 && apt-get clean" 
-    ],
-    "postruncommands": [
-        "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
-    ],
-    "debpackage": "konsole vim breeze-icon-theme sudo",
-    "icon": "nvidia.svg",
-    "keyword": "nvidia,smi",
-    "launch": "nvidiasmi.konsole",
-    "name": "nvidia-smi",
-    "displayname": "nvidia-smi",
-    "showinview": "dock",
-    "path": "/usr/bin/konsole",
-    "rules": { "homedir": { "default": true } },
-    "args": "--name nvidiasmi",
-    "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
-    "abcdesktop_release": 3
-},  {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [],
@@ -1678,7 +1628,8 @@
     "legacyfileextensions": "drawio",
     "desktopfile": "/usr/share/applications/drawio.desktop",
     "postruncommands": [ 
-        "RUN apt-get update && curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v20.3.0/drawio-amd64-20.3.0.deb' -o /tmp/drawio-amd64.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64.deb && rm /tmp/drawio-amd64.deb && rm -rf /var/lib/apt/lists/*" 
+	"RUN if [ $(uname -m) == 'aarch64' ]; then echo 'drawio does not exist for aarch64'; fi",
+        "RUN if [ $(uname -m) == 'x86_64'  ]; then apt-get update && curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v21.5.0/drawio-amd64-21.5.0.deb' -o /tmp/drawio-amd64.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64.deb && rm /tmp/drawio-amd64.deb && rm -rf /var/lib/apt/lists/* ; fi" 
     ]
 }, {
     "acl": { "permit": [ "all" ] },
