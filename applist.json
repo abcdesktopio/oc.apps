@@ -291,6 +291,7 @@
 {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
+    "platforms": "linux/amd64",
     "apkpackage": "powershell dbus-x11 gnome-terminal font-adobe-source-code-pro",
     "icon": "powershell.svg",
     "keyword": "powershell",
@@ -334,9 +335,10 @@
     "template": "abcdesktopio/oc.template.alpine.minimal",
     "preruncommands": [ 
         "ENV WINEARCH=win64",
-	    "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
+	"ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
         "RUN mkdir -p /composer/bin",
-        "RUN curl -Ls -o /composer/bin/putty.exe https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe"
+	"RUN if [ $(uname -m) = x86_64  ]; then curl -Ls -o /composer/bin/putty.exe https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe; fi",
+        "RUN if [ $(uname -m) = aarch64 ]; then curl -Ls -o /composer/bin/putty.exe https://the.earth.li/~sgtatham/putty/latest/wa64/putty.exe; fi"
     ],
     "args": "/composer/bin/putty.exe",
     "cat": "utilities",
@@ -350,13 +352,14 @@
     "path": "/usr/bin/wine64"
 }, {
     "acl": { "permit": [ "all" ] },
+    "platforms": "linux/amd64",
     "template": "abcdesktopio/oc.template.alpine.wine",
     "preruncommands": [
         "ENV WINEARCH=win64",
         "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
         "USER $BUSER",
         "RUN wineboot --init",
-        "RUN curl -Ls -o /tmp/winscp553.zip http://winscp.net/download/winscp553.zip && unzip /tmp/winscp553.zip -d /composer/bin/ && rm /tmp/winscp553.zip",
+        "RUN curl -Ls -o /tmp/winscp.zip https://winscp.net/download/WinSCP-6.1-Portable.zip && unzip /tmp/winscp.zip -d /composer/bin/ && rm /tmp/winscp.zip",
         "RUN echo disable > $WINEPREFIX/.update-timestamp",
         "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine/" ],
     "args": "/composer/bin/winscp.exe",
@@ -392,7 +395,7 @@
     "name": "supertux2",
     "displayname": "supertux2",
     "path": "/usr/games/supertux2",
-    "template": "abcdesktopio/oc.template.alpinei.minimal",
+    "template": "abcdesktopio/oc.template.alpine.minimal",
     "desktopfile": "/usr/share/applications/supertux2.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -578,9 +581,10 @@
 },   {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
+    "platforms": "linux/amd64",
     "postruncommands": [
 	"RUN curl -Ls -o /tmp/mongodb-compass_1.35.0_amd64.deb https://downloads.mongodb.com/compass/mongodb-compass_1.35.0_amd64.deb",
-        "RUN apt-get update && apt-get install --no-install-recommends -y /tmp/mongodb-compass_1.35.0_amd64.deb && apt-get clean" 
+        "RUN apt-get update && apt-get install --no-install-recommends -y /tmp/mongodb-compass_1.35.0_amd64.deb && rm  /tmp/mongodb-compass_1.35.0_amd64.deb && apt-get clean" 
     ],
     "debpackage": "dbus dbus-x11 libasound2",
     "icon": "mongodb-compass.svg",
@@ -724,6 +728,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
+    "platforms": "linux/amd64",
     "preruncommands": [ 
         "RUN apt-get update && curl -Ls -o /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb && apt-get install --yes /tmp/remarkable_1.87_all.deb && apt-get clean && rm -rf /tmp/remarkable_1.87_all.deb && rm -rf /var/lib/apt/lists/*" ],
     "debpackage": "",
@@ -1216,6 +1221,7 @@
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
+    "platforms": "linux/amd64",
     "apkpackage": "shotcut mesa-dri-gallium",
     "icon": "circle_shotcut.svg",
     "keyword": "video,audio,editing,suite,mlt,4k,video4linux,blackmagic,decklink",
@@ -1259,46 +1265,7 @@
     "template": "abcdesktopio/oc.template.alpine",
     "desktopfile": "/usr/share/applications/org.gnome.Calculator.desktop"
 },  {
-    "acl": { "permit": [ "all" ] },
-    "cat": "utilities",
-    "icon": "vm-linux-ubuntu.svg",
-    "keyword": "vm,ubuntu,jammy",
-    "launch": "qemu.Qemu-system-x86_64",
-    "name": "vmubuntu",
-    "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.vm.ubuntu:22.04",
-    "home": "/home/balloon",
-    "cmd": "/docker-entrypoint.sh",
-    "securitycontext": {
-      "allowPrivilegeEscalation": true,
-      "capabilities": {
-        "add": ["NET_ADMIN", "CAP_SYS_ADMIN"]
-      },
-      "readOnlyRootFilesystem": false,
-      "allowPrivilegeEscalation": true,
-      "runAsUser":  "0",
-      "runAsGroup": "0"
-    }
-},{
-    "acl": { "permit": [ "all" ] },
-    "cat": "utilities",
-    "preruncommands": [  "RUN yes | sudo pacman -S xorg-xauth" ],
-    "icon": "MacOS_logo.svg",
-    "keyword": "macos,apple",
-    "launch": "qemu.Qemu-system-x86_64",
-    "name": "vmmacos",
-    "rules": { "homedir": { "default": true } },
-    "host_config": { "devices": [ "/dev/kvm"] ,  "mem_limit": "16G" },
-    "template": "abcdesktop/docker-osx",
-    "workdir": "/home/arch/OSX-KVM",  
-    "user": "arch",
-    "home": "/home/arch",
-    "cmd": [    
-        "/bin/bash",
-        "-c",
-        "sudo touch /dev/kvm /dev/snd \"${IMAGE_PATH}\" \"${BOOTDISK}\" \"${ENV}\" 2>/dev/null || true; sudo chown -R $(id -u):$(id -g) /dev/kvm /dev/snd \"${IMAGE_PATH}\" \"${BOOTDISK}\" \"${ENV}\" 2>/dev/null || true     ; [[ \"${NOPICKER}\" == true ]] && {         sed -i '/^.*InstallMedia.*/d' Launch.sh         && export BOOTDISK=\"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore-nopicker.qcow2}\"     ; }     || export BOOTDISK=\"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore.qcow2}\"     ; [[ \"${GENERATE_UNIQUE}\" == true ]] && {         ./Docker-OSX/osx-serial-generator/generate-unique-machine-values.sh             --master-plist-url=\"${MASTER_PLIST_URL}\"             --count 1             --tsv ./serial.tsv             --bootdisks             --width \"${WIDTH:-1920}\" -height \"${HEIGHT:-1080}\"   --output-bootdisk \"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore.qcow2}\"             --output-env \"${ENV:=/env}\" || exit 1 ; }     ; [[ \"${GENERATE_SPECIFIC}\" == true ]] && {             source \"${ENV:=/env}\" 2>/dev/null             ; ./Docker-OSX/osx-serial-generator/generate-specific-bootdisk.sh --master-plist-url=\"${MASTER_PLIST_URL}\" --model \"${DEVICE_MODEL}\"             --serial \"${SERIAL}\"             --board-serial \"${BOARD_SERIAL}\"             --uuid \"${UUID}\"             --mac-address \"${MAC_ADDRESS}\" --width \"${WIDTH:-1920}\"             --height \"${HEIGHT:-1080}\"             --output-bootdisk \"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore.qcow2}\" || exit 1 ; } ; ./abcdesktop_config.sh ;  ./Launch.sh"
-    ]
-}, {
+    "platforms": "linux/amd64",
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
     "debpackage": "dbus-x11",
