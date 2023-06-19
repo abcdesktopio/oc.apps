@@ -1,38 +1,6 @@
 [ {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "debpackage": "konsole qt5dxcb-plugin libqglviewer2-qt5 libmgl-qt5-8 qt6-qpa-plugins libqglviewer-headers libegl1-mesa",
-     "preruncommands": [
-	"RUN apt-get update && apt-get install --no-install-recommends --yes wget sudo && apt-get clean",
-        "COPY cudnn-local-repo-ubuntu2204-8.7.0.84_1.0-1_amd64.deb /tmp",
-        "RUN apt-get update && apt-get install --no-install-recommends --yes -f /tmp/cudnn-local-repo-ubuntu2204-8.7.0.84_1.0-1_amd64.deb && apt-get clean",
-        "RUN cp /var/cudnn-local-repo-ubuntu2204-8.7.0.84/cudnn-local-BF23AD8A-keyring.gpg /usr/share/keyrings/",
-        "ENV PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-        "ENV LD_LIBRARY_PATH=/usr/local/cuda-12.0/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
-        "COPY ucsf-chimerax_1.5ubuntu22.04_amd64.deb virtualgl_3.1_amd64.deb /tmp/",
-	"RUN apt-get update && apt-get install -y -f /tmp/virtualgl_3.1_amd64.deb",
-	"RUN apt-get install -y -f /tmp/ucsf-chimerax_1.5ubuntu22.04_amd64.deb && rm -f /tmp/ucsf-chimerax_1.5ubuntu22.04_amd64.deb",
-        "RUN vglserver_config -config +s +f -t" ],
-    "icon": "chimerax.svg",
-    "installrecommends" : true,
-    "keyword": "development",
-    "launch": "ChimeraX.ChimeraX",
-    "name": "chimerax",
-    "path": "/usr/bin/konsole",
-    "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
-    "args": "",
-    "source": "https://www.cgl.ucsf.edu/chimerax/cgi-bin/secure/chimerax-get.py?ident=OHeQer2WTKVn%2F%2BJptntC7uBntlBVQ9nx3x9x0w3nnvEj&file=1.5%2Fubuntu-22.04%2Fucsf-chimerax_1.5ubuntu22.04_amd64.deb&choice=Notified",
-    "comment" : "https://www.rbvi.ucsf.edu/pipermail/chimerax-users/2020-November/001706.html",
-    "postruncommands": [ 
-	    "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all",
-	    "ENV CUDA_VISIBLE_DEVICES=1" 
-    ],
-    "rules": { "homedir": { "default": true } },
-    "mimetype" : "application/x-chimerax-code;application/x-chimerax-session;chemical/x-mmcif;chemical/x-pdb;chemical/x-spdbv;model/x3d+xml;",
-    "desktopfile": "/usr/lib/ucsf-chimerax/share/UCSF-ChimeraX-1.5.desktop"
-}, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
     "preruncommands": [
         "RUN curl -sL --output /tmp/ApacheDirectoryStudio.tar.gz https://dlcdn.apache.org/directory/studio/2.0.0.v20210717-M17/ApacheDirectoryStudio-2.0.0.v20210717-M17-linux.gtk.x86_64.tar.gz && cd /usr/local && tar -xvf /tmp/ApacheDirectoryStudio.tar.gz && rm -rf /tmp/ApacheDirectoryStudio.tar.gz",
     	"RUN mkdir /.ApacheDirectoryStudio && chmod 777 /.ApacheDirectoryStudio",
@@ -1188,43 +1156,7 @@
     "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
     "abcdesktop_release": 3
-}, {
-    "comment": "https://stackoverflow.com/questions/51002045/how-to-make-jupyter-notebook-to-run-on-gpu",
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "preruncommands": [
-	"RUN add-apt-repository ppa:mozillateam/ppa",
-	"COPY etc/apt/preferences.d/mozilla-firefox /etc/apt/preferences.d/mozilla-firefox",
-	"RUN apt-get update && apt-get install --no-install-recommends --yes firefox wget sudo && apt-get clean",
-	"COPY cudnn-local-repo-ubuntu2204-8.7.0.84_1.0-1_amd64.deb /tmp",
-	"RUN apt-get update && apt-get install --no-install-recommends --yes -f /tmp/cudnn-local-repo-ubuntu2204-8.7.0.84_1.0-1_amd64.deb && apt-get clean",
-	"RUN cp /var/cudnn-local-repo-ubuntu2204-8.7.0.84/cudnn-local-BF23AD8A-keyring.gpg /usr/share/keyrings/",
-	"ENV PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-        "ENV LD_LIBRARY_PATH=/usr/local/cuda-12.0/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
-        "RUN apt-get update && apt-get install --no-install-recommends --yes build-essential python3.9 python3-pip python-is-python3 libcurl4-openssl-dev libssl-dev wget && apt-get clean",
-	"RUN # wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh -O /tmp/anaconda3.sh && bash /tmp/anaconda3.sh -b -p /usr/local/anaconda", 
-	"RUN pip3 install torch",
-	"RUN pip3 install tensorflow-gpu",
-        "RUN pip3 install jupyter notebook",
-	"RUN pip3 install jupyterlab",
-        "RUN pip3 install jupyterlab-nvdashboard",
-        "RUN # jupyter labextension install jupyterlab-nvdashboard"
-    ],
-    "debpackage": "konsole openssh-client telnet netcat sshcommand sshfs ftp-ssl wput curl wget tftp ncftp git git-ftp ftp dbus-x11",
-    "icon": "jupyter.svg",
-    "keyword": "jupyter",
-    "launch": "konsole.jupyternvidia",
-    "name": "jupyternvidia",
-    "displayname": "jupyter nvidia",
-    "showinview": "dock",
-    "path": "/usr/bin/konsole",
-    "args": "--name=jupyternvidia -e /usr/local/bin/startjupyter.sh",
-    "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop ",
-    "abcdesktop_release": 3,
-    "postruncommands": [ "COPY startjupyter.sh /usr/local/bin/startjupyter.sh" ]
-}, {
+},  {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [],
