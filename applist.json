@@ -1860,10 +1860,11 @@
     "desktop": "minecraft-launcher.desktop",
     "host_config": { "mem_limit": "4G", "shm_size" : "2G",  "cpu_period": 200000, "cpu_quota": 200000, "ipc_mode": "shareable" },
     "desktopfile" : "/usr/share/applications/minecraft-launcher.desktop",
-    "preruncommands": [ 
-        "RUN apt-get update && apt-get install --no-install-recommends --yes libflite1 openjdk-8-jre at-spi2-core dbus-x11 orca libsecret-1-0 && curl -Ls 'https://launcher.mojang.com/download/Minecraft.deb' -o /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*",
-	    "COPY composer/init.d/init.minecraft-launcher /composer/init.d"
-                      ]
+    "postruncommands": [ 
+	"RUN if [ $(uname -m) == 'aarch64' ]; then echo 'minecraft does not exist for aarch64'; fi",
+        "RUN if [ $(uname -m) == 'x86_64'  ]; then apt-get update && apt-get install --no-install-recommends --yes libflite1 openjdk-8-jre at-spi2-core dbus-x11 orca libsecret-1-0 && curl -Ls 'https://launcher.mojang.com/download/Minecraft.deb' -o /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*; fi",
+	"COPY composer/init.d/init.minecraft-launcher /composer/init.d"
+    ]	
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
