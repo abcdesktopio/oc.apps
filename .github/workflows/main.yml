@@ -96,7 +96,15 @@ jobs:
         with:
          username: ${{ secrets.DOCKER_USERNAME }}
          password: ${{ secrets.DOCKER_TOKEN }}
-            
+
+
+      - name: Define platforms
+        id: define-platforms
+        run:
+          PLATFORMS=$(grep "# platforms=" ${{ matrix.path }} | awk -F "=" '{print $2 }')
+          echo "platforms=$PLATFORMS"
+          echo "platforms=$PLATFORMS" >> "$GITHUB_OUTPUT"
+
       - name: Build and push ${{ matrix.path }}
         env: 
           image: ${{ matrix.path }}
@@ -106,7 +114,7 @@ jobs:
         with:
           file: ${{ env.image }}
           context: .
-          platforms: linux/amd64,linux/arm64
+          platforms: ${{ steps.define-platforms.outputs.platforms }}
           build-args: |
             TAG=main
           push: true
