@@ -342,7 +342,7 @@
     "mimetype": "application/hlp;",
     "fileextensions":"hlp;",
     "path": "/usr/bin/wine",
-    "template": "abcdesktopio/oc.template.wine"
+    "template": "abcdesktopio/oc.template.alpine.wine"
 }, 
 {
     "acl": { "permit": [ "all" ] },
@@ -358,7 +358,7 @@
     "fileextensions":"hlp;",
     "path": "/usr/bin/gnome-terminal",
     "args": "--class=powershell -- /usr/bin/pwsh",
-    "template": "abcdesktopio/oc.template.alpine"
+    "template": "abcdesktopio/oc.template.ubuntu.wine"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -406,7 +406,7 @@
     "path": "/usr/bin/wine64"
 }, {
     "acl": { "permit": [ "all" ] },
-    "template": "abcdesktopio/oc.template.wine",
+    "template": "abcdesktopio/oc.template.alpine.wine",
     "preruncommands": [
         "ENV WINEARCH=win64",
         "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
@@ -437,7 +437,7 @@
     "name": "putty-unix",
     "displayname": "Putty Unix",
     "path": "/usr/bin/putty",
-    "template": "abcdesktopio/oc.template.alpine"
+    "template": "abcdesktopio/oc.template.alpine.wine"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
