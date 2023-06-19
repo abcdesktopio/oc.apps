@@ -1090,7 +1090,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [],
-    "debpackage": "konsole git cuda-demo-suite-12-0 libglu1-mesa libxi6 libxinerama1 libxmu6 libglu1-mesa mesa-utils freeglut3 x11-xserver-utils",
+    "debpackage": "konsole git libglu1-mesa libxi6 libxinerama1 libxmu6 libglu1-mesa mesa-utils freeglut3 x11-xserver-utils",
     "icon": "nvidia.svg",
     "keyword": "cuda nvidia demo suite",
     "launch": "cudademosuite.konsole",
@@ -1101,6 +1101,10 @@
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "postruncommands": [
+        "RUN if [ $(uname -m) == 'aarch64' ]; then echo 'cuda demo suite 12.0 does not exist for aarch64'; fi",
+        "RUN if [ $(uname -m) == 'x86_64'  ]; then apt-get update && apt-get install -y cuda-demo-suite-12-0 && rm -rf /var/lib/apt/lists/*; fi"
+    ],	
     "abcdesktop_release": 3
 }, {
     "acl": { "permit": [ "all" ] },
