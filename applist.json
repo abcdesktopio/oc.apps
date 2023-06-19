@@ -744,7 +744,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "debpackage": "",
-    "platforms": "linux/amd64",
+    "platforms": "linux/amd64,linux/arm64",
     "preruncommands": [ 
         "RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libx11-xcb1 libasound2 && apt-get clean",
 	"RUN if [ $(uname -m) == 'aarch64' ]; then curl -Ls -o /tmp/hyper.deb https://releases.hyper.is/download/deb_arm64; fi",
@@ -765,14 +765,10 @@
     "acl": { "permit": [ "all" ] },
     "cat": "office",
     "platforms": "linux/amd64",
-    "debpackage": "krb5-user fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine fonts-recommended",
+    "debpackage": "krb5-user fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine fonts-recommended google-chrome-stable",
     "preruncommands": [ 
         "RUN curl -Ls https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -",
 	"RUN echo \"deb [arch=$(dpkg --print-architecture)] http://dl.google.com/linux/chrome/deb/ stable main\" | tee /etc/apt/sources.list.d/google-chrome.list" 
-    ],
-    "postruncommands": [
-	"RUN if [ $(uname -m) == 'aarch64' ]; then echo 'google-chrome-stable does not exist'; fi",
-        "RUN if [ $(uname -m) == 'x86_64'  ]; then apt-get install -y google-chrome-stable; fi"
     ],
     "icon": "circle_google-chrome.svg",
     "keyword": "web,browser,internet",
@@ -810,15 +806,11 @@
     "cat": "office",
     "containerengine": "ephemeral_container",
     "platforms": "linux/amd64",
-    "debpackage": "",
+    "debpackage": "microsoft-edge-stable",
     "preruncommands": [ 
         "RUN # curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg",
 	"RUN curl https://packages.microsoft.com/keys/microsoft.asc  | apt-key add -",
         "RUN echo \"deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/edge stable main\" > /etc/apt/sources.list.d/edge.list"
-    ],
-    "postruncommands": [
-	"RUN if [ $(uname -m) == 'aarch64' ]; then echo microsoft-edge-stable does not exist on $(uname -m); fi",
-        "RUN if [ $(uname -m) == 'x86_64'  ]; then apt-get install -y microsoft-edge-stable; fi"
     ],
     "icon": "circle_microsoft-edge.svg",
     "keyword": "web,browser,internet",
@@ -1044,7 +1036,7 @@
     "cat": "development",
     "platforms": "linux/amd64",
     "preruncommands": [],
-    "debpackage": "konsole git libglu1-mesa libxi6 libxinerama1 libxmu6 libglu1-mesa mesa-utils freeglut3 x11-xserver-utils",
+    "debpackage": "konsole git libglu1-mesa libxi6 libxinerama1 libxmu6 libglu1-mesa mesa-utils freeglut3 x11-xserver-utils cuda-demo-suite-12-0",
     "icon": "nvidia.svg",
     "keyword": "cuda nvidia demo suite",
     "launch": "cudademosuite.konsole",
@@ -1055,10 +1047,6 @@
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
-    "postruncommands": [
-        "RUN if [ $(uname -m) == 'aarch64' ]; then echo 'cuda demo suite 12.0 does not exist for aarch64'; fi",
-        "RUN if [ $(uname -m) == 'x86_64'  ]; then apt-get update && apt-get install -y cuda-demo-suite-12-0 && rm -rf /var/lib/apt/lists/*; fi"
-    ],	
     "abcdesktop_release": 3
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1633,8 +1621,7 @@
     "legacyfileextensions": "drawio",
     "desktopfile": "/usr/share/applications/drawio.desktop",
     "postruncommands": [ 
-	"RUN if [ $(uname -m) == 'aarch64' ]; then echo 'drawio does not exist for aarch64'; fi",
-        "RUN if [ $(uname -m) == 'x86_64'  ]; then apt-get update && curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v21.5.0/drawio-amd64-21.5.0.deb' -o /tmp/drawio-amd64.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64.deb && rm /tmp/drawio-amd64.deb && rm -rf /var/lib/apt/lists/* ; fi" 
+        "RUN apt-get update && curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v21.5.0/drawio-amd64-21.5.0.deb' -o /tmp/drawio-amd64.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64.deb && rm /tmp/drawio-amd64.deb && rm -rf /var/lib/apt/lists/*" 
     ]
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1642,11 +1629,9 @@
     "platforms": "linux/amd64",
     "preruncommands": [
         "RUN curl https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -",
-	"RUN echo \"deb https://packages.cloudfoundry.org/debian stable main\" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list",
-	"RUN if [ $(uname -m) == 'aarch64' ]; then echo 'Cloud Foundry cli does not exist for aarch64'; fi",
-        "RUN if [ $(uname -m) == 'x86_64'  ]; then apt-get update && apt-get install -y cf8-cli && rm -rf /var/lib/apt/lists/*; fi"
+	"RUN echo \"deb https://packages.cloudfoundry.org/debian stable main\" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list"
     ],	
-    "debpackage": "",
+    "debpackage": "cf8-cli",
     "icon": "pivotalio-icon.svg",
     "keyword": "cf,pivotal.io,cloud,foundry,cloud foundry",
     "launch": "gnome-terminal-server.pivotalio.cf",
@@ -1661,7 +1646,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "games",
     "platforms": "linux/amd64",
-    "debpackage": "",
+    "debpackage": "libflite1 openjdk-8-jre at-spi2-core dbus-x11 orca libsecret-1-0",
     "icon": "circle_minecraft.svg",
     "keyword": "minecraft",
     "launch": "minecraft-launcher.Minecraft Launcher",
@@ -1673,8 +1658,7 @@
     "host_config": { "mem_limit": "4G", "shm_size" : "2G",  "cpu_period": 200000, "cpu_quota": 200000, "ipc_mode": "shareable" },
     "desktopfile" : "/usr/share/applications/minecraft-launcher.desktop",
     "postruncommands": [ 
-	"RUN if [ $(uname -m) == 'aarch64' ]; then echo 'minecraft does not exist for aarch64'; fi",
-        "RUN if [ $(uname -m) == 'x86_64'  ]; then apt-get update && apt-get install --no-install-recommends --yes libflite1 openjdk-8-jre at-spi2-core dbus-x11 orca libsecret-1-0 && curl -Ls 'https://launcher.mojang.com/download/Minecraft.deb' -o /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*; fi",
+        "RUN apt-get update && curl -Ls 'https://launcher.mojang.com/download/Minecraft.deb' -o /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*",
 	"COPY composer/init.d/init.minecraft-launcher /composer/init.d"
     ]	
 }, {
