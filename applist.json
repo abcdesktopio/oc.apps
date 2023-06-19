@@ -748,8 +748,8 @@
     "preruncommands": [ 
         "RUN apt-get update && apt-get install  --no-install-recommends --yes libgtk-3-0 libx11-xcb1 libasound2 && apt-get clean",
 	"RUN echo uname=$(uname -m)",
-	"RUN if [ $(uname -m) == 'aarch64' ]; then curl -Ls -o /tmp/hyper.deb https://releases.hyper.is/download/deb_arm64; fi",
-        "RUN if [ $(uname -m) == 'x86_64' ]; then curl -Ls -o /tmp/hyper.deb https://releases.hyper.is/download/deb; fi",
+	"RUN if [ $(uname -m) = 'aarch64' ]; then curl -Ls -o /tmp/hyper.deb https://releases.hyper.is/download/deb_arm64; fi",
+        "RUN if [ $(uname -m) = 'x86_64' ]; then curl -Ls -o /tmp/hyper.deb https://releases.hyper.is/download/deb; fi",
 	"RUN apt-get update && apt-get install --no-install-recommends --yes /tmp/hyper.deb && apt-get clean && rm -rf /tmp/hyper.deb"
     ],
     "icon": "hyper.svg",
