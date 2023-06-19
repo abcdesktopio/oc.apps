@@ -1,0 +1,52 @@
+[ {
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities",
+    "icon": "vm-linux-ubuntu.svg",
+    "keyword": "vm,ubuntu,jammy",
+    "launch": "qemu.Qemu-system-x86_64",
+    "name": "vmubuntu",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.vm.ubuntu:22.04",
+    "home": "/home/balloon",
+    "cmd": "/docker-entrypoint.sh",
+    "securitycontext": {
+      "allowPrivilegeEscalation": true,
+      "capabilities": {
+        "add": ["NET_ADMIN", "CAP_SYS_ADMIN"]
+      },
+      "readOnlyRootFilesystem": false,
+      "allowPrivilegeEscalation": true,
+      "runAsUser":  "0",
+      "runAsGroup": "0"
+    }
+},
+{
+    "acl": { "permit": [ "all" ] },
+    "cat": "utilities",
+    "preruncommands": [  "RUN yes | sudo pacman -S xorg-xauth" ],
+    "icon": "MacOS_logo.svg",
+    "keyword": "macos,apple",
+    "launch": "qemu.Qemu-system-x86_64",
+    "name": "vmmacos",
+    "rules": { "homedir": { "default": true } },
+    "host_config": { "devices": [ "/dev/kvm"] ,  "mem_limit": "16G" },
+    "template": "abcdesktop/docker-osx",
+    "workdir": "/home/arch/OSX-KVM",
+    "user": "arch",
+    "home": "/home/arch",
+    "cmd": [
+        "/bin/bash",
+        "-c",
+        "sudo touch /dev/kvm /dev/snd \"${IMAGE_PATH}\" \"${BOOTDISK}\" \"${ENV}\" 2>/dev/null || true; sudo chown -R $(id -u):$(id -g) /dev/kvm /dev/snd \"${IMAGE_PATH}\" \\
+"${BOOTDISK}\" \"${ENV}\" 2>/dev/null || true     ; [[ \"${NOPICKER}\" == true ]] && {         sed -i '/^.*InstallMedia.*/d' Launch.sh         && export BOOTDISK=\"${BOOTDISS
+K:=/home/arch/OSX-KVM/OpenCore/OpenCore-nopicker.qcow2}\"     ; }     || export BOOTDISK=\"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore.qcow2}\"     ; [[ \"${GENERATE_UNN
+IQUE}\" == true ]] && {         ./Docker-OSX/osx-serial-generator/generate-unique-machine-values.sh             --master-plist-url=\"${MASTER_PLIST_URL}\"             --counn
+t 1             --tsv ./serial.tsv             --bootdisks             --width \"${WIDTH:-1920}\" -height \"${HEIGHT:-1080}\"   --output-bootdisk \"${BOOTDISK:=/home/arch/OSS
+X-KVM/OpenCore/OpenCore.qcow2}\"             --output-env \"${ENV:=/env}\" || exit 1 ; }     ; [[ \"${GENERATE_SPECIFIC}\" == true ]] && {             source \"${ENV:=/env}\\
+" 2>/dev/null             ; ./Docker-OSX/osx-serial-generator/generate-specific-bootdisk.sh --master-plist-url=\"${MASTER_PLIST_URL}\" --model \"${DEVICE_MODEL}\"            
+  --serial \"${SERIAL}\"             --board-serial \"${BOARD_SERIAL}\"             --uuid \"${UUID}\"             --mac-address \"${MAC_ADDRESS}\" --width \"${WIDTH:-1920}\\
+"             --height \"${HEIGHT:-1080}\"             --output-bootdisk \"${BOOTDISK:=/home/arch/OSX-KVM/OpenCore/OpenCore.qcow2}\" || exit 1 ; } ; ./abcdesktop_config.sh ;;
+  ./Launch.sh"
+    ]
+}
+]
