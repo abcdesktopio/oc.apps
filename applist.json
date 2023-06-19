@@ -1681,9 +1681,11 @@
     "cat": "development",
     "preruncommands": [
         "RUN curl https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -",
-	"RUN echo \"deb https://packages.cloudfoundry.org/debian stable main\" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list"
+	"RUN echo \"deb https://packages.cloudfoundry.org/debian stable main\" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list",
+	"RUN if [ $(uname -m) == 'aarch64' ]; then echo 'Cloud Foundry cli does not exist for aarch64'; fi",
+        "RUN if [ $(uname -m) == 'x86_64'  ]; then apt-get update && apt-get install -y cf8-cli && rm -rf /var/lib/apt/lists/*; fi"
     ],	
-    "debpackage": "cf8-cli",
+    "debpackage": "",
     "icon": "pivotalio-icon.svg",
     "keyword": "cf,pivotal.io,cloud,foundry,cloud foundry",
     "launch": "gnome-terminal-server.pivotalio.cf",
