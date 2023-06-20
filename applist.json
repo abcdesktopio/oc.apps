@@ -308,7 +308,7 @@
     "fileextensions":"hlp;",
     "path": "/usr/bin/gnome-terminal",
     "args": "--class=powershell -- /usr/bin/pwsh",
-    "template": "abcdesktopio/oc.template.ubuntu.wine"
+    "template": "abcdesktopio/oc.template.alpine.wine"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -337,6 +337,7 @@
     "template": "abcdesktopio/oc.template.alpine.wine"
 }, {
     "acl": { "permit": [ "all" ] },
+    "platforms": "linux/amd64",
     "template": "abcdesktopio/oc.template.alpine.minimal",
     "preruncommands": [ 
         "ENV WINEARCH=win64",
@@ -837,28 +838,6 @@
     "desktopfile":"/usr/share/applications/microsoft-edge.desktop",
     "quick": true
 }, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "office",
-    "debpackage": "",
-    "preruncommands": [ 
-        "RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg",
-        "RUN echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/ms-teams stable main\" > /etc/apt/sources.list.d/teams.list",
-        "RUN apt update && apt install -y teams && apt-get clean && rm -rf /var/lib/apt/lists/*" ],
-    "icon": "teams.svg",
-    "keyword": "teams",
-    "launch": "microsoft teams - preview.Microsoft Teams - Preview",
-    "name": "teams",
-    "displayname": "Microsoft Teams",
-    
-    "installrecommends" : true,
-    "path": "/usr/bin/teams",
-    "rules": { "homedir": { "default": true } },
-    "args": "--disable-namespace-sandbox --disable-setuid-sandbox",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
-    "mimetype": "x-scheme-handler/msteams;",
-    "desktopfile":"/usr/share/applications/teams.desktop",
-    "quick": true
-},{
     "acl": { "permit": [ "all" ] },
     "cat": "office",
     "debpackage": "evolution dbus-x11",
