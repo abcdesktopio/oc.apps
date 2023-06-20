@@ -107,8 +107,7 @@ jobs:
       - name: Build and push ${{ matrix.path }}
         env: 
           image: ${{ matrix.path }}
-          imagetag: ${{ github.head_ref }}
-          # imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
+          imagetag: ${{ github.head_ref || github.ref_name || 'main' }}
         uses: docker/build-push-action@v3
         with:
           file: ${{ env.image }}
@@ -121,15 +120,18 @@ jobs:
             abcdesktopio/${{ env.image }}:${{ env.imagetag }}
         
       - uses: actions/upload-artifact@v3
+        env: 
+          image: ${{ matrix.path }}
+          imagetag: ${{ github.head_ref || github.ref_name || 'main' }}
         with:
-          name: artifact.${{ matrix.path }}.${{ github.head_ref }}
-          path: ${{ matrix.path }}
-          if-no-files-found: warn # 'error' or 'ignore' are also available, defaults to `warn`
+          name: artifact.${{ env.image }}.${{ env.imagetag }}
+          path: ${{ env.image }}
+          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
  
       - name: Repository Dispatch
         env: 
           image: ${{ matrix.path }}
-          imagetag: ${{ github.head_ref }}
+          imagetag: ${{ github.head_ref || github.ref_name || 'main' }}
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.TOKEN_DISPATCH }}
