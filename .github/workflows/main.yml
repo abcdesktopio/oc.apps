@@ -138,3 +138,37 @@ jobs:
           repository: abcdesktopio/images
           event-type: dispatch-from-oc.apps
           client-payload: '{"image": "${{ env.image }}", "tag": "${{ env.imagetag }}"}'
+
+  builddone:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+     
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifact-dockerfiles
+          path: artifact
+          if-no-files-found: warn # 'error' or 'ignore' are also available, defaults to `warn`
+            
+      - name: Current Dockerfile
+        env: 
+          CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
+          CI_COMMIT_AUTHOR: ${{ github.event.repository.name }} Continuous Integration
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          command: |
+            git config --global pull.ff only
+            git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+            git config --global user.email "abcdesktop@users.noreply.github.com"
+            git add artifact/*.d
+            git commit -m "${{ env.CI_COMMIT_MESSAGE }}" artifact/*.d
+            git push origin ${{ github.head_ref }}      
