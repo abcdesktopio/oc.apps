@@ -744,7 +744,7 @@
     "name": "remarkable",
     "displayname": "Remarkable",
     "path": "/usr/bin/remarkable",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.18.04",
     "mimetype": "text/x-markdown;text/markdown;",
     "legacyfileextensions": "md;markdown",
     "fileextensions": "md;markdown",
