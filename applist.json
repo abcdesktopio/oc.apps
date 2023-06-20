@@ -277,7 +277,8 @@
         "ENV WINEARCH=win64",
         "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
 	"ENV WINEPREFIX=/composer/.wine",
-        "USER $BUSER",
+        "RUN mkdir -p $WINEPREFIX && chown $BUSER:$BUSER $WINEPREFIX && chmod 777 $WINEPREFIX",
+	"USER $BUSER",
         "RUN wineboot --init",
         "RUN echo disable > $WINEPREFIX/.update-timestamp",
         "COPY --chown=$BUSER:$BUSER user.reg system.reg /composer/.wine/" ],
@@ -363,6 +364,8 @@
     "preruncommands": [
         "ENV WINEARCH=win64",
         "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
+	"ENV WINEPREFIX=/composer/.wine",
+	"RUN mkdir -p $WINEPREFIX && chown $BUSER:$BUSER $WINEPREFIX && chmod 777 $WINEPREFIX",
         "USER $BUSER",
         "RUN wineboot --init",
         "RUN curl -Ls -o /tmp/winscp.zip https://winscp.net/download/WinSCP-6.1-Portable.zip && unzip /tmp/winscp.zip -d /composer/bin/ && rm /tmp/winscp.zip",
