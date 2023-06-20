@@ -221,6 +221,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
+    "platforms": "linux/amd64",
     "preruncommands": [ 
 	    "ENV WINEDLLOVERRIDES=mscoree,mshtml="
     ],  
@@ -241,6 +242,7 @@
             "ENV WINEDLLOVERRIDES=mscoree,mshtml="
     ],
     "cat": "utilities",
+    "platforms": "linux/amd64",
     "apkpackage": "wine",
     "icon": "winefile.svg",
     "keyword": "wine,winfile,winefile,file,manager",
@@ -256,6 +258,7 @@
         "ENV WINEDLLOVERRIDES=mscoree,mshtml="
     ],
     "cat": "utilities",
+    "platforms": "linux/amd64",
     "apkpackage": "wine",
     "icon": "cmd.svg",
     "keyword": "wine,command,cmd.exe",
@@ -269,9 +272,11 @@
     "acl": { "permit": [ "all" ] },
     "args": "winhelp",
     "cat": "utilities",
+    "platforms": "linux/amd64",
     "preruncommands": [
         "ENV WINEARCH=win64",
         "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
+	"ENV WINEPREFIX=/composer/.wine",
         "USER $BUSER",
         "RUN wineboot --init",
         "RUN echo disable > $WINEPREFIX/.update-timestamp",
@@ -1645,6 +1650,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
+    "platforms": "linux/amd64",
     "debpackage": "",
     "icon": "circle_visual-studio-code.svg",
     "keyword": "ide,vscode,visual studio code,code",
