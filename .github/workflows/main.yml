@@ -81,7 +81,7 @@ jobs:
             
       - name: Current Dockerfile
         run: |
-          echo Current Dockerfile
+          echo Dockerfile ${{ matrix.path }}
           ls -la ${{ matrix.path }}
           cat ${{ matrix.path }}
          
@@ -97,7 +97,6 @@ jobs:
          username: ${{ secrets.DOCKER_USERNAME }}
          password: ${{ secrets.DOCKER_TOKEN }}
 
-
       - name: Define platforms
         id: define-platforms
         run: |
@@ -108,7 +107,7 @@ jobs:
       - name: Build and push ${{ matrix.path }}
         env: 
           image: ${{ matrix.path }}
-          imagetag: 'main'
+          imagetag: ${{ github.head_ref }}
           # imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
         uses: docker/build-push-action@v3
         with:
@@ -120,40 +119,20 @@ jobs:
           push: true
           tags: |
             abcdesktopio/${{ env.image }}:${{ env.imagetag }}
-            
+        
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifact.${{ matrix.path }}.${{ github.head_ref }}
+          path: ${{ matrix.path }}
+          if-no-files-found: warn # 'error' or 'ignore' are also available, defaults to `warn`
+ 
       - name: Repository Dispatch
         env: 
           image: ${{ matrix.path }}
-          imagetag: ${{ github.head_ref || github.ref_name || 'dev' }}
+          imagetag: ${{ github.head_ref }}
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/images
           event-type: dispatch-from-oc.apps
           client-payload: '{"image": "${{ env.image }}", "tag": "${{ env.imagetag }}"}'
-          
-  builddone:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      # Give the default GITHUB_TOKEN write permission to commit and push the
-      # added or changed files to the repository.
-      contents: write
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
-     
-      # overwrite previous Dockerfiles
-      - uses: actions/download-artifact@v3
-        with:
-            name: artifact-dockerfiles
-            
-      - name: Current Dockerfile
-        run: |
-          echo "Build Done"
-          ls -la *.d
-          cat *.d
-          
-        
-
