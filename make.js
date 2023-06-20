@@ -201,11 +201,10 @@ function makedockerfile(e) {
   }
   // remove links file over inacessible directory
   // RUN this command as ROOT
-  wstream.write( "RUN for d in /usr/share/icons /usr/share/pixmaps ; do echo \"testing link in $d\"; if [ -d $d ] && [ -x /composer/safelinks.sh ] ; then echo \"fixing link in $d\"; cd $d ; /composer/safelinks.sh ; fi; done\n" );
+  // wstream.write( "RUN for d in /usr/share/icons /usr/share/pixmaps ; do echo \"testing link in $d\"; if [ -d $d ] && [ -x /composer/safelinks.sh ] ; then echo \"fixing link in $d\"; cd $d ; /composer/safelinks.sh ; fi; done\n" );
   if (e.name) wstream.write(`ENV APPNAME "${e.name}"\n`);
   if (e.path) wstream.write(`ENV APPBIN "${e.path}"\n`);
   if (e.args) { wstream.write(`LABEL oc.args=${JSON.stringify(e.args)}\n`); }
-  if (e.path) { wstream.write(`ENV APP "${e.path}"\n`); }
   if (e.usedefaultapplication) { wstream.write(`LABEL oc.usedefaultapplication=${JSON.stringify(e.usedefaultapplication)}\n`); }
   if (e.home) { wstream.write(`LABEL oc.home=${JSON.stringify(e.home)}\n`); }
   if (e.containerengine) {  wstream.write(`LABEL oc.containerengine=${JSON.stringify(e.containerengine)}\n`); }
@@ -218,8 +217,8 @@ function makedockerfile(e) {
   if ( abcdesktop_release === '3.0' ) {
       // make sure that we are root to run the commands :
       wstream.write( "USER root\n" ),
-      wstream.write( "RUN mkdir -p /var/secrets/abcdesktop/localaccount\n" );
-      wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /var/secrets/abcdesktop/localaccount; rm -f /etc/$f; ln -s /var/secrets/abcdesktop/localaccount/$f /etc/$f; fi; done\n" );
+      wstream.write( "RUN mkdir -p /etc/localaccount\n" );
+      wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount; rm -f /etc/$f; ln -s /etc/localaccount/$f /etc/$f; fi; done\n" );
   }
 
   let user=(e.user)?(e.user):'balloon';
