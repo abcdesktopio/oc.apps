@@ -85,6 +85,14 @@ function makedocumentation(e) {
   if (e.template) {
     fs.writeSync( fd, `## inherite from\n[${e.template}](${'../' + e.template})\n`);
   }
+
+  
+  let platforms='linux/amd64,linux/arm64';
+  if (e.platforms) {
+    platforms=e.platforms;
+  }
+  wstream.write(`## Platforms\n${platforms}\n`);
+	
   if (e.debpackage) {
     fs.writeSync( fd,'## Distribution\nubuntu ![ubuntu](icons/ubuntu.svg){: style="height:32px;"}\n');
     
@@ -107,6 +115,8 @@ function makedocumentation(e) {
     fs.writeSync( fd,'## Alpine packages\n');
     writecmd( fd, e.apkpackage );
   }
+
+  
 
   if (e.licence === "non-free"){
     fs.writeSync( fd,'## Licence\n ** This application is NO FREE. ** You need to build it manually.\n\n');
