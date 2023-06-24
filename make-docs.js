@@ -86,12 +86,12 @@ function makedocumentation(e) {
     fs.writeSync( fd, `## inherite from\n[${e.template}](${'../' + e.template})\n`);
   }
 
-  
+  # write platforms
   let platforms='linux/amd64,linux/arm64';
   if (e.platforms) {
     platforms=e.platforms;
   }
-  wstream.write(`## Platforms\n${platforms}\n`);
+  fs.writeSync( fd, `## Platforms\n${platforms}\n`);
 	
   if (e.debpackage) {
     fs.writeSync( fd,'## Distribution\nubuntu ![ubuntu](icons/ubuntu.svg){: style="height:32px;"}\n');
