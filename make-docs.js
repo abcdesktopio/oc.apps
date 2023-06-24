@@ -86,7 +86,7 @@ function makedocumentation(e) {
     fs.writeSync( fd, `## inherite from\n[${e.template}](${'../' + e.template})\n`);
   }
 
-  # write platforms
+  // write platforms
   let platforms='linux/amd64,linux/arm64';
   if (e.platforms) {
     platforms=e.platforms;
