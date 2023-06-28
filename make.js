@@ -18,10 +18,11 @@ const path = require('path');
 const quickMode = false;
 const { ArgumentParser } = require('argparse');
 const { version } = require('./package.json');
+const templateimagesfilename = './templateimages.txt'
+var   templateimages = [];
 
 var	defaultApplicationfile  = 'applist.json';
 var	forceOutputToDockerfile = false;
-var 	abcdesktop_release='2.0'; 
 
 // function to encode file data to base64 encoded string
 function base64Encode(file) {
@@ -90,7 +91,25 @@ function makedockerfile(e) {
   if (e.tag)  tag=e.tag;
   wstream.write(`ARG TAG=${tag}\n`);
 
-  if (e.template) { 
+  if (e.template) {
+
+	  let template = e.template;
+          if (!e.template.includes(":"))
+                // do not tag twice
+                template += ':$TAG';
+
+          wstream.write(`FROM ${template}\n`);
+
+	  // console.log( ' e.template = ' + e.template );
+	  let arraysplitedtemplate = e.template.split('/');
+	  let splitedtemplate = (arraysplitedtemplate.length > 1) ? arraysplitedtemplate[1] : arraysplitedtemplate[0];
+          splitedtemplate = splitedtemplate.split(':')[0];
+	  // let splitedtemplate = e.template;
+	  // console.log( "template source " +  splitedtemplate );
+
+	  if ( templateimages.length > 0 && !templateimages.includes(splitedtemplate) )
+	     console.error( 'template image is not found ' + splitedtemplate + ' in file ' + templateimagesfilename );
+
 	  if (e.template.includes(":"))
 	  	// do not tag twice
 	  	wstream.write(`FROM ${e.template}\n`); 
@@ -214,12 +233,10 @@ function makedockerfile(e) {
         e.postruncommands.forEach((command) => wstream.write(`${command}\n`));
   }
 
-  if ( abcdesktop_release === '3.0' ) {
-      // make sure that we are root to run the commands :
-      wstream.write( "USER root\n" ),
-      wstream.write( "RUN mkdir -p /etc/localaccount\n" );
-      wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount; rm -f /etc/$f; ln -s /etc/localaccount/$f /etc/$f; fi; done\n" );
-  }
+  // make sure that we are root to run the commands :
+  wstream.write( "USER root\n" ),
+  wstream.write( "RUN mkdir -p /etc/localaccount\n" );
+  wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount; rm -f /etc/$f; ln -s /etc/localaccount/$f /etc/$f; fi; done\n" );
 
   let user=(e.user)?(e.user):'balloon';
   wstream.write(`USER ${user}\n`);
@@ -241,12 +258,11 @@ parser.add_argument('-f', '--applicationfile', 	{ default: 'applist.json', 	help
 
 let args=parser.parse_args();
 console.log( args );
-abcdesktop_release = args.release;
-console.log( 'Building image for release=' + abcdesktop_release );
 defaultApplicationfile = args.applicationfile;
 console.log( 'Read database json file=' + defaultApplicationfile );
 forceOutputToDockerfile = args.dockerfile;
 console.log( 'Only one file option to force output to dockerfile=' +  forceOutputToDockerfile);
+
 
 
 // Start open file
@@ -284,6 +300,19 @@ if (forceOutputToDockerfile === true ) {
 		console.error( 'remove Dockerfile option to command line'); 
 		process.exit(-1);
 	}
+}
+
+if (fs.existsSync(templateimagesfilename)) {
+  const templateimagescontent = fs.readFileSync(templateimagesfilename).toString('utf-8');
+  let arraytemplateimages = templateimagescontent.split("\n");
+  for( var i=0; i<arraytemplateimages.length; ++i) {
+	let line=arraytemplateimages[i];
+	let arraysplitedlinetemplate = line.split('/');
+        let splitedtemplate = (arraysplitedlinetemplate.length > 1) ? arraysplitedlinetemplate[1] : arraysplitedlinetemplate[0];
+	let splitedtemplatenotag = splitedtemplate.split(':')[0];
+	console.log( splitedtemplatenotag );
+  	templateimages.push( splitedtemplatenotag );
+  }
 }
 
 jsoncontent.forEach(makedockerfile);
