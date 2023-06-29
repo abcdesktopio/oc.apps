@@ -40,7 +40,7 @@ This array describe the application list ready to use with abcdesktop.
 |![gcompris.svg](icons/gcompris.svg){: style="height:32px;width:32px"}|GCompris|no comment|[gcompris.md](../gcompris)|[gcompris.d.3.0.json](../gcompris.d.3.0.json)|
 |![geany.svg](icons/geany.svg){: style="height:32px;width:32px"}|Geany|A fast and lightweight IDE using GTK+|[geany.md](../geany)|[geany.d.3.0.json](../geany.d.3.0.json)|
 |![gedit.svg](icons/gedit.svg){: style="height:32px;width:32px"}|Gedit|no comment|[gedit.md](../gedit)|[gedit.d.3.0.json](../gedit.d.3.0.json)|
-|![gelemental.svg](icons/gelemental.svg){: style="height:32px;width:32px"}|gElemental|View the periodic table of elements|[gelemental.md](../gelemental)|[gelemental.d.3.0.json](../gelemental.d.3.0.json)|
+|![gelemental.svg](icons/gelemental.svg){: style="height:32px;width:32px"}|gElemental|no comment|[gelemental.md](../gelemental)|[gelemental.d.3.0.json](../gelemental.d.3.0.json)|
 |![geogebra.svg](icons/geogebra.svg){: style="height:32px;width:32px"}|Geogebra|no comment|[geogebra.md](../geogebra)|[geogebra.d.3.0.json](../geogebra.d.3.0.json)|
 |![circle_gimp.svg](icons/circle_gimp.svg){: style="height:32px;width:32px"}|Gimp|Create images and edit photographs|[gimp.md](../gimp)|[gimp.d.3.0.json](../gimp.d.3.0.json)|
 |![gnumeric.svg](icons/gnumeric.svg){: style="height:32px;width:32px"}|Gnumerix (alpine)|Calculation, Analysis, and Visualization of Information|[gnumeric.md](../gnumeric)|[gnumeric.d.3.0.json](../gnumeric.d.3.0.json)|
