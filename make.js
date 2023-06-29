@@ -235,9 +235,10 @@ function makedockerfile(e) {
 
   // make sure that we are root to run the commands :
   wstream.write( "USER root\n" ),
-  wstream.write( "RUN mkdir -p /etc/localaccount\n" );
-  wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount; rm -f /etc/$f; ln -s /etc/localaccount/$f /etc/$f; fi; done\n" );
-
+  // wstream.write( "RUN mkdir -p /etc/localaccount\n" );
+  // wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount; rm -f /etc/$f; ln -s /etc/localaccount/$f /etc/$f; fi; done\n" );
+  wstream.write( "RUN mkdir -p /var/secrets/abcdesktop/localaccount\n" );
+  wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /var/secrets/abcdesktop/localaccount; rm -f /etc/$f; ln -s /var/secrets/abcdesktop/localaccount/$f /etc/$f; fi; done\n" );
   let user=(e.user)?(e.user):'balloon';
   wstream.write(`USER ${user}\n`);
 
