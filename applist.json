@@ -1617,18 +1617,26 @@
         "RUN apt-get update && curl -Ls 'https://launcher.mojang.com/download/Minecraft.deb' -o /tmp/Minecraft.deb && apt-get install --yes /tmp/Minecraft.deb && rm /tmp/Minecraft.deb && rm -rf /var/lib/apt/lists/*",
 	"COPY composer/init.d/init.minecraft-launcher /composer/init.d"
     ]	
-}, {
+},  {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "debpackage": "octave",
+    "installrecommends": true,
+    "debpackage": "konsole octave",
     "icon": "Gnu-octave-logo.svg",
     "keyword": "octave",
-    "launch": "octave-gui.octave-gui",
+    "launch": "octave-gui.GNU Octave",
     "name": "octave",
     "path": "/usr/bin/octave",
+    "debugpath": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "desktop": "www.octave.org-octave.desktop.desktop",
+    "args": "--gui",
+    "postruncommands": [
+        "ENV QT_XCB_NO_MITSHM=1",
+        "RUN find /usr/share/octave -name '*.qhc' | xargs chmod o+w",
+        "RUN find /usr/share/octave -type d -exec chmod o+w \"{}\" \\;"
+    ],
     "desktopfile" : "/usr/share/applications/www.octave.org-octave.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
