@@ -169,7 +169,9 @@ jobs:
         uses: docker/setup-buildx-action@v2
         
       - name: generate MarkDown files
-        run: node make-docs.js -r '${{ github.head_ref }}'
+        env: 
+          imagetag: ${{ github.ref_name || 'main' }}
+        run: node make-docs.js -r ${{ env.imagetag }}
           
       - uses: actions/upload-artifact@v3
         with:
