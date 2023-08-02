@@ -171,7 +171,7 @@ jobs:
       - name: generate MarkDown files
         env: 
           imagetag: ${{ github.ref_name || 'main' }}
-        run: node make-docs.js -r ${{ imagetag }}
+        run: node make-docs.js -r "${{ imagetag }}"
           
       - uses: actions/upload-artifact@v3
         with:
