@@ -65,7 +65,7 @@ function getosrelease( appname ) {
     stdout = childProcess.execSync(command).toString();
     osrelease = stdout;
     console.log(rmcommand);
-    child_process.exec(rmcommand);
+    childProcess.exec(rmcommand);
   } catch (error) {
     console.error( `error in getrelease ${DOCKERREGISTRYPATH}/${appname}:${release}`);
     console.error( error );
