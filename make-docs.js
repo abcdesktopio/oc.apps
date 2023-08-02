@@ -56,12 +56,16 @@ function getosrelease( appname ) {
   var osrelease = undefined;
   // docker run -it --rm abcdesktopio/firefox.d:3.0 bash -c "cat /etc/lsb-release 2>/dev/null || cat /etc/os-release 2>/dev/null"
   appname = appname.toLowerCase();
-  var command = 'docker run --rm ' + DOCKERREGISTRYPATH + '/' + appname + '.d:' + release;
+  let appimage = DOCKERREGISTRYPATH + '/' + appname + '.d:' + release;
+  var command = 'docker run --rm ' + appimage;
+  let rmcommand = 'docker rmi ' + appimage;
   command += ' /bin/cat /etc/os-release';
   try {
     console.log(command);
     stdout = childProcess.execSync(command).toString();
-    osrelease = stdout;	  
+    osrelease = stdout;
+    console.log(rmcommand);
+    child_process.exec(rmcommand);
   } catch (error) {
     console.error( `error in getrelease ${DOCKERREGISTRYPATH}/${appname}:${release}`);
     console.error( error );
