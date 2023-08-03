@@ -22,6 +22,7 @@ const { version } = require('./package.json');
 const DOCKERREGISTRYPATH = 'abcdesktopio';
 const HOSTEDURL = "https://raw.githubusercontent.com/abcdesktopio/oc.apps/main";
 var release  = '3.0';
+var removeimage = false;
 
 // function to encode file data to base64 encoded string
 function base64Encode(file) {
@@ -64,8 +65,13 @@ function getosrelease( appname ) {
     console.log(command);
     stdout = childProcess.execSync(command).toString();
     osrelease = stdout;
-    console.log(rmcommand);
-    childProcess.exec(rmcommand);
+    /*
+     * remove image in makedocArray
+    if (removeimage) {
+	console.log(rmcommand);
+       	childProcess.exec( rmcommand );
+    }
+    */
   } catch (error) {
     console.error( `error in getrelease ${DOCKERREGISTRYPATH}/${appname}:${release}`);
     console.error( error );
@@ -80,7 +86,7 @@ function getosrelease( appname ) {
 
 function makedocumentation(e) {
   console.log(e);
-  const filename = e.name.toLowerCase() + '.md';
+  const filename = e.name.toLowerCase() + '.' + release + '.md';
   const dockerfilename = e.name.toLowerCase() + '.d';
   const jsonfilename = e.name.toLowerCase() + '.d.' + release + '.json';
 
@@ -240,21 +246,21 @@ function makedocumentation(e) {
 const docarray = {};
 
 function makedocArray(e) {
-  if (e.name === '2048-alpine-error') return;
   const displayname = e.displayname ? e.displayname : e.name;
   const filename = e.name.toLowerCase();
   const icon = e.icon;
   const mimetype = e.mimetype;
   const appname = e.name.toLowerCase() + '.d';
   const jsonfile = `[${filename}.d.${release}.json](${'../' + filename}.d.${release}.json)`;
-  const mdfile = `[${filename}.md](${'../' + filename})`;
+  const mdfile = `[${filename}.${release}.md](${'../' + filename})`;
   const iconfile = `![${e.icon}](${'icons/' + e.icon}){: style="height:32px;width:32px"}`;
   var description = "no comment";
   if (e.desktopfile) {
-    var command = `docker run --rm ${DOCKERREGISTRYPATH}/${appname}:3.0 cat ${e.desktopfile} | grep 'Comment='`;
+    var rmcommand = `docker rmi ${DOCKERREGISTRYPATH}/${appname}:${release}`;
+    var command = `docker run --rm ${DOCKERREGISTRYPATH}/${appname}:${release} cat ${e.desktopfile} | grep 'Comment='`;
     try {
-	    var description = "no comment";
-      console.log(command);
+	var description = "no comment";
+        console.log(command);
     	stdout = childProcess.execSync(command).toString();
     	const comment = 'Comment=';
     	const indexOfFirst = stdout.indexOf(comment);
@@ -263,6 +269,9 @@ function makedocArray(e) {
 		    var end = stdout.length;
     		description = stdout.substr(i, end-comment.length-1);
     	}
+	if (removeimage)
+		childProcess.exec( rmcommand );
+
     } catch (error) {
 	    console.error( `error in parsing 'Comment' in file ${e.desktopfile} image ${DOCKERREGISTRYPATH}/${appname}:3.0`);
 	    // console.error( error );
@@ -277,15 +286,6 @@ function makedocArray(e) {
   docarray[appname] = `|${iconfile}|${displayname}|${description}|${mdfile}|${jsonfile}|`;
 }
 
-function sortByKey(array, key) {
-  return array.sort((a, b) => {
-    const x = a[key];
-    const y = b[key];
-    if (x < y) return -1;
-    if (x > y) return 1;
-    return 0;
-  });
-}
 
 function getDescription(jsonArray) {
   console.log('getDescription');
@@ -300,8 +300,9 @@ function getDescription(jsonArray) {
 // start here
 
 const parser = new ArgumentParser({ description: 'abcdesktop md file generator' });
-parser.add_argument('-r', '--release',   	{ default: '3.0', 		help: 'build version 3.0' });
-parser.add_argument('-f', '--applicationfile', 	{ default: 'applist.json', 	help: 'applicationfile applist.json' });
+parser.add_argument('-rmi', '--removeimage',    { default: 'false',             help: 'remove image' });
+parser.add_argument('-r',   '--release',   	{ default: '3.0', 		help: 'build version 3.0' });
+parser.add_argument('-f',   '--applicationfile',{ default: 'applist.json', 	help: 'applicationfile applist.json' });
 
 let args=parser.parse_args();
 console.log( args );
@@ -309,6 +310,8 @@ defaultApplicationfile = args.applicationfile;
 console.log( 'Read database json file=' + defaultApplicationfile );
 release = args.release;
 console.log( 'Release=' + release );
+removeimage = args.removeimage;
+console.log( 'Removeimage=' + removeimage );
 
 
 makedummy();
@@ -317,13 +320,12 @@ const jsoncontent = JSON.parse(content);
 
 for (var a=0; a<jsoncontent.length; a++) { // now lets iterate in sort order
     makedocumentation(jsoncontent[a]);
+    makedocArray(jsoncontent[a]);
 }
 
-//const jsonsortcontent = sortByKey(jsoncontent, 'name');
-// console.log( jsonsortcontent );
-getDescription(jsoncontent);
-
-const wstreamlist = fs.createWriteStream('list.md');
+const listfilename = 'list.' + release + '.md';
+console.log( 'Create file ' + listfilename );
+const wstreamlist = fs.createWriteStream( listfilename );
 wstreamlist.write('# Application list\n');
 wstreamlist.write('This array describe the application list ready to use with abcdesktop.\n\n');
 wstreamlist.write('|icon|displayname|comment|description|json file|\n');
