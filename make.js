@@ -20,9 +20,9 @@ const { ArgumentParser } = require('argparse');
 const { version } = require('./package.json');
 const templateimagesfilename = './templateimages.txt'
 var   templateimages = [];
-
-var	defaultApplicationfile  = 'applist.json';
-var	forceOutputToDockerfile = false;
+var   release='3.0';
+var   defaultApplicationfile  = 'applist.json';
+var   forceOutputToDockerfile = false;
 
 // function to encode file data to base64 encoded string
 function base64Encode(file) {
@@ -98,9 +98,6 @@ function makedockerfile(e) {
                 // do not tag twice
                 template += ':$TAG';
 
-          wstream.write(`FROM ${template}\n`);
-
-	  // console.log( ' e.template = ' + e.template );
 	  let arraysplitedtemplate = e.template.split('/');
 	  let splitedtemplate = (arraysplitedtemplate.length > 1) ? arraysplitedtemplate[1] : arraysplitedtemplate[0];
           splitedtemplate = splitedtemplate.split(':')[0];
@@ -234,11 +231,15 @@ function makedockerfile(e) {
   }
 
   // make sure that we are root to run the commands :
-  wstream.write( "USER root\n" ),
-  wstream.write( "RUN mkdir -p /etc/localaccount\n" );
-  wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount; rm -f /etc/$f; ln -s /etc/localaccount/$f /etc/$f; fi; done\n" );
-  // wstream.write( "RUN mkdir -p /var/secrets/abcdesktop/localaccount\n" );
-  // wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /var/secrets/abcdesktop/localaccount; rm -f /etc/$f; ln -s /var/secrets/abcdesktop/localaccount/$f /etc/$f; fi; done\n" );
+  wstream.write( "USER root\n" );
+  if (release == '3.1' ) {
+  	wstream.write( "RUN mkdir -p /etc/localaccount\n" );
+  	wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount; rm -f /etc/$f; ln -s /etc/localaccount/$f /etc/$f; fi; done\n" );
+  }
+  else { 
+	wstream.write( "RUN mkdir -p /var/secrets/abcdesktop/localaccount\n" );
+  	wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /var/secrets/abcdesktop/localaccount; rm -f /etc/$f; ln -s /var/secrets/abcdesktop/localaccount/$f /etc/$f; fi; done\n" );
+  }
   let user=(e.user)?(e.user):'balloon';
   wstream.write(`USER ${user}\n`);
 
@@ -254,13 +255,15 @@ function makedockerfile(e) {
 const parser = new ArgumentParser({ description: 'abcdesktop Dockerfile generator' });
 parser.add_argument('-v', '--version',   	{ action: 'version', version });
 parser.add_argument('-d', '--dockerfile', 	{ default: false, 		help: 'boolean true/false, default is false, force output as Dockerfile (must contains only one entry in json application list' });
-parser.add_argument('-r', '--release',   	{ default: '2.0', 		help: 'build version 2.0 or 3.0' });
+parser.add_argument('-r', '--release',   	{ default: '3.0', 		help: 'build version 3.0 by default' });
 parser.add_argument('-f', '--applicationfile', 	{ default: 'applist.json', 	help: 'applicationfile applist.json' });
 
 let args=parser.parse_args();
 console.log( args );
 defaultApplicationfile = args.applicationfile;
 console.log( 'Read database json file=' + defaultApplicationfile );
+release = args.release;
+console.log( 'Release format=' + release );
 forceOutputToDockerfile = args.dockerfile;
 console.log( 'Only one file option to force output to dockerfile=' +  forceOutputToDockerfile);
 
