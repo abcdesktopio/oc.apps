@@ -16,9 +16,13 @@
 const fs = require('fs');
 const path = require('path');
 const childProcess = require('child_process');
+const { ArgumentParser } = require('argparse');
+const { version } = require('./package.json');
+
 const DOCKERREGISTRYPATH = 'abcdesktopio';
 const HOSTEDURL = "https://raw.githubusercontent.com/abcdesktopio/oc.apps/main";
-const RELEASE='3.0';
+var release  = '3.0';
+var removeimage = false;
 
 // function to encode file data to base64 encoded string
 function base64Encode(file) {
@@ -49,33 +53,42 @@ function writecmd( fd, cmd, type ) {
 }
 
 
-function getrelease( appname ) {
-  var release = undefined;
+function getosrelease( appname ) {
+  var osrelease = undefined;
   // docker run -it --rm abcdesktopio/firefox.d:3.0 bash -c "cat /etc/lsb-release 2>/dev/null || cat /etc/os-release 2>/dev/null"
   appname = appname.toLowerCase();
-  var command = 'docker run --rm ' + DOCKERREGISTRYPATH + '/' + appname + '.d:' + RELEASE;
+  let appimage = DOCKERREGISTRYPATH + '/' + appname + '.d:' + release;
+  var command = 'docker run --rm ' + appimage;
+  let rmcommand = 'docker rmi ' + appimage;
   command += ' /bin/cat /etc/os-release';
   try {
     console.log(command);
     stdout = childProcess.execSync(command).toString();
-    release = stdout;	  
+    osrelease = stdout;
+    /*
+     * remove image in makedocArray
+    if (removeimage) {
+	console.log(rmcommand);
+       	childProcess.exec( rmcommand );
+    }
+    */
   } catch (error) {
-    console.error( `error in getrelease ${DOCKERREGISTRYPATH}/${appname}:3.0`);
+    console.error( `error in getrelease ${DOCKERREGISTRYPATH}/${appname}:${release}`);
     console.error( error );
     // error.status;  // 0 : successful exit, but here in exception it has to be greater than 0
     // error.message; // Holds the message you typically want.
     // error.stderr;  // Holds the stderr output. Use `.toString()`.
     // error.stdout;  // Holds the stdout output. Use `.toString()`.
  }
- console.log (release);
- return release;
+ console.log (osrelease);
+ return osrelease;
 }
 
 function makedocumentation(e) {
   console.log(e);
-  const filename = e.name.toLowerCase() + '.md';
+  const filename = e.name.toLowerCase() + '.' + release + '.md';
   const dockerfilename = e.name.toLowerCase() + '.d';
-  const jsonfilename = e.name.toLowerCase() + '.d.' + RELEASE + '.json';
+  const jsonfilename = e.name.toLowerCase() + '.d.' + release + '.json';
 
   console.log( 'createfile ' + filename );
   fd = fs.openSync(filename,'w');
@@ -86,30 +99,33 @@ function makedocumentation(e) {
     fs.writeSync( fd, `## inherite from\n[${e.template}](${'../' + e.template})\n`);
   }
 
+  // write release
+  fs.writeSync( fd, `## abcdesktop release\n${release}\n`);
+
   // write platforms
   let platforms='linux/amd64,linux/arm64';
   if (e.platforms) {
     platforms=e.platforms;
   }
   fs.writeSync( fd, `## Platforms\n${platforms}\n`);
-	
+
+  let osrelease = getosrelease(e.name);
+
   if (e.debpackage) {
     fs.writeSync( fd,'## Distribution\nubuntu ![ubuntu](icons/ubuntu.svg){: style="height:32px;"}\n');
-    
-    release = getrelease(e.name);
-    if (release) {
-      writecmd( fd, release );
+    if (osrelease) {
+      writecmd( fd, osrelease );
       fs.writeSync( fd, '\n');
     }
 
     fs.writeSync( fd,'## Ubuntu packages\n');
     writecmd( fd, e.debpackage );
   }
+
   if (e.apkpackage) {
     fs.writeSync( fd,'## Distribution\nalpine ![alpine](icons/alpine.svg){: style="height:32px;"}\n');
-    release = getrelease(e.name);
-    if (release) {
-      writecmd( fd, release );
+    if (osrelease) {
+      writecmd( fd, osrelease );
       fs.writeSync( fd, '\n');
     }
     fs.writeSync( fd,'## Alpine packages\n');
@@ -126,7 +142,9 @@ function makedocumentation(e) {
     fs.writeSync( fd, `## Comment\n${e.description}\n`);
   }
   if (e.args) fs.writeSync( fd, "## Arguments\n`" + JSON.stringify(e.args) + "`\n");
-  
+ 
+  fs.writeSync( fd, "\n");
+
   if (e.displayname) {
     fs.writeSync( fd, "## Displayname\n\n" );
     writecmd( fd, e.displayname);
@@ -138,8 +156,12 @@ function makedocumentation(e) {
   }
 
   if (e.uniquerunkey) { fs.writeSync( fd, `## uniquerunkey\n${JSON.stringify(e.uniquerunkey)}\n`); }
-  if (e.showinview) { fs.writeSync( fd, `## Showinview\n${JSON.stringify(e.showinview)}\n`); }
-  if (e.execmode) { fs.writeSync( fd, `## Exec mode\n${JSON.stringify(e.execmode)}\n`); }
+  if (e.showinview) { 
+	  fs.writeSync( fd, "## Showinview\n");
+	  fs.writeSync( fd, "If showinview attribut is equal to `dock` then the icon is show in dock\n");
+	  fs.writeSync( fd, `showinview is set to \`${JSON.stringify(e.showinview)}\`\n`); 
+  }
+  if (e.execmode) { fs.writeSync( fd, `## Exec mode\n ${JSON.stringify(e.execmode)}\n`); }
   if (e.mimetype) { 
     fs.writeSync( fd, '## Mimetype\n');
     writecmd( fd, e.mimetype);
@@ -204,7 +226,7 @@ function makedocumentation(e) {
   writecmd( fd, `wget ${HOSTEDURL}/${e.name}.d`, 'sh' );
 
   fs.writeSync( fd, '### build the `Dockerfile` to create a container image\n');
-  writecmd( fd, `docker build --build-arg TAG=${RELEASE} -f ${e.name}.d -t ${e.name} .`, 'sh' );
+  writecmd( fd, `docker build --build-arg TAG=${release} -f ${e.name}.d -t ${e.name} .`, 'sh' );
 
   fs.writeSync( fd, '### Install the new image\n');
   fs.writeSync( fd, '>If you are using `containerd` as container runtime, use the ctr command line\n');
@@ -224,21 +246,21 @@ function makedocumentation(e) {
 const docarray = {};
 
 function makedocArray(e) {
-  if (e.name === '2048-alpine-error') return;
   const displayname = e.displayname ? e.displayname : e.name;
   const filename = e.name.toLowerCase();
   const icon = e.icon;
   const mimetype = e.mimetype;
   const appname = e.name.toLowerCase() + '.d';
-  const jsonfile = `[${filename}.d.${RELEASE}.json](${'../' + filename}.d.${RELEASE}.json)`;
-  const mdfile = `[${filename}.md](${'../' + filename})`;
+  const jsonfile = `[${filename}.d.${release}.json](${'../' + filename}.d.${release}.json)`;
+  const mdfile = `[${filename}.${release}.md](${'../' + filename})`;
   const iconfile = `![${e.icon}](${'icons/' + e.icon}){: style="height:32px;width:32px"}`;
   var description = "no comment";
   if (e.desktopfile) {
-    var command = `docker run --rm ${DOCKERREGISTRYPATH}/${appname}:3.0 cat ${e.desktopfile} | grep 'Comment='`;
+    var rmcommand = `docker rmi ${DOCKERREGISTRYPATH}/${appname}:${release}`;
+    var command = `docker run --rm ${DOCKERREGISTRYPATH}/${appname}:${release} cat ${e.desktopfile} | grep 'Comment='`;
     try {
-	    var description = "no comment";
-      console.log(command);
+	var description = "no comment";
+        console.log(command);
     	stdout = childProcess.execSync(command).toString();
     	const comment = 'Comment=';
     	const indexOfFirst = stdout.indexOf(comment);
@@ -247,6 +269,9 @@ function makedocArray(e) {
 		    var end = stdout.length;
     		description = stdout.substr(i, end-comment.length-1);
     	}
+	if (removeimage)
+		childProcess.exec( rmcommand );
+
     } catch (error) {
 	    console.error( `error in parsing 'Comment' in file ${e.desktopfile} image ${DOCKERREGISTRYPATH}/${appname}:3.0`);
 	    // console.error( error );
@@ -261,15 +286,6 @@ function makedocArray(e) {
   docarray[appname] = `|${iconfile}|${displayname}|${description}|${mdfile}|${jsonfile}|`;
 }
 
-function sortByKey(array, key) {
-  return array.sort((a, b) => {
-    const x = a[key];
-    const y = b[key];
-    if (x < y) return -1;
-    if (x > y) return 1;
-    return 0;
-  });
-}
 
 function getDescription(jsonArray) {
   console.log('getDescription');
@@ -280,19 +296,36 @@ function getDescription(jsonArray) {
     makedocArray( jsonArray[i] );
   }
 }
+
+// start here
+
+const parser = new ArgumentParser({ description: 'abcdesktop md file generator' });
+parser.add_argument('-rmi', '--removeimage',    { default: 'false',             help: 'remove image' });
+parser.add_argument('-r',   '--release',   	{ default: '3.0', 		help: 'build version 3.0' });
+parser.add_argument('-f',   '--applicationfile',{ default: 'applist.json', 	help: 'applicationfile applist.json' });
+
+let args=parser.parse_args();
+console.log( args );
+defaultApplicationfile = args.applicationfile;
+console.log( 'Read database json file=' + defaultApplicationfile );
+release = args.release;
+console.log( 'Release=' + release );
+removeimage = args.removeimage;
+console.log( 'Removeimage=' + removeimage );
+
+
 makedummy();
 const content = fs.readFileSync('applist.json');
 const jsoncontent = JSON.parse(content);
 
 for (var a=0; a<jsoncontent.length; a++) { // now lets iterate in sort order
     makedocumentation(jsoncontent[a]);
+    makedocArray(jsoncontent[a]);
 }
 
-//const jsonsortcontent = sortByKey(jsoncontent, 'name');
-// console.log( jsonsortcontent );
-getDescription(jsoncontent);
-
-const wstreamlist = fs.createWriteStream('list.md');
+const listfilename = 'list.' + release + '.md';
+console.log( 'Create file ' + listfilename );
+const wstreamlist = fs.createWriteStream( listfilename );
 wstreamlist.write('# Application list\n');
 wstreamlist.write('This array describe the application list ready to use with abcdesktop.\n\n');
 wstreamlist.write('|icon|displayname|comment|description|json file|\n');
