@@ -39,7 +39,7 @@ jobs:
       - name: Remove previous Dockerfile
         run: rm *.d
       - name: generate Dockerfiles
-        run: node make.js -r '3.0'
+        run: node make.js -r "${{ github.ref_name }}"
       - name: Generate matrix with all Dockerfiles of the repository
         id: set-matrix
         run: |
