@@ -1643,7 +1643,7 @@
     "cat": "development",
     "platforms": "linux/amd64",
     "preruncommands": [
-        "RUN curl https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -",
+        "RUN curl  -Ls https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -",
 	"RUN echo \"deb https://packages.cloudfoundry.org/debian stable main\" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list"
     ],	
     "debpackage": "cf8-cli",
