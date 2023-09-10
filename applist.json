@@ -1292,7 +1292,7 @@
     "name": "eog",
     "path": "/usr/bin/eog",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.alpine.gtk",
+    "template": "abcdesktopio/oc.template.alpine.edge.gtk,
     "mimetype": "image/bmp;image/gif;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-tga;image/x-xbitmap;image/jpeg;image/png;image/x-icon;image/x-xpixmap;image/x-xcursor;",
     "fileextensions": "ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
     "legacyfileextensions":"ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
@@ -1309,7 +1309,7 @@
     "name": "calculator",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/gnome-calculator",
-    "template": "abcdesktopio/oc.template.alpine",
+    "template": "abcdesktopio/oc.template.alpine.edge",
     "desktopfile": "/usr/share/applications/org.gnome.Calculator.desktop"
 },  {
     "platforms": "linux/amd64",
