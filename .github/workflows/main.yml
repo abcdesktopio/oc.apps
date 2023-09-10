@@ -110,7 +110,7 @@ jobs:
           context: .
           platforms: ${{ steps.define-platforms.outputs.platforms }}
           build-args: |
-            TAG=main
+            TAG=${{ env.imagetag }}
           push: true
           tags: |
             abcdesktopio/${{ env.image }}:${{ env.imagetag }}
