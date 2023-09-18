@@ -169,7 +169,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
         
       - name: generate MarkDown files
-        run: node make-docs.js
+        run: node make-docs.js --release "${{ github.head_ref }}"
           
       - uses: actions/upload-artifact@v3
         with:
