@@ -17,7 +17,6 @@ This array describe the application list ready to use with abcdesktop.
 |![circle_chess.svg](icons/circle_chess.svg){: style="height:32px;width:32px"}|chess|Play the classic two-player board game of chess|[chess.3.0.md](../chess)|[chess.d.3.0.json](../chess.d.3.0.json)|
 |![circle_google-chrome.svg](icons/circle_google-chrome.svg){: style="height:32px;width:32px"}|Chrome|Access the Internet|[chrome.3.0.md](../chrome)|[chrome.d.3.0.json](../chrome.d.3.0.json)|
 |![circle_chromium.svg](icons/circle_chromium.svg){: style="height:32px;width:32px"}|chromium (alpine)|no comment|[chromium.3.0.md](../chromium)|[chromium.d.3.0.json](../chromium.d.3.0.json)|
-|![pivotalio-icon.svg](icons/pivotalio-icon.svg){: style="height:32px;width:32px"}|Cloud Foundry cli|no comment|[cloudfoundry.3.0.md](../cloudfoundry)|[cloudfoundry.d.3.0.json](../cloudfoundry.d.3.0.json)|
 |![cmd.svg](icons/cmd.svg){: style="height:32px;width:32px"}|cmd.exe wine (alpine)|no comment|[cmd.exe.3.0.md](../cmd.exe)|[cmd.exe.d.3.0.json](../cmd.exe.d.3.0.json)|
 |![games.svg](icons/games.svg){: style="height:32px;width:32px"}|corsix-th|Open source clone of Theme Hospital|[corsix-th.3.0.md](../corsix-th)|[corsix-th.d.3.0.json](../corsix-th.d.3.0.json)|
 |![nvidia.svg](icons/nvidia.svg){: style="height:32px;width:32px"}|cuda|Command line access|[cuda.3.0.md](../cuda)|[cuda.d.3.0.json](../cuda.d.3.0.json)|
@@ -34,7 +33,9 @@ This array describe the application list ready to use with abcdesktop.
 |![filelight.svg](icons/filelight.svg){: style="height:32px;width:32px"}|Filelight|View disk usage information|[filelight.3.0.md](../filelight)|[filelight.d.3.0.json](../filelight.d.3.0.json)|
 |![circle_filezilla.svg](icons/circle_filezilla.svg){: style="height:32px;width:32px"}|filezilla (alpine)|Download and upload files via FTP, FTPS and SFTP|[filezilla.3.0.md](../filezilla)|[filezilla.d.3.0.json](../filezilla.d.3.0.json)|
 |![circle_firefox.svg](icons/circle_firefox.svg){: style="height:32px;width:32px"}|Firefox (esr alpine)|Browse the World Wide Web|[firefox-esr.3.0.md](../firefox-esr)|[firefox-esr.d.3.0.json](../firefox-esr.d.3.0.json)|
-|![circle_firefox.svg](icons/circle_firefox.svg){: style="height:32px;width:32px"}|Firefox (alpine)|Browse the World Wide Web|[firefox.3.0.md](../firefox)|[firefox.d.3.0.json](../firefox.d.3.0.json)|
+|![circle_firefox.svg](icons/circle_firefox.svg){: style="height:32px;width:32px"}|Firefox (ubuntu)|Browse the World Wide Web|[firefox.3.0.md](../firefox)|[firefox.d.3.0.json](../firefox.d.3.0.json)|
+|![circle_firefox.svg](icons/circle_firefox.svg){: style="height:32px;width:32px"}|Firefox_pod (ubuntu)|Browse the World Wide Web|[firefox_pod.3.0.md](../firefox_pod)|[firefox_pod.d.3.0.json](../firefox_pod.d.3.0.json)|
+|![circle_firefox.svg](icons/circle_firefox.svg){: style="height:32px;width:32px"}|Firefox (alpine)|no comment|[firefoxalpine.3.0.md](../firefoxalpine)|[firefoxalpine.d.3.0.json](../firefoxalpine.d.3.0.json)|
 |![flare.svg](icons/flare.svg){: style="height:32px;width:32px"}|flare|A single player, 2D-isometric, action Role-Playing Game|[flare.3.0.md](../flare)|[flare.d.3.0.json](../flare.d.3.0.json)|
 |![frozen-bubble.svg](icons/frozen-bubble.svg){: style="height:32px;width:32px"}|frozen-bubble|no comment|[frozen-bubble.3.0.md](../frozen-bubble)|[frozen-bubble.d.3.0.json](../frozen-bubble.d.3.0.json)|
 |![gcompris.svg](icons/gcompris.svg){: style="height:32px;width:32px"}|GCompris|no comment|[gcompris.3.0.md](../gcompris)|[gcompris.d.3.0.json](../gcompris.d.3.0.json)|
