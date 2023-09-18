@@ -1640,25 +1640,6 @@
     ]
 }, {
     "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "platforms": "linux/amd64",
-    "preruncommands": [
-        "RUN curl  -Ls https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -",
-	"RUN echo \"deb https://packages.cloudfoundry.org/debian stable main\" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list"
-    ],	
-    "debpackage": "cf8-cli",
-    "icon": "pivotalio-icon.svg",
-    "keyword": "cf,pivotal.io,cloud,foundry,cloud foundry",
-    "launch": "gnome-terminal-server.pivotalio.cf",
-    "name": "cloudFoundry",
-    "path": "/usr/bin/gnome-terminal",
-    "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
-    "displayname": "Cloud Foundry cli",
-    "args": "--disable-factory --class pivotalio.cf",
-    "quick": true
-}, {
-    "acl": { "permit": [ "all" ] },
     "cat": "games",
     "platforms": "linux/amd64",
     "debpackage": "libflite1 openjdk-8-jre at-spi2-core dbus-x11 orca libsecret-1-0",
