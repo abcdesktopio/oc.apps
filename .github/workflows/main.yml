@@ -39,7 +39,7 @@ jobs:
       - name: Remove previous Dockerfile
         run: rm *.d
       - name: generate Dockerfiles
-        run: node make.js -r '3.0'
+        run: node make.js -r "${{ github.ref_name }}"
       - name: Generate matrix with all Dockerfiles of the repository
         id: set-matrix
         run: |
@@ -110,7 +110,7 @@ jobs:
           context: .
           platforms: ${{ steps.define-platforms.outputs.platforms }}
           build-args: |
-            TAG=main
+            TAG=${{ env.imagetag }}
           push: true
           tags: |
             abcdesktopio/${{ env.image }}:${{ env.imagetag }}
@@ -169,7 +169,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
         
       - name: generate MarkDown files
-        run: node make-docs.js
+        run: node make-docs.js --release "${{ github.head_ref }}"
           
       - uses: actions/upload-artifact@v3
         with:
