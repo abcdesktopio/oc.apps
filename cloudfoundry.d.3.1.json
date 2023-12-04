@@ -1,0 +1,157 @@
+[
+    {
+        "Id": "sha256:89fb569d1bf6c8ebbd4004f487bfdcd8cf58ab49f05cdc8ba5e3ea5c1444c22e",
+        "RepoTags": [
+            "abcdesktopio/cloudfoundry.d:3.1"
+        ],
+        "RepoDigests": [],
+        "Parent": "sha256:f2bb8b07e53d1a2616e62d4e779fe86c2350dd84409fe3eb1de4b17d99892c18",
+        "Comment": "",
+        "Created": "2023-12-01T10:31:58.397797463Z",
+        "Container": "8d5e0fd835d5cd40d3b68b93af775547b1d4ca91a2c6c40285276fb26ef972eb",
+        "ContainerConfig": {
+            "Hostname": "8d5e0fd835d5",
+            "Domainname": "",
+            "User": "balloon",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBCONF_FRONTEND=noninteractive",
+                "TERM=linux",
+                "LANG=en_US.utf8",
+                "BUSER=balloon",
+                "ARGS=--disable-factory --class pivotalio.cf",
+                "APPNAME=cloudFoundry",
+                "APPBIN=/usr/bin/gnome-terminal",
+                "APP=/usr/bin/gnome-terminal"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"/composer/appli-docker-entrypoint.sh\"]"
+            ],
+            "Image": "sha256:f2bb8b07e53d1a2616e62d4e779fe86c2350dd84409fe3eb1de4b17d99892c18",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "oc.acl": "{\"permit\":[\"all\"]}",
+                "oc.args": "--disable-factory --class pivotalio.cf",
+                "oc.cat": "development",
+                "oc.displayname": "Cloud Foundry cli",
+                "oc.icon": "pivotalio-icon.svg",
+                "oc.icondata": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHBhdGggZD0iTTI3LjY2IDBIMTAuNXY2NGgxMC42NjdWOS42Mmg1LjQzOGMxLjM2IDAgMi4zIDAgMy40NS4yMSA4Ljc4NC4yMSAxMy4wNzIgMi44MjQgMTMuMDcyIDkuODN2LjgzN2MwIDYuNDg0LTMuNDUgMTAuNjY3LTEyLjg2MyAxMC42NjctLjk0IDAtMi4zLS4yMS0yLjMtLjIxdjguNzg0aDIuM0M0My44NyAzOS43NCA1My41IDM0LjMgNTMuNSAyMC4zOTJ2LS44MzdDNTMuNSA1LjEyNCA0Mi44MjQgMCAyNy42NiAweiIgZmlsbD0iIzAwN2Q2OCIvPjwvc3ZnPg==",
+                "oc.keyword": "cloudfoundry,cf,pivotal.io,cloud,foundry,cloud foundry",
+                "oc.launch": "gnome-terminal-server.pivotalio.cf",
+                "oc.name": "cloudFoundry",
+                "oc.path": "/usr/bin/gnome-terminal",
+                "oc.rules": "{\"homedir\":{\"default\":true}}",
+                "oc.template": "abcdesktopio/oc.template.ubuntu.gtk",
+                "oc.type": "app",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "20.04"
+            }
+        },
+        "DockerVersion": "24.0.2",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "balloon",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBCONF_FRONTEND=noninteractive",
+                "TERM=linux",
+                "LANG=en_US.utf8",
+                "BUSER=balloon",
+                "ARGS=--disable-factory --class pivotalio.cf",
+                "APPNAME=cloudFoundry",
+                "APPBIN=/usr/bin/gnome-terminal",
+                "APP=/usr/bin/gnome-terminal"
+            ],
+            "Cmd": [
+                "/composer/appli-docker-entrypoint.sh"
+            ],
+            "Image": "sha256:f2bb8b07e53d1a2616e62d4e779fe86c2350dd84409fe3eb1de4b17d99892c18",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "oc.acl": "{\"permit\":[\"all\"]}",
+                "oc.args": "--disable-factory --class pivotalio.cf",
+                "oc.cat": "development",
+                "oc.displayname": "Cloud Foundry cli",
+                "oc.icon": "pivotalio-icon.svg",
+                "oc.icondata": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHBhdGggZD0iTTI3LjY2IDBIMTAuNXY2NGgxMC42NjdWOS42Mmg1LjQzOGMxLjM2IDAgMi4zIDAgMy40NS4yMSA4Ljc4NC4yMSAxMy4wNzIgMi44MjQgMTMuMDcyIDkuODN2LjgzN2MwIDYuNDg0LTMuNDUgMTAuNjY3LTEyLjg2MyAxMC42NjctLjk0IDAtMi4zLS4yMS0yLjMtLjIxdjguNzg0aDIuM0M0My44NyAzOS43NCA1My41IDM0LjMgNTMuNSAyMC4zOTJ2LS44MzdDNTMuNSA1LjEyNCA0Mi44MjQgMCAyNy42NiAweiIgZmlsbD0iIzAwN2Q2OCIvPjwvc3ZnPg==",
+                "oc.keyword": "cloudfoundry,cf,pivotal.io,cloud,foundry,cloud foundry",
+                "oc.launch": "gnome-terminal-server.pivotalio.cf",
+                "oc.name": "cloudFoundry",
+                "oc.path": "/usr/bin/gnome-terminal",
+                "oc.rules": "{\"homedir\":{\"default\":true}}",
+                "oc.template": "abcdesktopio/oc.template.ubuntu.gtk",
+                "oc.type": "app",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "20.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1021155258,
+        "VirtualSize": 1021155258,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/0e23865a2b9630da986a803122f3b887536bd9c6f7994114139f2ed444f8e5d8/diff:/mnt/nvme0n1/var/lib/docker/overlay2/f6cd04e7e27bfb6c52ffe269f20e4a480dfeb10164cecea34b5a2cc37be54664/diff:/mnt/nvme0n1/var/lib/docker/overlay2/9f3008a5744210a4b5acc74248f44eb9b051e4c6b327da3492cf72d92305bd52/diff:/mnt/nvme0n1/var/lib/docker/overlay2/4542b6df010a530773bbd1c5ace00447ac98761171f199fdf4e5e298411be812/diff:/mnt/nvme0n1/var/lib/docker/overlay2/4794563f9007b330f65c51c9db4292d83c076c94de45248f65e0e8712359a547/diff:/mnt/nvme0n1/var/lib/docker/overlay2/85784e686ea5c8e0d29c58f932378e6dd7bdcdac531b55db10ad2d72a70f167e/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d58c9de213ddff0febd14c41e77890215d1dc1900daf7a2a9d9db17bef7d793b/diff:/mnt/nvme0n1/var/lib/docker/overlay2/3c3d51aec0dcf468b89aec17c29f0dc21140c7c21cad684479c94cf7a23b75d3/diff:/mnt/nvme0n1/var/lib/docker/overlay2/92907940d10a082754f01143f9446dadfb3c59cac009243feb569fb1f0d7f90e/diff:/mnt/nvme0n1/var/lib/docker/overlay2/c60194fb9d9e6ba84b3a0c7ef14a72b83b2643d99cb15b6c4dd34040c193fda5/diff:/mnt/nvme0n1/var/lib/docker/overlay2/b02ae0fe69dfaa473e86be72fc0aef3bcfd2a685486de25dbdcb004fb86f61cf/diff:/mnt/nvme0n1/var/lib/docker/overlay2/739b5dfde6dad1fecfc1b9478050088f5ee78c4e9dfcf42a2e907d54efa0d65b/diff:/mnt/nvme0n1/var/lib/docker/overlay2/b0d0261617f9bdbf9a8dc49ec5f65dd3b7995b933a533b0fda1061aa0159416a/diff:/mnt/nvme0n1/var/lib/docker/overlay2/770ab3ef2223a447b3cc2f4d9ebeb8220cce272f1827c9abd2587725f7a5b2d6/diff:/mnt/nvme0n1/var/lib/docker/overlay2/45e53d052ae4bfa304a835da5aab453df3c80a65eb5c18588664f0207600fae2/diff:/mnt/nvme0n1/var/lib/docker/overlay2/b4d4d1c5b678bf6b14a22bfe23e6a6177cbb4bdefee8ca8e01d76052c1f0599d/diff:/mnt/nvme0n1/var/lib/docker/overlay2/581c2985a45e701fb87c5bd3dad8a6e97e2b5ad3c29f27be578ed08b30dfce56/diff:/mnt/nvme0n1/var/lib/docker/overlay2/e2fb904f18ce77acfaa6a60faedc81f169cc464a21e5e5a004edb976dac1c3ff/diff:/mnt/nvme0n1/var/lib/docker/overlay2/3ffc825f416cd1fce1535b89fe2c7c966f85ab889a6abc935c311ed2215572d5/diff:/mnt/nvme0n1/var/lib/docker/overlay2/4f1b8cb9286eea83fc9e658d27a84dfa448139065ac7e445680b1e3889044a44/diff:/mnt/nvme0n1/var/lib/docker/overlay2/7458545c4bad415b9393c142830843794b64273b078b82724f9a86d342d4b91b/diff:/mnt/nvme0n1/var/lib/docker/overlay2/1e0233122d625e9af530f89d275936fe0fb89b4e41728086254c3a6e980e3121/diff:/mnt/nvme0n1/var/lib/docker/overlay2/fc41819ca0f27b6050bc13b61eadab15f034bb00e5c7b4a0cc9b563d030485df/diff",
+                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/55adb5e0d639bfb8b482586a89592a306738085d7837446e06aa9199f1b060c8/merged",
+                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/55adb5e0d639bfb8b482586a89592a306738085d7837446e06aa9199f1b060c8/diff",
+                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/55adb5e0d639bfb8b482586a89592a306738085d7837446e06aa9199f1b060c8/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:6c3e7df31590f02f10cb71fc4eb27653e9b428df2e6e5421a455b062bd2e39f9",
+                "sha256:3dadf63e925852077a90f4e8ccdc9cbf13694c2f7b11b1e3727509cfbdf42a30",
+                "sha256:0dffc583d04d07a74178a1501e8b0becf882175086e0c4388d3e98803ded4edb",
+                "sha256:c633c6558cc929ddffe1b26a57295c2cfddeaacc1c8e1058d1888edac6b6750b",
+                "sha256:e2ce57fc9621b314bb6f462bc12bc1edf4b000bf0e11ef67e6acf1162060f517",
+                "sha256:898ccd1a4135ed13d6218d1ac6f7d1c17313ee5628b5649b65f6e529df4a172f",
+                "sha256:c314fd35bd01d7a411a967c399702045cdcab47c983f0558c705003ce8ca01e5",
+                "sha256:7bb85eccb29c1f4c2884a962a10cad7b9ca57260afb58c9cbc7d9debec5b9181",
+                "sha256:627b3f221251bdb18c4ea9ad384bb413626a0e298a26fb678ff7b67742c1ee82",
+                "sha256:f7138800f30a7036f27b4ba3c47c75bd2d96cae411f2974d1bccde67b2d4fa9d",
+                "sha256:4ba56d483dbb633ea6be26cacb331d19126749526fe2fb4503efebda04f44d10",
+                "sha256:43b589bed5f74d415e066e7535cfc1a625b1ef4d6e79915a2ee522f60f0f6635",
+                "sha256:d98887802d0181e296e80f62c8bb4d88e38aa0b364c9414a130aa64c74415bd2",
+                "sha256:06e394eb1b79a7b3f059b276391ba50254098e8d2eecdfa09cd2fa2d22899d22",
+                "sha256:9cbba12060943a83610cce0c8861a3db3b5898e07946c6e582aeae5bcd065f82",
+                "sha256:dfd2fd54ae6f4b19233f46accb5010e7c79b550411b0e31f29840719084f6ec4",
+                "sha256:6d842ebd13debbbe5ee9f364bdac939a90c47a7a3832a820d3a9a7ce84f55cda",
+                "sha256:ae057b2d7967998d753e9077922fcb171ed49490a7567cf88694b04a801ca522",
+                "sha256:61174b7f0424f0f73af20c05f7ae954abb5edd8671a027c3cf51406b42f50fa7",
+                "sha256:aef17b1141b69beecf0a449951911ac65fab1195e50be5b6ee7809634191cdbd",
+                "sha256:41bdbf043d3a0b1bb0f728cb2a2da740386d2551189881c651d922503ad8af65",
+                "sha256:5546d437a21943dcd2f95ba54655390b81a4cc4fd2ffc9ff35bfc5aff3b31227",
+                "sha256:e2e7eef1640136d396acbaf16d78f40b9666610d0dc074bbcfe2174f4642f7d5",
+                "sha256:e3f36060edb907bf77e7c4e571f52ba31c89787121edbcc2f747896f64325e33"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2023-12-04T12:02:57.237890768+01:00"
+        }
+    }
+]
