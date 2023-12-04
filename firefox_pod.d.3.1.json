@@ -4,7 +4,9 @@
         "RepoTags": [
             "abcdesktopio/firefox_pod.d:3.1"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "abcdesktopio/firefox_pod.d@sha256:8cdb9e3b8d81903f7e3b1236930bd42c33713a448b8f3213f8e92c0d628f64c6"
+        ],
         "Parent": "sha256:7be6eca89db425de9379afcb2e5a6afff300cd6548b4e55bb5f5e79bd4fbe9ac",
         "Comment": "",
         "Created": "2023-12-04T15:53:19.046340359Z",
@@ -166,7 +168,7 @@
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-12-04T16:53:19.249007725+01:00"
+            "LastTagTime": "2023-12-04T17:41:57.01050297+01:00"
         }
     }
 ]

@@ -1,17 +1,16 @@
 [
     {
-        "Id": "sha256:7d2242840a6b448df6f70bf0de6bd9512db214e0c9f18e9556693da13fe87f6e",
+        "Id": "sha256:cbfcea165a98cf93e5de67f5366f4aba2d0ffe5329a52caa9d6d2ed4772ae3ae",
         "RepoTags": [
-            "abcdesktopio/calculator.d:3.0",
             "abcdesktopio/calculator.d:3.1"
         ],
         "RepoDigests": [],
-        "Parent": "sha256:83678451e8f928135cc5b94108374d64d3fcc714079aabc67e2916ff0461db26",
+        "Parent": "sha256:c40d70c74ab5fd01b4330c2dec1bf688fcc2a7a12f5faca82f0aa590801e8dca",
         "Comment": "",
-        "Created": "2023-09-07T13:23:17.071731162Z",
-        "Container": "972c4d2f84995383be2f26b68180b1c0031c77c58428ff4f82a92119968b7117",
+        "Created": "2023-12-04T16:37:22.546468356Z",
+        "Container": "170c1f10e7ef8319456c8799773be19600c10ea64821536ce099c41e503bf4e7",
         "ContainerConfig": {
-            "Hostname": "972c4d2f8499",
+            "Hostname": "170c1f10e7ef",
             "Domainname": "",
             "User": "balloon",
             "AttachStdin": false,
@@ -38,7 +37,7 @@
                 "#(nop) ",
                 "CMD [\"/composer/appli-docker-entrypoint.sh\"]"
             ],
-            "Image": "sha256:83678451e8f928135cc5b94108374d64d3fcc714079aabc67e2916ff0461db26",
+            "Image": "sha256:c40d70c74ab5fd01b4330c2dec1bf688fcc2a7a12f5faca82f0aa590801e8dca",
             "Volumes": null,
             "WorkingDir": "",
             "Entrypoint": null,
@@ -55,7 +54,7 @@
                 "oc.name": "calculator",
                 "oc.path": "/usr/bin/gnome-calculator",
                 "oc.rules": "{\"homedir\":{\"default\":true}}",
-                "oc.template": "abcdesktopio/oc.template.alpine",
+                "oc.template": "abcdesktopio/oc.template.alpine.edge",
                 "oc.type": "app"
             }
         },
@@ -86,7 +85,7 @@
             "Cmd": [
                 "/composer/appli-docker-entrypoint.sh"
             ],
-            "Image": "sha256:83678451e8f928135cc5b94108374d64d3fcc714079aabc67e2916ff0461db26",
+            "Image": "sha256:c40d70c74ab5fd01b4330c2dec1bf688fcc2a7a12f5faca82f0aa590801e8dca",
             "Volumes": null,
             "WorkingDir": "",
             "Entrypoint": null,
@@ -103,45 +102,45 @@
                 "oc.name": "calculator",
                 "oc.path": "/usr/bin/gnome-calculator",
                 "oc.rules": "{\"homedir\":{\"default\":true}}",
-                "oc.template": "abcdesktopio/oc.template.alpine",
+                "oc.template": "abcdesktopio/oc.template.alpine.edge",
                 "oc.type": "app"
             }
         },
         "Architecture": "amd64",
         "Os": "linux",
-        "Size": 313965706,
-        "VirtualSize": 313965706,
+        "Size": 442341724,
+        "VirtualSize": 442341724,
         "GraphDriver": {
             "Data": {
-                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/d9a4079c74b1463ace6e41193bd337247f42dc9dedf3928f4d8d7463a3335bbe/diff:/mnt/nvme0n1/var/lib/docker/overlay2/9bd8df1226bc7e6fad69ea3946995018df753a0dc83a720de5d27570324dfeb8/diff:/mnt/nvme0n1/var/lib/docker/overlay2/74b4575d4f9e89c2520e739a520a0d054efff431b16bd41e48c9b8f8d97a56f9/diff:/mnt/nvme0n1/var/lib/docker/overlay2/32f074e590c87251f79beb7315aded12bdfb63d0105fae5502a10c66457586ef/diff:/mnt/nvme0n1/var/lib/docker/overlay2/a03b1de3f20c7531320355a9b3aa96acffad81bd7b6f7020bcf93e808ba42004/diff:/mnt/nvme0n1/var/lib/docker/overlay2/55ddad4a0a5387040e806ed88b12308f9a8a78dbdea46d34a0144ce28553b3c3/diff:/mnt/nvme0n1/var/lib/docker/overlay2/98ebe938ad623f279fcf5e818bd3ff06397190d1b6bfd4403a049565c19953ef/diff:/mnt/nvme0n1/var/lib/docker/overlay2/8889599e51f63d16ab0c38b409c9f0d39a661845f3a6f6a8022c919d6f316c9d/diff:/mnt/nvme0n1/var/lib/docker/overlay2/4451fc96d78e54b919da9cf872178ff579b03d485d2edd0cdd7f63322d3d5e38/diff:/mnt/nvme0n1/var/lib/docker/overlay2/0b70ac055f453c57e196c47b88d72622e5585cabd0f00d31102d144741c4b6a2/diff:/mnt/nvme0n1/var/lib/docker/overlay2/6a14191fff64b291b3f5483aebd8021d76d5eb9b07c553038e997acb7e67b58c/diff:/mnt/nvme0n1/var/lib/docker/overlay2/21428c20b870cc2c19e602020415a777cef3e64857d4d25d09bcb71c30b856a7/diff:/mnt/nvme0n1/var/lib/docker/overlay2/c413a4d3e1a6f1005ee4b42aed2e2627246bd25b65b14441ac2d20a069183233/diff:/mnt/nvme0n1/var/lib/docker/overlay2/c8f6736f19ad45e46a09c81e5f7c99792b7d539a014adcb98bfc7ae5b57bfac2/diff",
-                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/1b7136b0d373f928a710a6b1f2e0cf884e4e2369dc13674edbb2e464e2a70e71/merged",
-                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/1b7136b0d373f928a710a6b1f2e0cf884e4e2369dc13674edbb2e464e2a70e71/diff",
-                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/1b7136b0d373f928a710a6b1f2e0cf884e4e2369dc13674edbb2e464e2a70e71/work"
+                "LowerDir": "/mnt/nvme0n1/var/lib/docker/overlay2/1ec9f0e7e3be9b69f03364c43abd462c342b0c81c2d3f360da7ecf87e1bf758f/diff:/mnt/nvme0n1/var/lib/docker/overlay2/ec0ef1b0a378deac40eb660e379c13a7f4a4749ca43a069afc62d50b0e5e7c5c/diff:/mnt/nvme0n1/var/lib/docker/overlay2/27a1278232b34715d57a5c6dcf52723950ceda3bc4f019764d2406774a8de7a4/diff:/mnt/nvme0n1/var/lib/docker/overlay2/2e24478540146cd895bb73a24f980fabe98b717c00aac2d20092f2e419b02996/diff:/mnt/nvme0n1/var/lib/docker/overlay2/36b6547ec7b2b56399d67f425053a92b8972009a06d62e2e13d44108183fb9b1/diff:/mnt/nvme0n1/var/lib/docker/overlay2/c89cea476d0a62bc58cfa45db87664426e0535fe991ede2c4fbe04c38de08e30/diff:/mnt/nvme0n1/var/lib/docker/overlay2/3f44aa2cd2cc415a30e08abc82445568d4607cef1987c0cb8b04eb57dd4a8bbf/diff:/mnt/nvme0n1/var/lib/docker/overlay2/5bc5aaf1990f4fc5b0fb2787bee84b38cf6039823b1b913a4d377f4f87f6afa9/diff:/mnt/nvme0n1/var/lib/docker/overlay2/74cf26a6be150566f948637f522119a9d2b2377040bea3b43bb045da9ef9be78/diff:/mnt/nvme0n1/var/lib/docker/overlay2/718fd0e25e167b7d28b8854cfcbbd5d863c1901a48d06153a67e076f09968f27/diff:/mnt/nvme0n1/var/lib/docker/overlay2/087a676233f050f2914ba2383b9784d4cc347124b0b751a6f0a05a7df36eedf0/diff:/mnt/nvme0n1/var/lib/docker/overlay2/4d73d8e346e8634d7ae19a9fbca411a0d69247634d32893bbffa775e45994f21/diff:/mnt/nvme0n1/var/lib/docker/overlay2/8fd158a7b63703e06e37a405b90aad4d3765fef69769d94d3884b20be223ed30/diff:/mnt/nvme0n1/var/lib/docker/overlay2/d38a7ff876a371782ecd75abc1c1d4dcd7c55337346dc009b17d53a10605bbf5/diff",
+                "MergedDir": "/mnt/nvme0n1/var/lib/docker/overlay2/3b8716646079edae77c01dd4deb057fb0bd734cbe6ad1a7bb86d01ce01af0470/merged",
+                "UpperDir": "/mnt/nvme0n1/var/lib/docker/overlay2/3b8716646079edae77c01dd4deb057fb0bd734cbe6ad1a7bb86d01ce01af0470/diff",
+                "WorkDir": "/mnt/nvme0n1/var/lib/docker/overlay2/3b8716646079edae77c01dd4deb057fb0bd734cbe6ad1a7bb86d01ce01af0470/work"
             },
             "Name": "overlay2"
         },
         "RootFS": {
             "Type": "layers",
             "Layers": [
-                "sha256:f1417ff83b319fbdae6dd9cd6d8c9c88002dcd75ecf6ec201c8c6894681cf2b5",
-                "sha256:98443b739dcd4bfd3794cae568563fc70d30bf12343e435de066a805cb8dd8fe",
-                "sha256:cfe75a116fad426b4fc81b72ae26ee5140a98fd9a2ee672bff47b0237f58a2ee",
-                "sha256:5acd0fc4dbffce045627ce16a597f1b04793a24e5bd244e7b96d7a5a5249aec0",
-                "sha256:19121e6f8e51ce581a750defbfd3bafc3d1675ba74871334ecba058225d5dcd1",
-                "sha256:b1a75900c4676583ac8e44716a5fd99330ef7c13aa1170495ba03f3b25e17912",
-                "sha256:dbc8d125a5a260182b3eceb831d733f7e6fc55a5367b14c2ef3db024f1eeaf0b",
-                "sha256:48468286b80c1ecd0cf575d67d036b8e9d5ad5ecb45b19bedfd4443f03c4cfe5",
-                "sha256:5ed2078b7a1e7b19347e8f0980975fdeddf2a3499ae0a50080335fca2d52c786",
-                "sha256:e19dc42cfbdd46c1995d1c7e476d3daf347ac0cd9f9d48c60b2c13e9553184a2",
-                "sha256:0cadefe7f60e21d2f48a8166f422ac93a27924ed1ab333e4ee8cedfb08b2a0d8",
-                "sha256:2589fdf7598c6a34cd8e89a2121a3932b9e12551a5536eac0312488dcc4c620c",
-                "sha256:478b33b72a7e85877e70260f065920e1cc15a25cb3aa7973f58676e357541351",
-                "sha256:0a68afb31cd14b6283d58e5cc5bc429c933191228a064bdee920254347851819",
-                "sha256:adce93e38e2eb91a17b9f7f2b468d90ed90cd3ab0abf568c134b43d2948af146"
+                "sha256:451b9c2d58ac03e9179dc467e00a11268fb9525abd386e73df512c057d3ea503",
+                "sha256:742b655d8efbc7fb8aa9e1c73bf8c7669a64e6271431948e82e05cdaaa1e3b6d",
+                "sha256:5e18166ba422e5b49193252b703faa6940ce3bb8900fb234e76ea1b1a3bbe678",
+                "sha256:110e899723e5f3646888337d36bf69c207f70ec569436c6ccc2cfa019188677e",
+                "sha256:2d6b6b7828b4629969fbf84cff0f3dd382728deeee4c8fd7c8037856d774fe3f",
+                "sha256:2c5aa466d1427a80dab18b04313381094b2bf166af427b25c3cc8737c3e15195",
+                "sha256:8a83753bd762f936895d54b525cc9bdd08baa467f2d8e1d85b5cd1c7ab6b852b",
+                "sha256:95fedbf5f925a3772dc30d0aab4c1d27eb25e57a82435b97c8638b3499cb0aaf",
+                "sha256:f55e48808defca8642c58a2d79762fde46642213a256947aafc7aa40bd4a8f59",
+                "sha256:756fc4ef69086b5b7d6d3e69b9b80795eee277e6436d74aec31bac25fda550ee",
+                "sha256:5fb8bf1e3926e85b5cbff74d25585c1813ea6e1400a315de4004279a4f32a1a8",
+                "sha256:a8c4615628f0f45173a1102435fa06aef4837261e36eec9fbed1f7d81356cc29",
+                "sha256:3f1d0eceace80ca881cfdfaaaa7b12d0e95853b7ae584ef2355d9f926ef90b48",
+                "sha256:fe9f7bf697b7c6a2df097704b3ea241434d34c9f9f7e6bba15a3adff8ff9194e",
+                "sha256:b7119a5a1251dd2b17c7d07465fbf4d3f99e70d8e00a23d3264b59010b4abbd7"
             ]
         },
         "Metadata": {
-            "LastTagTime": "2023-12-04T16:42:10.994620962+01:00"
+            "LastTagTime": "2023-12-04T17:41:36.159273728+01:00"
         }
     }
 ]
