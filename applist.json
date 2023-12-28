@@ -859,8 +859,7 @@
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
-    "desktopfile":"/usr/share/applications/google-chrome.desktop",
-    "abcdesktop_release": 3 
+    "desktopfile":"/usr/share/applications/google-chrome.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -949,8 +948,7 @@
     "legacyfileextensions": "odf;ott;fodt;uot",
     "fileextensions": "sxw;stw;doc;dot;wps;rtf;602;wpd;docx;docm;dotx;dotm;abw;zabw;pages;dummy;lrf;cwk;hqx;fb2;mw;mcw;mwd;pdb;wn",
     "desktopfile": "/usr/share/applications/libreoffice-writer.desktop",
-    "usedefaultapplication": true,
-    "abcdesktop_release": 3
+    "usedefaultapplication": true
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -970,8 +968,7 @@
     "legacyfileextensions": "odf;ott;fodt;uot",
     "fileextensions": "sxw;stw;doc;dot;wps;rtf;602;wpd;docx;docm;dotx;dotm;abw;zabw;pages;dummy;lrf;cwk;hqx;fb2;mw;mcw;mwd;pdb;wn",
     "desktopfile": "/usr/share/applications/libreoffice-writer.desktop",
-    "usedefaultapplication": true,
-    "abcdesktop_release": 3
+    "usedefaultapplication": true
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -1010,8 +1007,7 @@
     "fileextensions": "odf;odc",
     "legacyfileextensions": "odf;odc",
     "desktopfile": "/usr/share/applications/libreoffice-math.desktop",
-    "usedefaultapplication": true,
-    "abcdesktop_release": 3
+    "usedefaultapplication": true
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -1030,8 +1026,7 @@
     "fileextensions": "odp;otg",
     "legacyfileextensions":"odp;otg",
     "desktopfile": "/usr/share/applications/libreoffice-draw.desktop",
-    "usedefaultapplication": true,
-    "abcdesktop_release": 3
+    "usedefaultapplication": true
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1050,8 +1045,7 @@
     "rules": { "homedir": { "default": true } },
     "legacyfileextensions":"odb",
     "desktopfile": "/usr/share/applications/libreoffice-base.desktop",
-    "usedefaultapplication": true,
-    "abcdesktop_release": 3
+    "usedefaultapplication": true
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1066,7 +1060,6 @@
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
-    "abcdesktop_release": 3,
     "postruncommands": [
 	    "ENV SHELL=/bin/bash",
             "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" 
@@ -1084,8 +1077,7 @@
     "args": "--name=cuda",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
-    "abcdesktop_release": 3
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1101,8 +1093,7 @@
     "args": "--name cudademosuite",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.ubuntu.nvidia.22.04",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
-    "abcdesktop_release": 3
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1551,8 +1542,7 @@
     "mimetype": "application/x-gnumeric;application/x-oleo;application/x-planperfect;application/x-sc;application/x-sylk;application/x-xbase;",
     "fileextensions": "gnm",
     "legacyfileextensions":"gnm",
-    "desktopfile": "/usr/share/applications/gnumeric.desktop",
-    "abcdesktop_release": 3
+    "desktopfile": "/usr/share/applications/gnumeric.desktop"
 }, 
 {
     "acl": { "permit": [ "all" ] },
