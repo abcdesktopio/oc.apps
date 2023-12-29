@@ -1,5 +1,7 @@
 # oc.apps
 
+[![CI.build.template](https://github.com/abcdesktopio/oc.apps/actions/workflows/main.yml/badge.svg?branch=3.2)](https://github.com/abcdesktopio/oc.apps/actions/workflows/main.yml)
+
 ## To get more informations
 
 Please, read the public documentation web site:
@@ -8,14 +10,11 @@ Please, read the public documentation web site:
 
 ## abcdesktop application dockerfiles
 
-DockerFile generator from json file to build applications images 
-run commands
+```
+TAG=3.2 make
+```
 
-```
-$ make dockerfile
-$ make build
-```
-this command build all generated Dockerfile 
+this command build all generated all Dockerfiles 
 
 
 To build documentation files 
