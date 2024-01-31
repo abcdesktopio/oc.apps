@@ -27,7 +27,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
       commit_hash: ${{ steps.set-matrix.outputs.commit_hash }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
       - name: Use Node.js
@@ -66,7 +66,7 @@ jobs:
       matrix:
         path: ${{ fromJson(needs.generateInputDockerFile.outputs.matrix) }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
      
@@ -115,7 +115,7 @@ jobs:
           tags: |
             abcdesktopio/${{ env.image }}:${{ env.imagetag }}
         
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         env: 
           image: ${{ matrix.path }}
           imagetag: ${{ github.ref_name || 'main' }}
@@ -128,7 +128,7 @@ jobs:
         env: 
           image: ${{ matrix.path }}
           imagetag: ${{ github.ref_name || 'main' }}
-        uses: peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/images
@@ -143,19 +143,19 @@ jobs:
       # added or changed files to the repository.
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
       
       - name: remove previous Dockerfile
         run: rm *.d
           
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: artifact-dockerfiles   
           
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with: 
           node-version: "18.x"
           
@@ -163,10 +163,10 @@ jobs:
         run: npm install   
         
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
         
       - name: generate MarkDown files
         run: node make-docs.js --release "${{ github.head_ref }}"
@@ -178,7 +178,7 @@ jobs:
           if-no-files-found: error # 'error' or 'ignore' are also available, defaults to `warn`
       
       - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/docs
