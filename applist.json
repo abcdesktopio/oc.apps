@@ -1876,7 +1876,8 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
-    "apkpackage": "kdiamond",
+    "postruncommands": [ "ENV QT_XCB_NO_MITSHM=1" ],
+    "apkpackage": "kdiamond dbus-x11",
     "icon": "kdiamond.svg",
     "keyword": "kdiamond",
     "launch": "kdiamond.kdiamond",
