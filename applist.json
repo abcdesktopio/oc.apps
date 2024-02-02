@@ -1881,7 +1881,7 @@
     "keyword": "kdiamond",
     "launch": "kdiamond.kdiamond",
     "name": "kDiamond",
-    "path": "/usr/games/kdiamond",
+    "path": "/usr/bin/kdiamond",
     "template": "abcdesktopio/oc.template.alpine"
 }
 ]
