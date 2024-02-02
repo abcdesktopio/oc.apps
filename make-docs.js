@@ -21,7 +21,7 @@ const { version } = require('./package.json');
 
 const DOCKERREGISTRYPATH = 'abcdesktopio';
 const HOSTEDURL = "https://raw.githubusercontent.com/abcdesktopio/oc.apps/main";
-var release  = '3.0';
+var release  = '3.2';
 var removeimage = false;
 
 // function to encode file data to base64 encoded string
@@ -301,7 +301,7 @@ function getDescription(jsonArray) {
 
 const parser = new ArgumentParser({ description: 'abcdesktop md file generator' });
 parser.add_argument('-rmi', '--removeimage',    { default: 'false',             help: 'remove image' });
-parser.add_argument('-r',   '--release',   	{ default: '3.0', 		help: 'build version 3.0' });
+parser.add_argument('-r',   '--release',   	{ default: '3.2', 		help: 'build version 3.2' });
 parser.add_argument('-f',   '--applicationfile',{ default: 'applist.json', 	help: 'applicationfile applist.json' });
 
 let args=parser.parse_args();
