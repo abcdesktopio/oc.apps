@@ -46,7 +46,7 @@ jobs:
           dockerfiles=$(ls -l *.d | grep '^-' | awk -F ' ' '{print $9}' | jq -R -s -c 'split("\n") | map(select(length > 0))')
           echo "dockerfiles=$dockerfiles"
           echo "::set-output name=matrix::$dockerfiles"
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: artifact-dockerfiles
           path: "*.d"
@@ -71,7 +71,7 @@ jobs:
           ref: ${{ github.head_ref }}
      
       # overwrite previous Dockerfiles
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
             name: artifact-dockerfiles
             
@@ -82,13 +82,13 @@ jobs:
           cat ${{ matrix.path }}
          
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
  
       - name: Login to DockerHub
-        uses: docker/login-action@v2 
+        uses: docker/login-action@v3
         with:
          username: ${{ secrets.DOCKER_USERNAME }}
          password: ${{ secrets.DOCKER_TOKEN }}
@@ -104,7 +104,7 @@ jobs:
         env: 
           image: ${{ matrix.path }}
           imagetag: ${{ github.ref_name || 'main' }}
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
           file: ${{ env.image }}
           context: .
@@ -171,7 +171,7 @@ jobs:
       - name: generate MarkDown files
         run: node make-docs.js --release "${{ github.head_ref }}"
           
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: artifact-application-md-files
           path: "*.md"
