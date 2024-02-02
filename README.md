@@ -19,6 +19,6 @@ this command build all generated all Dockerfiles
 
 To build documentation files 
 ```
-$ make docs
+$ TAG=3.2 make docs
 ```
 this command build all md files, and build list.md
