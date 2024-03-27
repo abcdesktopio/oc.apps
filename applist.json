@@ -1080,6 +1080,20 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
+    "preruncommands": [],
+    "rpmpackage": "konsole",
+    "icon": "nvidia.svg",
+    "keyword": "cuda nvidia rockylinux",
+    "launch": "cudarockylinux.konsole",
+    "name": "cuda.rockylinux",
+    "path": "/usr/bin/konsole",
+    "args": "--name=cudarockylinux",
+    "rules": { "homedir": { "default": true } },
+    "template": "abcdesktopio/oc.template.rockylinux.nvidia.8",
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop"
+}, {
+    "acl": { "permit": [ "all" ] },
+    "cat": "development",
     "platforms": "linux/amd64",
     "preruncommands": [],
     "debpackage": "konsole git libglu1-mesa libxi6 libxinerama1 libxmu6 libglu1-mesa mesa-utils freeglut3 x11-xserver-utils cuda-demo-suite-12-0",
