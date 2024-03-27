@@ -1081,16 +1081,16 @@
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [],
-    "rpmpackage": "konsole",
+    "rpmpackage": "gnome-terminal",
     "icon": "nvidia.svg",
     "keyword": "cuda nvidia rockylinux",
-    "launch": "cudarockylinux.konsole",
+    "launch": "cudarockylinux.gnome-terminal",
     "name": "cuda.rockylinux",
-    "path": "/usr/bin/konsole",
+    "path": "/usr/bin/gnome-terminal",
     "args": "--name=cudarockylinux",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.rockylinux.nvidia.8",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop"
+    "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
