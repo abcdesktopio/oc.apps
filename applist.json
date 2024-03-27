@@ -1086,8 +1086,8 @@
     "keyword": "cuda nvidia rockylinux",
     "launch": "cudarockylinux.gnome-terminal",
     "name": "cuda.rockylinux",
-    "path": "/usr/bin/gnome-terminal",
-    "args": "--name=cudarockylinux",
+    "path": "/bin/sleep",
+    "args": "1d",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.rockylinux.nvidia.8",
     "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop"
