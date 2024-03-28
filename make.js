@@ -123,17 +123,23 @@ function makedockerfile(e) {
     e.preruncommands.forEach((command) => wstream.write(`${command}\n`));
   }
 
+  wstream.write("# Install package\n");
   // install deb package 
   if (e.debpackage) {
     let installCommand = 'RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ';
     if (!e.installrecommends) { installCommand += ' --no-install-recommends '; }
-
     if (e.forceconfold) { installCommand += ' -o Dpkg::Options::="--force-confold" '; }
-
     installCommand += `${e.debpackage} && apt-get clean && rm -rf /var/lib/apt/lists/* \n`;
-    wstream.write(installCommand);
     wstream.write("RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections\n");
+    wstream.write(installCommand);
   }
+
+  // install rpm package
+  if (e.rpmpackage) {
+    let installCommand = `RUN yum install -y ${e.rpmpackage} && yum -y clean all && rm -rf /var/cache\n`;
+    wstream.write(installCommand);
+  }
+	
   // install apk package 
   if (e.apkpackage) {
     let installCommand = `RUN apk add --no-cache --update ${e.apkpackage}\n`;
@@ -145,6 +151,7 @@ function makedockerfile(e) {
     const contents = fs.readFileSync(e.postinstall, 'utf8');
     wstream.write(contents);
   }
+    wstream.write("# End of install package\n");
 
   if (e.icon) {
     wstream.write(`LABEL oc.icon=${JSON.stringify(e.icon)}\n`);
