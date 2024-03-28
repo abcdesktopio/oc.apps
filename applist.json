@@ -323,6 +323,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
+    "platforms": "linux/amd64",
     "apkpackage": "wine",
      "preruncommands": [
         "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\""
@@ -384,6 +385,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "args": "",
+    "platforms": "linux/amd64",
     "cat": "utilities",
     "apkpackage": "putty",
     "icon": "circle_putty-unix.svg",
