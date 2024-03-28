@@ -975,7 +975,7 @@
     "cat": "office",
     "platforms": "linux/amd64",
     "apkpackage": "libreoffice-gnome",
-    "icon": "circle_libreoffice_icalc.svg",
+    "icon": "circle_libreoffice_calc.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-calc",
     "name": "calc",
