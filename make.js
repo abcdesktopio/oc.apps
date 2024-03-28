@@ -238,8 +238,16 @@ function makedockerfile(e) {
   }
 
   // make sure that we are root to run the commands :
+  wstream.write( "#\n" );
+  wstream.write( "# Run next commands as root\n" );
   wstream.write( "USER root\n" );
-  
+  wstream.write( "# Permit to create file in directory /var/lib/dbus/\n")
+  wstream.write( "RUN if [ -x /usr/bin/dbus-launch ]; then chmod g+r,g+w,o+r,o+w /var/lib/dbus ; fi\n" );
+  wstream.write( "# Create links for local acccounts\n");
+  wstream.write( "# /etc/passwd  -> /etc/localaccount/passwd\n");
+  wstream.write( "# /etc/shadow  -> /etc/localaccount/shadow\n")
+  wstream.write( "# /etc/group   -> /etc/localaccount/group\n")
+  wstream.write( "# /etc/gshadow -> /etc/localaccount/gshadow\n")
   wstream.write( "RUN mkdir -p /etc/localaccount\n" );
   wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount; rm -f /etc/$f; ln -s /etc/localaccount/$f /etc/$f; fi; done\n" );
 
