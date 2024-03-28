@@ -128,7 +128,17 @@ function makedocumentation(e) {
       writecmd( fd, osrelease );
       fs.writeSync( fd, '\n');
     }
-    fs.writeSync( fd,'## Alpine packages\n');
+    fs.writeSync( fd,'## APK packages\n');
+    writecmd( fd, e.apkpackage );
+  }
+
+   if (e.rpmpackage) {
+    fs.writeSync( fd,'## Distribution\rockylinux ![rockylinux](icons/rockylinux.svg){: style="height:32px;"}\n');
+    if (osrelease) {
+      writecmd( fd, osrelease );
+      fs.writeSync( fd, '\n');
+    }
+    fs.writeSync( fd,'## RPM packages\n');
     writecmd( fd, e.apkpackage );
   }
 
