@@ -13,6 +13,7 @@ This array describe the application list ready to use with abcdesktop.
 |![circle_bless.svg](icons/circle_bless.svg){: style="height:32px;width:32px"}|Bless|no comment|[bless..md](../bless)|[bless.d..json](../bless.d..json)|
 |![blobby.svg](icons/blobby.svg){: style="height:32px;width:32px"}|blobby|no comment|[blobby..md](../blobby)|[blobby.d..json](../blobby.d..json)|
 |![org.gnome.Boxes.svg](icons/org.gnome.Boxes.svg){: style="height:32px;width:32px"}|Gnome-boxes|no comment|[boxes..md](../boxes)|[boxes.d..json](../boxes.d..json)|
+|![circle_libreoffice_calc.svg](icons/circle_libreoffice_calc.svg){: style="height:32px;width:32px"}|Calc|no comment|[calc..md](../calc)|[calc.d..json](../calc.d..json)|
 |![gnome_calculator.svg](icons/gnome_calculator.svg){: style="height:32px;width:32px"}|calculator|no comment|[calculator..md](../calculator)|[calculator.d..json](../calculator.d..json)|
 |![circle_chess.svg](icons/circle_chess.svg){: style="height:32px;width:32px"}|chess|no comment|[chess..md](../chess)|[chess.d..json](../chess.d..json)|
 |![circle_google-chrome.svg](icons/circle_google-chrome.svg){: style="height:32px;width:32px"}|Chrome|no comment|[chrome..md](../chrome)|[chrome.d..json](../chrome.d..json)|
@@ -20,6 +21,7 @@ This array describe the application list ready to use with abcdesktop.
 |![cmd.svg](icons/cmd.svg){: style="height:32px;width:32px"}|cmd.exe wine (alpine)|no comment|[cmd.exe..md](../cmd.exe)|[cmd.exe.d..json](../cmd.exe.d..json)|
 |![games.svg](icons/games.svg){: style="height:32px;width:32px"}|corsix-th|no comment|[corsix-th..md](../corsix-th)|[corsix-th.d..json](../corsix-th.d..json)|
 |![nvidia.svg](icons/nvidia.svg){: style="height:32px;width:32px"}|cuda|no comment|[cuda..md](../cuda)|[cuda.d..json](../cuda.d..json)|
+|![nvidia.svg](icons/nvidia.svg){: style="height:32px;width:32px"}|cuda.rockylinux|no comment|[cuda.rockylinux..md](../cuda.rockylinux)|[cuda.rockylinux.d..json](../cuda.rockylinux.d..json)|
 |![nvidia.svg](icons/nvidia.svg){: style="height:32px;width:32px"}|cuda demo suite|no comment|[cudademosuite..md](../cudademosuite)|[cudademosuite.d..json](../cudademosuite.d..json)|
 |![circle_dia.svg](icons/circle_dia.svg){: style="height:32px;width:32px"}|Dia|no comment|[dia..md](../dia)|[dia.d..json](../dia.d..json)|
 |![doom.svg](icons/doom.svg){: style="height:32px;width:32px"}|Doom|no comment|[doom..md](../doom)|[doom.d..json](../doom.d..json)|
