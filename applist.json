@@ -1081,7 +1081,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "preruncommands": [],
-    "rpmpackage": "gnome-terminal",
+    "rpmpackage": "gnome-terminal mesa-dri-drivers mesa-libGL",
     "icon": "nvidia.svg",
     "keyword": "cuda nvidia rockylinux",
     "launch": "cudarockylinux.gnome-terminal",
