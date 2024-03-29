@@ -1449,20 +1449,6 @@
     "path": "/usr/games/flare",
     "template": "abcdesktopio/oc.template.ubuntu.gtk",
     "desktopfile": "/usr/share/applications/flare.desktop"
-},   {
-    "acl": { "permit": [ "all" ] },
-    "cat": "games",
-    "preruncommands": [ "RUN apt-get update && apt-get install --no-install-recommends --yes unzip && apt-get clean",
-	    		"RUN cd /composer &&  curl -Ls https://th.corsix.org/Demo.zip -o Demo.zip && unzip Demo.zip && rm -rf Demo.zip",
-                        "COPY corsix-th.config.txt /composer/corsix-th.config.txt" ],
-    "debpackage": "libgl1 corsix-th",
-    "icon": "games.svg",
-    "keyword": "hospital,role,playing",
-    "launch": "corsix-th.corsix-th",
-    "name": "corsix-th",
-    "path": "/usr/games/corsix-th",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
-    "desktopfile": "/usr/share/applications/com.corsixth.CorsixTH.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,development",
