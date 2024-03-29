@@ -154,7 +154,7 @@ jobs:
       
       - name: Dump release
         run: |
-             echo "release = ${{ release }}"   
+             echo "release = $release"   
 
       - uses: actions/download-artifact@v4
         with:
@@ -190,7 +190,7 @@ jobs:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/docs
           event-type: dispatch-from-oc.apps
-          client-payload: '{ "ref_name": "$x{{ release }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-application-md-files" }'
+          client-payload: '{ "ref_name": "$release", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-application-md-files" }'
 
       #- name: commit Dockerfiles and md files
       #  env: 
