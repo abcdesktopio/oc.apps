@@ -146,7 +146,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          
+      
+      - name: Dump github.head_ref
+        run: |
+             echo "release = ${{ github.head_ref }}"   
+
       - uses: actions/download-artifact@v4
         with:
           name: artifact-dockerfiles   
@@ -167,7 +171,6 @@ jobs:
         
       - name: generate MarkDown files
         run: |
-          echo "release ${{ github.head_ref }}"
           node make-docs.js --release ${{ github.head_ref }}
           
       - uses: actions/upload-artifact@v4
@@ -184,18 +187,18 @@ jobs:
           event-type: dispatch-from-oc.apps
           client-payload: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-application-md-files" }'
 
-      - name: commit Dockerfiles and md files
-        env: 
-          CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
-          CI_COMMIT_AUTHOR: ${{ github.event.repository.name }} Continuous Integration
-        uses: nick-fields/retry@v2
-        with:
-          timeout_minutes: 10
-          max_attempts: 3
-          command: |
-            git config --global pull.ff only
-            git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-            git config --global user.email "abcdesktop@users.noreply.github.com"
-            git add *.md *.d
-            git commit -m "${{ env.CI_COMMIT_MESSAGE }}" *.md
-            git push origin ${{ github.head_ref }}      
+      #- name: commit Dockerfiles and md files
+      #  env: 
+      #    CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
+      #    CI_COMMIT_AUTHOR: ${{ github.event.repository.name }} Continuous Integration
+      #  uses: nick-fields/retry@v2
+      #  with:
+      #    timeout_minutes: 10
+      #    max_attempts: 3
+      #    command: |
+      #      git config --global pull.ff only
+      #      git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+      #      git config --global user.email "abcdesktop@users.noreply.github.com"
+      #      git add *.md *.d
+      #      git commit -m "${{ env.CI_COMMIT_MESSAGE }}" *.md
+      #      git push origin ${{ github.head_ref }}      
