@@ -13,6 +13,8 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  release: ${{ github.head_ref }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,6 +29,8 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
       commit_hash: ${{ steps.set-matrix.outputs.commit_hash }}
     steps:
+      - name: Dump release
+        run: echo "release = $release ${{ release }}"
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
@@ -147,9 +151,9 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       
-      - name: Dump github.head_ref
+      - name: Dump release
         run: |
-             echo "release = ${{ github.head_ref }}"   
+             echo "release = $release ${{ release }}"   
 
       - uses: actions/download-artifact@v4
         with:
@@ -171,7 +175,7 @@ jobs:
         
       - name: generate MarkDown files
         run: |
-          node make-docs.js --release ${{ github.head_ref }}
+          node make-docs.js --release $release
           
       - uses: actions/upload-artifact@v4
         with:
@@ -185,7 +189,7 @@ jobs:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/docs
           event-type: dispatch-from-oc.apps
-          client-payload: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-application-md-files" }'
+          client-payload: '{ "ref_name": "${{ release }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-application-md-files" }'
 
       #- name: commit Dockerfiles and md files
       #  env: 
