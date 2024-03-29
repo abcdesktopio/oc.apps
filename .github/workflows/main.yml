@@ -132,7 +132,7 @@ jobs:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/images
           event-type: dispatch-from-oc.apps
-          client-payload: '{ "ref_name": "${{ github.ref_name }}", "image": "${{ env.image }}", "tag": "${{ env.imagetag }}"}'
+          client-payload: '{ "ref_name": "${{ github.ref_name }}", "image": "${{ env.image }}", "tag": "${{ env.imagetag }}","run_id": "${{ github.run_id }}"}'
 
   generateDocumentation:
     needs: build
