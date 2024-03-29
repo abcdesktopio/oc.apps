@@ -164,10 +164,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         
+      # node make-docs.js --release ${{ github.head_ref }}
       - name: generate MarkDown files
         run: |
-          node make-docs.js --release ${{ github.head_ref }}
-          
+          node make-docs.js 
+      
       - uses: actions/upload-artifact@v4
         with:
           name: artifact-application-md-files
