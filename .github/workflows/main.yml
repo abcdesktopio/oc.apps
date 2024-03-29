@@ -35,9 +35,7 @@ jobs:
         with: 
           node-version: "18.x"
       - name: Install dependencies
-        run: npm install   
-      - name: Remove previous Dockerfile
-        run: rm *.d
+        run: npm install
       - name: generate Dockerfiles
         run: node make.js -r "${{ github.ref_name }}"
       - name: Generate matrix with all Dockerfiles of the repository
