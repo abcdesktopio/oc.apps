@@ -30,7 +30,7 @@ jobs:
       commit_hash: ${{ steps.set-matrix.outputs.commit_hash }}
     steps:
       - name: Dump release
-        run: echo release ${{ release }}
+        run: echo release $release
 
       - uses: actions/checkout@v4
         with:
