@@ -45,7 +45,7 @@ jobs:
           echo "dockerfiles=$dockerfiles"
           # dockerfiles is an array of filename
           # echo "::set-output name=matrix::$dockerfiles"
-          echo "matrix::$dockerfiles" >> $GITHUB_OUTPUT
+          echo "matrix=$dockerfiles" >> $GITHUB_OUTPUT
       - uses: actions/upload-artifact@v4
         with:
           name: artifact-dockerfiles
