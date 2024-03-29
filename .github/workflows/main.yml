@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  release: ${{ github.head_ref }}
+  release: ${{ github.ref_name }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -71,6 +71,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
+
+      - name: dump github.ref_name
+        run: echo "${{ github.ref_name }}"
      
       # overwrite previous Dockerfiles
       - uses: actions/download-artifact@v4
@@ -167,10 +170,10 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         
-      # node make-docs.js --release ${{ github.head_ref }}
+      # node make-docs.js --release ${{ github.ref_name }}
       - name: generate MarkDown files
         run: |
-          node make-docs.js
+          node make-docs.js --release ${{ github.ref_name }}
       
       - uses: actions/upload-artifact@v4
         with:
@@ -184,7 +187,7 @@ jobs:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/docs
           event-type: dispatch-from-oc.apps
-          client-payload: '{ "ref_name": "${{ github.head_ref }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-application-md-files" }'
+          client-payload: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-application-md-files" }'
 
       - name: Repository Dispatch dockerfiles to images 
         uses: peter-evans/repository-dispatch@v3
@@ -192,7 +195,7 @@ jobs:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/image
           event-type: dispatch-dockerfile-from-oc.apps
-          client-payload: '{ "ref_name": "${{ github.head_ref }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-dockerfiles" }'
+          client-payload: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-dockerfiles" }'
 
       #- name: commit Dockerfiles and md files
       #  env: 
