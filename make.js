@@ -66,10 +66,7 @@ function makedockerfile(e) {
   if (forceOutputToDockerfile)
 	filename = 'Dockerfile';
 
-  console.log(e);
-
-  if (e.launch)
-  	console.log(`Building ${e.launch}`);
+  console.log('Creating Dockerfile ' + filename );
 
   // Create output Dockerfile 
   const wstream = fs.createWriteStream(filename);
