@@ -285,7 +285,7 @@ console.log( 'Read database json file=' + defaultApplicationfile );
 release = args.release;
 console.log( 'Release format=' + release );
 forceOutputToDockerfile = args.dockerfile;
-console.log( 'Only one file option to force output to dockerfile=' +  forceOutputToDockerfile);
+console.log( 'forceOutputToDockerfile=' +  forceOutputToDockerfile);
 
 
 
