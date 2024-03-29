@@ -126,7 +126,7 @@ jobs:
           path: ${{ env.image }}
           if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
  
-      - name: Repository Dispatch
+      - name: Repository Dispatch json event new image is pushed
         env: 
           image: ${{ matrix.path }}
           imagetag: ${{ github.ref_name || 'main' }}
@@ -134,7 +134,7 @@ jobs:
         with:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/images
-          event-type: dispatch-from-oc.apps
+          event-type: dispatch-json-from-oc.apps
           client-payload: '{ "ref_name": "${{ github.ref_name }}", "image": "${{ env.image }}", "tag": "${{ env.imagetag }}","run_id": "${{ github.run_id }}"}'
 
   generateDocumentation:
@@ -178,13 +178,21 @@ jobs:
           path: "*.md"
           if-no-files-found: error # 'error' or 'ignore' are also available, defaults to `warn`
       
-      - name: Repository Dispatch
+      - name: Repository Dispatch to doc
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/docs
           event-type: dispatch-from-oc.apps
           client-payload: '{ "ref_name": "${{ github.head_ref }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-application-md-files" }'
+
+      - name: Repository Dispatch dockerfiles to images 
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.TOKEN_DISPATCH }}
+          repository: abcdesktopio/image
+          event-type: dispatch-dockerfile-from-oc.apps
+          client-payload: '{ "ref_name": "${{ github.head_ref }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-dockerfiles" }'
 
       #- name: commit Dockerfiles and md files
       #  env: 
