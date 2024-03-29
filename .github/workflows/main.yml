@@ -13,6 +13,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  release: ${{ github.head_ref }}
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
@@ -167,7 +170,7 @@ jobs:
       # node make-docs.js --release ${{ github.head_ref }}
       - name: generate MarkDown files
         run: |
-          node make-docs.js 
+          node make-docs.js --release ${{ env.release }}
       
       - uses: actions/upload-artifact@v4
         with:
