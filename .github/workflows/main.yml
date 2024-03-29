@@ -43,7 +43,8 @@ jobs:
         run: |
           dockerfiles=$(ls -l *.d | grep '^-' | awk -F ' ' '{print $9}' | jq -R -s -c 'split("\n") | map(select(length > 0))')
           echo "dockerfiles=$dockerfiles"
-          echo "::set-output name=matrix::$dockerfiles"
+          # echo "::set-output name=matrix::$dockerfiles"
+          echo "name=matrix::$dockerfiles" >> $GITHUB_OUTPUT
       - uses: actions/upload-artifact@v4
         with:
           name: artifact-dockerfiles
