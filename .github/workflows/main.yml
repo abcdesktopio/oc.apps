@@ -170,7 +170,7 @@ jobs:
       # node make-docs.js --release ${{ github.head_ref }}
       - name: generate MarkDown files
         run: |
-          node make-docs.js --release ${{ env.release }}
+          node make-docs.js
       
       - uses: actions/upload-artifact@v4
         with:
