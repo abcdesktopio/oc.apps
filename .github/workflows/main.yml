@@ -190,7 +190,7 @@ jobs:
           client-payload: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-application-md-files" }'
 
       - name: Repository Dispatch dockerfiles to images 
-        uses: peter-evans/repository-dispatch@v3
+        uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/image
