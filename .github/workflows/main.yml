@@ -193,7 +193,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.TOKEN_DISPATCH }}
-          repository: abcdesktopio/image
+          repository: abcdesktopio/images
           event-type: dispatch-dockerfile-from-oc.apps
           client-payload: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-dockerfiles" }'
 
