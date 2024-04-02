@@ -1113,10 +1113,11 @@
     "postruncommands": [ "ENV SHELL=/bin/bash", "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" ],
     "rpmpackage": "gnome-terminal sudo dbus-x11 mesa-dri-drivers mesa-libGL google-noto-fonts-common xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi texlive-utopia liberation-fonts-common",
     "icon": "nvidia.svg",
-    "keyword": "cuda nvidia rockylinux",
-    "launch": "cudarockylinux.gnome-terminal",
+    "keyword": "cuda nvidia rockylinux terminal",
+    "launch": "gnome-terminal-server.Gnome-terminal",
     "name": "cuda.rockylinux",
     "path": "/usr/bin/gnome-terminal",
+    "args": "--wait",
     "rules": { "homedir": { "default": true } },
     "template": "abcdesktopio/oc.template.rockylinux.nvidia.8",
     "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop"
