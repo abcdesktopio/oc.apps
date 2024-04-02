@@ -1111,7 +1111,7 @@
     "cat": "development",
     "preruncommands": [],
     "postruncommands": [ "ENV SHELL=/bin/bash", "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" ],
-    "rpmpackage": "gnome-terminal sudo dbus-x11 mesa-dri-drivers mesa-libGL google-noto-fonts-common xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi texlive-utopia liberation-fonts-common",
+    "rpmpackage": "gnome-terminal sudo dbus-x11 mesa-dri-drivers mesa-libGL google-noto-fonts-common xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi gnome-font-viewer liberation-fonts-common",
     "icon": "nvidia.svg",
     "keyword": "cuda nvidia rockylinux terminal",
     "launch": "gnome-terminal-server.Gnome-terminal",
