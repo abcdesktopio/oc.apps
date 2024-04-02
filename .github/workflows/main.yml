@@ -187,7 +187,7 @@ jobs:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/docs
           event-type: dispatch-from-oc.apps
-          client-payload: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-application-md-files" }'
+          client-payload: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}",  "run_number": "${{ github.run_number }}",  "artifact": "artifact-application-md-files" }'
 
       - name: Repository Dispatch dockerfiles to images 
         uses: peter-evans/repository-dispatch@v2
@@ -195,7 +195,7 @@ jobs:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/images
           event-type: dispatch-dockerfile-from-oc.apps
-          client-payload: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "artifact": "artifact-dockerfiles" }'
+          client-payload: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "run_number": "${{ github.run_number }}",  "artifact": "artifact-dockerfiles" }'
 
       #- name: commit Dockerfiles and md files
       #  env: 
