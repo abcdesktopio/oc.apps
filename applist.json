@@ -44,9 +44,7 @@
     "template": "abcdesktopio/oc.template.alpine",
     "desktopfile": "/usr/share/applications/xterm.desktop",
     "args": "-xrm 'XTerm*selectToClipboard:true'",
-    "postruncommands": [
-    	"RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
-    ],
+    "postruncommands": [ "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" ],
     "quick": true
 }, {
     "acl": { "permit": [ "all" ] },
@@ -62,9 +60,7 @@
     "template": "abcdesktopio/oc.template.alpine",
     "desktopfile": "/usr/share/applications/org.gnome.Boxes.desktop",
     "mimetype": "application/x-cd-image;",
-    "postruncommands": [
-        "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
-    ],
+    "postruncommands": [ "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" ],
     "securitycontext": {
       "allowPrivilegeEscalation": true,
       "capabilities": {
