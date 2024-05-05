@@ -719,6 +719,40 @@
     "fileextensions": "htm;html;xml;gif",
     "desktopfile":"/usr/share/applications/firefox-esr.desktop",
     "usedefaultapplication": true
+},  {
+    "acl": { "permit": [ "all" ] },
+    "rules": { "homedir": { "default": true } },
+    "cat": "office",
+    "comment": "NSS_SDB_USE_CACHE=yes",
+    "preruncommands": [
+        "RUN add-apt-repository -y ppa:mozillateam/ppa"
+    ],
+    "postruncommands": [
+        "RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf",
+        "RUN /usr/sbin/ldconfig",
+        "RUN mkdir -p /usr/lib/firefox-esr/distribution",
+        "COPY composer/init.d/init.firefox /composer/init.d/init.firefox-esr",
+        "COPY policies.json /usr/lib/firefox-esr/distribution",
+        "COPY --from=abcdesktopio/ntlm_auth:20.04 /samba/samba-4.15.13+dfsg/bin/default/source3/utils/ntlm_auth /usr/bin/ntlm_auth.desktop",
+        "RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop"
+    ],
+    "debpackage": "firefox-esr krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-locale-fr firefox-esr-locale-en firefox-esr-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base",
+    "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
+    "icon": "circle_firefox.svg",
+    "keyword": "firefox,mozilla,web,internet",
+    "launch": "Navigator.firefox",
+    "args": "--no-remote",
+    "name": "Firefox-ubuntu-esr",
+    "displayname": "Firefox (esr ubuntu)",
+    "showinview": "dock",
+    "path": "/usr/bin/firefox-esr",
+    "template": "abcdesktopio/oc.template.ubuntu.20.04",
+    "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
+    "legacyfileextensions": "htm;html;xml",
+    "fileextensions": "htm;html;xml;gif",
+    "secrets_requirement":  [ "ntlm", "kerberos" ],
+    "desktopfile":"/usr/share/applications/firefox.desktop",
+    "usedefaultapplication": true
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
