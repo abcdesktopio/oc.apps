@@ -719,13 +719,16 @@
     "fileextensions": "htm;html;xml;gif",
     "desktopfile":"/usr/share/applications/firefox-esr.desktop",
     "usedefaultapplication": true
-},  {
+}, {
     "acl": { "permit": [ "all" ] },
     "rules": { "homedir": { "default": true } },
     "cat": "office",
     "comment": "NSS_SDB_USE_CACHE=yes",
     "preruncommands": [
-        "RUN add-apt-repository -y ppa:mozillateam/ppa"
+        "RUN install -d -m 0755 /etc/apt/keyrings",
+        "RUN apt-get update && apt-get install --no-install-recommends --yes wget && apt-get clean",
+        "RUN wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null",
+        "RUN echo 'deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main' | tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null"
     ],
     "postruncommands": [
         "RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf",
@@ -736,13 +739,13 @@
         "COPY --from=abcdesktopio/ntlm_auth:20.04 /samba/samba-4.15.13+dfsg/bin/default/source3/utils/ntlm_auth /usr/bin/ntlm_auth.desktop",
         "RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop"
     ],
-    "debpackage": "firefox-esr krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-locale-fr firefox-esr-locale-en firefox-esr-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base",
+    "debpackage": "ubuntu-restricted-extras ttf-mscorefonts-installer libavcodec-extra firefox-esr=128.6.0esr~build1 krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-l10n-fr=128.6.0esr~build1 firefox-esr-l10n-ro=128.6.0esr~build1 language-pack-en language-pack-ro language-pack-fr-base language-pack-ro-base language-pack-en-base",
     "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.firefox",
     "args": "--no-remote",
-    "name": "Firefox-ubuntu-esr",
+    "name": "Firefox-esr",
     "displayname": "Firefox (esr ubuntu)",
     "showinview": "dock",
     "path": "/usr/bin/firefox-esr",
