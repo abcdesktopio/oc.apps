@@ -19,12 +19,12 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-  generateInputDockerFile:
+  generateInputDockerFile: 
     runs-on: ubuntu-latest
-    # permissions:
-    #  # Give the default GITHUB_TOKEN write permission to commit and push the
-    #  # added or changed files to the repository.
-    #  contents: write
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
       commit_hash: ${{ steps.set-matrix.outputs.commit_hash }}
