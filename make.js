@@ -89,7 +89,7 @@ function makedockerfile(e) {
   wstream.write(`ARG TAG=${tag}\n`);
 
   if (e.template) {
-
+          e.template = 'ghcr.io/' + e.template
 	  let template = e.template;
           if (!e.template.includes(":"))
                 // do not tag twice
