@@ -770,15 +770,15 @@
     "cat": "games",
      "preruncommands": [
         "RUN apt-get update && apt-get install  --no-install-recommends --yes vice libmp3lame0 git wget && apt-get clean",
+	"RUN mkdir -p /usr/lib/vice/C64/cartridge",
         "RUN git clone https://github.com/stuartcarnie/vice-emu && mv vice-emu/vice/data/DRIVES/* /usr/lib/vice/C64 && cd /vice-emu/vice/data/C64 && mv chargen kernal basic /usr/lib/vice/C64",
-		"RUN mkdir /usr/lib/vice/C64/cartridge",
-		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_1-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_1-8000.bin", 
-		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_2-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_2-8000.bin",
-		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_3-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_3-8000.bin",
-		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_4-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_4-8000.bin",
-		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/C64638_Jack_Attack-8000.bin -O /usr/lib/vice/C64/cartridge/C64638_Jack_Attack-8000.bin",
-		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/315102-01.bin -O /usr/lib/vice/C64/cartridge/315102-01.bin",
-		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/315103-01.bin -O /usr/lib/vice/C64/cartridge/315103-01.bin"
+	"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_1-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_1-8000.bin", 
+	"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_2-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_2-8000.bin",
+	"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_3-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_3-8000.bin",
+	"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_4-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_4-8000.bin",
+	"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/C64638_Jack_Attack-8000.bin -O /usr/lib/vice/C64/cartridge/C64638_Jack_Attack-8000.bin",
+	"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/315102-01.bin -O /usr/lib/vice/C64/cartridge/315102-01.bin",
+	"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/315103-01.bin -O /usr/lib/vice/C64/cartridge/315103-01.bin"
     ],
     "debpackage": "",
     "icon": "c64.svg",
@@ -1420,18 +1420,6 @@
     "template": "abcdesktopio/oc.template.alpine",
     "mimetype": "image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/tiff;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/x-targa;image/x-tga;image/openraster;",
     "desktopfile": "/usr/share/applications/pinta.desktop"
-}, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "utilities,office",
-    "debpackage": "bless",
-    "icon": "circle_bless.svg",
-    "keyword": "hexa,decimal",
-    "launch": "bless.Bless",
-    "name": "Bless",
-    "path": "/usr/bin/bless",
-    "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
-    "desktopfile": "/usr/share/applications/bless.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
