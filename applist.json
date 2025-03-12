@@ -117,7 +117,7 @@
     "rules": { "homedir": { "default": true } },
     "name": "postman",
     "path": "/usr/local/bin/Postman/app/Postman",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk"
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.20.04"
 }, {   
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -144,7 +144,7 @@
     "name": "xpad",
     "displayname": "Xpad",
     "path": "/usr/bin/xpad",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "rules": { "homedir": { "default": true } },
     "fileextensions":"",
     "args": "",
@@ -207,7 +207,7 @@
     "name": "file-roller",
     "displayname": "file-roller",
     "path": "/usr/bin/file-roller",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "mimetype": "application/x-7z-compressed;application/gzip;application/gtar;application/tar;application/zip;application/x-compress;application/x-compressed;application/x-zip-compressed;multipart/x-zip;application/gnutar;application/x-lzx;application/lzx;application/x-gzip;application/x-gtar;application/x-bzip2;application/x-bzip;application/x-bzip2;",
     "fileextensions":"7z;7zip;Z;unzip;zip;tar;tgz;war;tar.gz;ar;bcz;cpio;ear;jar;iso;tar.Z;tar.gz;tar.lz;tar.lzma;tar.lzo;tar.xz",
     "args": "",
@@ -428,7 +428,7 @@
     "displayname": "kigo",
     "rules": { "homedir": { "default": false } },
     "path": "/usr/games/kigo",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile": "/usr/share/applications/org.kde.kigo.desktop",
     "preruncommands": [ "COPY composer/init.d/init.kigo /composer/init.d/init.kigo" ]
 }, {
@@ -581,7 +581,7 @@
     "showinview": "dock",
     "path": "/usr/bin/nautilus",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile":"/usr/share/applications/org.gnome.Nautilus.desktop",
     "usedefaultapplication": true,
     "quick": true
@@ -602,7 +602,7 @@
     "path": "/usr/lib/mongodb-compass/MongoDB Compass",
     "rules": { "homedir": { "default": true } },
     "mimetype": "x-scheme-handler/mongodb;x-scheme-handler/mongodb+srv;",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile":"/usr/share/applications/mongodb-compass.desktop",
     "usedefaultapplication": true
 },  {
@@ -809,7 +809,7 @@
     "args": "--no-sandbox",
     "rules": { "homedir": { "default": true } },
     "path": "/opt/Beekeeper-Studio/beekeeper-studio",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "legacyfileextensions": "sql",
     "fileextensions": "sql",
     "desktopfile":"/usr/share/applications/beekeeper-studio.desktop",
@@ -825,7 +825,7 @@
     "displayname": "Remmina",
     "args": "",
     "path": "/usr/bin/remmina",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "mimetype": "application/x-remmina;",
     "desktopfile":"/usr/share/applications/remmina-file.desktop",
     "rules": { "homedir": { "default": true } },
@@ -1423,12 +1423,12 @@
     "name": "Bless",
     "path": "/usr/bin/bless",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile": "/usr/share/applications/bless.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
-    "preruncommands": [ "RUN curl -Ls https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -a",
+    "preruncommands": [ "RUN curl https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null",
                         "RUN echo \"deb https://download.sublimetext.com/ apt/stable/\" | tee /etc/apt/sources.list.d/sublime-text.list",
    			"RUN apt-get update && apt-get install --yes libgl1 && apt-get clean" ],
     "debpackage": "sublime-text",
@@ -1439,7 +1439,7 @@
     "rules": { "homedir": { "default": true } },
     "name": "sublime-Text",
     "path": "/opt/sublime_text/sublime_text",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile":"/usr/share/applications/sublime_text.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
@@ -1467,7 +1467,7 @@
     "name": "klotski",
     "host_config": { "mem_limit": "384M", "shm_size": "128M", "pid_mode": false },
     "path": "/usr/games/gnome-klotski",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile": "/usr/share/applications/gnome-klotski.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
@@ -1480,7 +1480,7 @@
     "args": "--game=flare-game",
     "host_config": { "mem_limit": "512M", "shm_size": "128M", "pid_mode": false },
     "path": "/usr/games/flare",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile": "/usr/share/applications/flare.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
@@ -1494,7 +1494,7 @@
     "mimetype": "text/plain;text/html;text/x-php;text/x-c;text/x-shellscript;",
     "host_config": { "mem_limit": "512M", "shm_size": "128M", "pid_mode": false },
     "path": "/usr/bin/notepadqq",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile": "/usr/share/applications/notepadqq.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1505,7 +1505,7 @@
     "launch": "gnome-mahjongg.Gnome-mahjongg",
     "name": "mahjongg",
     "path": "/usr/games/gnome-mahjongg",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile":"/usr/share/applications/gnome-mahjongg.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1615,7 +1615,7 @@
     "launch": "gnome-tetravex.Gnome-tetravex",
     "name": "Tetravex",
     "path": "/usr/games/gnome-tetravex",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktop":"gnome-tetravex.desktop",
     "rules": { "homedir": { "default": true } },
     "host_config": { "mem_limit": "384M", "shm_size": "128M", "pid_mode": false }
@@ -1684,7 +1684,7 @@
     "displayname": "draw.io",
     "rules": { "homedir": { "default": true } },
     "path": "/opt/drawio/drawio",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "mimetype": "application/vnd.jgraph.mxfile;application/vnd.visio;",
     "fileextensions": "drawio",
     "legacyfileextensions": "drawio",
@@ -1703,7 +1703,7 @@
     "name": "minecraft",
     "path": "/usr/bin/minecraft-launcher",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.gtk",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktop": "minecraft-launcher.desktop",
     "host_config": { "mem_limit": "4G", "shm_size" : "2G",  "cpu_period": 200000, "cpu_quota": 200000, "ipc_mode": "shareable" },
     "desktopfile" : "/usr/share/applications/minecraft-launcher.desktop",
@@ -1822,7 +1822,7 @@
     "name": "Golly",
     "path": "/usr/games/golly",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.gtk"
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
