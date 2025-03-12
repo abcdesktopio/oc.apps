@@ -605,7 +605,43 @@
     "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile":"/usr/share/applications/mongodb-compass.desktop",
     "usedefaultapplication": true
-},  {
+}, {
+    "acl": { "permit": [ "all" ] },
+    "rules": { "homedir": { "default": true } },
+    "cat": "office",
+    "comment": "NSS_SDB_USE_CACHE=yes",
+    "preruncommands": [
+        "RUN install -d -m 0755 /etc/apt/keyrings",
+        "RUN apt-get update && apt-get install --no-install-recommends --yes wget && apt-get clean",
+        "RUN wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null",
+        "RUN echo 'deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main' | tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null"
+    ],
+    "postruncommands": [
+        "RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf",
+        "RUN /usr/sbin/ldconfig",
+        "COPY composer/init.d/init.firefox /composer/init.d/init.firefox-esr",
+        "COPY --from=abcdesktopio/ntlm_auth:20.04 /samba/samba-4.15.13+dfsg/bin/default/source3/utils/ntlm_auth /usr/bin/ntlm_auth.desktop",
+        "RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop"
+    ],
+    "debpackage": "ubuntu-restricted-extras ttf-mscorefonts-installer libavcodec-extra firefox-esr=128.8.0esr~build1 krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-l10n-fr=128.8.0esr~build1 firefox-esr-l10n-ro=128.8.0esr~build1 language-pack-en language-pack-ro language-pack-fr-base language-pack-ro-base language-pack-en-base libegl1",
+    "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
+    "icon": "circle_firefox.svg",
+    "keyword": "firefox,mozilla,web,internet",
+    "launch": "Navigator.firefox",
+    "args": "--no-remote",
+    "name": "Firefox-esr",
+    "displayname": "Firefox (esr ubuntu)",
+    "showinview": "dock",
+    "path": "/usr/bin/firefox-esr",
+    "template": "abcdesktopio/oc.template.ubuntu.20.04",
+    "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
+    "legacyfileextensions": "htm;html;xml",
+    "fileextensions": "htm;html;xml;gif",
+    "secrets_requirement":  [ "ntlm", "kerberos" ],
+    "desktopfile":"/usr/share/applications/firefox.desktop",
+    "usedefaultapplication": true
+},
+{
     "acl": { "permit": [ "all" ] },
     "rules": { "homedir": { "default": true } },
     "cat": "office",
