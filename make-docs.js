@@ -19,7 +19,7 @@ const childProcess = require('child_process');
 const { ArgumentParser } = require('argparse');
 const { version } = require('./package.json');
 
-const DOCKERREGISTRYPATH = 'ghrc.io/abcdesktopio';
+const DOCKERREGISTRYPATH = 'ghcr.io/abcdesktopio';
 const HOSTEDURL = "https://raw.githubusercontent.com/abcdesktopio/oc.apps/main";
 var release  = '4.0';
 var removeimage = false;
