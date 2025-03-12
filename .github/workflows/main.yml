@@ -14,6 +14,7 @@ on:
   workflow_dispatch:
 
 env:
+  registry: 'ghcr.io'
   release: ${{ github.ref_name }}
   TAG: ${{ github.ref_name }}
 
@@ -140,7 +141,7 @@ jobs:
           token: ${{ secrets.TOKEN_DISPATCH }}
           repository: abcdesktopio/images
           event-type: dispatch-json-from-oc.apps
-          client-payload: '{ "ref_name": "${{ github.ref_name }}", "image": "${{ env.image }}", "tag": "${{ env.imagetag }}","run_id": "${{ github.run_id }}"}'
+          client-payload: '{ "registry": "ghcr.io", "ref_name": "${{ github.ref_name }}", "image": "${{ env.image }}", "tag": "${{ env.imagetag }}","run_id": "${{ github.run_id }}"}'
 
   generateDocumentation:
     needs: build
