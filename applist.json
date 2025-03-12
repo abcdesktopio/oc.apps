@@ -1656,7 +1656,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
-    "debpackage": "dia dia-lang",
+    "debpackage": "dia",
     "installrecommends" : true,
     "icon": "circle_dia.svg",
     "launch": "dia-gnome.Dia-gnome",
