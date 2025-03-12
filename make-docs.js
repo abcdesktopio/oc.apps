@@ -19,9 +19,9 @@ const childProcess = require('child_process');
 const { ArgumentParser } = require('argparse');
 const { version } = require('./package.json');
 
-const DOCKERREGISTRYPATH = 'abcdesktopio';
+const DOCKERREGISTRYPATH = 'ghrc.io/abcdesktopio';
 const HOSTEDURL = "https://raw.githubusercontent.com/abcdesktopio/oc.apps/main";
-var release  = '3.2';
+var release  = '4.0';
 var removeimage = false;
 
 // function to encode file data to base64 encoded string
@@ -95,7 +95,9 @@ function makedocumentation(e) {
   fs.writeSync( fd, `# ${e.name}\n`);
   fs.writeSync( fd, `![${e.icon}](icons/${e.icon}){: style="height:64px;width:64px"}\n` );
 
+  
   if (e.template) {
+    e.template = 'ghcr.io/' + e.template; 
     fs.writeSync( fd, `## inherite from\n[${e.template}](${'../' + e.template})\n`);
   }
 
