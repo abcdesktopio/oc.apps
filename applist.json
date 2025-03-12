@@ -602,7 +602,7 @@
     "path": "/usr/lib/mongodb-compass/MongoDB Compass",
     "rules": { "homedir": { "default": true } },
     "mimetype": "x-scheme-handler/mongodb;x-scheme-handler/mongodb+srv;",
-    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.20.04",
     "desktopfile":"/usr/share/applications/mongodb-compass.desktop",
     "usedefaultapplication": true
 }, {
