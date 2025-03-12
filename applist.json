@@ -593,7 +593,7 @@
 	"RUN curl -Ls -o /tmp/mongodb-compass_1.35.0_amd64.deb https://downloads.mongodb.com/compass/mongodb-compass_1.35.0_amd64.deb",
         "RUN apt-get update && apt-get install --no-install-recommends -y /tmp/mongodb-compass_1.35.0_amd64.deb && rm  /tmp/mongodb-compass_1.35.0_amd64.deb && apt-get clean" 
     ],
-    "debpackage": "dbus dbus-x11 libasound2",
+    "debpackage": "dbus dbus-x11",
     "icon": "mongodb-compass.svg",
     "keyword": "mongodb,compass",
     "launch": "mongodb compass.MongoDB Compass",
@@ -761,7 +761,7 @@
     "cat": "games",
      "preruncommands": [
         "RUN apt-get update && apt-get install  --no-install-recommends --yes vice libmp3lame0 git wget && apt-get clean",
-        "RUN git clone https://github.com/stuartcarnie/vice-emu/ && mv vice-emu/vice/data/DRIVES/* /usr/lib/vice/C64 && cd /vice-emu/vice/data/C64 && mv chargen kernal basic /usr/lib/vice/C64",
+        "RUN git clone https://github.com/stuartcarnie/vice-emu && mv vice-emu/vice/data/DRIVES/* /usr/lib/vice/C64 && cd /vice-emu/vice/data/C64 && mv chargen kernal basic /usr/lib/vice/C64",
 		"RUN mkdir /usr/lib/vice/C64/cartridge",
 		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_1-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_1-8000.bin", 
 		"RUN wget http://www.zimmers.net/anonftp/pub/cbm/firmware/misc/c64carts/Super_Games_2-8000.bin -O /usr/lib/vice/C64/cartridge/Super_Games_2-8000.bin",
@@ -777,7 +777,6 @@
     "launch": "x64.X64",
     "name": "vice",
     "displayname": "Commodore64",
-    
     "installrecommends" : true,
     "path": "/usr/bin/x64",
     "template": "abcdesktopio/oc.template.ubuntu.gtk.18.04",
@@ -788,10 +787,10 @@
     "acl": { "permit": [ "all" ] },
     "cat": "office",
      "preruncommands": [
-        "RUN apt-get update && apt-get install  --no-install-recommends --yes libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 && apt-get clean",
+        "RUN apt-get update && apt-get install  --no-install-recommends --yes libxss1 libxshmfence1 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 && apt-get clean",
 	    "RUN curl -Ls https://deb.beekeeperstudio.io/beekeeper.key | apt-key add -",
         "RUN echo \"deb https://deb.beekeeperstudio.io stable main\" | tee /etc/apt/sources.list.d/beekeeper-studio-app.list",
-    	"RUN apt-get update && apt-get install  --no-install-recommends --yes beekeeper-studio libxshmfence1 && apt-get clean",
+    	"RUN apt-get update && apt-get install  --no-install-recommends --yes beekeeper-studio && apt-get clean",
     	"RUN mv \"/opt/Beekeeper Studio/\" /opt/Beekeeper-Studio",
     	"ENV ELECTRON_ENABLE_LOGGING=true",
     	"ENV QT_X11_NO_MITSHM=1" 
@@ -802,7 +801,6 @@
     "launch": "beekeeper-studio.beekeeper-studio",
     "name": "beekeeperstudio",
     "displayname": "Beekeeper-studio",
-    
     "installrecommends" : false,
     "forceconfold" : true,
     "host_config": { "shm_size" : "2G", "ipc_mode": "shareable" },
@@ -817,7 +815,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "remmina libsecret-1-0 remmina-plugin-rdp remmina-plugin-secret remmina-plugin-vnc remmina-plugin-exec remmina-plugin-nx remmina-plugin-spice",
+    "debpackage": "remmina libsecret-1-0 remmina-plugin-rdp remmina-plugin-secret remmina-plugin-vnc remmina-plugin-exec remmina-plugin-spice",
     "icon": "remmina.svg",
     "keyword": "rdp,tsclient",
     "launch": "remmina.Remmina",
@@ -1661,23 +1659,23 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
-    "apkpackage": "dia dia-lang",
+    "debpackage": "dia dia-lang",
     "installrecommends" : true,
     "icon": "circle_dia.svg",
     "launch": "dia-gnome.Dia-gnome",
     "name": "Dia",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/dia",
-    "template": "abcdesktopio/oc.template.alpine.3.17",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "mimetype": "application/x-dia-diagram;",
     "fileextensions": "dia",
     "legacyfileextensions": "dia",
-    "desktopfile": "/usr/share/applications/dia.desktop"
+    "desktopfile": "/usr/share/applications/org.gnome.Dia.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
     "platforms": "linux/amd64",
-    "debpackage": "libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin",
+    "debpackage": "libxss1 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin",
     "icon": "circle_drawio.svg",
     "launch": "draw.io.draw.io",
     "name": "drawio",
@@ -1690,7 +1688,7 @@
     "legacyfileextensions": "drawio",
     "desktopfile": "/usr/share/applications/drawio.desktop",
     "postruncommands": [ 
-        "RUN apt-get update && curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v21.5.0/drawio-amd64-21.5.0.deb' -o /tmp/drawio-amd64.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64.deb && rm /tmp/drawio-amd64.deb && rm -rf /var/lib/apt/lists/*" 
+        "RUN apt-get update && curl -Ls 'https://github.com/jgraph/drawio-desktop/releases/download/v26.0.16/drawio-amd64-26.0.16.deb' -o /tmp/drawio-amd64.deb && apt-get install --yes --no-install-recommends /tmp/drawio-amd64.deb && rm /tmp/drawio-amd64.deb && rm -rf /var/lib/apt/lists/*" 
     ]
 }, {
     "acl": { "permit": [ "all" ] },
