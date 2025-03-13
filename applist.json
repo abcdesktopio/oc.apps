@@ -896,7 +896,7 @@
     "displayname": "Chrome",
     "installrecommends" : true,
     "path": "/usr/bin/google-chrome-stable",
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
