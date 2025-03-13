@@ -926,12 +926,11 @@
     "displayname": "Microsoft Edge",
     "path": "/usr/bin/microsoft-edge-stable",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.20.04",
+    "template": "abcdesktopio/oc.template.ubuntu.24.04",
     "mimetype": "application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;", 
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
-    "desktopfile":"/usr/share/applications/microsoft-edge.desktop",
-    "quick": true
+    "desktopfile":"/usr/share/applications/microsoft-edge.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
