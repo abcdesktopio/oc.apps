@@ -654,7 +654,7 @@
     "postruncommands": [
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
     ],
-    "debpackage": "pciutils libpci3 libegl1 libgl1 firefox krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base libgulkan-utils libgles1 libosmesa6 libglfw3 pciutils libpci3 libgl1 libgl1-mesa-dri libegl1 libgles2 libgl",
+    "debpackage": "pciutils libpci3 libegl1 libgl1 firefox krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base libgulkan-utils libgles1 libosmesa6 libglfw3 pciutils libpci3 libgl1 libgl1-mesa-dri libegl1 libgles2",
     "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
