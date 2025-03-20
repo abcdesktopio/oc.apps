@@ -649,7 +649,7 @@
     "preruncommands": [
 	"RUN apt-get update && apt-get install --no-install-recommends --yes software-properties-common && apt-get clean",
 	"COPY mozilla-firefox /etc/apt/preferences.d/mozilla-firefox",
-        "RUN add-apt-repository -r ppa:mozillateam/ppa"
+        "RUN add-apt-repository -y ppa:mozillateam/ppa"
     ],
     "postruncommands": [
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
