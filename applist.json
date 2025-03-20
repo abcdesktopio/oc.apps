@@ -648,6 +648,7 @@
     "comment": "NSS_SDB_USE_CACHE=yes",
     "preruncommands": [
 	"RUN apt-get update && apt-get install --no-install-recommends --yes software-properties-common && apt-get clean",
+	"COPY mozilla-firefox /etc/apt/preferences.d/mozilla-firefox",
         "RUN add-apt-repository -r ppa:mozillateam/ppa"
     ],
     "postruncommands": [
