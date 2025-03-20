@@ -654,7 +654,7 @@
     "postruncommands": [
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
     ],
-    "debpackage": "pciutils libpci3 libegl1 libgl1 firefox krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base",
+    "debpackage": "pciutils libpci3 libegl1 libgl1 firefox krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base libgulkan-utils libgles1 libosmesa6 libglfw3 pciutils libpci3 libgl1 libgl1-mesa-dri libegl1 libgles2 libgl",
     "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
@@ -881,7 +881,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "office",
     "platforms": "linux/amd64",
-    "debpackage": "krb5-user fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine fonts-recommended google-chrome-stable",
+    "debpackage": "krb5-user fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine fonts-recommended google-chrome-stable pciutils libgl1 libgl1-mesa-dri libegl1 libgles2 libgl1",
     "preruncommands": [ 
         "RUN curl -Ls https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -",
 	"RUN echo \"deb [arch=$(dpkg --print-architecture)] http://dl.google.com/linux/chrome/deb/ stable main\" | tee /etc/apt/sources.list.d/google-chrome.list" 
