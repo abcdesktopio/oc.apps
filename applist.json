@@ -1122,9 +1122,10 @@
     "name": "Terminal",
     "displayname": "Terminal sudo",
     "showinview": "dock",
-    "path": "/usr/bin/konsole",
+    "path": "/usr/bin/sleep",
+    "args": "3600",
     "rules": { "homedir": { "default": true } },
-    "template": "abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "abcdesktopio/oc.template.ubuntu.24.04",
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
     "postruncommands": [
 	    "ENV SHELL=/bin/bash",
@@ -1200,10 +1201,9 @@
     "displayname": "Terminal [ephemeral container]",
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": false} },
-    "host_config": { "mem_limit": "256M", "shm_size": "128M", "pid_mode": false, "ipc_mode": false  },
     "args": "--name ephemeral",
     "containerengine": "ephemeral_container",
-    "template": "abcdesktopio/oc.template.ubuntu.20.04",
+    "template": "abcdesktopio/oc.template.ubuntu.24.04",
     "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
