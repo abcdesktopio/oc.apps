@@ -7,7 +7,7 @@ echo "start of init.nautilus"
 #    Oops! Something went wrong 
 #  Unable to create a required folder. Please create the folling folder
 #  or set permissions such that it can be created:
-#  /home/balloon/.config/nautilus
+#  ~/.config/nautilus
 #
 mkdir -p ~/.config/nautilus
 if [ ! -f ~/.gtk-bookmarks ]; then
