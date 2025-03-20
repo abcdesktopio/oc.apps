@@ -646,16 +646,14 @@
     "rules": { "homedir": { "default": true } },
     "cat": "office",
     "comment": "NSS_SDB_USE_CACHE=yes",
-    "postruncommands": [
-	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf",
-	"RUN /usr/sbin/ldconfig",
-        "RUN mkdir -p /usr/lib/firefox/distribution",
-        "COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
-        "COPY policies.json /usr/lib/firefox/distribution",
-        "COPY --from=abcdesktopio/ntlm_auth:20.04 /samba/samba-4.15.13+dfsg/bin/default/source3/utils/ntlm_auth /usr/bin/ntlm_auth.desktop",
-        "RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop"
+    "preruncommands": [
+	"RUN apt-get update && apt-get install --no-install-recommends --yes software-properties-common && apt-get clean",
+        "RUN add-apt-repository -r ppa:mozillateam/ppa"
     ],
-    "debpackage": "firefox krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base",
+    "postruncommands": [
+        "COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
+    ],
+    "debpackage": "pciutils libpci3 libegl1 libgl1 firefox krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base",
     "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
@@ -665,13 +663,12 @@
     "displayname": "Firefox (ubuntu)",
     "showinview": "dock",
     "path": "/usr/bin/firefox",
-    "template": "abcdesktopio/oc.template.ubuntu.20.04",
+    "template": "abcdesktopio/oc.template.ubuntu.24.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
     "secrets_requirement":  [ "ntlm", "kerberos" ],
-    "desktopfile":"/usr/share/applications/firefox.desktop",
-    "usedefaultapplication": true
+    "desktopfile":"/usr/share/applications/firefox.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
     "rules": { "homedir": { "default": true } },
@@ -695,7 +692,7 @@
     "showinview": "dock",
     "args": "--class firefoxubuntupod",
     "path": "/usr/bin/firefox",
-    "template": "abcdesktopio/oc.template.ubuntu.20.04",
+    "template": "abcdesktopio/oc.template.ubuntu.24.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
