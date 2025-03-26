@@ -652,7 +652,7 @@
         "RUN add-apt-repository -y ppa:mozillateam/ppa"
     ],
     "postruncommands": [
-        "COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
+        "COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
 	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf",
         "RUN /usr/sbin/ldconfig",
         "COPY --from=abcdesktopio/ntlm_auth:ubuntu.24.04 /samba/samba-*+dfsg/bin/default/source3/utils/ntlm_auth /usr/bin/ntlm_auth.desktop",
