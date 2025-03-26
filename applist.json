@@ -620,7 +620,7 @@
         "RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf",
         "RUN /usr/sbin/ldconfig",
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox-esr",
-        "COPY --from=abcdesktopio/ntlm_auth:20.04 /samba/samba-4.15.13+dfsg/bin/default/source3/utils/ntlm_auth /usr/bin/ntlm_auth.desktop",
+        "COPY --from=abcdesktopio/ntlm_auth:ubuntu.24.04 /samba/samba-*+dfsg/bin/default/source3/utils/ntlm_auth /usr/bin/ntlm_auth.desktop",
         "RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop"
     ],
     "debpackage": "ubuntu-restricted-extras ttf-mscorefonts-installer libavcodec-extra firefox-esr=128.8.0esr~build1 krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-l10n-fr=128.8.0esr~build1 firefox-esr-l10n-ro=128.8.0esr~build1 language-pack-en language-pack-ro language-pack-fr-base language-pack-ro-base language-pack-en-base libegl1",
@@ -653,6 +653,10 @@
     ],
     "postruncommands": [
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
+	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf",
+        "RUN /usr/sbin/ldconfig",
+        "COPY --from=abcdesktopio/ntlm_auth:ubuntu.24.04 /samba/samba-*+dfsg/bin/default/source3/utils/ntlm_auth /usr/bin/ntlm_auth.desktop",
+        "RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop"
     ],
     "debpackage": "pciutils libpci3 libegl1 libgl1 firefox krb5-user samba-common-bin hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base libgulkan-utils libgles1 libosmesa6 libglfw3 pciutils libpci3 libgl1 libgl1-mesa-dri libegl1 libgles2",
     "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
@@ -682,7 +686,7 @@
         "RUN mkdir -p /usr/lib/firefox/distribution",
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
         "COPY policies.json /usr/lib/firefox/distribution",
-        "COPY --from=abcdesktopio/ntlm_auth:20.04 /samba/samba-4.15.13+dfsg/bin/default/source3/utils/ntlm_auth /usr/bin/ntlm_auth.desktop",
+        "COPY --from=abcdesktopio/ntlm_auth:ubuntu.24.04 /samba/samba-*+dfsg/bin/default/source3/utils/ntlm_auth /usr/bin/ntlm_auth.desktop",
         "RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" ],
     "debpackage": "ubuntu-restricted-extras firefox krb5-user samba-common-bin pulseaudio-utils firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de",
     "icon": "circle_firefox.svg",
