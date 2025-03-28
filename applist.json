@@ -619,8 +619,8 @@
     "postruncommands": [
         "RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf",
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox-esr",
-        "COPY --from=ghcr.io/abcdesktopio/ntlm_auth:ubuntu.24.04 /dist/bin/ntlm_auth /usr/bin/ntlm_auth.desktop",
-	"COPY --from=ghcr.io/abcdesktopio/ntlm_auth:ubuntu.24.04 /dist/lib /usr/lib/x86_64-linux-gnu/samba", 
+        "COPY --from=ghcr.io/abcdesktopio/ntlm_auth:ubuntu.24.04 /dist/*.deb /tmp",
+	"RUN  apt-get update &&  apt-get install /tmp/*.deb && apt-get clean", 
 	"RUN /usr/sbin/ldconfig",
         "RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop"
     ],
@@ -655,8 +655,8 @@
     "postruncommands": [
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
 	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf",
-	"COPY --from=ghcr.io/abcdesktopio/ntlm_auth:ubuntu.24.04 /dist/bin/ntlm_auth /usr/bin/ntlm_auth.desktop",
-	"COPY --from=ghcr.io/abcdesktopio/ntlm_auth:ubuntu.24.04 /dist/lib /usr/lib/x86_64-linux-gnu/samba", 
+        "COPY --from=ghcr.io/abcdesktopio/ntlm_auth:ubuntu.24.04 /dist/*.deb /tmp",
+	"RUN  apt-get update &&  apt-get install /tmp/*.deb && apt-get clean", 
 	"RUN /usr/sbin/ldconfig",
         "RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop"
     ],
