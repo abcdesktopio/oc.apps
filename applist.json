@@ -711,11 +711,8 @@
     "postruncommands": [ 
 	"RUN mkdir -p /usr/lib/firefox/distribution",
 	"COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
-	"COPY policies.json /usr/lib/firefox/distribution",
-	"COPY --from=ghcr.io/abcdesktopio/ntlm_auth:alpine.edge /dist/bin/ntlm_auth /usr/bin/ntlm_auth.desktop",
-	"COPY --from=ghcr.io/abcdesktopio/ntlm_auth:alpine.edge /dist/lib /usr/lib/x86_64-linux-gnu/samba", 
-	"RUN /usr/sbin/ldconfig",
-	"RUN chown root:root /usr/bin/ntlm_auth.desktop && chmod 115 /usr/bin/ntlm_auth.desktop" ],
+	"COPY policies.json /usr/lib/firefox/distribution" 
+    ],
     "apkpackage": "firefox krb5 gcompat samba-client mesa-dri-gallium pciutils-libs",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
