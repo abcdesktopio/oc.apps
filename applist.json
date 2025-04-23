@@ -750,7 +750,7 @@
         "COPY composer/init.d/init.firefox-esr /composer/init.d/init.firefox-esr",
         "COPY policies.json /usr/lib/firefox-esr/distribution"
     ],
-    "debpackage": "ubuntu-restricted-extras ttf-mscorefonts-installer libavcodec-extra firefox-esr=128.9.0esr+build2-0ubuntu0.20.04.1-mt1 krb5-user hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-l10n-fr=128.9.0esr+build2-0ubuntu0.20.04.1-mt1 firefox-esr-l10n-ro=128.9.0esr+build2-0ubuntu0.20.04.1-mt1 language-pack-en language-pack-ro language-pack-fr-base language-pack-ro-base language-pack-en-base",
+    "debpackage": "ubuntu-restricted-extras ttf-mscorefonts-installer libavcodec-extra firefox-esr=128.9.0esr~build2 krb5-user hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-l10n-fr=128.9.0esr~build2 firefox-esr-l10n-ro=128.9.0esr~build2 firefox-esr-l10n-de=128.9.0esr~build2 language-pack-en language-pack-ro language-pack-fr-base language-pack-ro-base language-pack-en-base",
     "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
