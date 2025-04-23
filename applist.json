@@ -739,6 +739,7 @@
         "RUN wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null",
         "RUN echo 'deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main' | tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null",
 	"RUN apt-get update && apt-cache policy firefox-esr",
+	"RUN apt-get update && apt-cache policy firefox-esr-l10n-fr"
     ],
     "postruncommands": [
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox-esr",
