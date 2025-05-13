@@ -925,9 +925,10 @@
     "cat": "office",
     "containerengine": "ephemeral_container",
     "platforms": "linux/amd64",
-    "debpackage": "microsoft-edge-stable",
+    "debpackage": "microsoft-edge-stable ttf-mscorefonts-installer",
     "preruncommands": [ 
-        "RUN # curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg",
+        "RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
+	"RUN # curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg",
 	"RUN curl https://packages.microsoft.com/keys/microsoft.asc  | apt-key add -",
         "RUN echo \"deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/edge stable main\" > /etc/apt/sources.list.d/edge.list"
     ],
