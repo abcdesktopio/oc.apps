@@ -222,14 +222,14 @@ function makedockerfile(e) {
   // remove links file over inacessible directory
   // RUN this command as ROOT
   // wstream.write( "RUN for d in /usr/share/icons /usr/share/pixmaps ; do echo \"testing link in $d\"; if [ -d $d ] && [ -x /composer/safelinks.sh ] ; then echo \"fixing link in $d\"; cd $d ; /composer/safelinks.sh ; fi; done\n" );
-  if (e.name) wstream.write(`ENV APPNAME "${e.name}"\n`);
-  if (e.path) wstream.write(`ENV APPBIN "${e.path}"\n`);
+  if (e.name) wstream.write(`ENV APPNAME="${e.name}"\n`);
+  if (e.path) wstream.write(`ENV APPBIN="${e.path}"\n`);
   
   // This is deprecated
   //
   if (e.path) {
           wstream.write(`# ENV APP is deprecated, removed in next release\n`);
-          wstream.write(`ENV APP "${e.path}"\n`);
+          wstream.write(`ENV APP="${e.path}"\n`);
   }
   if (e.args) { wstream.write(`LABEL oc.args=${JSON.stringify(e.args)}\n`); }
   if (e.usedefaultapplication) { wstream.write(`LABEL oc.usedefaultapplication=${JSON.stringify(e.usedefaultapplication)}\n`); }
