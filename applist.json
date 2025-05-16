@@ -925,7 +925,7 @@
     "cat": "office",
     "containerengine": "ephemeral_container",
     "platforms": "linux/amd64",
-    "debpackage": "microsoft-edge-stable ttf-mscorefonts-installer fontconfig fonts-ubuntu",
+    "debpackage": "microsoft-edge-stable ttf-mscorefonts-installer fontconfig fonts-ubuntu xdg-utils",
     "preruncommands": [ 
         "RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
 	"RUN # curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg",
