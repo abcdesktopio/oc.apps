@@ -1276,7 +1276,7 @@
     "cat": "development",
     "postruncommands": [ "ENV QT_XCB_NO_MITSHM=1" ],
     "icon": "konsolesilver.svg",
-    "apkpackage": "konsole sudo",
+    "apkpackage": "konsole sudo inetutils-telnet netcat-openbsd xeyes nmap",
     "keyword": "ksonsole,console,shell,bash,sh,pod",
     "launch": "podsilver.konsole",
     "name": "konsolepodsilver",
