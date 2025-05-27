@@ -247,21 +247,15 @@ function makedockerfile(e) {
   wstream.write( "USER root\n" );
   wstream.write( "# Permit to create file in directory /var/lib/dbus/\n")
   wstream.write( "RUN if [ -x /usr/bin/dbus-launch ]; then chmod g+r,g+w,o+r,o+w /var/lib/dbus ; fi\n" );
+  wstream.write( "\n");
   wstream.write( "# Create links for local acccounts\n");
   wstream.write( "# /etc/passwd  -> /etc/localaccount/passwd\n");
-  wstream.write( "# /etc/shadow  -> /etc/localaccount/shadow\n")
   wstream.write( "# /etc/group   -> /etc/localaccount/group\n")
-  wstream.write( "# /etc/gshadow -> /etc/localaccount/gshadow\n")
-  wstream.write( "RUN mkdir -p /etc/localaccount\n" );
-  wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount; rm -f /etc/$f; ln -s /etc/localaccount/$f /etc/$f; fi; done\n" );
-
-  // old account mapping
-  // wstream.write( "RUN mkdir -p /var/secrets/abcdesktop/localaccount\n" );
-  // wstream.write( "RUN for f in passwd shadow group gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /var/secrets/abcdesktop/localaccount; rm -f /etc/$f; ln -s /var/secrets/abcdesktop/localaccount/$f /etc/$f; fi; done\n" );
-  // 
-	
-  let user=(e.user)?(e.user):'balloon';
-  wstream.write(`USER ${user}\n`);
+  wstream.write( "# /etc/shadow  -> /etc/localaccount.shadow/shadow\n")
+  wstream.write( "# /etc/gshadow -> /etc/localaccount.shadow/gshadow\n")
+  wstream.write( "RUN mkdir -p /etc/localaccount /etc/localaccount.shadow\n" );
+  wstream.write( "RUN for f in passwd group ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount; rm -f /etc/$f; ln -s /etc/localaccount/$f /etc/$f; fi; done\n" );
+  wstream.write( "RUN for f in shadow gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount.shadow; rm -f /etc/$f; ln -s /etc/localaccount.shadow/$f /etc/$f; fi; done\n" );
 
   let cmd=(e.cmd)?(e.cmd):"/composer/appli-docker-entrypoint.sh";  
   wstream.write(`CMD [ \"${cmd}\" ]\n`);
