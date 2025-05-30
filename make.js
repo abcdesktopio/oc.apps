@@ -114,6 +114,7 @@ function makedockerfile(e) {
   // make sure to be root 
   // if this image if rerun
   wstream.write('USER root\n');
+  wstream.write('ENV ABCDESKTOP_LOCALACCOUNT_DIR=/etc/localaccount\n');
 
   // run pre commands
   if (e.preruncommands) {
@@ -253,10 +254,9 @@ function makedockerfile(e) {
   wstream.write( "# /etc/group   -> /etc/localaccount/group\n")
   wstream.write( "# /etc/shadow  -> /etc/localaccount.shadow/shadow\n")
   wstream.write( "# /etc/gshadow -> /etc/localaccount.shadow/gshadow\n")
-  wstream.write( "RUN mkdir -p /etc/localaccount /etc/localaccount.shadow\n" );
-  wstream.write( "RUN for f in passwd group ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount; rm -f /etc/$f; ln -s /etc/localaccount/$f /etc/$f; fi; done\n" );
-  wstream.write( "RUN for f in shadow gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f /etc/localaccount.shadow; rm -f /etc/$f; ln -s /etc/localaccount.shadow/$f /etc/$f; fi; done\n" );
-
+  wstream.write( "RUN mkdir -p ${ABCDESKTOP_LOCALACCOUNT_DIR} ${ABCDESKTOP_LOCALACCOUNT_DIR}.shadow\n" );
+  wstream.write( "RUN for f in passwd group ;   do if [ -f /etc/$f ] ; then  cp /etc/$f ${ABCDESKTOP_LOCALACCOUNT_DIR};        rm -f /etc/$f; ln -s ${ABCDESKTOP_LOCALACCOUNT_DIR}/$f        /etc/$f; fi; done\n" );
+  wstream.write( "RUN for f in shadow gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f ${ABCDESKTOP_LOCALACCOUNT_DIR}.shadow; rm -f /etc/$f; ln -s ${ABCDESKTOP_LOCALACCOUNT_DIR}.shadow/$f /etc/$f; fi; done\n" );
   let cmd=(e.cmd)?(e.cmd):"/composer/appli-docker-entrypoint.sh";  
   wstream.write(`CMD [ \"${cmd}\" ]\n`);
   wstream.end(() => {});
