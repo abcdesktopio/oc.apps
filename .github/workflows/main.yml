@@ -116,8 +116,8 @@ jobs:
         with:
           file: ${{ env.image }}
           context: .
-          # platforms: ${{ steps.define-platforms.outputs.platforms }}
-          platforms: linux/amd64
+          platforms: ${{ steps.define-platforms.outputs.platforms }}
+          # platforms: linux/amd64
           build-args: |
             TAG=${{ env.imagetag }}
           push: true
