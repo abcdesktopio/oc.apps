@@ -610,6 +610,7 @@
     "acl": { "permit": [ "all" ] },
     "rules": { "homedir": { "default": true } },
     "cat": "office",
+    "platforms": "linux/amd64",
     "comment": "NSS_SDB_USE_CACHE=yes",
     "preruncommands": [
         "RUN install -d -m 0755 /etc/apt/keyrings",
@@ -731,6 +732,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "rules": { "homedir": { "default": true } },
+    "platforms": "linux/amd64",
     "cat": "office",
     "comment": "NSS_SDB_USE_CACHE=yes",
     "preruncommands": [
@@ -1141,6 +1143,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
+    "platforms": "linux/amd64",
     "preruncommands": [],
     "debpackage": "konsole",
     "icon": "nvidia.svg",
@@ -1154,6 +1157,7 @@
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
+    "platforms": "linux/amd64",
     "cat": "development",
     "preruncommands": [],
     "postruncommands": [ "ENV SHELL=/bin/bash", "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" ],
