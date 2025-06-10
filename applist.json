@@ -367,7 +367,7 @@
         "RUN wineboot --init",
         "RUN echo disable > $WINEPREFIX/.update-timestamp",
         "COPY user.reg system.reg /composer/.wine/", 
-        "RUN chmow -R 777 $WINEPREFIX/*" ],
+        "RUN chmod -R 777 $WINEPREFIX/*" ],
     "args": "/composer/bin/winscp.exe",
     "cat": "utilities",
     "debpackage": "",
