@@ -1303,7 +1303,6 @@
     "path": "/usr/bin/qterminal",
     "rules": { "homedir": { "default": false} },
     "containerengine": "pod_application",
-    "executeclassname": "silver",
     "template": "abcdesktopio/oc.template.alpine.minimal",
     "desktopfile": "/usr/share/applications/qterminal.desktop"
 }, {
