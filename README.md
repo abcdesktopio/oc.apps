@@ -1,6 +1,6 @@
 # oc.apps
 
-[![CI.build.template](https://github.com/abcdesktopio/oc.apps/actions/workflows/main.yml/badge.svg?branch=3.2)](https://github.com/abcdesktopio/oc.apps/actions/workflows/main.yml)
+[![CI.build.template](https://github.com/abcdesktopio/oc.apps/actions/workflows/main.yml/badge.svg?branch=4.0)](https://github.com/abcdesktopio/oc.apps/actions/workflows/main.yml)
 
 ## To get more informations
 
@@ -11,7 +11,7 @@ Please, read the public documentation web site:
 ## abcdesktop application dockerfiles
 
 ```
-TAG=3.2 make
+TAG=4.0 make
 ```
 
 this command build all generated all Dockerfiles 
@@ -19,6 +19,6 @@ this command build all generated all Dockerfiles
 
 To build documentation files 
 ```
-$ TAG=3.2 make docs
+$ TAG=4.0 make docs
 ```
 this command build all md files, and build list.md
