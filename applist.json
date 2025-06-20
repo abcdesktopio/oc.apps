@@ -916,6 +916,7 @@
     "rules": { "homedir": { "default": true } },
     "displayname": "chromium (alpine)",
     "installrecommends" : true,
+    "args": "--no-default-browser-check",
     "path": "/usr/bin/chromium-browser",
     "template": "abcdesktopio/oc.template.alpine.edge.gtk",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
