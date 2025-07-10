@@ -30,19 +30,9 @@ dockerfile:
 	for dir in $(wildcard *.d); do \
             rm $$dir | true;\
         done 
-	node make.js -r '3.0'
+	node make.js -r '4.1'
 	echo "Number of file generated: $(words $(wildcard *.d))"
 
-buildpushdelete:
-	for dir in $(sort $(wildcard *.d)); do \
-		if [ ! -f $$dir.non-free ]; then \
-		echo "\n\n *********** pushing $$dir **********\n"; \
-		docker tag abcdesktopio/$$dir:$(TAG) abcdesktopio/$$dir:2.0;\
-		docker push  abcdesktopio/$$dir:2.0;\
-		echo "\n\n *********** deleting $$dir **********\n"; \
-		# docker rmi abcdesktopio/$$dir:$(TAG) ;\
-		fi \
-        done
 build:
 	for dir in $(sort $(wildcard *.d)); do \
                 echo "\n\n *********** buildin $$dir **********\n"; \
