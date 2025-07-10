@@ -141,13 +141,29 @@ function makedockerfile(e) {
 
   // install rpm package
   if (e.rpmpackage) {
-    let installCommand = `RUN yum install -y ${e.rpmpackage} && yum -y clean all && rm -rf /var/cache\n`;
+    let rpmpackages = '';
+    if (typeof e.rpmpackage === 'string' || e.rpmpackage instanceof String)
+      rpmpackages += e.rpmpackage
+    if (Array.isArray(e.rpmpackage)) {
+      // if e.debpackage is an array
+      // join array with space  
+      rpmpackages += e.rpmpackage.join(' ');
+    }
+    let installCommand = `RUN yum install -y ${rpmpackages} && yum -y clean all && rm -rf /var/cache\n`;
     wstream.write(installCommand);
   }
 	
   // install apk package 
   if (e.apkpackage) {
-    let installCommand = `RUN apk add --no-cache --update ${e.apkpackage}\n`;
+    let apkpackages = '';
+    if (typeof e.apkpackage === 'string' || e.apkpackage instanceof String)
+      apkpackages += e.apkpackage
+    if (Array.isArray(e.apkpackage)) {
+      // if e.debpackage is an array
+      // join array with space  
+      apkpackages += e.apkpackage.join(' ');
+    }
+    let installCommand = `RUN apk add --no-cache --update ${apkpackages}\n`;
     wstream.write(installCommand);
   }
  
