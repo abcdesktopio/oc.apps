@@ -89,11 +89,11 @@ function makedockerfile(e) {
   wstream.write(`ARG TAG=${tag}\n`);
 
   if (e.template) {
-          e.template = 'ghcr.io/' + e.template
+
 	  let template = e.template;
-          if (!e.template.includes(":"))
-                // do not tag twice
-                template += ':$TAG';
+    if (!e.template.includes(":"))
+          // do not tag twice
+          template += ':$TAG';
 
 	  let arraysplitedtemplate = e.template.split('/');
 	  let splitedtemplate = (arraysplitedtemplate.length > 1) ? arraysplitedtemplate[1] : arraysplitedtemplate[0];
@@ -127,7 +127,14 @@ function makedockerfile(e) {
     let installCommand = 'RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ';
     if (!e.installrecommends) { installCommand += ' --no-install-recommends '; }
     if (e.forceconfold) { installCommand += ' -o Dpkg::Options::="--force-confold" '; }
-    installCommand += `${e.debpackage} && apt-get clean && rm -rf /var/lib/apt/lists/* \n`;
+    if (typeof e.debpackage === 'string' || e.debpackage instanceof String)
+      installCommand += e.debpackage
+    if (Array.isArray(e.debpackage)) {
+      // if e.debpackage is an array
+      // join array with space  
+      installCommand += e.debpackage.join(' ');
+    }
+    installCommand += " && apt-get clean && rm -rf /var/lib/apt/lists/* \n";
     wstream.write("RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections\n");
     wstream.write(installCommand);
   }
