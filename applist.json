@@ -1002,8 +1002,8 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "libreoffice-writer",
-    "icon": "circle_libreoffice_writer.svg",
+    "debpackage": "libreoffice-calc",
+    "icon": "circle_libreoffice_calc.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-calc",
     "name": "calc",
