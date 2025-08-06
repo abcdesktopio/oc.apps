@@ -582,6 +582,7 @@
     "showinview": "dock",
     "path": "/usr/bin/nautilus",
     "rules": { "homedir": { "default": true } },
+    "mimetype": "inode/directory;",
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile":"/usr/share/applications/org.gnome.Nautilus.desktop",
     "usedefaultapplication": true,
