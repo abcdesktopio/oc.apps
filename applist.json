@@ -621,7 +621,7 @@
     "postruncommands": [
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox-esr",
         "COPY --from=ghcr.io/abcdesktopio/ntlm_auth_ubuntu_24.04:main /dist/*.deb /tmp",
-	"RUN apt-get update && apt-get install --no-install-recommends -y /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop", 
+	"RUN apt-get update && apt-get install --no-install-recommends --allow-downgrades -y /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop", 
 	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig"
     ],
     "debpackage": "ubuntu-restricted-extras ttf-mscorefonts-installer libavcodec-extra firefox-esr krb5-user hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-l10n-fr firefox-esr-l10n-ro language-pack-en language-pack-ro language-pack-fr-base language-pack-ro-base language-pack-en-base libegl1",
@@ -655,7 +655,7 @@
     "postruncommands": [
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
         "COPY --from=ghcr.io/abcdesktopio/ntlm_auth_ubuntu_24.04:main /dist/*.deb /tmp",
-	"RUN apt-get update && ls -la /tmp/*.deb && apt-get install -y --no-install-recommends /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop", 
+	"RUN apt-get update && ls -la /tmp/*.deb && apt-get install -y --no-install-recommends --allow-downgrades /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop", 
 	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig"
     ],
     "debpackage": "pciutils libpci3 libegl1 libgl1 firefox krb5-user speech-dispatcher hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base libgulkan-utils libgles1 libosmesa6 libglfw3 pciutils libpci3 libgl1 libgl1-mesa-dri libegl1 libgles2",
@@ -683,7 +683,7 @@
     "postruncommands": [
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
         "COPY --from=ghcr.io/abcdesktopio/ntlm_auth_ubuntu_24.04:main /dist/*.deb /tmp",
-	"RUN apt-get update && apt-get install -y --no-install-recommends /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" , 
+	"RUN apt-get update && apt-get install -y --no-install-recommends --allow-downgrades /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" , 
 	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig",
 	"RUN mkdir -p /usr/lib/firefox/distribution",
 	"COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
