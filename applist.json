@@ -573,7 +573,7 @@
    	"COPY composer/desktop_download.py /composer/desktop_download.py",
 	"ENV GTK_A11Y=none"
     ],
-    "debpackage": "dbus gnome-icon-theme gnome-icon-theme-symbolic numix-gtk-theme numix-icon-theme gnome-font-viewer dbus-x11 python3-nautilus python3-shellescape nautilus desktop-file-utils shared-mime-info xdg-user-dirs libgles2 language-pack-gnome-fr language-pack-gnome-en language-pack-gnome-de bzip2 unzip zip arj lzip lzma lzop ncompress rpm2cpio rzip sharutils squashfs-tools unace unalz unar xz-utils file-roller",
+    "debpackage": "dbus gnome-icon-theme gnome-icon-theme-symbolic numix-gtk-theme numix-icon-theme gnome-font-viewer dbus-x11 python3-nautilus python3-shellescape nautilus desktop-file-utils shared-mime-info xdg-user-dirs libgles2 language-pack-gnome-fr language-pack-gnome-en language-pack-gnome-de bzip2 unzip zip arj lzip lzma lzop ncompress rpm2cpio rzip sharutils squashfs-tools unace unalz unar xz-utils",
     "icon": "circle_filemanager.svg",
     "keyword": "file,manager,nautilus",
     "launch": "org.gnome.Nautilus.Org.gnome.Nautilus",
