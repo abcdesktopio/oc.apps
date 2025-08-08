@@ -303,7 +303,7 @@
     "rules": { "homedir": { "default": true } },
     "fileextensions":"ps1;",
     "path": "/usr/bin/konsole",
-    "args": "--name powershell -e /usr/bin/pwsh",
+    "args": "-e /usr/bin/pwsh",
     "template": "ghcr.io/abcdesktopio/oc.template.alpine"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1126,7 +1126,6 @@
     "launch": "cuda.console",
     "name": "cuda",
     "path": "/usr/bin/konsole",
-    "args": "--name=cuda",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.nvidia.22.04",
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop"
@@ -1158,7 +1157,6 @@
     "name": "cudademosuite",
     "displayname": "cuda demo suite",
     "path": "/usr/bin/konsole",
-    "args": "--name cudademosuite",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.nvidia.22.04",
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop"
@@ -1173,8 +1171,7 @@
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "host_config": { "mem_limit": "256M", "shm_size": "128M", "pid_mode": false, "ipc_mode": false  },
-    "args": "--name stress",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.20.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.24.04",
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1187,7 +1184,6 @@
     "displayname": "Terminal [ephemeral container]",
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": false} },
-    "args": "--name ephemeral",
     "containerengine": "ephemeral_container",
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.24.04",
     "desktopfile": "/usr/share/applications/org.gnome.Terminal.desktop"
@@ -1203,7 +1199,6 @@
     "displayname": "konsole bronze [pod]",
     "containerengine": "pod_application",
     "executeclassname": "bronze",
-    "args": "--name podbronze",
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.alpine",
@@ -1222,7 +1217,6 @@
     "name": "konsolephemeralcontainer",
     "displayname": "konsole [ephemeral_container]",
     "containerengine": "ephemeral_container",
-    "args": "--name ephemeral_container",
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.alpine",
@@ -1242,7 +1236,6 @@
     "displayname": "konsole gold [pod]",
     "containerengine": "pod_application",
     "executeclassname": "gold",
-    "args": "--name podgold",
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.alpine",
@@ -1262,7 +1255,6 @@
     "displayname": "konsole silver [pod]",
     "containerengine": "pod_application",
     "executeclassname": "silver",
-    "args": "--name podsilver",
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.alpine",
@@ -1281,7 +1273,6 @@
     "name": "konsolepod",
     "displayname": "konsole [pod]",
     "containerengine": "pod_application",
-    "args": "--name pod",
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.alpine",
