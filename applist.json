@@ -973,7 +973,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "libreoffice-gnome",
+    "debpackage": "libreoffice-writer",
     "icon": "circle_libreoffice_writer.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-writer",
@@ -993,7 +993,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "libreoffice-gnome",
+    "debpackage": "libreoffice-calc",
     "icon": "circle_libreoffice_calc.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-calc",
@@ -1013,7 +1013,7 @@
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "libreoffice-gnome",
+    "debpackage": "libreoffice-impress",
     "icon": "circle_libreoffice_impress.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-impress",
@@ -1033,7 +1033,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "libreoffice-gnome",
+    "debpackage": "libreoffice-math",
     "icon": "circle_libreoffice_math.svg",
     "keyword": "libreoffice,office",
     "launch": "libreoffice.libreoffice-math",
@@ -1104,7 +1104,7 @@
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
     "postruncommands": [
 	    "ENV SHELL=/bin/bash",
-            "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" 
+        "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" 
     ]   
 }, {
     "acl": { "permit": [ "all" ] },
