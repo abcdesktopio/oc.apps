@@ -44,8 +44,7 @@
     "template": "ghcr.io/abcdesktopio/oc.template.alpine",
     "desktopfile": "/usr/share/applications/xterm.desktop",
     "args": "-xrm 'XTerm*selectToClipboard:true'",
-    "postruncommands": [ "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" ],
-    "quick": true
+    "postruncommands": [ "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" ]
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -100,8 +99,7 @@
     "template": "ghcr.io/abcdesktopio/oc.template.alpine",
     "postruncommands": [
             "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" 
-    ], 
-    "quick": true
+    ] 
 }, {
     "acl": { "permit": [ "all" ] },
     "preruncommands": [ 
@@ -180,8 +178,7 @@
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.18.04",
     "mimetype": "application/text;",
     "fileextensions":"txt;log;md",
-    "args": "",
-    "quick": true
+    "args": ""
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -195,8 +192,7 @@
     "path": "/usr/bin/xclock",
     "rules": { "homedir": { "default": false } },
     "template": "ghcr.io/abcdesktopio/oc.template.alpine.minimal",
-    "args": "",
-    "quick": true
+    "args": ""
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -212,8 +208,7 @@
     "fileextensions":"7z;7zip;Z;unzip;zip;tar;tgz;war;tar.gz;ar;bcz;cpio;ear;jar;iso;tar.Z;tar.gz;tar.lz;tar.lzma;tar.lzo;tar.xz",
     "args": "",
     "rules": { "homedir": { "default": true } },
-    "desktopfile": "/usr/share/applications/org.gnome.FileRoller.desktop",
-    "quick": true
+    "desktopfile": "/usr/share/applications/org.gnome.FileRoller.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -514,8 +509,7 @@
     "fileextensions":"asx;dts;gxf;m2v;m3u;m4v;mpeg1;mpeg2;mts;mxf;ogm;pls;bup;a52;aac;b4s;cue;divx;dv;flv;m1v;m2ts;mkv;mov;mpeg4;oma;spx;ts,vlc,vob,xspf;dat;bin;ifo;part;3g2;avi;mpeg;mpg;flac;m4a;mp1;ogg;wav;xm;3gp;srt;wmv;ac3;asf;mod;mp2;mp3;mp4;wma;mka;m4p",
     "template": "ghcr.io/abcdesktopio/oc.template.alpine",
     "rules": { "homedir": { "default": true } },
-    "desktopfile": "/usr/share/applications/vlc.desktop",
-    "quick": true
+    "desktopfile": "/usr/share/applications/vlc.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -530,8 +524,7 @@
     "mimetype": "application/pdf;application/x-bzpdf;application/x-gzpdf;application/x-xzpdf;application/x-ext-pdf;application/postscript;application/x-bzpostscript;application/x-gzpostscript;image/x-eps;image/x-bzeps;image/x-gzeps;application/x-ext-ps;application/x-ext-eps;application/x-dvi;application/x-bzdvi;application/x-gzdvi;application/x-ext-dvi;image/vnd.djvu;application/x-ext-djv;application/x-ext-djvu;image/tiff;application/x-cbr;application/x-cbz;application/x-cb7;application/x-cbt;application/x-ext-cbr;application/x-ext-cbz;application/x-ext-cb7;application/x-ext-cbt;application/oxps;application/vnd.ms-xpsdocument;",
     "fileextensions": "pdf;ps;dvi;eps;cbt;cbr;cb7;xps",
     "legacyfileextensions": "pdf;ps;dvi",
-    "desktopfile": "/usr/share/applications/org.gnome.Evince.desktop",
-    "quick": true
+    "desktopfile": "/usr/share/applications/org.gnome.Evince.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -567,7 +560,7 @@
     "cat": "utilities,office",
     "comment": [ "ENV NAUTILUS_PYTHON_DEBUG=misc" ],
     "preruncommands": [ 
-        "RUN mkdir -p /run/user/4096 /var/run/dbus/ chown balloon:balloon /run/user/4096 /var/run/dbus", 
+        "RUN mkdir -p /run/user/4096 /var/run/dbus/ && chown balloon:balloon /run/user/4096 /var/run/dbus", 
 	"RUN mkdir -p /composer/node/ocdownload && cd /composer/node/ocdownload && curl -Ls -o ocdownload.js  https://raw.githubusercontent.com/abcdesktopio/oc.user/main/composer/node/ocdownload/ocdownload.js && curl -Ls -o package.json  https://raw.githubusercontent.com/abcdesktopio/oc.user/main/composer/node/ocdownload/package.json && npm install",
 	"COPY composer/init.d/init.nautilus /composer/init.d/init.nautilus",
    	"COPY composer/desktop_download.py /composer/desktop_download.py",
@@ -585,8 +578,7 @@
     "mimetype": "inode/directory;",
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktopfile":"/usr/share/applications/org.gnome.Nautilus.desktop",
-    "usedefaultapplication": true,
-    "quick": true
+    "usedefaultapplication": true
 },   {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
@@ -950,8 +942,7 @@
     "mimetype": "application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;", 
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
-    "desktopfile":"/usr/share/applications/microsoft-edge.desktop",
-    "quick": true
+    "desktopfile":"/usr/share/applications/microsoft-edge.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -1314,8 +1305,7 @@
     "fileextensions": "dds",
     "legacyfileextensions":"dds",
     "desktopfile":"/usr/share/applications/gimp.desktop",
-    "usedefaultapplication": false,
-    "quick": true
+    "usedefaultapplication": false
 },  {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
@@ -1348,8 +1338,7 @@
     "fileextensions": "ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
     "legacyfileextensions":"ani;bmp;gif;ico;jpg;jpeg;pcx;png;pnm;ras;svg;tga;tif;tiff;wbmp;xbm;xpm",
     "desktopfile":"/usr/share/applications/org.gnome.eog.desktop",
-    "usedefaultapplication": true,
-    "quick": true
+    "usedefaultapplication": true
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
@@ -1557,8 +1546,7 @@
     "mimetype": "text/plain;",
     "fileextensions": "txt",
     "legacyfileextensions":"txt",
-    "desktopfile": "/usr/share/applications/gedit.desktop",
-    "quick": true
+    "desktopfile": "/usr/share/applications/gedit.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -1598,8 +1586,7 @@
     "launch": "xeyes.XEyes",
     "name": "xeyes",
     "path": "/usr/bin/xeyes",
-    "template": "ghcr.io/abcdesktopio/oc.template.alpine",
-    "quick": true
+    "template": "ghcr.io/abcdesktopio/oc.template.alpine"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
@@ -1726,8 +1713,7 @@
         "RUN echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main\" > /etc/apt/sources.list.d/teams.list",
         "RUN apt update && apt install -y --no-install-recommends code && apt-get clean && rm -rf /var/lib/apt/lists/*",
 	"RUN mkdir -p /usr/share/code/extensions && chmod 777 /usr/share/code /usr/share/code/extensions"
-    ],
-    "quick": true
+    ]
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
