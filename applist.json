@@ -560,7 +560,6 @@
     "cat": "utilities,office",
     "comment": [ "ENV NAUTILUS_PYTHON_DEBUG=misc" ],
     "preruncommands": [ 
-        "RUN mkdir -p /run/user/ /var/run/dbus/ && chmod 777 /run/user /var/run/dbus", 
 	"RUN mkdir -p /composer/node/ocdownload && cd /composer/node/ocdownload && curl -Ls -o ocdownload.js  https://raw.githubusercontent.com/abcdesktopio/oc.user/main/composer/node/ocdownload/ocdownload.js && curl -Ls -o package.json  https://raw.githubusercontent.com/abcdesktopio/oc.user/main/composer/node/ocdownload/package.json && npm install",
 	"COPY composer/init.d/init.nautilus /composer/init.d/init.nautilus",
    	"COPY composer/desktop_download.py /composer/desktop_download.py",
