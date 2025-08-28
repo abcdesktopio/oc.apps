@@ -1089,14 +1089,14 @@
     "usedefaultapplication": true
 }, {
     "acl": { "permit": [ "all" ] },
-    "cat": "development",
+    "cat": "TerminalEmulator",
     "installrecommends": true,
     "debpackage": "konsole sudo bash openssh-client telnet sshcommand sshfs ftp-ssl wput curl wget ncftp git git-ftp ftp dbus-x11",
     "icon": "circle_xterm.svg",
     "keyword": "konsole,terminal,bash,shell,cmd,admin,ftp,telnet,netcat,sshfs,curl,wget,git,ssh",
     "launch": "konsole.konsole",
     "name": "Terminal",
-    "displayname": "Terminal sudo",
+    "displayname": "Terminal",
     "showinview": "dock",
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
