@@ -1092,7 +1092,7 @@
     "cat": "development",
     "installrecommends": true,
     "debpackage": "konsole sudo bash openssh-client telnet sshcommand sshfs ftp-ssl wput curl wget ncftp git git-ftp ftp dbus-x11",
-    "icon": "utilities-terminal.svg",
+    "icon": "circle_xterm.svg",
     "keyword": "konsole,terminal,bash,shell,cmd,admin,ftp,telnet,netcat,sshfs,curl,wget,git,ssh",
     "launch": "konsole.konsole",
     "name": "Terminal",
@@ -1103,7 +1103,7 @@
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.24.04",
     "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
     "postruncommands": [
-	    "ENV SHELL=/bin/bash",
+	"ENV SHELL=/bin/bash",
         "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" 
     ]   
 }, {
