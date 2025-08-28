@@ -434,6 +434,7 @@
     "icon": "circle_2048.svg",
     "keyword": "2048",
     "launch": "org.gnome.TwentyFortyEight.Gnome-2048",
+    "wm_class": "Gnome-2048",
     "name": "2048-alpine",
     "displayname": "2048 (alpine gtk)",
     "path": "/usr/bin/gnome-2048",

@@ -204,6 +204,7 @@ function makedockerfile(e) {
   if (e.webhook) {
     wstream.write(`LABEL oc.webhook=${JSON.stringify(e.webhook)}\n`);
   }
+  if (e.wm_class) wstream.write(`LABEL oc.wm_class=${JSON.stringify(e.wm_class)}\n`);
   if (e.launch)   wstream.write(`LABEL oc.launch=${JSON.stringify(e.launch)}\n`);
   if (e.template) wstream.write(`LABEL oc.template=${JSON.stringify(e.template)}\n`);
   if (e.args)     wstream.write(`ENV ARGS=${JSON.stringify(e.args)}\n`);
