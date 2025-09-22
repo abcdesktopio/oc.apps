@@ -1727,14 +1727,15 @@
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "platforms": "linux/amd64",
-    "debpackage": "",
+    "debpackage": "git-all python3-all gcc make wget konsole sudo bash openssh-client sshcommand ftp-ssl wput curl git ftp dbus-x11 cloc bandit python3-bandit gcc make python3-pip python3-virtualenv golang-go python3-venv",
     "icon": "circle_visual-studio-code.svg",
     "keyword": "ide,vscode,visual studio code,code",
+    "showinview": "dock",
     "launch": "code.Code",
     "name": "VSCode",
     "path": "/usr/bin/code",
     "rules": { "homedir": { "default": true } },
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "desktop": "code.desktop",
     "host_config":  { "mem_limit": "2G", "shm_size" : "2G",  "cpu_period": 200000, "cpu_quota": 200000 , "cap_add": [ "SYS_ADMIN" ] },
     "args": "--extensions-dir /usr/share/code/extensions --verbose",
@@ -1747,6 +1748,14 @@
         "RUN echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main\" > /etc/apt/sources.list.d/teams.list",
         "RUN apt update && apt install -y --no-install-recommends code && apt-get clean && rm -rf /var/lib/apt/lists/*",
 	"RUN mkdir -p /usr/share/code/extensions && chmod 777 /usr/share/code /usr/share/code/extensions"
+    ],
+    "postruncommands": [
+        "ENV SHELL=/bin/bash",
+        "SHELL [ \"/bin/bash\", \"-c\" ]",
+        "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all",
+        "RUN wget https://github.com/trufflesecurity/trufflehog/releases/download/v3.90.8/trufflehog_3.90.8_linux_amd64.tar.gz && tar -xvf trufflehog_3.90.8_linux_amd64.tar.gz && mv trufflehog /usr/local/bin && rm -rf trufflehog_3.90.8_linux_amd64.tar.gz",
+        "RUN git clone https://github.com/gitleaks/gitleaks.git && cd gitleaks && make build",
+        "RUN mkdir semgrep && virtualenv semgrep && source semgrep/bin/activate && pip3 install semgrep"
     ]
 }, {
     "acl": { "permit": [ "all" ] },
