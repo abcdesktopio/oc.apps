@@ -1719,7 +1719,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "platforms": "linux/amd64",
-    "debpackage": "git-all python3-all gcc make wget konsole sudo bash openssh-client sshcommand ftp-ssl wput curl git ftp dbus-x11 cloc bandit python3-bandit gcc make python3-pip python3-virtualenv golang-go python3-venv",
+    "debpackage": "git-all python3-all gcc make wget konsole sudo bash openssh-client sshcommand ftp-ssl wput curl git ftp dbus-x11 cloc bandit python3-bandit gcc make python3-pip python3-virtualenv golang-go python3-venv pre-commit",
     "icon": "circle_visual-studio-code.svg",
     "keyword": "ide,vscode,visual studio code,code",
     "showinview": "dock",
