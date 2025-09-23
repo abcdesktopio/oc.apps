@@ -21,8 +21,8 @@ const { version } = require('./package.json');
 
 const DOCKERREGISTRYPATH = 'ghcr.io/abcdesktopio';
 const HOSTEDURL = "https://raw.githubusercontent.com/abcdesktopio/oc.apps/main";
-var release  = '4.0';
-var removeimage = false;
+var release  = '4.2';
+var removeimage = true;
 
 // function to encode file data to base64 encoded string
 function base64Encode(file) {
@@ -65,13 +65,11 @@ function getosrelease( appname ) {
     console.log(command);
     stdout = childProcess.execSync(command).toString();
     osrelease = stdout;
-    /*
-     * remove image in makedocArray
+    // remove image in makedocArray
     if (removeimage) {
 	console.log(rmcommand);
        	childProcess.exec( rmcommand );
     }
-    */
   } catch (error) {
     console.error( `error in getrelease ${DOCKERREGISTRYPATH}/${appname}:${release}`);
     console.error( error );
@@ -285,7 +283,7 @@ function makedocArray(e) {
 		childProcess.exec( rmcommand );
 
     } catch (error) {
-	    console.error( `error in parsing 'Comment' in file ${e.desktopfile} image ${DOCKERREGISTRYPATH}/${appname}:3.0`);
+	    console.error( `error in parsing 'Comment' in file ${e.desktopfile} image ${DOCKERREGISTRYPATH}/${appname}:${release}`);
 	    // console.error( error );
     	// error.status;  // 0 : successful exit, but here in exception it has to be greater than 0
     	// error.message; // Holds the message you typically want.
