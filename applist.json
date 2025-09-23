@@ -1112,7 +1112,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "TerminalEmulator",
     "installrecommends": true,
-    "debpackage": "wget konsole sudo bash openssh-client telnet sshcommand sshfs ftp-ssl wput curl wget ncftp git git-ftp ftp dbus-x11 cloc bandit python3-bandit gcc make python3-pip python3-virtualenv golang-go python3-venv",
+    "debpackage": "wget konsole sudo bash openssh-client telnet sshcommand sshfs ftp-ssl wput curl wget ncftp git git-ftp ftp dbus-x11 cloc bandit python3-bandit gcc make python3-pip python3-virtualenv golang-go python3-venv pre-commit build-essential libc6-dev",
     "icon": "circle_security.svg",
     "keyword": "konsole,terminal,bash,shell,cmd,admin,ftp,telnet,netcat,sshfs,curl,wget,git,ssh",
     "launch": "konsole.konsole",
