@@ -197,6 +197,10 @@ function makedockerfile(e) {
   if (e.desktopfile) {
     wstream.write(`LABEL oc.desktopfile=${JSON.stringify(path.basename(e.desktopfile))}\n`);
   }
+  // desktop file section
+  if (e.desktopfileoverwrited) {
+    wstream.write(`LABEL oc.desktopfileoverwrited=${JSON.stringify(path.basename(e.desktopfileoverwrited))}\n`);
+  }
 
   if (e.extra_hosts) {
     wstream.write(`LABEL oc.extra_hosts=${JSON.stringify(e.extra_hosts)}\n`);
@@ -268,8 +272,8 @@ function makedockerfile(e) {
 
   // make sure that we are root to run the commands :
   wstream.write( "#\n" );
-  wstream.write( "# Run next commands as root\n" );
-  wstream.write( "USER root\n" );
+  // wstream.write( "# Run next commands as root\n" );
+  // wstream.write( "# USER root\n" );
   wstream.write( "# Permit to create file in directory /var/lib/dbus/\n")
   wstream.write( "RUN if [ -x /usr/bin/dbus-launch ]; then chmod g+r,g+w,o+r,o+w /var/lib/dbus ; fi\n" );
   wstream.write( "\n");

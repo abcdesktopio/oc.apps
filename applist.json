@@ -1123,7 +1123,8 @@
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.24.04",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.devsecops.desktop",
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "desktopfileoverwrited": "/usr/share/applications/org.kde.konsole.devsecops.desktop",
     "postruncommands": [
         "ENV SHELL=/bin/bash",
 	"SHELL [ \"/bin/bash\", \"-c\" ]",
@@ -1146,7 +1147,8 @@
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.nvidia.22.04",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.cude.desktop"
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "desktopfileoverwrited": "/usr/share/applications/org.kde.konsole.cuda.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "platforms": "linux/amd64",
@@ -1177,7 +1179,8 @@
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.nvidia.22.04",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.cudademosuite.desktop"
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "desktopfileoverwrited": "/usr/share/applications/org.kde.konsole.cudademosuite.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1189,7 +1192,8 @@
     "path": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.24.04",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.stress.desktop"
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "desktopfileoverwrited": "/usr/share/applications/org.kde.konsole.stress.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1203,7 +1207,8 @@
     "rules": { "homedir": { "default": false} },
     "containerengine": "ephemeral_container",
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.24.04",
-    "desktopfile": "/usr/share/applications/org.gnome.Terminal.ephemeral.desktop"
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "desktopfileoverwrited": "/usr/share/applications/org.kde.konsole.stress.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1223,7 +1228,8 @@
             "ENV SHELL=/bin/bash",
             "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
     ],
-    "desktopfile": "/usr/share/applications/org.kde.konsole.bronze.desktop"
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "desktopfileoverwrited": "/usr/share/applications/org.kde.konsole.bronze.desktop"
 
 },{
     "acl": { "permit": [ "all" ] },
@@ -1243,7 +1249,8 @@
             "ENV SHELL=/bin/bash",
             "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
     ],
-    "desktopfile": "/usr/share/applications/org.kde.konsole.sudo.desktop"
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "desktopfileoverwrited": "/usr/share/applications/org.kde.konsole.sudo.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1263,7 +1270,8 @@
             "ENV SHELL=/bin/bash",
             "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
     ],
-    "desktopfile": "/usr/share/applications/org.kde.konsole.gold.desktop"
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "desktopfileoverwrited": "/usr/share/applications/org.kde.konsole.gold.desktop"
 },{
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1283,7 +1291,8 @@
 	    "ENV SHELL=/bin/bash",
             "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
     ],
-    "desktopfile": "/usr/share/applications/org.kde.konsole.silver.desktop"
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "desktopfileoverwrited": "/usr/share/applications/org.kde.konsole.silver.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1302,7 +1311,8 @@
             "ENV SHELL=/bin/bash",
             "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all"
     ],
-    "desktopfile": "/usr/share/applications/org.kde.konsole.pod.desktop"
+    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
+    "desktopfileoverwrited": "/usr/share/applications/org.kde.konsole.pod.desktop" 
 },{
     "acl": { "permit": [ "all" ] },
     "cat": "development",
@@ -1698,13 +1708,12 @@
     "acl": { "permit": [ "all" ] },
     "cat": "development",
     "installrecommends": true,
-    "debpackage": "konsole octave",
+    "debpackage": "octave",
     "icon": "Gnu-octave-logo.svg",
     "keyword": "octave",
     "launch": "octave-gui.GNU Octave",
     "name": "octave",
     "path": "/usr/bin/octave",
-    "debugpath": "/usr/bin/konsole",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.22.04",
     "desktop": "www.octave.org-octave.desktop.desktop",
