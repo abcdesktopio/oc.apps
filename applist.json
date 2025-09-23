@@ -617,7 +617,7 @@
 	"RUN apt-get update && apt-get install --no-install-recommends --allow-downgrades -y /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop", 
 	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig"
     ],
-    "debpackage": "ubuntu-restricted-extras ttf-mscorefonts-installer libavcodec-extra firefox-esr krb5-user hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-l10n-fr firefox-esr-l10n-ro language-pack-en language-pack-ro language-pack-fr-base language-pack-ro-base language-pack-en-base libegl1",
+    "debpackage": "ubuntu-restricted-extras ttf-mscorefonts-installer libavcodec-extra firefox-esr krb5-user hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-l10n-fr firefox-esr-l10n-ro language-pack-en language-pack-ro language-pack-fr-base language-pack-ro-base language-pack-en-base libegl1 libavcodec-extra",
     "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
@@ -651,7 +651,7 @@
 	"RUN apt-get update && ls -la /tmp/*.deb && apt-get install -y --no-install-recommends --allow-downgrades /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop", 
 	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig"
     ],
-    "debpackage": "pciutils libpci3 libegl1 libgl1 firefox krb5-user speech-dispatcher hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base libgulkan-utils libgles1 libosmesa6 libglfw3 pciutils libpci3 libgl1 libgl1-mesa-dri libegl1 libgles2",
+    "debpackage": "pciutils libpci3 libegl1 libgl1 firefox krb5-user speech-dispatcher hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base libgulkan-utils libgles1 libosmesa6 libglfw3 pciutils libpci3 libgl1 libgl1-mesa-dri libegl1 libgles2 libavcodec-extra ubuntu-restricted-extras",
     "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
@@ -681,7 +681,7 @@
 	"RUN mkdir -p /usr/lib/firefox/distribution",
 	"COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
     ],
-    "debpackage": "ubuntu-restricted-extras firefox krb5-user samba-common-bin pulseaudio-utils speech-dispatcher firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de",
+    "debpackage": "libavcodec-extra ubuntu-restricted-extras firefox krb5-user samba-common-bin pulseaudio-utils speech-dispatcher firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.firefoxubuntupod",
@@ -707,7 +707,7 @@
 	"COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
 	"COPY policies.json /usr/lib/firefox/distribution" 
     ],
-    "apkpackage": "firefox krb5 gcompat samba-client mesa-dri-gallium pciutils-libs",
+    "apkpackage": "firefox krb5 gcompat samba-client mesa-dri-gallium pciutils-libs ffmpeg-libavformat ffmpeg",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.firefox",
