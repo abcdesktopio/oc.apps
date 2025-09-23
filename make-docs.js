@@ -70,9 +70,9 @@ function getosrelease( appname ) {
 	console.log(rmcommand);
        	childProcess.exec( rmcommand );
 	// clean all
-	rmcommand = 'docker image prune -f';
-	console.log(rmcommand);
-	childProcess.exec( rmcommand );
+	//rmcommand = 'docker image prune -f';
+	//console.log(rmcommand);
+	//childProcess.exec( rmcommand );
     }
   } catch (error) {
     console.error( `error in getrelease ${DOCKERREGISTRYPATH}/${appname}:${release}`);
