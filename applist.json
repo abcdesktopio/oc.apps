@@ -1415,7 +1415,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
     "displayname": "Pinta (alpine)",
-    "apkpackage": "pinta pinta-lang adwaita-icon-theme libadwaita font-noto font-xfree86-type1",
+    "apkpackage": "pinta pinta-lang adwaita-icon-theme libadwaita font-noto font-xfree86-type1 mesa-gles",
     "icon": "pinta.svg",
     "keyword": "pinta,paint",
     "launch": "Pinta.Pinta",
