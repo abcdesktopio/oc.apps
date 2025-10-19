@@ -929,7 +929,9 @@
         "RUN echo \"deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/edge stable main\" > /etc/apt/sources.list.d/edge.list"
     ],
     "postruncommands": [
-        "RUN fc-cache -vf"
+        "RUN fc-cache -vf",
+		"RUN mkdir -p /etc/opt/edge/policies/managed /etc/opt/edge/policies/recommended",
+		"COPY msedge-recommanded.json /etc/opt/edge/policies/recommended"
     ],
     "icon": "circle_microsoft-edge.svg",
     "keyword": "web,browser,internet",
