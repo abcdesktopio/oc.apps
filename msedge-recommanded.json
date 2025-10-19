@@ -6,5 +6,5 @@
 // If you enable or disable this policy, users can't change or override it in Microsoft Edge. If you don't configure it, users can save passwords, as well as turn this feature off.
 
 "PasswordManagerEnabled": false,
-"HideFirstRunExperience": false
+"HideFirstRunExperience": true
 }
