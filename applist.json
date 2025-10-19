@@ -922,7 +922,7 @@
     "platforms": "linux/amd64",
     "containerengine": "ephemeral_container",
     "comment": "Edge is not available for Arm Linux",
-    "debpackage": "microsoft-edge-stable ttf-mscorefonts-installer fontconfig fonts-ubuntu xdg-utils",
+    "debpackage": "microsoft-edge-stable ttf-mscorefonts-installer fontconfig fonts-ubuntu xdg-utils libgles2 libgl1-mesa-dri libgles1 libglu1-mesa libglx-mesa0 libgl1",
     "preruncommands": [ 
         "RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
 	"RUN curl https://packages.microsoft.com/keys/microsoft.asc  | apt-key add -",
