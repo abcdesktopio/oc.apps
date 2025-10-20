@@ -1,10 +1,3 @@
 {
-// https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#passwordmanagerenabled
-// Enable Microsoft Edge to save user passwords.
-// If you enable this policy, users can save their passwords in Microsoft Edge. The next time they visit the site, Microsoft Edge will enter the password automatically.
-// If you disable this policy, users can't save new passwords, but they can still use previously saved passwords.
-// If you enable or disable this policy, users can't change or override it in Microsoft Edge. If you don't configure it, users can save passwords, as well as turn this feature off.
-
-"PasswordManagerEnabled": false,
-"HideFirstRunExperience": true
+// https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies
 }
