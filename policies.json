@@ -7,6 +7,7 @@
     "DontCheckDefaultBrowser": true,
     "DisableSystemAddonUpdate": true,
     "DefaultDownloadDirectory": "${home}/Downloads",
+    "HardwareAcceleration": false,
     "NoDefaultBookmarks": true,
     "OverrideFirstRunPage": "",
     "Preferences": {
