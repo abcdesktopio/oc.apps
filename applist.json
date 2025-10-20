@@ -931,7 +931,8 @@
     "postruncommands": [
         "RUN fc-cache -vf",
 		"RUN mkdir -p /etc/opt/edge/policies/managed /etc/opt/edge/policies/recommended",
-		"COPY msedge-recommanded.json /etc/opt/edge/policies/recommended"
+		"COPY msedge-recommended.json /etc/opt/edge/policies/recommended"
+		"COPY msedge-managed.json /etc/opt/edge/policies/managed"
     ],
     "icon": "circle_microsoft-edge.svg",
     "keyword": "web,browser,internet",
