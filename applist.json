@@ -646,7 +646,7 @@
         "RUN add-apt-repository -y ppa:mozillateam/ppa"
     ],
     "postruncommands": [
-	"COPY policy.json /usr/lib/firefox/distribution/policy.json",
+	"COPY policies.json /usr/lib/firefox/distribution/policies.json",
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
         "COPY --from=ghcr.io/abcdesktopio/ntlm_auth_ubuntu_24.04:main /dist/*.deb /tmp",
 	"RUN apt-get update && ls -la /tmp/*.deb && apt-get install -y --no-install-recommends --allow-downgrades /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop", 
