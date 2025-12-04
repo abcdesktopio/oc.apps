@@ -1418,7 +1418,8 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
-    "displayname": "Pinta (alpine)",
+	"platforms": "linux/amd64",
+    "displayname": "Pinta",
 	"preruncommands": [ "RUN apt-get update && apt-get install --yes libgtk-4-1 libadwaita-1-0 wget && apt-get clean",
 						"RUN wget https://launchpad.net/~xtradeb/+archive/ubuntu/apps/+files/xtradeb-apt-source_0.4_all.deb && apt-get update && apt-get install ./xtradeb-apt-source_0.4_all.deb && rm ./xtradeb-apt-source_0.4_all.deb && apt-get clean" ],
     "debpackage": "pinta",
