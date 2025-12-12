@@ -674,15 +674,19 @@
     "cat": "office",
     "containerengine": "pod_application",
     "comment": "NSS_SDB_USE_CACHE=yes",
+    "preruncommands": [
+        "RUN apt-get update && apt-get install --no-install-recommends --yes software-properties-common && apt-get clean",
+        "COPY mozilla-firefox /etc/apt/preferences.d/mozilla-firefox",
+        "RUN add-apt-repository -y ppa:mozillateam/ppa"
+    ],
     "postruncommands": [
+        "COPY policies.json /usr/lib/firefox/distribution/policies.json",
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
         "COPY --from=ghcr.io/abcdesktopio/ntlm_auth_ubuntu_24.04:main /dist/*.deb /tmp",
-	"RUN apt-get update && apt-get install -y --no-install-recommends --allow-downgrades /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" , 
-	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig",
-	"RUN mkdir -p /usr/lib/firefox/distribution",
-	"COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
+        "RUN apt-get update && ls -la /tmp/*.deb && apt-get install -y --no-install-recommends --allow-downgrades /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop",
+        "RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig"
     ],
-    "debpackage": "libavcodec-extra ubuntu-restricted-extras firefox krb5-user samba-common-bin pulseaudio-utils speech-dispatcher firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de",
+    "debpackage": "pciutils libpci3 libegl1 libgl1 firefox krb5-user speech-dispatcher hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base libgulkan-utils libgles1 libosmesa6 libglfw3 pciutils libpci3 libgl1 libgl1-mesa-dri libegl1 libgles2 libavcodec-extra ubuntu-restricted-extras libgles2 libgl1-mesa-dri libgles1 libglu1-mesa libglx-mesa0",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.firefoxubuntupod",
