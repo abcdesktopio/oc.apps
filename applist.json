@@ -634,8 +634,7 @@
     "secrets_requirement":  [ "ntlm", "kerberos" ],
     "desktopfile":"/usr/share/applications/firefox.desktop",
     "usedefaultapplication": true
-},
-{
+},  {
     "acl": { "permit": [ "all" ] },
     "rules": { "homedir": { "default": true } },
     "cat": "office",
@@ -768,6 +767,31 @@
     "desktopfile":"/usr/share/applications/firefox.desktop",
     "usedefaultapplication": true
 }, {
+    "acl": { "permit": [ "all" ] },
+    "rules": { "homedir": { "default": true } },
+    "cat": "office",
+    "comment": "NSS_SDB_USE_CACHE=yes",
+    "postruncommands": [
+        "COPY policies.json /usr/lib/firefox/distribution/policies.json",
+        "COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
+    ],
+    "rpmpackage": "firefox",
+    "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
+    "icon": "circle_firefox.svg",
+    "keyword": "firefox,mozilla,web,internet",
+    "launch": "Navigator.firefoxrockylinux9",
+    "args": "--no-remote --class firefoxrockylinux9",
+    "name": "FirefoxRockyLinux",
+    "displayname": "Firefox (Rocky Linux)",
+    "showinview": "dock",
+    "path": "/usr/bin/firefox",
+    "template": "ghcr.io/abcdesktopio/oc.template.rockylinux.gtk.9",
+    "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
+    "legacyfileextensions": "htm;html;xml",
+    "fileextensions": "htm;html;xml;gif",
+    "secrets_requirement":  [ "ntlm", "kerberos" ],
+    "desktopfile":"/usr/share/applications/firefox.desktop"
+},  {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
      "preruncommands": [
