@@ -277,14 +277,6 @@ function makedockerfile(e) {
   wstream.write( "# Permit to create file in directory /var/lib/dbus/\n")
   wstream.write( "RUN if [ -x /usr/bin/dbus-launch ]; then chmod g+r,g+w,o+r,o+w /var/lib/dbus ; fi\n" );
   wstream.write( "\n");
-  wstream.write( "# Create links for local acccounts\n");
-  wstream.write( "# /etc/passwd  -> /etc/localaccount/passwd\n");
-  wstream.write( "# /etc/group   -> /etc/localaccount/group\n")
-  wstream.write( "# /etc/shadow  -> /etc/localaccount.shadow/shadow\n")
-  wstream.write( "# /etc/gshadow -> /etc/localaccount.shadow/gshadow\n")
-  wstream.write( "RUN mkdir -p ${ABCDESKTOP_LOCALACCOUNT_DIR} ${ABCDESKTOP_LOCALACCOUNT_DIR}.shadow\n" );
-  wstream.write( "RUN for f in passwd group ;   do if [ -f /etc/$f ] ; then  cp /etc/$f ${ABCDESKTOP_LOCALACCOUNT_DIR};        rm -f /etc/$f; ln -s ${ABCDESKTOP_LOCALACCOUNT_DIR}/$f        /etc/$f; fi; done\n" );
-  wstream.write( "RUN for f in shadow gshadow ; do if [ -f /etc/$f ] ; then  cp /etc/$f ${ABCDESKTOP_LOCALACCOUNT_DIR}.shadow; rm -f /etc/$f; ln -s ${ABCDESKTOP_LOCALACCOUNT_DIR}.shadow/$f /etc/$f; fi; done\n" );
   let cmd=(e.cmd)?(e.cmd):"/composer/appli-docker-entrypoint.sh";  
   wstream.write(`CMD [ \"${cmd}\" ]\n`);
   wstream.end(() => {});
