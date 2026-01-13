@@ -1424,31 +1424,12 @@
     "path": "/usr/bin/gnome-calculator",
     "template": "ghcr.io/abcdesktopio/oc.template.alpine.edge",
     "desktopfile": "/usr/share/applications/org.gnome.Calculator.desktop"
-},  {
-    "platforms": "linux/amd64",
-    "acl": { "permit": [ "all" ] },
-    "cat": "utilities,office",
-    "debpackage": "dbus-x11",
-    "icon": "whatsapp.svg",
-    "keyword": "whatsapp,whatsdesk",
-    "launch": "whatsdesk.whatsdesk",
-    "name": "whatsdesk",
-    "path": "/opt/whatsdesk/whatsdesk",
-    "rules": { "homedir": { "default": true } },
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.20.04",
-    "mimetype": "x-scheme-handler/whatsapp;",
-    "desktopfile": "/usr/share/applications/whatsdesk.desktop",
-    "preruncommands": [
-            "RUN curl -Ls -o /tmp/whatsdesk.deb https://zerkc.gitlab.io/whatsdesk/whatsdesk_0.3.9_amd64.deb",
-	    "RUN apt-get update && apt-get install --no-install-recommends --yes desktop-file-utils libasound2 && apt-get clean && rm -rf /var/lib/apt/lists/*",
-            "RUN apt-get update && apt-get install --no-install-recommends --yes /tmp/whatsdesk.deb && apt-get clean && rm -rf /var/lib/apt/lists/*"
-    ]
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office",
-	"platforms": "linux/amd64",
+    "platforms": "linux/amd64",
     "displayname": "Pinta",
-	"preruncommands": [ "RUN apt-get update && apt-get install --yes libgtk-4-1 libadwaita-1-0 wget && apt-get clean",
+    "preruncommands": [ "RUN apt-get update && apt-get install --yes libgtk-4-1 libadwaita-1-0 wget && apt-get clean",
 						"RUN wget https://launchpad.net/~xtradeb/+archive/ubuntu/apps/+files/xtradeb-apt-source_0.4_all.deb && apt-get update && apt-get install ./xtradeb-apt-source_0.4_all.deb && rm ./xtradeb-apt-source_0.4_all.deb && apt-get clean" ],
     "debpackage": "pinta",
     "icon": "pinta.svg",
