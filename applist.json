@@ -791,7 +791,32 @@
     "fileextensions": "htm;html;xml;gif",
     "secrets_requirement":  [ "ntlm", "kerberos" ],
     "desktopfile":"/usr/share/applications/firefox.desktop"
-},  {
+}, {
+    "acl": { "permit": [ "all" ] },
+    "rules": { "homedir": { "default": true } },
+    "cat": "office",
+    "comment": "NSS_SDB_USE_CACHE=yes",
+    "postruncommands": [
+        "COPY policies.json /usr/lib/firefox/distribution/policies.json",
+        "COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
+    ],
+    "rpmpackage": "firefox",
+    "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
+    "icon": "circle_firefox.svg",
+    "keyword": "firefox,mozilla,web,internet",
+    "launch": "Navigator.firefoxalmalinux10",
+    "args": "--no-remote --class firefoxalmalinux10",
+    "name": "FirefoxAlmaLinux",
+    "displayname": "Firefox (Alma Linux)",
+    "showinview": "dock",
+    "path": "/usr/bin/firefox",
+    "template": "ghcr.io/abcdesktopio/oc.template.almalinux.gtk.10",
+    "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
+    "legacyfileextensions": "htm;html;xml",
+    "fileextensions": "htm;html;xml;gif",
+    "secrets_requirement":  [ "ntlm", "kerberos" ],
+    "desktopfile":"/usr/share/applications/firefox.desktop"
+}, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
      "preruncommands": [
