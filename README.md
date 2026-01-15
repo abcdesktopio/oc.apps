@@ -1,6 +1,6 @@
 # oc.apps
 
-[![CI.build.template](https://github.com/abcdesktopio/oc.apps/actions/workflows/main.yml/badge.svg?branch=4.0)](https://github.com/abcdesktopio/oc.apps/actions/workflows/main.yml)
+[![CI.build.template](https://github.com/abcdesktopio/oc.apps/actions/workflows/main.yml/badge.svg?branch=4.3)](https://github.com/abcdesktopio/oc.apps/actions/workflows/main.yml)
 
 ## To get more informations
 
