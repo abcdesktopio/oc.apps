@@ -1392,7 +1392,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
     "installrecommends" : true,
-    "debpackage": "gimp gimp-lang",
+    "debpackage": "gimp",
     "icon": "circle_gimp.svg",
     "keyword": "gimp,image,gif,tiff,png,jpeg,bmp,tga,pcx,bitmap,jpg,pixmap",
     "launch": "gimp.Gimp",
