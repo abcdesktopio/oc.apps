@@ -800,7 +800,7 @@
         "COPY policies.json /usr/lib/firefox/distribution/policies.json",
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
     ],
-    "rpmpackage": "firefox",
+    "rpmpackage": [ "firefox", "mesa-libGL" ],
     "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
