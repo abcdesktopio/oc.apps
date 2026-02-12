@@ -100,23 +100,6 @@
     "postruncommands": [
             "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all" 
     ] 
-}, {
-    "acl": { "permit": [ "all" ] },
-    "preruncommands": [ 
-        "RUN apt-get update && apt-get install --no-install-recommends --yes libgtk-3-0 libatk-bridge2.0-0 libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libnss3 qt5dxcb-plugin  libxss1 libasound2 libx11-xcb1 libxcb-dri3-0 libdrm2  libdrm-common libgbm1 libasound2-plugins libgail-common libgtk2.0-bin && apt-get clean",
-        "RUN curl -Ls -o /tmp/postman.tar.gz https://dl.pstmn.io/download/latest/linux64 && gunzip -d /tmp/postman.tar.gz && cd /usr/local/bin && tar -xvf /tmp/postman.tar && rm -rf /tmp/blender.tar" ],
-    "cat": "development",
-    "debpackage": "",
-    "installrecommends" : false,
-    "icon": "circle_postman.svg",
-    "keyword": "http,post,json",
-    "launch": "postman.Postman",
-    "displayname": "Postman",
-    "rules": { "homedir": { "default": true } },
-    "name": "postman",
-    "path": "/usr/local/bin/Postman/app/Postman",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.20.04",
-     "desktopfile": "/usr/share/applications/org.kde.postman.desktop"
 }, {   
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
@@ -128,7 +111,7 @@
     "displayname": "Filelight",
     "rules": { "homedir": { "default": true } },
     "path": "/usr/bin/filelight",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.26.04",
     "mimetype": "inode/directory;",
     "fileextensions":"",
     "args": "",
@@ -143,7 +126,7 @@
     "name": "xpad",
     "displayname": "Xpad",
     "path": "/usr/bin/xpad",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "rules": { "homedir": { "default": true } },
     "fileextensions":"",
     "args": "",
@@ -160,7 +143,7 @@
     "name": "xman",
     "displayname": "Xman",
     "path": "/usr/bin/xman",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.18.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.26.04",
     "mimetype": "application/x-troff;application/x-troff-man;",
     "fileextensions":"man;roff",
     "args": ""
@@ -176,7 +159,7 @@
     "displayname": "Xedit",
     "path": "/usr/bin/xedit",
     "rules": { "homedir": { "default": true } },
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.18.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.26.04",
     "mimetype": "application/text;",
     "fileextensions":"txt;log;md",
     "args": ""
@@ -184,7 +167,7 @@
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
     "containerengine": "ephemeral_container",
-    "apkpackage": [ "xclock" ],
+    "debpackage": [ "x11-apps" ],
     "icon": "xclock.svg",
     "keyword": "clock,xclock,time",
     "launch": "xclock.XClock",
@@ -192,7 +175,7 @@
     "displayname": "Xclock",
     "path": "/usr/bin/xclock",
     "rules": { "homedir": { "default": false } },
-    "template": "ghcr.io/abcdesktopio/oc.template.alpine.minimal",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.26.04",
     "args": ""
 }, {
     "acl": { "permit": [ "all" ] },
@@ -204,7 +187,7 @@
     "name": "file-roller",
     "displayname": "file-roller",
     "path": "/usr/bin/file-roller",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "mimetype": "application/x-7z-compressed;application/gzip;application/gtar;application/tar;application/zip;application/x-compress;application/x-compressed;application/x-zip-compressed;multipart/x-zip;application/gnutar;application/x-lzx;application/lzx;application/x-gzip;application/x-gtar;application/x-bzip2;application/x-bzip;application/x-bzip2;",
     "fileextensions":"7z;7zip;Z;unzip;zip;tar;tgz;war;tar.gz;ar;bcz;cpio;ear;jar;iso;tar.Z;tar.gz;tar.lz;tar.lzma;tar.lzo;tar.xz",
     "args": "",
@@ -311,7 +294,7 @@
     "name": "frozen-bubble",
     "displayname": "frozen-bubble",
     "path": "/usr/games/frozen-bubble",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.22.04"
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.26.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
@@ -455,7 +438,7 @@
     "displayname": "2048 (ubuntu qt)",
     "path": "/usr/games/2048-qt",
     "desktopfile": "/usr/share/applications/2048-qt.desktop",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.26.04",
     "rules": { "homedir": { "default": true } },
     "postruncommands": [ "ENV QT_X11_NO_MITSHM=1" ] 
 }, {
@@ -468,7 +451,7 @@
     "name": "astromenace",
     "displayname": "astromenace",
     "path": "/usr/games/AstroMenace",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.26.04",
     "desktopfile": "/usr/share/applications/astromenace.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -480,7 +463,7 @@
     "name": "swell-foop",
     "displayname": "swell-foop",
     "path": "/usr/games/swell-foop",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.22.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.26.04",
     "desktopfile": "/usr/share/applications/org.gnome.SwellFoop.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -576,7 +559,7 @@
     "path": "/usr/bin/nautilus",
     "rules": { "homedir": { "default": true } },
     "mimetype": "inode/directory;",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "desktopfile":"/usr/share/applications/org.gnome.Nautilus.desktop",
     "usedefaultapplication": true
 },   {
@@ -882,7 +865,7 @@
     "displayname": "Remmina",
     "args": "",
     "path": "/usr/bin/remmina",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "mimetype": "application/x-remmina;",
     "desktopfile":"/usr/share/applications/remmina-file.desktop",
     "rules": { "homedir": { "default": true } },
@@ -947,7 +930,7 @@
     "showinview": "dock",
     "installrecommends" : true,
     "path": "/usr/bin/google-chrome-stable",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -965,7 +948,7 @@
     "installrecommends" : true,
     "args": "--no-default-browser-check",
     "path": "/usr/bin/chromium-browser",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -1399,7 +1382,7 @@
     "name": "Gimp",
     "path": "/usr/bin/gimp",
     "rules": { "homedir": { "default": true } },
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "mimetype": "image/bmp;image/g3fax;image/gif;image/x-fits;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-psd;image/x-sgi;image/x-tga;image/x-xbitmap;image/x-xwindowdump;image/x-xcf;image/x-compressed-xcf;image/x-gimp-gbr;image/x-gimp-pat;image/x-gimp-gih;image/jpeg;image/x-psp;image/png;image/x-icon;image/x-xpixmap;image/x-wmf;image/jp2;image/jpeg2000;image/jpx;image/x-xcursor;",
     "fileextensions": "dds",
     "legacyfileextensions":"dds",
@@ -1464,7 +1447,7 @@
     "name": "Pinta",
     "path": "/usr/bin/pinta",
     "rules": { "homedir": { "default": true } },
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "mimetype": "image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/tiff;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/x-targa;image/x-tga;image/openraster;",
     "desktopfile": "/usr/share/applications/pinta.desktop"
 }, {
@@ -1509,7 +1492,7 @@
     "launch": "gnome-klotski.Gnome-klotski",
     "name": "klotski",
     "path": "/usr/games/gnome-klotski",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "desktopfile": "/usr/share/applications/gnome-klotski.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
@@ -1521,7 +1504,7 @@
     "name": "flare",
     "args": "--game=flare-game",
     "path": "/usr/games/flare",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "desktopfile": "/usr/share/applications/flare.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
@@ -1534,7 +1517,7 @@
     "rules": { "homedir": { "default": true } },
     "mimetype": "text/plain;text/html;text/x-php;text/x-c;text/x-shellscript;",
     "path": "/usr/bin/notepadqq",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "desktopfile": "/usr/share/applications/notepadqq.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1545,7 +1528,7 @@
     "launch": "gnome-mahjongg.Gnome-mahjongg",
     "name": "mahjongg",
     "path": "/usr/games/gnome-mahjongg",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "desktopfile":"/usr/share/applications/gnome-mahjongg.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
@@ -1654,7 +1637,7 @@
     "launch": "gnome-tetravex.Gnome-tetravex",
     "name": "Tetravex",
     "path": "/usr/games/gnome-tetravex",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "desktop":"gnome-tetravex.desktop",
     "rules": { "homedir": { "default": true } }
 }, {
@@ -1721,7 +1704,7 @@
     "displayname": "draw.io",
     "rules": { "homedir": { "default": true } },
     "path": "/opt/drawio/drawio",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "mimetype": "application/vnd.jgraph.mxfile;application/vnd.visio;",
     "fileextensions": "drawio",
     "legacyfileextensions": "drawio",
@@ -1864,7 +1847,7 @@
     "name": "Golly",
     "path": "/usr/games/golly",
     "rules": { "homedir": { "default": true } },
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04"
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
