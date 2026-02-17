@@ -1413,8 +1413,9 @@
     "cat": "utilities,office",
     "platforms": "linux/amd64",
     "displayname": "Pinta",
-    "preruncommands": [ "RUN apt-get update && apt-get install --yes libgtk-4-1 libadwaita-1-0 wget && apt-get clean",
-						"RUN wget https://launchpad.net/~xtradeb/+archive/ubuntu/apps/+files/xtradeb-apt-source_0.4_all.deb && apt-get update && apt-get install ./xtradeb-apt-source_0.4_all.deb && rm ./xtradeb-apt-source_0.4_all.deb && apt-get clean" ],
+    "preruncommands": [ 
+	"RUN apt-get update && apt-get install --yes --no-install-recommends software-properties-common && apt-get clean",
+	"RUN add-apt-repository -y ppa:xtradeb/apps" ],
     "debpackage": "pinta",
     "icon": "pinta.svg",
     "keyword": "pinta,paint",
@@ -1422,7 +1423,7 @@
     "name": "Pinta",
     "path": "/usr/bin/pinta",
     "rules": { "homedir": { "default": true } },
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "mimetype": "image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/tiff;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/x-targa;image/x-tga;image/openraster;",
     "desktopfile": "/usr/share/applications/pinta.desktop"
 }, {
