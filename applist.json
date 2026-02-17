@@ -1150,32 +1150,6 @@
     ]   
 }, {
     "acl": { "permit": [ "all" ] },
-    "cat": "TerminalEmulator",
-    "installrecommends": true,
-    "debpackage": "wget konsole sudo bash openssh-client telnet sshcommand sshfs ftp-ssl wput curl wget ncftp git git-ftp ftp dbus-x11 cloc bandit python3-bandit gcc make python3-pip python3-virtualenv golang-go python3-venv pre-commit build-essential libc6-dev",
-    "icon": "circle_security.svg",
-    "keyword": "konsole,terminal,bash,shell,cmd,admin,ftp,telnet,netcat,sshfs,curl,wget,git,ssh",
-    "launch": "konsole.konsole",
-    "name": "devsecops",
-    "displayname": "DevSecOps",
-    "showinview": "dock",
-    "wm_class": "konsole",
-    "path": "/usr/bin/konsole",
-    "rules": { "homedir": { "default": true } },
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.24.04",
-    "desktopfile": "/usr/share/applications/org.kde.konsole.desktop",
-    "desktopfileoverwrited": "/usr/share/applications/org.kde.konsole.devsecops.desktop",
-    "postruncommands": [
-        "ENV SHELL=/bin/bash",
-	"SHELL [ \"/bin/bash\", \"-c\" ]",
-        "RUN echo \"ALL ALL=(ALL:ALL) ALL\">/etc/sudoers.d/all",
-	"RUN wget https://github.com/trufflesecurity/trufflehog/releases/download/v3.90.8/trufflehog_3.90.8_linux_amd64.tar.gz && tar -xvf trufflehog_3.90.8_linux_amd64.tar.gz && mv trufflehog /usr/local/bin && rm -rf trufflehog_3.90.8_linux_amd64.tar.gz",
-	"RUN git clone https://github.com/gitleaks/gitleaks.git && cd gitleaks && make build",
-	"RUN mkdir semgrep && virtualenv semgrep && source semgrep/bin/activate && pip3 install semgrep"
-    ]
-}, 
-{
-    "acl": { "permit": [ "all" ] },
     "cat": "development",
     "platforms": "linux/amd64",
     "preruncommands": [],
