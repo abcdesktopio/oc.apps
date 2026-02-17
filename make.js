@@ -114,7 +114,6 @@ function makedockerfile(e) {
   // make sure to be root 
   // if this image if rerun
   wstream.write('USER root\n');
-  wstream.write('ENV ABCDESKTOP_LOCALACCOUNT_DIR=/etc/localaccount\n');
 
   // run pre commands
   if (e.preruncommands) {
