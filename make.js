@@ -149,7 +149,7 @@ function makedockerfile(e) {
       // join array with space  
       rpmpackages += e.rpmpackage.join(' ');
     }
-    let installCommand = `RUN yum install -y ${rpmpackages} && yum -y clean all && rm -rf /var/cache\n`;
+    let installCommand = `RUN dnf install -y ${rpmpackages} && dnf -y clean all && rm -rf /var/cache\n`;
     wstream.write(installCommand);
   }
 	
