@@ -82,8 +82,8 @@ function makedockerfile(e) {
   wstream.write(`# platforms=${platforms}\n`);
   wstream.write("#\n");
   
-  // read env var TAG or set default tag to dev 
-  let tag= process.env.TAG || "dev";
+  // read env var TAG or set default tag to release 
+  let tag= process.env.TAG || release;
   // if tag is overwrite
   if (e.tag)  tag=e.tag;
   wstream.write(`ARG TAG=${tag}\n`);
