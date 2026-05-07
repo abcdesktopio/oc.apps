@@ -1871,7 +1871,7 @@
     "name": "Robots",
     "path": "/usr/games/gnome-robots",
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.minimal.22.04",
-    "desktopfile":"gnome-robots.desktop"
+    "desktopfile":"/usr/share/applications/gnome-robots.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
