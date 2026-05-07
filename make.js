@@ -214,7 +214,17 @@ function makedockerfile(e) {
   wstream.write(`LABEL oc.name=${JSON.stringify(e.name)}\n`);
   const displayname = (e.displayname) ? e.displayname : e.name;
   if (displayname) wstream.write(`LABEL oc.displayname=${JSON.stringify(displayname)}\n`);
-  if (e.path) wstream.write(`LABEL oc.path=${JSON.stringify(e.path)}\n`);
+
+  if (e.path) 
+	wstream.write(`LABEL oc.path=${JSON.stringify(e.path)}\n`);
+  else
+	wstream.write('LABEL oc.path="{{ oc.path }}"\n');
+
+  if (e.comment)
+	wstream.write(`LABEL oc.comment=${JSON.stringify(e.comment)}\n`);
+  else
+        wstream.write('LABEL oc.comment="{{ oc.comment }}"\n');
+
   wstream.write('LABEL oc.type=app\n');
   if (e.uniquerunkey) { wstream.write(`LABEL oc.uniquerunkey=${JSON.stringify(e.uniquerunkey)}\n`); }
   if (e.showinview) {
@@ -251,14 +261,7 @@ function makedockerfile(e) {
   // RUN this command as ROOT
   // wstream.write( "RUN for d in /usr/share/icons /usr/share/pixmaps ; do echo \"testing link in $d\"; if [ -d $d ] && [ -x /composer/safelinks.sh ] ; then echo \"fixing link in $d\"; cd $d ; /composer/safelinks.sh ; fi; done\n" );
   if (e.name) wstream.write(`ENV APPNAME="${e.name}"\n`);
-  if (e.path) wstream.write(`ENV APPBIN="${e.path}"\n`);
-  
-  // This is deprecated
-  //
-  if (e.path) {
-          wstream.write(`# ENV APP is deprecated, removed in next release\n`);
-          wstream.write(`ENV APP="${e.path}"\n`);
-  }
+  if (e.path) { wstream.write(`ENV APP="${e.path}"\n`); }
   if (e.args) { wstream.write(`LABEL oc.args=${JSON.stringify(e.args)}\n`); }
   if (e.usedefaultapplication) { wstream.write(`LABEL oc.usedefaultapplication=${JSON.stringify(e.usedefaultapplication)}\n`); }
   if (e.home) { wstream.write(`LABEL oc.home=${JSON.stringify(e.home)}\n`); }

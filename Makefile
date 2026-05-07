@@ -30,16 +30,16 @@ dockerfile:
 	for dir in $(wildcard *.d); do \
             rm $$dir | true;\
         done 
-	node make.js -r '4.1'
+	node make.js -r '4.4'
 	echo "Number of file generated: $(words $(wildcard *.d))"
 
 build:
 	for dir in $(sort $(wildcard *.d)); do \
                 echo "\n\n *********** buildin $$dir **********\n"; \
                 echo "docker build  --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:$(TAG) -f $$dir ."; \
+		echo $$dir; \
                 docker build --build-arg TAG=$(TAG) -t abcdesktopio/$$dir:$(TAG) -f $$dir . ;\
 		docker inspect abcdesktopio/$$dir:$(TAG) > $$dir.$(TAG).json; \
-                # docker rmi `docker images -q --filter "dangling=true"` ;\
         done 
 	docker rmi `docker images -q --filter "dangling=true"`
 
