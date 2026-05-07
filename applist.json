@@ -597,11 +597,10 @@
     "postruncommands": [
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox-esr",
         "COPY --from=ghcr.io/abcdesktopio/ntlm_auth_ubuntu_24.04:main /dist/*.deb /tmp",
-	"RUN apt-get update && apt-get install --no-install-recommends --allow-downgrades -y /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop", 
-	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig"
+	    "RUN apt-get update && apt-get install --no-install-recommends --allow-downgrades -y /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop", 
+	    "RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig"
     ],
     "debpackage": "ubuntu-restricted-extras ttf-mscorefonts-installer libavcodec-extra firefox-esr krb5-user hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-l10n-fr firefox-esr-l10n-ro language-pack-en language-pack-ro language-pack-fr-base language-pack-ro-base language-pack-en-base libegl1 libavcodec-extra",
-    "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.firefox",
@@ -615,7 +614,7 @@
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
     "secrets_requirement":  [ "ntlm", "kerberos" ],
-    "desktopfile":"/usr/share/applications/firefox.desktop",
+    "desktopfile":"/usr/share/applications/firefox-esr.desktop",
     "usedefaultapplication": true
 },  {
     "acl": { "permit": [ "all" ] },
@@ -628,14 +627,13 @@
         "RUN add-apt-repository -y ppa:mozillateam/ppa"
     ],
     "postruncommands": [
-	"COPY policies.json /usr/lib/firefox/distribution/policies.json",
+	    "COPY policies.json /usr/lib/firefox/distribution/policies.json",
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox",
         "COPY --from=ghcr.io/abcdesktopio/ntlm_auth_ubuntu_24.04:main /dist/*.deb /tmp",
 	"RUN apt-get update && ls -la /tmp/*.deb && apt-get install -y --no-install-recommends --allow-downgrades /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop", 
 	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig"
     ],
     "debpackage": "pciutils libpci3 libegl1 libgl1 firefox krb5-user speech-dispatcher hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-locale-fr firefox-locale-en firefox-locale-ro firefox-locale-de language-pack-fr language-pack-en language-pack-ro language-pack-de language-pack-fr-base language-pack-ro-base language-pack-de-base language-pack-en-base libgulkan-utils libgles1 libosmesa6 libglfw3 pciutils libpci3 libgl1 libgl1-mesa-dri libegl1 libgles2 libavcodec-extra ubuntu-restricted-extras libgles2 libgl1-mesa-dri libgles1 libglu1-mesa libglx-mesa0",
-    "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.firefox",
@@ -649,7 +647,7 @@
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
     "secrets_requirement":  [ "ntlm", "kerberos" ],
-    "desktopfile":"/usr/share/applications/firefox.desktop"
+    "desktopfile":"/usr/share/applications/firefox-ubuntu-24-04.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
     "rules": { "homedir": { "default": true } },
@@ -682,7 +680,7 @@
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
     "secrets_requirement":  [ "ntlm", "kerberos" ],
-    "desktopfile":"/usr/share/applications/firefox.desktop",
+    "desktopfile":"/usr/share/applications/firefox-ubuntu-24-04-pod.desktop",
     "usedefaultapplication": true
 },{
     "acl": { "permit": [ "all" ] },
@@ -707,37 +705,36 @@
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;video/webm;application/x-xpinstall;",
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
-    "desktopfile":"/usr/share/applications/firefox.desktop",
+    "desktopfile":"/usr/share/applications/firefox-alpine-edge.desktop",
     "usedefaultapplication": true
 }, {
     "acl": { "permit": [ "all" ] },
     "rules": { "homedir": { "default": true } },
     "platforms": "linux/amd64",
     "cat": "office",
-    "comment": "NSS_SDB_USE_CACHE=yes",
     "preruncommands": [
         "RUN install -d -m 0755 /etc/apt/keyrings",
         "RUN apt-get update && apt-get install --no-install-recommends --yes wget && apt-get clean",
         "RUN wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null",
         "RUN echo 'deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main' | tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null",
-	"RUN apt-get update && apt-cache policy firefox-esr",
-	"RUN apt-get update && apt-cache policy firefox-esr-l10n-fr"
+	    "RUN apt-get update && apt-cache policy firefox-esr",
+	    "RUN apt-get update && apt-cache policy firefox-esr-l10n-fr"
     ],
     "postruncommands": [
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox-esr",
         "COPY --from=ghcr.io/abcdesktopio/ntlm_auth_ubuntu_24.04:main /dist/*.deb /tmp",
-	"RUN apt-get update && apt-get install -y --no-install-recommends /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" , 
-	"RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig",
-	"RUN mkdir -p /usr/lib/firefox-esr/distribution",
+	    "RUN apt-get update && apt-get install -y --no-install-recommends /tmp/*.deb && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -f /tmp/*.deb && mv /usr/bin/ntlm_auth /usr/bin/ntlm_auth.desktop && chown root:root /usr/bin/ntlm_auth.desktop && chmod 111 /usr/bin/ntlm_auth.desktop" , 
+	    "RUN echo /usr/lib/x86_64-linux-gnu/samba >> /etc/ld.so.conf.d/x86_64-linux-gnu.conf && /usr/sbin/ldconfig",
+	    "RUN mkdir -p /usr/lib/firefox-esr/distribution",
         "COPY composer/init.d/init.firefox-esr /composer/init.d/init.firefox-esr",
         "COPY policies.json /usr/lib/firefox-esr/distribution"
     ],
     "debpackage": "ubuntu-restricted-extras ttf-mscorefonts-installer libavcodec-extra firefox-esr krb5-user hunspell-fr hunspell-de-de hunspell-ro hunspell-en-us firefox-esr-l10n-fr firefox-esr-l10n-ro firefox-esr-l10n-de language-pack-en language-pack-ro language-pack-fr-base language-pack-ro-base language-pack-en-base",
-    "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
+    "comment": "NSS_SDB_USE_CACHE=yes firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
-    "launch": "Navigator.firefoxubuntu2004",
-    "args": "--no-remote --class firefoxubuntu2404",
+    "launch": "Navigator.firefoxesrubuntu2404",
+    "args": "--no-remote --class firefoxesrubuntu2404",
     "name": "Firefox-esr-24-04",
     "displayname": "Firefox (esr ubuntu 24.04)",
     "showinview": "dock",
@@ -747,19 +744,18 @@
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
     "secrets_requirement":  [ "ntlm", "kerberos" ],
-    "desktopfile":"/usr/share/applications/firefox.desktop",
+    "desktopfile":"/usr/share/applications/firefox-esr-ubuntu-24-04.desktop",
     "usedefaultapplication": true
 }, {
     "acl": { "permit": [ "all" ] },
     "rules": { "homedir": { "default": true } },
     "cat": "office",
-    "comment": "NSS_SDB_USE_CACHE=yes",
     "postruncommands": [
         "COPY policies.json /usr/lib/firefox/distribution/policies.json",
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
     ],
     "rpmpackage": "firefox",
-    "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
+    "comment": "NSS_SDB_USE_CACHE=yes firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.firefoxrockylinux9",
@@ -773,18 +769,17 @@
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
     "secrets_requirement":  [ "ntlm", "kerberos" ],
-    "desktopfile":"/usr/share/applications/firefox.desktop"
+    "desktopfile":"/usr/share/applications/firefox-rockylinux9.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "rules": { "homedir": { "default": true } },
     "cat": "office",
-    "comment": "NSS_SDB_USE_CACHE=yes",
     "postruncommands": [
         "COPY policies.json /usr/lib/firefox/distribution/policies.json",
         "COPY composer/init.d/init.firefox /composer/init.d/init.firefox"
     ],
     "rpmpackage": [ "firefox", "mesa-libGL", "google-noto-fonts-common", "liberation-fonts" ],
-    "comment": "firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
+    "comment": "NSS_SDB_USE_CACHE=yes firefox krb5-user samba-common-bin firefox-locale-en language-pack-en language-pack-en-base",
     "icon": "circle_firefox.svg",
     "keyword": "firefox,mozilla,web,internet",
     "launch": "Navigator.firefoxalmalinux10",
@@ -798,7 +793,7 @@
     "legacyfileextensions": "htm;html;xml",
     "fileextensions": "htm;html;xml;gif",
     "secrets_requirement":  [ "ntlm", "kerberos" ],
-    "desktopfile":"/usr/share/applications/firefox.desktop"
+    "desktopfile":"/usr/share/applications/firefox-almalinux10.desktop"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
