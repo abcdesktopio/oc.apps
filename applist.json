@@ -938,7 +938,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "chromium-browser",
+    "debpackage": "chromium",
     "icon": "circle_chromium.svg",
     "keyword": "web,browser,internet",
     "launch": "chromium.Chromium",
@@ -947,8 +947,8 @@
     "displayname": "chromium",
     "installrecommends" : true,
     "args": "--no-default-browser-check",
-    "path": "/usr/bin/chromium-browser",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
+    "path": "/usr/bin/chromium",
+    "template": "ghcr.io/abcdesktopio/oc.template.debian",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
@@ -959,10 +959,10 @@
     "platforms": "linux/amd64",
     "containerengine": "ephemeral_container",
     "comment": "Edge is not available for Arm Linux",
-    "debpackage": "microsoft-edge-stable ttf-mscorefonts-installer fontconfig fonts-ubuntu xdg-utils libgles2 libgl1-mesa-dri libgles1 libglu1-mesa libglx-mesa0 libgl1",
+    "debpackage": "dbus-x11 microsoft-edge-stable ttf-mscorefonts-installer fontconfig fonts-ubuntu xdg-utils libgles2 libgl1-mesa-dri libgles1 libglu1-mesa libglx-mesa0 libgl1",
     "preruncommands": [ 
         "RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
-	"RUN curl https://packages.microsoft.com/keys/microsoft.asc  | apt-key add -",
+	    "RUN curl https://packages.microsoft.com/keys/microsoft.asc  | apt-key add -",
         "RUN echo \"deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/edge stable main\" > /etc/apt/sources.list.d/edge.list"
     ],
     "postruncommands": [

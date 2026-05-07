@@ -20,7 +20,7 @@ const { ArgumentParser } = require('argparse');
 const { version } = require('./package.json');
 const templateimagesfilename = './templateimages.txt'
 var   templateimages = [];
-var   release='3.0';
+var   release='4.4';
 var   defaultApplicationfile  = 'applist.json';
 var   forceOutputToDockerfile = false;
 
@@ -82,8 +82,8 @@ function makedockerfile(e) {
   wstream.write(`# platforms=${platforms}\n`);
   wstream.write("#\n");
   
-  // read env var TAG or set default tag to dev 
-  let tag= process.env.TAG || "dev";
+  // read env var TAG or set default tag to release 
+  let tag= process.env.TAG || release;
   // if tag is overwrite
   if (e.tag)  tag=e.tag;
   wstream.write(`ARG TAG=${tag}\n`);
@@ -291,7 +291,7 @@ function makedockerfile(e) {
 const parser = new ArgumentParser({ description: 'abcdesktop Dockerfile generator' });
 parser.add_argument('-v', '--version',   	{ action: 'version', version });
 parser.add_argument('-d', '--dockerfile', 	{ default: false, 		help: 'boolean true/false, default is false, force output as Dockerfile (must contains only one entry in json application list' });
-parser.add_argument('-r', '--release',   	{ default: '3.0', 		help: 'build version 3.0 by default' });
+parser.add_argument('-r', '--release',   	{ default: '4.4', 		help: 'build version 3.0 by default' });
 parser.add_argument('-f', '--applicationfile', 	{ default: 'applist.json', 	help: 'applicationfile applist.json' });
 
 let args=parser.parse_args();
@@ -299,9 +299,9 @@ console.log( args );
 defaultApplicationfile = args.applicationfile;
 console.log( 'Read database json file=' + defaultApplicationfile );
 release = args.release;
-console.log( 'Release format=' + release );
+// console.log( 'Release format=' + release );
 forceOutputToDockerfile = args.dockerfile;
-console.log( 'forceOutputToDockerfile=' +  forceOutputToDockerfile);
+// console.log( 'forceOutputToDockerfile=' +  forceOutputToDockerfile);
 
 
 
