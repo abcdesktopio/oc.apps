@@ -374,18 +374,6 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
-    "apkpackage": "supertux mesa-gl mesa-egl mesa-dri-gallium",
-    "icon": "circle_supertux.svg",
-    "keyword": "supertux",
-    "launch": "supertux2.supertux2",
-    "name": "supertux2",
-    "displayname": "supertux2",
-    "path": "/usr/games/supertux2",
-    "template": "ghcr.io/abcdesktopio/oc.template.alpine.minimal",
-    "desktopfile": "/usr/share/applications/supertux2.desktop"
-}, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "games",
     "debpackage": "chocolate-doom doom-wad-shareware prboom-plus freedoom prboom-plus",
     "icon": "doom.svg",
     "keyword": "doom",
@@ -1351,7 +1339,7 @@
     "name": "Gimp",
     "path": "/usr/bin/gimp",
     "rules": { "homedir": { "default": true } },
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
     "mimetype": "image/bmp;image/g3fax;image/gif;image/x-fits;image/x-pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-psd;image/x-sgi;image/x-tga;image/x-xbitmap;image/x-xwindowdump;image/x-xcf;image/x-compressed-xcf;image/x-gimp-gbr;image/x-gimp-pat;image/x-gimp-gih;image/jpeg;image/x-psp;image/png;image/x-icon;image/x-xpixmap;image/x-wmf;image/jp2;image/jpeg2000;image/jpx;image/x-xcursor;",
     "fileextensions": "dds",
     "legacyfileextensions":"dds",
@@ -1422,23 +1410,6 @@
     "mimetype": "image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/tiff;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/x-targa;image/x-tga;image/openraster;",
     "desktopfile": "/usr/share/applications/pinta.desktop"
 }, {
-    "acl": { "permit": [ "all" ] },
-    "cat": "development",
-    "platforms": "linux/amd64",
-    "preruncommands": [ "RUN curl https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null",
-                        "RUN echo \"deb https://download.sublimetext.com/ apt/stable/\" | tee /etc/apt/sources.list.d/sublime-text.list",
-   			"RUN apt-get update && apt-get install --yes libgl1 && apt-get clean" ],
-    "debpackage": "sublime-text",
-    "installrecommends" : true,
-    "icon": "circle_sublime-text.svg",
-    "keyword": "ide,code,sublime-text",
-    "launch": "sublime_text.Sublime_text",
-    "rules": { "homedir": { "default": true } },
-    "name": "sublime-Text",
-    "path": "/opt/sublime_text/sublime_text",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
-    "desktopfile":"/usr/share/applications/sublime_text.desktop"
-},  {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
     "apkpackage": "inkscape inkscape-lang",
@@ -1598,19 +1569,6 @@
     "fileextensions": "gnm",
     "legacyfileextensions":"gnm",
     "desktopfile": "/usr/share/applications/gnumeric.desktop"
-}, 
-{
-    "acl": { "permit": [ "all" ] },
-    "cat": "games",
-    "debpackage": "gnome-tetravex",
-    "icon": "gnome-tetravex.svg",
-    "keyword": "game",
-    "launch": "gnome-tetravex.Gnome-tetravex",
-    "name": "Tetravex",
-    "path": "/usr/games/gnome-tetravex",
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
-    "desktop":"gnome-tetravex.desktop",
-    "rules": { "homedir": { "default": true } }
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities",
