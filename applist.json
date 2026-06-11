@@ -1397,8 +1397,8 @@
     "platforms": "linux/amd64",
     "displayname": "Pinta",
     "preruncommands": [ 
-	"RUN apt-get update && apt-get install --yes --no-install-recommends software-properties-common && apt-get clean",
-	"RUN add-apt-repository -y ppa:xtradeb/apps" ],
+	    "RUN apt-get update && apt-get install --yes --no-install-recommends software-properties-common libgtk-4-1 libadwaita-1-0 && apt-get clean",
+	    "RUN add-apt-repository -y ppa:xtradeb/apps" ],
     "debpackage": "pinta",
     "icon": "pinta.svg",
     "keyword": "pinta,paint",
@@ -1406,10 +1406,10 @@
     "name": "Pinta",
     "path": "/usr/bin/pinta",
     "rules": { "homedir": { "default": true } },
-    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "mimetype": "image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/tiff;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/x-targa;image/x-tga;image/openraster;",
-    "desktopfile": "/usr/share/applications/pinta.desktop"
-}, {
+    "desktopfile": "pinta.desktop"
+  }, {
     "acl": { "permit": [ "all" ] },
     "cat": "graphics",
     "apkpackage": "inkscape inkscape-lang",
