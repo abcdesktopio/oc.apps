@@ -251,12 +251,14 @@
     "preruncommands": [
         "ENV WINEARCH=win64",
         "ENV WINEDLLOVERRIDES=\"mscoree,mshtml=\"",
-	"ENV WINEPREFIX=/composer/.wine",
+	    "ENV WINEPREFIX=/composer/.wine",
         "RUN mkdir -p $WINEPREFIX && chmod 777 $WINEPREFIX",
         "RUN wineboot --init",
         "RUN echo disable > $WINEPREFIX/.update-timestamp",
         "COPY user.reg system.reg /composer/.wine",
-   	"RUN chmod -R 777 $WINEPREFIX/*" ],
+        "RUN mv /composer/.wine /composer/.wine.seed",
+        "ENV WINEPREFIX=/tmp/.wine",
+        "RUN printf '#!/bin/sh\\n[ -d $WINEPREFIX ] || cp -r /composer/.wine.seed $WINEPREFIX\\nexec /usr/bin/wine $@\\n' > /usr/local/bin/wine-seed.sh && chmod +x /usr/local/bin/wine-seed.sh" ],
     "debpackage": "",
     "icon": "winhelp.svg",
     "keyword": "wine,winhelp,text,hlp,help,wine",
@@ -266,7 +268,7 @@
     "rules": { "homedir": { "default": true } },
     "mimetype": "application/hlp;",
     "fileextensions":"hlp;",
-    "path": "/usr/bin/wine",
+    "path": "/usr/local/bin/wine-seed.sh",
     "template": "ghcr.io/abcdesktopio/oc.template.alpine.wine"
 }, 
 {
