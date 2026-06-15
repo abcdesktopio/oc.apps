@@ -199,6 +199,14 @@ jobs:
           event-type: dispatch-dockerfile-from-oc.apps
           client-payload: '{ "workflow": "${{ github.workflow }}", "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}", "run_id": "${{ github.run_id }}", "run_number": "${{ github.run_number }}",  "artifact": "artifact-dockerfiles" }'
 
+      - name: Repository Dispatch build app list to images 
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.TOKEN_DISPATCH }}
+          repository: abcdesktopio/images
+          event-type: dispatch-buildAppList-from-oc.apps
+          client-payload: '{ "workflow": "${{ github.workflow }}", "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}" }'
+
       #- name: commit Dockerfiles and md files
       #  env: 
       #    CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
