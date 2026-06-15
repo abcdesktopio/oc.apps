@@ -510,7 +510,7 @@
     "displayname": "filezilla (alpine)",
     "path": "/usr/bin/filezilla",
     "rules": { "homedir": { "default": true } },
-    "template": "ghcr.io/abcdesktopio/oc.template.alpine.edge.gtk",
+    "template": "ghcr.io/abcdesktopio/oc.template.alpine",
     "desktopfile": "/usr/share/applications/filezilla.desktop"
 },  {
     "acl": { "permit": [ "all" ] },
