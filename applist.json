@@ -458,7 +458,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,graphics",
-    "apkpackage": "blender mesa-dri-gallium",
+    "apkpackage": "blender mesa-dri-gallium mesa-gl",
     "icon": "circle_blender.svg",
     "keyword": "blender,modeler",
     "launch": "Blender.Blender",
@@ -469,7 +469,7 @@
     "fileextensions":"blend,obj,fbx,3ds,ply,stl",
     "template": "ghcr.io/abcdesktopio/oc.template.alpine",
     "desktopfile": "/usr/share/applications/blender.desktop"
-}, {
+  }, {
     "acl": { "permit": [ "all" ] },
     "cat": "utilities,office,graphics",
     "apkpackage": "ffmpeg vlc-qt dbus dbus-x11 mesa-dri-gallium",
