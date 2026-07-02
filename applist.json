@@ -900,10 +900,21 @@
     "acl": { "permit": [ "all" ] },
     "cat": "office",
     "platforms": "linux/amd64",
-    "debpackage": "krb5-user fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine fonts-recommended google-chrome-stable pciutils libgl1 libgl1-mesa-dri libegl1 libgles2 libgl1",
+    "debpackage": "krb5-user fonts-noto fonts-roboto xfonts-100dpi fonts-ubuntu fonts-freefont-ttf dbus-x11 fonts-wine fonts-recommended google-chrome-stable pciutils libgl1 libgl1-mesa-dri libegl1 libgles2 libgl1 libglu1-mesa",
     "preruncommands": [ 
-        "RUN curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg",
-	"RUN echo 'Types: deb \\nURIs: https://dl.google.com/linux/chrome/deb/ \\nSuites: stable \\nComponents: main \\nArchitectures: amd64 \\nSigned-By: /usr/share/keyrings/google-chrome.gpg' > /etc/apt/sources.list.d/google-chrome.sources"
+      "RUN curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg",
+      "RUN echo 'Types: deb \\nURIs: https://dl.google.com/linux/chrome/deb/ \\nSuites: stable \\nComponents: main \\nArchitectures: amd64 \\nSigned-By: /usr/share/keyrings/google-chrome.gpg' > /etc/apt/sources.list.d/google-chrome.sources"
+    ],
+    "postruncommands": [
+        "RUN curl -sL --output /tmp/virtualgl.deb https://github.com/VirtualGL/virtualgl/releases/download/3.1.4/virtualgl_3.1.4_amd64.deb && apt-get install -y --no-install-recommends /tmp/virtualgl.deb && rm -f /tmp/virtualgl.deb && apt-get clean",
+        "ENV NVIDIA_VISIBLE_DEVICES=all",
+        "ENV NVIDIA_DRIVER_CAPABILITIES=all",
+        "ENV LD_PRELOAD=/usr/lib/libdlfaker.so:/usr/lib/libvglfaker.so",
+        "ENV VGL_ISACTIVE=1",
+        "ENV VGL_DISPLAY=egl0",
+        "ENV GEOPROBE_USEGLX=1",
+        "ENV PROMAGIC_USEGLX=1",
+        "ENV VBOX_CROGL_FORCE_SUPPORTED=1"
     ],
     "icon": "circle_google-chrome.svg",
     "keyword": "web,browser,internet",
@@ -913,17 +924,28 @@
     "displayname": "Chrome",
     "showinview": "dock",
     "installrecommends" : true,
-    "args": "--no-sandbox --use-gl=angle --use-angle=gl-egl --ignore-gpu-blocklist --enable-gpu-rasterization --disable-dev-shm-usage",
+    "args": "--use-gl=angle --use-angle=gl-egl --ignore-gpu-blocklist --enable-gpu-rasterization --disable-dev-shm-usage",
     "path": "/usr/bin/google-chrome-stable",
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
     "desktopfile":"/usr/share/applications/google-chrome.desktop"
-}, {
+  }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "chromium",
+    "debpackage": "chromium libglu1-mesa",
+    "postruncommands": [
+        "RUN curl -sL --output /tmp/virtualgl.deb https://github.com/VirtualGL/virtualgl/releases/download/3.1.4/virtualgl_3.1.4_amd64.deb && apt-get install -y --no-install-recommends /tmp/virtualgl.deb && rm -f /tmp/virtualgl.deb && apt-get clean",
+        "ENV NVIDIA_VISIBLE_DEVICES=all",
+        "ENV NVIDIA_DRIVER_CAPABILITIES=all",
+        "ENV LD_PRELOAD=/usr/lib/libdlfaker.so:/usr/lib/libvglfaker.so",
+        "ENV VGL_ISACTIVE=1",
+        "ENV VGL_DISPLAY=egl0",
+        "ENV GEOPROBE_USEGLX=1",
+        "ENV PROMAGIC_USEGLX=1",
+        "ENV VBOX_CROGL_FORCE_SUPPORTED=1"
+    ],
     "icon": "circle_chromium.svg",
     "keyword": "web,browser,internet",
     "launch": "chromium.Chromium",
@@ -931,30 +953,39 @@
     "rules": { "homedir": { "default": true } },
     "displayname": "chromium",
     "installrecommends" : true,
-    "args": "--no-default-browser-check",
+    "args": "--no-default-browser-check --use-gl=angle --use-angle=gl-egl --ignore-gpu-blocklist --enable-gpu-rasterization",
     "path": "/usr/bin/chromium",
     "template": "ghcr.io/abcdesktopio/oc.template.debian",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
     "desktopfile":"/usr/share/applications/chromium-browser.desktop"
-}, {
+},  {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
     "platforms": "linux/amd64",
     "containerengine": "ephemeral_container",
     "comment": "Edge is not available for Arm Linux",
-    "debpackage": "dbus-x11 microsoft-edge-stable ttf-mscorefonts-installer fontconfig fonts-ubuntu xdg-utils libgles2 libgl1-mesa-dri libgles1 libglu1-mesa libglx-mesa0 libgl1 vulkan-tools libvulkan1 libgulkan-0.15-0t64 libgle3 libglfw3  libglu1-mesa libopengl0 libgles1 libosmesa6",
+    "debpackage": "dbus-x11 microsoft-edge-stable ttf-mscorefonts-installer fontconfig fonts-ubuntu xdg-utils libgles2 libgl1-mesa-dri libgles1 libglu1-mesa libglx-mesa0 libgl1 vulkan-tools libvulkan1 libgulkan-0.15-0t64 libgle3 libglfw3  libglu1-mesa libopengl0 libgles1 libosmesa6 libxtst6 libxv1 libegl1",
     "preruncommands": [ 
         "RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections",
-	    "RUN curl https://packages.microsoft.com/keys/microsoft.asc  | apt-key add -",
+	      "RUN curl https://packages.microsoft.com/keys/microsoft.asc  | apt-key add -",
         "RUN echo \"deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/edge stable main\" > /etc/apt/sources.list.d/edge.list"
     ],
     "postruncommands": [
         "RUN fc-cache -vf",
-		"RUN mkdir -p /etc/opt/edge/policies/managed /etc/opt/edge/policies/recommended",
-		"COPY msedge-recommended.json /etc/opt/edge/policies/recommended",
-		"COPY msedge-managed.json /etc/opt/edge/policies/managed"
+        "RUN mkdir -p /etc/opt/edge/policies/managed /etc/opt/edge/policies/recommended",
+        "COPY msedge-recommended.json /etc/opt/edge/policies/recommended",
+        "COPY msedge-managed.json /etc/opt/edge/policies/managed",
+        "RUN curl -sL --output /tmp/virtualgl.deb https://github.com/VirtualGL/virtualgl/releases/download/3.1.4/virtualgl_3.1.4_amd64.deb && apt-get install -y --no-install-recommends /tmp/virtualgl.deb && rm -f /tmp/virtualgl.deb && apt-get clean",
+        "ENV NVIDIA_VISIBLE_DEVICES=all",
+        "ENV NVIDIA_DRIVER_CAPABILITIES=all",
+        "ENV LD_PRELOAD=/usr/lib/libdlfaker.so:/usr/lib/libvglfaker.so",
+        "ENV VGL_ISACTIVE=1",
+        "ENV VGL_DISPLAY=egl0",
+        "ENV GEOPROBE_USEGLX=1",
+        "ENV PROMAGIC_USEGLX=1",
+        "ENV VBOX_CROGL_FORCE_SUPPORTED=1"
     ],
     "icon": "circle_microsoft-edge.svg",
     "keyword": "web,browser,internet",
@@ -962,6 +993,7 @@
     "name": "edge",
     "showinview": "dock",
     "displayname": "Microsoft Edge",
+    "args": "--use-gl=angle --use-angle=gl-egl --ignore-gpu-blocklist --enable-gpu-rasterization --disable-dev-shm-usage",
     "path": "/usr/bin/microsoft-edge-stable",
     "rules": { "homedir": { "default": true } },
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.24.04",
@@ -969,7 +1001,7 @@
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
     "desktopfile":"/usr/share/applications/microsoft-edge.desktop"
-}, {
+  }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
     "preruncommands": [
