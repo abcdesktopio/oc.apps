@@ -955,7 +955,7 @@
     "installrecommends" : true,
     "args": "--no-default-browser-check --use-gl=angle --use-angle=gl-egl --ignore-gpu-blocklist --enable-gpu-rasterization",
     "path": "/usr/bin/chromium",
-    "template": "ghcr.io/abcdesktopio/oc.template.debian",
+    "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
     "legacyfileextensions": "html;xml",
     "fileextensions": "html;xml;gif",
