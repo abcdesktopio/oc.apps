@@ -934,7 +934,7 @@
   }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "chromium libglu1-mesa",
+    "debpackage": "chromium libglu1-mesa libxtst6",
     "postruncommands": [
         "RUN curl -sL --output /tmp/virtualgl.deb https://github.com/VirtualGL/virtualgl/releases/download/3.1.4/virtualgl_3.1.4_amd64.deb && apt-get install -y --no-install-recommends /tmp/virtualgl.deb && rm -f /tmp/virtualgl.deb && apt-get clean",
         "ENV NVIDIA_VISIBLE_DEVICES=all",
