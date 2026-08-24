@@ -934,9 +934,14 @@
   }, {
     "acl": { "permit": [ "all" ] },
     "cat": "office",
-    "debpackage": "chromium libxv1 libglu1-mesa libegl1 libxtst6",
+    "debpackage": "chromium libxv1 libglu1-mesa libgl1 libegl1 libxtst6",
+    "preruncommands": [ 
+	    "RUN echo uname=$(uname -m)",
+	    "RUN if [ $(uname -m) = 'aarch64' ]; then curl -Ls -o /tmp/virtualgl.deb https://github.com/VirtualGL/virtualgl/releases/download/3.1.5/virtualgl_3.1.5_arm64.deb; fi",
+        "RUN if [ $(uname -m) = 'x86_64' ];  then curl -Ls -o /tmp/virtualgl.deb https://github.com/VirtualGL/virtualgl/releases/download/3.1.5/virtualgl_3.1.5_amd64.deb; fi",
+	    "RUN apt-get update && apt-get install --no-install-recommends --yes /tmp/virtualgl.deb && apt-get clean && rm -rf /tmp/virtualgl.deb"
+    ],
     "postruncommands": [
-        "RUN curl -sL --output /tmp/virtualgl.deb https://github.com/VirtualGL/virtualgl/releases/download/3.1.4/virtualgl_3.1.4_amd64.deb && apt-get install -y --no-install-recommends /tmp/virtualgl.deb && rm -f /tmp/virtualgl.deb && apt-get clean",
         "ENV NVIDIA_VISIBLE_DEVICES=all",
         "ENV NVIDIA_DRIVER_CAPABILITIES=all",
         "ENV LD_PRELOAD=/usr/lib/libdlfaker.so:/usr/lib/libvglfaker.so",
