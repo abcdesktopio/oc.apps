@@ -1805,7 +1805,6 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
-	"preruncommands": [ "RUN sed -i 's/^#\\(.*\\/community\\)/\\1/' /etc/apk/repositories && apk update"  ],
     "apkpackage": "stellarium",
     "icon": "stellarium.svg",
     "keyword": "stellarium,astronomy",
@@ -1814,7 +1813,7 @@
     "path": "/usr/bin/stellarium",
     "mimetype": "application/x-stellarium-script;",
     "desktopfile":"/usr/share/applications/org.stellarium.Stellarium.desktop",
-    "template": "ghcr.io/abcdesktopio/oc.template.alpine"
+    "template": "ghcr.io/abcdesktopio/oc.template.alpine.3.23"
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "games",
