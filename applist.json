@@ -1805,6 +1805,7 @@
 }, {
     "acl": { "permit": [ "all" ] },
     "cat": "education",
+	"preruncommands": [ "sed -i 's/^#\(.*\/community\)/\1/' /etc/apk/repositories && apk update" ],
     "apkpackage": "stellarium",
     "icon": "stellarium.svg",
     "keyword": "stellarium,astronomy",
