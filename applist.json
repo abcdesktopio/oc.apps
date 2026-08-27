@@ -914,7 +914,7 @@
         "ENV VGL_DISPLAY=egl0",
         "ENV GEOPROBE_USEGLX=1",
         "ENV PROMAGIC_USEGLX=1",
-        "ENV VBOX_CROGL_FORCE_SUPPORTED=1"
+        "ENV VBOX_CROGL_FORCE_SUPPORTED=1",
 		"RUN fc-cache -f -v"
     ],
     "icon": "circle_google-chrome.svg",
