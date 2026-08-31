@@ -925,7 +925,7 @@
     "displayname": "Chrome",
     "showinview": "dock",
     "installrecommends" : true,
-    "args": "--use-gl=angle --use-angle=gl-egl --ignore-gpu-blocklist --enable-gpu-rasterization --disable-dev-shm-usage",
+    "args": "--no-first-run --no-default-browser-check --use-gl=angle --use-angle=gl-egl --ignore-gpu-blocklist --enable-gpu-rasterization --disable-dev-shm-usage",
     "path": "/usr/bin/google-chrome-stable",
     "template": "ghcr.io/abcdesktopio/oc.template.ubuntu.gtk.26.04",
     "mimetype": "text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;video/webm;",
