@@ -1,15 +1,12 @@
-from gi.repository import GObject
-import shellescape
 import os
-import gi
-import sys
-gi.require_version('Nautilus', '3.0')
-from gi.repository import Nautilus
+import shellescape
+from gi.repository import Nautilus, GObject
 
 class DesktopMenuProvider(GObject.GObject, Nautilus.MenuProvider):
 
     def __init__(self):
-        self.debug( 'sys.version: ' + str(sys.version))
+        # self.debug('__init__')
+        super().__init__()
     
     def debug(self, msg):
         f = open("/var/log/desktop/nautilus_desktop_extension.log", "a")
@@ -31,7 +28,7 @@ class DesktopMenuProvider(GObject.GObject, Nautilus.MenuProvider):
             self.debug('Exception: ' + str(e) )
 
 
-    def get_file_items(self, window, files):
+    def get_file_items(self, files):
         # self.debug('get_file_items')
         item = Nautilus.MenuItem(name='DesktopMenuProvider::Download', 
                                          label='Download for Desktop ', 
@@ -39,5 +36,4 @@ class DesktopMenuProvider(GObject.GObject, Nautilus.MenuProvider):
                                          icon='')
         item.connect('activate', self.menu_activate_cb, files)
 
-        return item,
-
+        return [item]
